@@ -1,0 +1,39 @@
+body{
+	margin: 0;
+	background: black;
+}
+#item_manage{
+	width:920px;
+	height:600px;
+	margin: 0 auto;
+	background-color: #DDD;
+	padding:20px;
+}
+#attribute_panel,#item_panel{float:left;height:600px;}
+#attribute_panel{
+	background: white;
+	width:47%;
+	margin-right:3%;
+}
+#item_panel{
+	width:50%;
+	background: white;
+}
+#attribute_panel #avatars{
+	margin: 0 auto;
+	width:90%;
+	height:100px;
+	background:#000;
+	padding:10px;
+	text-align:center;
+	clear:both;
+}
+#attribute_panel #avatars .avatar{display: inline-block; width:100px; height: 100px; background:white; margin-right:10px;}
+#attributes{ margin: 20px; width:auto; height:440px; background:black;}
+#wear_left,#wear_preview,#wear_right{float:left;}
+#wear_left,#wear_right{width:20%;height:300px;}
+#wear_preview{height:250px;width:50%;margin:20px 5%;background:white;}
+#wear_left .weapon{width:50px; height:50px; background-color: white; margin: 30px auto auto auto;}
+#wear_right .clothes{width:50px; height:50px; background-color: white; margin: 170px auto auto auto;}
+#attribute_values{background-color: #FFF;}
+#attributes #attribute_panel{clear: both; height:120px; width:100%; background:white; border-radius:5px;}
