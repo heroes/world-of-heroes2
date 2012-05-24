@@ -26,7 +26,7 @@ base_level_data={
 		'health':150,//当前等级的生命值
 		'attack':0,//当前等级的攻击值
 		'defend':0,//当前等级的防御值
-		'crit'：0，//当前等级的暴击值
+		'crit':0,//当前等级的暴击值
 		//'skill_point':2,//从上一等级升级到当前等级获得的技能点
 		'speed_movement':0,//移动速度
 		'speed_attack':0,//攻击速度（攻击速度和移动速度如果不随等级变化，就移到上面skill_rate那里去）
@@ -36,7 +36,7 @@ base_level_data={
 		'health':150,//当前等级的生命值
 		'attack':0,//当前等级的攻击值
 		'defend':0,//当前等级的防御值
-		'crit'：0，//当前等级的暴击值
+		'crit':0,//当前等级的暴击值
 		//'skill_point':2,//从上一等级升级到当前等级获得的技能点
 		'speed_movement':0,//移动速度
 		'speed_attack':0,//攻击速度（攻击速度和移动速度如果不随等级变化，就移到上面skill_rate那里去）
