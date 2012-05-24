@@ -6,7 +6,7 @@ body{
 	width:920px;
 	height:600px;
 	margin: 0 auto;
-	background-color: #DDD;
+	background:url('images/bg.jpg') center;
 	padding:20px;
 }
 #attribute_panel,#item_panel{float:left;height:600px;}
