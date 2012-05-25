@@ -3,20 +3,23 @@ body{
 	background: black;
 }
 #item_manage{
-	width:984px;
-	height:600px;
+	width:960px;
+	height:580px;
 	margin: 0 auto;
-	background:url('images/bg.jpg') center;
+	background:#855e2d url('images/bg.png') top left no-repeat;
 	padding:20px;
 }
-#attribute_panel,#item_panel{float:left;height:600px;}
+#attribute_panel,#item_panel{float:left;height:550px;}
 #attribute_panel{
-	width:47%;
-	margin-right:3%;
+	padding-right:20px;
+	width:445px;
+	border:15px solid #3d2a21;
+	border-right:none;
 }
 #item_panel{
-	width:50%;
-	background: white;
+	width:465px;
+	border:15px solid #3d2a21;
+	border-left:none;
 }
 #attribute_panel #avatars{
 	margin: 0 auto;
