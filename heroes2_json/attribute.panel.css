@@ -27,12 +27,13 @@ body{
 	text-align:center;
 	clear:both;
 }
-#attribute_panel #avatars .avatar{display: inline-block; width:75px; height: 75px; margin:22px; border:3px solid #20170f; background:#5b412a;}
-#attributes{ margin: 20px; width:auto; height:440px; background:black;}
+#attribute_panel #avatars .avatar{display: inline-block; width:75px; height: 75px; margin:0 22px; border:3px solid #20170f; background:#5b412a;}
+#attributes{ margin:0 20px; width:auto; height:412px; background:#3d2a21;box-shadow:inset 0 0 10px #000}
 #wear_left,#wear_preview,#wear_right{float:left;}
-#wear_left,#wear_right{width:20%;height:300px;}
-#wear_preview{height:250px;width:50%;margin:20px 5%;background:white;}
-#wear_left .weapon{width:50px; height:50px; background-color: white; margin: 30px auto auto auto;}
-#wear_right .clothes{width:50px; height:50px; background-color: white; margin: 170px auto auto auto;}
+#wear_left,#wear_right{width:20%;height:250px;}
+#wear_preview{height:250px;width:50%;margin:20px 5% 10px 5%; box-shadow:inset 0 0 10px #000}
+#wear_left .weapon,#wear_right .clothes{width:50px; height:50px; box-shadow:inset 0 0 10px #000}
+#wear_left .weapon{ margin: 30px auto auto auto;}
+#wear_right .clothes{margin: 170px auto auto auto;}
 #attribute_values{background-color: #FFF;}
-#attributes #attribute_panel{clear: both; height:120px; width:100%; background:white; border-radius:5px;}
+#attributes #attribute_list{clear: both; height:120px; margin:0 10px; border-radius:5px; box-shadow:inset 0 0 10px #000}
