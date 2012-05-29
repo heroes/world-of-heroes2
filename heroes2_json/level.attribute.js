@@ -1,7 +1,12 @@
-//用于存储各个职业的偏移百分比
+//用于存储各个职业的偏移百分比以及移动、攻击速度
 skill_rate={
 	'001':{
-
+		'health_rate':0.5,//血量偏移
+		'attack_rate':0.8,//攻击偏移
+		'defend_rate':0.7,//防御偏移
+		'crit_rate':1.7,//暴击偏移
+		'speed_movement':0,//移动速度
+		'speed_attack':0,//攻击速度
 	},
 	'002':{
 
@@ -27,9 +32,6 @@ base_level_data={
 		'attack':0,//当前等级的攻击值
 		'defend':0,//当前等级的防御值
 		'crit':0,//当前等级的暴击值
-		//'skill_point':2,//从上一等级升级到当前等级获得的技能点
-		'speed_movement':0,//移动速度
-		'speed_attack':0,//攻击速度（攻击速度和移动速度如果不随等级变化，就移到上面skill_rate那里去）
 	},
 	'002':{
 		'exp':1300,//当前等级所需的经验值
@@ -37,9 +39,6 @@ base_level_data={
 		'attack':0,//当前等级的攻击值
 		'defend':0,//当前等级的防御值
 		'crit':0,//当前等级的暴击值
-		//'skill_point':2,//从上一等级升级到当前等级获得的技能点
-		'speed_movement':0,//移动速度
-		'speed_attack':0,//攻击速度（攻击速度和移动速度如果不随等级变化，就移到上面skill_rate那里去）
 	},
 }
-console.log(base_level_data);
+//console.log(base_level_data);
