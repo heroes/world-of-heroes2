@@ -15,6 +15,7 @@ skill_rate={
 		'attack_rate':1,//攻击偏移
 		'defend_rate':1,//防御偏移
 		'crit_rate':1,//暴击偏移
+		'miss_rate':1,//闪避偏移
 		'speed_movement':200,//移动速度
 		'speed_attack':1,//攻击速度
 	},
@@ -23,6 +24,7 @@ skill_rate={
 		'attack_rate':0.5,
 		'defend_rate':1.3,
 		'crit_rate':1,
+		'miss_rate':1,
 		'speed_movement':200,
 		'speed_attack':1,
 	},
@@ -31,11 +33,12 @@ skill_rate={
 		'attack_rate':2,
 		'defend_rate':0.5,
 		'crit_rate':1,
+		'miss_rate':1,
 		'speed_movement':200,
 		'speed_attack':1,
 	},
 }
-//存储基础值（目前定为近战战士的那个,'001'-'040'表示编号）
+//存储基础值（目前定为近战战士的那个,'001'-'040'表示等级编号）
 base_level_data={
 	/*'001':{
 		'exp':1000,//当前等级所需的经验值

@@ -1,55 +1,79 @@
-//人物：｛名字，等级，人物头像，人物模型图片，当前生命，最大生命，当前经验，升级经验，攻击(基础，加成后)，防御（基础，加成后），暴击（基础，加成后），速度，当前衣服，当前武器,剩余技能点｝
-//道具：｛图标，大图，名字，描述，生命加成，攻击加成，防御加成，暴击加成,速度加成｝
+//用于通信的
 role_data={
 	'001':{
-		'name':'唐如',
-		'lv':0,
-		'avatar':'images/role/ava/ava_001.png',
-		'model':'images/role/model/001_normal.png',
-		'health':1000,
-		'exp_current':12345,
-		'exp_next':20000,
-		'attack_base':15,
-		'attack_current':30,
-		'defend_base':3,
-		'defend_current':17,
-		'crit_base':0.01,
-		'crit_current':0.02,
-		'speed_moving_base':14,
-		'speed_moving_current':15,
-		'speed_attack_basic':12,
-		'speed_attack_added':15,
-		'weapon':'001',
-		'clothes':'001',
+		'name':'唐如',//名字
+		'type':'001',//类型
+		'lv':0,//等级
+		'avatar':'images/role/ava/ava_001.png',//头像
+		'model':'images/role/model/001_normal.png',//裸模
+		'health':1000,//生命
+		'exp_current':12345,//当前经验值
+		'exp_next':20000,//升级经验值
+		'attack':15,//攻击
+		'defend':3,//防御
+		'crit':5,//暴击
+		'miss':5,//闪避
+		'weapon':'001',//武器编号
+		'clothes':'001',//衣服编号
 		'skill_point':'2',
 		'skill_list':['001','2','002','2','003','2']
 	},
 	'002':{
-		'name':'祝离',
-		'lv':0,
-		'avatar':'images/role/ava/ava_002.png',
-		'model':'images/role/model/002_normal.png',
-		'health':1000,
-		'exp_current':12345,
-		'exp_next':20000,
-		'attack_base':15,
-		'attack_current':30,
-		'defend_base':3,
-		'defend_current':17,
-		'crit_base':0.01,
-		'crit_current':0.02,
-		'speed_base':14,
-		'speed_current':15,
-		'weapon':'001',
-		'clothes':'001',
-		'skill_point':3,
+		'name':'祝离',//名字
+		'type':'002',//类型
+		'lv':0,//等级
+		'avatar':'images/role/ava/ava_001.png',//头像
+		'model':'images/role/model/001_normal.png',//裸模
+		'health':1000,//生命
+		'exp_current':12345,//当前经验值
+		'exp_next':20000,//升级经验值
+		'attack':15,//攻击
+		'defend':3,//防御
+		'crit':5,//暴击
+		'miss':5,//闪避
+		'weapon':'001',//武器编号
+		'clothes':'001',//衣服编号
+		//技能部待讨论
+		'skill_point':'2',
 		'skill_list':['001','2','002','2','003','2']
-	}
+	},
+	'003':{
+		'name':'碧青',//名字
+		'lv':0,//等级
+		'avatar':'images/role/ava/ava_001.png',//头像
+		'model':'images/role/model/001_normal.png',//裸模
+		'health':1000,//生命
+		'exp_current':12345,//当前经验值
+		'exp_next':20000,//升级经验值
+		'attack':15,//攻击
+		'defend':3,//防御
+		'crit':5,//暴击
+		'miss':5,//闪避
+		'weapon':'001',//武器编号
+		'clothes':'001',//衣服编号
+		'skill_point':'2',
+		'skill_list':['001','2','002','2','003','2']
+	},
 }
 
 item_data={
 		'weapon':{
 			'001':{
+				'name':'毛笔',
+				'description':'路边最普通不过的十文钱一支的毛笔',
+				'icon':'images/weapon/icons/001.png',
+				'model':'images/weapon/model/001.png',
+				'health_addition':0,
+				'attack_addition':10,
+				'defend_addition':3,
+				'crit_addition':0,
+				'for':'001',//适用角色
+				'open':true
+			},
+			'002':{
+				
+			},
+			'003':{
 				'name':'十八妹',
 				'description':'虽然外表看起来像是一把菜刀，但是其主人坚称它是一柄剑，能够增加少得可怜的攻击和防御。',
 				'icon':'images/weapon/icons/001.png',
@@ -57,8 +81,11 @@ item_data={
 				'health_addition':0,
 				'attack_addition':10,
 				'defend_addition':3,
-				'crit_additoon':0,
-				'speed_addition':2,
+				'crit_addition':0,
+				'for':'002'//适用角色
+			},
+			'004':{
+					
 			}
 		},
 
@@ -71,8 +98,9 @@ item_data={
 				'health_addition':0,
 				'attack_addition':10,
 				'defend_addition':3,
-				'crit_additoon':0,
+				'crit_addition':0,
 				'speed_addition':0, 
+				'for':'001'//适用角色
 			}
 		}
 }
