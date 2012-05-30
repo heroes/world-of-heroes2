@@ -59,10 +59,10 @@ role_data={
 item_data={
 		'weapon':{
 			'001':{
-				'name':'毛笔',
-				'description':'路边最普通不过的十文钱一支的毛笔',
-				'icon':'images/weapon/icons/001.png',
-				'model':'images/weapon/model/001.png',
+				'name':'毛笔',//名称
+				'description':'路边最普通不过的十文钱一支的毛笔',//描述
+				'icon':'images/weapon/icons/001.png',//图标路径
+				'model':'images/weapon/model/001.png',//模型
 				'health_addition':0,
 				'attack_addition':10,
 				'defend_addition':3,
@@ -75,7 +75,7 @@ item_data={
 			},
 			'003':{
 				'name':'十八妹',
-				'description':'虽然外表看起来像是一把菜刀，但是其主人坚称它是一柄剑，能够增加少得可怜的攻击和防御。',
+				'description':'虽然外表看起来像是一把菜刀，但是其主人坚称它是一柄剑，能够增加一定程度的攻击和防御。',
 				'icon':'images/weapon/icons/001.png',
 				'model':'images/weapon/model/001.png',
 				'health_addition':0,
