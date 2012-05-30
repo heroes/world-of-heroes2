@@ -11,19 +11,38 @@
 <body>
     <div id="doc" class="doc">
         <div id="game-container" class="game-container">
-            <div class="css-loading">
+            <!-- loading -->
+            <div id="css-loading" class="css-loading">
                 <div id="block_1" class="barlittle"></div>
                 <div id="block_2" class="barlittle"></div>
                 <div id="block_3" class="barlittle"></div>
                 <div id="block_4" class="barlittle"></div>
                 <div id="block_5" class="barlittle"></div>
             </div>
+            <!-- intro stage -->
+            <div id="intro" class="stage-container"></div>
+            <!-- drama stage -->
+            <div id="drama" class="stage-container"></div>
+            <!-- drama dialogue -->
+            <div id="dialogue" class="stage-container">Dialogue Test</div>
         </div>
     </div>
     
     <script src="./js/lib/laro.0.3.js"></script>
-    <script src="./js/stage.js"></script>
+    <script src="./js/lib/leta.fx.js"></script>
+    <script src="./js/woh.js"></script>
     <script src="./js/g_config.js"></script>
+    <script src="./js/woh.captionPlayer.js"></script>
+    
+    <script src="./js/woh.stageIntro.js"></script>
+    <script src="./js/woh.stageBattle.js"></script>
+    <script src="./js/woh.stageDrama.js"></script>
+    <script src="./js/woh.stageDialogue.js"></script>
+    <script src="./js/woh.stageEquipment.js"></script>
+    <script src="./js/woh.stageMap.js"></script>
+    <script src="./js/woh.stageGameover.js"></script>
+    <script src="./js/woh.stage.js"></script>
+    <script src="./js/woh.loop.js"></script>
     
     <script>
         woh.init();

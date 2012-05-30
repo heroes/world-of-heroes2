@@ -1,12 +1,15 @@
 /* world of heroes */
+html,body, p { padding: 0; margin: 0 }
 html, body {
-    padding: 0;
-    margin: 0;
     position: absolute;
     width: 100%;
     height: 100%;
     overflow: hidden;
     background: #333;
+    font-size: 14px;
+    font-family: Microsoft Yahei, Arial, Tohoma;
+    color: #ccc;
+    line-height: 2;
 }
 
 .barlittle {
@@ -65,4 +68,31 @@ html, body {
     top: 50%;
     margin-left: -45px;
     margin-top: -10px;
+}
+.stage-container {
+    position: absolute;
+    width: 960px;
+    height: 580px;
+    left: 50%;
+    top: 50%;
+    margin-left: -480px;
+    margin-top: -290px;
+    display: none;
+}
+
+.caption-con {
+    width: 500px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -250px;
+    font-weight: 500;
+}
+.caption-con p {
+    opacity: 0;
+}
+
+#dialogue {
+    background: #ccc;
+    color: #333;
 }
