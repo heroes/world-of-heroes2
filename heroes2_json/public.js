@@ -59,19 +59,28 @@ role_data={
 item_data={
 		'weapon':{
 			'001':{
-				'name':'毛笔',//名称
-				'description':'路边最普通不过的十文钱一支的毛笔',//描述
+				'name':'秃毛笔',//名称
+				'description':'路边最普通不过的十文钱一支的毛笔。',//描述
 				'icon':'images/weapon/icons/001.png',//图标路径
 				'model':'images/weapon/model/001.png',//模型
+				'health_addition':0,//血量加成
+				'attack_addition':10,//攻击加成
+				'defend_addition':3,//防御加成
+				'crit_addition':0,//暴击加成
+				'for':'001',//适用角色（读取role_data中的数据）
+				'open':true//是否已经获得
+			},
+			'002':{
+				'name':'羊毫笔',//名称
+				'description':'羊毫制成的毛笔，柔而无锋，不为人喜爱，故而价格廉宜。',
+				'icon':'images/weapon/icons/001.png',
+				'model':'images/weapon/model/001.png',
 				'health_addition':0,
 				'attack_addition':10,
 				'defend_addition':3,
 				'crit_addition':0,
-				'for':'001',//适用角色
-				'open':true
-			},
-			'002':{
-				
+				'for':'001',
+				'open':false
 			},
 			'003':{
 				'name':'十八妹',
@@ -82,10 +91,44 @@ item_data={
 				'attack_addition':10,
 				'defend_addition':3,
 				'crit_addition':0,
-				'for':'002'//适用角色
+				'for':'002',
+				'open':false
 			},
 			'004':{
-					
+				'name':'十八妹',
+				'description':'虽然外表看起来像是一把菜刀，但是其主人坚称它是一柄剑，能够增加一定程度的攻击和防御。',
+				'icon':'images/weapon/icons/001.png',
+				'model':'images/weapon/model/001.png',
+				'health_addition':0,
+				'attack_addition':10,
+				'defend_addition':3,
+				'crit_addition':0,
+				'for':'002',
+				'open':false	
+			},
+			'005':{
+				'name':'十八妹',
+				'description':'虽然外表看起来像是一把菜刀，但是其主人坚称它是一柄剑，能够增加一定程度的攻击和防御。',
+				'icon':'images/weapon/icons/001.png',
+				'model':'images/weapon/model/001.png',
+				'health_addition':0,
+				'attack_addition':10,
+				'defend_addition':3,
+				'crit_addition':0,
+				'for':'002',
+				'open':false	
+			},
+			'0046':{
+				'name':'十八妹',
+				'description':'虽然外表看起来像是一把菜刀，但是其主人坚称它是一柄剑，能够增加一定程度的攻击和防御。',
+				'icon':'images/weapon/icons/001.png',
+				'model':'images/weapon/model/001.png',
+				'health_addition':0,
+				'attack_addition':10,
+				'defend_addition':3,
+				'crit_addition':0,
+				'for':'002',
+				'open':false	
 			}
 		},
 
@@ -101,6 +144,66 @@ item_data={
 				'crit_addition':0,
 				'speed_addition':0, 
 				'for':'001'//适用角色
+			},
+			'002':{
+				'name':'棉布衣',
+				'description':'一般穷书生穿的布袍，只是单纯的布袍而已。',
+				'icon':'images/weapon/icons/001.png',
+				'model':'images/weapon/model/001.png',
+				'health_addition':0,
+				'attack_addition':10,
+				'defend_addition':3,
+				'crit_addition':0,
+				'speed_addition':0, 
+				'for':'001'//适用角色
+			},
+			'003':{
+				'name':'粗布衣',
+				'description':'旧衣店出售的破旧衣服，上面还打了几个补丁。',
+				'icon':'images/weapon/icons/001.png',
+				'model':'images/weapon/model/001.png',
+				'health_addition':0,
+				'attack_addition':10,
+				'defend_addition':3,
+				'crit_addition':0,
+				'speed_addition':0, 
+				'for':'002'//适用角色
+			},
+			'004':{
+				'name':'粗布衣',
+				'description':'旧衣店出售的破旧衣服，上面还打了几个补丁。',
+				'icon':'images/weapon/icons/001.png',
+				'model':'images/weapon/model/001.png',
+				'health_addition':0,
+				'attack_addition':10,
+				'defend_addition':3,
+				'crit_addition':0,
+				'speed_addition':0, 
+				'for':'002'//适用角色
+			},
+			'005':{
+				'name':'粗布衣',
+				'description':'旧衣店出售的破旧衣服，上面还打了几个补丁。',
+				'icon':'images/weapon/icons/001.png',
+				'model':'images/weapon/model/001.png',
+				'health_addition':0,
+				'attack_addition':10,
+				'defend_addition':3,
+				'crit_addition':0,
+				'speed_addition':0, 
+				'for':'003'//适用角色
+			},
+			'006':{
+				'name':'粗布衣',
+				'description':'旧衣店出售的破旧衣服，上面还打了几个补丁。',
+				'icon':'images/weapon/icons/001.png',
+				'model':'images/weapon/model/001.png',
+				'health_addition':0,
+				'attack_addition':10,
+				'defend_addition':3,
+				'crit_addition':0,
+				'speed_addition':0, 
+				'for':'003'//适用角色
 			}
 		}
 }
