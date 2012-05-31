@@ -62,7 +62,7 @@ item_data={
 				'name':'秃毛笔',//名称
 				'description':'路边最普通不过的十文钱一支的毛笔。',//描述
 				'icon':'images/weapon/icons/001.png',//图标路径
-				'model':'images/weapon/model/001.png',//模型
+				'model':'images/weapon/model/001.png',//模型路径
 				'health_addition':0,//血量加成
 				'attack_addition':10,//攻击加成
 				'defend_addition':3,//防御加成
@@ -72,7 +72,7 @@ item_data={
 			},
 			'002':{
 				'name':'羊毫笔',//名称
-				'description':'羊毫制成的毛笔，柔而无锋，不为人喜爱，故而价格廉宜。',
+				'description':'羊毫制成的毛笔，柔而无锋，书而无骨，不为书法家们喜爱，故而价格廉宜。',
 				'icon':'images/weapon/icons/001.png',
 				'model':'images/weapon/model/001.png',
 				'health_addition':0,
@@ -83,8 +83,8 @@ item_data={
 				'open':false
 			},
 			'003':{
-				'name':'十八妹',
-				'description':'虽然外表看起来像是一把菜刀，但是其主人坚称它是一柄剑，能够增加一定程度的攻击和防御。',
+				'name':'长剑',
+				'description':'“长剑一杯酒， 男儿方寸心。”游侠儿的必备装饰，看起来很拉风的样子。',
 				'icon':'images/weapon/icons/001.png',
 				'model':'images/weapon/model/001.png',
 				'health_addition':0,
@@ -95,8 +95,8 @@ item_data={
 				'open':false
 			},
 			'004':{
-				'name':'十八妹',
-				'description':'虽然外表看起来像是一把菜刀，但是其主人坚称它是一柄剑，能够增加一定程度的攻击和防御。',
+				'name':'青铜剑',
+				'description':'古法锻冶的剑，拿在手里颇有分量，比普通的长剑看起来有内涵的样子，是这几年的流行选择。',
 				'icon':'images/weapon/icons/001.png',
 				'model':'images/weapon/model/001.png',
 				'health_addition':0,
@@ -107,8 +107,8 @@ item_data={
 				'open':false	
 			},
 			'005':{
-				'name':'十八妹',
-				'description':'虽然外表看起来像是一把菜刀，但是其主人坚称它是一柄剑，能够增加一定程度的攻击和防御。',
+				'name':'晶球',
+				'description':'白水晶磨制的透明圆球，看不出有什么特别。',
 				'icon':'images/weapon/icons/001.png',
 				'model':'images/weapon/model/001.png',
 				'health_addition':0,
@@ -118,7 +118,19 @@ item_data={
 				'for':'002',
 				'open':false	
 			},
-			'0046':{
+			'006':{
+				'name':'紫晶珠',
+				'description':'紫光流转的珠子，煞是好看，据说具有神秘的力量。',
+				'icon':'images/weapon/icons/001.png',
+				'model':'images/weapon/model/001.png',
+				'health_addition':0,
+				'attack_addition':10,
+				'defend_addition':3,
+				'crit_addition':0,
+				'for':'002',
+				'open':false	
+			},
+			'007':{
 				'name':'十八妹',
 				'description':'虽然外表看起来像是一把菜刀，但是其主人坚称它是一柄剑，能够增加一定程度的攻击和防御。',
 				'icon':'images/weapon/icons/001.png',
@@ -158,8 +170,8 @@ item_data={
 				'for':'001'//适用角色
 			},
 			'003':{
-				'name':'粗布衣',
-				'description':'旧衣店出售的破旧衣服，上面还打了几个补丁。',
+				'name':'锦袍',
+				'description':'富家公子常穿的便服，冬暖夏凉。',
 				'icon':'images/weapon/icons/001.png',
 				'model':'images/weapon/model/001.png',
 				'health_addition':0,
@@ -170,8 +182,8 @@ item_data={
 				'for':'002'//适用角色
 			},
 			'004':{
-				'name':'粗布衣',
-				'description':'旧衣店出售的破旧衣服，上面还打了几个补丁。',
+				'name':'蜀锦袍',
+				'description':'“犹馀蜀中锦，爱惜比甘棠。”蜀地的锦缎千载驰名，用其制作的袍子自然也价格不菲。',
 				'icon':'images/weapon/icons/001.png',
 				'model':'images/weapon/model/001.png',
 				'health_addition':0,
@@ -182,8 +194,8 @@ item_data={
 				'for':'002'//适用角色
 			},
 			'005':{
-				'name':'粗布衣',
-				'description':'旧衣店出售的破旧衣服，上面还打了几个补丁。',
+				'name':'麟裳',
+				'description':'人鱼国最常见的平民装束。',
 				'icon':'images/weapon/icons/001.png',
 				'model':'images/weapon/model/001.png',
 				'health_addition':0,
@@ -194,8 +206,8 @@ item_data={
 				'for':'003'//适用角色
 			},
 			'006':{
-				'name':'粗布衣',
-				'description':'旧衣店出售的破旧衣服，上面还打了几个补丁。',
+				'name':'华彩裙',
+				'description':'少女们钟爱的薄绸裙，在阳光下会隐隐泛出五色华彩。',
 				'icon':'images/weapon/icons/001.png',
 				'model':'images/weapon/model/001.png',
 				'health_addition':0,
