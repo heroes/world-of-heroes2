@@ -84,7 +84,11 @@ item_data={
 			},
 			'003':{
 				'name':'长剑',
+<<<<<<< HEAD
 				'description':'“长剑一杯酒， 男儿方寸心。”游侠儿的必备装饰，看起来很拉风的样子。',
+=======
+				'description':'虽然外表看起来像是一把菜刀，但是其主人坚称它是一柄剑，能够增加一定程度的攻击和防御。',
+>>>>>>> …..
 				'icon':'images/weapon/icons/001.png',
 				'model':'images/weapon/model/001.png',
 				'health_addition':0,
@@ -127,7 +131,7 @@ item_data={
 				'attack_addition':10,
 				'defend_addition':3,
 				'crit_addition':0,
-				'for':'002',
+				'for':'003',
 				'open':false	
 			},
 			'007':{
@@ -139,7 +143,7 @@ item_data={
 				'attack_addition':10,
 				'defend_addition':3,
 				'crit_addition':0,
-				'for':'002',
+				'for':'003',
 				'open':false	
 			}
 		},
