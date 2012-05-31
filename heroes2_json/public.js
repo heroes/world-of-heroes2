@@ -155,7 +155,8 @@ item_data={
 				'defend_addition':3,
 				'crit_addition':0,
 				'speed_addition':0, 
-				'for':'001'//适用角色
+				'for':'001',//适用角色
+				'open':true
 			},
 			'002':{
 				'name':'棉布衣',
@@ -167,7 +168,8 @@ item_data={
 				'defend_addition':3,
 				'crit_addition':0,
 				'speed_addition':0, 
-				'for':'001'//适用角色
+				'for':'001',
+				'open':false
 			},
 			'003':{
 				'name':'锦袍',
@@ -179,7 +181,8 @@ item_data={
 				'defend_addition':3,
 				'crit_addition':0,
 				'speed_addition':0, 
-				'for':'002'//适用角色
+				'for':'002',//适用角色
+				'open':true
 			},
 			'004':{
 				'name':'蜀锦袍',
@@ -191,7 +194,8 @@ item_data={
 				'defend_addition':3,
 				'crit_addition':0,
 				'speed_addition':0, 
-				'for':'002'//适用角色
+				'for':'002',//适用角色
+				'open':false
 			},
 			'005':{
 				'name':'麟裳',
@@ -203,7 +207,8 @@ item_data={
 				'defend_addition':3,
 				'crit_addition':0,
 				'speed_addition':0, 
-				'for':'003'//适用角色
+				'for':'003',//适用角色
+				'open':true
 			},
 			'006':{
 				'name':'华彩裙',
@@ -215,7 +220,8 @@ item_data={
 				'defend_addition':3,
 				'crit_addition':0,
 				'speed_addition':0, 
-				'for':'003'//适用角色
+				'for':'003',//适用角色
+				'open':false
 			}
 		}
 }
