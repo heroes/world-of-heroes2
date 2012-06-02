@@ -1,0 +1,106 @@
+.intro-module{
+	width:960px;
+	height:640px;
+	background:#000 url(../resources/images/index.jpg) top center no-repeat;
+}
+.intro-module .button{
+	padding:40px 0;
+	width:100px;
+	line-height:20px;
+	float:right;
+	background:black;
+	margin-right:20px;
+	margin-top:500px;
+	text-align:center;
+	color:red;
+	border-radius:20px;
+	cursor:pointer;
+}
+.intro-module .button:first-child{margin-right:150px;}
+.intro-module .button:hover{
+	border-radius:30px;
+	box-shadow:0 0 20px red;
+}
+
+.map-module{
+	width:960px;
+	height:640px;
+	background:#000;
+}
+
+.map-module .button{
+	width:80px;
+	line-height:20px;
+	padding:30px 0;
+	background:red;
+	color:white;
+	float:right;
+	margin-right:20px;
+	border-radius:20px;
+	text-align:center;
+	cursor:pointer;
+	margin-top:540px;
+}
+.map-module .button:hover{
+	border-radius:30px;
+	box-shadow:0 0 20px white;
+}
+
+.cg-module,.drama-module{
+	width:960px;
+	height:640px;
+	background:#000;
+}
+.cg-module .button,.drama-module .button{
+	padding:16px;
+	width:100px;
+	text-align:center;
+	background:red;
+	color:white;
+	float:right;
+	margin-top:520px;
+}
+.dialogue-module{
+	width:960px;
+	height:640px;
+	background:black;
+	position:relative;
+}
+.dialogue-module .chat{
+	z-index:2;
+	position:absolute;
+	bottom:30px;
+	width:90%;
+	height:200px;
+	padding:10px 0;
+	background:white;
+	margin-left:-45%;
+	left:50%;
+}
+.dialogue-module .chat .avatar{
+	width:200px;
+	height:200px;
+	float:left;
+	background:gray;
+	margin:0 10px;
+}
+.dialogue-module .chat .content h1{padding: 10px; margin:0; font-size:24px;line-height:24px;}
+.dialogue-module .chat p{padding:0; margin:0;}
+
+.battle-module{
+	width:960px;
+	height:640px;
+	background:#000;
+	position:relative;
+}
+.battle-module .skill-icons{
+	position:absolute;
+	z-index:2;
+	height:100px;
+	top:10px;
+	left:0;
+	padding:10px;
+}
+.battle-module .skill-icon{float:left; margin-right:10px; background:red; width:100px; height:100px;}
+
+
