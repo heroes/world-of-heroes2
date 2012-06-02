@@ -104,3 +104,62 @@
 .battle-module .skill-icon{float:left; margin-right:10px; background:red; width:100px; height:100px;}
 
 
+.btn_close{position:absolute;right:2px;top:2px;height:40px;width:40px;border-radius:20px;background:#3d2a21 url(../resources/images/map/cross.png) center no-repeat;cursor:pointer;}
+#item_manage{
+	width:940px;
+	height:580px;
+	background:#855e2d url(../resources/images/map/role-management.png) top left no-repeat;
+	padding:10px;
+	position: relative;
+	font: 12px/1.2em Arial, sans-serif;
+}
+
+#attributes h1{ text-align:center;font-size:18px; clear:both;line-height:18px; padding:10px;margin:0;}
+#attribute_panel,#item_panel{float:left;height:550px;}
+#attribute_panel{
+	width:445px;
+	border:15px solid #3d2a21;
+	border-right:none;
+}
+#item_panel{
+	width:465px;
+	border:15px solid #3d2a21;
+	border-left:none;
+}
+
+#attribute_panel #avatars{
+	margin: 0 auto;
+	padding:15px;
+	text-align:center;
+	clear:both;
+}
+#attribute_panel #avatars .avatar{display: inline-block; width:75px; height: 75px; margin:0 22px; border:3px solid #20170f; background:#5b412a;}
+#attributes{ margin:0 20px; width:auto; height:412px; background:#3d2a21;box-shadow:inset 0 0 10px #000}
+#wear_left,#wear_preview,#wear_right{float:left;}
+#wear_left,#wear_right{width:20%;height:250px;}
+#wear_preview{height:230px;width:50%;margin:10px 5% 10px 5%; box-shadow:inset 0 0 10px #000}
+#wear_left .weapon,#wear_right .clothes{width:50px; height:50px; box-shadow:inset 0 0 10px #000}
+#wear_left .weapon{ margin: 30px auto auto auto;}
+#wear_right .clothes{margin: 170px auto auto auto;}
+#attribute_values{background-color: #FFF;}
+#attributes #attribute_list{clear: both; height:110px; margin:0 10px; border-radius:5px; box-shadow:inset 0 0 10px #000}
+#attributes #attribute_list span,#attributes #attribute_list label{display:inline-block; padding:10px 2%;}
+#attributes #attribute_list label{color:yellow;width:10%;text-align:right;}
+#attributes #attribute_list span{color:white;width:14%;}
+#attributes #attribute_list .exp_line_outer{display: inline-block;height:14px;width:80%;border: 1px solid rgba(255,255,255,.3);vertical-align:middle;margin:0 2%; border-radius:5px;cursor:pointer;}
+#attributes #attribute_list .exp_line_inner{width:30%;background:white;height:14px;border-radius:5px;text-align:center;}
+#attributes #attribute_list .exp_line_inner .value{display:none;}
+#attributes #attribute_list .exp_line_outer:hover{box-shadow:0 0 6px yellow;}
+#attributes #attribute_list .exp_line_outer:hover .exp_line_inner .value{display:inline;line-height:14px;color:#000;font-size:12px;}
+
+#item_panel #item_icons{background:#3d2a21;box-shadow:inset 0 0 10px #000; width:90%; padding:20px 10px; margin: 10px auto}
+#item_panel #item_icons .icon_panel .item_icon{width:50px; height:50px;background:#3d2a21;box-shadow:inset 0 0 10px #000; display:inline-block;margin:3px;}
+
+#item_panel .description{padding:10px;background:#3d2a21;box-shadow:inset 0 0 10px #000; width:90%; margin:0 auto;}
+#item_panel .description h2.item_name{font-size:16px;color:white;}
+#item_panel .description p{margin:5px 0;}
+#item_panel .description p.item_description{font-size:14px;}
+
+
+
+
