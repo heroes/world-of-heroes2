@@ -59,20 +59,20 @@ role_data={
 item_data={
 		'weapon':{
 			'001':{
-				'name':'秃毛笔',//名称
-				'description':'路边最普通不过的十文钱一支的毛笔。',//描述
+				'name':'小刀',//名称
+				'description':'常见的小刀，可以用来切切水果什么的',//描述
 				'icon':'images/weapon/icons/001.png',//图标路径
 				'model':'images/weapon/model/001.png',//模型路径
 				'health_addition':0,//血量加成
-				'attack_addition':10,//攻击加成
-				'defend_addition':3,//防御加成
+				'attack_addition':3,//攻击加成
+				'defend_addition':0,//防御加成
 				'crit_addition':0,//暴击加成
 				'for':'001',//适用角色（读取role_data中的数据）
 				'open':true//是否已经获得
 			},
 			'002':{
-				'name':'羊毫笔',//名称
-				'description':'羊毫制成的毛笔，柔而无锋，书而无骨，不为书法家们喜爱，故而价格廉宜。',
+				'name':'匕首',//名称
+				'description':'勉强能够用来防身的便宜货，居家旅行常备的防盗工具',
 				'icon':'images/weapon/icons/001.png',
 				'model':'images/weapon/model/001.png',
 				'health_addition':0,
