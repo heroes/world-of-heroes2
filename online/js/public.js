@@ -249,7 +249,8 @@ skill_data={
 		'icon':'resources/iamges/001.png',//技能图标路径
 		'level_limit':[0,3,4,5,7],//每一阶段的可点等级
 		'cd':3,//CD时间
-		//技能影响，如果没有则留空
+		
+		//技能影响
 		'data':{
 			//单体直接伤害
 			'attack_direct':{
@@ -270,8 +271,9 @@ skill_data={
 		    'buff':{
 		    	'target':'selfSingle',
 		    	'speed_addition':50,
-		    	'':,
-		    	''
+		    	'defend_addition':0,
+		    	'defend_addition':0,
+		    	'crit_addition':0,
 		    }
 		}
 	},
