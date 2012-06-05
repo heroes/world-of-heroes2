@@ -2,7 +2,7 @@
 role_data={
 	'001':{
 		'name':'唐如',//名字
-		'type':'001',//类型
+		'type':'002',//类型
 		'lv':0,//等级
 		'avatar':'images/role/ava/ava_001.png',//头像
 		'model':'images/role/model/001_normal.png',//裸模
@@ -16,11 +16,16 @@ role_data={
 		'weapon':'001',//武器编号
 		'clothes':'001',//衣服编号
 		'skill_point':'2',//剩余技能点
-		'skill_list':['001',2,'002',2,'003',1,'004',0]//技能列表（编号-等级）
+		'skill_list':{
+			'疾风刺':1,
+			'秋瑟':2,
+			'夕岚':3，
+			'狂舞':0
+		}//技能列表（编号-等级）
 	},
 	'002':{
 		'name':'祝离',//名字
-		'type':'002',//类型
+		'type':'001',//类型
 		'lv':0,//等级
 		'avatar':'images/role/ava/ava_001.png',//头像
 		'model':'images/role/model/001_normal.png',//裸模
@@ -35,7 +40,9 @@ role_data={
 		'clothes':'001',//衣服编号
 		//技能部待讨论
 		'skill_point':'2',
-		'skill_list':['005',2,'006',2,'007',1,'008',0]
+		'skill_list':{
+
+		}
 	},
 	'003':{
 		'name':'碧青',//名字
@@ -53,7 +60,12 @@ role_data={
 		'weapon':'001',//武器编号
 		'clothes':'001',//衣服编号
 		'skill_point':'2',
-		'skill_list':['009',2,'010',2,'011',1,'012',0]
+		'skill_list':{
+			'水月':1,
+			'花颜':1,
+			'万艳':3,
+			'镜泉':0
+		}
 	},
 }
 
@@ -227,36 +239,55 @@ item_data={
 		}
 }
 
-//技能基础类型 以001-006标识
-//攻击技能 直接对敌方产生伤害
-//诅咒技能 一段时间内持续对敌方产生伤害
-//强控制技能 一段时间内让敌方无法行动 
-//弱控制技能 一段时间内让敌方无法攻击、减速
-//增益类技能 一定时间内对方产生增益
-//治疗类技能 增加己方的血量
+//直接伤害，回复生命，区域伤害，添加buff
+//buff类型：
 
 
 skill_data={
-	'001':{
-		'name':'流风',//技能
-		'description':'追求一击必杀的招式，冲向对方进行一次攻击。伤害增加40。',//技能描述
-		'type':'001',//技能类型
-		'target':'enemy',//使用对象 self/ememy
-		'range':0, //技能的攻击范围，数值表示攻击范围的半径，0表示单体近身攻击
+	'疾风刺':{
+		'description':'追求一击必杀的招式，轻灵迅捷，其威力在不同修为者手中截然不同。（冲向对方进行一次攻击。伤害增加40）',//技能描述
 		'icon':'resources/iamges/001.png',//技能图标路径
 		'level_limit':[0,3,4,5,7],//每一阶段的可点等级
 		'cd':3,//CD时间
-		'duration':0.5,//动作持续时间
-		'continue':0,//技能效果持续时间
-		'lock':false;//技能是否可以被打断
+		//技能影响，如果没有则留空
 		'data':{
-			'attack_addition':40,
-			'target_count':'single'
+			//单体直接伤害
+			'attack_direct':{
+				'target':'enemySingle',//使用对象 self/ememy
+				'duration':0.5,//动作持续时间
+				'range':0.5, //技能的攻击范围，数值表示攻击范围的半径
+				'attack_addition':40,//伤害增加值
+		    },
+		    //回复
+		    'recover':{
+
+		    },
+		    //区域伤害
+		    'attack_area':{
+
+		    },
+		    //添加buff
+		    'buff':{
+		    	'target':{
+
+		    	}
+		    	'speed_addition':0,
+		    	'':,
+		    	''
+		    }
 		}
 	},
-	'002':{
+	'落英旋':{
 
-	}
+	},
+	'浮云风卷':{
+
+	},
+	'醉舞秋红':{
+
+	},
 }
+
+
 
 console.log(role_data);
