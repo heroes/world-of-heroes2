@@ -235,35 +235,28 @@ item_data={
 //增益类技能 一定时间内对方产生增益
 //治疗类技能 增加己方的血量
 
-//使用对象
-//技能名称
-//技能等级
-//CD时间
-//持续时间
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 skill_data={
 	'001':{
 		'name':'流风',//技能
 		'description':'追求一击必杀的招式，冲向对方进行一次攻击。伤害增加40。',//技能描述
 		'type':'001',//技能类型
-		'icon':'',//技能图标路径
+		'target':'enemy',//使用对象 self/ememy
+		'range':0, //技能的攻击范围，数值表示攻击范围的半径，0表示单体近身攻击
+		'icon':'resources/iamges/001.png',//技能图标路径
 		'level_limit':[0,3,4,5,7],//每一阶段的可点等级
-		'cd':3,
+		'cd':3,//CD时间
+		'duration':0.5,//动作持续时间
+		'continue':0,//技能效果持续时间
+		'lock':false;//技能是否可以被打断
 		'data':{
-			'blood_addition':'',
+			'attack_addition':40,
+			'target_count':'single'
 		}
 	},
-	'002':{}
+	'002':{
+
+	}
 }
 
 console.log(role_data);
