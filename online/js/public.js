@@ -269,7 +269,7 @@ skill_data={
 		    //添加buff
 		    'buff':{
 		    	'target':'selfSingle',
-		    	'speed_addition':30,
+		    	'speed_addition':50,
 		    	'':,
 		    	''
 		    }
