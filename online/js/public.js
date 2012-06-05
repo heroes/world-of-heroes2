@@ -18,9 +18,9 @@ role_data={
 		'skill_point':'2',//剩余技能点
 		'skill_list':{
 			'疾风刺':1,
-			'秋瑟':2,
-			'夕岚':3，
-			'狂舞':0
+			'落英旋':2,
+			'浮云风卷':3，
+			'醉舞秋红':0
 		}//技能列表（编号-等级）
 	},
 	'002':{
@@ -253,7 +253,7 @@ skill_data={
 		'data':{
 			//单体直接伤害
 			'attack_direct':{
-				'target':'enemySingle',//使用对象 self/ememy
+				'target':'enemySingle',//使用对象 selfSingle/ememySingle/selfRange/ememyRange
 				'duration':0.5,//动作持续时间
 				'range':0.5, //技能的攻击范围，数值表示攻击范围的半径
 				'attack_addition':40,//伤害增加值
@@ -268,10 +268,8 @@ skill_data={
 		    },
 		    //添加buff
 		    'buff':{
-		    	'target':{
-
-		    	}
-		    	'speed_addition':0,
+		    	'target':'selfSingle',
+		    	'speed_addition':30,
 		    	'':,
 		    	''
 		    }
