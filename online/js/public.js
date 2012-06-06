@@ -19,7 +19,7 @@ role_data={
 		'skill_list':{
 			'疾风刺':1,
 			'落英旋':2,
-			'浮云风卷':3，
+			'浮云风卷':3,
 			'醉舞秋红':0
 		}//技能列表（编号-等级）
 	},
@@ -38,10 +38,12 @@ role_data={
 		'miss':5,//闪避
 		'weapon':'001',//武器编号
 		'clothes':'001',//衣服编号
-		//技能部待讨论
 		'skill_point':'2',
 		'skill_list':{
-
+			'灵焰灼':1,
+			'心月斩':2,
+			'天狐之怒':0,
+			'心宿业炎':1,
 		}
 	},
 	'003':{
@@ -61,10 +63,10 @@ role_data={
 		'clothes':'001',//衣服编号
 		'skill_point':'2',
 		'skill_list':{
-			'水月':1,
-			'花颜':1,
-			'万艳':3,
-			'镜泉':0
+			'花雨露':1,
+			'水月霖':1,
+			'芳华流转':3,
+			'镜泉润物':0
 		}
 	},
 }
@@ -239,9 +241,12 @@ item_data={
 		}
 }
 
+//技能影响
 //直接伤害，回复生命，区域伤害，添加buff
-//buff类型：
+//buff类型：速度类（加减），防御类（加减），暴击类（加减），生命类（加减）
+//注：大招均为手势识别施放，每个人的第四个招为大招
 
+//目前唐如的三个技能分别为 单体攻击 瞬发群体攻击 吟唱群体攻击 大招为全屏幕地图炮高伤害攻击 
 
 skill_data={
 	'疾风刺':{
@@ -260,32 +265,134 @@ skill_data={
 				'attack_addition':40,//伤害增加值
 		    },
 		    //回复
+		    //'recover':{
+
+		    //},
+		    //区域伤害
+		    //'attack_area':{
+
+		    //},
+		    //添加buff
+		    'buff':{
+		    	//技能施展的同时冲向对方，用速度来表示
+		    	'target':'selfSingle',
+		    	'speed_addition':50,
+		    }
+		}
+	},
+	'落英旋':{
+		'description':'英华翩舞兮，染景纷纷旧年时。映丽柔美，伤人于幻梦之中。（以指定点为中心，在半径30的区域内进行群体攻击，攻击+50）',//技能描述
+		'icon':'resources/iamges/001.png',//技能图标路径
+		'level_limit':[0,3,4,5,7],//每一阶段的可点等级
+		'cd':3,//CD时间
+		//技能影响
+		'data':{
+			//单体直接伤害
+			'attack_direct':{
+				
+		    },
+		    //回复
 		    'recover':{
 
 		    },
 		    //区域伤害
 		    'attack_area':{
-
+		    	'target':'enemyRange',//使用对象 selfSingle/ememySingle/selfRange/ememyRange
+				'duration':0.5,//动作持续时间
+				'continue':2,//技能效果持续时间
+				'times':1,//造成伤害的次数
+				'range':30, //技能的攻击范围，数值表示攻击范围的半径
+				'attack_addition':50,//伤害增加值
 		    },
 		    //添加buff
 		    'buff':{
-		    	'target':'selfSingle',
-		    	'speed_addition':50,
-		    	'defend_addition':0,
-		    	'defend_addition':0,
-		    	'crit_addition':0,
+
 		    }
 		}
 	},
-	'落英旋':{
-
-	},
 	'浮云风卷':{
+		'description':'飘风自南，泱泱涤尘。凝神静气，荡净浮埃。（以施法者为中心，在半径200的区域内进行群体攻击，攻击+50）',//技能描述
+		'icon':'resources/iamges/001.png',//技能图标路径
+		'level_limit':[0,3,4,5,7],//每一阶段的可点等级
+		'cd':5,//CD时间
+		//技能影响
+		'data':{
+			//单体直接伤害
+			'attack_direct':{
 
+		    },
+		    //回复
+		    'recover':{
+
+		    },
+		    //区域伤害
+		    'attack_area':{
+		    	'target':'enemyRange',//使用对象 selfSingle/ememySingle/selfRange/ememyRange
+				'duration':3,//动作持续时间
+				'continue':3,//技能有效时间
+				'times':3,//造成的伤害次数
+				'range':200, //技能的攻击范围，数值表示攻击范围的半径
+				'attack_addition':50,//伤害增加值
+		    },
+		    //添加buff
+		    'buff':{
+
+		    }
+		}
 	},
 	'醉舞秋红':{
+		'description':'日暮秋烟起，萧萧枫树林。寄托着壮志未酬哀思的招式，饱含着尽除敌寇的怨愤。(敌方全体造成大量伤害)',
+		'icon':'resources/iamges/001.png',//技能图标路径
+		'level_limit':[0,3,4,5,7],//每一阶段的可点等级
+		'cd':5,//CD时间
+		//技能影响
+		'data':{
+			//单体直接伤害
+			//'attack_direct':{
+
+		    //},
+		    //回复
+		    //'recover':{
+
+		    //},
+		    //区域伤害
+		    'attack_area':{
+		    	'target':'enemyRange',//使用对象 selfSingle/ememySingle/selfRange/ememyRange
+				'duration':0.5,//动作持续时间
+				'continue':5,//技能效果持续时间
+				'range':9999, //技能的攻击范围，数值表示攻击范围的半径
+				'attack_addition':500,//伤害增加值
+		    },
+		    //添加buff
+		    //'buff':{
+
+		    //}
+		}
+	},
+	'灵焰灼':{
 
 	},
+	'心月斩':{
+
+	},
+	'天狐之怒':{
+
+	},
+	'心宿业炎':{
+
+	},
+	'花雨露':{
+
+	},
+	'水月霖':{
+
+	},
+	'芳华流转':{
+
+	},
+	'镜泉润物':{
+
+	}
 }
 
 
