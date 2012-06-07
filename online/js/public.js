@@ -299,7 +299,7 @@ skill_data={
 		    'attack_area':{
 		    	'target':'enemyRange',//使用对象 selfSingle/ememySingle/selfRange/ememyRange
 				'duration':0.5,//动作持续时间
-				'continue':2,//技能效果持续时间
+				'continue':2,//技能效果持续时间 
 				'times':1,//造成伤害的次数
 				'range':30, //技能的攻击范围，数值表示攻击范围的半径
 				'attack_addition':[50,60,70,80,90],//伤害增加值
@@ -343,7 +343,7 @@ skill_data={
 	'醉舞秋红':{
 		'description':'日暮秋烟起，萧萧枫树林。寄托着壮志未酬哀思的招式，饱含着尽除敌寇的怨愤。(敌方全体造成大量伤害)',
 		'icon':'resources/iamges/001.png',//技能图标路径
-		'level_limit':[0,3,4,5,7],//每一阶段的可点等级
+		'level_limit':[5],//每一阶段的可点等级
 		'cd':5,//CD时间
 		//技能影响
 		'data':{
@@ -370,7 +370,33 @@ skill_data={
 		}
 	},
 	'灵焰灼':{
+		'description':'(受到攻击的敌人每秒受到)',
+		'icon':'resources/iamges/001.png',//技能图标路径
+		'level_limit':[5],//每一阶段的可点等级
+		'cd':5,//CD时间
+		//技能影响
+		'data':{
+			//单体直接伤害
+			//'attack_direct':{
 
+		    //},
+		    //回复
+		    //'recover':{
+
+		    //},
+		    //区域伤害
+		    'attack_area':{
+		    	'target':'enemyRange',//使用对象 selfSingle/ememySingle/selfRange/ememyRange
+				'duration':0.5,//动作持续时间
+				'continue':5,//技能效果持续时间
+				'range':9999, //技能的攻击范围，数值表示攻击范围的半径
+				'attack_addition':500,//伤害增加值
+		    },
+		    //添加buff
+		    //'buff':{
+
+		    //}
+		}
 	},
 	'心月斩':{
 
