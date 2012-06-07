@@ -250,7 +250,7 @@ item_data={
 
 skill_data={
 	'疾风刺':{
-		'description':'追求一击必杀的招式，轻灵迅捷，其威力在不同修为者手中截然不同。（冲向对方进行一次攻击。伤害增加40）',//技能描述
+		'description':'追求一击必杀的招式，轻灵迅捷，其威力在不同修为者手中截然不同。（冲向对方进行一次攻击）',//技能描述
 		'icon':'resources/iamges/001.png',//技能图标路径
 		'level_limit':[0,3,4,5,7],//每一阶段的可点等级
 		'cd':3,//CD时间
@@ -262,7 +262,7 @@ skill_data={
 				'target':'enemySingle',//使用对象 selfSingle/ememySingle/selfRange/ememyRange
 				'duration':0.5,//动作持续时间
 				'range':0.5, //技能的攻击范围，数值表示攻击范围的半径
-				'attack_addition':40,//伤害增加值
+				'attack_addition':[40,60,80,100,110],//伤害增加值,对应不同等级
 		    },
 		    //回复
 		    //'recover':{
@@ -281,7 +281,7 @@ skill_data={
 		}
 	},
 	'落英旋':{
-		'description':'英华翩舞兮，染景纷纷旧年时。映丽柔美，伤人于幻梦之中。（以指定点为中心，在半径30的区域内进行群体攻击，攻击+50）',//技能描述
+		'description':'英华翩舞兮，染景纷纷旧年时。映丽柔美，伤人于幻梦之中。（以指定点为中心，在半径30的区域内进行群体攻击）',//技能描述
 		'icon':'resources/iamges/001.png',//技能图标路径
 		'level_limit':[0,3,4,5,7],//每一阶段的可点等级
 		'cd':3,//CD时间
@@ -302,7 +302,7 @@ skill_data={
 				'continue':2,//技能效果持续时间
 				'times':1,//造成伤害的次数
 				'range':30, //技能的攻击范围，数值表示攻击范围的半径
-				'attack_addition':50,//伤害增加值
+				'attack_addition':[50,60,70,80,90],//伤害增加值
 		    },
 		    //添加buff
 		    'buff':{
@@ -332,7 +332,7 @@ skill_data={
 				'continue':3,//技能有效时间
 				'times':3,//造成的伤害次数
 				'range':200, //技能的攻击范围，数值表示攻击范围的半径
-				'attack_addition':50,//伤害增加值
+				'attack_addition':[50,60,70,80,90],//伤害增加值
 		    },
 		    //添加buff
 		    'buff':{
