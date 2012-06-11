@@ -24,6 +24,4 @@ Laro.NS('woh.loop', function (L) {
         woh.update(dt);
         woh.draw();
     };
-    
-
 });

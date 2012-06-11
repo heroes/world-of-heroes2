@@ -1,5 +1,5 @@
 //用于通信的
-role_data={
+woh.role_data={
 	'001':{
 		'name':'唐如',//名字
 		'type':'002',//类型
@@ -17,7 +17,7 @@ role_data={
 		'clothes':'001',//衣服编号
 		'skill_point':'2',//剩余技能点
 		'skill_list':{
-			'疾风刺':1,
+			'疾风刺':1, 
 			'落英旋':2,
 			'浮云风卷':3,
 			'醉舞秋红':0
@@ -71,7 +71,7 @@ role_data={
 	},
 }
 
-item_data={
+woh.item_data={
 		'weapon':{
 			'001':{
 				'name':'小刀',//名称
@@ -248,7 +248,7 @@ item_data={
 
 //目前唐如的三个技能分别为 单体攻击 瞬发群体攻击 吟唱群体攻击 大招为全屏幕地图炮高伤害攻击 
 
-skill_data={
+woh.skill_data={
 	'疾风刺':{
 		'description':'追求一击必杀的招式，轻灵迅捷，其威力在不同修为者手中截然不同。（冲向对方进行一次攻击）',//技能描述
 		'icon':'resources/iamges/001.png',//技能图标路径
@@ -260,8 +260,7 @@ skill_data={
 			//单体直接伤害
 			'attack_direct':{
 				'target':'enemySingle',//使用对象 selfSingle/ememySingle/selfRange/ememyRange
-				'duration':0.5,//动作持续时间
-				'range':0.5, //技能的攻击范围，数值表示攻击范围的半径
+				'range':10, //技能的攻击范围，数值表示攻击范围的半径
 				'attack_addition':[40,60,80,100,110],//伤害增加值,对应不同等级
 		    },
 		    //回复
@@ -298,7 +297,6 @@ skill_data={
 		    //区域伤害
 		    'attack_area':{
 		    	'target':'enemyRange',//使用对象 selfSingle/ememySingle/selfRange/ememyRange
-				'duration':0.5,//动作持续时间
 				'continue':2,//技能效果持续时间 
 				'times':1,//造成伤害的次数
 				'range':30, //技能的攻击范围，数值表示攻击范围的半径
@@ -311,7 +309,7 @@ skill_data={
 		}
 	},
 	'浮云风卷':{
-		'description':'飘风自南，泱泱涤尘。凝神静气，荡净浮埃。（以施法者为中心，在半径200的区域内进行群体攻击，攻击+50）',//技能描述
+		'description':'飘风自南，泱泱涤尘。凝神静气，荡净浮埃。（以施法者为中心，在半径200的区域内进行群体攻击）',//技能描述
 		'icon':'resources/iamges/001.png',//技能图标路径
 		'level_limit':[0,3,4,5,7],//每一阶段的可点等级
 		'cd':5,//CD时间
@@ -370,10 +368,10 @@ skill_data={
 		}
 	},
 	'灵焰灼':{
-		'description':'(受到攻击的敌人每秒受到)',
+		'description':'星星之火，可以燎原，一旦燃起，便势不可当。(受到攻击的敌人每秒受到伤害，持续五秒)',
 		'icon':'resources/iamges/001.png',//技能图标路径
-		'level_limit':[5],//每一阶段的可点等级
-		'cd':5,//CD时间
+		'level_limit':[5，6，7，8，9],//每一阶段的可点等级
+		'cd':3,//CD时间
 		//技能影响
 		'data':{
 			//单体直接伤害
@@ -386,26 +384,68 @@ skill_data={
 		    //},
 		    //区域伤害
 		    'attack_area':{
-		    	'target':'enemyRange',//使用对象 selfSingle/ememySingle/selfRange/ememyRange
-				'duration':0.5,//动作持续时间
-				'continue':5,//技能效果持续时间
-				'range':9999, //技能的攻击范围，数值表示攻击范围的半径
-				'attack_addition':500,//伤害增加值
+
 		    },
 		    //添加buff
-		    //'buff':{
-
-		    //}
+		    'buff':{
+		    	'target':'enemyRange',
+		    	'health_addition':[-20,-30,-40,-50,-60],
+		    	'duration':5,
+		    	'times':5
+		    }
 		}
 	},
 	'心月斩':{
-
+		'description':'心宿之精心月狐，其性属火，其状如狐，喜好游戏人间，祸乱人心。（造成范围伤害，受到伤害者行动封印。）',
+		'icon':'resources/iamges/001.png',//技能图标路径
+		'level_limit':[5，6，7，8，9],//每一阶段的可点等级
+		'cd':3,//CD时间
+		//技能影响
+		'data':{
+		    'attack_area':{
+		    	'target':'enemyRange',//使用对象 selfSingle/ememySingle/selfRange/ememyRange
+				'range':10,
+				'attack_addition':[10,20,30,40,50],//伤害增加值
+		    },
+		    //添加buff
+		    'buff':{
+		    	'target':'enemyRange',
+		    	'speed_addition':-9999，
+		    	'duration':[0.5,1,1.2,1.5,2]
+		    }
+		}
 	},
 	'天狐之怒':{
-
+		'description':'“青丘之山，有兽焉，其状如狐而九尾。”九尾狐出，乃世间将有大乱之象。（地面燃起烈火，全部敌人受到连续伤害）',
+		'icon':'resources/iamges/001.png',//技能图标路径
+		'level_limit':[5，6，7，8，9],//每一阶段的可点等级
+		'cd':3,//CD时间
+		//技能影响
+		'data':{
+		    'attack_area':{
+		    	
+		    },
+		    //添加buff
+		    'buff':{
+		    	
+		    }
+		}
 	},
 	'心宿业炎':{
-
+		'description':'',
+		'icon':'resources/iamges/001.png',//技能图标路径
+		'level_limit':[5，6，7，8，9],//每一阶段的可点等级
+		'cd':3,//CD时间
+		//技能影响
+		'data':{
+		    'attack_area':{
+		    	
+		    },
+		    //添加buff
+		    'buff':{
+		    	
+		    }
+		}
 	},
 	'花雨露':{
 
@@ -423,4 +463,4 @@ skill_data={
 
 
 
-console.log(role_data);
+//console.log(role_data);

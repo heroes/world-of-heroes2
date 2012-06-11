@@ -49,7 +49,7 @@ Laro.NS('woh.stageClass', function (L) {
             this.timeInState += dt;
         },
         transition: function () {
-            this.timeInState > 2 && woh.stage.go('drama', 'firstAct');
+            //this.timeInState > 2 && woh.stage.go('drama', 'firstAct');
         },
         draw: function () {
             // TODO

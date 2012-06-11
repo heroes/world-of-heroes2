@@ -6,10 +6,9 @@
 
 //伤害值=攻击-防御/（级别/10）
 //伤害公式弄得简单点就行了
-
-
 //用于存储各个职业的偏移百分比以及移动、攻击速度
-skill_rate={
+
+woh.skill_rate={
 	'001':{
 		'health_rate':1,//血量偏移
 		'attack_rate':1,//攻击偏移
@@ -20,7 +19,7 @@ skill_rate={
 		'speed_attack':1,//攻击速度
 	},
 	'002':{
-        'health_rate':1.2,
+    'health_rate':1.2,
 		'attack_rate':0.5,
 		'defend_rate':1.3,
 		'crit_rate':1,
@@ -29,7 +28,7 @@ skill_rate={
 		'speed_attack':1,
 	},
 	'003':{
-        'health_rate':0.5,
+    'health_rate':0.5,
 		'attack_rate':2,
 		'defend_rate':0.5,
 		'crit_rate':1,

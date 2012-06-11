@@ -50,7 +50,6 @@ Laro.NS('woh', function (L) {
     
     this.init = function () {
         getEls();
-        
         woh.stage.init();
         woh.loop.init();
     };

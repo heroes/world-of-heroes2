@@ -6,6 +6,7 @@
     <meta name="author" content="https://github.com/heroes" />
     <title>大侠的世界</title>
     <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/modules.css" />
 </head>
 
 <body>
@@ -20,11 +21,30 @@
                 <div id="block_5" class="barlittle"></div>
             </div>
             <!-- intro stage -->
-            <div id="intro" class="stage-container"></div>
+            <div id="intro" class="stage-container">
+                <div class='intro-module'>
+                    <div class='button'>特别鸣谢</div>
+                    <div class='button'>关于我们</div>
+                    <div class='button'>读取进度</div>
+                    <div class='button'>开始游戏</div>
+                </div>
+            </div>
             <!-- drama stage -->
-            <div id="drama" class="stage-container"></div>
+            <div id="drama" class="stage-container">
+                
+            </div>
             <!-- drama dialogue -->
-            <div id="dialogue" class="stage-container">Dialogue Test</div>
+            <div id="dialogue" class="stage-container">
+                <div class='dialogue-module'>
+                    <div class='chat'>
+                    <div class='avatar'>头像图片</div>
+                    <div class='content'>
+                    <h1><span>【</span><span class='name'>名字</span><span>】</span></h1>
+                    <p class='words'>单段剧情</p>
+                    </div>
+                 </div>
+                </div>
+            </div>
         </div>
     </div>
     
@@ -34,6 +54,7 @@
     <script src="./js/g_config.js"></script>
     <script src="./js/woh.captionPlayer.js"></script>
     <script src="./js/woh.stageIntro.js"></script>
+    <script src="./js/woh.stageCg.js"></script>
     <script src="./js/woh.stageBattle.js"></script>
     <script src="./js/woh.stageDrama.js"></script>
     <script src="./js/woh.stageDialogue.js"></script>
@@ -42,6 +63,7 @@
     <script src="./js/woh.stageGameover.js"></script>
     <script src="./js/woh.stage.js"></script>
     <script src="./js/woh.loop.js"></script>
+    <script src="./js/module.render.js"></script>
     
     <script>
         woh.init();

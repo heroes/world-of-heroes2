@@ -4,21 +4,22 @@
 	background:#000 url(../resources/images/index.jpg) top center no-repeat;
 }
 .intro-module .button{
-	padding:40px 0;
-	width:100px;
+	padding:26px 0;
+	width:72px;
 	line-height:20px;
 	float:right;
-	background:black;
+	border-radius:36px;
+	background:url(../resources/images/index-btn.png) no-repeat;
 	margin-right:20px;
 	margin-top:500px;
 	text-align:center;
-	color:red;
-	border-radius:20px;
+	color:black;
+	text-shadow:0 0 5px white;
 	cursor:pointer;
+	font-size:13px;
 }
 .intro-module .button:first-child{margin-right:150px;}
 .intro-module .button:hover{
-	border-radius:30px;
 	box-shadow:0 0 20px red;
 }
 

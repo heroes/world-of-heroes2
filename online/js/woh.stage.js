@@ -5,13 +5,13 @@
 Laro.NS('woh.stage', function (L) {
     var pkg = this;
     this.statesName = {
-        'intro': 0, // 介绍场景
-        'drama': 1, // 剧情和对话场景
-        'dialogue': 2,
-        'map': 3, // 大地图场景
-        'battle': 4, // 战斗场景
-        'equipment': 5, // 装备场景
-        'gameover': 6 // 结束
+        'intro': 0, // 介绍场景（开始界面）
+        'drama': 1, // 字幕
+        'dialogue': 2,//对话
+        'cg':3,//CG播放
+        'map': 4, // 大地图场景
+        'battle': 5, // 战斗场景
+        'gameover': 6 // 战斗结束
     };
     this.statesList = [
         this.statesName.intro, woh.stageClass.Intro,

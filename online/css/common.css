@@ -72,11 +72,11 @@ html, body {
 .stage-container {
     position: absolute;
     width: 960px;
-    height: 580px;
+    height: 640px;
     left: 50%;
     top: 50%;
     margin-left: -480px;
-    margin-top: -290px;
+    margin-top: -320px;
     display: none;
 }
 
