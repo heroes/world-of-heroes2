@@ -161,14 +161,15 @@
 
         },
         callbackFunc:function(e){
-            e.target.style.background="url(../online/resources/images/index/index-btn-press.png) no-repeat";
-            console.log(e.target.id);
-            switch(e.target.id){
-                case 'btn-3':woh.gameScript.continueExec();
-                case 'btn-2':break;
-                case 'btn-1':break;
-                case 'btn-0':break;
-                default:break;
+            if(e.target.id.substring(0,4)=='btn-'){
+                e.target.style.background="url(../online/resources/images/index/index-btn-press.png) no-repeat";
+                switch(e.target.id){
+                    case 'btn-3':setTimeout('woh.gameScript.continueExec()',300);
+                    case 'btn-2':break;
+                    case 'btn-1':break;
+                    case 'btn-0':break;
+                    default:break;
+                }
             }
         }
     };
