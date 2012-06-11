@@ -3,11 +3,12 @@
  */
 
 Laro.NS('woh.stageClass', function (L) {
-    var pkg = this,
-        cfg = woh.stage_config.stage_intro,
-        textures = cfg.textures;
+    var pkg = this;
+
+
+
     
-    function prepare() {
+    function prepare(textures) {
         var img = new Image();
         img.src = textures.index.src;
         img.width = woh.g_config.canvasWidth;
@@ -32,14 +33,13 @@ Laro.NS('woh.stageClass', function (L) {
     }
 
     var Intro = L.BaseState.extend(function () {
-        this.timeInState = 0;
-        
+        this.timeInState = 0;        
     }).methods({
         enter: function (msg, fromState) {
             woh.log('enter stage [intro] ');
             woh.show(woh.els.intro);
             woh.els.intro.style['opacity'] = 0;
-            prepare();
+            prepare(msg);
         },
         leave: function () {
             woh.log('leave stage [intro]');
@@ -49,7 +49,7 @@ Laro.NS('woh.stageClass', function (L) {
             this.timeInState += dt;
         },
         transition: function () {
-            this.timeInState > 2 && woh.stage.go('drama', 'firstAct');
+            this.timeInState > 2 && woh.gameScript.continueExec();
         },
         draw: function () {
             // TODO
