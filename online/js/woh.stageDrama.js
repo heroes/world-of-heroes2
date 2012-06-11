@@ -4,7 +4,6 @@
 
 Laro.NS('woh.stageClass', function (L) {
     var pkg = this,
-        dramaData = woh.stage_config.stage_drama,
         timeSpace = 500;
 
     var Drama = L.BaseState.extend(function () {
@@ -18,8 +17,8 @@ Laro.NS('woh.stageClass', function (L) {
             woh.show(woh.els.drama);
             this.msg = msg;
             var captionPlayer = new woh.CaptionPlayer();
-            for (var i = 0; i < dramaData[msg]['caption'].length; i ++) {
-                var caption = new woh.Caption(dramaData[msg]['caption'][i]);
+            for (var i = 0; i < msg.length; i ++) {
+                var caption = new woh.Caption(msg[i]);
                 captionPlayer.add(caption);
             }
             captionPlayer.play();
@@ -33,7 +32,7 @@ Laro.NS('woh.stageClass', function (L) {
             this.timeInState += dt;
         },
         transition: function () {
-            this.timeInState > this.actTime && woh.stage.go('dialogue', 'first');
+            this.timeInState > this.actTime && woh.gameScript.continueExec();
         },
         draw: function (render) {
         
