@@ -1,7 +1,7 @@
 ﻿/* global default configs */
 woh.g_config = {
     canvasWidth: 960,
-    canvasHeight: 580
+    canvasHeight: 640
 };
 
 /* stage config */
@@ -52,6 +52,7 @@ woh.g_config.script = [
         ]
     }
 ];
+
 //主要思想：剧情脚本的数据全部用json来封装，然后通过msg传入场景
 //'next'用来存储下一幕的
 woh.story_script={
