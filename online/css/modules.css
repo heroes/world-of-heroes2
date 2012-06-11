@@ -1,24 +1,26 @@
 .intro-module{
 	width:960px;
 	height:640px;
-	background:#000 url(../resources/images/index.jpg) top center no-repeat;
+	background:#000 url(../resources/images/index/index.jpg) top center no-repeat;
 }
 .intro-module .button{
-	padding:26px 0;
-	width:72px;
-	line-height:20px;
+	width:150px;
+	height:150px;
 	float:right;
-	border-radius:36px;
-	background:url(../resources/images/index-btn.png) no-repeat;
+	border-radius:75px;
 	margin-right:20px;
-	margin-top:500px;
+	margin-top:400px;
 	text-align:center;
 	color:black;
 	text-shadow:0 0 5px white;
 	cursor:pointer;
 	font-size:13px;
 }
-.intro-module .button:first-child{margin-right:150px;}
+.intro-module .button#btn-3{background:url(../resources/images/index/index-btn-0.png) no-repeat;}
+.intro-module .button#btn-2{background:url(../resources/images/index/index-btn-1.png) no-repeat;}
+.intro-module .button#btn-1{background:url(../resources/images/index/index-btn-2.png) no-repeat;}
+.intro-module .button#btn-0{background:url(../resources/images/index/index-btn-3.png) no-repeat;}
+.intro-module .button:first-child{margin-right:200px;}
 .intro-module .button:hover{
 	box-shadow:0 0 20px red;
 }

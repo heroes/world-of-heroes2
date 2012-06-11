@@ -143,15 +143,34 @@
 	};
     //开始界面
     packetManager.Intro={
-        tpl:'<div class="intro-module"></div>',
-        tpl_pop:'',//弹出窗
+        tpl:function(id){
+            return '<div class="button" id="'+id+'"></div>'
+        },
+        tpl_pop:'<div class="intro-pop"></div>',//弹出窗
+        total:4,
         init:function(){
-            
+            var items = [];
+            for(var i = 0; i < this.total; i++){  
+                items.push(this.tpl("btn-"+i));
+            }
+           _doc.querySelector('#intro').innerHTML = items.join('');
+           _doc.querySelector('#intro').addEventListener('mousedown',this.callbackFunc,false);
+           _doc.querySelector('#intro').addEventListener('touchstart',this.callbackFunc,false);
         },
         unInit:function(){
 
+        },
+        callbackFunc:function(e){
+            e.target.style.background="url(../online/resources/images/index/index-btn-press.png) no-repeat";
+            console.log(e.target.id);
+            switch(e.target.id){
+                case 'btn-3':woh.gameScript.continueExec();
+                case 'btn-2':break;
+                case 'btn-1':break;
+                case 'btn-0':break;
+                default:break;
+            }
         }
-
     };
 	packetManager.article = {
 		tpl : '<article class="item_icon"></article>',
@@ -178,5 +197,6 @@
 
 		}
 	}
+    packetManager.Intro.init();
 })(window);
-packetManager.Intro.init();
+
