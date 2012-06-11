@@ -1,7 +1,7 @@
 ﻿/* global default configs */
 woh.g_config = {
     canvasWidth: 960,
-    canvasHeight: 640
+    canvasHeight: 580
 };
 
 /* stage config */
@@ -35,19 +35,23 @@ woh.g_config.script = [
                         '织锦的华裳在海风中衣袂翩然',
                         '微笑，长发，美得如同不食人间烟火的精灵'
                     ]
-                }
-                
-            ]
-        }
+                }                
+        ]
     },
-    
-    stage_dialogue: {
-        textures: {},
-        first: {
-            
-        }
+    {
+        type: "drama",
+        data:[
+                {
+                    appear: 'auto',
+                    data: [
+                        '发生这种事情呢，其实谁都不想的',
+                        '做人呢，最重要的就是开心。',
+                        '喏，我下面给你吃吧。'    
+                    ]
+                }
+        ]
     }
-};
+];
 //主要思想：剧情脚本的数据全部用json来封装，然后通过msg传入场景
 //'next'用来存储下一幕的
 woh.story_script={
@@ -89,21 +93,4 @@ woh.story_script={
         data:{}
        }
 }
-=======
-                }                
-        ]
-    },{
-        type: "drama",
-        data:[
-                {
-                    appear: 'auto',
-                    data: [
-                        '发生这种事情呢，其实谁都不想的',
-                        '做人呢，最重要的就是开心。',
-                        '喏，我下面给你吃吧。'    
-                    ]
-                }
-        ]
-    }
-];
->>>>>>> 6c60dc5d2c4876649eb58e81beccb861eebdfb42
+
