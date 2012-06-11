@@ -1,27 +1,24 @@
-/* global default configs */
+﻿/* global default configs */
 woh.g_config = {
     canvasWidth: 960,
     canvasHeight: 640
 };
 
 /* stage config */
-woh.stage_config = {
-    stage_intro: {
-        textures: {
-            index: {
+woh.g_config.script = [
+    {
+        type:"intro",
+        data: {
+            index:{
                 src: './resources/images/index.jpg',
                 width: 1032,
                 height: 774
             }
-        }
-        
+        }        
     },
-    // 情节，剧情，对话
-    stage_drama: {
-        textures: {},
-        // 第一幕
-        firstAct: {
-            caption:[
+    {
+        type: "drama",
+        data:[
                 {
                     appear: 'auto',
                     data: [
@@ -30,7 +27,7 @@ woh.stage_config = {
                         '这是命运的邂逅。'    
                     ]
                 },
-                /*{
+                {
                     appear: 'auto',
                     data: [
                         '阳光明澈，将海水映得蔚蓝',
@@ -38,7 +35,7 @@ woh.stage_config = {
                         '织锦的华裳在海风中衣袂翩然',
                         '微笑，长发，美得如同不食人间烟火的精灵'
                     ]
-                }*/
+                }
                 
             ]
         }
@@ -92,3 +89,21 @@ woh.story_script={
         data:{}
        }
 }
+=======
+                }                
+        ]
+    },{
+        type: "drama",
+        data:[
+                {
+                    appear: 'auto',
+                    data: [
+                        '发生这种事情呢，其实谁都不想的',
+                        '做人呢，最重要的就是开心。',
+                        '喏，我下面给你吃吧。'    
+                    ]
+                }
+        ]
+    }
+];
+>>>>>>> 6c60dc5d2c4876649eb58e81beccb861eebdfb42

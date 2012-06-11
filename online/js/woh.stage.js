@@ -1,4 +1,4 @@
-/**
+﻿/**
  * stage controler
  */
 
@@ -25,7 +25,7 @@ Laro.NS('woh.stage', function (L) {
     
     function init () {
         pkg.fsm = new L.AppFSM(this, this.statesList);
-        go('intro');
+        woh.gameScript.startExec(woh.g_config.script);
     }
     function go (stage, msg) {
         if (pkg.statesName[stage] == undefined) {
