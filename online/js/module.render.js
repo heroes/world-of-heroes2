@@ -141,6 +141,7 @@
 
 		}
 	};
+    
     //开始界面
     packetManager.Intro={
         tpl:function(id){
@@ -173,7 +174,8 @@
             }
         }
     };
-	packetManager.article = {
+	//物品管理界面
+    packetManager.article = {
 		tpl : '<article class="item_icon"></article>',
 		total :28,
 		data : {},
