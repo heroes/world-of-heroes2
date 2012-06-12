@@ -11,6 +11,9 @@
 </head>
 
 <body>
+<script>
+console.log([document.body.clientWidth,document.body.clientHeight]);
+</script>
     <div id="doc" class="doc">
         <div id="game-container" class="game-container">
             <!-- loading -->
@@ -24,6 +27,10 @@
             <!-- intro stage -->
             <div id="intro" class="stage-container intro-module">
 
+            </div>
+            <!-- battle stage -->
+            <div id="battle" class="stage-container">
+                <canvas id="battle_canvas" width="960" height="640"></canvas>
             </div>
             <!-- drama stage -->
             <div id="drama" class="stage-container">
