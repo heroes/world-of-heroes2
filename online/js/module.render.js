@@ -143,7 +143,7 @@
 	};
     
     //开始界面
-    packetManager.Intro={
+    Intro={
         tpl:function(id){
             return '<div class="button" id="'+id+'"></div>'
         },
@@ -174,6 +174,13 @@
             }
         }
     };
+    //CG界面
+    CG={
+        tpl:'<div class="button">跳过CG</div>',
+        init:function(){
+            _doc.querySelector('#cg').innerHTML = this.tpl;
+        }
+    }
 	//物品管理界面
     packetManager.article = {
 		tpl : '<article class="item_icon"></article>',
@@ -200,6 +207,7 @@
 
 		}
 	}
-    packetManager.Intro.init();
+    Intro.init();
+    CG.init();
 })(window);
 

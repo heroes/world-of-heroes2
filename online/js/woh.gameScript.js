@@ -5,17 +5,17 @@
 Laro.NS('woh.gameScript', function (L) {
 
     var script = null;
-    this.stageNum = 0;
+    this.stageTag = '1';
         
     this.startExec = function(_script){
         script = _script;
-        this.stageNum = 0;
-
-        with(script[this.stageNum ++])
-             woh.stage.go(type,data);
+        this.stageTag = '1';
+        with(script[this.stageTag])
+            woh.stage.go(type,data);
     }
     this.continueExec = function(){
-        with(script[this.stageNum ++])
+        console.log('sss');
+        with(script[script[this.stageTag].next])
             woh.stage.go(type,data);
     }
     

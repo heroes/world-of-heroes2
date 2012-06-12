@@ -13,6 +13,7 @@ Laro.NS('woh', function (L) {
         els.gameContainer = $('game-container');
         els.intro = $('intro');
         els.drama = $('drama');
+        els.cg=$('cg');
         els.dialogue = $('dialogue');
         pkg.els = els;
     }

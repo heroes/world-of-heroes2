@@ -4,8 +4,7 @@ Laro.NS('woh.stageClass', function (L) {
     }).methods({
         enter: function (msg, from) {
             woh.log('enter stage [cg] with msg ' + msg);
-            woh.show(woh.els.dialogue)
-            
+            woh.show(woh.els.cg);
         },
         leave: function () {},
         update: function (dt) {
