@@ -14,6 +14,7 @@ Laro.NS('woh', function (L) {
         els.intro = $('intro');
         els.drama = $('drama');
         els.dialogue = $('dialogue');
+        els.battle = $('battle');
         pkg.els = els;
     }
     

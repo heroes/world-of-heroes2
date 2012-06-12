@@ -7,13 +7,8 @@ woh.g_config = {
 /* stage config */
 woh.g_config.script = [
     {
-        type:"intro",
+        type:"battle",
         data: {
-            index:{
-                src: './resources/images/index.jpg',
-                width: 1032,
-                height: 774
-            }
         }        
     },
     {
