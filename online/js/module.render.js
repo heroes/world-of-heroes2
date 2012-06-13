@@ -178,8 +178,45 @@
     CG={
         tpl:'<div class="button">跳过CG</div>',
         init:function(){
+            this.render();
+            this.bind();
+        },
+        callbackFunc:function(e){
+            woh.gameScript.continueExec();
+        },
+        render:function(){
             _doc.querySelector('#cg').innerHTML = this.tpl;
+        },
+        bind:function(){
+            _doc.querySelector('#cg .button').addEventListener('mousedown',this.callbackFunc,false);
         }
+    }
+    //对话界面
+    Dialogue={
+        tpl:function(){return '<div class="chat">'+
+            '<div class="avatar">头像图片</div>'+
+            '<div class="content">'+
+                '<h1><span>【</span><span class="name">名字</span><span>】</span></h1>'+
+                '<p class="words">单段剧情</p>'+
+            '</div>'+
+        '</div>'
+        },
+        init:function(){
+            this.render();
+        },
+        render:function(){
+            _doc.querySelector('#dialogue').innerHTML=this.tpl();
+        },
+        bind:function(){
+
+        }
+    }
+    //战斗界面
+    Battle={
+        tpl:'<div class="skill-icons"></div>',
+        init:function(){},
+        render:function(){},
+        bind:function(){}
     }
 	//物品管理界面
     packetManager.article = {
@@ -209,5 +246,6 @@
 	}
     Intro.init();
     CG.init();
+    Dialogue.init();
 })(window);
 

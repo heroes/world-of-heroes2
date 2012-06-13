@@ -48,7 +48,6 @@
 	border-radius:30px;
 	box-shadow:0 0 20px white;
 }
-
 .cg-module,.drama-module{
 	width:960px;
 	height:640px;
@@ -62,12 +61,11 @@
 	color:white;
 	float:right;
 	margin-top:520px;
+	cursor: pointer
 }
 .dialogue-module{
 	width:960px;
-	height:640px;
-	background:black;
-	position:relative;
+	height:640px; 
 }
 .dialogue-module .chat{
 	z-index:2;

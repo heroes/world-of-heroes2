@@ -49,14 +49,12 @@ woh.g_config = {
 woh.g_config.script={
     //死亡
     '0':{
-        enable:true,
         type:'dead',
         data: {},     
         next:'1'
     },
     //开始界面
     '1':{
-        enable:true,
         type:'intro',//标记相应的stage类型
         data: {
             index:{
@@ -68,7 +66,6 @@ woh.g_config.script={
         next:'2'
     },
     '2':{
-        enable:true,
         type:'drama',//标记相应的stage类型
         data:[
                 {
@@ -83,21 +80,18 @@ woh.g_config.script={
         next:'3'
     },
     '3':{
-        enable:true,
         type:'cg',
         data:{},
         next:'4'
     },
     '4':{
-        enable:true,
-        type:'cg',
+        type:'dialogue',
         data:{
 
         },
         next:'5'
     },
     '5':{
-        enable:'true',
         type:'battle',
         data:{},
         next:'6'

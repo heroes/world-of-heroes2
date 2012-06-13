@@ -16,11 +16,10 @@ Laro.NS('woh.stage', function (L) {
     this.statesList = [
         this.statesName.intro, woh.stageClass.Intro,
         this.statesName.drama, woh.stageClass.Drama,
-        this.statesName.cg, woh.stageClass.Cg,
         this.statesName.dialogue, woh.stageClass.Dialogue,
+        this.statesName.cg, woh.stageClass.Cg,
         this.statesName.map, woh.stageClass.Map,
         this.statesName.battle, woh.stageClass.Battle,
-        this.statesName.equipment, woh.stageClass.Equipment,
         this.statesName.gameover, woh.stageClass.Gameover
     ];
     
