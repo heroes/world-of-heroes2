@@ -1,10 +1,15 @@
+/* dialogue stage */
+
 Laro.NS('woh.stageClass', function (L) {
+    var pkg = this;
+
     var Cg = L.BaseState.extend(function () {
-        var pkg = this;
+    
     }).methods({
         enter: function (msg, from) {
-            woh.log('enter stage [cg] with msg ' + msg);
-            woh.show(woh.els.cg);
+            woh.log('enter stage [Cg] with msg ' + msg);
+            woh.show(woh.els.cg)
+            
         },
         leave: function () {},
         update: function (dt) {
@@ -16,5 +21,7 @@ Laro.NS('woh.stageClass', function (L) {
         draw: function (render) {}
     
     });
+
     this.Cg = Cg;
+
 });

@@ -14,9 +14,9 @@ Laro.NS('woh.gameScript', function (L) {
             woh.stage.go(type,data);
     }
     this.continueExec = function(){
-        console.log('sss');
-        with(script[script[this.stageTag].next])
+        with(script[this.stageTag =script[this.stageTag].next])
             woh.stage.go(type,data);
+            console.log(this.stageTag);
     }
     
 });

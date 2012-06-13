@@ -84,13 +84,13 @@ woh.g_config.script={
     },
     '3':{
         enable:true,
-        type:'CG',
+        type:'cg',
         data:{},
         next:'4'
     },
     '4':{
         enable:true,
-        type:'CG',
+        type:'cg',
         data:{
 
         },
