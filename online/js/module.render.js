@@ -151,7 +151,7 @@
         total:4,
         init:function(){
             var items = [];
-            for(var i = 0; i < this.total; i++){  
+            for(var i = 1; i <= this.total; i++){  
                 items.push(this.tpl("btn-"+i));
             }
            _doc.querySelector('#intro').innerHTML = items.join('');
@@ -165,10 +165,10 @@
             if(e.target.id.substring(0,4)=='btn-'){
                 //e.target.style.background="url(../online/resources/images/index/index-btn-press.png) no-repeat";
                 switch(e.target.id){
-                    case 'btn-3':setTimeout('woh.gameScript.continueExec()',300);
+                    case 'btn-1':setTimeout('woh.gameScript.continueExec()',300);
                     case 'btn-2':break;
-                    case 'btn-1':break;
-                    case 'btn-0':break;
+                    case 'btn-3':break;
+                    case 'btn-4':break;
                     default:break;
                 }
             }

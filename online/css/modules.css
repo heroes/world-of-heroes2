@@ -6,7 +6,7 @@
 .intro-module .button{
 	width:129px;
 	height:129px;
-	float:right;
+	float:left;
 	border-radius:64px;
 	margin-right:20px;
 	margin-top:470px;
@@ -16,11 +16,11 @@
 	cursor:pointer;
 	font-size:13px;
 }
-.intro-module .button#btn-3{background:url(../resources/images/index/start-button-1.png) no-repeat;}
+.intro-module .button#btn-1{background:url(../resources/images/index/start-button-1.png) no-repeat;}
 .intro-module .button#btn-2{background:url(../resources/images/index/start-button-2.png) no-repeat;}
-.intro-module .button#btn-1{background:url(../resources/images/index/start-button-3.png) no-repeat;}
-.intro-module .button#btn-0{background:url(../resources/images/index/start-button-4.png) no-repeat;}
-.intro-module .button:first-child{margin-right:20px;}
+.intro-module .button#btn-3{background:url(../resources/images/index/start-button-3.png) no-repeat;}
+.intro-module .button#btn-4{background:url(../resources/images/index/start-button-4.png) no-repeat;}
+.intro-module .button:first-child{margin-left:300px;}
 .intro-module .button:hover{
 	box-shadow:0 0 20px white;
 }
