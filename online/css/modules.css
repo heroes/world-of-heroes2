@@ -22,7 +22,7 @@
 .intro-module .button#btn-0{background:url(../resources/images/index/start-button-4.png) no-repeat;}
 .intro-module .button:first-child{margin-right:300px;}
 .intro-module .button:hover{
-	box-shadow:0 0 20px red;
+	box-shadow:0 0 20px white;
 }
 
 .map-module{
