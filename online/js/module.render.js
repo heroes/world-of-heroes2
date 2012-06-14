@@ -203,6 +203,7 @@
         },
         init:function(){
             this.render();
+            this.bind();
         },
         render:function(){
             _doc.querySelector('#dialogue').innerHTML=this.tpl();
