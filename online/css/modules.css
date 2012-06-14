@@ -28,7 +28,7 @@
 .map-module{
 	width:960px;
 	height:640px;
-	background:#000;
+	background:white;
 }
 
 .map-module .button{
@@ -92,7 +92,6 @@
 	width:960px;
 	height:640px;
 	background:#000;
-	position:relative;
 }
 .battle-module .skill-icons{
 	position:absolute;

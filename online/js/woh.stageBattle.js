@@ -8,10 +8,13 @@ Laro.NS('woh.stageClass', function (L) {
     }).methods({
     	enter: function (msg, from) {
             woh.log('enter stage [Battle] with msg ' + msg);
-            woh.show(woh.els.cg)
+            woh.show(woh.els.battle)
             
         },
-        leave: function () {},
+        leave: function () {
+            woh.log('leave stage [battle]');
+            woh.hide(woh.els.battle);
+        },
         update: function (dt) {
         
         },

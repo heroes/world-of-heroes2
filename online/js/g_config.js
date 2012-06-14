@@ -96,5 +96,10 @@ woh.g_config.script={
         data:{},
         next:'6'
        }
+    '6':{
+        type:'map',
+        data:{},
+        next:'1'
+    }
 }
 

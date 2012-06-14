@@ -11,7 +11,10 @@ Laro.NS('woh.stageClass', function (L) {
             woh.show(woh.els.dialogue)
             this.timeInState=0;
         },
-        leave: function () {},
+        leave: function () {
+            woh.log('leave stage [dialogue]');
+            woh.hide(woh.els.dialogue);
+        },
         update: function (dt) {
             this.timeInState += dt;
         },

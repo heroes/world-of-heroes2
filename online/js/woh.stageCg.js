@@ -11,7 +11,10 @@ Laro.NS('woh.stageClass', function (L) {
             woh.show(woh.els.cg)
             
         },
-        leave: function () {},
+        leave: function () {
+            woh.log('leave stage [cg]');
+            woh.hide(woh.els.cg);
+        },
         update: function (dt) {
         
         },
