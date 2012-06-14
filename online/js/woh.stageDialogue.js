@@ -9,14 +9,14 @@ Laro.NS('woh.stageClass', function (L) {
         enter: function (msg, from) {
             woh.log('enter stage [dialogue] with msg ' + msg);
             woh.show(woh.els.dialogue)
-            
+            this.timeInState=0;
         },
         leave: function () {},
         update: function (dt) {
-        
+            this.timeInState += dt;
         },
         transition: function () {
-        
+            this.timeInState > 2 && woh.gameScript.continueExec();
         },
         draw: function (render) {}
     
