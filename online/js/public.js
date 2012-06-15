@@ -1,5 +1,5 @@
-//用于通信的
-woh.role_data={
+//用于初始化人物的数据
+woh.role_init_data={
 	'001':{
 		'name':'唐如',//名字
 		'type':'002',//类型
@@ -458,7 +458,7 @@ woh.skill_data={
 		}
 	},
 	'水月霖':{
-		'description':'水月之力，属幻，堕入幽梦者，如履太虚。（敌方全体进入减速状态）',
+		'description':'水月之力属幻，堕入幽梦者，如履太虚。（敌方全体进入减速状态）',
 		'icon':'resources/iamges/001.png',//技能图标路径
 		'level_limit':[5，6，7，8，9],//每一阶段的可点等级
 		'cd':3,//CD时间
