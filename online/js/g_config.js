@@ -95,7 +95,7 @@ woh.g_config.script={
         type:'battle',
         data:{},
         next:'6'
-       }
+       },
     '6':{
         type:'map',
         data:{},
