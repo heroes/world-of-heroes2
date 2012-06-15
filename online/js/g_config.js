@@ -89,8 +89,9 @@ woh.g_config.script={
         data:{
 
         },
-        next:'5'
+        next:'7'
     },
+    
     '5':{
         type:'battle',
         data:{},
@@ -100,6 +101,53 @@ woh.g_config.script={
         type:'map',
         data:{},
         next:'1'
+    },
+    
+    '7': {
+        type: 'loading',
+        data: {
+            key: 'battle_1' // 从 resources 中拿battle_1的数据
+        },
+        next: '5'
+    }
+};
+
+
+// 暂时放在此吧 -_-! ，到时候需要整合再说，每个场景对应的需要预加载的资源列表
+woh.g_config.resources = {
+    // 比如： 战斗场景，随便测试一个, 假如第一场战斗
+    // 根目录基于 resources/
+    battle_1: {
+        type: 'battle',
+        resources: [
+            'images/test/BG3.jpg',
+            'images/test/boss_2.png'
+        ]
+    }
+};
+
+// 精灵啦啦啦啦
+woh.g_config.sprites = {
+    // 用于测试，大侠一的boss_2
+    // http://hongru.github.com/proj/laro/Leditor/animation/index.html
+    "boss_2": {
+        "info": {
+            "nbrOfFrames": 5,
+            "name": "boss_2",
+            "type": "animation",
+            "framerate": 10,
+            "pivotx": 125,
+            "pivoty": 92,
+            "events": []
+        },
+        "data": [
+            [0,0,250,183,0,0,250,183],
+            [251,0,501,183,251,0,501,183],
+            [502,0,752,183,502,0,752,183],
+            [753,0,1003,183,753,0,1003,183],
+            [1004,0,1254,183,1004,0,1254,183]
+        ],
+        "filename": "images/test/boss_2.png"
     }
 }
 

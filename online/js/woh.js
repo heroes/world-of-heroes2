@@ -16,6 +16,8 @@ Laro.NS('woh', function (L) {
         els.cg=$('cg');
         els.dialogue = $('dialogue');
         els.battle=$('battle');
+        els.canvas = $('canvas');
+        els.canvasWrap = $('canvas-wrap');
         pkg.els = els;
     }
     
@@ -39,7 +41,8 @@ Laro.NS('woh', function (L) {
         //...
     };
     this.draw = function () {
-        woh.stage.draw()
+        woh.canvasRender.clear();
+        woh.stage.draw(woh.canvasRender)
     };
     this.pause = function () {
         // show global pause tips
@@ -52,6 +55,13 @@ Laro.NS('woh', function (L) {
     
     this.init = function () {
         getEls();
+        //loader
+        this.loader = new L.ResourceLoader('resources/'); // 默认以resources/ 为资源根目录
+        // render
+        pkg.els.canvas.width = 960;
+        pkg.els.canvas.height = 640;
+        this.canvasRender = new L.CanvasRender(pkg.els.canvas, 1, false);
+        
         woh.stage.init();
         woh.loop.init();
     };

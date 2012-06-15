@@ -11,7 +11,9 @@ Laro.NS('woh.stage', function (L) {
         'cg':3,//CG播放
         'map': 4, // 大地图场景
         'battle': 5, // 战斗场景
-        'gameover': 6 // 战斗结束
+        'gameover': 6, // 战斗结束
+        
+        'loading': 7 // 公用资源加载场景，可以出现在每个需要资源预加载的场景前，具体应该加载某个具体的场景资源列表由 message 消息指定.
     };
     this.statesList = [
         this.statesName.intro, woh.stageClass.Intro,
@@ -20,7 +22,9 @@ Laro.NS('woh.stage', function (L) {
         this.statesName.cg, woh.stageClass.Cg,
         this.statesName.map, woh.stageClass.Map,
         this.statesName.battle, woh.stageClass.Battle,
-        this.statesName.gameover, woh.stageClass.Gameover
+        this.statesName.gameover, woh.stageClass.Gameover,
+        
+        this.statesName.loading, woh.stageClass.Loading
     ];
     
     function init () {
