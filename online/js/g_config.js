@@ -54,8 +54,8 @@ woh.g_config.script={
         next:'1'
     },
     //开始界面
-    '1':{
-        type:'intro',//标记相应的stage类型
+    '7':{
+        type:'battle',//标记相应的stage类型
         data: {
             index:{
                 src: './resources/images/index.jpg',
@@ -103,12 +103,12 @@ woh.g_config.script={
         next:'1'
     },
     
-    '7': {
+    '1': {
         type: 'loading',
         data: {
             key: 'battle_1' // 从 resources 中拿battle_1的数据
         },
-        next: '5'
+        next: '7'
     }
 };
 
