@@ -1,7 +1,7 @@
 ﻿/**
  * stage controler
  */
-
+//剧情脚本读取
 Laro.NS('woh.gameScript', function (L) {
 
     var script = null;

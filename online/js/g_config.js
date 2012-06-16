@@ -56,6 +56,7 @@ woh.g_config.script={
     //开始界面
     '1':{
         type:'intro',//标记相应的stage类型
+        repeat:true,//标记在流程中是否允许重复出现（即选关的时候是否会被再次触发）
         data: {
             index:{
                 src: './resources/images/index.jpg',
@@ -63,10 +64,11 @@ woh.g_config.script={
                 height: 774
             }
         },
-        next:'6'
+        next:'2'
     },
     '2':{
         type:'drama',//标记相应的stage类型
+        repeat:false,
         data:[
                 {
                     appear: 'auto',
@@ -81,11 +83,13 @@ woh.g_config.script={
     },
     '3':{
         type:'cg',
+        repeat:false,
         data:{},
         next:'4'
     },
     '4':{
         type:'dialogue',
+        repeat:false,
         data:{
 
         },
@@ -94,17 +98,20 @@ woh.g_config.script={
     
     '5':{
         type:'battle',
+        repeat:false,
         data:{},
         next:'6'
        },
     '6':{
         type:'map',
+        repeat:true,
         data:{},
         next:'1'
     },
     
     '7': {
         type: 'loading',
+        repeat: true,
         data: {
             key: 'battle_1' // 从 resources 中拿battle_1的数据
         },
