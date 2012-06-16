@@ -63,7 +63,7 @@ woh.g_config.script={
                 height: 774
             }
         },
-        next:'2'
+        next:'6'
     },
     '2':{
         type:'drama',//标记相应的stage类型
