@@ -245,6 +245,26 @@
 
 		}
 	}
+
+    //地图界面
+    Map={
+        tpl:function(){
+            return "<div class='map-module'><div class='button'>离开</div>"+
+            "<div class='button'>技能</div>"+
+            "<div class='button'>人物</div></div>"
+        },
+        init:function(){
+            this.render();
+            this.bind();
+        },
+        render:function(){
+            _doc.getElementById('map').innerHTML=this.tpl();
+        },
+        bind:function(){
+
+        }
+    }
+    Map.init();
     Intro.init();
     CG.init();
     Dialogue.init();

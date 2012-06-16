@@ -18,6 +18,7 @@ Laro.NS('woh', function (L) {
         els.battle=$('battle');
         els.canvas = $('canvas');
         els.canvasWrap = $('canvas-wrap');
+        els.map = $('map');
         pkg.els = els;
     }
     
