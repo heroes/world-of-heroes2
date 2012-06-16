@@ -16,15 +16,17 @@ Laro.NS('woh.stageClass', function (L) {
             this.test_boss2 = L.$lea.getAnimation('boss_2');
             this.test_boss2.play();
             
+            this.timeInState=0;
         },
         leave: function () {
             woh.log('leave stage [battle]');
         },
         update: function (dt) {
             this.test_boss2.update(dt);
+            this.timeInState+=dt;
         },
         transition: function () {
-        
+            this.timeInState > 2 && woh.gameScript.continueExec();
         },
         draw: function (render) {
             this.test_boss2.draw(render, render.getWidth()/2, render.getHeight()/2, 0, 1, false);
