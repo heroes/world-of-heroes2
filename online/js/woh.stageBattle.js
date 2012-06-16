@@ -1,9 +1,6 @@
 /**
  * stage Battle Class
  */
-/**
- * stage Battle Class
- */
 Laro.NS('woh.stageClass', function (L) {
     var pkg = this;
     var Battle = L.BaseState.extend(function () {
@@ -24,6 +21,7 @@ Laro.NS('woh.stageClass', function (L) {
         },
         update: function (dt) {
             this.timeInState += dt;
+
             with(this)
                 this.objects.forEach(function(o){
                     o.update(dt);
@@ -123,18 +121,16 @@ var rio_tang_actions = {
     },
 }
 
+
 var rio_tang = new Character({
     
 })
+
 
 document.body.onclick = function(){ rio_tang.attack() };
 
 function Character(data){
 
-
-
-    
-    
     var pos = [0,0]
     var stage = null;
     this.setStage = function(_stage) {

@@ -1,4 +1,4 @@
-﻿/* global default configs */
+﻿﻿/* global default configs */
 woh.g_config = {
     canvasWidth: 960,
     canvasHeight: 640
@@ -150,4 +150,3 @@ woh.g_config.sprites = {
         "filename": "images/test/boss_2.png"
     }
 }
-
