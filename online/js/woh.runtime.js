@@ -6,16 +6,16 @@ Laro.NS('woh.runtime', function (L) {
     	var i=0,
     	    j=this.scriptProcess.length-1;
     	    exist=false;
-    	while(i<j){
-    		var mid=parseInt((i+j)/2);
+    	do{
+    		var mid=Math.round((i+j)/2);
     		if(key==this.scriptProcess[mid]){return true;}
     		if(key<this.scriptProcess[mid]){
     			j=mid;
     		}
     		else{
-    			i=mid+1;
+    			i=mid;
     		}
-    	}
+    	}while(i<j);
 
         return exist;
     },
@@ -24,8 +24,8 @@ Laro.NS('woh.runtime', function (L) {
     	this.scriptProcess.sort();
     },
     this.init=function(){
-    	for(var key in woh.g_config.script){this.scriptProcess.push(key);}
-        this.scriptProcess.sort();
-    	//console.log(this.searchScriptProcess('2'));
+    	//this.insertScriptProcess('4');
+        //this.scriptProcess.sort();
+    	//console.log(this.searchScriptProcess('4'));
     }
 });

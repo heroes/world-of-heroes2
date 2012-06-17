@@ -63,9 +63,9 @@ Laro.NS('woh', function (L) {
         pkg.els.canvas.height = 640;
         this.canvasRender = new L.CanvasRender(pkg.els.canvas, 1, false);
         
+        woh.runtime.init();//初始化运行时数据
         woh.stage.init();
         woh.loop.init();
-        woh.runtime.init();//初始化运行时数据
     };
 
 });
