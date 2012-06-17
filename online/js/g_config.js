@@ -64,7 +64,7 @@ woh.g_config.script={
                 height: 774
             }
         },
-        next:'6'
+        next:'2'
     },
     '2':{
         type:'drama',//标记相应的stage类型
@@ -95,7 +95,6 @@ woh.g_config.script={
         },
         next:'7'
     },
-    
     '5':{
         type:'battle',
         repeat:false,

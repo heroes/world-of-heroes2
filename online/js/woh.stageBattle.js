@@ -20,6 +20,7 @@ Laro.NS('woh.stageClass', function (L) {
         },
         leave: function () {
             woh.log('leave stage [battle]');
+            woh.hide(woh.els.canvasWrap);
         },
         update: function (dt) {
             this.test_boss2.update(dt);
