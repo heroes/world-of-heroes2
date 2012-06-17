@@ -11,6 +11,8 @@ html, body {
     color: #ccc;
     line-height: 2;
 }
+.left{float: left;}
+.right{float: right;}
 
 .barlittle {
 	background-color:#2187e7;  

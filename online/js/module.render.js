@@ -180,7 +180,7 @@
         tpl:function(data){
         var str = '<div class="chat">'+
             '<%if(avatar){%>'+
-            '<div class="avatar <%=position||"left"%>"></div>'+
+            '<div class="avatar <%=position||"left"%>"><img src="<%=avatar%>" alt="" /></div>'+
             '<%}%>'+
             '<div class="content">'+
                 '<%if(name){%>'+

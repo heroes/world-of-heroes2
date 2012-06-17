@@ -91,13 +91,13 @@ woh.g_config.script={
         type:'dialogue',
         repeat:false,
         data:[
-            {'avatar':'','name':'唐如','content':'好美的人哦……',position:'left'},
-            {'avatar':'','name':'？？','content':'你知道……人鱼吗？',position:'right'},
-            {'avatar':'','name':'唐如','content':'人鱼？古书里面倒是记载着不少关于这个的传说……',position:'left'},
+            {'avatar':'resources/images/dialogue/UI-dialog-character.png','name':'唐如','content':'好美的人哦……',position:'left'},
+            {'avatar':'resources/images/dialogue/UI-dialog-character.png','name':'？？','content':'你知道……人鱼吗？',position:'right'},
+            {'avatar':'resources/images/dialogue/UI-dialog-character.png','name':'唐如','content':'人鱼？古书里面倒是记载着不少关于这个的传说……',position:'left'},
             {'avatar':'','name':'','content':'喂喂喂，你怎么了！'},
-            {'avatar':'','name':'？？','content':'……',position:'right'},
-            {'avatar':'','name':'唐如','content':'你没事吧，醒醒啊！呼吸很平稳，看来只是晕过去了而已。',position:'left'},
-            {'avatar':'','name':'唐如','content':'天啊，哪来那么多的大螃蟹！不好，螃蟹似乎是冲着那个人来的。不管怎么样，先把它们击退吧。',position:'left'}
+            {'avatar':'resources/images/dialogue/UI-dialog-character.png','name':'？？','content':'……',position:'right'},
+            {'avatar':'resources/images/dialogue/UI-dialog-character.png','name':'唐如','content':'你没事吧，醒醒啊！呼吸很平稳，看来只是晕过去了而已。',position:'left'},
+            {'avatar':'resources/images/dialogue/UI-dialog-character.png','name':'唐如','content':'天啊，哪来那么多的大螃蟹！不好，螃蟹似乎是冲着那个人来的。不管怎么样，先把它们击退吧。',position:'left'}
         ],
         next:'7'
     },
