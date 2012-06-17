@@ -23,7 +23,6 @@ Laro.NS('woh.stage', function (L) {
         this.statesName.map, woh.stageClass.Map,
         this.statesName.battle, woh.stageClass.Battle,
         this.statesName.gameover, woh.stageClass.Gameover,
-        
         this.statesName.loading, woh.stageClass.Loading
     ];
     

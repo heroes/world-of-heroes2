@@ -6,9 +6,8 @@ Laro.NS('woh.runtime', function (L) {
     	var i=0,
     	    j=this.scriptProcess.length-1;
     	    exist=false;
-    	do{
+    	while(i<=j){
     		var mid=Math.round((i+j)/2);
-            console.log(i,j,this.scriptProcess[mid]);
     		if(key==this.scriptProcess[mid]){
                 return true;
             }
@@ -18,7 +17,7 @@ Laro.NS('woh.runtime', function (L) {
     		else{
     			j=mid-1;
     		}
-    	}while(i<j)
+    	}
         return exist;
     },
     this.insertScriptProcess=function(key){
