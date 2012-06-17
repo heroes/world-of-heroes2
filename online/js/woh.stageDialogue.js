@@ -8,6 +8,7 @@ Laro.NS('woh.stageClass', function (L) {
     }).methods({
         enter: function (msg, from) {
             woh.log('enter stage [dialogue] with msg ' + msg);
+            window.Dialogue.init(msg);
             woh.show(woh.els.dialogue)
             this.timeInState=0;
         },
@@ -19,7 +20,7 @@ Laro.NS('woh.stageClass', function (L) {
             this.timeInState += dt;
         },
         transition: function () {
-            this.timeInState > 2 && woh.gameScript.continueExec();
+            //this.timeInState > 2 && woh.gameScript.continueExec();
         },
         draw: function (render) {}
     

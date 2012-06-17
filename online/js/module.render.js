@@ -127,7 +127,7 @@
     }
 
     //开始界面
-    Intro={
+    Intro = {
         tpl:function(id){
             return '<div class="button" id="'+id+'"></div>'
         },
@@ -176,24 +176,40 @@
         }
     }
     //对话界面
-    Dialogue={
-        tpl:function(){return '<div class="chat">'+
-            '<div class="avatar">头像图片</div>'+
+    Dialogue = _win.Dialogue = {
+        tpl:function(data){
+        var str = '<div class="chat">'+
+            '<%if(avatar){%>'+
+            '<div class="avatar <%=position||"left"%>"></div>'+
+            '<%}%>'+
             '<div class="content">'+
-                '<h1><span>【</span><span class="name">名字</span><span>】</span></h1>'+
-                '<p class="words">单段剧情</p>'+
+                '<%if(name){%>'+
+                '<h1><span>【</span><span class="name"><%=name%></span><span>】</span></h1>'+
+                '<%}%>'+
+                '<p class="words"><%=content%></p>'+
             '</div>'+
-        '</div>'
+        '</div>';
+        return str;
         },
-        init:function(){
+        init:function(data){
+            this.data = data;
+            this.index = 0;
             this.render();
             this.bind();
         },
         render:function(){
-            _doc.querySelector('#dialogue').innerHTML=this.tpl();
+            if(this.index >= this.data.length){
+                woh.gameScript.continueExec();
+            }else{
+                _doc.querySelector('#dialogue').innerHTML= tmpl(this.tpl(), this.data[this.index]);
+            }
         },
         bind:function(){
-
+            var self = this;
+             _doc.getElementById('dialogue').addEventListener('click', function(){
+                self.index++;
+                self.render();
+            })
         }
     }
     //战斗界面
@@ -229,6 +245,5 @@
     Map.init();
     Intro.init();
     CG.init();
-    Dialogue.init();
 })(window);
 
