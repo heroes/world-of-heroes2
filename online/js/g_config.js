@@ -99,7 +99,7 @@ woh.g_config.script={
             {'avatar':'resources/images/dialogue/UI-dialog-character.png','name':'唐如','content':'你没事吧，醒醒啊！呼吸很平稳，看来只是晕过去了而已。',position:'left'},
             {'avatar':'resources/images/dialogue/UI-dialog-character.png','name':'唐如','content':'天啊，哪来那么多的大螃蟹！不好，螃蟹似乎是冲着那个人来的。不管怎么样，先把它们击退吧。',position:'left'}
         ],
-        next:'7'
+        next:'5'
     },
     '5':{
         type:'battle',
@@ -112,15 +112,6 @@ woh.g_config.script={
         repeat:true,
         data:{},
         next:'1'
-    },
-    
-    '7': {
-        type: 'loading',
-        repeat: true,
-        data: {
-            key: 'battle_1' // 从 resources 中拿battle_1的数据
-        },
-        next: '5'
     }
 };
 
