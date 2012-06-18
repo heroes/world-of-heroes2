@@ -3,23 +3,16 @@ woh.role_init_data={
 	'001':{
 		'name':'唐如',//名字
 		'type':'002',//类型
-		'lv':0,//等级
+		'lv':0,//等级(根据类型和等级读取其他数据)
 		'avatar':'images/role/ava/ava_001.png',//头像
-		'model':'images/role/model/001_normal.png',//裸模
-		'health':1000,//生命
-		'exp_current':12345,//当前经验值
-		'exp_next':20000,//升级经验值
-		'attack':15,//攻击
-		'defend':3,//防御
-		'crit':5,//暴击
-		'miss':5,//闪避
+		'exp_current':0,//当前经验值
 		'weapon':'001',//武器编号
 		'clothes':'001',//衣服编号
-		'skill_point':'2',//剩余技能点
+		'skill_point':'0',//剩余技能点
 		'skill_list':{
-			'疾风刺':1, 
-			'落英旋':2,
-			'浮云风卷':3,
+			'疾风刺':0, 
+			'落英旋':0,
+			'浮云风卷':0,
 			'醉舞秋红':0
 		}//技能列表（编号-等级）
 	},
@@ -28,20 +21,13 @@ woh.role_init_data={
 		'type':'001',//类型
 		'lv':0,//等级
 		'avatar':'images/role/ava/ava_001.png',//头像
-		'model':'images/role/model/001_normal.png',//裸模
-		'health':1000,//生命
-		'exp_current':12345,//当前经验值
-		'exp_next':20000,//升级经验值
-		'attack':15,//攻击
-		'defend':3,//防御
-		'crit':5,//暴击
-		'miss':5,//闪避
+		'exp_current':0,//当前经验值
 		'weapon':'001',//武器编号
 		'clothes':'001',//衣服编号
-		'skill_point':'2',
+		'skill_point':'0',
 		'skill_list':{
-			'灵焰灼':1,
-			'心月斩':2,
+			'灵焰灼':0,
+			'心月斩':0,
 			'天狐之怒':0,
 			'心宿炎障':0,
 		}
@@ -51,21 +37,14 @@ woh.role_init_data={
 		'type':'003',//类型
 		'lv':0,//等级
 		'avatar':'images/role/ava/ava_001.png',//头像
-		'model':'images/role/model/001_normal.png',//裸模
-		'health':1000,//生命
-		'exp_current':12345,//当前经验值
-		'exp_next':20000,//升级经验值
-		'attack':15,//攻击
-		'defend':3,//防御
-		'crit':5,//暴击
-		'miss':5,//闪避
+		'exp_current':0,//当前经验值
 		'weapon':'001',//武器编号
 		'clothes':'001',//衣服编号
-		'skill_point':'2',
+		'skill_point':'0',
 		'skill_list':{
-			'花雨露':1,
-			'水月霖':1,
-			'芳华流转':3,
+			'花雨露':0,
+			'水月霖':0,
+			'芳华流转':0,
 			'镜泉润物':0
 		}
 	},
