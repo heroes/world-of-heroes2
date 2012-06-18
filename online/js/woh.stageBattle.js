@@ -17,6 +17,18 @@ Laro.NS('woh.stageClass', function (L) {
             this.context = this.canvas.getContext("2d");
             this.context.clearRect(0,0,this.canvas.width,this.canvas.height);
             this.registerObj(rio_tang);
+            
+            /*
+            woh.log('enter stage [Battle] with msg ' + msg);
+            woh.show(woh.els.canvasWrap);
+            
+            L.$lea.setLoader(woh.loader);
+            L.$lea.setSourceObj(woh.g_config.sprites);
+            
+            this.test_boss2 = L.$lea.getAnimation('boss_2');
+            this.test_boss2.play();*/
+            
+            this.timeInState=0;
         },
         leave: function () {
             woh.log('leave stage [battle]');
@@ -31,6 +43,22 @@ Laro.NS('woh.stageClass', function (L) {
         },
         transition: function () {
             this.timeInState > Infinity && woh.gameScript.continueExec();
+        },
+        leave: function () {
+            woh.log('leave stage [battle]');
+            woh.hide(woh.els.canvasWrap);
+        },
+        update: function (dt) {
+            //this.test_boss2.update(dt);
+            this.timeInState += dt;
+            with(this)
+                this.objects.forEach(function(o){
+                    o.update(dt);
+                })
+        },
+        transition: function () {
+            this.timeInState > 2 && woh.gameScript.continueExec();
+
         },
         draw: function (render) {
             this.context.clearRect(0,0,this.canvas.width,this.canvas.height);
@@ -186,7 +214,7 @@ function Character(data){
         context.strokeStyle = "blue";
         if(this.state.drawInfo) {
             this.state.drawInfo.image.forEach(function(img) {
-                context.drawImage(img,1,1, img.width, img.height);
+                context.drawImage(img,1,1, img.width/2, img.height/2);
             });
         }
     }

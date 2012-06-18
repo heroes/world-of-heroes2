@@ -18,6 +18,7 @@ Laro.NS('woh', function (L) {
         els.battle=$('battle');
         els.canvas = $('canvas');
         els.canvasWrap = $('canvas-wrap');
+        els.map = $('map');
         pkg.els = els;
     }
     
@@ -62,6 +63,7 @@ Laro.NS('woh', function (L) {
         pkg.els.canvas.height = 640;
         this.canvasRender = new L.CanvasRender(pkg.els.canvas, 1, false);
         
+        woh.runtime.init();//初始化运行时数据
         woh.stage.init();
         woh.loop.init();
     };

@@ -54,8 +54,9 @@ woh.g_config.script={
         next:'1'
     },
     //开始界面
-    '7':{
-        type:'battle',//标记相应的stage类型
+    '1':{
+        type:'intro',//标记相应的stage类型
+        repeat:true,//标记在流程中是否允许重复出现（即选关的时候是否会被再次触发）
         data: {
             index:{
                 src: './resources/images/index.jpg',
@@ -63,10 +64,11 @@ woh.g_config.script={
                 height: 774
             }
         },
-        next:'2'
+        next:'4'
     },
     '2':{
         type:'drama',//标记相应的stage类型
+        repeat:false,
         data:[
                 {
                     appear: 'auto',
@@ -81,34 +83,35 @@ woh.g_config.script={
     },
     '3':{
         type:'cg',
+        repeat:false,
         data:{},
         next:'4'
     },
     '4':{
         type:'dialogue',
-        data:{
-
-        },
-        next:'7'
+        repeat:false,
+        data:[
+            {'avatar':'resources/images/dialogue/UI-dialog-character.png','name':'唐如','content':'好美的人哦……',position:'left'},
+            {'avatar':'resources/images/dialogue/UI-dialog-character.png','name':'？？','content':'你知道……人鱼吗？',position:'right'},
+            {'avatar':'resources/images/dialogue/UI-dialog-character.png','name':'唐如','content':'人鱼？古书里面倒是记载着不少关于这个的传说……',position:'left'},
+            {'avatar':'','name':'','content':'喂喂喂，你怎么了！'},
+            {'avatar':'resources/images/dialogue/UI-dialog-character.png','name':'？？','content':'……',position:'right'},
+            {'avatar':'resources/images/dialogue/UI-dialog-character.png','name':'唐如','content':'你没事吧，醒醒啊！呼吸很平稳，看来只是晕过去了而已。',position:'left'},
+            {'avatar':'resources/images/dialogue/UI-dialog-character.png','name':'唐如','content':'天啊，哪来那么多的大螃蟹！不好，螃蟹似乎是冲着那个人来的。不管怎么样，先把它们击退吧。',position:'left'}
+        ],
+        next:'5'
     },
-    
     '5':{
         type:'battle',
+        repeat:false,
         data:{},
         next:'6'
        },
     '6':{
         type:'map',
+        repeat:true,
         data:{},
         next:'1'
-    },
-    
-    '1': {
-        type: 'loading',
-        data: {
-            key: 'battle_1' // 从 resources 中拿battle_1的数据
-        },
-        next: '7'
     }
 };
 

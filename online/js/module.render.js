@@ -27,123 +27,107 @@
 	return data ? fn( data ) : fn;
 	};
 
-    var _events = {};
-    function _addEvent(e, callback, cfg) {
-        cfg = cfg || {};
-        cfg.obj = cfg.obj || null;
-        cfg.onlyone = cfg.onlyone || false;
-        var item = {callback: callback,obj: cfg.obj};
-        if (cfg.obj && cfg.onlyone) {
-            if (_events[e]) {
-                for (var i = 0; i < _events[e].length; i++) {
-                    if (callback) {
-                        if (_events[e][i].obj === cfg.obj && _events[e][i].callback === callback) {
-                            return;
-                        }
-                    } else {
-                        if (_events[e][i].obj === cfg.obj) {
-                            return;
-                        }
-                    }
-                }
-            }
-        }
-        _events[e] = _events[e] || [];
-        _events[e].push(item);
-    }
-    function _removeEvent(e, callback, cfg) {
-        cfg = cfg || {};
-        cfg.obj = cfg.obj || null;
-        if (_events[e]) {
-            for (var i = _events[e].length - 1; i >= 0; i--) {
-                if (cfg.obj && cfg.obj === _events[e][i].obj) {
-                    if (callback && _events[e][i].obj.callback === callback) {
-                        _events[e].splice(i, 1);
-                    } else {
-                        _events[e].splice(i, 1);
-                    }
-                } else {
-                    if (callback && _events[e][i].obj.callback === callback) {
-                        _events[e].splice(i, 1);
-                    } else {
-                        _events[e].splice(i, 1);
-                    }
-                }
-            }
-        }
-    }
-    function _fireEvent(e, args, async) {
-        async = typeof async != 'undefined' ? async : true;
-        if (async) {
-            if (_events[e]) {
-                for (var i = 0; i < _events[e].length; i++) {
-                    if (typeof _events[e][i].callback == "function") {
-                        var fn = _events[e][i].callback;
-                        var context = this;
-                        setTimeout((function(fn, context) {
-                            return function() {
-                                fn.apply(context, [args]);
-                            }
-                        })(fn, context), i * 12);
-                    }
-                }
-            }
-        } else {
-            if (_events[e]) {
-                for (var i = 0; i < _events[e].length; i++) {
-                    if (typeof _events[e][i].callback == "function") {
-                        var fn = _events[e][i].callback;
-                        var context = this;
-                        fn.apply(context, [args]);
-                    }
-                }
-            }
-        }
-    }
-    function _clear(obj) {
-        if (obj != null) {
-            _clearObjEvent(obj);
-        } else {
-            _clearAll();
-        }
-    }
-    function _clearObjEvent(obj) {
-        if (obj == null) {
-            return;
-        }
-        for (var e in _events) {
-            if (!_events[e]) {
-                continue;
-            }
-            for (var i = _events[e].length - 1; i >= 0; i--) {
-                if (_events[e][i].obj === obj) {
-                    _events[e].splice(i, 1);
-                }
-            }
-        }
-    }
-    function _clearAll() {
-        for (var e in _events) {
-            delete _events[e];
-            _events[e] = null;
-        }
-    }
-
-
-
 	var _doc = _win.document;
 
 	var packetManager = _win.packetManager = {
+        tpl:function(){
+
+          return  "<div id='item_manage'><div class='btn_close'></div>"+
+            "<div id='attribute_panel'>"+
+            "<div id='avatars'>"+
+              "<div class='avatar'></div>"+
+              "<div class='avatar'></div>"+
+              "<div class='avatar'></div>"+
+            "</div>"+
+            "<div id='attributes'>"+
+              "<h1 id='role_name'>唐如</h1>"+
+              "<div id='wear_left'>"+
+                "<div class='weapon'></div>"+
+              "</div>"+
+              "<canvas id='wear_preview'></canvas>"+
+
+            "<div id='wear_right'>"+
+            "<div class='clothes'></div>"+
+            "</div>"+
+            "<div id='attribute_list'>"+
+            "<label>生命值</label>"+
+            "<span id='num_0'>8523</span>"+
+            "<label>等级</label>"+
+            "<span id='num_1'>13</span>"+
+            "<label>攻击</label>"+
+            "<span id='num_2'>12</span>"+
+            "<label>防御</label>"+
+            "<span id='num_3'>23</span>"+
+            "<label>暴击</label>"+
+            "<span id='num_4'>5</span>"+
+            "<label>闪避</label>"+
+            "<span id='num_5'>5</span>"+
+            "<label>经验</label>"+
+            "<div class='exp_line_outer'>"+
+              "<div class='exp_line_inner'><span class='value'>200/1000</span></div>"+
+            "</div>"+
+            "</div>"+
+            "</div>"+
+            "</div>"+
+            "<div id='item_panel'>"+
+            "<div id='item_icons'>"+
+            "<div class='icon_panel'>"+
+            "</div>  "+
+            "</div>"+
+            "<div class='description'>"+
+            "<h2 class='item_name'>物品名称</h2>"+
+            "<p class='item_description'>物品描述</p>"+
+            "<p class='item_attribute'>物品属性</p>"+
+            "</div>"+
+            "</div></div>"
+        },
 		init : function(){
+            var packet = _doc.getElementById('packet');
+            packet.innerHTML = this.tpl();
+            packet.style.display = 'block';
 			packetManager.article.init();
+            this.bind();
 		},
 		unInit : function(){
 
-		}
+		},
+        bind : function(){
+             _doc.querySelector('.btn_close').addEventListener('click', function(){
+                packet.style.display = 'none';
+            })
+        }
 	};
     
+
+    //物品管理界面
+    packetManager.article = {
+        tpl : '<article class="item_icon"></article>',
+        total :28,
+        data : {},
+        init : function() {
+            this.render();
+            this.bind();
+        },
+        unInit : function(){
+            this.unbind();
+        },
+        render : function(){
+            var items = [];
+            for(var i = 0; i < this.total; i++){
+                items.push(tmpl(this.tpl, this.data));
+            }
+            //_doc.querySelector('#item_icons div.icon_panel').innerHTML = items.join('');
+        },
+        bind : function(){
+
+        },
+        unbind : function(){
+
+        }
+    }
+
     //开始界面
-    Intro={
+    Intro = {
         tpl:function(id){
             return '<div class="button" id="'+id+'"></div>'
         },
@@ -192,24 +176,40 @@
         }
     }
     //对话界面
-    Dialogue={
-        tpl:function(){return '<div class="chat">'+
-            '<div class="avatar">头像图片</div>'+
+    Dialogue = _win.Dialogue = {
+        tpl:function(data){
+        var str = '<div class="chat">'+
+            '<%if(avatar){%>'+
+            '<div class="avatar <%=position||"left"%>"><img src="<%=avatar%>" alt="" /></div>'+
+            '<%}%>'+
             '<div class="content">'+
-                '<h1><span>【</span><span class="name">名字</span><span>】</span></h1>'+
-                '<p class="words">单段剧情</p>'+
+                '<%if(name){%>'+
+                '<h1><span>【</span><span class="name"><%=name%></span><span>】</span></h1>'+
+                '<%}%>'+
+                '<p class="words"><%=content%></p>'+
             '</div>'+
-        '</div>'
+        '</div>';
+        return str;
         },
-        init:function(){
+        init:function(data){
+            this.data = data;
+            this.index = 0;
             this.render();
             this.bind();
         },
         render:function(){
-            _doc.querySelector('#dialogue').innerHTML=this.tpl();
+            if(this.index >= this.data.length){
+                woh.gameScript.continueExec();
+            }else{
+                _doc.querySelector('#dialogue').innerHTML= tmpl(this.tpl(), this.data[this.index]);
+            }
         },
         bind:function(){
-
+            var self = this;
+             _doc.getElementById('dialogue').addEventListener('click', function(){
+                self.index++;
+                self.render();
+            })
         }
     }
     //战斗界面
@@ -219,34 +219,31 @@
         render:function(){},
         bind:function(){}
     }
-	//物品管理界面
-    packetManager.article = {
-		tpl : '<article class="item_icon"></article>',
-		total :28,
-		data : {},
-		init : function() {
-			this.render();
-			this.bind();
-		},
-		unInit : function(){
-			this.unbind();
-		},
-		render : function(){
-			var items = [];
-			for(var i = 0; i < this.total; i++){
-				items.push(tmpl(this.tpl, this.data));
-			}
-			//_doc.querySelector('#item_icons div.icon_panel').innerHTML = items.join('');
-		},
-		bind : function(){
 
-		},
-		unbind : function(){
-
-		}
-	}
+    //地图界面
+    Map={
+        tpl:function(){
+            return '<div class="map-module">' +
+                '<div class="button" id="map-leave">离开</div>' +
+                '<div class="button" id="map-skill">技能</div>' +
+                '<div class="button" id="map-person">人物</div>' + 
+            "</div>"
+        },
+        init:function(){
+            this.render();
+            this.bind();
+        },
+        render:function(){
+            _doc.getElementById('map').innerHTML=this.tpl();
+        },
+        bind:function(){
+            _doc.getElementById('map-person').addEventListener('click', function(){
+                packetManager.init();
+            })
+        }
+    }
+    Map.init();
     Intro.init();
     CG.init();
-    Dialogue.init();
 })(window);
 
