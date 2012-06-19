@@ -42,6 +42,7 @@ Laro.NS('woh.stageClass', function (L) {
                 })
         },
         transition: function () {
+            //this.timeInState > 2 && woh.gameScript.continueExec();
             this.timeInState > Infinity && woh.gameScript.continueExec();
         },
         leave: function () {
@@ -55,10 +56,6 @@ Laro.NS('woh.stageClass', function (L) {
                 this.objects.forEach(function(o){
                     o.update(dt);
                 })
-        },
-        transition: function () {
-            this.timeInState > 2 && woh.gameScript.continueExec();
-
         },
         draw: function (render) {
             this.context.clearRect(0,0,this.canvas.width,this.canvas.height);
@@ -158,11 +155,6 @@ var rio_tang = new Character({
 document.body.onclick = function(){ rio_tang.attack() };
 
 function Character(data){
-
-
-
-    
-    
     var pos = [0,0]
     var stage = null;
     this.setStage = function(_stage) {
@@ -208,7 +200,6 @@ function Character(data){
                 duration += this.action.states[curr].duration;
             }
         }
-
     }
     this.draw = function(context) {
         context.strokeStyle = "blue";
