@@ -29,14 +29,6 @@ Laro.NS('woh.runtime', function (L) {
     	//console.log(this.searchScriptProcess('4'));
     },
     this.roles={
-        '001':{
-
-        },
-        '002':{
-
-        },
-        '003':{
-            
-        }
+        
     }
 });
