@@ -28,6 +28,7 @@ Laro.NS('woh.stage', function (L) {
     
     function init () {
         pkg.fsm = new L.AppFSM(this, this.statesList);
+        pkg.$ = new L.Stage(woh.els.canvas);
         woh.gameScript.startExec(woh.g_config.script,'1');//从开始界面开始
     }
     function go (stage, msg) {
@@ -40,9 +41,11 @@ Laro.NS('woh.stage', function (L) {
     
     this.update = function (dt) {
         this.fsm && this.fsm.update(dt);
+        this.$.dispatchUpdate(dt);
     };
     this.draw = function (render) {
         this.fsm && this.fsm.draw(render);
+        this.$.dispatchDraw(render);
     };
     
     this.init = init;

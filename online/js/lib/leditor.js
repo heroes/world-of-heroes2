@@ -45,6 +45,7 @@ Laro.register('.$lea', function (La) {
 		}
 		
 	};
+
 	
 	this.getAnimation = getAnimation;
 	

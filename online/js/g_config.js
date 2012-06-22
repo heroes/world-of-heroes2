@@ -4,46 +4,6 @@ woh.g_config = {
     canvasHeight: 640
 };
 
-/* stage config */
-/*woh.g_config.script = [
-    {
-        type:"intro",
-        data: {
-            index:{
-                src: './resources/images/index.jpg',
-                width: 1032,
-                height: 774
-            }
-        }        
-    },
-    {
-        type: "drama",
-        data:[
-                {
-                    appear: 'auto',
-                    data: [
-                        '当唐如捡起沙滩上第九十九个贝壳的时候——',
-                        '他们相遇了。',
-                        '这是命运的邂逅。'    
-                    ]
-                }
-        ]
-    },
-    {
-        type: "drama",
-        data:[
-                {
-                    appear: 'auto',
-                    data: [
-                        '发生这种事情呢，其实谁都不想的',
-                        '做人呢，最重要的就是开心。',
-                        '喏，我下面给你吃吧。'    
-                    ]
-                }
-        ]
-    }
-];*/
-
 //主要思想：剧情脚本的数据全部用json来封装，然后通过msg传入场景
 //'next'用来存储下一幕的
 woh.g_config.script={
@@ -101,20 +61,28 @@ woh.g_config.script={
         ],
         next:'5'
     },
+    // 
     '5':{
+        type:'loading',
+        repeat:true,
+        data:{
+            key: 'battle_1'
+        },
+        next:'6'
+    },
+    '6':{
         type:'battle',
         repeat:false,
         data:{},
-        next:'6'
-       },
-    '6':{
+        next:'7'
+    },
+    '8':{
         type:'map',
         repeat:true,
         data:{},
         next:'1'
     }
 };
-
 
 // 暂时放在此吧 -_-! ，到时候需要整合再说，每个场景对应的需要预加载的资源列表
 woh.g_config.resources = {
@@ -123,34 +91,103 @@ woh.g_config.resources = {
     battle_1: {
         type: 'battle',
         resources: [
-            'images/test/BG3.jpg',
-            'images/test/boss_2.png'
+            'images/bg/BG3.jpg',
+            'images/sprites/rio_tang/stand_r1_c1.png',
+            'images/sprites/rio_tang/stand_r1_c2.png',
+            
+            'images/sprites/rio_tang/hit_r1_c1.png',
+            'images/sprites/rio_tang/hit_r1_c2.png',
+            
+            'images/sprites/rio_tang/hurt_r1_c1.png',
+            'images/sprites/rio_tang/hurt_r1_c2.png',
+            
+            'images/sprites/rio_tang/magic_r1_c1.png',
+            'images/sprites/rio_tang/magic_r1_c2.png',
+            
+            'images/sprites/rio_tang/move_r1_c1.png',
+            'images/sprites/rio_tang/move_r1_c2.png'
         ]
     }
 };
 
 // 精灵啦啦啦啦
 woh.g_config.sprites = {
-    // 用于测试，大侠一的boss_2
     // http://hongru.github.com/proj/laro/Leditor/animation/index.html
-    "boss_2": {
-        "info": {
-            "nbrOfFrames": 5,
-            "name": "boss_2",
-            "type": "animation",
-            "framerate": 10,
-            "pivotx": 125,
-            "pivoty": 92,
-            "events": []
-        },
-        "data": [
-            [0,0,250,183,0,0,250,183],
-            [251,0,501,183,251,0,501,183],
-            [502,0,752,183,502,0,752,183],
-            [753,0,1003,183,753,0,1003,183],
-            [1004,0,1254,183,1004,0,1254,183]
+    // 跟public 里面 人物 uid 对应， 001 -> 唐如
+    "001": {
+        "stand": [
+            // role
+            {
+                "info": {
+                    "nbrOfFrames": 2,
+                    "name": "",
+                    "type": "animation",
+                    "framerate": 4,
+                    "pivotx": 145,
+                    "pivoty": 122,
+                    "events": []
+                },
+                "data": [
+                    [0,0,289,244,0,0,289,244],
+                    [290,0,579,244,290,0,579,244]
+                ],
+                "filename": 'images/sprites/rio_tang/stand_r1_c1.png'
+            },
+            {
+                "info": {
+                    "nbrOfFrames": 2,
+                    "name": "",
+                    "type": "animation",
+                    "framerate": 4,
+                    "pivotx": 145,
+                    "pivoty": 122,
+                    "events": []
+                },
+                "data": [
+                    [0,0,289,244,0,0,289,244],
+                    [290,0,579,244,290,0,579,244]
+                ],
+                "filename": "images/sprites/rio_tang/stand_r1_c2.png"
+            }
         ],
-        "filename": "images/test/boss_2.png"
+        "hit": [
+            {
+                "info": {
+                    "nbrOfFrames": 4,
+                    "name": "",
+                    "type": "animation",
+                    "framerate": 8,
+                    "pivotx": 145,
+                    "pivoty": 122,
+                    "events": []
+                },
+                "data": [
+                    [0,0,289,244,0,0,289,244],
+                    [290,0,579,244,290,0,579,244],
+                    [580,0,869,244,580,0,869,244],
+                    [870,0,1159,244,870,0,1159,244]
+                ],
+                "filename": "images/sprites/rio_tang/hit_r1_c1.png"
+            },
+            {
+                "info": {
+                    "nbrOfFrames": 4,
+                    "name": "",
+                    "type": "animation",
+                    "framerate": 8,
+                    "pivotx": 145,
+                    "pivoty": 122,
+                    "events": []
+                },
+                "data": [
+                    [0,0,289,244,0,0,289,244],
+                    [290,0,579,244,290,0,579,244],
+                    [580,0,869,244,580,0,869,244],
+                    [870,0,1159,244,870,0,1159,244]
+                ],
+                "filename": "images/sprites/rio_tang/hit_r1_c2.png"
+            }
+        ]
     }
 }
 

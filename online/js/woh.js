@@ -42,6 +42,7 @@ Laro.NS('woh', function (L) {
         //...
     };
     this.draw = function () {
+        // 统一清除 canvas 重绘，其他地方不用在每次draw的时候再清canvas了
         woh.canvasRender.clear();
         woh.stage.draw(woh.canvasRender)
     };

@@ -54,7 +54,7 @@ woh.item_data={
 		'weapon':{
 			'001':{
 				'name':'小刀',//名称
-				'description':'常见的小刀，可以用来切切水果什么的。',//描述
+				'description':'常见的小刀,可以用来切切水果什么的。',//描述
 				'icon':'images/weapon/icons/001.png',//图标路径
 				'model':'images/weapon/model/001.png',//模型路径
 				'health_addition':0,//血量加成
@@ -66,7 +66,7 @@ woh.item_data={
 			},
 			'002':{
 				'name':'匕首',//名称
-				'description':'勉强能够用来防身的便宜货，居家旅行常备的防盗工具',
+				'description':'勉强能够用来防身的便宜货,居家旅行常备的防盗工具',
 				'icon':'images/weapon/icons/001.png',
 				'model':'images/weapon/model/001.png',
 				'health_addition':0,
@@ -78,7 +78,7 @@ woh.item_data={
 			},
 			'003':{
 				'name':'长剑',
-				'description':'“长剑一杯酒， 男儿方寸心。”游侠儿的必备装饰，看起来很拉风的样子。',
+				'description':'“长剑一杯酒, 男儿方寸心。”游侠儿的必备装饰,看起来很拉风的样子。',
 				'icon':'images/weapon/icons/001.png',
 				'model':'images/weapon/model/001.png',
 				'health_addition':0,
@@ -90,7 +90,7 @@ woh.item_data={
 			},
 			'004':{
 				'name':'青铜剑',
-				'description':'古法锻冶的剑，拿在手里颇有分量，比普通的长剑看起来有内涵的样子，是这几年的流行选择。',
+				'description':'古法锻冶的剑,拿在手里颇有分量,比普通的长剑看起来有内涵的样子,是这几年的流行选择。',
 				'icon':'images/weapon/icons/001.png',
 				'model':'images/weapon/model/001.png',
 				'health_addition':0,
@@ -102,7 +102,7 @@ woh.item_data={
 			},
 			'005':{
 				'name':'晶球',
-				'description':'白水晶磨制的透明圆球，看不出有什么特别。',
+				'description':'白水晶磨制的透明圆球,看不出有什么特别。',
 				'icon':'images/weapon/icons/001.png',
 				'model':'images/weapon/model/001.png',
 				'health_addition':0,
@@ -114,7 +114,7 @@ woh.item_data={
 			},
 			'006':{
 				'name':'紫晶珠',
-				'description':'紫光流转的珠子，煞是好看，据说具有神秘的力量。',
+				'description':'紫光流转的珠子,煞是好看,据说具有神秘的力量。',
 				'icon':'images/weapon/icons/001.png',
 				'model':'images/weapon/model/001.png',
 				'health_addition':0,
@@ -126,7 +126,7 @@ woh.item_data={
 			},
 			'007':{
 				'name':'十八妹',
-				'description':'虽然外表看起来像是一把菜刀，但是其主人坚称它是一柄剑，能够增加一定程度的攻击和防御。',
+				'description':'虽然外表看起来像是一把菜刀,但是其主人坚称它是一柄剑,能够增加一定程度的攻击和防御。',
 				'icon':'images/weapon/icons/001.png',
 				'model':'images/weapon/model/001.png',
 				'health_addition':0,
@@ -141,7 +141,7 @@ woh.item_data={
 		'clothes':{
 			'001':{
 				'name':'粗布衣',
-				'description':'旧衣店出售的破旧衣服，上面还打了几个补丁。',
+				'description':'旧衣店出售的破旧衣服,上面还打了几个补丁。',
 				'icon':'images/weapon/icons/001.png',
 				'model':'images/weapon/model/001.png',
 				'health_addition':0,
@@ -154,7 +154,7 @@ woh.item_data={
 			},
 			'002':{
 				'name':'棉布衣',
-				'description':'一般穷书生穿的布袍，只是单纯的布袍而已。',
+				'description':'一般穷书生穿的布袍,只是单纯的布袍而已。',
 				'icon':'images/weapon/icons/001.png',
 				'model':'images/weapon/model/001.png',
 				'health_addition':0,
@@ -167,7 +167,7 @@ woh.item_data={
 			},
 			'003':{
 				'name':'锦袍',
-				'description':'富家公子常穿的便服，冬暖夏凉。',
+				'description':'富家公子常穿的便服,冬暖夏凉。',
 				'icon':'images/weapon/icons/001.png',
 				'model':'images/weapon/model/001.png',
 				'health_addition':0,
@@ -180,7 +180,7 @@ woh.item_data={
 			},
 			'004':{
 				'name':'蜀锦袍',
-				'description':'“犹馀蜀中锦，爱惜比甘棠。”蜀地的锦缎千载驰名，用其制作的袍子自然也价格不菲。',
+				'description':'“犹馀蜀中锦,爱惜比甘棠。”蜀地的锦缎千载驰名,用其制作的袍子自然也价格不菲。',
 				'icon':'images/weapon/icons/001.png',
 				'model':'images/weapon/model/001.png',
 				'health_addition':0,
@@ -206,7 +206,7 @@ woh.item_data={
 			},
 			'006':{
 				'name':'华彩裙',
-				'description':'少女们钟爱的薄绸裙，在阳光下会隐隐泛出五色华彩。',
+				'description':'少女们钟爱的薄绸裙,在阳光下会隐隐泛出五色华彩。',
 				'icon':'images/weapon/icons/001.png',
 				'model':'images/weapon/model/001.png',
 				'health_addition':0,
@@ -221,15 +221,15 @@ woh.item_data={
 }
 
 //技能影响
-//直接伤害，回复生命，区域伤害，添加buff
-//buff类型：速度类（加减），防御类（加减），暴击类（加减），生命类（加减）
-//注：大招均为手势识别施放，每个人的第四个招为大招
+//直接伤害,回复生命,区域伤害,添加buff
+//buff类型：速度类（加减）,防御类（加减）,暴击类（加减）,生命类（加减）
+//注：大招均为手势识别施放,每个人的第四个招为大招
 
 //目前唐如的三个技能分别为 单体攻击 瞬发群体攻击 吟唱群体攻击 大招为全屏幕地图炮高伤害攻击 
 
 woh.skill_data={
 	'疾风刺':{
-		'description':'追求一击必杀的招式，轻灵迅捷，其威力在不同修为者手中截然不同。（冲向对方进行一次攻击）',//技能描述
+		'description':'追求一击必杀的招式,轻灵迅捷,其威力在不同修为者手中截然不同。（冲向对方进行一次攻击）',//技能描述
 		'icon':'resources/iamges/001.png',//技能图标路径
 		'level_limit':[0,3,4,5,7],//每一阶段的可点等级
 		'cd':3,//CD时间
@@ -239,7 +239,7 @@ woh.skill_data={
 			//单体直接伤害
 			'attack_direct':{
 				'target':'enemySingle',//使用对象 selfSingle/ememySingle/selfRange/ememyRange
-				'range':10, //技能的攻击范围，数值表示攻击范围的半径
+				'range':10, //技能的攻击范围,数值表示攻击范围的半径
 				'attack_addition':[40,60,80,100,110],//伤害增加值,对应不同等级
 		    },
 		    //回复
@@ -252,14 +252,14 @@ woh.skill_data={
 		    //},
 		    //添加buff
 		    'buff':{
-		    	//技能施展的同时冲向对方，用速度来表示
+		    	//技能施展的同时冲向对方,用速度来表示
 		    	'target':'selfSingle',
 		    	'speed_addition':50,
 		    }
 		}
 	},
 	'落英旋':{
-		'description':'英华翩舞兮，染景纷纷旧年时。映丽柔美，伤人于幻梦之中。（以指定点为中心，在半径30的区域内进行群体攻击）',//技能描述
+		'description':'英华翩舞兮,染景纷纷旧年时。映丽柔美,伤人于幻梦之中。（以指定点为中心,在半径30的区域内进行群体攻击）',//技能描述
 		'icon':'resources/iamges/001.png',//技能图标路径
 		'level_limit':[0,3,4,5,7],//每一阶段的可点等级
 		'cd':3,//CD时间
@@ -278,7 +278,7 @@ woh.skill_data={
 		    	'target':'enemyRange',//使用对象 selfSingle/ememySingle/selfRange/ememyRange
 				'continue':2,//技能效果持续时间 
 				'times':1,//造成伤害的次数
-				'range':30, //技能的攻击范围，数值表示攻击范围的半径
+				'range':30, //技能的攻击范围,数值表示攻击范围的半径
 				'attack_addition':[50,60,70,80,90],//伤害增加值
 		    },
 		    //添加buff
@@ -288,7 +288,7 @@ woh.skill_data={
 		}
 	},
 	'浮云风卷':{
-		'description':'飘风自南，泱泱涤尘。凝神静气，荡净浮埃。（以施法者为中心，在半径200的区域内进行群体攻击）',//技能描述
+		'description':'飘风自南,泱泱涤尘。凝神静气,荡净浮埃。（以施法者为中心,在半径200的区域内进行群体攻击）',//技能描述
 		'icon':'resources/iamges/001.png',//技能图标路径
 		'level_limit':[0,3,4,5,7],//每一阶段的可点等级
 		'cd':5,//CD时间
@@ -308,7 +308,7 @@ woh.skill_data={
 				'duration':3,//动作持续时间
 				'continue':3,//技能有效时间
 				'times':3,//造成的伤害次数
-				'range':200, //技能的攻击范围，数值表示攻击范围的半径
+				'range':200, //技能的攻击范围,数值表示攻击范围的半径
 				'attack_addition':[50,60,70,80,90],//伤害增加值
 		    },
 		    //添加buff
@@ -318,7 +318,7 @@ woh.skill_data={
 		}
 	},
 	'醉舞秋红':{
-		'description':'日暮秋烟起，萧萧枫树林。寄托壮志未酬哀思的招式，饱含尽除敌寇的怨愤。(敌方全体造成大量伤害)',
+		'description':'日暮秋烟起,萧萧枫树林。寄托壮志未酬哀思的招式,饱含尽除敌寇的怨愤。(敌方全体造成大量伤害)',
 		'icon':'resources/iamges/001.png',//技能图标路径
 		'level_limit':[5],//每一阶段的可点等级
 		'cd':5,//CD时间
@@ -337,7 +337,7 @@ woh.skill_data={
 		    	'target':'enemyRange',//使用对象 selfSingle/ememySingle/selfRange/ememyRange
 				'duration':0.5,//动作持续时间
 				'continue':5,//技能效果持续时间
-				'range':9999, //技能的攻击范围，数值表示攻击范围的半径
+				'range':9999, //技能的攻击范围,数值表示攻击范围的半径
 				'attack_addition':500,//伤害增加值
 		    },
 		    //添加buff
@@ -347,9 +347,9 @@ woh.skill_data={
 		}
 	},
 	'灵焰灼':{
-		'description':'星星之火，可以燎原，一旦燃起，便势不可当。(受到攻击的敌人每秒受到伤害，持续五秒)',
+		'description':'星星之火,可以燎原,一旦燃起,便势不可当。(受到攻击的敌人每秒受到伤害,持续五秒)',
 		'icon':'resources/iamges/001.png',//技能图标路径
-		'level_limit':[5，6，7，8，9],//每一阶段的可点等级
+		'level_limit':[5,6,7,8,9],//每一阶段的可点等级
 		'cd':3,//CD时间
 		//技能影响
 		'data':{
@@ -375,9 +375,9 @@ woh.skill_data={
 		}
 	},
 	'心月斩':{
-		'description':'心月狐，其性属火，喜好游戏人间，祸乱人心。（造成范围伤害，受到伤害者行动封印。）',
+		'description':'心月狐,其性属火,喜好游戏人间,祸乱人心。（造成范围伤害,受到伤害者行动封印。）',
 		'icon':'resources/iamges/001.png',//技能图标路径
-		'level_limit':[5，6，7，8，9],//每一阶段的可点等级
+		'level_limit':[5,6,7,8,9],//每一阶段的可点等级
 		'cd':3,//CD时间
 		//技能影响
 		'data':{
@@ -389,15 +389,15 @@ woh.skill_data={
 		    //添加buff
 		    'buff':{
 		    	'target':'enemyRange',
-		    	'speed_addition':-9999，
+		    	'speed_addition':-9999,
 		    	'duration':[0.5,1,1.2,1.5,2]
 		    }
 		}
 	},
 	'天狐之怒':{
-		'description':'“青丘之山，有兽焉，其状如狐而九尾。”九尾狐出，乃世间将有大乱之象。（全部敌人受到连续伤害）',
+		'description':'“青丘之山,有兽焉,其状如狐而九尾。”九尾狐出,乃世间将有大乱之象。（全部敌人受到连续伤害）',
 		'icon':'resources/iamges/001.png',//技能图标路径
-		'level_limit':[5，6，7，8，9],//每一阶段的可点等级
+		'level_limit':[5,6,7,8,9],//每一阶段的可点等级
 		'cd':3,//CD时间
 		//技能影响
 		'data':{
@@ -411,9 +411,9 @@ woh.skill_data={
 		}
 	},
 	'心宿炎障':{
-		'description':'心宿，又称大火，东方苍龙七宿之心，守心护元，灭障除魔。（全部队友获得5秒免伤状态）',
+		'description':'心宿,又称大火,东方苍龙七宿之心,守心护元,灭障除魔。（全部队友获得5秒免伤状态）',
 		'icon':'resources/iamges/001.png',//技能图标路径
-		'level_limit':[5，6，7，8，9],//每一阶段的可点等级
+		'level_limit':[5,6,7,8,9],//每一阶段的可点等级
 		'cd':3,//CD时间
 		//技能影响
 		'data':{
@@ -427,9 +427,9 @@ woh.skill_data={
 		}
 	},
 	'花雨露':{
-		'description':'花雨润泽，沁人心脾，沐浴者神清气爽。（单体回复体力）',
+		'description':'花雨润泽,沁人心脾,沐浴者神清气爽。（单体回复体力）',
 		'icon':'resources/iamges/001.png',//技能图标路径
-		'level_limit':[5，6，7，8，9],//每一阶段的可点等级
+		'level_limit':[5,6,7,8,9],//每一阶段的可点等级
 		'cd':3,//CD时间
 		//技能影响
 		'data':{
@@ -437,9 +437,9 @@ woh.skill_data={
 		}
 	},
 	'水月霖':{
-		'description':'水月之力属幻，堕入幽梦者，如履太虚。（敌方全体进入减速状态）',
+		'description':'水月之力属幻,堕入幽梦者,如履太虚。（敌方全体进入减速状态）',
 		'icon':'resources/iamges/001.png',//技能图标路径
-		'level_limit':[5，6，7，8，9],//每一阶段的可点等级
+		'level_limit':[5,6,7,8,9],//每一阶段的可点等级
 		'cd':3,//CD时间
 		//技能影响
 		'data':{
@@ -447,16 +447,16 @@ woh.skill_data={
 		}
 	},
 	'芳华流转':{
-		'description':'芳华轻笑，千红流转，生机盎然。（全体回复体力）',
+		'description':'芳华轻笑,千红流转,生机盎然。（全体回复体力）',
 		'icon':'resources/iamges/001.png',//技能图标路径
-		'level_limit':[5，6，7，8，9],//每一阶段的可点等级
+		'level_limit':[5,6,7,8,9],//每一阶段的可点等级
 		'cd':3,//CD时间
 		//技能影响
 	},
 	'镜泉润物':{
-		'description':'泉之始，镜之初，润泽万物，生生不息。（全体回复大量体力并解除一切负面状态）',
+		'description':'泉之始,镜之初,润泽万物,生生不息。（全体回复大量体力并解除一切负面状态）',
 		'icon':'resources/iamges/001.png',//技能图标路径
-		'level_limit':[5，6，7，8，9],//每一阶段的可点等级
+		'level_limit':[5,6,7,8,9],//每一阶段的可点等级
 		'cd':3,//CD时间
 		//技能影响
 	}

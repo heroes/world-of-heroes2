@@ -10,7 +10,20 @@ Laro.NS('woh.stageClass', function (L) {
     }
     
     var Loading = L.BaseState.extend(function () {
-        this.timeInState = 0;        
+        this.timeInState = 0;
+        this.font = new L.Font({
+            "outline_b": 0,
+            "font": "Georgia",
+            "outline": 2.0,
+            "base_b": 255,
+            "base_g": 255,
+            "outline_r": 0,
+            "base_r": 255,
+            "size": 36,
+            "id": "loading",
+            "outline_g": 0
+        });
+        
     }).methods({
         enter: function (msg, fromState) {
             /*
@@ -40,7 +53,7 @@ Laro.NS('woh.stageClass', function (L) {
         },
         draw: function (render) {
             // TODO
-            render.drawSystemText(this.progress*100 + '%', render.getWidth()/2, render.getHeight()/2, 'red');
+            render.drawSystemText(this.progress*100 + '%', render.getWidth()/2, render.getHeight()/2, this.font);
         },
         
         // 各种处理
