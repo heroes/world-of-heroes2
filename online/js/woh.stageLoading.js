@@ -53,12 +53,12 @@ Laro.NS('woh.stageClass', function (L) {
         },
         draw: function (render) {
             // TODO
-            render.drawSystemText(this.progress*100 + '%', render.getWidth()/2, render.getHeight()/2, this.font);
+            render.drawSystemText(this.progress*100 + '%', render.getWidth()/2 - 60, render.getHeight()/2, this.font);
         },
         
         // 各种处理
         loadProgressCallback: function (p) {
-            this.progress = Math.min(p, 1);
+            this.progress = Math.floor(Math.min(p, 1));
             if (this.progress == 1) { this._finishTime = this.timeInState } 
         }
     });
