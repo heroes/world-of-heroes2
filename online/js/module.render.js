@@ -173,7 +173,7 @@
     };
     //CG界面
     CG={
-        tpl:'<div class="button">跳过CG</div>',
+        tpl:'<button class="skip"></button>',
         init:function(){
             this.render();
             this.bind();
@@ -185,7 +185,7 @@
             _doc.getElementById('cg').innerHTML = this.tpl;
         },
         bind:function(){
-            _doc.querySelector('#cg .button').addEventListener('mousedown',this.callbackFunc,false);
+            _doc.querySelector('#cg button.skip').addEventListener('mousedown',this.callbackFunc,false);
         }
     }
     //对话界面
