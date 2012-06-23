@@ -3,6 +3,23 @@
 	height:640px;
 	background:#000 url(../resources/images/index/index.jpg) top center no-repeat;
 }
+.intro-module .intro-pop{
+	width:960px;
+	height:640px;
+	background:rgba(0,0,0,.7);
+	position:absolute;
+	display:none;
+}
+.intro-module .intro-pop .content{
+	margin:10px;
+	border:3px solid white;
+	border-radius:10px;
+	padding:10px;
+}
+.intro-module .intro-pop button.leave{
+	margin:0 auto;
+	background:white;
+}
 .intro-module .button{
 	width:129px;
 	height:129px;
@@ -24,7 +41,18 @@
 .intro-module .button:hover{
 	box-shadow:0 0 20px white;
 }
-
+.drama-module .caption-con {
+    width: 500px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -250px;
+    font-weight: 500;
+    font-size: 24px
+}
+.drama-module .caption-con p {
+    opacity: 0;
+}
 .map-module{
 	width:960px;
 	height:640px;

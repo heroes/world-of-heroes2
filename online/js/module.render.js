@@ -131,16 +131,29 @@
         tpl:function(id){
             return '<div class="button" id="'+id+'"></div>'
         },
-        tpl_pop:'<div class="intro-pop"></div>',//弹出窗
+        tpl_pop:function(id){return '<div id="'+id+'" class="intro-pop">'+
+            '<div class="content">内容</div>'+
+            '<button class="leave" data-toggle='+id+'>离开</button>'
+        '</div>'},//弹出窗
         total:4,
         init:function(){
             var items = [];
             for(var i = 1; i <= this.total; i++){  
                 items.push(this.tpl("btn-"+i));
             }
-           _doc.querySelector('#intro').innerHTML = items.join('');
-           _doc.querySelector('#intro').addEventListener('mousedown',this.callbackFunc,false);
-           _doc.querySelector('#intro').addEventListener('touchstart',this.callbackFunc,false);
+           _doc.getElementById('intro').innerHTML = items.join('');
+           _doc.getElementById('intro').addEventListener('mousedown',this.callbackFunc,false);
+           _doc.getElementById('intro').addEventListener('touchstart',this.callbackFunc,false);
+           //添加三个子窗体
+           for(var i=0;i<3;i++){
+              var sub=document.createElement();
+              _doc.getElementById('intro').appendChild(sub);
+              sub.outerHTML=this.tpl_pop('Intro-'+i);
+              document.getElementById('Intro-'+i).querySelector('.leave').addEventListener(
+                 'click',function(){document.getElementById(this.getAttribute('data-toggle')).style.display='none';},false
+              );
+            }
+            //设置三个子窗体中的内容
         },
         unInit:function(){
 
@@ -149,14 +162,14 @@
             if(e.target.id.substring(0,4)=='btn-'){
                 //e.target.style.background="url(../online/resources/images/index/index-btn-press.png) no-repeat";
                 switch(e.target.id){
-                    case 'btn-1':setTimeout('woh.gameScript.continueExec()',300);
-                    case 'btn-2':break;
-                    case 'btn-3':break;
-                    case 'btn-4':break;
+                    case 'btn-1':setTimeout('woh.gameScript.continueExec()',300);break;
+                    case 'btn-2':document.getElementById('Intro-0').style.display='block';break;
+                    case 'btn-3':document.getElementById('Intro-1').style.display='block';break;
+                    case 'btn-4':document.getElementById('Intro-2').style.display='block';break;
                     default:break;
                 }
             }
-        }
+        },
     };
     //CG界面
     CG={
@@ -169,7 +182,7 @@
             woh.gameScript.continueExec();
         },
         render:function(){
-            _doc.querySelector('#cg').innerHTML = this.tpl;
+            _doc.getElementById('cg').innerHTML = this.tpl;
         },
         bind:function(){
             _doc.querySelector('#cg .button').addEventListener('mousedown',this.callbackFunc,false);

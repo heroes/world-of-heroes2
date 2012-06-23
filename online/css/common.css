@@ -81,20 +81,3 @@ html, body {
     margin-top: -320px;
     display: none;
 }
-
-.caption-con {
-    width: 500px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin-left: -250px;
-    font-weight: 500;
-}
-.caption-con p {
-    opacity: 0;
-}
-
-#dialogue {
-    background: #ccc;
-    color: #333;
-}
