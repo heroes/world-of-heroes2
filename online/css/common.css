@@ -81,3 +81,15 @@ html, body {
     margin-top: -320px;
     display: none;
 }
+.stage-container .skip{
+    position:absolute;
+    width:150px;
+    height:80px;
+    top:10px;
+    right:20px;
+    background: url(../resources/images/bg/btn-skip.png center no-repeat);
+    z-index: 2
+}
+.stage-container .skip:hover{
+    background: url(../resources/images/bg/btn-skip2.png center no-repeat);
+}
