@@ -5,7 +5,9 @@
 Laro.NS('woh.stageClass', function (L) {
     var pkg = this;
     var Battle = L.BaseState.extend(function () {
-        this.objects = [];
+        // role collection
+        this.roles = new woh.RoleCollection();
+        woh.currentRoleGroup = this.roles;
  	
     }).methods({
         enter: function (msg, from) {
@@ -16,8 +18,8 @@ Laro.NS('woh.stageClass', function (L) {
             woh.show(woh.els.canvasWrap);
             
             // rio_tang
-            this.rio_tang = new woh.Role(woh.role_init_data['001'], '001');
-            this.rio_tang.pos.add(new L.Vector2(200, 400));
+            this.roles.add('rio_tang', new woh.Role(woh.role_init_data['001'], '001'));
+            this.roles.get('rio_tang').setPos(200, 400);
             
             this.timeInState=0;
         },
@@ -38,11 +40,11 @@ Laro.NS('woh.stageClass', function (L) {
             woh.hide(woh.els.canvasWrap);
         },
         update: function (dt) {
-            this.rio_tang.update(dt);
+            this.roles.dispatch('update', dt);
         },
         draw: function (render) {
             this.drawBg(render);
-            this.rio_tang.draw(render);
+            this.roles.dispatch('draw', render);
         },
         drawBg: function (rd) {
             rd.context.drawImage(woh.loader.loadedImages['images/bg/BG3.jpg'], 0, 0);

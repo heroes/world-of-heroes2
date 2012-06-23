@@ -41,13 +41,25 @@ Laro.NS('woh.roleStateClass', function (L) {
     
     }).methods({
         enter: function (msg, from) {
+            console.log('enter move');
             this.host.setAndPlay('move');
+            this.dis = Number.MAX_VALUE;
         },
-        leave: function () {},
+        leave: function () {
+            console.log('leave move')
+        },
         update: function (dt) {
-        
+            if (this.host.toPos) {
+                var speed = dt*200;
+                this.dis = Math.sqrt(Math.pow(this.host.toPos.x-this.host.x, 2) + Math.pow(this.host.toPos.y-this.host.y, 2));
+                var newX = this.host.x + speed * (this.host.toPos.x - this.host.x)/this.dis,
+                    newY = this.host.y + speed * (this.host.toPos.y - this.host.y)/this.dis;
+                this.host.setPos(newX, newY);
+            }
         },
-        transition: function () {},
+        transition: function () {
+            this.dis < 2 && this.host.stand();
+        },
         message: function () {}
     
     });

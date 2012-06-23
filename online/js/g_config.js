@@ -105,7 +105,10 @@ woh.g_config.resources = {
             'images/sprites/rio_tang/magic_r1_c2.png',
             
             'images/sprites/rio_tang/move_r1_c1.png',
-            'images/sprites/rio_tang/move_r1_c2.png'
+            'images/sprites/rio_tang/move_r1_c2.png',
+            
+            'images/circle.png',
+            'images/pie.png'
         ]
     }
 };
@@ -125,7 +128,16 @@ woh.g_config.sprites = {
                     "framerate": 4,
                     "pivotx": 145,
                     "pivoty": 122,
-                    "events": []
+                    "events": [
+                        {
+                            name: 'standup',
+                            frame: 1 //第一帧进入时触发
+                        },
+                        {
+                            name: 'standdown',
+                            frame: 2 // 第二帧进入时触发
+                        }
+                    ]
                 },
                 "data": [
                     [0,0,289,244,0,0,289,244],
@@ -148,6 +160,44 @@ woh.g_config.sprites = {
                     [290,0,579,244,290,0,579,244]
                 ],
                 "filename": "images/sprites/rio_tang/stand_r1_c2.png"
+            }
+        ],
+        "move": [
+            {
+                "info": {
+                    "nbrOfFrames": 4,
+                    "name": "",
+                    "type": "animation",
+                    "framerate": 6,
+                    "pivotx": 145,
+                    "pivoty": 122,
+                    "events": []
+                },
+                "data": [
+                    [0,0,289,244,0,0,289,244],
+                    [290,0,579,244,290,0,579,244],
+                    [580,0,869,244,580,0,869,244],
+                    [870,0,1159,244,870,0,1159,244]
+                ],
+                "filename": "images/sprites/rio_tang/move_r1_c1.png"
+            },
+            {
+                "info": {
+                    "nbrOfFrames": 4,
+                    "name": "",
+                    "type": "animation",
+                    "framerate": 6,
+                    "pivotx": 145,
+                    "pivoty": 122,
+                    "events": []
+                },
+                "data": [
+                    [0,0,289,244,0,0,289,244],
+                    [290,0,579,244,290,0,579,244],
+                    [580,0,869,244,580,0,869,244],
+                    [870,0,1159,244,870,0,1159,244]
+                ],
+                "filename": "images/sprites/rio_tang/move_r1_c2.png"
             }
         ],
         "hit": [

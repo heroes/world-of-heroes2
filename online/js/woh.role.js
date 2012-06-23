@@ -42,18 +42,48 @@ Laro.NS('woh', function (L) {
         this.uid = uid;
         L.extend(this, data);
         this.life = this.data.life || 1000;
-        this.pos = new L.Vector2(0, 0);
+        // 不用 Vector 操作，在大数据量操作的时候会快些
+        this.x = 0;
+        this.y = 0;
         this.movement = new L.Vector2(0, 0);
         this.fsm = new L.AppFSM(this, statesList);
         // 当前animation
         this.animations = {};
         this.curAnimation = null;
         
+        // 是否可移动标志
+        this.canMove = false;
+        this.face = 'right';
+        
         this.born();
     }).methods({
         born: function () {
             this.getAnimations();
+            this.initCheckArea();
             this.stand(); // 默认进入站立状态
+        },
+        initCheckArea: function () {
+            // 可操作区域 == > 这一部分数据需要 提到 人物数据配置 里面去， 这里目前暂时先写死
+            var me = this;
+            this.checkRect = new L.Sprite(woh.stage.$, function () {
+                this.width = 140;
+                this.height = 210;
+                this.setPos = function (x, y) {
+                    // 因为 sprite 默认是画在中心的，所以 也需要加上偏移量
+                    this.x = x - 82;
+                    this.y = y - 120;
+                };
+                
+                this.setPos(me.x, me.y);
+                // dev 模式，可以显示可以操作的区域，正式的时候把draw去掉
+                this.draw = function (rd) {
+                    rd.drawRect(0, 0, this.width, this.height, '#000');
+                }
+            });    
+            
+            this.checkRect.addEventListener('mousedown', function (x, y) {
+                me.canMove = true;
+            });
         },
         getAnimationGroup: function (type) {
             L.$lea.setLoader(woh.loader);
@@ -63,16 +93,16 @@ Laro.NS('woh', function (L) {
             if (!Array.isArray(obj)) {
                 obj = [obj];
             }
-            
             L.$lea.setSourceObj(obj);
-            obj.forEach(function (o, i) {
+            for (var i = 0; i < obj.length; i ++) {
                 ret.push(L.$lea.getAnimation(i));
-            });
+            }
             
             return ret;
         },
         getAnimations: function () {
             this.animations.stand = this.getAnimationGroup('stand');
+            this.animations.move = this.getAnimationGroup('move');
         },
         // 设置当前 animation 并自动播放
         setAndPlay: function (animation, loop, start, end) {
@@ -94,6 +124,8 @@ Laro.NS('woh', function (L) {
         onAnimationEvent: function (evt, anim) {
             switch (evt) {
                 case "stopped" : this.fsm.message(woh.roleMessages.animStopped); break;
+                case "standup": console.log('up'); break;
+                case "standdown": console.log('down'); break;
                 case "end_attack" : this.endAttack(); break;
             }
 
@@ -102,10 +134,25 @@ Laro.NS('woh', function (L) {
         update: function (dt) {
             this.fsm.update(dt);
             this.curAnimation && this.curAnimation.forEach(function (o) { o.update(dt) });
+            
         },
         draw: function (render) {
-            var x = Math.floor(this.pos.x), y = Math.floor(this.pos.y);
-            this.curAnimation && this.curAnimation.forEach(function (o) { o.draw(render, x, y, 0, 1, null) });
+            var x = Math.floor(this.x), y = Math.floor(this.y),
+                me = this;
+            // draw circle & pie ==> 这里的数据也要提出去
+            if (this.canMove) {
+                render.context.drawImage(woh.loader.loadedImages['images/circle.png'], this.x-65, this.y + 60);
+                render.context.drawImage(woh.loader.loadedImages['images/pie.png'], woh.STAGE_MOUSE_POS.x-38, woh.STAGE_MOUSE_POS.y-23);
+                render.drawLine(this.x, this.y+94, woh.STAGE_MOUSE_POS.x, woh.STAGE_MOUSE_POS.y, '#fff')
+            }
+            this.curAnimation && this.curAnimation.forEach(function (o) { 
+                ((me.face == 'left' && !o.renderMirrored) || (me.face == 'right' && o.renderMirrored)) && o.mirror();
+                o.draw(render, x, y, 0, 1, null); 
+            });
+            
+        },
+        pressEnd: function () {
+            this.canMove = false;
         },
         startAttack: function (type) {
         
@@ -119,22 +166,30 @@ Laro.NS('woh', function (L) {
             
         },
         getPos: function () {
-        
+            return {
+                x: this.x,
+                y: this.y
+            }
         },
-        setPos: function (pos) {
-        
+        setPos: function (x, y) {
+            this.x = x;
+            this.y = y;
+            this.checkRect.setPos(x, y);
         },
         faceLeft: function () {
-        
+            this.face = 'left';
         },
         faceRight: function () {
-        
+            this.face = 'right';
         },
         
         stand: function () {
+            this.toPos = null;
             this.fsm.setState(woh.roleStates.stand);
         },
-        move: function () {
+        moveTo: function (x, y) {
+            x > this.x ? this.faceRight() : this.faceLeft();
+            this.toPos = {x: x, y: y-60};
             this.fsm.setState(woh.roleStates.move);
         },
         normalAttack: function () {

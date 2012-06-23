@@ -48,11 +48,11 @@ Laro.NS('woh', function (L) {
     };
     this.pause = function () {
         // show global pause tips
-        woh.loop.stop();
+        //woh.loop.stop();
     };
     this.resume = function () {
         //...
-        woh.loop.resume();
+        //woh.loop.resume();
     };
     
     this.init = function () {
@@ -68,5 +68,73 @@ Laro.NS('woh', function (L) {
         woh.stage.init();
         woh.loop.init();
     };
+
+});
+
+// objects collection
+Laro.NS('woh', function (L) {
+
+    var Collection = L.Class(function () {
+        this._objects = [];
+    }).methods({
+        add: function (name, o) {
+            this._objects.push({'name': name, 'obj': o});
+        },
+        remove: function (name) {
+            if (name == undefined) {
+                this._objects = [];
+            } else {
+                for (var i = 0; i < this._objects.length; i ++) {
+                    var o = this._objects[i];
+                    if (o.name == name) {
+                        return this._objects.splice(i, 1);
+                    }
+                }
+            }
+        },
+        get: function (name) {
+            if (name == undefined) return this._objects;
+            for (var i = 0; i < this._objects.length; i ++) {
+                var o = this._objects[i];
+                if (o.name == name) {
+                    return o.obj;
+                }
+            }
+
+        },
+        sort: function (fn) {
+            return this._objects.sort(fn);
+        },
+        dispatch: function (fnName, args) {
+            var _args = arguments,
+                slice = Array.prototype.slice,
+                __args = slice.call(_args, 0);
+            __args.splice(0, 1);
+
+            this._objects.forEach(function (o) {
+                var obj = o.obj;
+                obj[fnName] && obj[fnName].apply(obj, __args);
+            });
+        }
+    });
+    
+    this.Collection = Collection;
+
+});
+
+// roles collection
+Laro.NS('woh', function (L) {
+
+    var RoleCollection = woh.Collection.extend().methods({
+        getOneCanMove: function () {
+            for (var i = 0; i < this._objects.length; i ++) {
+                var obj = this._objects[i].obj;
+                if (obj.canMove) return obj;
+            }
+            return null;
+        }
+    });
+    
+    this.RoleCollection = RoleCollection;
 
 });

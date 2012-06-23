@@ -27,8 +27,9 @@ Laro.NS('woh.stage', function (L) {
     ];
     
     function init () {
+        initStageCollection();
         pkg.fsm = new L.AppFSM(this, this.statesList);
-        pkg.$ = new L.Stage(woh.els.canvas);
+        
         woh.gameScript.startExec(woh.g_config.script,'1');//从开始界面开始
     }
     function go (stage, msg) {
@@ -37,6 +38,20 @@ Laro.NS('woh.stage', function (L) {
             return woh.warn('no this stage --> ' + stage);
         }
         pkg.fsm.enter(pkg.statesName[stage], msg);
+    }
+    function initStageCollection () {
+        // 用于处理一些有事件交互的 sprite, 暂不管多点触摸的情况
+        pkg.$ = new L.Stage(woh.els.canvas);
+        pkg.$.addEventListener('mouseup', function (x, y) {
+            if (woh.currentRoleGroup) {
+                var r = woh.currentRoleGroup.getOneCanMove();
+                r && r.moveTo(x, y);
+                woh.currentRoleGroup.dispatch('pressEnd');
+            }
+        });
+        pkg.$.addEventListener('mousemove', function (x, y) {
+            woh.STAGE_MOUSE_POS = {x: x, y: y};
+        });
     }
     
     this.update = function (dt) {

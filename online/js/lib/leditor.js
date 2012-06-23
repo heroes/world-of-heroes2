@@ -14,7 +14,7 @@ Laro.register('.$lea', function (La) {
 	var getAnimation = function (name, fromObj, useLoader,/*for test behind args*/ textureImg, createNew) {
 		if (!fromObj) { fromObj = sourceObj }
 		if (!useLoader) { useLoader = loader }
-		if (!createNew && pkg.animations[name]) { return pkg.animations[name]; }
+		//if (!createNew && pkg.animations[name]) { return pkg.animations[name]; }
 		
 		var o = fromObj[name];
 		if (o) {
