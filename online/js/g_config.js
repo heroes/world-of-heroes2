@@ -76,7 +76,7 @@ woh.g_config.script={
         data:{},
         next:'7'
     },
-    '8':{
+    '7':{
         type:'map',
         repeat:true,
         data:{},
@@ -88,10 +88,13 @@ woh.g_config.script={
 woh.g_config.resources = {
     // 比如： 战斗场景，随便测试一个, 假如第一场战斗
     // 根目录基于 resources/
+    intro:{
+
+    },
     battle_1: {
         type: 'battle',
         resources: [
-            'images/bg/BG3.jpg',
+            'images/bg/game-bg-beach.jpg',
             'images/sprites/rio_tang/stand_r1_c1.png',
             'images/sprites/rio_tang/stand_r1_c2.png',
             
