@@ -62,7 +62,7 @@ woh.g_config.script={
         next:'5'
     },
     // 
-    '5':{
+    '7':{
         type:'loading',
         repeat:true,
         data:{
@@ -118,6 +118,10 @@ woh.g_config.sprites = {
     // http://hongru.github.com/proj/laro/Leditor/animation/index.html
     // 跟public 里面 人物 uid 对应， 001 -> 唐如
     "001": {
+        "areadata": {
+            standup:[0,0,140,210],
+            standdown:[0,0,140,210]
+        },
         "stand": [
             // role
             {

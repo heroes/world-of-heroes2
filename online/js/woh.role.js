@@ -1,4 +1,4 @@
-/**
+﻿/**
  * 人物或者怪物 
  */
 
@@ -122,10 +122,18 @@ Laro.NS('woh', function (L) {
             animation[0].setCallback(L.curry(this.onAnimationEvent, this));
         },
         onAnimationEvent: function (evt, anim) {
+            var me = this;
+            
             switch (evt) {
                 case "stopped" : this.fsm.message(woh.roleMessages.animStopped); break;
-                case "standup": console.log('up'); break;
-                case "standdown": console.log('down'); break;
+                case "standup": 
+                    with(this.getPos())
+                         this.stage.registerHurtableObject(me,woh.g_config.sprites[this.uid]["areadata"]["standup"],{x:x-82,y:y-120});
+                    break;
+                case "standdown":
+                    with(this.getPos())
+                         this.stage.registerHurtableObject(me,woh.g_config.sprites[this.uid]["areadata"]["standdown"],{x:x-82,y:y-120});
+                    break;
                 case "end_attack" : this.endAttack(); break;
             }
 
@@ -133,7 +141,9 @@ Laro.NS('woh', function (L) {
         },
         update: function (dt) {
             this.fsm.update(dt);
-            this.curAnimation && this.curAnimation.forEach(function (o) { o.update(dt) });
+            this.curAnimation && this.curAnimation.forEach(function (o) { 
+                o.update(dt) 
+            });
             
         },
         draw: function (render) {
