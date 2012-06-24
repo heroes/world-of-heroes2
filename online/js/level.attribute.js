@@ -48,7 +48,14 @@ base_level_data={
 		'miss':5,//当前等级的闪避值
 	},*/
 
-	
+'000':{
+  'exp':0,
+  'health':140,
+  'attack':19,
+  'defend':9,
+  'crit':5,
+  'miss':5,
+},
 '001':{
   'exp':1000,
   'health':150,

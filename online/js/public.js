@@ -53,7 +53,7 @@ woh.role_init_data={
 woh.item_data={
 		'weapon':{
 			'001':{
-				'name':'小刀',//名称
+				'name':'圆月刀',//名称
 				'description':'常见的小刀,可以用来切切水果什么的。',//描述
 				'icon':'images/weapon/icons/001.png',//图标路径
 				'model':'images/weapon/model/001.png',//模型路径
@@ -232,7 +232,7 @@ woh.skill_data={
 		'description':'追求一击必杀的招式,轻灵迅捷,其威力在不同修为者手中截然不同。（冲向对方进行一次攻击）',//技能描述
 		'icon':'resources/iamges/001.png',//技能图标路径
 		'level_limit':[1,3,4,5,7],//每一阶段的可点等级
-		'cd':30,//CD时间
+		'cd':15,//CD时间
 		
 		//技能影响
 		'data':{
@@ -252,7 +252,7 @@ woh.skill_data={
 		'description':'英华翩舞兮,染景纷纷旧年时。美好的追忆总能治愈人心。（己方全体生命回复）',//技能描述
 		'icon':'resources/iamges/001.png',//技能图标路径
 		'level_limit':[1,3,4,5,7],//每一阶段的可点等级
-		'cd':3,//CD时间
+		'cd':15,//CD时间
 		//技能影响
 		'data':{
 			//单体直接伤害
@@ -277,7 +277,7 @@ woh.skill_data={
 		'description':'飘风自南,泱泱涤尘。凝神静气,荡净浮埃。（以施法者为中心,在半径200的区域内进行群体攻击）',//技能描述
 		'icon':'resources/iamges/001.png',//技能图标路径
 		'level_limit':[0,3,4,5,7],//每一阶段的可点等级
-		'cd':5,//CD时间
+		'cd':30,//CD时间
 		//技能影响
 		'data':{
 			//单体直接伤害
@@ -336,7 +336,7 @@ woh.skill_data={
 		'description':'星星之火,可以燎原,一旦燃起,便势不可当。(受到攻击的敌人每秒受到伤害,持续五秒)',
 		'icon':'resources/iamges/001.png',//技能图标路径
 		'level_limit':[5,6,7,8,9],//每一阶段的可点等级
-		'cd':3,//CD时间
+		'cd':15,//CD时间
 		//技能影响
 		'data':{
 			//单体直接伤害
@@ -364,7 +364,7 @@ woh.skill_data={
 		'description':'心月狐,其性属火,喜好游戏人间,祸乱人心。（造成范围伤害,受到伤害者行动封印。）',
 		'icon':'resources/iamges/001.png',//技能图标路径
 		'level_limit':[5,6,7,8,9],//每一阶段的可点等级
-		'cd':3,//CD时间
+		'cd':15,//CD时间
 		//技能影响
 		'data':{
 		    'attack_area':{
@@ -384,7 +384,7 @@ woh.skill_data={
 		'description':'“青丘之山,有兽焉,其状如狐而九尾。”九尾狐出,乃世间将有大乱之象。（全部敌人受到连续伤害）',
 		'icon':'resources/iamges/001.png',//技能图标路径
 		'level_limit':[5,6,7,8,9],//每一阶段的可点等级
-		'cd':3,//CD时间
+		'cd':30,//CD时间
 		//技能影响
 		'data':{
 		    'attack_area':{
@@ -400,7 +400,7 @@ woh.skill_data={
 		'description':'心宿,又称大火,东方苍龙七宿之心,守心护元,灭障除魔。（全部队友获得5秒免伤状态）',
 		'icon':'resources/iamges/001.png',//技能图标路径
 		'level_limit':[5,6,7,8,9],//每一阶段的可点等级
-		'cd':3,//CD时间
+		'cd':60,//CD时间
 		//技能影响
 		'data':{
 		    'attack_area':{
