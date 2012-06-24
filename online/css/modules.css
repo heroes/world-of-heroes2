@@ -95,6 +95,10 @@
 	width:960px;
 	height:640px; 
 }
+.dialogue-module .chat-wrap{
+	width:960px;
+	height:640px; 
+}
 .dialogue-module .chat{
 	z-index:2;
 	position:absolute;

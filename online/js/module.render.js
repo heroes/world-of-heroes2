@@ -191,7 +191,7 @@
     //对话界面
     Dialogue = _win.Dialogue = {
         tpl:function(data){
-        var str = '<div class="chat">'+
+        var str = '<div class="chat-wrap" style="background:url(<%=globalBg%>) no-repeat 0 0"><div class="chat">'+
             '<%if( typeof position !=="undefined" && position == "right"){%>'+
                 '<%if(avatar){%>'+
                     '<div class="avatar right scaleX"><img src="<%=avatar%>" alt="" /></div>'+
@@ -209,7 +209,7 @@
                 '<%}%>'+
                 '<p class="words"><%=content%></p>'+
             '</div>'+
-        '</div>';
+        '</div></div>';
         return str;
         },
         init:function(data){
