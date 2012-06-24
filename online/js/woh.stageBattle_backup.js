@@ -4,6 +4,7 @@
 /**
  * stage Battle Class
  */
+ //已删除的DEMO版本，备用
 Laro.NS('woh.stageClass', function (L) {
     var pkg = this;
     var Battle = L.BaseState.extend(function () {

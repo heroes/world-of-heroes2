@@ -450,8 +450,13 @@ woh.skill_data={
 
 //怪物初始化数据
 woh.monster_init_data={
-	'001':{
-		'health':
+	'crab':{
+		'health':140,
+		'attack':20,
+	},
+	'crab_boss':{
+		'health':1400,
+		'attack':30,
 	}
 
 }

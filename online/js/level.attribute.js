@@ -48,7 +48,7 @@ base_level_data={
 		'miss':5,//当前等级的闪避值
 	},*/
 
-'000':{
+'0':{
   'exp':0,
   'health':140,
   'attack':19,
@@ -56,7 +56,7 @@ base_level_data={
   'crit':5,
   'miss':5,
 },
-'001':{
+'1':{
   'exp':1000,
   'health':150,
   'attack':20,
@@ -64,7 +64,7 @@ base_level_data={
   'crit':5,
   'miss':5,
  },
-'002':{
+'2':{
   'exp':1300,
   'health':160,
   'attack':22,
@@ -72,7 +72,7 @@ base_level_data={
   'crit':5,
   'miss':5,
  },
-'003':{
+'3':{
   'exp':1600,
   'health':170,
   'attack':24,
@@ -80,7 +80,7 @@ base_level_data={
   'crit':5,
   'miss':5,
  },
-'004':{
+'4':{
   'exp':1900,
   'health':180,
   'attack':26,
@@ -88,7 +88,7 @@ base_level_data={
   'crit':5,
   'miss':5,
  },
-'005':{
+'5':{
   'exp':2200,
   'health':190,
   'attack':28,
@@ -96,7 +96,7 @@ base_level_data={
   'crit':5,
   'miss':5,
  },
-'006':{
+'6':{
   'exp':2500,
   'health':200,
   'attack':30,
@@ -104,7 +104,7 @@ base_level_data={
   'crit':5,
   'miss':5,
  },
-'007':{
+'7':{
   'exp':2800,
   'health':210,
   'attack':32,
@@ -112,7 +112,7 @@ base_level_data={
   'crit':5,
   'miss':5,
  },
-'008':{
+'8':{
   'exp':3100,
   'health':220,
   'attack':34,
@@ -120,7 +120,7 @@ base_level_data={
   'crit':5,
   'miss':5,
  },
-'009':{
+'9':{
   'exp':3400,
   'health':230,
   'attack':36,
@@ -128,7 +128,7 @@ base_level_data={
   'crit':5,
   'miss':5,
  },
-'010':{
+'10':{
   'exp':5000,
   'health':240,
   'attack':38,
@@ -136,7 +136,7 @@ base_level_data={
   'crit':5,
   'miss':5,
  },
-'011':{
+'11':{
   'exp':5600,
   'health':260,
   'attack':42,
@@ -144,7 +144,7 @@ base_level_data={
   'crit':5,
   'miss':5,
  },
-'012':{
+'12':{
   'exp':6200,
   'health':280,
   'attack':46,
@@ -152,7 +152,7 @@ base_level_data={
   'crit':5,
   'miss':5,
  },
-'013':{
+'13':{
   'exp':6800,
   'health':300,
   'attack':50,
@@ -160,7 +160,7 @@ base_level_data={
   'crit':5,
   'miss':5,
  },
-'014':{
+'14':{
   'exp':7400,
   'health':320,
   'attack':54,
@@ -168,7 +168,7 @@ base_level_data={
   'crit':5,
   'miss':5,
  },
-'015':{
+'15':{
   'exp':8000,
   'health':340,
   'attack':58,
@@ -176,7 +176,7 @@ base_level_data={
   'crit':5,
   'miss':5,
  },
-'016':{
+'16':{
   'exp':8600,
   'health':360,
   'attack':62,
@@ -184,7 +184,7 @@ base_level_data={
   'crit':5,
   'miss':5,
  },
-'017':{
+'17':{
   'exp':9200,
   'health':380,
   'attack':66,
@@ -192,7 +192,7 @@ base_level_data={
   'crit':5,
   'miss':5,
  },
-'018':{
+'18':{
   'exp':9800,
   'health':400,
   'attack':70,
@@ -200,7 +200,7 @@ base_level_data={
   'crit':5,
   'miss':5,
  },
-'019':{
+'19':{
   'exp':10400,
   'health':420,
   'attack':74,
@@ -208,13 +208,13 @@ base_level_data={
   'crit':5,
   'miss':5,
  },
-'020':{
+'20':{
   'exp':11000,
   'health':440,
   'attack':78,
   'defend':39,
   'crit':5,
   'miss':5,
- },
+ }
 }
 //console.log(base_level_data);
