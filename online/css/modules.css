@@ -105,9 +105,10 @@
 .dialogue-module .chat .avatar{
 	width:380px;
 	height:510px;
-	margin-top:-310px;
+	margin-top:-255px;
 }
-.dialogue-module .chat .content{color:#fff;font:bold 24px Arial;background:url(../resources/images/dialogue/UI-dialog-bg.png) no-repeat;height:245px;padding:40px;}
+.dialogue-module .chat .bg{background:url(../resources/images/dialogue/UI-dialog-bg.png) no-repeat;height:254px;position: absolute;bottom:0;width:100%;z-index:-1;}
+.dialogue-module .chat .content{color:#fff;font:bold 24px Arial;height:245px;padding:40px;}
 .dialogue-module .chat .content h1{padding: 10px; margin:0; font-size:24px;line-height:24px;}
 
 

@@ -193,7 +193,13 @@
         tpl:function(data){
         var str = '<div class="chat">'+
             '<%if(avatar){%>'+
-            '<div class="avatar <%=position||"left"%>"><img src="<%=avatar%>" alt="" /></div>'+
+                '<%if(position && position == "right"){%>'+
+                    '<div class="avatar right scaleX"><img src="<%=avatar%>" alt="" /></div>'+
+                    '<div class="bg scaleX"></div>'+
+                '<%}else{%>'+
+                    '<div class="avatar left"><img src="<%=avatar%>" alt="" /></div>'+
+                    '<div class="bg"></div>'+
+                '<%}%>'+
             '<%}%>'+
             '<div class="content">'+
                 '<%if(name){%>'+

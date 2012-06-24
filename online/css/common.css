@@ -13,6 +13,12 @@ html, body {
 }
 .left{float: left;}
 .right{float: right;}
+.scaleX{
+     -moz-transform:scaleX(-1);
+    -webkit-transform:scaleX(-1);
+    -o-transform:scaleX(-1);
+    transform:scaleX(-1);
+}
 
 .barlittle {
 	background-color:#2187e7;  
