@@ -192,14 +192,16 @@
     Dialogue = _win.Dialogue = {
         tpl:function(data){
         var str = '<div class="chat">'+
-            '<%if(avatar){%>'+
-                '<%if(position && position == "right"){%>'+
+            '<%if( typeof position !=="undefined" && position == "right"){%>'+
+                '<%if(avatar){%>'+
                     '<div class="avatar right scaleX"><img src="<%=avatar%>" alt="" /></div>'+
-                    '<div class="bg scaleX"></div>'+
-                '<%}else{%>'+
-                    '<div class="avatar left"><img src="<%=avatar%>" alt="" /></div>'+
-                    '<div class="bg"></div>'+
                 '<%}%>'+
+                '<div class="bg scaleX"></div>'+
+            '<%}else{%>'+
+                '<%if(avatar){%>'+
+                    '<div class="avatar left"><img src="<%=avatar%>" alt="" /></div>'+
+                '<%}%>'+
+                '<div class="bg"></div>'+
             '<%}%>'+
             '<div class="content">'+
                 '<%if(name){%>'+
