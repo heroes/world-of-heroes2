@@ -232,9 +232,9 @@
                 self.index++;
                 self.render();
             }, false);
-              _doc.getElementById('skip-dialogue')addEventListener('click', function(){
-                 woh.gameScript.continueExec();
-            }, false);
+            _doc.getElementById('skip-dialogue').addEventListener('click', function(){
+                woh.gameScript.continueExec();
+            },false);
         }
     }
     //战斗界面
