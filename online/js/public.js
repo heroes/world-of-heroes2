@@ -231,26 +231,16 @@ woh.skill_data={
 	'疾风刺':{
 		'description':'追求一击必杀的招式,轻灵迅捷,其威力在不同修为者手中截然不同。（冲向对方进行一次攻击）',//技能描述
 		'icon':'resources/iamges/001.png',//技能图标路径
-		'level_limit':[0,3,4,5,7],//每一阶段的可点等级
-		'cd':3,//CD时间
+		'level_limit':[1,3,4,5,7],//每一阶段的可点等级
+		'cd':30,//CD时间
 		
 		//技能影响
 		'data':{
-			//单体直接伤害
+			//单体直接伤害，攻击范围等同于武器攻击范围
 			'attack_direct':{
 				'target':'enemySingle',//使用对象 selfSingle/ememySingle/selfRange/ememyRange
-				'range':10, //技能的攻击范围,数值表示攻击范围的半径
 				'attack_addition':[40,60,80,100,110],//伤害增加值,对应不同等级
 		    },
-		    //回复
-		    //'recover':{
-
-		    //},
-		    //区域伤害
-		    //'attack_area':{
-
-		    //},
-		    //添加buff
 		    'buff':{
 		    	//技能施展的同时冲向对方,用速度来表示
 		    	'target':'selfSingle',
@@ -258,10 +248,10 @@ woh.skill_data={
 		    }
 		}
 	},
-	'落英旋':{
-		'description':'英华翩舞兮,染景纷纷旧年时。映丽柔美,伤人于幻梦之中。（以指定点为中心,在半径30的区域内进行群体攻击）',//技能描述
+	'落英染':{
+		'description':'英华翩舞兮,染景纷纷旧年时。美好的追忆总能治愈人心。（己方全体生命回复）',//技能描述
 		'icon':'resources/iamges/001.png',//技能图标路径
-		'level_limit':[0,3,4,5,7],//每一阶段的可点等级
+		'level_limit':[1,3,4,5,7],//每一阶段的可点等级
 		'cd':3,//CD时间
 		//技能影响
 		'data':{
@@ -275,11 +265,7 @@ woh.skill_data={
 		    },
 		    //区域伤害
 		    'attack_area':{
-		    	'target':'enemyRange',//使用对象 selfSingle/ememySingle/selfRange/ememyRange
-				'continue':2,//技能效果持续时间 
-				'times':1,//造成伤害的次数
-				'range':30, //技能的攻击范围,数值表示攻击范围的半径
-				'attack_addition':[50,60,70,80,90],//伤害增加值
+		    	
 		    },
 		    //添加buff
 		    'buff':{
@@ -321,7 +307,7 @@ woh.skill_data={
 		'description':'日暮秋烟起,萧萧枫树林。寄托壮志未酬哀思的招式,饱含尽除敌寇的怨愤。(敌方全体造成大量伤害)',
 		'icon':'resources/iamges/001.png',//技能图标路径
 		'level_limit':[5],//每一阶段的可点等级
-		'cd':5,//CD时间
+		'cd':60,//CD时间
 		//技能影响
 		'data':{
 			//单体直接伤害
@@ -462,6 +448,11 @@ woh.skill_data={
 	}
 }
 
+//怪物初始化数据
+woh.monster_init_data={
+	'001':{
+		'health':
+	}
 
-
+}
 //console.log(role_data);
