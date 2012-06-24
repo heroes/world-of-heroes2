@@ -191,7 +191,7 @@
     //对话界面
     Dialogue = _win.Dialogue = {
         tpl:function(data){
-        var str = '<div class="chat-wrap" style="background:url(<%=globalBg%>) no-repeat 0 0"><div class="chat">'+
+        var str = '<div  class="chat-wrap" style="background:url(<%=globalBg%>) no-repeat 0 0"><div class="chat">'+
             '<%if( typeof position !=="undefined" && position == "right"){%>'+
                 '<%if(avatar){%>'+
                     '<div class="avatar right scaleX"><img src="<%=avatar%>" alt="" /></div>'+
@@ -215,6 +215,7 @@
         init:function(data){
             this.data = data;
             this.index = 0;
+            _doc.querySelector('#dialogue').innerHTML = '<div class="content-wrap"></div><button class="skip" id="skip-dialogue"></button>';
             this.render();
             this.bind();
         },
@@ -222,15 +223,18 @@
             if(this.index >= this.data.length){
                 woh.gameScript.continueExec();
             }else{
-                _doc.querySelector('#dialogue').innerHTML= tmpl(this.tpl(), this.data[this.index]);
+                _doc.querySelector('#dialogue div.content-wrap').innerHTML= tmpl(this.tpl(), this.data[this.index]);
             }
         },
         bind:function(){
             var self = this;
-             _doc.getElementById('dialogue').addEventListener('click', function(){
+             _doc.querySelector('#dialogue .content-wrap').addEventListener('click', function(){
                 self.index++;
                 self.render();
-            })
+            }, false);
+              _doc.getElementById('skip-dialogue')addEventListener('click', function(){
+                 woh.gameScript.continueExec();
+            }, false);
         }
     }
     //战斗界面
