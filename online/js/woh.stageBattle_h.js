@@ -65,6 +65,7 @@ Laro.NS('woh.stageClass', function (L) {
             this.roles.dispatch('draw', render);
         },
         drawBg: function (rd) {
+<<<<<<< HEAD
             rd.context.drawImage(woh.loader.loadedImages['images/bg/BG3.jpg'], 0, 0);
         },
         registerHurtableObject: function(obj, areas,offset) {
@@ -108,6 +109,9 @@ Laro.NS('woh.stageClass', function (L) {
                 }
             })
 
+=======
+            rd.context.drawImage(woh.loader.loadedImages['images/bg/game-bg-beach.jpg'], 0, 0);
+>>>>>>> sync
         }
     });
     this.Battle = Battle;
