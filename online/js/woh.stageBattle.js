@@ -1,34 +1,45 @@
 /**
- * stage Battle Class
+ * battle for hongru
  */
-/**
- * stage Battle Class
- */
+
 Laro.NS('woh.stageClass', function (L) {
     var pkg = this;
     var Battle = L.BaseState.extend(function () {
-        this.objects = [];
-        this.damageArea    	
+        // role collection
+        this.roles = new woh.RoleCollection();
+        woh.currentRoleGroup = this.roles;
+        this.hurtables = [];
+
     }).methods({
         enter: function (msg, from) {
             woh.log('enter stage [battle] with msg ' + msg);
             woh.show(woh.els.battle);
-            this.canvas =  woh.els.battle.querySelector("#battle_canvas");
-            this.context = this.canvas.getContext("2d");
-            this.context.clearRect(0,0,this.canvas.width,this.canvas.height);
-            this.registerObj(rio_tang);
-            
-            /*
+
             woh.log('enter stage [Battle] with msg ' + msg);
             woh.show(woh.els.canvasWrap);
             
-            L.$lea.setLoader(woh.loader);
-            L.$lea.setSourceObj(woh.g_config.sprites);
+            // temp part to do area
+            var me = this;            
+            document.querySelector("body").onmouseup = function(e){
+                if(e.target.tagName!="CANVAS" ) return;
+                var rect = e.target.getClientRects()[0];
+                var offsetX = e.clientX - rect.left;
+                var offsetY = e.clientY - rect.top;
+                me.hurtArea({
+                    left:offsetX-50,
+                    top:offsetY-50,
+                    right:offsetX+50,
+                    bottom:offsetY+50
+                },e.target);
+            }
             
-            this.test_boss2 = L.$lea.getAnimation('boss_2');
-            this.test_boss2.play();*/
-            
+            // rio_tang
+            this.roles.add('rio_tang', new woh.Role(woh.role_init_data['001'], '001'));
+            this.roles.get('rio_tang').setPos(200, 400);
+            this.roles.get('rio_tang').stage = this;
             this.timeInState=0;
+            
+            
         },
         leave: function () {
             woh.log('leave stage [battle]');
@@ -36,10 +47,7 @@ Laro.NS('woh.stageClass', function (L) {
         },
         update: function (dt) {
             this.timeInState += dt;
-            with(this)
-                this.objects.forEach(function(o){
-                    o.update(dt);
-                })
+
         },
         transition: function () {
             //this.timeInState > 2 && woh.gameScript.continueExec();
@@ -50,163 +58,56 @@ Laro.NS('woh.stageClass', function (L) {
             woh.hide(woh.els.canvasWrap);
         },
         update: function (dt) {
-            //this.test_boss2.update(dt);
-            this.timeInState += dt;
-            with(this)
-                this.objects.forEach(function(o){
-                    o.update(dt);
-                })
+            this.roles.dispatch('update', dt);
         },
         draw: function (render) {
-            this.context.clearRect(0,0,this.canvas.width,this.canvas.height);
-            with(this)
-                this.objects.forEach(function(o){
-                    o.draw(context);
-                })
+            this.drawBg(render);
+            this.roles.dispatch('draw', render);
         },
-        registerObj:function(obj){
-            this.objects.push(obj);
+        drawBg: function (rd) {
+            rd.context.drawImage(woh.loader.loadedImages['images/bg/game-bg-beach.jpg'], 0, 0);
         },
-        unregisterObj:function(obj){
-            this.objects = this.objects.filter(function(o){ return o!=obj; });
+        registerHurtableObject: function(obj, areas,offset) {
+            //console.log([areas[0]+offset.x,areas[1]+offset.y,areas[2]+offset.x,areas[3]+offset.y]);
+            if(this.hurtables.some(function(e){
+                if(e.obj==obj) {
+                    e.areas = {
+                        left:areas[0]+offset.x,
+                        top:areas[1]+offset.y,
+                        right:areas[2]+offset.x,
+                        bottom:areas[3]+offset.y
+                    };
+                    return true;
+                }
+            })) return;
+
+            this.hurtables.push({
+                obj:obj,
+                areas:{
+                    left:areas[0]+offset.x,
+                    top:areas[1]+offset.y,
+                    right:areas[2]+offset.x,
+                    bottom:areas[3]+offset.y
+                }
+            })
+        },
+        hurtArea: function(area,canvas) {
+            function areaCross(area1,area2){
+                with(canvas.getContext("2d")) {
+                    strokeRect(area1.left,area1.top,area1.right-area1.left,area1.bottom-area1.top);
+                    strokeRect(area2.left,area2.top,area2.right-area2.left,area2.bottom-area2.top);
+                }
+                return (area1.top<area2.bottom && area2.top<area1.bottom) &&
+                    (area1.left<area2.right && area2.left<area1.right);
+            }
+            
+            this.hurtables.forEach(function(e){
+                if(areaCross(area,e.areas)) {
+                    e.obj.hurt(1);
+                    return true;
+                }
+            })
         }
     });
     this.Battle = Battle;
 });
-
-function loadImage(src) {
-    var img = new Image;
-    img.src = src;
-    return img;
-}
-
-woh.cache = {
-    rio_tang:{
-        standing:loadImage(".\\images\\rio_tang\\stand\\character\\1.png"),
-        preparing:loadImage(".\\images\\rio_tang\\stand\\character\\2.png")
-    }
-}
-
-
-var rio_tang_actions = {
-     defaultAction:"stand",
-     stand:{
-        name: "stand",
-        type: "cycle",
-        states: [
-            {
-                name:"standing",
-                drawInfo:{
-                    image:[loadImage(".\\images\\rio_tang\\stand\\character\\1.png"),loadImage(".\\images\\rio_tang\\stand\\weapon\\1.png")]
-                },
-                duration:300,
-                areaInfo:null
-            },
-            {
-                name:"preparing",
-                drawInfo:{
-                    image:[loadImage(".\\images\\rio_tang\\stand\\character\\2.png"),loadImage(".\\images\\rio_tang\\stand\\weapon\\2.png")]
-                },
-                duration:300,
-                areaInfo:null
-            }
-        ]
-    },
-    attack:{
-        name: "attack",
-        type: "once",
-        states: [
-            {
-                drawInfo:{
-                    image: [loadImage(".\\images\\rio_tang\\attack\\character\\1.png"),loadImage(".\\images\\rio_tang\\attack\\weapon\\1.png")]
-                },
-                duration:50,
-                areaInfo:null
-            },
-            {
-                drawInfo:{
-                    image: [loadImage(".\\images\\rio_tang\\attack\\character\\2.png"),loadImage(".\\images\\rio_tang\\attack\\weapon\\2.png")]
-                },
-                duration:100,
-                areaInfo:null
-            },
-            {
-                drawInfo:{
-                    image: [loadImage(".\\images\\rio_tang\\attack\\character\\3.png"),loadImage(".\\images\\rio_tang\\attack\\weapon\\3.png")]
-                },
-                duration:100,
-                areaInfo:null
-            },
-            {
-                drawInfo:{
-                    image: [loadImage(".\\images\\rio_tang\\attack\\character\\4.png"),loadImage(".\\images\\rio_tang\\attack\\weapon\\4.png")]
-                },
-                duration:100,
-                areaInfo:null
-            }
-        ]
-    },
-}
-
-var rio_tang = new Character({
-    
-})
-
-document.body.onclick = function(){ rio_tang.attack() };
-
-function Character(data){
-    var pos = [0,0]
-    var stage = null;
-    this.setStage = function(_stage) {
-        if(stage)
-            stage.unregisterObj(this);
-
-        stage = _stage;
-        stage.registerObj(this);
-    }
-    
-    this.attack = function (){
-        curr = 0;
-        this.action = rio_tang_actions.attack;
-        this.state = this.action.states[curr];
-        duration = this.action.states[curr].duration;
-    }
-    
-    var curr = 0;
-    var t = 0;
-    var duration = 0;
-    this.action = rio_tang_actions[rio_tang_actions.defaultAction]
-    this.state = this.action.states[curr];
-    this.update = function(dt) {
-        duration -= Math.floor(dt*1000);
-        
-        if(duration<0) {
-            curr ++;
-            if(curr >=  this.action.states.length) {
-                if(this.action.type == "cycle") {
-                    curr = 0;
-                    this.state = this.action.states[curr];
-                    duration += this.action.states[curr].duration;
-                }
-                else {
-                    curr = 0;
-                    this.action = rio_tang_actions[rio_tang_actions.defaultAction]
-                    this.state = this.action.states[curr];
-                    duration += this.action.states[curr].duration;
-                }
-            }
-            else {
-                this.state = this.action.states[curr];
-                duration += this.action.states[curr].duration;
-            }
-        }
-    }
-    this.draw = function(context) {
-        context.strokeStyle = "blue";
-        if(this.state.drawInfo) {
-            this.state.drawInfo.image.forEach(function(img) {
-                context.drawImage(img,1,1, img.width/2, img.height/2);
-            });
-        }
-    }
-}
