@@ -62,7 +62,7 @@ woh.g_config.script={
         next:'5'
     },
     // 
-    '7':{
+    '5':{
         type:'loading',
         repeat:true,
         data:{
