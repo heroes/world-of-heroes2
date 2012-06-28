@@ -24,13 +24,9 @@ Laro.NS('woh.runtime', function (L) {
     	this.scriptProcess.push(key);
     	this.scriptProcess.sort();
     },
-    var role_runtime=[];//三个人物的运行时数据
+    this.role_runtime=[],//三个人物的运行时数据
     this.init=function(){
     	//初始化运行时人物数据
 
-    },
-    var init_role=function(init_list){
-        return init_list;
     }
-    this.role_runtime=role_runtime;
 });
