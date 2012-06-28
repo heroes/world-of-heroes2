@@ -32,13 +32,11 @@ Laro.NS('woh.stageClass', function (L) {
                     bottom:offsetY+50
                 },e.target);
             }
-            
             // rio_tang
             this.roles.add('rio_tang', new woh.Role(woh.role_init_data['001'], '001'));
             this.roles.get('rio_tang').setPos(200, 400);
             this.roles.get('rio_tang').stage = this;
             this.timeInState=0;
-            
             
         },
         leave: function () {

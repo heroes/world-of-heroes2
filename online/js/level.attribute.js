@@ -4,8 +4,11 @@
 //生命值=人物本身生命+装备生命+技能提升生命
 //攻击力=人物本身攻击+武器攻击+技能提升攻击
 
-//伤害值=攻击-防御/（级别/10）
-//伤害公式弄得简单点就行了
+//受到的伤害值=攻击-防御
+//造成的伤害值计算方式：
+//普攻打出暴击时造成的伤害为攻击力（人物本身攻击+武器攻击）的双倍
+//暴击只对普攻起作用，技能不存在暴击效果
+//本期暂不考虑闪避效果（在界面上也不用显示）
 //用于存储各个职业的偏移百分比以及移动、攻击速度
 
 woh.skill_rate={
@@ -15,8 +18,8 @@ woh.skill_rate={
 		'defend_rate':1,//防御偏移
 		'crit_rate':1,//暴击偏移
 		'miss_rate':1,//闪避偏移
-		'speed_movement':200,//移动速度
-		'speed_attack':1,//攻击速度
+		'speed_movement':200,//移动速度，单位为像素
+		'speed_attack':1,//攻击速度，单位为t/s,每秒多少次
 	},
 	'002':{
     'health_rate':1.2,
@@ -53,7 +56,7 @@ base_level_data={
   'health':140,
   'attack':19,
   'defend':9,
-  'crit':5,
+  'crit':0.05,
   'miss':5,
 },
 '1':{
@@ -61,7 +64,7 @@ base_level_data={
   'health':150,
   'attack':20,
   'defend':10,
-  'crit':5,
+  'crit':0.05,
   'miss':5,
  },
 '2':{
@@ -69,7 +72,7 @@ base_level_data={
   'health':160,
   'attack':22,
   'defend':11,
-  'crit':5,
+  'crit':0.05,
   'miss':5,
  },
 '3':{
@@ -77,7 +80,7 @@ base_level_data={
   'health':170,
   'attack':24,
   'defend':12,
-  'crit':5,
+  'crit':0.05,
   'miss':5,
  },
 '4':{
@@ -85,7 +88,7 @@ base_level_data={
   'health':180,
   'attack':26,
   'defend':13,
-  'crit':5,
+  'crit':0.05,
   'miss':5,
  },
 '5':{
@@ -93,7 +96,7 @@ base_level_data={
   'health':190,
   'attack':28,
   'defend':14,
-  'crit':5,
+  'crit':0.05,
   'miss':5,
  },
 '6':{
@@ -101,7 +104,7 @@ base_level_data={
   'health':200,
   'attack':30,
   'defend':15,
-  'crit':5,
+  'crit':0.05,
   'miss':5,
  },
 '7':{
@@ -109,7 +112,7 @@ base_level_data={
   'health':210,
   'attack':32,
   'defend':16,
-  'crit':5,
+  'crit':0.05,
   'miss':5,
  },
 '8':{
@@ -117,7 +120,7 @@ base_level_data={
   'health':220,
   'attack':34,
   'defend':17,
-  'crit':5,
+  'crit':0.05,
   'miss':5,
  },
 '9':{
@@ -125,7 +128,7 @@ base_level_data={
   'health':230,
   'attack':36,
   'defend':18,
-  'crit':5,
+  'crit':0.05,
   'miss':5,
  },
 '10':{
@@ -133,7 +136,7 @@ base_level_data={
   'health':240,
   'attack':38,
   'defend':19,
-  'crit':5,
+  'crit':0.05,
   'miss':5,
  },
 '11':{
@@ -141,7 +144,7 @@ base_level_data={
   'health':260,
   'attack':42,
   'defend':21,
-  'crit':5,
+  'crit':0.05,
   'miss':5,
  },
 '12':{
@@ -149,7 +152,7 @@ base_level_data={
   'health':280,
   'attack':46,
   'defend':23,
-  'crit':5,
+  'crit':0.05,
   'miss':5,
  },
 '13':{
@@ -157,7 +160,7 @@ base_level_data={
   'health':300,
   'attack':50,
   'defend':25,
-  'crit':5,
+  'crit':0.05,
   'miss':5,
  },
 '14':{
@@ -165,7 +168,7 @@ base_level_data={
   'health':320,
   'attack':54,
   'defend':27,
-  'crit':5,
+  'crit':0.05,
   'miss':5,
  },
 '15':{
@@ -173,7 +176,7 @@ base_level_data={
   'health':340,
   'attack':58,
   'defend':29,
-  'crit':5,
+  'crit':0.05,
   'miss':5,
  },
 '16':{
@@ -181,7 +184,7 @@ base_level_data={
   'health':360,
   'attack':62,
   'defend':31,
-  'crit':5,
+  'crit':0.05,
   'miss':5,
  },
 '17':{
@@ -189,7 +192,7 @@ base_level_data={
   'health':380,
   'attack':66,
   'defend':33,
-  'crit':5,
+  'crit':0.05,
   'miss':5,
  },
 '18':{
@@ -197,7 +200,7 @@ base_level_data={
   'health':400,
   'attack':70,
   'defend':35,
-  'crit':5,
+  'crit':0.05,
   'miss':5,
  },
 '19':{
@@ -205,7 +208,7 @@ base_level_data={
   'health':420,
   'attack':74,
   'defend':37,
-  'crit':5,
+  'crit':0.05,
   'miss':5,
  },
 '20':{
@@ -213,7 +216,7 @@ base_level_data={
   'health':440,
   'attack':78,
   'defend':39,
-  'crit':5,
+  'crit':0.05,
   'miss':5,
  }
 }

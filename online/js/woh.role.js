@@ -211,7 +211,5 @@ Laro.NS('woh', function (L) {
         }
     
     });
-    
     this.Role = Role;
-
 });
