@@ -24,7 +24,7 @@ Laro.NS('woh.runtime', function (L) {
     	this.scriptProcess.push(key);
     	this.scriptProcess.sort();
     },
-    this.role_runtime=[],//三个人物的运行时数据
+    this.role_runtime=[],//人物的运行时数据
     this.init=function(){
     	//初始化运行时人物数据
 

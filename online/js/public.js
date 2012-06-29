@@ -7,7 +7,7 @@ woh.role_init_data={
 		'avatar':'images/role/ava/ava_001.png',//头像
 		'exp_current':0,//当前经验值
 		'weapon':'001',//武器编号
-		'clothes':'001',//衣服编号
+		'clothes':'none',//衣服编号,none表示裸奔
 		'skill_point':'0',//剩余技能点
 		'skill_list':{
 			'疾风刺':0, 
@@ -23,7 +23,7 @@ woh.role_init_data={
 		'avatar':'images/role/ava/ava_001.png',//头像
 		'exp_current':1300,//当前经验值
 		'weapon':'003',//武器编号
-		'clothes':'003',//衣服编号
+		'clothes':'none',//衣服编号
 		'skill_point':'0',
 		'skill_list':{
 			'灵焰灼':1,
@@ -77,10 +77,10 @@ woh.item_data={
 				'open':false
 			},
 			'003':{
-				'name':'长剑',
-				'description':'“长剑一杯酒, 男儿方寸心。”游侠儿的必备装饰,看起来很拉风的样子。',
-				'icon':'images/weapon/icons/001.png',
-				'model':'images/weapon/model/001.png',
+				'name':'龙泉剑',
+				'description':'“装饰着金色精美花纹的剑，一看就很贵的样子，至于攻击力，就不得而知了。',
+				'icon':'images/icons/001.png',
+				'model':'resources/images/weapon/003',
 				'health_addition':0,
 				'attack_addition':10,
 				'defend_addition':3,
@@ -89,8 +89,8 @@ woh.item_data={
 				'open':false
 			},
 			'004':{
-				'name':'青铜剑',
-				'description':'古法锻冶的剑,拿在手里颇有分量,比普通的长剑看起来有内涵的样子,是这几年的流行选择。',
+				'name':'飞渊剑',
+				'description':'据说取材于极渊苦寒之地的紫晶，看起来挺像那么回事的。',
 				'icon':'images/weapon/icons/001.png',
 				'model':'images/weapon/model/001.png',
 				'health_addition':0,
