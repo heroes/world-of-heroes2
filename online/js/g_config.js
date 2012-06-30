@@ -245,6 +245,9 @@ woh.g_config.sprites = {
                 "filename": "images/sprites/rio_tang/hit_r1_c2.png"
             }
         ]
+    },
+    "002":{
+
     }
 }
 
