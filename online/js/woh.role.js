@@ -41,7 +41,7 @@ Laro.NS('woh', function (L) {
         this.data = data;
         this.uid = uid;
         L.extend(this, data);
-        this.life = this.data.life || 1000;
+        this.life = 1000;
         // 不用 Vector 操作，在大数据量操作的时候会快些
         this.x = 0;
         this.y = 0;
