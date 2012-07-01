@@ -67,11 +67,11 @@ Laro.NS('woh', function (L) {
             var me = this;
             this.checkRect = new L.Sprite(woh.stage.$, function () {
                 this.width = 100;
-                this.height = 140;
+                this.height = 120;
                 this.setPos = function (x, y) {
                     // 因为 sprite 默认是画在中心的，所以 也需要加上偏移量
                     this.x = x - 50;
-                    this.y = y - 70;
+                    this.y = y - 60;
                 };
                 
                 this.setPos(me.x, me.y);

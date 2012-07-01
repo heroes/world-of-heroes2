@@ -224,36 +224,36 @@ woh.g_config.sprites = {
                     "nbrOfFrames": 4,
                     "name": "",
                     "type": "animation",
-                    "framerate": 8,
-                    "pivotx": 145,
-                    "pivoty": 122,
+                    "framerate": 10,
+                    "pivotx": 100,
+                    "pivoty": 85,
                     "events": []
                 },
                 "data": [
-                    [0,0,289,244,0,0,289,244],
-                    [290,0,579,244,290,0,579,244],
-                    [580,0,869,244,580,0,869,244],
-                    [870,0,1159,244,870,0,1159,244]
+                    [0,0,199,169,0,0,199,169],
+                    [200,0,399,169,200,0,399,169],
+                    [400,0,599,169,400,0,599,169],
+                    [600,0,799,169,600,0,799,169]
                 ],
-                "filename": "images/sprites/rio_tang/hit_r1_c1.png"
+                "filename": "images/sprites/clothes/001/none/attack.png"
             },
             {
                 "info": {
                     "nbrOfFrames": 4,
                     "name": "",
                     "type": "animation",
-                    "framerate": 8,
-                    "pivotx": 145,
-                    "pivoty": 122,
+                    "framerate": 10,
+                    "pivotx": 100,
+                    "pivoty": 85,
                     "events": []
                 },
                 "data": [
-                    [0,0,289,244,0,0,289,244],
-                    [290,0,579,244,290,0,579,244],
-                    [580,0,869,244,580,0,869,244],
-                    [870,0,1159,244,870,0,1159,244]
+                    [0,0,199,169,0,0,199,169],
+                    [200,0,399,169,200,0,399,169],
+                    [400,0,599,169,400,0,599,169],
+                    [600,0,799,169,600,0,799,169]
                 ],
-                "filename": "images/sprites/rio_tang/hit_r1_c2.png"
+                "filename": "images/sprites/weapon/001/attack.png"
             }
         ]
     },
