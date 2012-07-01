@@ -29,112 +29,15 @@
 
 	var _doc = _win.document;
 
-	var packetManager = _win.packetManager = {
-        tpl:function(){
 
-          return  "<div id='item_manage'><div class='btn_close'></div>"+
-            "<div id='attribute_panel'>"+
-            "<div id='avatars'>"+
-              "<div class='avatar'></div>"+
-              "<div class='avatar'></div>"+
-              "<div class='avatar'></div>"+
-            "</div>"+
-            "<div id='attributes'>"+
-              "<h1 id='role_name'>唐如</h1>"+
-              "<div id='wear_left'>"+
-                "<div class='weapon'></div>"+
-              "</div>"+
-              "<canvas id='wear_preview'></canvas>"+
-
-            "<div id='wear_right'>"+
-            "<div class='clothes'></div>"+
-            "</div>"+
-            "<div id='attribute_list'>"+
-            "<label>生命值</label>"+
-            "<span id='num_0'>8523</span>"+
-            "<label>等级</label>"+
-            "<span id='num_1'>13</span>"+
-            "<label>攻击</label>"+
-            "<span id='num_2'>12</span>"+
-            "<label>防御</label>"+
-            "<span id='num_3'>23</span>"+
-            "<label>暴击</label>"+
-            "<span id='num_4'>5</span>"+
-            "<label>闪避</label>"+
-            "<span id='num_5'>5</span>"+
-            "<label>经验</label>"+
-            "<div class='exp_line_outer'>"+
-              "<div class='exp_line_inner'><span class='value'>200/1000</span></div>"+
-            "</div>"+
-            "</div>"+
-            "</div>"+
-            "</div>"+
-            "<div id='item_panel'>"+
-            "<div id='item_icons'>"+
-            "<div class='icon_panel'>"+
-            "</div>  "+
-            "</div>"+
-            "<div class='description'>"+
-            "<h2 class='item_name'>物品名称</h2>"+
-            "<p class='item_description'>物品描述</p>"+
-            "<p class='item_attribute'>物品属性</p>"+
-            "</div>"+
-            "</div></div>"
-        },
-		init : function(){
-            var packet = _doc.getElementById('packet');
-            packet.innerHTML = this.tpl();
-            packet.style.display = 'block';
-			packetManager.article.init();
-            this.bind();
-		},
-		unInit : function(){
-
-		},
-        bind : function(){
-             _doc.querySelector('.btn_close').addEventListener('click', function(){
-                packet.style.display = 'none';
-            })
-        }
-	};
-    
-
-    //物品管理界面
-    packetManager.article = {
-        tpl : '<article class="item_icon"></article>',
-        total :28,
-        data : {},
-        init : function() {
-            this.render();
-            this.bind();
-        },
-        unInit : function(){
-            this.unbind();
-        },
-        render : function(){
-            var items = [];
-            for(var i = 0; i < this.total; i++){
-                items.push(tmpl(this.tpl, this.data));
-            }
-            //_doc.querySelector('#item_icons div.icon_panel').innerHTML = items.join('');
-        },
-        bind : function(){
-
-        },
-        unbind : function(){
-
-        }
-    }
-    //点技能界面
-    //需求：类似dota的点技能，当技能处于可点状态，点击相应图标升级技能，每升级一次消耗一个技能点
     //开始界面
     Intro = {
         tpl:function(id){
             return '<div class="button" id="'+id+'"></div>'
         },
-        tpl_pop:function(id){return '<div id="'+id+'" class="intro-pop">'+
+        tpl_pop:function(id){return '<div id="'+id+'" class="sub-win">'+
             '<div class="content">内容</div>'+
-            '<button class="leave" data-toggle='+id+'>离开</button>'
+            '<button class="close" data-toggle='+id+'></button>'
         '</div>'},//弹出窗
         total:4,
         init:function(){
@@ -150,7 +53,7 @@
               var sub=document.createElement();
               _doc.getElementById('intro').appendChild(sub);
               sub.outerHTML=this.tpl_pop('Intro-'+i);
-              document.getElementById('Intro-'+i).querySelector('.leave').addEventListener(
+              document.getElementById('Intro-'+i).querySelector('.close').addEventListener(
                  'click',function(){document.getElementById(this.getAttribute('data-toggle')).style.display='none';},false
               );
             }
@@ -249,11 +152,11 @@
     //地图界面
     Map={
         tpl:function(){
-            return '<div class="map-module">' +
-                '<div class="button" id="map-leave">离开</div>' +
+            return '<div class="button" id="map-leave">离开</div>' +
                 '<div class="button" id="map-skill">技能</div>' +
-                '<div class="button" id="map-person">人物</div>' + 
-            "</div>"
+                '<div class="button" id="map-person">人物</div>'+
+                '<div id="role-manage" class="sub-win"></div>'+
+                '<div id="skill-manage" class="sub-win"></div>'
         },
         init:function(){
             this.render();
@@ -264,10 +167,96 @@
         },
         bind:function(){
             _doc.getElementById('map-person').addEventListener('click', function(){
-                packetManager.init();
+                roleManager.init();
             })
         }
     }
+
+    //物品管理界面
+    var roleManager = _win.roleManager = {
+        tpl:function(){
+          return "<button class='close'>"+
+                 "</button>"+
+                 "<div class='left-block'>"+
+                     "<ul class='ava-bar'>"+
+                        "<li class='avar standard-stroke active'></li>"+
+                        "<li class='avar standard-stroke'></li>"+
+                        "<li class='avar standard-stroke'></li>"+
+                     "</ul>"+
+                     "<div class='role-info'>"+
+
+                     "</div>"
+                 "</div>"+
+                 "<div class='right-block'>"+
+
+                 "</div>"
+        },
+        init : function(){
+            var roleinfo = _doc.getElementById('role-manage');
+            roleinfo.innerHTML = this.tpl();
+            roleinfo.style.display = 'block';
+
+            this.bind();
+        },
+        unInit : function(){
+
+        },
+        bind : function(){
+             _doc.querySelector('#role-manage .close').addEventListener('click', function(){
+                _doc.getElementById('role-manage').style.display = 'none';
+            })
+        }
+    }
+    //点技能界面
+    //需求：类似dota的点技能，当技能处于可点状态，点击相应图标升级技能，每升级一次消耗一个技能点
+    var skillManager = _win.roleManager = {
+        tpl:function(){
+          return "<div>"+
+                    
+                "</div>"
+        },
+        init : function(){
+            var skillinfo = _doc.getElementById('skill-manage');
+            skillinfo.innerHTML = this.tpl();
+            skillinfo.style.display = 'block';
+            this.bind();
+        },
+        unInit : function(){
+
+        },
+        bind : function(){
+             _doc.querySelector('#skill-manage .close').addEventListener('click', function(){
+                _doc.getElementById('skill-manage').style.display = 'none';
+            })
+        }
+    };
+    // roleManager.article = {
+    //     tpl : '<article class="item_icon"></article>',
+    //     total :28,
+    //     data : {},
+    //     init : function() {
+    //         this.render();
+    //         this.bind();
+    //     },
+    //     unInit : function(){
+    //         this.unbind();
+    //     },
+    //     render : function(){
+    //         var items = [];
+    //         for(var i = 0; i < this.total; i++){
+    //             items.push(tmpl(this.tpl, this.data));
+    //         }
+    //         //_doc.querySelector('#item_icons div.icon_panel').innerHTML = items.join('');
+    //     },
+    //     bind : function(){
+
+    //     },
+    //     unbind : function(){
+
+    //     }
+    // }
+
+
     Map.init();
     Intro.init();
     CG.init();
