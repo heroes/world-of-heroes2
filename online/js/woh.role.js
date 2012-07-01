@@ -33,7 +33,7 @@ Laro.NS('woh', function (L) {
             woh.roleStates.stand, woh.roleStateClass.Stand,
             woh.roleStates.move, woh.roleStateClass.Move,
             woh.roleStates.normlAttack, woh.roleStateClass.NormalAttack,
-            woh.roleStates.hurt, woh.roleStateClass.Hurt,
+            woh.roleStates.hurted, woh.roleStateClass.Hurted,
             woh.roleStates.skill, woh.roleStateClass.Skill,
             woh.roleStates.dead, woh.roleStateClass.Dead,
         ];
@@ -103,6 +103,8 @@ Laro.NS('woh', function (L) {
         getAnimations: function () {
             this.animations.stand = this.getAnimationGroup('stand');
             this.animations.move = this.getAnimationGroup('run');
+            this.animations.hurted = this.getAnimationGroup('hurted');
+            this.animations.attack = this.getAnimationGroup('attack');
         },
         // 设置当前 animation 并自动播放
         setAndPlay: function (animation, loop, start, end) {
@@ -205,9 +207,9 @@ Laro.NS('woh', function (L) {
         normalAttack: function () {
             this.fsm.setState(woh.roleStates.normalAttack);
         },
-        hurt: function (damage) {
+        hurted: function (damage) {
             this.life -= damage;
-            this.fsm.setState(woh.roleStates.hurt);
+            this.fsm.setState(woh.roleStates.hurted);
         }
     
     });

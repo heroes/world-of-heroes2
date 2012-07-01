@@ -6,7 +6,7 @@ woh.roleStates = {
     stand: 0,
     move: 1,
     normlAttack: 2,
-    hurt: 3,
+    hurted: 3,
     skill: 4,
     dead: 5
 };
@@ -80,15 +80,15 @@ Laro.NS('woh.roleStateClass', function (L) {
     
     });
     
-    var Hurt = L.BaseState.extend(function () {
+    var Hurted = L.BaseState.extend(function () {
     
     }).methods({
         enter: function (msg, from) {
-            this.host.setAndPlay('hurt');
+            this.host.setAndPlay('hurted');
         },
         leave: function () {},
         update: function (dt) {
-        
+            
         },
         transition: function () {},
         message: function () {}
@@ -128,7 +128,7 @@ Laro.NS('woh.roleStateClass', function (L) {
     this.Stand = Stand;
     this.Move = Move;
     this.NormalAttack = NormalAttack;
-    this.Hurt = Hurt;
+    this.Hurted = Hurted;
     this.Skill = Skill;
     this.Dead = Dead;
 });

@@ -259,6 +259,89 @@ woh.g_config.sprites = {
     },
     "002":{
 
+    },
+    "crab": {
+        "areadata": {
+            standup: [0, 0, 190, 120],
+            standdown: [0, 0, 190, 120]
+        },
+        "stand": [
+        // role
+                {
+                "info": {
+                    "nbrOfFrames": 2,
+                    "name": "stand",
+                    "type": "animation",
+                    "framerate": 2,
+                    "pivotx": 100,
+                    "pivoty": 85,
+                    "events": [
+                            { name: 'standup', frame: 1 }, //第一帧进入时触发
+                            {name: 'standdown', frame: 2}//第二帧进入时触发
+                        ]
+                },
+                "data": [
+                        [0, 0, 190, 120, 0, 0, 190, 120],
+                        [190, 0, 380, 120, 190, 0, 380, 120]
+                    ],
+                "filename": "images/monster/normal001-crab.png"
+            }
+        ],
+        "run": [
+            {
+                "info": {
+                    "nbrOfFrames": 4,
+                    "name": "",
+                    "type": "animation",
+                    "framerate": 4,
+                    "pivotx": 100,
+                    "pivoty": 85,
+                    "events": []
+                },
+                "data": [
+                        [0, 0, 190, 120, 0, 0, 190, 120],
+                        [190, 0, 380, 120, 190, 0, 380, 120]
+                ],
+                "filename": "images/monster/normal001-crab.png"
+            }
+        ],
+        "attack": [
+            {
+                "info": {
+                    "nbrOfFrames": 4,
+                    "name": "",
+                    "type": "animation",
+                    "framerate": 10,
+                    "pivotx": 100,
+                    "pivoty": 85,
+                    "events": []
+                },
+                "data": [
+                    [190, 0, 380, 120, 190, 0, 380, 120],
+                    [380, 0, 570, 120, 380, 0, 570, 120]
+                ],
+                "filename": "images/monster/normal001-crab.png"
+            }
+        ],
+        "hurted": [
+            {
+                "info": {
+                    "nbrOfFrames": 4,
+                    "name": "",
+                    "type": "animation",
+                    "framerate": 10,
+                    "pivotx": 100,
+                    "pivoty": 85,
+                    "events": []
+                },
+                "data": [
+                    [190, 0, 380, 120, 190, 0, 380, 120],
+                    [570, 0, 760, 120, 570, 0, 760, 120]
+                ],
+                "filename": "images/monster/normal001-crab.png"
+            }
+        ]
     }
+
 }
 
