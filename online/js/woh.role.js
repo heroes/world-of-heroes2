@@ -66,12 +66,12 @@ Laro.NS('woh', function (L) {
             // 可操作区域 == > 这一部分数据需要 提到 人物数据配置 里面去， 这里目前暂时先写死
             var me = this;
             this.checkRect = new L.Sprite(woh.stage.$, function () {
-                this.width = 140;
-                this.height = 210;
+                this.width = 100;
+                this.height = 140;
                 this.setPos = function (x, y) {
                     // 因为 sprite 默认是画在中心的，所以 也需要加上偏移量
-                    this.x = x - 82;
-                    this.y = y - 120;
+                    this.x = x - 50;
+                    this.y = y - 70;
                 };
                 
                 this.setPos(me.x, me.y);
@@ -102,7 +102,7 @@ Laro.NS('woh', function (L) {
         },
         getAnimations: function () {
             this.animations.stand = this.getAnimationGroup('stand');
-            this.animations.move = this.getAnimationGroup('move');
+            this.animations.move = this.getAnimationGroup('run');
         },
         // 设置当前 animation 并自动播放
         setAndPlay: function (animation, loop, start, end) {
@@ -151,9 +151,9 @@ Laro.NS('woh', function (L) {
                 me = this;
             // draw circle & pie ==> 这里的数据也要提出去
             if (this.canMove) {
-                render.context.drawImage(woh.loader.loadedImages['images/circle.png'], this.x-65, this.y + 60);
+                render.context.drawImage(woh.loader.loadedImages['images/circle.png'], this.x-60, this.y+20);
                 render.context.drawImage(woh.loader.loadedImages['images/pie.png'], woh.STAGE_MOUSE_POS.x-38, woh.STAGE_MOUSE_POS.y-23);
-                render.drawLine(this.x, this.y+94, woh.STAGE_MOUSE_POS.x, woh.STAGE_MOUSE_POS.y, '#fff')
+                render.drawLine(this.x, this.y+45, woh.STAGE_MOUSE_POS.x, woh.STAGE_MOUSE_POS.y, '#fff')
             }
             this.curAnimation && this.curAnimation.forEach(function (o) { 
                 ((me.face == 'left' && !o.renderMirrored) || (me.face == 'right' && o.renderMirrored)) && o.mirror();

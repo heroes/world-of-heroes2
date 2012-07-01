@@ -24,7 +24,7 @@ woh.g_config.script={
                 height: 774
             }
         },
-        next:'2'
+        next:'5'
     },
     '2':{
         type:'drama',//标记相应的stage类型
@@ -95,7 +95,6 @@ woh.g_config.resources = {
         type: 'battle',
         resources: [
             'images/bg/game-bg-beach.jpg',
-            'images/sprites/rio_tang/stand_r1_c2.png',
             
             'images/sprites/rio_tang/hit_r1_c1.png',
             'images/sprites/rio_tang/hit_r1_c2.png',
@@ -128,31 +127,12 @@ woh.g_config.resources = {
     }
 };
 
-//武器和衣服的动画数据配置,暂时还没独立出来，今晚看看怎么抽（要和换装系统匹配）
+//武器和衣服的动画数据配置,暂时还没独立出来，稍后看看怎么抽（要和换装系统匹配）
 woh.g_config.equipment={
-    "clothes_none":{
-        "stand": {
-            "info": {
-                "nbrOfFrames": 2,
-                "name": "stand",
-                "type": "animation",
-                "framerate": 2,
-                "pivotx": 100,
-                "pivoty": 85,
-                "events": []
-            },
-            "data": [
-                [0,0,199,169,0,0,199,169],
-                [200,0,399,169,200,0,399,169]
-            ],
-            "filename": "images/sprites/clothes/001/none/stand.png"
-        }
-    },
-    "weapon_001":{
 
-    }
 }
-// 精灵啦啦啦啦
+
+ // 精灵啦啦啦啦
 woh.g_config.sprites = {
     // http://hongru.github.com/proj/laro/Leditor/animation/index.html
     // 跟public 里面 人物 uid 对应， 001 -> 唐如
@@ -200,45 +180,45 @@ woh.g_config.sprites = {
                     "filename": "images/sprites/weapon/001/stand.png"
                 }
         ],
-        "move": [
+        "run": [
             {
                 "info": {
                     "nbrOfFrames": 4,
                     "name": "",
                     "type": "animation",
-                    "framerate": 6,
-                    "pivotx": 145,
-                    "pivoty": 122,
+                    "framerate": 4,
+                    "pivotx": 100,
+                    "pivoty": 85,
                     "events": []
                 },
                 "data": [
-                    [0,0,289,244,0,0,289,244],
-                    [290,0,579,244,290,0,579,244],
-                    [580,0,869,244,580,0,869,244],
-                    [870,0,1159,244,870,0,1159,244]
+                    [0,0,199,169,0,0,199,169],
+                    [200,0,399,169,200,0,399,169],
+                    [400,0,599,169,400,0,599,169],
+                    [600,0,799,169,600,0,799,169]
                 ],
-                "filename": "images/sprites/rio_tang/move_r1_c1.png"
+                "filename": "images/sprites/clothes/001/none/run.png"
             },
             {
                 "info": {
                     "nbrOfFrames": 4,
                     "name": "",
                     "type": "animation",
-                    "framerate": 6,
-                    "pivotx": 145,
-                    "pivoty": 122,
+                    "framerate": 4,
+                    "pivotx": 100,
+                    "pivoty": 85,
                     "events": []
                 },
                 "data": [
-                    [0,0,289,244,0,0,289,244],
-                    [290,0,579,244,290,0,579,244],
-                    [580,0,869,244,580,0,869,244],
-                    [870,0,1159,244,870,0,1159,244]
+                    [0,0,199,169,0,0,199,169],
+                    [200,0,399,169,200,0,399,169],
+                    [400,0,599,169,400,0,599,169],
+                    [600,0,799,169,600,0,799,169]
                 ],
-                "filename": "images/sprites/rio_tang/move_r1_c2.png"
-            }
+                "filename": "images/sprites/weapon/001/run.png"
+            },
         ],
-        "hit": [
+        "attack": [
             {
                 "info": {
                     "nbrOfFrames": 4,
