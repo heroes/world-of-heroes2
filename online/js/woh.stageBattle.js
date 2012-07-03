@@ -66,7 +66,7 @@ Laro.NS('woh.stageClass', function (L) {
             this.roles.dispatch('draw', render);
         },
         drawBg: function (rd) {
-            rd.context.drawImage(woh.loader.loadedImages['images/bg/game-bg-beach.jpg'], 0, 0);
+            rd.context.drawImage(woh.loader.loadedImages['images/bg/bg-beach-dusk.jpg'], 0, 0);
         },
         registerHurtableObject: function (obj, areas, offset) {
             //console.log([areas[0]+offset.x,areas[1]+offset.y,areas[2]+offset.x,areas[3]+offset.y]);
