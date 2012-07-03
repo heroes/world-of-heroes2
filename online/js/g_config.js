@@ -111,89 +111,97 @@ woh.g_config.resources = {
             'images/sprites/weapon/001/magic.png',
             'images/sprites/weapon/001/stand.png',
             'images/sprites/weapon/001/run.png',
+
+            'images/sprites/weapon/002/attack.png',
+            'images/sprites/weapon/002/hurt.png',
+            'images/sprites/weapon/002/magic.png',
+            'images/sprites/weapon/002/stand.png',
+            'images/sprites/weapon/002/run.png',
         ]
     }
 };
 
-//武器和衣服的动画数据配置,暂时还没独立出来，稍后看看怎么抽（要和换装系统匹配）
-woh.g_config.equipment={
-    '001':{
-
-    }
-}
+//衣服的动画数据
 woh.g_config.clothes={
-    '001':{
-        
-    }
-}
- // 精灵啦啦啦啦
-woh.g_config.sprites = {
-    // http://hongru.github.com/proj/laro/Leditor/animation/index.html
-    // 跟public 里面 人物 uid 对应， 001 -> 唐如
-    
-    "rio_tang": {
-        "areadata": {
-            standup:[0,0,140,210],
-            standdown:[0,0,140,210]
-        },
-        "stand": [
-            // role
-                {
-                    "info": {
-                        "nbrOfFrames": 2,
-                        "name": "stand",
-                        "type": "animation",
-                        "framerate": 2,
-                        "pivotx": 100,
-                        "pivoty": 85,
-                        "events": [
-                            {name:'standup',frame:1},//第一帧进入时触发
-                            {name:'standdown',frame:2}//第二帧进入时触发
-                        ]
-                    },
-                    "data": [
-                        [0,0,199,169,0,0,199,169],
-                        [200,0,399,169,200,0,399,169]
-                    ],
-                    "filename": "images/sprites/clothes/001/none/stand.png"
-                },
-                {
-                    "info": {
-                        "nbrOfFrames": 2,
-                        "name": "",
-                        "type": "animation",
-                        "framerate": 2,
-                        "pivotx": 100,
-                        "pivoty": 85,
-                        "events": []
-                    },
-                    "data": [
-                        [0,0,199,169,0,0,199,169],
-                        [200,0,399,169,200,0,399,169]
-                    ],
-                    "filename": "images/sprites/weapon/001/stand.png"
-                }
-        ],
-        "run": [
-            {
-                "info": {
-                    "nbrOfFrames": 4,
-                    "name": "",
-                    "type": "animation",
-                    "framerate": 4,
-                    "pivotx": 100,
-                    "pivoty": 85,
-                    "events": []
-                },
-                "data": [
-                    [0,0,199,169,0,0,199,169],
-                    [200,0,399,169,200,0,399,169],
-                    [400,0,599,169,400,0,599,169],
-                    [600,0,799,169,600,0,799,169]
-                ],
-                "filename": "images/sprites/clothes/001/none/run.png"
+    'none':{
+        "stand":{
+            "info": {
+                "nbrOfFrames": 2,
+                "name": "stand",
+                "type": "animation",
+                "framerate": 2,
+                "pivotx": 100,
+                "pivoty": 85,
+                "events": [
+                    {name:'standup',frame:1},//第一帧进入时触发
+                    {name:'standdown',frame:2}//第二帧进入时触发
+                ]
             },
-            {
+            "data": [
+                [0,0,199,169,0,0,199,169],
+                [200,0,399,169,200,0,399,169]
+            ],
+            "filename": "images/sprites/clothes/001/none/stand.png"
+            }, 
+        "run":{
+            "info": {
+                "nbrOfFrames": 4,
+                "name": "",
+                "type": "animation",
+                "framerate": 4,
+                "pivotx": 100,
+                "pivoty": 85,
+                "events": []
+            },
+            "data": [
+                [0,0,199,169,0,0,199,169],
+                [200,0,399,169,200,0,399,169],
+                [400,0,599,169,400,0,599,169],
+                [600,0,799,169,600,0,799,169]
+            ],
+            "filename": "images/sprites/clothes/001/none/run.png"
+        },
+        "attack":{
+            "info": {
+                "nbrOfFrames": 4,
+                "name": "",
+                "type": "animation",
+                "framerate": 10,
+                "pivotx": 100,
+                "pivoty": 85,
+                "events": []
+            },
+            "data": [
+                [0,0,199,169,0,0,199,169],
+                [200,0,399,169,200,0,399,169],
+                [400,0,599,169,400,0,599,169],
+                [600,0,799,169,600,0,799,169]
+            ],
+            "filename": "images/sprites/clothes/001/none/attack.png"
+        },
+    },     
+}
+//武器的动画数据
+woh.g_config.equipment={
+    'none':{},
+    '001':{
+        "stand":{
+            "info": {
+                "nbrOfFrames": 2,
+                "name": "",
+                "type": "animation",
+                "framerate": 2,
+                "pivotx": 100,
+                "pivoty": 85,
+                "events": []
+            },
+            "data": [
+                [0,0,199,169,0,0,199,169],
+                [200,0,399,169,200,0,399,169]
+            ],
+            "filename": "images/sprites/weapon/001/stand.png"
+        },
+        "run":{
                 "info": {
                     "nbrOfFrames": 4,
                     "name": "",
@@ -210,46 +218,106 @@ woh.g_config.sprites = {
                     [600,0,799,169,600,0,799,169]
                 ],
                 "filename": "images/sprites/weapon/001/run.png"
+        },
+        "attack":{
+            "info": {
+                "nbrOfFrames": 4,
+                "name": "",
+                "type": "animation",
+                "framerate": 10,
+                "pivotx": 100,
+                "pivoty": 85,
+                "events": []
             },
+            "data": [
+                [0,0,199,169,0,0,199,169],
+                [200,0,399,169,200,0,399,169],
+                [400,0,599,169,400,0,599,169],
+                [600,0,799,169,600,0,799,169]
+            ],
+            "filename": "images/sprites/weapon/001/attack.png"
+        }
+    },
+    '002':{
+        "stand":{
+            "info": {
+                "nbrOfFrames": 2,
+                "name": "",
+                "type": "animation",
+                "framerate": 2,
+                "pivotx": 100,
+                "pivoty": 85,
+                "events": []
+            },
+            "data": [
+                [0,0,199,169,0,0,199,169],
+                [200,0,399,169,200,0,399,169]
+            ],
+            "filename": "images/sprites/weapon/002/stand.png"
+        },
+        "run":{
+                "info": {
+                    "nbrOfFrames": 4,
+                    "name": "",
+                    "type": "animation",
+                    "framerate": 4,
+                    "pivotx": 100,
+                    "pivoty": 85,
+                    "events": []
+                },
+                "data": [
+                    [0,0,199,169,0,0,199,169],
+                    [200,0,399,169,200,0,399,169],
+                    [400,0,599,169,400,0,599,169],
+                    [600,0,799,169,600,0,799,169]
+                ],
+                "filename": "images/sprites/weapon/002/run.png"
+        },
+        "attack":{
+            "info": {
+                "nbrOfFrames": 4,
+                "name": "",
+                "type": "animation",
+                "framerate": 10,
+                "pivotx": 100,
+                "pivoty": 85,
+                "events": []
+            },
+            "data": [
+                [0,0,199,169,0,0,199,169],
+                [200,0,399,169,200,0,399,169],
+                [400,0,599,169,400,0,599,169],
+                [600,0,799,169,600,0,799,169]
+            ],
+            "filename": "images/sprites/weapon/002/attack.png"
+        }
+    },
+}
+ // 精灵啦啦啦啦
+woh.g_config.sprites = {
+    // http://hongru.github.com/proj/laro/Leditor/animation/index.html
+    // 跟public 里面 人物 uid 对应， 001 -> 唐如
+    
+    "rio_tang": {
+        "areadata": {
+            standup:[0,0,140,210],
+            standdown:[0,0,140,210]
+        },
+        "stand": [
+            // role
+            woh.g_config.clothes['none']['stand'],
+            woh.g_config.equipment['002']['stand']   
+        ],
+        "run": [
+            woh.g_config.clothes['none']['run'],
+            woh.g_config.equipment['001']['run'] 
         ],
         "attack": [
-            {
-                "info": {
-                    "nbrOfFrames": 4,
-                    "name": "",
-                    "type": "animation",
-                    "framerate": 10,
-                    "pivotx": 100,
-                    "pivoty": 85,
-                    "events": []
-                },
-                "data": [
-                    [0,0,199,169,0,0,199,169],
-                    [200,0,399,169,200,0,399,169],
-                    [400,0,599,169,400,0,599,169],
-                    [600,0,799,169,600,0,799,169]
-                ],
-                "filename": "images/sprites/clothes/001/none/attack.png"
-            },
-            {
-                "info": {
-                    "nbrOfFrames": 4,
-                    "name": "",
-                    "type": "animation",
-                    "framerate": 10,
-                    "pivotx": 100,
-                    "pivoty": 85,
-                    "events": []
-                },
-                "data": [
-                    [0,0,199,169,0,0,199,169],
-                    [200,0,399,169,200,0,399,169],
-                    [400,0,599,169,400,0,599,169],
-                    [600,0,799,169,600,0,799,169]
-                ],
-                "filename": "images/sprites/weapon/001/attack.png"
-            }
-        ]
+            woh.g_config.clothes['none']['attack'],
+            woh.g_config.equipment['001']['attack'],
+        ],
+        "magic": [],
+        "hurt":[]
     },
     "002":{
 
