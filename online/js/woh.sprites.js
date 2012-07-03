@@ -28,7 +28,7 @@ Laro.NS('woh', function (L) {
             }//技能列表（编号-等级）
         }
     */
-    var Role = L.Class(function (data, uid) {
+    var Sprite = L.Class(function (data) {
         var statesList = [
             woh.roleStates.stand, woh.roleStateClass.Stand,
             woh.roleStates.move, woh.roleStateClass.Move,
@@ -39,7 +39,6 @@ Laro.NS('woh', function (L) {
         ];
         
         this.data = data;
-        this.uid = uid;
         L.extend(this, data);
         this.life = 1000;
         // 不用 Vector 操作，在大数据量操作的时候会快些
@@ -88,7 +87,10 @@ Laro.NS('woh', function (L) {
         getAnimationGroup: function (type) {
             L.$lea.setLoader(woh.loader);
             
-            var obj = woh.g_config.sprites[this.uid][type],
+            var obj = [
+                woh.g_config.clothes[this.data['clothes']][type],
+                woh.g_config.weapon[this.data['weapon']][type],
+            ],
                 ret = [];
             if (!Array.isArray(obj)) {
                 obj = [obj];
@@ -130,11 +132,11 @@ Laro.NS('woh', function (L) {
                 case "stopped" : this.fsm.message(woh.roleMessages.animStopped); break;
                 case "standup": 
                     with(this.getPos())
-                         this.stage.registerHurtableObject(me,woh.g_config.sprites[this.uid]["areadata"]["standup"],{x:x-82,y:y-120});
+                         this.stage.registerHurtableObject(me,me.data["areadata"]["standup"],{x:x-82,y:y-120});
                     break;
                 case "standdown":
                     with(this.getPos())
-                         this.stage.registerHurtableObject(me,woh.g_config.sprites[this.uid]["areadata"]["standdown"],{x:x-82,y:y-120});
+                         this.stage.registerHurtableObject(me,me.data["areadata"]["standdown"],{x:x-82,y:y-120});
                     break;
                 case "end_attack" : this.endAttack(); break;
             }
@@ -213,5 +215,8 @@ Laro.NS('woh', function (L) {
         }
     
     });
+    var Role=Sprite.extend();
+    var Monster=Sprite.extend();
     this.Role = Role;
+    this.Monster=Monster;
 });

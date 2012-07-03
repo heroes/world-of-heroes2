@@ -182,7 +182,7 @@ woh.g_config.clothes={
     },     
 }
 //武器的动画数据
-woh.g_config.equipment={
+woh.g_config.weapon={
     'none':{},
     '001':{
         "stand":{
@@ -297,28 +297,6 @@ woh.g_config.equipment={
 woh.g_config.sprites = {
     // http://hongru.github.com/proj/laro/Leditor/animation/index.html
     // 跟public 里面 人物 uid 对应， 001 -> 唐如
-    
-    "rio_tang": {
-        "areadata": {
-            standup:[0,0,140,210],
-            standdown:[0,0,140,210]
-        },
-        "stand": [
-            // role
-            woh.g_config.clothes['none']['stand'],
-            woh.g_config.equipment['002']['stand']   
-        ],
-        "run": [
-            woh.g_config.clothes['none']['run'],
-            woh.g_config.equipment['001']['run'] 
-        ],
-        "attack": [
-            woh.g_config.clothes['none']['attack'],
-            woh.g_config.equipment['001']['attack'],
-        ],
-        "magic": [],
-        "hurt":[]
-    },
     "002":{
 
     },
@@ -421,7 +399,11 @@ woh.role_init_data={
             '落英染':0,
             '浮云风卷':0,
             '醉舞秋红':0
-        }//技能列表（编号-等级）
+        },//技能列表（编号-等级）
+        "areadata": {
+            standup:[0,0,140,210],
+            standdown:[0,0,140,210]
+        }
     },
     '002':{
         'name':'程少非',//名字

@@ -33,10 +33,10 @@ Laro.NS('woh.stageClass', function (L) {
                 }, e.target);
             }
             // rio_tang
-            this.roles.add('rio_tang', new woh.Role(woh.runtime.role[0], 'rio_tang'));
+            this.roles.add('rio_tang', new woh.Role(woh.runtime.role[0]));
             this.roles.get('rio_tang').setPos(200, 400);
             this.roles.get('rio_tang').stage = this;
-            this.roles.add('crab', new woh.Role(woh.runtime.role[0], 'crab'));
+            this.roles.add('crab', new woh.Monster(woh.runtime.role[0]));
             this.roles.get('crab').setPos(500, 400);
             this.roles.get('crab').stage = this;
             this.timeInState = 0;
