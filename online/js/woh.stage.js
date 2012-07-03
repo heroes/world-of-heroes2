@@ -12,7 +12,6 @@ Laro.NS('woh.stage', function (L) {
         'map': 4, // 大地图场景
         'battle': 5, // 战斗场景
         'gameover': 6, // 战斗结束
-        
         'loading': 7 // 公用资源加载场景，可以出现在每个需要资源预加载的场景前，具体应该加载某个具体的场景资源列表由 message 消息指定.
     };
     this.statesList = [

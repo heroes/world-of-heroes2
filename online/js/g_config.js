@@ -80,7 +80,7 @@ woh.g_config.script={
         type:'map',
         repeat:true,
         data:{},
-        next:'1'
+        next:'5'
     }
 };
 
@@ -95,18 +95,6 @@ woh.g_config.resources = {
         type: 'battle',
         resources: [
             'images/bg/game-bg-beach.jpg',
-            
-            'images/sprites/rio_tang/hit_r1_c1.png',
-            'images/sprites/rio_tang/hit_r1_c2.png',
-            
-            'images/sprites/rio_tang/hurt_r1_c1.png',
-            'images/sprites/rio_tang/hurt_r1_c2.png',
-            
-            'images/sprites/rio_tang/magic_r1_c1.png',
-            'images/sprites/rio_tang/magic_r1_c2.png',
-            
-            'images/sprites/rio_tang/move_r1_c1.png',
-            'images/sprites/rio_tang/move_r1_c2.png',
             
             'images/circle.png',
             'images/pie.png',
@@ -129,15 +117,21 @@ woh.g_config.resources = {
 
 //武器和衣服的动画数据配置,暂时还没独立出来，稍后看看怎么抽（要和换装系统匹配）
 woh.g_config.equipment={
+    '001':{
 
+    }
 }
-
+woh.g_config.clothes={
+    '001':{
+        
+    }
+}
  // 精灵啦啦啦啦
 woh.g_config.sprites = {
     // http://hongru.github.com/proj/laro/Leditor/animation/index.html
     // 跟public 里面 人物 uid 对应， 001 -> 唐如
     
-    "001": {
+    "rio_tang": {
         "areadata": {
             standup:[0,0,140,210],
             standdown:[0,0,140,210]
@@ -281,8 +275,8 @@ woh.g_config.sprites = {
                         ]
                 },
                 "data": [
-                        [0, 0, 190, 120, 0, 0, 190, 120],
-                        [190, 0, 380, 120, 190, 0, 380, 120]
+                        [380,0,569,119,380,0,569,119],
+                        [570,0,759,119,570,0,759,119]
                     ],
                 "filename": "images/monster/normal001-crab.png"
             }
@@ -299,8 +293,8 @@ woh.g_config.sprites = {
                     "events": []
                 },
                 "data": [
-                        [0, 0, 190, 120, 0, 0, 190, 120],
-                        [190, 0, 380, 120, 190, 0, 380, 120]
+                        [380,0,569,119,380,0,569,119],
+                        [570,0,759,119,570,0,759,119]
                 ],
                 "filename": "images/monster/normal001-crab.png"
             }
@@ -317,8 +311,8 @@ woh.g_config.sprites = {
                     "events": []
                 },
                 "data": [
-                    [190, 0, 380, 120, 190, 0, 380, 120],
-                    [380, 0, 570, 120, 380, 0, 570, 120]
+                    [570,0,759,119,570,0,759,119],
+                    [190,0,379,119,190,0,379,119]
                 ],
                 "filename": "images/monster/normal001-crab.png"
             }
@@ -335,8 +329,7 @@ woh.g_config.sprites = {
                     "events": []
                 },
                 "data": [
-                    [190, 0, 380, 120, 190, 0, 380, 120],
-                    [570, 0, 760, 120, 570, 0, 760, 120]
+                    [0,0,189,119,0,0,189,119]
                 ],
                 "filename": "images/monster/normal001-crab.png"
             }

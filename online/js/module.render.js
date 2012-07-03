@@ -168,6 +168,9 @@
         bind:function(){
             _doc.getElementById('map-person').addEventListener('click', function(){
                 roleManager.init();
+            });
+            _doc.getElementById('map-leave').addEventListener('click', function(){
+                woh.gameScript.continueExec();
             })
         }
     }
@@ -178,20 +181,42 @@
           return "<button class='close'>"+
                  "</button>"+
                  "<div class='left-block'>"+
-                     "<ul class='ava-bar'>"+
-                        "<li class='avar standard-stroke active'></li>"+
-                        "<li class='avar standard-stroke'></li>"+
-                        "<li class='avar standard-stroke'></li>"+
-                     "</ul>"+
-                     "<div class='role-info'>"+
-
-                     "</div>"
+                    "<ul class='ava-bar'>"+
+                       "<li class='avar standard-stroke active'></li>"+
+                       "<li class='avar standard-stroke'></li>"+
+                       "<li class='avar standard-stroke'></li>"+
+                    "</ul>"+
+                    "<div class='role-info'>"+
+                        "<h1 id='name'>111<small>Lv:</small></h1>"+
+                        "<div id='clothes'>"+
+                        "</div>"+
+                        "<div id='preview'>"+
+                        "</div>"+
+                        "<div id='weapon'>"+
+                        "</div>"+
+                        "<ul class='role-attributes'>"+
+                            "<li><label>生命：</label><span></span></li>"+
+                            "<li><label>防御：</label><span></span></li>"+
+                            "<li><label>闪避：</label><span></span></li>"+
+                            "<li><label>暴击：</label><span></span></li>"+
+                        "</ul>"+
+                        "<div class='exp-bar'>"+
+                            "<div class='exp-bar-inner'>"+
+                            "</div>"+
+                        "</div>"+
+                     "</div>"+
                  "</div>"+
                  "<div class='right-block'>"+
-
+                    "<div class='items'>"+
+                        "<div class='pane'></div>"+
+                    "</div>"+
+                    "<div class='description'>"+
+                        "<h3 class='name'>"+
+                        "</h3>"+
+                    "</div>"+
                  "</div>"
         },
-        init : function(){
+        init : function(data){
             var roleinfo = _doc.getElementById('role-manage');
             roleinfo.innerHTML = this.tpl();
             roleinfo.style.display = 'block';
