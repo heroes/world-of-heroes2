@@ -8,13 +8,13 @@ woh.g_config = {
 //'next'用来存储下一幕的
 woh.g_config.script={
     //死亡
-    'dead':{
+    '0':{
         type:'dead',
         data: {},     
-        next:'intro'
+        next:'1'
     },
     //开始界面
-    'intro':{
+    '1':{
         type:'intro',//标记相应的stage类型
         repeat:true,//标记在流程中是否允许重复出现（即选关的时候是否会被再次触发）
         data: {
@@ -24,9 +24,9 @@ woh.g_config.script={
                 height: 774
             }
         },
-        next:'map_1'
+        next:'7'
     },
-    'drama_1':{
+    '2':{
         type:'drama',//标记相应的stage类型
         repeat:false,
         data:[
@@ -39,15 +39,15 @@ woh.g_config.script={
                     ]
                 }
         ],
-        next:'cg_1'
+        next:'3'
     },
-    'cg_1':{
+    '3':{
         type:'cg',
         repeat:false,
         data:{},
-        next:'dialogue_1'
+        next:'4'
     },
-    'dialogue_1':{
+    '4':{
         type:'dialogue',
         repeat:false,
         data:[
@@ -59,28 +59,28 @@ woh.g_config.script={
             {'avatar':'resources/images/dialogue/UI-dialog-character.png','name':'唐如','content':'你没事吧，醒醒啊！呼吸很平稳，看来只是晕过去了而已。',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
             {'avatar':'resources/images/dialogue/UI-dialog-character.png','name':'唐如','content':'天啊，哪来那么多的大螃蟹！不好，螃蟹似乎是冲着那个人来的。不管怎么样，先把它们击退吧。',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'}
         ],
-        next:'loading_1'
+        next:'5'
     },
     // 
-    'loading_1':{
+    '5':{
         type:'loading',
         repeat:true,
         data:{
             key: 'battle_1'
         },
-        next:'battle_1'
+        next:'6'
     },
-    'battle_1':{
+    '6':{
         type:'battle',
         repeat:false,
         data:{},
-        next:'map_1'
+        next:'7'
     },
-    'map_1':{
+    '7':{
         type:'map',
         repeat:true,
         data:{},
-        next:'loading_1'
+        next:'5'
     }
 };
 
