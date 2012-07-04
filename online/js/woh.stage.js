@@ -29,7 +29,7 @@ Laro.NS('woh.stage', function (L) {
         initStageCollection();
         pkg.fsm = new L.AppFSM(this, this.statesList);
         
-        woh.gameScript.startExec(woh.g_config.script,'intro');//从开始界面开始
+        woh.gameScript.startExec(woh.g_config.script,'1');//从开始界面开始
     }
     function go (stage, msg) {
 
