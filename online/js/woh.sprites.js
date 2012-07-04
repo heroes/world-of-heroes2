@@ -31,16 +31,16 @@ Laro.NS('woh', function (L) {
     var Sprite = L.Class(function (data) {
         var statesList = [
             woh.roleStates.stand, woh.roleStateClass.Stand,
-            woh.roleStates.move, woh.roleStateClass.Move,
+            woh.roleStates.run, woh.roleStateClass.Run,
             woh.roleStates.normlAttack, woh.roleStateClass.NormalAttack,
-            woh.roleStates.hurted, woh.roleStateClass.Hurted,
-            woh.roleStates.skill, woh.roleStateClass.Skill,
+            woh.roleStates.hurt, woh.roleStateClass.Hurted,
+            woh.roleStates.magic, woh.roleStateClass.Magic,
             woh.roleStates.dead, woh.roleStateClass.Dead,
         ];
         
         this.data = data;
+        this.bloodBarW=this.data.bloodBarW||150;
         L.extend(this, data);
-        this.life = 1000;
         // 不用 Vector 操作，在大数据量操作的时候会快些
         this.x = 0;
         this.y = 0;
@@ -104,9 +104,10 @@ Laro.NS('woh', function (L) {
         },
         getAnimations: function () {
             this.animations.stand = this.getAnimationGroup('stand');
-            this.animations.move = this.getAnimationGroup('run');
-            this.animations.hurted = this.getAnimationGroup('hurted');
+            this.animations.run = this.getAnimationGroup('run');
+            this.animations.hurt = this.getAnimationGroup('hurt');
             this.animations.attack = this.getAnimationGroup('attack');
+            this.animations.magic=this.getAnimationGroup('magic');
         },
         // 设置当前 animation 并自动播放
         setAndPlay: function (animation, loop, start, end) {
@@ -148,7 +149,6 @@ Laro.NS('woh', function (L) {
             this.curAnimation && this.curAnimation.forEach(function (o) { 
                 o.update(dt) 
             });
-            
         },
         draw: function (render) {
             var x = Math.floor(this.x), y = Math.floor(this.y),
@@ -157,7 +157,36 @@ Laro.NS('woh', function (L) {
                 ((me.face == 'left' && !o.renderMirrored) || (me.face == 'right' && o.renderMirrored)) && o.mirror();
                 o.draw(render, x, y, 0, 1, null); 
             });
-            
+            var ctx = render.context;
+        },
+        //绘制血条
+        drawBloodBar: function (render) {
+            var ctx = render.context;
+            console.log(ctx);
+            var x = this.x - this.bloodBarW / 2 ;
+            var y = this.y - this.height-20;
+            var border = 2;
+            ctx.save();
+            ctx.globalAlpha = 0.7;
+            ctx.lineCap = "round";
+
+            ctx.beginPath();
+            ctx.lineWidth = this.bloodBarH+border*2;
+            ctx.strokeStyle = '#000';
+            ctx.moveTo(x - border,y );
+            ctx.lineTo(x+border+this.bloodBarW,y);
+            ctx.stroke();
+            ctx.closePath();
+
+            ctx.beginPath();
+            ctx.lineWidth = this.bloodBarH ;
+            ctx.strokeStyle = 'green';
+            ctx.moveTo(x,y);
+            ctx.lineTo(x+ this.bloodBarW*this.nowLife/this.life ,y);
+            ctx.stroke();
+            ctx.closePath();
+
+            ctx.restore();
         },
         pressEnd: function () {
             this.canMove = false;
@@ -209,8 +238,14 @@ Laro.NS('woh', function (L) {
         }
     
     });
+//由基础精灵类派生出人物类
     var Role=Sprite.extend(function(){
-
+        //根据等级和装备计算人物的相应数据
+        this.nowLife=this.life=1000;//生命
+        this.attack=0;//攻击
+        this.miss=0;//闪避
+        
+        //防御
     }).methods({
         initCheckArea: function () {
             // 可操作区域 == > 这一部分数据需要 提到 人物数据配置 里面去， 这里目前暂时先写死
@@ -244,14 +279,20 @@ Laro.NS('woh', function (L) {
                 render.context.drawImage(woh.loader.loadedImages['images/pie.png'], woh.STAGE_MOUSE_POS.x-38, woh.STAGE_MOUSE_POS.y-23);
                 render.drawLine(this.x, this.y+45, woh.STAGE_MOUSE_POS.x, woh.STAGE_MOUSE_POS.y, '#fff')
             }
+            this.drawBloodBar(render);
             this.curAnimation && this.curAnimation.forEach(function (o) { 
                 ((me.face == 'left' && !o.renderMirrored) || (me.face == 'right' && o.renderMirrored)) && o.mirror();
                 o.draw(render, x, y, 0, 1, null); 
             });
-            
         },
     });
-    var Monster=Sprite.extend();
+    var Monster=Sprite.extend(function(){
+        //相同等级的小怪各项属性分别是同类型人物属性的减半
+
+    }).methods({
+
+    });
+
     this.Role = Role;
     this.Monster=Monster;
 });
