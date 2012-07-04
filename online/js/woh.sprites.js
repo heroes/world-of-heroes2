@@ -40,10 +40,13 @@ Laro.NS('woh', function (L) {
         
         this.data = data;
         L.extend(this, data);
-        this.life = 1000;
+        this.nowLife=this.life = 1000;
         // 不用 Vector 操作，在大数据量操作的时候会快些
         this.x = 0;
         this.y = 0;
+        //定义血条的宽和高
+        this.bloodBarW=this.data.bloodBarW||120;
+        this.bloodBarH=15;
         this.movement = new L.Vector2(0, 0);
         this.fsm = new L.AppFSM(this, statesList);
         // 当前animation
@@ -157,7 +160,7 @@ Laro.NS('woh', function (L) {
                 ((me.face == 'left' && !o.renderMirrored) || (me.face == 'right' && o.renderMirrored)) && o.mirror();
                 o.draw(render, x, y, 0, 1, null); 
             });
-            
+            this.drawBloodBar(render);
         },
         pressEnd: function () {
             this.canMove = false;
@@ -206,11 +209,39 @@ Laro.NS('woh', function (L) {
         hurted: function (damage) {
             this.life -= damage;
             this.fsm.setState(woh.roleStates.hurted);
-        }
-    
+        },
+        drawBloodBar: function (render) {
+            var ctx = render.context;
+            var x = this.x - this.bloodBarW / 2 ;
+            var y = this.y - this.checkRect.height+10;
+            console.log(this.bloodBarW,this.checkRect.height);
+            var border = 2;
+            ctx.save();
+            ctx.globalAlpha = 0.7;
+            ctx.lineCap = "round";
+
+
+            ctx.beginPath();
+            ctx.lineWidth = this.bloodBarH+border*2;
+            ctx.strokeStyle = '#000';
+            ctx.moveTo(x - border,y );
+            ctx.lineTo(x+border+this.bloodBarW,y);
+            ctx.stroke();
+            ctx.closePath();
+
+            ctx.beginPath();
+            ctx.lineWidth = this.bloodBarH ;
+            ctx.strokeStyle = 'green';
+            ctx.moveTo(x,y);
+            ctx.lineTo(x+ this.bloodBarW*this.nowLife/this.life ,y);
+            ctx.stroke();
+            ctx.closePath();
+
+            ctx.restore();
+        },
     });
     var Role=Sprite.extend(function(){
-
+        
     }).methods({
         initCheckArea: function () {
             // 可操作区域 == > 这一部分数据需要 提到 人物数据配置 里面去， 这里目前暂时先写死
@@ -218,6 +249,7 @@ Laro.NS('woh', function (L) {
             this.checkRect = new L.Sprite(woh.stage.$, function () {
                 this.width = 100;
                 this.height = 120;
+
                 this.setPos = function (x, y) {
                     // 因为 sprite 默认是画在中心的，所以 也需要加上偏移量
                     this.x = x - 50;
@@ -248,6 +280,8 @@ Laro.NS('woh', function (L) {
                 ((me.face == 'left' && !o.renderMirrored) || (me.face == 'right' && o.renderMirrored)) && o.mirror();
                 o.draw(render, x, y, 0, 1, null); 
             });
+            this.drawBloodBar(render);
+            //console.log(ctx);
             
         },
     });

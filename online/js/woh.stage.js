@@ -38,6 +38,7 @@ Laro.NS('woh.stage', function (L) {
         }
         pkg.fsm.enter(pkg.statesName[stage], msg);
     }
+    
     function initStageCollection () {
         // 用于处理一些有事件交互的 sprite, 暂不管多点触摸的情况
         pkg.$ = new L.Stage(woh.els.canvas);
