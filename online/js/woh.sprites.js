@@ -118,7 +118,6 @@ Laro.NS('woh', function (L) {
             this.curAnimation = animation;
             
             animation.forEach(function (o) {
-                console.log(o);
                 o.setRange(start, end);
                 o.rewind();
                 o.play(loop);
