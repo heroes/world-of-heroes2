@@ -294,12 +294,8 @@ woh.g_config.weapon={
     },
 }
  // 精灵啦啦啦啦
-woh.g_config.sprites = {
-    // http://hongru.github.com/proj/laro/Leditor/animation/index.html
-    // 跟public 里面 人物 uid 对应， 001 -> 唐如
-    "002":{
+woh.g_config.monsters = {
 
-    },
     "crab": {
         "areadata": {
             standup: [0, 0, 190, 120],

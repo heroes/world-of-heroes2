@@ -9,26 +9,8 @@ woh.roleAttackType = {
 // Role
 Laro.NS('woh', function (L) {
     
-    /**
-     * 从 config 里面获取到的人物数据 如下
-         '001':{
-            'name':'唐如',//名字
-            'type':'002',//类型
-            'lv':0,//等级(根据类型和等级读取其他数据)
-            'avatar':'images/role/ava/ava_001.png',//头像
-            'exp_current':0,//当前经验值
-            'weapon':'001',//武器编号
-            'clothes':'001',//衣服编号
-            'skill_point':'0',//剩余技能点
-            'skill_list':{
-                '疾风刺':0, 
-                '落英染':0,
-                '浮云风卷':0,
-                '醉舞秋红':0
-            }//技能列表（编号-等级）
-        }
-    */
-    var Sprite = L.Class(function (data) {
+
+    var Sprite = L.Class(function (data, brain) {
         var statesList = [
             woh.roleStates.stand, woh.roleStateClass.Stand,
             woh.roleStates.move, woh.roleStateClass.Move,
@@ -39,7 +21,7 @@ Laro.NS('woh', function (L) {
         ];
         
         this.data = data;
-        L.extend(this, data);
+        //L.extend(this, data);
         this.nowLife=this.life = 1000;
         // 不用 Vector 操作，在大数据量操作的时候会快些
         this.x = 0;
@@ -56,7 +38,10 @@ Laro.NS('woh', function (L) {
         // 是否可移动标志
         this.canMove = false;
         this.face = 'right';
-        
+
+        this.brain = brain;
+        this.brain.knowSprite(this);
+
         this.born();
     }).methods({
         born: function () {
@@ -87,24 +72,7 @@ Laro.NS('woh', function (L) {
             //     me.canMove = true;
             // });
         },
-        getAnimationGroup: function (type) {
-            L.$lea.setLoader(woh.loader);
-            
-            var obj = [
-                woh.g_config.clothes[this.data['clothes']][type],
-                woh.g_config.weapon[this.data['weapon']][type],
-            ],
-                ret = [];
-            if (!Array.isArray(obj)) {
-                obj = [obj];
-            }
-            L.$lea.setSourceObj(obj);
-            for (var i = 0; i < obj.length; i ++) {
-                ret.push(L.$lea.getAnimation(i));
-            }
-            
-            return ret;
-        },
+
         getAnimations: function () {
             this.animations.stand = this.getAnimationGroup('stand');
             this.animations.move = this.getAnimationGroup('run');
@@ -160,7 +128,7 @@ Laro.NS('woh', function (L) {
                 ((me.face == 'left' && !o.renderMirrored) || (me.face == 'right' && o.renderMirrored)) && o.mirror();
                 o.draw(render, x, y, 0, 1, null); 
             });
-            this.drawBloodBar(render);
+            this.drawHPBar(render);
         },
         pressEnd: function () {
             this.canMove = false;
@@ -186,6 +154,7 @@ Laro.NS('woh', function (L) {
             this.x = x;
             this.y = y;
             this.checkRect.setPos(x, y);
+            this.brain.knowPos(this,x,y);
         },
         faceLeft: function () {
             this.face = 'left';
@@ -210,11 +179,11 @@ Laro.NS('woh', function (L) {
             this.life -= damage;
             this.fsm.setState(woh.roleStates.hurted);
         },
-        drawBloodBar: function (render) {
+        drawHPBar: function (render) {
             var ctx = render.context;
             var x = this.x - this.bloodBarW / 2 ;
             var y = this.y - this.checkRect.height+10;
-            console.log(this.bloodBarW,this.checkRect.height);
+            //console.log(this.bloodBarW,this.checkRect.height);
             var border = 2;
             ctx.save();
             ctx.globalAlpha = 0.7;
@@ -240,52 +209,8 @@ Laro.NS('woh', function (L) {
             ctx.restore();
         },
     });
-    var Role=Sprite.extend(function(){
-        
-    }).methods({
-        initCheckArea: function () {
-            // 可操作区域 == > 这一部分数据需要 提到 人物数据配置 里面去， 这里目前暂时先写死
-            var me = this;
-            this.checkRect = new L.Sprite(woh.stage.$, function () {
-                this.width = 100;
-                this.height = 120;
+    this.Sprite = Sprite;
 
-                this.setPos = function (x, y) {
-                    // 因为 sprite 默认是画在中心的，所以 也需要加上偏移量
-                    this.x = x - 50;
-                    this.y = y - 60;
-                };
-                
-                this.setPos(me.x, me.y);
-                // dev 模式，可以显示可以操作的区域，正式的时候把draw去掉
-                this.draw = function (rd) {
-                    rd.drawRect(0, 0, this.width, this.height, '#000');
-                }
-            });    
-            
-            this.checkRect.addEventListener('mousedown', function (x, y) {
-                me.canMove = true;
-            });
-        },
-        draw: function (render) {
-            var x = Math.floor(this.x), y = Math.floor(this.y),
-                me = this;
-            // draw circle & pie ==> 这里的数据也要提出去
-            if (this.canMove) {
-                render.context.drawImage(woh.loader.loadedImages['images/circle.png'], this.x-60, this.y+20);
-                render.context.drawImage(woh.loader.loadedImages['images/pie.png'], woh.STAGE_MOUSE_POS.x-38, woh.STAGE_MOUSE_POS.y-23);
-                render.drawLine(this.x, this.y+45, woh.STAGE_MOUSE_POS.x, woh.STAGE_MOUSE_POS.y, '#fff')
-            }
-            this.curAnimation && this.curAnimation.forEach(function (o) { 
-                ((me.face == 'left' && !o.renderMirrored) || (me.face == 'right' && o.renderMirrored)) && o.mirror();
-                o.draw(render, x, y, 0, 1, null); 
-            });
-            this.drawBloodBar(render);
-            //console.log(ctx);
-            
-        },
-    });
-    var Monster=Sprite.extend();
-    this.Role = Role;
-    this.Monster=Monster;
+    
+
 });

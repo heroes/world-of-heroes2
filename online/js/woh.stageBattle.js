@@ -20,6 +20,7 @@ Laro.NS('woh.stageClass', function (L) {
 
             // temp part to do area
             var me = this;
+            /*
             document.querySelector("body").onmouseup = function (e) {
                 if (e.target.tagName != "CANVAS") return;
                 var rect = e.target.getClientRects()[0];
@@ -31,12 +32,23 @@ Laro.NS('woh.stageClass', function (L) {
                     right: offsetX + 50,
                     bottom: offsetY + 50
                 }, e.target);
-            }
+            }*/
             // rio_tang
-            this.roles.add('rio_tang', new woh.Role(woh.runtime.role[0]));
+            this.aiController = {
+                knowPos: function (obj, x, y) {
+                    if(obj == me.roles.get('rio_tang')) {
+                        if(me.roles.get('crab'))
+                            me.roles.get('crab').moveTo(x,y);
+                    }
+                },
+                knowSprite: function (obj) {
+                    
+                },
+            }
+            this.roles.add('rio_tang', new woh.Role(woh.runtime.role[0], this.aiController));
             this.roles.get('rio_tang').setPos(200, 400);
             this.roles.get('rio_tang').stage = this;
-            this.roles.add('crab', new woh.Monster(woh.runtime.role[0]));
+            this.roles.add('crab', new woh.Monster(woh.g_config.monsters.crab, this.aiController));
             this.roles.get('crab').setPos(500, 400);
             this.roles.get('crab').stage = this;
             this.timeInState = 0;
