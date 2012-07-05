@@ -100,7 +100,7 @@
 	box-shadow:0 0 20px white;
 }
 .map-module .sub-win .ava-bar{width:100%;list-style: none; margin: 0; padding: 0; text-align: center}
-.map-module .sub-win .ava-bar .avar{width:120px; height:120px; display: inline-block; opacity: .7; margin:10px 3px}
+.map-module .sub-win .ava-bar .avar{width:120px; height:120px; display: inline-block; opacity: .3; margin:10px 3px}
 .map-module .sub-win .ava-bar .avar.active{opacity:1}
 .map-module .sub-win h1#name{color:white; font-size:24px; font-weight:bold; text-align:center; margin:0; padding:0 0 0 80px;}
 .map-module .sub-win .left-block,.sub-win .right-block{height:640px;float:left;}

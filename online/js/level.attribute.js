@@ -13,21 +13,21 @@
 
 woh.skill_rate={
 	'001':{
-		'health_rate':1,//血量偏移
-		'attack_rate':1,//攻击偏移
-		'defend_rate':1,//防御偏移
-		'crit_rate':1,//暴击偏移
-		'miss_rate':1,//闪避偏移
-		'speed_movement':200,//移动速度，单位为像素
+		'health':1,//血量偏移
+		'attack':1,//攻击偏移
+		'defend':1,//防御偏移
+		'crit':1,//暴击偏移
+		'miss':1,//闪避偏移
+		'speed':200,//移动速度，单位为像素
 		'speed_attack':1,//攻击速度，单位为t/s,每秒多少次
 	},
 	'002':{
-    'health_rate':1.2,
-		'attack_rate':0.5,
-		'defend_rate':1.3,
-		'crit_rate':1,
-		'miss_rate':1,
-		'speed_movement':200,
+    'health':1.2,
+		'attack':0.5,
+		'defend':1.3,
+		'crit':1,
+		'miss':1,
+		'speed':200,
 		'speed_attack':1,
 	},
 	'003':{

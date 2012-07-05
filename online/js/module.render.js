@@ -182,12 +182,9 @@
                  "</button>"+
                  "<div class='left-block'>"+
                     "<ul class='ava-bar'>"+
-                       "<li class='avar standard-stroke active'></li>"+
-                       "<li class='avar standard-stroke'></li>"+
-                       "<li class='avar standard-stroke'></li>"+
                     "</ul>"+
                     "<div class='role-info'>"+
-                        "<h1 id='name'>111<small>Lv:</small></h1>"+
+                        "<h1 id='name'></h1>"+
                         "<div id='clothes'>"+
                         "</div>"+
                         "<div id='preview'>"+
@@ -195,9 +192,9 @@
                         "<div id='weapon'>"+
                         "</div>"+
                         "<ul class='role-attributes'>"+
-                            "<li><label>生命：</label><span></span></li>"+
-                            "<li><label>防御：</label><span></span></li>"+
-                            "<li><label>闪避：</label><span></span></li>"+
+                            "<li><label>生命：</label><span id='health'></span></li>"+
+                            "<li><label>防御：</label><span id='defend'></span></li>"+
+                            "<li><label>闪避：</label><span id=''></span></li>"+
                             "<li><label>暴击：</label><span></span></li>"+
                         "</ul>"+
                         "<div class='exp-bar'>"+
@@ -216,6 +213,20 @@
                     "</div>"+
                  "</div>"
         },
+        refreshData:function(id){
+            var data=woh.runtime.activeRole[id];//显示相应人物的数据
+            _doc.querySelector('#role-manage .role-info h1#name').innerHTML=data['name']+'<small> Lv:'+data['lv']+'</small>';
+            //载入武器和衣服的图标
+
+            roleType=data['type'];
+            //载入相关数据
+            var attributes=_doc.querySelector('.role-attributes li span');
+            console.log(attributes);
+        },
+        //渲染包裹数据
+        renderPackage:function(){
+
+        },
         init : function(data){
             var roleinfo = _doc.getElementById('role-manage');
             roleinfo.innerHTML = this.tpl();
@@ -223,6 +234,8 @@
 
             this.bind();
             this.loadavatar();
+            _doc.querySelector('#role-manage .ava-bar .avar:first-child').className+=" active";
+            this.refreshData(0);
         },
         unInit : function(){
 
@@ -238,7 +251,7 @@
         loadavatar:function(){ //载入活动人物的头像
             for(var i in woh.runtime.activeRole){
                 console.log(woh.runtime.activeRole[i]);
-                //_doc.querySelector('#role-manage .ava-bar')
+                _doc.querySelector('#role-manage .ava-bar').innerHTML+='<li class="avar standard-stroke" id="'+i+'"><img width="120" height="120" src="'+woh.runtime.activeRole[i]['avatar']+'"></li>';
             }
         },
         loaddata:function(id){//载入选中人物的数据

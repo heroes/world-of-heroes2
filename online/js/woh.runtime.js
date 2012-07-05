@@ -32,5 +32,6 @@ Laro.NS('woh.runtime', function (L) {
             this.role.push(eval('('+JSON.stringify(woh.role_init_data[key])+')'));
         }
         this.activeRole.push(this.role[0]);
+        this.activeRole.push(this.role[1]);
     }
 });
