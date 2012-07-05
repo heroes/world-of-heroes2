@@ -222,14 +222,28 @@
             roleinfo.style.display = 'block';
 
             this.bind();
+            this.loadavatar();
         },
         unInit : function(){
 
         },
         bind : function(){
-             _doc.querySelector('#role-manage .close').addEventListener('click', function(){
+            _doc.querySelector('#role-manage .close').addEventListener('click', function(){
                 _doc.getElementById('role-manage').style.display = 'none';
-            })
+            });
+            _doc.querySelector('#role-manage .ava-bar').addEventListener('click',function(e){
+                
+            });
+        },
+        loadavatar:function(){ //载入活动人物的头像
+            for(var i in woh.runtime.activeRole){
+                console.log(woh.runtime.activeRole[i]);
+                //_doc.querySelector('#role-manage .ava-bar')
+            }
+        },
+        loaddata:function(id){//载入选中人物的数据
+           
+
         }
     }
     //点技能界面

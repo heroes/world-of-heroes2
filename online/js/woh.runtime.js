@@ -24,12 +24,13 @@ Laro.NS('woh.runtime', function (L) {
     	this.scriptProcess.push(key);
     	this.scriptProcess.sort();
     },
-    this.role=[],//人物的运行时数据
+    this.role=[],//全部人物的运行时数据
+    this.activeRole=[],//活动人物的列表，初始值为唐如一个人
     this.init=function(){
-    	//初始化运行时人物数据
+        //初始化运行时人物数据
         for(var key in woh.role_init_data){
             this.role.push(eval('('+JSON.stringify(woh.role_init_data[key])+')'));
         }
-        //console.log(this.role_runtime);
+        this.activeRole.push(this.role[0]);
     }
 });

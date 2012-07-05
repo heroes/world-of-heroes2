@@ -389,7 +389,7 @@ woh.role_init_data={
         'name':'唐如',//名字
         'type':'001',//类型
         'lv':0,//等级(根据类型和等级读取其他数据)
-        'avatar':'images/role/ava/ava_001.png',//头像
+        'avatar':'../resources/images/map/ava/rio_tang.png',//头像
         'exp_current':0,//当前经验值
         'weapon':'001',//武器编号
         'clothes':'none',//衣服编号,none表示裸奔
@@ -409,7 +409,7 @@ woh.role_init_data={
         'name':'程少非',//名字
         'type':'002',//类型
         'lv':2,//等级
-        'avatar':'images/role/ava/ava_001.png',//头像
+        'avatar':'../resources/images/map/ava/shaofei_cheng.png',//头像
         'exp_current':1300,//当前经验值
         'weapon':'003',//武器编号
         'clothes':'none',//衣服编号
