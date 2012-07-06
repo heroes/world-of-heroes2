@@ -17,8 +17,7 @@ woh.skill_rate={
 		'attack':1,//攻击偏移
 		'defend':1,//防御偏移
 		'crit':1,//暴击偏移
-		'miss':1,//闪避偏移
-		'speed':200,//移动速度，单位为像素
+		'speed_movement':200,//移动速度，单位为像素
 		'speed_attack':1,//攻击速度，单位为t/s,每秒多少次
 	},
 	'002':{
@@ -27,15 +26,15 @@ woh.skill_rate={
 		'defend':1.3,
 		'crit':1,
 		'miss':1,
-		'speed':200,
+		'speed_movement':200,
 		'speed_attack':1,
 	},
 	'003':{
-    'health_rate':0.5,
-		'attack_rate':2,
-		'defend_rate':0.5,
-		'crit_rate':1,
-		'miss_rate':1,
+    'health':0.5,
+		'attack':2,
+		'defend':0.5,
+		'crit':1,
+		'miss':1,
 		'speed_movement':200,
 		'speed_attack':1,
 	},
@@ -57,7 +56,6 @@ base_level_data={
   'attack':19,
   'defend':9,
   'crit':0.05,
-  'miss':5,
 },
 '1':{
   'exp':1000,
@@ -65,7 +63,6 @@ base_level_data={
   'attack':20,
   'defend':10,
   'crit':0.05,
-  'miss':5,
  },
 '2':{
   'exp':1300,
@@ -73,7 +70,6 @@ base_level_data={
   'attack':22,
   'defend':11,
   'crit':0.05,
-  'miss':5,
  },
 '3':{
   'exp':1600,
@@ -81,7 +77,6 @@ base_level_data={
   'attack':24,
   'defend':12,
   'crit':0.05,
-  'miss':5,
  },
 '4':{
   'exp':1900,
@@ -89,7 +84,6 @@ base_level_data={
   'attack':26,
   'defend':13,
   'crit':0.05,
-  'miss':5,
  },
 '5':{
   'exp':2200,
@@ -97,7 +91,6 @@ base_level_data={
   'attack':28,
   'defend':14,
   'crit':0.05,
-  'miss':5,
  },
 '6':{
   'exp':2500,
@@ -105,7 +98,6 @@ base_level_data={
   'attack':30,
   'defend':15,
   'crit':0.05,
-  'miss':5,
  },
 '7':{
   'exp':2800,
@@ -113,7 +105,6 @@ base_level_data={
   'attack':32,
   'defend':16,
   'crit':0.05,
-  'miss':5,
  },
 '8':{
   'exp':3100,
@@ -121,7 +112,6 @@ base_level_data={
   'attack':34,
   'defend':17,
   'crit':0.05,
-  'miss':5,
  },
 '9':{
   'exp':3400,
@@ -129,7 +119,6 @@ base_level_data={
   'attack':36,
   'defend':18,
   'crit':0.05,
-  'miss':5,
  },
 '10':{
   'exp':5000,
@@ -137,7 +126,6 @@ base_level_data={
   'attack':38,
   'defend':19,
   'crit':0.05,
-  'miss':5,
  },
 '11':{
   'exp':5600,
@@ -145,7 +133,6 @@ base_level_data={
   'attack':42,
   'defend':21,
   'crit':0.05,
-  'miss':5,
  },
 '12':{
   'exp':6200,
@@ -153,7 +140,6 @@ base_level_data={
   'attack':46,
   'defend':23,
   'crit':0.05,
-  'miss':5,
  },
 '13':{
   'exp':6800,
@@ -161,7 +147,6 @@ base_level_data={
   'attack':50,
   'defend':25,
   'crit':0.05,
-  'miss':5,
  },
 '14':{
   'exp':7400,
@@ -169,7 +154,6 @@ base_level_data={
   'attack':54,
   'defend':27,
   'crit':0.05,
-  'miss':5,
  },
 '15':{
   'exp':8000,
@@ -177,7 +161,6 @@ base_level_data={
   'attack':58,
   'defend':29,
   'crit':0.05,
-  'miss':5,
  },
 '16':{
   'exp':8600,
@@ -185,7 +168,6 @@ base_level_data={
   'attack':62,
   'defend':31,
   'crit':0.05,
-  'miss':5,
  },
 '17':{
   'exp':9200,
@@ -193,7 +175,6 @@ base_level_data={
   'attack':66,
   'defend':33,
   'crit':0.05,
-  'miss':5,
  },
 '18':{
   'exp':9800,
@@ -201,7 +182,6 @@ base_level_data={
   'attack':70,
   'defend':35,
   'crit':0.05,
-  'miss':5,
  },
 '19':{
   'exp':10400,
@@ -209,7 +189,6 @@ base_level_data={
   'attack':74,
   'defend':37,
   'crit':0.05,
-  'miss':5,
  },
 '20':{
   'exp':11000,
@@ -217,7 +196,6 @@ base_level_data={
   'attack':78,
   'defend':39,
   'crit':0.05,
-  'miss':5,
  }
 }
 //console.log(base_level_data);

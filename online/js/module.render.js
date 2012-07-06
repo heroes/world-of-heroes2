@@ -193,9 +193,9 @@
                         "</div>"+
                         "<ul class='role-attributes'>"+
                             "<li><label>生命：</label><span id='health'></span></li>"+
+                            "<li><label>攻击：</label><span id='attack'></span></li>"+
                             "<li><label>防御：</label><span id='defend'></span></li>"+
-                            "<li><label>闪避：</label><span id=''></span></li>"+
-                            "<li><label>暴击：</label><span></span></li>"+
+                            "<li><label>暴击：</label><span id='crit'></span></li>"+
                         "</ul>"+
                         "<div class='exp-bar'>"+
                             "<div class='exp-bar-inner'>"+
@@ -213,16 +213,29 @@
                     "</div>"+
                  "</div>"
         },
-        refreshData:function(id){
+        initData:function(id){
             var data=woh.runtime.activeRole[id];//显示相应人物的数据
             _doc.querySelector('#role-manage .role-info h1#name').innerHTML=data['name']+'<small> Lv:'+data['lv']+'</small>';
             //载入武器和衣服的图标
-
-            roleType=data['type'];
             //载入相关数据
-            var attributes=_doc.querySelector('.role-attributes li span');
-            console.log(attributes);
+            var rate_info=woh.skill_rate[data['type']],
+                level_info=woh.base_level_data[data['lv']];
+            //根据百分比计算出基础数值
+            // 'health':,
+            // 'attack':,
+            // 'defend':,
+            // 'crit':,
+            var base_health=woh.skill_rate['health']*level_info['health'],
+                base_attack=woh.skill_rate['attack']*level_info['attack'],
+                base_defend=woh.skill_rate['defend']*level_info['defend'],
+                base_crit=woh.skill_rate['crit']*level_info['crit'],
+            //加上装备的加成值
+                //if(data[])
+            //读取当前经验值
         },
+        changeEquippment:function(type,id){
+
+        }
         //渲染包裹数据
         renderPackage:function(){
 
@@ -235,7 +248,7 @@
             this.bind();
             this.loadavatar();
             _doc.querySelector('#role-manage .ava-bar .avar:first-child').className+=" active";
-            this.refreshData(0);
+            this.initData(0);
         },
         unInit : function(){
 

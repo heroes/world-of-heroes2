@@ -437,54 +437,44 @@ woh.role_init_data={
 
 woh.item_data={
         'weapon':{
-            
             '001':{
                 'name':'匕首',//名称
                 'description':'勉强能够用来防身的便宜货,居家旅行常备的防盗工具',
                 'icon':'images/weapon/icons/001.png',
-                'model':'images/weapon/model/001.png',
-                'health_addition':0,
-                'attack_addition':10,
-                'defend_addition':3,
-                'crit_addition':0,
+                'health':0,
+                'attack':10,
+                'defend':3,
+                'crit':0,
                 'for':'001',
-                'open':false
             },
             '002':{
                 'name':'玉殃',//名称
                 'description':'常见的小刀,可以用来切切水果什么的。',//描述
                 'icon':'images/weapon/icons/001.png',//图标路径
-                'model':'images/weapon/model/001.png',//模型路径
-                'health_addition':0,//血量加成
-                'attack_addition':3,//攻击加成
-                'defend_addition':0,//防御加成
-                'crit_addition':0,//暴击加成
+                'health':0,//血量加成
+                'attack':3,//攻击加成
+                'defend':0,//防御加成
+                'crit':0,//暴击加成
                 'for':'001',//适用角色（读取role_data中的数据）
-                'open':true//是否已经获得
             },
             '003':{
                 'name':'龙泉剑',
                 'description':'“装饰着金色精美花纹的剑，一看就很贵的样子，至于攻击力，就不得而知了。',
                 'icon':'images/icons/001.png',
-                'model':'resources/images/weapon/003',
-                'health_addition':0,
-                'attack_addition':10,
-                'defend_addition':3,
-                'crit_addition':0,
+                'health':0,
+                'attack':10,
+                'defend':3,
+                'crit':0,
                 'for':'002',
-                'open':false
             },
             '004':{
                 'name':'飞渊剑',
                 'description':'据说取材于极渊苦寒之地的紫晶，看起来挺像那么回事的。',
-                'icon':'images/weapon/icons/001.png',
-                'model':'images/weapon/model/001.png',
-                'health_addition':0,
-                'attack_addition':10,
-                'defend_addition':3,
-                'crit_addition':0,
-                'for':'002',
-                'open':false    
+                'health':0,
+                'attack':10,
+                'defend':3,
+                'crit':0,
+                'for':'002',   
             },
             '005':{
                 'name':'晶球',
@@ -495,8 +485,7 @@ woh.item_data={
                 'attack_addition':10,
                 'defend_addition':3,
                 'crit_addition':0,
-                'for':'002',
-                'open':false    
+                'for':'002',   
             },
             '006':{
                 'name':'紫晶珠',
@@ -507,8 +496,7 @@ woh.item_data={
                 'attack_addition':10,
                 'defend_addition':3,
                 'crit_addition':0,
-                'for':'003',
-                'open':false    
+                'for':'003',  
             },
             '007':{
                 'name':'十八妹',
@@ -519,8 +507,7 @@ woh.item_data={
                 'attack_addition':10,
                 'defend_addition':3,
                 'crit_addition':0,
-                'for':'003',
-                'open':false    
+                'for':'003',  
             }
         },
 
@@ -536,7 +523,6 @@ woh.item_data={
                 'crit_addition':0,
                 'speed_addition':0, 
                 'for':'001',//适用角色
-                'open':true
             },
             '002':{
                 'name':'棉布衣',
@@ -549,7 +535,6 @@ woh.item_data={
                 'crit_addition':0,
                 'speed_addition':0, 
                 'for':'001',
-                'open':false
             },
             '003':{
                 'name':'锦袍',
@@ -562,7 +547,6 @@ woh.item_data={
                 'crit_addition':0,
                 'speed_addition':0, 
                 'for':'002',//适用角色
-                'open':true
             },
             '004':{
                 'name':'蜀锦袍',
@@ -575,7 +559,6 @@ woh.item_data={
                 'crit_addition':0,
                 'speed_addition':0, 
                 'for':'002',//适用角色
-                'open':false
             },
             '005':{
                 'name':'麟裳',
@@ -588,7 +571,6 @@ woh.item_data={
                 'crit_addition':0,
                 'speed_addition':0, 
                 'for':'003',//适用角色
-                'open':true
             },
             '006':{
                 'name':'华彩裙',
@@ -601,7 +583,6 @@ woh.item_data={
                 'crit_addition':0,
                 'speed_addition':0, 
                 'for':'003',//适用角色
-                'open':false
             }
         }
 }
