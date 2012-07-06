@@ -218,24 +218,42 @@
             _doc.querySelector('#role-manage .role-info h1#name').innerHTML=data['name']+'<small> Lv:'+data['lv']+'</small>';
             //载入武器和衣服的图标
             //载入相关数据
+            console.log(woh.skill_rate);
             var rate_info=woh.skill_rate[data['type']],
                 level_info=woh.base_level_data[data['lv']];
-            //根据百分比计算出基础数值
-            // 'health':,
-            // 'attack':,
-            // 'defend':,
-            // 'crit':,
-            var base_health=woh.skill_rate['health']*level_info['health'],
-                base_attack=woh.skill_rate['attack']*level_info['attack'],
-                base_defend=woh.skill_rate['defend']*level_info['defend'],
-                base_crit=woh.skill_rate['crit']*level_info['crit'],
+            //根据偏移百分比计算出基础数值
+            var health=rate_info['health']*level_info['health'],
+                attack=rate_info['attack']*level_info['attack'],
+                defend=rate_info['defend']*level_info['defend'],
+                crit=rate_info['crit']*level_info['crit'];
             //加上装备的加成值
-                //if(data[])
+            //武器的加成值
+            if(data['weapon']!='none'){
+                var weapon=woh.item_data['weapon'][data['weapon']];
+                    health+=weapon['health'];
+                    attack+=weapon['attack'];
+                    defend+=weapon['defend'];
+                    crit+=weapon['crit'];
+            }
+                //衣服的加成值
+            if(data['clothes']!='none'){
+                var clothes=woh.item_data['clothes'][data['clothes']];
+                    health+=clothes['health'];
+                    attack+=clothes['attack'];
+                    defend+=clothes['defend'];
+                    crit+=clothes['crit'];
+            }
             //读取当前经验值
+
+            //将数据渲染到界面上
+            _doc.querySelector('#role-manage .role-info .role-attributes #health').innerHTML=health;
+            _doc.querySelector('#role-manage .role-info .role-attributes #attack').innerHTML=attack;
+            _doc.querySelector('#role-manage .role-info .role-attributes #defend').innerHTML=defend;
+            _doc.querySelector('#role-manage .role-info .role-attributes #crit').innerHTML=crit*100;
         },
         changeEquippment:function(type,id){
 
-        }
+        },
         //渲染包裹数据
         renderPackage:function(){
 
