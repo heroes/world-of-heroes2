@@ -386,7 +386,7 @@ woh.role_init_data={
         'type':'001',//类型
         'lv':0,//等级(根据类型和等级读取其他数据)
         'avatar':'./resources/images/map/ava/rio_tang.png',//头像
-        'exp_current':0,//当前经验值
+        'exp':0,//当前经验值
         'weapon':'001',//武器编号
         'clothes':'none',//衣服编号,none表示裸奔
         'skill_point':'0',//剩余技能点
@@ -406,7 +406,7 @@ woh.role_init_data={
         'type':'002',//类型
         'lv':2,//等级
         'avatar':'./resources/images/map/ava/shaofei_cheng.png',//头像
-        'exp_current':1300,//当前经验值
+        'exp':1300,//当前经验值
         'weapon':'003',//武器编号
         'clothes':'none',//衣服编号
         'skill_point':'0',
@@ -422,7 +422,7 @@ woh.role_init_data={
         'type':'003',//类型
         'lv':2,//等级
         'avatar':'./resources/images/map/ava/biqing_guo.png',//头像
-        'exp_current':1300,//当前经验值
+        'exp':1300,//当前经验值
         'weapon':'005',//武器编号
         'clothes':'005',//衣服编号
         'skill_point':0,

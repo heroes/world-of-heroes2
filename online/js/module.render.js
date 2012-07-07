@@ -244,14 +244,20 @@
                     crit+=clothes['crit'];
             }
             //读取当前经验值
-
+            var width_percent=data['exp']/woh.base_level_data[(parseInt(data['lv'])+1).toString()]['exp'];
+                
             //将数据渲染到界面上
             _doc.querySelector('#role-manage .role-info .role-attributes #health').innerHTML=health;
             _doc.querySelector('#role-manage .role-info .role-attributes #attack').innerHTML=attack;
             _doc.querySelector('#role-manage .role-info .role-attributes #defend').innerHTML=defend;
             _doc.querySelector('#role-manage .role-info .role-attributes #crit').innerHTML=crit*100;
+            //经验条
+            _doc.querySelector('#role-manage .exp-bar-inner').style.width=width_percent*220+'px';
         },
-        changeEquippment:function(type,id){
+        changeEquippment:function(type,id,target){
+            //修改runtime数据
+            woh.runtime.activeRole[target][type]=id;
+            //渲染预览图
 
         },
         //渲染包裹数据
@@ -266,6 +272,9 @@
             this.bind();
             this.loadavatar();
             _doc.querySelector('#role-manage .ava-bar .avar:first-child').className+=" active";
+            _doc.querySelector('#role-manage .ava-bar').addEventListener('click',function(){
+                
+            },false);
             this.initData(0);
         },
         unInit : function(){
