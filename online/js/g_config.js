@@ -160,7 +160,7 @@ woh.g_config.clothes={
                 [400,0,599,169,400,0,599,169],
                 [600,0,799,169,600,0,799,169]
             ],
-            "filename": "images/sprites/clothes/001/none/run.png"
+            "filename": "images/sprites/clothes/001/001/run.png"
         },
         "attack":{
             "info": {
