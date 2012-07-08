@@ -114,7 +114,8 @@ margin-top:420px;}
 .map-module .sub-win .right-block .description{height: 100px; margin-left: 18px}
 .map-module .sub-win .right-block .items{height:300px;margin-top: 140px;margin-left: 7px}
 .map-module .sub-win .right-block .items table{width:100%}
-.map-module .sub-win .right-block .items table tr td{width:77px;height:77px;border:3px solid #000;margin:4px;background:rgba(0,0,0,.7)}
+.map-module .sub-win .right-block .items table tr td{width:77px;height:77px;border:3px solid #000;margin:4px;background:rgba(0,0,0,.7);padding:0}
+.map-module .sub-win .right-block .items table tr td img{margin: 0; padding: 0}
 .map-module .sub-win#role-manage ul.role-attributes{width:80%;list-style: none; clear:both;margin:0 auto;font-weight:bold}
 .map-module .sub-win#role-manage ul.role-attributes li{display: inline-block; width: 40% ;padding:0 10px;}
 .map-module .sub-win#role-manage ul.role-attributes li span{}

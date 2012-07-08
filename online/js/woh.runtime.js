@@ -35,7 +35,7 @@ Laro.NS('woh.runtime', function (L) {
         //以下为测试代码
         this.activeRole.push(this.role[0]);
         this.activeRole.push(this.role[1]);
-        this.packageItems.push(woh.item_data['weapon']['001']);
-        this.packageItems.push(woh.item_data['weapon']['002']);
+        this.packageItems.push(['weapon','001']);
+        this.packageItems.push(['weapon','002']);
     }
 });

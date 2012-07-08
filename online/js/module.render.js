@@ -212,6 +212,7 @@
                     "<div class='description'>"+
                         "<h3 class='name'>"+
                         "</h3>"+
+                        "<p class='content'></p>"
                     "</div>"+
                  "</div>"
         },
@@ -255,18 +256,30 @@
             _doc.querySelector('#role-manage .role-info .role-attributes #defend').innerHTML=defend;
             _doc.querySelector('#role-manage .role-info .role-attributes #crit').innerHTML=crit*100;
             _doc.querySelector('#role-manage .role-info .exp-value').style.width=exp_length;
+        },
+        renderItems:function(){
             //渲染物品图标
-            var itemlattics=_doc.querySelectorAll('#role-manage .items td');
-            for(var i in itemlattics){
-                itemlattics[i].innerHTML="<img src='"+woh.runtime.packageItems[i]['icon']+"'/>";
+            var itemlattics=_doc.querySelectorAll('#role-manage .items td'),
+                itemdatas=woh.runtime.packageItems;
+            for(var i in itemdatas){
+                itemlattics[i].innerHTML="<img width='77' height='77' src='"+woh.item_data[itemdatas[i][0]][itemdatas[i][1]]['icon']+"' draggable='true'"
+                +"datatype='"+woh.runtime.packageItems[i][0]+"' datatag='"+woh.runtime.packageItems[i][1]+"'/>";
             }
+            var draggingType;
+            _doc.querySelector('#role-manage .items').addEventListener('dragstart',function(e){
+                draggingType=e.target.attributes['datatype'].nodeValue;
+            },false);
+            _doc.getElementById('weapon').ondragover=function(e){
+                if (e.preventDefault) 
+                    e.preventDefault();                                          
+            };
+            _doc.getElementById('weapon').addEventListener('drop',function(e){
+                e.preventDefault();
+                console.log('drop');
+            },false);
         },
         changeEquippment:function(type,id){
             
-        },
-        //渲染包裹数据
-        renderPackage:function(){
-
         },
         init : function(data){
             var roleinfo = _doc.getElementById('role-manage');
@@ -277,6 +290,7 @@
             this.loadavatar();
             _doc.querySelector('#role-manage .ava-bar .avar:first-child').className+=" active";
             this.initData(0);
+            this.renderItems();
         },
         unInit : function(){
 
