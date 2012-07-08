@@ -291,7 +291,9 @@ woh.g_config.weapon={
                 [600,0,799,169,600,0,799,169]
             ],
             "filename": "images/sprites/weapon/002/attack.png"
-        }
+        },
+        magic:{},
+        hurted:{},
     },
 }
  // 精灵啦啦啦啦
