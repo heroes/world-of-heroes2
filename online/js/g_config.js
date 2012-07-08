@@ -292,8 +292,8 @@ woh.g_config.weapon={
             ],
             "filename": "images/sprites/weapon/002/attack.png"
         },
-        magic:{},
-        hurted:{},
+        "magic":{},
+        "hurted":{},
     },
 }
  // 精灵啦啦啦啦
@@ -442,8 +442,8 @@ woh.item_data={
         'weapon':{
             '001':{
                 'name':'匕首',//名称
-                'description':'勉强能够用来防身的便宜货,居家旅行常备的防盗工具',
-                'icon':'images/weapon/icons/001.png',
+                'description':'勉强能够用来防身的便宜货,居家旅行常备的防盗工具。',
+                'icon':'./resources/images/map/items/w_001.png',
                 'health':0,
                 'attack':10,
                 'defend':3,
@@ -452,8 +452,8 @@ woh.item_data={
             },
             '002':{
                 'name':'玉殃',//名称
-                'description':'常见的小刀,可以用来切切水果什么的。',//描述
-                'icon':'images/weapon/icons/001.png',//图标路径
+                'description':'美其名曰“玉”，其实不过是打磨得比较光滑的青铜而已。',//描述
+                'icon':'./resources/images/map/items/w_002.png',//图标路径
                 'health':0,//血量加成
                 'attack':3,//攻击加成
                 'defend':0,//防御加成

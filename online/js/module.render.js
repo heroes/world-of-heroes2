@@ -199,6 +199,8 @@
                         "</ul>"+
                         "<div class='exp-bar'>"+
                             "<div class='exp-bar-inner'>"+
+                                "<div class='exp-value'>"+
+                                "</div>"+
                             "</div>"+
                         "</div>"+
                      "</div>"+
@@ -235,7 +237,7 @@
                     defend+=weapon['defend'];
                     crit+=weapon['crit'];
             }
-                //衣服的加成值
+            //衣服的加成值
             if(data['clothes']!='none'){
                 var clothes=woh.item_data['clothes'][data['clothes']];
                     health+=clothes['health'];
@@ -244,12 +246,20 @@
                     crit+=clothes['crit'];
             }
             //读取当前经验值
+            var exp_length=220*data['exp']/woh.base_level_data[data['lv']+1]['exp']+'px';
+            //console.log(exp_length);
             
             //将数据渲染到界面上
             _doc.querySelector('#role-manage .role-info .role-attributes #health').innerHTML=health;
             _doc.querySelector('#role-manage .role-info .role-attributes #attack').innerHTML=attack;
             _doc.querySelector('#role-manage .role-info .role-attributes #defend').innerHTML=defend;
             _doc.querySelector('#role-manage .role-info .role-attributes #crit').innerHTML=crit*100;
+            _doc.querySelector('#role-manage .role-info .exp-value').style.width=exp_length;
+            //渲染物品图标
+            var itemlattics=_doc.querySelectorAll('#role-manage .items td');
+            for(var i in itemlattics){
+                itemlattics[i].innerHTML="<img src='"+woh.runtime.packageItems[i]['icon']+"'/>";
+            }
         },
         changeEquippment:function(type,id){
             

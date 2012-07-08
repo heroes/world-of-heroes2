@@ -122,7 +122,7 @@ margin-top:420px;}
 	background: url(../resources/images/map/exp-right.png) right bottom no-repeat;
 }
 .map-module .sub-win#role-manage .exp-bar-inner{height: 26px;background: rgba(0,0,0,.7); width: 220px}
-
+.map-module .sub-win#role-manage .exp-value{height: 26px; background: white;}
 .cg-module,.drama-module{
 	width:960px;
 	height:640px;
