@@ -105,6 +105,7 @@ woh.g_config.resources = {
             'images/sprites/clothes/001/none/magic.png',
             'images/sprites/clothes/001/none/stand.png',
             'images/sprites/clothes/001/none/run.png',
+            'images/sprites/clothes/001/001/stand.png',
 
             'images/sprites/weapon/001/attack.png',
             'images/sprites/weapon/001/hurt.png',
@@ -141,7 +142,7 @@ woh.g_config.clothes={
                 [0,0,199,169,0,0,199,169],
                 [200,0,399,169,200,0,399,169]
             ],
-            "filename": "images/sprites/clothes/001/none/stand.png"
+            "filename": "images/sprites/clothes/001/001/stand.png"
             }, 
         "run":{
             "info": {

@@ -3,7 +3,7 @@
 	height:640px;
 	position:absolute;
 	z-index: 2;
-	background:url(../resources/images/map/win_bg.png) no-repeat;
+	background:url(../resources/images/map/win_bg.jpg) no-repeat;
 	display:none;
 }
 .sub-win button.close{
@@ -11,15 +11,22 @@
 	top:20px;
 	right:20px;
 	background:url(../resources/images/map/cross.png) no-repeat center;
-	width:96px;
-	height:96px;
-	border:5px solid rgba(255,255,255,.7);
+	background-size: 80px 80px;
+	width:94px;
+	height:94px;
+	border:0;
+	-webkit-transition: -webkit-transform .3s ease-in;
+    -moz-transition:    -moz-transform .3s ease-in;
+    -o-transition:      -o-transform .3s ease-in;
+    transition:         transform .3s ease-in;
 }
 .sub-win button.close:hover{
-	box-shadow: 0 0 10px white;
-}
+ -webkit-transform: rotate(180deg) scale(0.8);
+    -moz-transform: rotate(180deg) scale(0.8);
+    -o-transform: rotate(180deg) scale(0.8);
+    -transform: rotate(180deg) scale(0.8);}
 .sub-win .standard-stroke{
-	border:5px solid rgba(255,255,255,.7);
+	border:5px solid rgba(0,0,0,.7);
 }
 
 .intro-module{
@@ -80,47 +87,41 @@
 .map-module{
 	width:960px;
 	height:640px;
-	background:white;
+	background: url(../resources/images/map/map.jpg) no-repeat;
 }
 .map-module .button{
-	width:80px;
-	line-height:20px;
-	padding:30px 0;
-	background:red;
-	color:white;
-	float:right;
-	margin-right:20px;
-	border-radius:20px;
-	text-align:center;
-	cursor:pointer;
-	margin-top:540px;
-}
-.map-module .button:hover{
-	border-radius:30px;
-	box-shadow:0 0 20px white;
-}
-.map-module .sub-win .ava-bar{width:100%;list-style: none; margin: 0; padding: 0; text-align: center}
-.map-module .sub-win .ava-bar .avar{width:120px; height:120px; display: inline-block; opacity: .3; margin:10px 3px}
+width:180px;
+height:200px;
+margin:0 10px;
+float:right;
+cursor:pointer;
+margin-top:420px;}
+#map-leave{background: url(../resources/images/map/button3.png) center no-repeat}
+#map-skill{background: url(../resources/images/map/button2.png) center no-repeat}
+#map-person{background: url(../resources/images/map/button1.png) center no-repeat}
+
+.map-module .sub-win .ava-bar{width:85%;list-style: none; margin: 0 auto; padding: 0;}
+.map-module .sub-win .ava-bar .avar{width:105px; height:105px; display: inline-block; opacity: .3; margin:3px;}
 .map-module .sub-win .ava-bar .avar.active{opacity:1}
-.map-module .sub-win h1#name{color:white; font-size:24px; font-weight:bold; text-align:center; margin:0; padding:0 0 0 80px;}
+.map-module .sub-win h1#name{color:black; font-size:24px; font-weight:bold; text-align:center; margin:0;}
 .map-module .sub-win .left-block,.sub-win .right-block{height:640px;float:left;}
-.map-module .sub-win .left-block{width: 415px;}
-.map-module .sub-win .right-block{width:525px;}
-.map-module .sub-win .left-block #clothes,.map-module .sub-win .left-block #preview,.map-module .sub-win .left-block #weapon{float: right;height:230px;}
-.map-module .sub-win .left-block #clothes,.sub-win .left-block #weapon{width:60px; background: url(../resources/images/map/selected_bg.png) no-repeat center 90px; margin-right: 15px}
-.map-module .sub-win .left-block #preview{width:170px;}
-.map-module .sub-win .right-block .description{border:5px solid rgba(255,255,255,.7);background: url(../resources/images/map/description-bg.png) right bottom no-repeat;height: 100px; margin-left: 18px}
-.map-module .sub-win .right-block .items{background: url(../resources/images/map/item_edge.png) repeat-y;height:300px;
-	margin-top: 120px;width: 518px; margin-left: 7px
-}
-.map-module .sub-win .right-block .items .pane{height:210px;padding:10px;border:5px solid rgba(255,255,255,.7);width: 470px; margin-left: 18px}
-.map-module .sub-win#role-manage ul.role-attributes{list-style: none; clear:both;margin: 0; padding: 0 0 0 130px;}
+.map-module .sub-win .left-block{width: 420px; margin:20px 30px}
+.map-module .sub-win .right-block{width:440px;margin-left:10px}
+.map-module .sub-win .left-block #clothes,.sub-win .left-block #weapon{width:80px;height:230px; background: url(../resources/images/map/selected_bg.png) no-repeat center 90px;}
+.sub-win .left-block #weapon{float:left}
+.map-module .sub-win .left-block #clothes{float:right}
+.map-module .sub-win .left-block #preview{float:left;width:230px;height:230px;margin-left:15px;}
+.map-module .sub-win .right-block .description{height: 100px; margin-left: 18px}
+.map-module .sub-win .right-block .items{height:300px;margin-top: 140px;margin-left: 7px}
+.map-module .sub-win .right-block .items table{width:100%}
+.map-module .sub-win .right-block .items table tr td{width:77px;height:77px;border:3px solid #000;margin:4px;background:rgba(0,0,0,.7)}
+.map-module .sub-win#role-manage ul.role-attributes{width:80%;list-style: none; clear:both;margin:0 auto;font-weight:bold}
 .map-module .sub-win#role-manage ul.role-attributes li{display: inline-block; width: 40% ;padding:0 10px;}
 .map-module .sub-win#role-manage ul.role-attributes li span{}
-.map-module .sub-win#role-manage .exp-bar{height: 26px; width: 250px;padding-left: 130px; padding-top: 10px;
+.map-module .sub-win#role-manage .exp-bar{height: 26px; width: 250px;margin:10px auto;
 	background: url(../resources/images/map/exp-right.png) right bottom no-repeat;
 }
-.map-module .sub-win#role-manage .exp-bar-inner{height: 26px;background: rgba(255,255,255,.7); width: 220px}
+.map-module .sub-win#role-manage .exp-bar-inner{height: 26px;background: rgba(0,0,0,.7); width: 220px}
 
 .cg-module,.drama-module{
 	width:960px;

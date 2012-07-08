@@ -152,9 +152,9 @@
     //地图界面
     Map={
         tpl:function(){
-            return '<div class="button" id="map-leave">离开</div>' +
-                '<div class="button" id="map-skill">技能</div>' +
-                '<div class="button" id="map-person">人物</div>'+
+            return '<div class="button" id="map-leave"></div>' +
+                '<div class="button" id="map-skill"></div>' +
+                '<div class="button" id="map-person"></div>'+
                 '<div id="role-manage" class="sub-win"></div>'+
                 '<div id="skill-manage" class="sub-win"></div>'
         },
@@ -185,11 +185,11 @@
                     "</ul>"+
                     "<div class='role-info'>"+
                         "<h1 id='name'></h1>"+
-                        "<div id='clothes'>"+
+                        "<div id='weapon'>"+
                         "</div>"+
                         "<div id='preview'>"+
                         "</div>"+
-                        "<div id='weapon'>"+
+                        "<div id='clothes'>"+
                         "</div>"+
                         "<ul class='role-attributes'>"+
                             "<li><label>生命：</label><span id='health'></span></li>"+
@@ -205,7 +205,7 @@
                  "</div>"+
                  "<div class='right-block'>"+
                     "<div class='items'>"+
-                        "<div class='pane'></div>"+
+                        "<table><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr></table>"+
                     "</div>"+
                     "<div class='description'>"+
                         "<h3 class='name'>"+
@@ -244,21 +244,15 @@
                     crit+=clothes['crit'];
             }
             //读取当前经验值
-            var width_percent=data['exp']/woh.base_level_data[(parseInt(data['lv'])+1).toString()]['exp'];
-                
+            
             //将数据渲染到界面上
-            _doc.getElementById('health').innerHTML=health;
-            _doc.getElementById('attack').innerHTML=attack;
-            _doc.getElementById('defend').innerHTML=defend;
-            _doc.getElementById('crit').innerHTML=crit*100;
-            //经验条
-            _doc.querySelector('#role-manage .exp-bar-inner').style.width=width_percent*220+'px';
+            _doc.querySelector('#role-manage .role-info .role-attributes #health').innerHTML=health;
+            _doc.querySelector('#role-manage .role-info .role-attributes #attack').innerHTML=attack;
+            _doc.querySelector('#role-manage .role-info .role-attributes #defend').innerHTML=defend;
+            _doc.querySelector('#role-manage .role-info .role-attributes #crit').innerHTML=crit*100;
         },
-        changeEquippment:function(type,id,target){
-            //修改runtime数据
-            woh.runtime.activeRole[target][type]=id;
-            //渲染预览图
-
+        changeEquippment:function(type,id){
+            
         },
         //渲染包裹数据
         renderPackage:function(){
@@ -272,9 +266,6 @@
             this.bind();
             this.loadavatar();
             _doc.querySelector('#role-manage .ava-bar .avar:first-child').className+=" active";
-            _doc.querySelector('#role-manage .ava-bar').addEventListener('click',function(){
-                
-            },false);
             this.initData(0);
         },
         unInit : function(){
@@ -291,7 +282,7 @@
         loadavatar:function(){ //载入活动人物的头像
             for(var i in woh.runtime.activeRole){
                 console.log(woh.runtime.activeRole[i]);
-                _doc.querySelector('#role-manage .ava-bar').innerHTML+='<li class="avar standard-stroke" id="'+i+'"><img width="120" height="120" src="'+woh.runtime.activeRole[i]['avatar']+'"></li>';
+                _doc.querySelector('#role-manage .ava-bar').innerHTML+='<li class="avar standard-stroke" id="'+i+'"><img width="105" height="105" src="'+woh.runtime.activeRole[i]['avatar']+'"></li>';
             }
         },
         loaddata:function(id){//载入选中人物的数据
