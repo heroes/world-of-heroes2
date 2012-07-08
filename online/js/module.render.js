@@ -247,10 +247,10 @@
             var width_percent=data['exp']/woh.base_level_data[(parseInt(data['lv'])+1).toString()]['exp'];
                 
             //将数据渲染到界面上
-            _doc.querySelector('#role-manage .role-info .role-attributes #health').innerHTML=health;
-            _doc.querySelector('#role-manage .role-info .role-attributes #attack').innerHTML=attack;
-            _doc.querySelector('#role-manage .role-info .role-attributes #defend').innerHTML=defend;
-            _doc.querySelector('#role-manage .role-info .role-attributes #crit').innerHTML=crit*100;
+            _doc.getElementById('health').innerHTML=health;
+            _doc.getElementById('attack').innerHTML=attack;
+            _doc.getElementById('defend').innerHTML=defend;
+            _doc.getElementById('crit').innerHTML=crit*100;
             //经验条
             _doc.querySelector('#role-manage .exp-bar-inner').style.width=width_percent*220+'px';
         },
