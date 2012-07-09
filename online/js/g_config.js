@@ -142,7 +142,7 @@ woh.g_config.clothes={
                 [0,0,199,169,0,0,199,169],
                 [200,0,399,169,200,0,399,169]
             ],
-            "filename": "images/sprites/clothes/001/001/stand.png"
+            "filename": "images/sprites/clothes/001/none/stand.png"
             }, 
         "run":{
             "info": {
@@ -160,7 +160,7 @@ woh.g_config.clothes={
                 [400,0,599,169,400,0,599,169],
                 [600,0,799,169,600,0,799,169]
             ],
-            "filename": "images/sprites/clothes/001/001/run.png"
+            "filename": "images/sprites/clothes/001/none/run.png"
         },
         "attack":{
             "info": {
@@ -291,9 +291,7 @@ woh.g_config.weapon={
                 [600,0,799,169,600,0,799,169]
             ],
             "filename": "images/sprites/weapon/002/attack.png"
-        },
-        "magic":{},
-        "hurted":{},
+        }
     },
 }
  // 精灵啦啦啦啦
@@ -390,7 +388,7 @@ woh.role_init_data={
         'lv':0,//等级(根据类型和等级读取其他数据)
         'avatar':'./resources/images/map/ava/rio_tang.png',//头像
         'exp':0,//当前经验值
-        'weapon':'001',//武器编号
+        'weapon':'002',//武器编号
         'clothes':'none',//衣服编号,none表示裸奔
         'skill_point':'0',//剩余技能点
         'skill_list':{

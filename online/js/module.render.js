@@ -177,6 +177,7 @@
 
     //物品管理界面
     var roleManager = _win.roleManager = {
+        currentActiveRole:0,
         tpl:function(){
           return "<button class='close'>"+
                  "</button>"+
@@ -206,9 +207,8 @@
                      "</div>"+
                  "</div>"+
                  "<div class='right-block'>"+
-                    "<div class='items'>"+
-                        "<table><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr></table>"+
-                    "</div>"+
+                    "<ul class='items'>"+
+                    "</ul>"+
                     "<div class='description'>"+
                         "<h3 class='name'>"+
                         "</h3>"+
@@ -217,9 +217,9 @@
                  "</div>"
         },
         initData:function(id){
+            this.currentActiveRole=id;                          
             var data=woh.runtime.activeRole[id];//显示相应人物的数据
             _doc.querySelector('#role-manage .role-info h1#name').innerHTML=data['name']+'<small> Lv:'+data['lv']+'</small>';
-            //载入武器和衣服的图标
             //载入相关数据
             console.log(woh.skill_rate);
             var rate_info=woh.skill_rate[data['type']],
@@ -257,35 +257,59 @@
             _doc.querySelector('#role-manage .role-info .role-attributes #crit').innerHTML=crit*100;
             _doc.querySelector('#role-manage .role-info .exp-value').style.width=exp_length;
         },
+        renderItemlattic:function(){
+            var items=[];
+            for(var i=0;i<15;i++){
+                items.push("<li></li>");
+            }
+            items=items.join('');
+            _doc.querySelector('#role-manage ul.items').innerHTML=items;
+
+        },
         renderItems:function(){
             //渲染物品图标
-            var itemlattics=_doc.querySelectorAll('#role-manage .items td'),
-                itemdatas=woh.runtime.packageItems;
+            var itemlattics=_doc.querySelectorAll('#role-manage ul.items li'),
+                itemdatas=woh.runtime.packageItems,
+                dropping=false;
             for(var i in itemdatas){
                 itemlattics[i].innerHTML="<img width='77' height='77' src='"+woh.item_data[itemdatas[i][0]][itemdatas[i][1]]['icon']+"' draggable='true'"
                 +"datatype='"+woh.runtime.packageItems[i][0]+"' datatag='"+woh.runtime.packageItems[i][1]+"'/>";
             }
-            var draggingType;
+            //处理换装流程
+            var draggingType,
+                draggingId;
             _doc.querySelector('#role-manage .items').addEventListener('dragstart',function(e){
                 draggingType=e.target.attributes['datatype'].nodeValue;
+                draggingId=e.target.attributes['datatag'].nodeValue;
             },false);
             _doc.getElementById('weapon').ondragover=function(e){
                 if (e.preventDefault) 
                     e.preventDefault();                                          
             };
             _doc.getElementById('weapon').addEventListener('drop',function(e){
-                e.preventDefault();
-                console.log('drop');
+                console.log(e.target);
+                if(draggingType=='weapon'){
+                    if(e.target.id=='weapon'){
+                        e.target.innerHTML="<img width='77' height='77' src='"+woh.item_data['weapon'][draggingId]['icon']+"'/>";
+                    }
+                    else{
+                        e.target.src=woh.item_data['weapon'][draggingId]['icon'];
+                    }
+                    console.log(e.target.innerHTML);
+                }
+                    console.log(this.currentActiveRole);
+                    woh.runtime.activeRole[0]['weapon']=draggingId;
             },false);
         },
-        changeEquippment:function(type,id){
-            
+        setEquipment:function(type,id){
+
         },
         init : function(data){
             var roleinfo = _doc.getElementById('role-manage');
             roleinfo.innerHTML = this.tpl();
             roleinfo.style.display = 'block';
-
+           
+            this.renderItemlattic()
             this.bind();
             this.loadavatar();
             _doc.querySelector('#role-manage .ava-bar .avar:first-child').className+=" active";
@@ -337,33 +361,6 @@
             })
         }
     };
-    // roleManager.article = {
-    //     tpl : '<article class="item_icon"></article>',
-    //     total :28,
-    //     data : {},
-    //     init : function() {
-    //         this.render();
-    //         this.bind();
-    //     },
-    //     unInit : function(){
-    //         this.unbind();
-    //     },
-    //     render : function(){
-    //         var items = [];
-    //         for(var i = 0; i < this.total; i++){
-    //             items.push(tmpl(this.tpl, this.data));
-    //         }
-    //         //_doc.querySelector('#item_icons div.icon_panel').innerHTML = items.join('');
-    //     },
-    //     bind : function(){
-
-    //     },
-    //     unbind : function(){
-
-    //     }
-    // }
-
-
     Map.init();
     Intro.init();
     CG.init();
