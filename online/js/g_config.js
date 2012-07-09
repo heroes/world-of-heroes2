@@ -101,14 +101,14 @@ woh.g_config.resources = {
 
             //载入无装备状态的资源
             'images/sprites/clothes/001/none/attack.png',
-            'images/sprites/clothes/001/none/hurt.png',
+            'images/sprites/clothes/001/none/hurted.png',
             'images/sprites/clothes/001/none/magic.png',
             'images/sprites/clothes/001/none/stand.png',
             'images/sprites/clothes/001/none/run.png',
             'images/sprites/clothes/001/001/stand.png',
 
             'images/sprites/weapon/001/attack.png',
-            'images/sprites/weapon/001/hurt.png',
+            'images/sprites/weapon/001/hurted.png',
             'images/sprites/weapon/001/magic.png',
             'images/sprites/weapon/001/stand.png',
             'images/sprites/weapon/001/run.png',
@@ -143,7 +143,7 @@ woh.g_config.clothes={
                 [200,0,399,169,200,0,399,169]
             ],
             "filename": "images/sprites/clothes/001/none/stand.png"
-            }, 
+        }, 
         "run":{
             "info": {
                 "nbrOfFrames": 4,
@@ -180,7 +180,132 @@ woh.g_config.clothes={
             ],
             "filename": "images/sprites/clothes/001/none/attack.png"
         },
-    },     
+        "hurted": {
+            "info": {
+                "nbrOfFrames": 2,
+                "name": "hurted",
+                "type": "animation",
+                "framerate": 4,
+                "pivotx": 100,
+                "pivoty": 85,
+                "events": []
+            },
+            "data": [
+                [0,0,199,169,0,0,199,169],
+                [200,0,399,169,200,0,399,169]
+            ],
+            "filename": "images/sprites/clothes/001/none/hurted.png"
+        },
+        "magic": {
+            "info": {
+                "nbrOfFrames": 4,
+                "name": "hurted",
+                "type": "animation",
+                "framerate": 2,
+                "pivotx": 100,
+                "pivoty": 85,
+                "events": []
+            },
+            "data": [
+                [0,0,199,169,0,0,199,169],
+                [200,0,399,169,200,0,399,169],
+                [400,0,599,169,400,0,599,169],
+                [600,0,799,169,600,0,799,169]
+            ],
+            "filename": "images/sprites/clothes/001/none/magic.png"
+        }
+    },  
+    '001':{
+        "stand":{
+            "info": {
+                "nbrOfFrames": 2,
+                "name": "stand",
+                "type": "animation",
+                "framerate": 2,
+                "pivotx": 100,
+                "pivoty": 85,
+                "events": [
+                    {name:'standup',frame:1},//第一帧进入时触发
+                    {name:'standdown',frame:2}//第二帧进入时触发
+                ]
+            },
+            "data": [
+                [0,0,199,169,0,0,199,169],
+                [200,0,399,169,200,0,399,169]
+            ],
+            "filename": "images/sprites/clothes/001/001/stand.png"
+        }, 
+        "run":{
+            "info": {
+                "nbrOfFrames": 4,
+                "name": "",
+                "type": "animation",
+                "framerate": 4,
+                "pivotx": 100,
+                "pivoty": 85,
+                "events": []
+            },
+            "data": [
+                [0,0,199,169,0,0,199,169],
+                [200,0,399,169,200,0,399,169],
+                [400,0,599,169,400,0,599,169],
+                [600,0,799,169,600,0,799,169]
+            ],
+            "filename": "images/sprites/clothes/001/001/run.png"
+        },
+        "attack":{
+            "info": {
+                "nbrOfFrames": 4,
+                "name": "",
+                "type": "animation",
+                "framerate": 10,
+                "pivotx": 100,
+                "pivoty": 85,
+                "events": []
+            },
+            "data": [
+                [0,0,199,169,0,0,199,169],
+                [200,0,399,169,200,0,399,169],
+                [400,0,599,169,400,0,599,169],
+                [600,0,799,169,600,0,799,169]
+            ],
+            "filename": "images/sprites/clothes/001/001/attack.png"
+        },
+        "hurted": {
+            "info": {
+                "nbrOfFrames": 2,
+                "name": "hurted",
+                "type": "animation",
+                "framerate": 4,
+                "pivotx": 100,
+                "pivoty": 85,
+                "events": []
+            },
+            "data": [
+                [0,0,199,169,0,0,199,169],
+                [200,0,399,169,200,0,399,169]
+            ],
+            "filename": "images/sprites/clothes/001/001/hurted.png"
+        },
+        "magic": {
+            "info": {
+                "nbrOfFrames": 4,
+                "name": "hurted",
+                "type": "animation",
+                "framerate": 2,
+                "pivotx": 100,
+                "pivoty": 85,
+                "events": []
+            },
+            "data": [
+                [0,0,199,169,0,0,199,169],
+                [200,0,399,169,200,0,399,169],
+                [400,0,599,169,400,0,599,169],
+                [600,0,799,169,600,0,799,169]
+            ],
+            "filename": "images/sprites/clothes/001/001/magic.png"
+        }
+    },   
 }
 //武器的动画数据
 woh.g_config.weapon={
@@ -388,8 +513,8 @@ woh.role_init_data={
         'lv':0,//等级(根据类型和等级读取其他数据)
         'avatar':'./resources/images/map/ava/rio_tang.png',//头像
         'exp':0,//当前经验值
-        'weapon':'002',//武器编号
-        'clothes':'none',//衣服编号,none表示裸奔
+        'weapon':'001',//武器编号
+        'clothes':'001',//衣服编号,none表示裸奔
         'skill_point':'0',//剩余技能点
         'skill_list':{
             '疾风刺':0, 

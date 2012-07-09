@@ -13,10 +13,10 @@ Laro.NS('woh', function (L) {
     var Sprite = L.Class(function (data, brain) {
         var statesList = [
             woh.roleStates.stand, woh.roleStateClass.Stand,
-            woh.roleStates.move, woh.roleStateClass.Move,
-            woh.roleStates.normlAttack, woh.roleStateClass.NormalAttack,
+            woh.roleStates.run, woh.roleStateClass.Run,
+            woh.roleStates.attack, woh.roleStateClass.Attack,
             woh.roleStates.hurted, woh.roleStateClass.Hurted,
-            woh.roleStates.skill, woh.roleStateClass.Skill,
+            woh.roleStates.magic, woh.roleStateClass.Magic,
             woh.roleStates.dead, woh.roleStateClass.Dead,
         ];
         
@@ -75,9 +75,10 @@ Laro.NS('woh', function (L) {
 
         getAnimations: function () {
             this.animations.stand = this.getAnimationGroup('stand');
-            this.animations.move = this.getAnimationGroup('run');
+            this.animations.run = this.getAnimationGroup('run');
             this.animations.hurted = this.getAnimationGroup('hurted');
             this.animations.attack = this.getAnimationGroup('attack');
+            this.animations.magic = this.getAnimationGroup('magic');
         },
         // 设置当前 animation 并自动播放
         setAndPlay: function (animation, loop, start, end) {
@@ -170,10 +171,10 @@ Laro.NS('woh', function (L) {
         moveTo: function (x, y) {
             x > this.x ? this.faceRight() : this.faceLeft();
             this.toPos = {x: x, y: y-60};
-            this.fsm.setState(woh.roleStates.move);
+            this.fsm.setState(woh.roleStates.run);
         },
         normalAttack: function () {
-            this.fsm.setState(woh.roleStates.normalAttack);
+            this.fsm.setState(woh.roleStates.attack);
         },
         hurted: function (damage) {
             this.life -= damage;

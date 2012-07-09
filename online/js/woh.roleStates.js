@@ -4,10 +4,10 @@
 
 woh.roleStates = {
     stand: 0,
-    move: 1,
-    normlAttack: 2,
+    run: 1,
+    attack: 2,
     hurted: 3,
-    skill: 4,
+    magic: 4,
     dead: 5
 };
 
@@ -37,16 +37,16 @@ Laro.NS('woh.roleStateClass', function (L) {
     });
     
     // Move
-    var Move = L.BaseState.extend(function () {
+    var Run = L.BaseState.extend(function () {
     
     }).methods({
         enter: function (msg, from) {
-            console.log('enter move');
-            this.host.setAndPlay('move');
+            console.log('enter run');
+            this.host.setAndPlay('run');
             this.dis = Number.MAX_VALUE;
         },
         leave: function () {
-            console.log('leave move')
+            console.log('leave run')
         },
         update: function (dt) {
             if (this.host.toPos) {
@@ -65,11 +65,11 @@ Laro.NS('woh.roleStateClass', function (L) {
     });
     
 
-    var NormalAttack = L.BaseState.extend(function () {
+    var Attack = L.BaseState.extend(function () {
     
     }).methods({
         enter: function (msg, from) {
-            this.host.setAndPlay('normalAttack');
+            this.host.setAndPlay('attack');
         },
         leave: function () {},
         update: function (dt) {
@@ -95,11 +95,11 @@ Laro.NS('woh.roleStateClass', function (L) {
     
     });
     
-    var Skill = L.BaseState.extend(function () {
+    var Magic = L.BaseState.extend(function () {
     
     }).methods({
         enter: function (msg, from) {
-            this.host.setAndPlay('skill');
+            this.host.setAndPlay('magic');
         },
         leave: function () {},
         update: function (dt) {
@@ -126,9 +126,9 @@ Laro.NS('woh.roleStateClass', function (L) {
     });
 
     this.Stand = Stand;
-    this.Move = Move;
-    this.NormalAttack = NormalAttack;
+    this.Run = Run;
     this.Hurted = Hurted;
-    this.Skill = Skill;
+    this.Magic = Magic;
+    this.Attack=Attack;
     this.Dead = Dead;
 });
