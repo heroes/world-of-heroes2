@@ -304,11 +304,21 @@
             //当前人物切换处理
             _doc.querySelector('#role-manage .ava-bar').addEventListener('click',function(e){
                 if(e.target.id){
-                   that.initData(e.target.getAttribute('data-toggle'));
-                   _doc.querySelector('#role-manage .ava-bar .active').className='avar standard-stroke';
-                   e.target.parentNode.className+=" active";
-                   //禁用不适合当前人物的装备
-
+                var currentId=e.target.getAttribute('data-toggle');
+                    that.initData(currentId);
+                    _doc.querySelector('#role-manage .ava-bar .active').className='avar standard-stroke';
+                    e.target.parentNode.className+=" active";
+                    //禁用不适合当前人物的装备
+                var currentRoleType=woh.runtime.activeRole[currentId]['type'],
+                    itemsList=_doc.querySelectorAll('#role-manage ul.items li img');
+                    console.log(currentRoleType);
+                    //禁用不合当前角色使用的装备
+                    for(var i in itemsList){
+                        itemsList[i].style.display='block';
+                        if(itemsList[i].getAttribute('for')!=currentRoleType){
+                           itemsList[i].style.display='none'; 
+                        }
+                    }
                 }
             },false);
             

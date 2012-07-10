@@ -646,7 +646,7 @@ woh.item_data={
                 'attack':10,
                 'defend':3,
                 'crit':0,
-                'for':'002',//适用职业类型
+                'for':'001',//适用职业类型
             },
             '002':{
                 'name':'云锦深衣',
@@ -656,7 +656,7 @@ woh.item_data={
                 'attack':10,
                 'defend':3,
                 'crit':0,
-                'for':'002',
+                'for':'001',
             },
             '003':{
                 'name':'锦袍',
@@ -666,7 +666,7 @@ woh.item_data={
                 'attack':10,
                 'defend':3,
                 'crit':0,
-                'for':'001',//适用职业类型
+                'for':'002',//适用职业类型
             },
             '004':{
                 'name':'蜀锦袍',
@@ -676,7 +676,7 @@ woh.item_data={
                 'attack':10,
                 'defend':3,
                 'crit':0,
-                'for':'001',//适用角色
+                'for':'002',//适用角色
             },
             '005':{
                 'name':'华彩裙',
@@ -794,7 +794,7 @@ woh.skill_data={
     },
     '005':{
         'name':'灵焰灼',
-        'description':'星星之火,可以燎原,一旦燃起,便势不可当。(受到攻击的敌人每秒受到伤害,持续五秒)',
+        'description':'星星之火,可以燎原,一旦燃起,便势不可当。(敌方全体受到伤害)',
         'icon':'./resources/images/skillicons/005.png',//技能图标路径
         'level_limit':[1,2,4,5,7],//每一阶段的可点等级
         'cd':15,//CD时间
