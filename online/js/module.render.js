@@ -278,31 +278,6 @@
                 itemlattics[i].innerHTML="<img width='77' height='77' src='"+woh.item_data[itemdatas[i][0]][itemdatas[i][1]]['icon']+"' draggable='true'"
                 +"datatype='"+woh.runtime.packageItems[i][0]+"' datatag='"+woh.runtime.packageItems[i][1]+"'/>";
             }
-            //处理换装流程
-            var draggingType,
-                draggingId;
-            _doc.querySelector('#role-manage .items').addEventListener('dragstart',function(e){
-                draggingType=e.target.attributes['datatype'].nodeValue;
-                draggingId=e.target.attributes['datatag'].nodeValue;
-            },false);
-            _doc.getElementById('weapon').ondragover=function(e){
-                if (e.preventDefault) 
-                    e.preventDefault();                                          
-            };
-            _doc.getElementById('weapon').addEventListener('drop',function(e){
-                console.log(e.target);
-                if(draggingType=='weapon'){
-                    if(e.target.id=='weapon'){
-                        e.target.innerHTML="<img width='77' height='77' src='"+woh.item_data['weapon'][draggingId]['icon']+"'/>";
-                    }
-                    else{
-                        e.target.src=woh.item_data['weapon'][draggingId]['icon'];
-                    }
-                }
-                //更新相关数据
-                woh.runtime.activeRole[that.currentActiveRole]['weapon']=draggingId;
-                that.initData(that.currentActiveRole);
-            },false);
         },
         setEquipment:function(type,id){
 
@@ -334,6 +309,49 @@
                    e.target.parentNode.className+=" active";
                 }
             },false);
+            
+            //装备图标拖动事件
+            var draggingType,
+                draggingId;
+            _doc.querySelector('#role-manage .items').addEventListener('dragstart',function(e){
+                draggingType=e.target.attributes['datatype'].nodeValue;
+                draggingId=e.target.attributes['datatag'].nodeValue;
+            },false);
+            _doc.getElementById('weapon').ondragover=function(e){
+                if (e.preventDefault) 
+                    e.preventDefault();                                          
+            };
+            _doc.getElementById('clothes').ondragover=function(e){
+                if (e.preventDefault) 
+                    e.preventDefault();                                          
+            };
+            _doc.getElementById('weapon').addEventListener('drop',function(e){
+                if(draggingType=='weapon'){
+                    if(e.target.id=='weapon'){
+                        e.target.innerHTML="<img width='77' height='77' src='"+woh.item_data['weapon'][draggingId]['icon']+"'/>";
+                    }
+                    else{
+                        e.target.src=woh.item_data['weapon'][draggingId]['icon'];
+                    }
+                    //更新相关数据
+                    woh.runtime.activeRole[that.currentActiveRole]['weapon']=draggingId;
+                    that.initData(that.currentActiveRole);
+                }
+            },false);
+            _doc.getElementById('clothes').addEventListener('drop',function(e){
+                if(draggingType=='clothes'){
+                    if(e.target.id=='clothes'){
+                        e.target.innerHTML="<img width='77' height='77' src='"+woh.item_data['weapon'][draggingId]['icon']+"'/>";
+                    }
+                    else{
+                        e.target.src=woh.item_data['clothes'][draggingId]['icon'];
+                    }
+                    //更新相关数据
+                    woh.runtime.activeRole[that.currentActiveRole]['clothes']=draggingId;
+                    that.initData(that.currentActiveRole);
+                }
+            },false);
+            //
         },
         initAvatarBar:function(){ //载入活动人物的头像
             for(var i in woh.runtime.activeRole){
