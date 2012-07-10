@@ -586,7 +586,7 @@ woh.item_data={
             '003':{
                 'name':'龙泉剑',
                 'description':'“装饰着金色精美花纹的剑，一看就很贵的样子，至于攻击力，就不得而知了。',
-                'icon':'images/icons/001.png',
+                'icon':'./resources/images/map/items/w_003.png',
                 'health':0,
                 'attack':10,
                 'defend':3,
@@ -596,6 +596,7 @@ woh.item_data={
             '004':{
                 'name':'飞渊剑',
                 'description':'据说取材于极渊苦寒之地的紫晶，看起来挺像那么回事的。',
+                'icon':'./resources/images/map/items/w_004.png',
                 'health':0,
                 'attack':10,
                 'defend':3,
@@ -603,15 +604,14 @@ woh.item_data={
                 'for':'002',   
             },
             '005':{
-                'name':'晶球',
-                'description':'白水晶磨制的透明圆球,看不出有什么特别。',
-                'icon':'images/weapon/icons/001.png',
-                'model':'images/weapon/model/001.png',
+                'name':'阴阳镜',
+                'description':'阴阳二气，万物之宗，以之为镜，可窥天地一斑。',
+                'icon':'./resources/images/map/items/w_005.png',
                 'health_addition':0,
                 'attack_addition':10,
                 'defend_addition':3,
                 'crit_addition':0,
-                'for':'002',   
+                'for':'003',   
             },
             '006':{
                 'name':'紫晶珠',
@@ -641,8 +641,7 @@ woh.item_data={
             '001':{
                 'name':'粗布衣',
                 'description':'旧衣店出售的破旧衣服,上面还打了几个补丁。',
-                'icon':'images/weapon/icons/001.png',
-                'model':'images/weapon/model/001.png',
+                'icon':'./resources/images/map/items/c_001.png',
                 'health':0,
                 'attack':10,
                 'defend':3,
@@ -650,10 +649,9 @@ woh.item_data={
                 'for':'001',//适用角色
             },
             '002':{
-                'name':'棉布衣',
-                'description':'一般穷书生穿的布袍,只是单纯的布袍而已。',
-                'icon':'images/weapon/icons/001.png',
-                'model':'images/weapon/model/001.png',
+                'name':'云锦深衣',
+                'description':'看起来是高级武将使用的样式，但已十分破旧，上有云锦纹路，据说有护持作用。',
+                'icon':'./resources/images/map/items/c_001.png',
                 'health':0,
                 'attack':10,
                 'defend':3,
@@ -663,8 +661,7 @@ woh.item_data={
             '003':{
                 'name':'锦袍',
                 'description':'富家公子常穿的便服,冬暖夏凉。',
-                'icon':'images/weapon/icons/001.png',
-                'model':'images/weapon/model/001.png',
+                'icon':'./resources/images/map/items/c_003.png',
                 'health':0,
                 'attack':10,
                 'defend':3,
@@ -674,8 +671,7 @@ woh.item_data={
             '004':{
                 'name':'蜀锦袍',
                 'description':'“犹馀蜀中锦,爱惜比甘棠。”蜀地的锦缎千载驰名,用其制作的袍子自然也价格不菲。',
-                'icon':'images/weapon/icons/001.png',
-                'model':'images/weapon/model/001.png',
+                'icon':'./resources/images/map/items/c_003.png',
                 'health':0,
                 'attack':10,
                 'defend':3,
@@ -683,25 +679,23 @@ woh.item_data={
                 'for':'002',//适用角色
             },
             '005':{
-                'name':'麟裳',
-                'description':'人鱼国最常见的平民装束。',
-                'icon':'images/weapon/icons/001.png',
-                'model':'images/weapon/model/001.png',
-                'health':0,
-                'attack':10,
-                'defend':3,
-                'crit':0,
-                'for':'003',//适用角色
-            },
-            '006':{
                 'name':'华彩裙',
                 'description':'少女们钟爱的薄绸裙,在阳光下会隐隐泛出五色华彩。',
-                'icon':'images/weapon/icons/001.png',
-                'model':'images/weapon/model/001.png',
+                'icon':'./resources/images/map/items/c_005.png',
                 'health':0,
                 'attack':10,
                 'defend':3,
                 'crit':0, 
+                'for':'003',//适用角色
+            },
+            '006':{
+                'name':'麟裳',
+                'description':'人鱼国最常见的平民装束。',
+                'icon':'./resources/images/map/items/c_005.png',
+                'health':0,
+                'attack':10,
+                'defend':3,
+                'crit':0,
                 'for':'003',//适用角色
             }
         }

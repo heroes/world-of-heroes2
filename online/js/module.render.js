@@ -249,13 +249,16 @@
             //读取当前经验值
             var exp_length=220*data['exp']/woh.base_level_data[data['lv']+1]['exp']+'px';
             //console.log(exp_length);
-            
+            //界面渲染的相关部分，应当提出来
             //将数据渲染到界面上
             _doc.querySelector('#role-manage .role-info .role-attributes #health').innerHTML=health;
             _doc.querySelector('#role-manage .role-info .role-attributes #attack').innerHTML=attack;
             _doc.querySelector('#role-manage .role-info .role-attributes #defend').innerHTML=defend;
             _doc.querySelector('#role-manage .role-info .role-attributes #crit').innerHTML=crit*100;
             _doc.querySelector('#role-manage .role-info .exp-value').style.width=exp_length;
+            //高亮当前人物头像
+            
+            //重置物品栏的可用物品
         },
         renderItemlattic:function(){
             var items=[];
@@ -267,10 +270,10 @@
 
         },
         renderItems:function(){
+            var that=this;
             //渲染物品图标
             var itemlattics=_doc.querySelectorAll('#role-manage ul.items li'),
-                itemdatas=woh.runtime.packageItems,
-                dropping=false;
+                itemdatas=woh.runtime.packageItems;
             for(var i in itemdatas){
                 itemlattics[i].innerHTML="<img width='77' height='77' src='"+woh.item_data[itemdatas[i][0]][itemdatas[i][1]]['icon']+"' draggable='true'"
                 +"datatype='"+woh.runtime.packageItems[i][0]+"' datatag='"+woh.runtime.packageItems[i][1]+"'/>";
@@ -295,10 +298,10 @@
                     else{
                         e.target.src=woh.item_data['weapon'][draggingId]['icon'];
                     }
-                    console.log(e.target.innerHTML);
                 }
-                    console.log(this.currentActiveRole);
-                    woh.runtime.activeRole[0]['weapon']=draggingId;
+                //更新相关数据
+                woh.runtime.activeRole[that.currentActiveRole]['weapon']=draggingId;
+                that.initData(that.currentActiveRole);
             },false);
         },
         setEquipment:function(type,id){
@@ -312,33 +315,31 @@
             this.renderItemlattic()
             this.bind();
             this.initAvatarBar();
-            _doc.querySelector('#role-manage .ava-bar .avar:first-child').className+=" active";
             this.initData(0);
+            _doc.querySelector('#role-manage .ava-bar .avar:first-child').className+=' active';
             this.renderItems();
         },
         unInit : function(){
 
         },
         bind : function(){
+            var that=this;
             _doc.querySelector('#role-manage .close').addEventListener('click', function(){
                 _doc.getElementById('role-manage').style.display = 'none';
             });
             _doc.querySelector('#role-manage .ava-bar').addEventListener('click',function(e){
-                
-            });
+                if(e.target.id){
+                   that.initData(e.target.getAttribute('data-toggle'));
+                   _doc.querySelector('#role-manage .ava-bar .active').className='avar standard-stroke';
+                   e.target.parentNode.className+=" active";
+                }
+            },false);
         },
         initAvatarBar:function(){ //载入活动人物的头像
             for(var i in woh.runtime.activeRole){
                 console.log(woh.runtime.activeRole[i]);
-                _doc.querySelector('#role-manage .ava-bar').innerHTML+='<li class="avar standard-stroke" id="'+i+'"><img width="105" height="105" src="'+woh.runtime.activeRole[i]['avatar']+'"></li>';
+                _doc.querySelector('#role-manage .ava-bar').innerHTML+='<li class="avar standard-stroke"><img width="105" height="105" id="role'+i+'" src="'+woh.runtime.activeRole[i]['avatar']+'" data-toggle="'+i+'"></li>';
             }
-            _doc.querySelector('#role-manage .ava-bar').addEventListener('click',function(e){
-                    console.log(e.target.id);
-            },false);
-        },
-        loaddata:function(id){//载入选中人物的数据
-           
-
         }
     }
     //点技能界面
