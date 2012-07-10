@@ -221,7 +221,6 @@
             var data=woh.runtime.activeRole[id];//显示相应人物的数据
             _doc.querySelector('#role-manage .role-info h1#name').innerHTML=data['name']+'<small> Lv:'+data['lv']+'</small>';
             //载入相关数据
-            console.log(woh.skill_rate);
             var rate_info=woh.skill_rate[data['type']],
                 level_info=woh.base_level_data[data['lv']];
             //根据偏移百分比计算出基础数值
@@ -276,7 +275,7 @@
                 itemdatas=woh.runtime.packageItems;
             for(var i in itemdatas){
                 itemlattics[i].innerHTML="<img width='77' height='77' src='"+woh.item_data[itemdatas[i][0]][itemdatas[i][1]]['icon']+"' draggable='true'"
-                +"datatype='"+woh.runtime.packageItems[i][0]+"' datatag='"+woh.runtime.packageItems[i][1]+"'/>";
+                +"datatype='"+woh.runtime.packageItems[i][0]+"' datatag='"+woh.runtime.packageItems[i][1]+"' for='"+woh.item_data[itemdatas[i][0]][itemdatas[i][1]]['for']+"'/>";
             }
         },
         setEquipment:function(type,id){
@@ -298,21 +297,24 @@
 
         },
         bind : function(){
-            var that=this;
+        var that=this;
             _doc.querySelector('#role-manage .close').addEventListener('click', function(){
                 _doc.getElementById('role-manage').style.display = 'none';
             });
+            //当前人物切换处理
             _doc.querySelector('#role-manage .ava-bar').addEventListener('click',function(e){
                 if(e.target.id){
                    that.initData(e.target.getAttribute('data-toggle'));
                    _doc.querySelector('#role-manage .ava-bar .active').className='avar standard-stroke';
                    e.target.parentNode.className+=" active";
+                   //禁用不适合当前人物的装备
+
                 }
             },false);
             
             //装备图标拖动事件
-            var draggingType,
-                draggingId;
+        var draggingType,
+            draggingId;
             _doc.querySelector('#role-manage .items').addEventListener('dragstart',function(e){
                 draggingType=e.target.attributes['datatype'].nodeValue;
                 draggingId=e.target.attributes['datatag'].nodeValue;
@@ -336,12 +338,13 @@
                     //更新相关数据
                     woh.runtime.activeRole[that.currentActiveRole]['weapon']=draggingId;
                     that.initData(that.currentActiveRole);
+                    draggingType="";
                 }
             },false);
             _doc.getElementById('clothes').addEventListener('drop',function(e){
                 if(draggingType=='clothes'){
                     if(e.target.id=='clothes'){
-                        e.target.innerHTML="<img width='77' height='77' src='"+woh.item_data['weapon'][draggingId]['icon']+"'/>";
+                        e.target.innerHTML="<img width='77' height='77' src='"+woh.item_data['clothes'][draggingId]['icon']+"'/>";
                     }
                     else{
                         e.target.src=woh.item_data['clothes'][draggingId]['icon'];
@@ -349,13 +352,13 @@
                     //更新相关数据
                     woh.runtime.activeRole[that.currentActiveRole]['clothes']=draggingId;
                     that.initData(that.currentActiveRole);
+                    draggingType="";
                 }
             },false);
             //
         },
         initAvatarBar:function(){ //载入活动人物的头像
             for(var i in woh.runtime.activeRole){
-                console.log(woh.runtime.activeRole[i]);
                 _doc.querySelector('#role-manage .ava-bar').innerHTML+='<li class="avar standard-stroke"><img width="105" height="105" id="role'+i+'" src="'+woh.runtime.activeRole[i]['avatar']+'" data-toggle="'+i+'"></li>';
             }
         }
