@@ -311,7 +311,7 @@
            
             this.renderItemlattic()
             this.bind();
-            this.loadavatar();
+            this.initAvatarBar();
             _doc.querySelector('#role-manage .ava-bar .avar:first-child').className+=" active";
             this.initData(0);
             this.renderItems();
@@ -327,11 +327,14 @@
                 
             });
         },
-        loadavatar:function(){ //载入活动人物的头像
+        initAvatarBar:function(){ //载入活动人物的头像
             for(var i in woh.runtime.activeRole){
                 console.log(woh.runtime.activeRole[i]);
                 _doc.querySelector('#role-manage .ava-bar').innerHTML+='<li class="avar standard-stroke" id="'+i+'"><img width="105" height="105" src="'+woh.runtime.activeRole[i]['avatar']+'"></li>';
             }
+            _doc.querySelector('#role-manage .ava-bar').addEventListener('click',function(e){
+                    console.log(e.target.id);
+            },false);
         },
         loaddata:function(id){//载入选中人物的数据
            
