@@ -212,7 +212,8 @@
                     "<div class='description'>"+
                         "<h3 class='name'>"+
                         "</h3>"+
-                        "<p class='content'></p>"
+                        "<p class='content'></p>"+
+                        "<p class='value'></p>"+
                     "</div>"+
                  "</div>"
         },
@@ -255,9 +256,21 @@
             _doc.querySelector('#role-manage .role-info .role-attributes #defend').innerHTML=defend;
             _doc.querySelector('#role-manage .role-info .role-attributes #crit').innerHTML=crit*100;
             _doc.querySelector('#role-manage .role-info .exp-value').style.width=exp_length;
-            //高亮当前人物头像
-            
-            //重置物品栏的可用物品
+            //将装备和服装图标设为人物当前的装备
+            _doc.getElementById('weapon').innerHTML="<img width='77' height='77' src='"+(data["weapon"]=="none"?'':woh.item_data["weapon"][data["weapon"]]["icon"])+"'/>";
+            _doc.getElementById('clothes').innerHTML="<img width='77' height='77' src='"+(data["clothes"]=="none"?'':woh.item_data["clothes"][data["clothes"]]["icon"])+"'/>";
+            //禁用不适合当前人物的装备
+            var itemsList=_doc.querySelectorAll('#role-manage ul.items li img');
+
+            for(var i in itemsList){
+                console.log(i);
+                if(itemsList[i].getAttribute&&itemsList[i].getAttribute('for')!=data['type']){
+                         itemsList[i].className=''; 
+                }
+                else{
+                    itemsList[i].className='useable'; 
+                }
+            }
         },
         renderItemlattic:function(){
             var items=[];
@@ -289,11 +302,15 @@
             this.renderItemlattic()
             this.bind();
             this.initAvatarBar();
+            this.renderItems();
             this.initData(0);
             _doc.querySelector('#role-manage .ava-bar .avar:first-child').className+=' active';
-            this.renderItems();
         },
         unInit : function(){
+
+        },
+        //设置预览动画
+        setPreview:function(weapon,clothes){
 
         },
         bind : function(){
@@ -305,20 +322,9 @@
             _doc.querySelector('#role-manage .ava-bar').addEventListener('click',function(e){
                 if(e.target.id){
                 var currentId=e.target.getAttribute('data-toggle');
-                    that.initData(currentId);
                     _doc.querySelector('#role-manage .ava-bar .active').className='avar standard-stroke';
                     e.target.parentNode.className+=" active";
-                    //禁用不适合当前人物的装备
-                var currentRoleType=woh.runtime.activeRole[currentId]['type'],
-                    itemsList=_doc.querySelectorAll('#role-manage ul.items li img');
-                    console.log(currentRoleType);
-                    //禁用不合当前角色使用的装备
-                    for(var i in itemsList){
-                        itemsList[i].style.display='block';
-                        if(itemsList[i].getAttribute('for')!=currentRoleType){
-                           itemsList[i].style.display='none'; 
-                        }
-                    }
+                    that.initData(currentId);
                 }
             },false);
             
@@ -326,8 +332,30 @@
         var draggingType,
             draggingId;
             _doc.querySelector('#role-manage .items').addEventListener('dragstart',function(e){
-                draggingType=e.target.attributes['datatype'].nodeValue;
-                draggingId=e.target.attributes['datatag'].nodeValue;
+                if(e.target.className=='useable'){
+                    draggingType=e.target.attributes['datatype'].nodeValue;
+                    draggingId=e.target.attributes['datatag'].nodeValue;
+                }
+            },false);
+            _doc.querySelector('#role-manage .items').addEventListener('drop',function(){
+
+            },false);
+            //点击装备图标显示相应数值
+            _doc.querySelector('#role-manage .items').addEventListener('mousedown',function(e){
+                if(e.target.attributes['datatype']){
+                    if(_doc.querySelector('#role-manage .items .active')){
+                        _doc.querySelector('#role-manage .items .active').className="";
+                    }
+                    e.target.parentNode.className+=' active';
+                    var dataType=e.target.attributes['datatype'].nodeValue,
+                        dataTag=e.target.attributes['datatag'].nodeValue,
+                        dataItem=woh.item_data[dataType][dataTag];
+                    //显示相应的资料
+                    _doc.querySelector('#role-manage .description .name').innerHTML=dataItem['name'];
+                    _doc.querySelector('#role-manage .description .content').innerHTML=dataItem['description'];
+                    _doc.querySelector('#role-manage .description .value').innerHTML='生命+'+dataItem['health']+' 攻击+'+dataItem['defend']+
+                    ' 防御+'+dataItem['defend']+' 暴击+'+dataItem['crit'];
+                }
             },false);
             _doc.getElementById('weapon').ondragover=function(e){
                 if (e.preventDefault) 
@@ -365,7 +393,6 @@
                     draggingType="";
                 }
             },false);
-            //
         },
         initAvatarBar:function(){ //载入活动人物的头像
             for(var i in woh.runtime.activeRole){

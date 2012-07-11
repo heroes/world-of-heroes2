@@ -114,11 +114,12 @@ margin-top:420px;}
 .map-module .sub-win .right-block .description{height: 100px; margin-left: 18px}
 .map-module .sub-win .right-block .items{height:300px;margin-top: 140px;margin-left: 7px}
 .map-module .sub-win .right-block ul.items{width:100%; list-style: none; padding: 0; margin: 140px 0 0 10px}
-.map-module .sub-win .right-block ul.items li{display:block;float:left;width:77px;height:77px;border:3px solid #000;margin:1px;background:rgba(0,0,0,.7);padding:0}
-.map-module .sub-win .right-block ul.items li img{margin: 0; padding: 0}
+.map-module .sub-win .right-block ul.items li{display:block;float:left;width:77px;height:77px;border:3px solid #000;margin:1px;background:rgba(0,0,0,.7);padding:0;}
+.map-module .sub-win .right-block ul.items li.active{border:3px solid yellow;}
+.map-module .sub-win .right-block ul.items li img{margin: 0; padding: 0; opacity: .1}
+.map-module .sub-win .right-block ul.items li img.useable{opacity: 1}
 .map-module .sub-win#role-manage ul.role-attributes{width:80%;list-style: none; clear:both;margin:0 auto;font-weight:bold}
 .map-module .sub-win#role-manage ul.role-attributes li{display: inline-block; width: 40% ;padding:0 10px;}
-.map-module .sub-win#role-manage ul.role-attributes li span{}
 .map-module .sub-win#role-manage .exp-bar{height: 26px; width: 250px;margin:10px auto;
 	background: url(../resources/images/map/exp-right.png) right bottom no-repeat;
 }
