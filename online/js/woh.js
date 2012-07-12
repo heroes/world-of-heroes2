@@ -66,6 +66,7 @@ Laro.NS('woh', function (L) {
         
         woh.runtime.init();//初始化运行时数据
         woh.stage.init();
+        woh.skills.init();
         woh.loop.init();
     };
 

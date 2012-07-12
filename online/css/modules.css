@@ -178,7 +178,9 @@ margin-top:420px;}
 	left:0;
 	padding:10px;
 }
-.battle-module .skill-icon{float:left; margin-right:10px; background:red; width:100px; height:100px;}
+.battle-module .skill-icon{float:left; margin-right:10px; background:red; width:100px; height:100px;
+    -webkit-border-radius: 10px;
+}
 
 
 

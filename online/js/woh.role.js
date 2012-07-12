@@ -24,6 +24,7 @@ Laro.NS('woh', function (L) {
 
             this.checkRect.addEventListener('mousedown', function (x, y) {
                 me.canMove = true;
+                woh.skills.show(me.data.type);
             });
         },
         draw: function (render) {
