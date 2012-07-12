@@ -1,7 +1,6 @@
 ﻿/**
  * 人物或者怪物 
  */
-
 woh.roleAttackType = {
     normalAttack: 0,
     heavyAttack: 1

@@ -37,5 +37,8 @@ Laro.NS('woh.runtime', function (L) {
         this.activeRole.push(this.role[1]);
         this.packageItems.push(['weapon','001']);
         this.packageItems.push(['weapon','002']);
+        this.packageItems.push(['clothes','001']);
+        this.packageItems.push(['clothes','003']);
+        this.packageItems.push(['clothes','005']);
     }
 });

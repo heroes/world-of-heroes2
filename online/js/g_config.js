@@ -167,7 +167,7 @@ woh.g_config.clothes={
                 "nbrOfFrames": 4,
                 "name": "",
                 "type": "animation",
-                "framerate": 10,
+                "framerate": 4,
                 "pivotx": 100,
                 "pivoty": 85,
                 "events": []
@@ -452,10 +452,10 @@ woh.g_config.monsters = {
         "run": [
             {
                 "info": {
-                    "nbrOfFrames": 4,
+                    "nbrOfFrames": 2,
                     "name": "",
                     "type": "animation",
-                    "framerate": 4,
+                    "framerate": 2,
                     "pivotx": 100,
                     "pivoty": 85,
                     "events": []
@@ -470,10 +470,10 @@ woh.g_config.monsters = {
         "attack": [
             {
                 "info": {
-                    "nbrOfFrames": 4,
+                    "nbrOfFrames": 2,
                     "name": "",
                     "type": "animation",
-                    "framerate": 10,
+                    "framerate": 2,
                     "pivotx": 100,
                     "pivoty": 85,
                     "events": []
@@ -488,7 +488,7 @@ woh.g_config.monsters = {
         "hurted": [
             {
                 "info": {
-                    "nbrOfFrames": 4,
+                    "nbrOfFrames": 1,
                     "name": "",
                     "type": "animation",
                     "framerate": 10,
@@ -586,7 +586,7 @@ woh.item_data={
             '003':{
                 'name':'龙泉剑',
                 'description':'“装饰着金色精美花纹的剑，一看就很贵的样子，至于攻击力，就不得而知了。',
-                'icon':'images/icons/001.png',
+                'icon':'./resources/images/map/items/w_003.png',
                 'health':0,
                 'attack':10,
                 'defend':3,
@@ -596,6 +596,7 @@ woh.item_data={
             '004':{
                 'name':'飞渊剑',
                 'description':'据说取材于极渊苦寒之地的紫晶，看起来挺像那么回事的。',
+                'icon':'./resources/images/map/items/w_004.png',
                 'health':0,
                 'attack':10,
                 'defend':3,
@@ -603,15 +604,14 @@ woh.item_data={
                 'for':'002',   
             },
             '005':{
-                'name':'晶球',
-                'description':'白水晶磨制的透明圆球,看不出有什么特别。',
-                'icon':'images/weapon/icons/001.png',
-                'model':'images/weapon/model/001.png',
+                'name':'阴阳镜',
+                'description':'阴阳二气，万物之宗，以之为镜，可窥天地一斑。',
+                'icon':'./resources/images/map/items/w_005.png',
                 'health_addition':0,
                 'attack_addition':10,
                 'defend_addition':3,
                 'crit_addition':0,
-                'for':'002',   
+                'for':'003',   
             },
             '006':{
                 'name':'紫晶珠',
@@ -641,19 +641,17 @@ woh.item_data={
             '001':{
                 'name':'粗布衣',
                 'description':'旧衣店出售的破旧衣服,上面还打了几个补丁。',
-                'icon':'images/weapon/icons/001.png',
-                'model':'images/weapon/model/001.png',
+                'icon':'./resources/images/map/items/c_001.png',
                 'health':0,
                 'attack':10,
                 'defend':3,
                 'crit':0,
-                'for':'001',//适用角色
+                'for':'001',//适用职业类型
             },
             '002':{
-                'name':'棉布衣',
-                'description':'一般穷书生穿的布袍,只是单纯的布袍而已。',
-                'icon':'images/weapon/icons/001.png',
-                'model':'images/weapon/model/001.png',
+                'name':'云锦深衣',
+                'description':'看起来是高级武将使用的样式，但已十分破旧，上有云锦纹路，据说有护持作用。',
+                'icon':'./resources/images/map/items/c_001.png',
                 'health':0,
                 'attack':10,
                 'defend':3,
@@ -663,19 +661,17 @@ woh.item_data={
             '003':{
                 'name':'锦袍',
                 'description':'富家公子常穿的便服,冬暖夏凉。',
-                'icon':'images/weapon/icons/001.png',
-                'model':'images/weapon/model/001.png',
+                'icon':'./resources/images/map/items/c_003.png',
                 'health':0,
                 'attack':10,
                 'defend':3,
                 'crit':0,
-                'for':'002',//适用角色
+                'for':'002',//适用职业类型
             },
             '004':{
                 'name':'蜀锦袍',
                 'description':'“犹馀蜀中锦,爱惜比甘棠。”蜀地的锦缎千载驰名,用其制作的袍子自然也价格不菲。',
-                'icon':'images/weapon/icons/001.png',
-                'model':'images/weapon/model/001.png',
+                'icon':'./resources/images/map/items/c_003.png',
                 'health':0,
                 'attack':10,
                 'defend':3,
@@ -683,25 +679,23 @@ woh.item_data={
                 'for':'002',//适用角色
             },
             '005':{
-                'name':'麟裳',
-                'description':'人鱼国最常见的平民装束。',
-                'icon':'images/weapon/icons/001.png',
-                'model':'images/weapon/model/001.png',
-                'health':0,
-                'attack':10,
-                'defend':3,
-                'crit':0,
-                'for':'003',//适用角色
-            },
-            '006':{
                 'name':'华彩裙',
                 'description':'少女们钟爱的薄绸裙,在阳光下会隐隐泛出五色华彩。',
-                'icon':'images/weapon/icons/001.png',
-                'model':'images/weapon/model/001.png',
+                'icon':'./resources/images/map/items/c_005.png',
                 'health':0,
                 'attack':10,
                 'defend':3,
                 'crit':0, 
+                'for':'003',//适用角色
+            },
+            '006':{
+                'name':'麟裳',
+                'description':'人鱼国最常见的平民装束。',
+                'icon':'./resources/images/map/items/c_005.png',
+                'health':0,
+                'attack':10,
+                'defend':3,
+                'crit':0,
                 'for':'003',//适用角色
             }
         }
@@ -718,7 +712,7 @@ woh.skill_data={
     '001':{
         'name':'疾风刺',
         'description':'追求一击必杀的招式,轻灵迅捷,其威力在不同修为者手中截然不同。（冲向对方进行一次攻击）',//技能描述
-        'icon':'resources/iamges/001.png',//技能图标路径
+        'icon':'./resources/images/skillicons/001.png',//技能图标路径
         'level_limit':[1,2,4,5,7],//每一阶段的可点等级
         'cd':15,//CD时间
         
@@ -734,7 +728,7 @@ woh.skill_data={
     '002':{
         'name':'落英染',
         'description':'英华翩舞兮,染景纷纷旧年时。美好的追忆总能治愈人心。（己方全体生命回复）',//技能描述
-        'icon':'resources/iamges/001.png',//技能图标路径
+        'icon':'./resources/images/skillicons/002.png',//技能图标路径
         'level_limit':[2,3,4,8,10],//每一阶段的可点等级
         'cd':15,//CD时间
         //技能影响
@@ -749,7 +743,7 @@ woh.skill_data={
     '003':{
         'name':'浮云风卷',
         'description':'飘风自南,泱泱涤尘。凝神静气,荡净浮埃。（以施法者为中心,在半径200的区域内进行群体攻击）',//技能描述
-        'icon':'resources/iamges/001.png',//技能图标路径
+        'icon':'./resources/images/skillicons/003.png',//技能图标路径
         'level_limit':[2,3,4,9,11],//每一阶段的可点等级
         'cd':30,//CD时间
         //技能影响
@@ -780,7 +774,7 @@ woh.skill_data={
     '004':{
         'name':'醉舞秋红',
         'description':'日暮秋烟起,萧萧枫树林。寄托壮志未酬哀思的招式,饱含尽除敌寇的怨愤。(敌方全体造成大量伤害)',
-        'icon':'resources/iamges/001.png',//技能图标路径
+        'icon':'./resources/images/skillicons/004.png',//技能图标路径
         'level_limit':[5,8,9,13,15],//每一阶段的可点等级
         'cd':120,//CD时间
         //技能影响
@@ -800,8 +794,8 @@ woh.skill_data={
     },
     '005':{
         'name':'灵焰灼',
-        'description':'星星之火,可以燎原,一旦燃起,便势不可当。(受到攻击的敌人每秒受到伤害,持续五秒)',
-        'icon':'resources/iamges/001.png',//技能图标路径
+        'description':'星星之火,可以燎原,一旦燃起,便势不可当。(敌方全体受到伤害)',
+        'icon':'./resources/images/skillicons/005.png',//技能图标路径
         'level_limit':[1,2,4,5,7],//每一阶段的可点等级
         'cd':15,//CD时间
         //技能影响
@@ -819,7 +813,7 @@ woh.skill_data={
     '006':{
         'name':'心月斩',
         'description':'心月狐,其性属火,喜好游戏人间,祸乱人心。（造成范围伤害,受到伤害者行动封印。）',
-        'icon':'resources/iamges/001.png',//技能图标路径
+        'icon':'./resources/images/skillicons/006.png',//技能图标路径
         'level_limit':[2,3,4,8,10],//每一阶段的可点等级
         'cd':15,//CD时间
         //技能影响
@@ -840,7 +834,7 @@ woh.skill_data={
     '007':{
         'name':'天狐之怒',
         'description':'“青丘之山,有兽焉,其状如狐而九尾。”九尾狐出,乃世间将有大乱之象。（全部敌人受到连续伤害）',
-        'icon':'resources/iamges/001.png',//技能图标路径
+        'icon':'./resources/images/skillicons/007.png',//技能图标路径
         'level_limit':[2,3,4,9,11],//每一阶段的可点等级
         'cd':30,//CD时间
         //技能影响
@@ -857,7 +851,7 @@ woh.skill_data={
     '008':{
         'name':'心宿炎障',
         'description':'心宿,又称大火,东方苍龙七宿之心,守心护元,灭障除魔。（全部队友获得5秒免伤状态）',
-        'icon':'resources/iamges/001.png',//技能图标路径
+        'icon':'./resources/images/skillicons/008.png',//技能图标路径
         'level_limit':[5,8,9,13,15],//每一阶段的可点等级
         'cd':60,//CD时间
         //技能影响
@@ -874,7 +868,7 @@ woh.skill_data={
     '009':{
         'name':'花雨露',
         'description':'花雨润泽,沁人心脾,沐浴者神清气爽。（单体回复体力）',
-        'icon':'resources/iamges/001.png',//技能图标路径
+        'icon':'./resources/images/skillicons/009.png',//技能图标路径
         'level_limit':[5,6,7,8,9],//每一阶段的可点等级
         'cd':15,//CD时间
         //技能影响
@@ -885,7 +879,7 @@ woh.skill_data={
     '010':{
         'name':'水月霖',
         'description':'水月之力属幻,堕入幽梦者,如履太虚。（敌方全体受到伤害并进入减速状态）',
-        'icon':'resources/iamges/001.png',//技能图标路径
+        'icon':'./resources/images/skillicons/010.png',//技能图标路径
         'level_limit':[5,6,7,8,9],//每一阶段的可点等级
         'cd':15,//CD时间
         //技能影响
@@ -896,7 +890,7 @@ woh.skill_data={
     '011':{
         'name':'芳华流转',
         'description':'芳华轻笑,千红流转,生机盎然。（全体回复体力）',
-        'icon':'resources/iamges/001.png',//技能图标路径
+        'icon':'./resources/images/skillicons/011.png',//技能图标路径
         'level_limit':[5,6,7,8,9],//每一阶段的可点等级
         'cd':30,//CD时间
         //技能影响
@@ -904,7 +898,7 @@ woh.skill_data={
     '012':{
         'name':'镜泉润物',
         'description':'泉之始,镜之初,润泽万物,生生不息。（全体回复大量体力并解除一切负面状态）',
-        'icon':'resources/iamges/001.png',//技能图标路径
+        'icon':'./resources/images/skillicons/012.png',//技能图标路径
         'level_limit':[5,6,7,8,9],//每一阶段的可点等级
         'cd':60,//CD时间
         //技能影响

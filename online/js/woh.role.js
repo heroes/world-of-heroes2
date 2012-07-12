@@ -1,6 +1,6 @@
 Laro.NS('woh', function (L) {
     var Role = this.Sprite.extend(function () {
-
+        this.speed = 200;
     }).methods({
         initCheckArea: function () {
             // 可操作区域 == > 这一部分数据需要 提到 人物数据配置 里面去， 这里目前暂时先写死
@@ -45,7 +45,6 @@ Laro.NS('woh', function (L) {
         },
         getAnimationGroup: function (type) {
             L.$lea.setLoader(woh.loader);
-            
             var obj = [
                 woh.g_config.clothes[this.data['clothes']][type],
                 woh.g_config.weapon[this.data['weapon']][type],
