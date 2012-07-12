@@ -3,8 +3,13 @@
 	height:640px;
 	position:absolute;
 	z-index: 2;
-	background:url(../resources/images/map/win_bg.jpg) no-repeat;
 	display:none;
+}
+.sub-win#role-manage{
+	background:url(../resources/images/map/win_bg.jpg) no-repeat;
+}
+.sub-win#skill-manage{
+	background:url(../resources/images/map/win_bg2.jpg) no-repeat;
 }
 .sub-win button.close{
 	position:absolute;
@@ -125,6 +130,7 @@ margin-top:420px;}
 }
 .map-module .sub-win#role-manage .exp-bar-inner{height: 26px;background: rgba(0,0,0,.7); width: 220px}
 .map-module .sub-win#role-manage .exp-value{height: 26px; background: white;}
+.map-module .sub-win#skill-manage span.skill-point{font-size: 30px; color: red; display: block;margin-top: 186px; margin-left: 465px}
 .cg-module,.drama-module{
 	width:960px;
 	height:640px;

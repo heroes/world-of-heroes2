@@ -169,6 +169,9 @@
             _doc.getElementById('map-person').addEventListener('click', function(){
                 roleManager.init();
             });
+            _doc.getElementById('map-skill').addEventListener('click', function(){
+                skillManager.init();
+            });
             _doc.getElementById('map-leave').addEventListener('click', function(){
                 woh.gameScript.continueExec();
             })
@@ -401,11 +404,12 @@
     }
     //点技能界面
     //需求：类似dota的点技能，当技能处于可点状态，点击相应图标升级技能，每升级一次消耗一个技能点
-    var skillManager = _win.roleManager = {
+    var skillManager = _win.skillManager = {
         tpl:function(){
-          return "<div>"+
-                    
-                "</div>"
+          return "<button class='close'>"+
+                 "</button>"+
+                 "<span class='skill-point'>1</span>";
+
         },
         init : function(){
             var skillinfo = _doc.getElementById('skill-manage');
@@ -417,9 +421,9 @@
 
         },
         bind : function(){
-             _doc.querySelector('#skill-manage .close').addEventListener('click', function(){
+            _doc.querySelector('#skill-manage .close').addEventListener('click', function(){
                 _doc.getElementById('skill-manage').style.display = 'none';
-            })
+            });
         }
     };
     Map.init();
