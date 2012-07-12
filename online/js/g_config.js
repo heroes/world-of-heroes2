@@ -167,7 +167,7 @@ woh.g_config.clothes={
                 "nbrOfFrames": 4,
                 "name": "",
                 "type": "animation",
-                "framerate": 10,
+                "framerate": 4,
                 "pivotx": 100,
                 "pivoty": 85,
                 "events": []
@@ -452,10 +452,10 @@ woh.g_config.monsters = {
         "run": [
             {
                 "info": {
-                    "nbrOfFrames": 4,
+                    "nbrOfFrames": 2,
                     "name": "",
                     "type": "animation",
-                    "framerate": 4,
+                    "framerate": 2,
                     "pivotx": 100,
                     "pivoty": 85,
                     "events": []
@@ -470,10 +470,10 @@ woh.g_config.monsters = {
         "attack": [
             {
                 "info": {
-                    "nbrOfFrames": 4,
+                    "nbrOfFrames": 2,
                     "name": "",
                     "type": "animation",
-                    "framerate": 10,
+                    "framerate": 2,
                     "pivotx": 100,
                     "pivoty": 85,
                     "events": []
@@ -488,7 +488,7 @@ woh.g_config.monsters = {
         "hurted": [
             {
                 "info": {
-                    "nbrOfFrames": 4,
+                    "nbrOfFrames": 1,
                     "name": "",
                     "type": "animation",
                     "framerate": 10,
