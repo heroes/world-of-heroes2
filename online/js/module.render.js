@@ -263,7 +263,6 @@
             var itemsList=_doc.querySelectorAll('#role-manage ul.items li img');
 
             for(var i in itemsList){
-                console.log(i);
                 if(itemsList[i].getAttribute&&itemsList[i].getAttribute('for')!=data['type']){
                          itemsList[i].className=''; 
                 }

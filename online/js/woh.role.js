@@ -45,7 +45,6 @@ Laro.NS('woh', function (L) {
         },
         getAnimationGroup: function (type) {
             L.$lea.setLoader(woh.loader);
-            
             var obj = [
                 woh.g_config.clothes[this.data['clothes']][type],
                 woh.g_config.weapon[this.data['weapon']][type],
