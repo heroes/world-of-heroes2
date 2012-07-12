@@ -78,13 +78,13 @@ Laro.NS('woh', function (L) {
         this._objects = [];
     }).methods({
         add: function (name, o) {
-            this._objects.push({'name': name, 'obj': o});
+            this._objects.push({ 'name': name, 'obj': o });
         },
         remove: function (name) {
             if (name == undefined) {
                 this._objects = [];
             } else {
-                for (var i = 0; i < this._objects.length; i ++) {
+                for (var i = 0; i < this._objects.length; i++) {
                     var o = this._objects[i];
                     if (o.name == name) {
                         return this._objects.splice(i, 1);
@@ -94,7 +94,7 @@ Laro.NS('woh', function (L) {
         },
         get: function (name) {
             if (name == undefined) return this._objects;
-            for (var i = 0; i < this._objects.length; i ++) {
+            for (var i = 0; i < this._objects.length; i++) {
                 var o = this._objects[i];
                 if (o.name == name) {
                     return o.obj;
@@ -111,13 +111,18 @@ Laro.NS('woh', function (L) {
                 __args = slice.call(_args, 0);
             __args.splice(0, 1);
 
+            this._objects.sort(function (a, b) {
+                return a.obj.y - b.obj.y;
+
+            })
+
             this._objects.forEach(function (o) {
                 var obj = o.obj;
                 obj[fnName] && obj[fnName].apply(obj, __args);
             });
         }
     });
-    
+
     this.Collection = Collection;
 
 });

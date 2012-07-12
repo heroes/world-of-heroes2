@@ -50,7 +50,7 @@ Laro.NS('woh.roleStateClass', function (L) {
         },
         update: function (dt) {
             if (this.host.toPos) {
-                var speed = dt*200;
+                var speed = dt*(this.host.speed);
                 this.dis = Math.sqrt(Math.pow(this.host.toPos.x-this.host.x, 2) + Math.pow(this.host.toPos.y-this.host.y, 2));
                 var newX = this.host.x + speed * (this.host.toPos.x - this.host.x)/this.dis,
                     newY = this.host.y + speed * (this.host.toPos.y - this.host.y)/this.dis;
