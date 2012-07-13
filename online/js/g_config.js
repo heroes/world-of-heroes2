@@ -17,13 +17,6 @@ woh.g_config.script={
     '1':{
         type:'intro',//标记相应的stage类型
         repeat:true,//标记在流程中是否允许重复出现（即选关的时候是否会被再次触发）
-        data: {
-            index:{
-                src: './resources/images/index.jpg',
-                width: 1032,
-                height: 774
-            }
-        },
         next:'7'
     },
     '2':{
@@ -84,7 +77,7 @@ woh.g_config.script={
     }
 };
 
-// 暂时放在此吧 -_-! ，到时候需要整合再说，每个场景对应的需要预加载的资源列表
+//每个场景对应的需要预加载的资源列表
 woh.g_config.resources = {
     // 比如： 战斗场景，随便测试一个, 假如第一场战斗
     // 根目录基于 resources/
@@ -515,7 +508,7 @@ woh.role_init_data={
         'exp':0,//当前经验值
         'weapon':'001',//武器编号
         'clothes':'001',//衣服编号,none表示裸奔
-        'skill_point':'0',//剩余技能点
+        'skill_point':'3',//剩余技能点
         'skill_list':{
             '001':0, 
             '002':0,
@@ -535,7 +528,7 @@ woh.role_init_data={
         'exp':1300,//当前经验值
         'weapon':'003',//武器编号
         'clothes':'none',//衣服编号
-        'skill_point':'0',
+        'skill_point':'3',
         'skill_list':{
             '005':1,
             '006':1,
@@ -566,7 +559,8 @@ woh.item_data={
             '001':{
                 'name':'匕首',//名称
                 'description':'勉强能够用来防身的便宜货,居家旅行常备的防盗工具。',
-                'icon':'./resources/images/map/items/w_001.png',
+                'icon':'./resources/images/map/items/w_001.png',//图标路径
+                'modal':['./resources/images/sprites/weapon/001/stand.png',200,170],//模型路径
                 'health':0,
                 'attack':10,
                 'defend':3,
@@ -577,6 +571,7 @@ woh.item_data={
                 'name':'玉殃',//名称
                 'description':'美其名曰“玉”，其实不过是打磨得比较光滑的青铜而已。',//描述
                 'icon':'./resources/images/map/items/w_002.png',//图标路径
+                'modal':['./resources/images/sprites/weapon/002/stand.png',200,170],//模型路径
                 'health':0,//血量加成
                 'attack':3,//攻击加成
                 'defend':0,//防御加成
@@ -587,6 +582,7 @@ woh.item_data={
                 'name':'龙泉剑',
                 'description':'“装饰着金色精美花纹的剑，一看就很贵的样子，至于攻击力，就不得而知了。',
                 'icon':'./resources/images/map/items/w_003.png',
+                'modal':['./resources/images/sprites/weapon/003/stand.png',342,210],
                 'health':0,
                 'attack':10,
                 'defend':3,
@@ -597,6 +593,7 @@ woh.item_data={
                 'name':'飞渊剑',
                 'description':'据说取材于极渊苦寒之地的紫晶，看起来挺像那么回事的。',
                 'icon':'./resources/images/map/items/w_004.png',
+                'modal':['./resources/images/sprites/weapon/004/stand.png',342,210],
                 'health':0,
                 'attack':10,
                 'defend':3,
@@ -636,12 +633,13 @@ woh.item_data={
                 'for':'003',  
             }
         },
-
         'clothes':{
+            'none':{},
             '001':{
                 'name':'粗布衣',
                 'description':'旧衣店出售的破旧衣服,上面还打了几个补丁。',
                 'icon':'./resources/images/map/items/c_001.png',
+                'modal':['resources/images/sprites/clothes/001/001/stand.png',200,170],
                 'health':0,
                 'attack':10,
                 'defend':3,
@@ -652,6 +650,7 @@ woh.item_data={
                 'name':'云锦深衣',
                 'description':'看起来是高级武将使用的样式，但已十分破旧，上有云锦纹路，据说有护持作用。',
                 'icon':'./resources/images/map/items/c_001.png',
+                'modal':['.resources/images/sprites/clothes/001/001/stand.png',200,170],
                 'health':0,
                 'attack':10,
                 'defend':3,
@@ -712,7 +711,7 @@ woh.skill_data={
     '001':{
         'name':'疾风刺',
         'description':'追求一击必杀的招式,轻灵迅捷,其威力在不同修为者手中截然不同。（冲向对方进行一次攻击）',//技能描述
-        'icon':'./resources/images/skillicons/001.png',//技能图标路径
+        'icon':'./resources/images/skillicons/001.jpg',//技能图标路径
         'level_limit':[1,2,4,5,7],//每一阶段的可点等级
         'cd':15,//CD时间
         
@@ -728,7 +727,7 @@ woh.skill_data={
     '002':{
         'name':'落英染',
         'description':'英华翩舞兮,染景纷纷旧年时。美好的追忆总能治愈人心。（己方全体生命回复）',//技能描述
-        'icon':'./resources/images/skillicons/002.png',//技能图标路径
+        'icon':'./resources/images/skillicons/002.jpg',//技能图标路径
         'level_limit':[2,3,4,8,10],//每一阶段的可点等级
         'cd':15,//CD时间
         //技能影响
@@ -743,7 +742,7 @@ woh.skill_data={
     '003':{
         'name':'浮云风卷',
         'description':'飘风自南,泱泱涤尘。凝神静气,荡净浮埃。（以施法者为中心,在半径200的区域内进行群体攻击）',//技能描述
-        'icon':'./resources/images/skillicons/003.png',//技能图标路径
+        'icon':'./resources/images/skillicons/003.jpg',//技能图标路径
         'level_limit':[2,3,4,9,11],//每一阶段的可点等级
         'cd':30,//CD时间
         //技能影响
@@ -774,7 +773,7 @@ woh.skill_data={
     '004':{
         'name':'醉舞秋红',
         'description':'日暮秋烟起,萧萧枫树林。寄托壮志未酬哀思的招式,饱含尽除敌寇的怨愤。(敌方全体造成大量伤害)',
-        'icon':'./resources/images/skillicons/004.png',//技能图标路径
+        'icon':'./resources/images/skillicons/004.jpg',//技能图标路径
         'level_limit':[5,8,9,13,15],//每一阶段的可点等级
         'cd':120,//CD时间
         //技能影响
@@ -785,17 +784,13 @@ woh.skill_data={
                 'duration':0.5,//动作持续时间
                 'continue':5,//技能效果持续时间
                 'attack_addition':30,//伤害增加值
-            },
-            //添加buff
-            //'buff':{
-
-            //}
+            }
         }
     },
     '005':{
         'name':'灵焰灼',
         'description':'星星之火,可以燎原,一旦燃起,便势不可当。(敌方全体受到伤害)',
-        'icon':'./resources/images/skillicons/005.png',//技能图标路径
+        'icon':'./resources/images/skillicons/005.jpg',//技能图标路径
         'level_limit':[1,2,4,5,7],//每一阶段的可点等级
         'cd':15,//CD时间
         //技能影响
@@ -813,7 +808,7 @@ woh.skill_data={
     '006':{
         'name':'心月斩',
         'description':'心月狐,其性属火,喜好游戏人间,祸乱人心。（造成范围伤害,受到伤害者行动封印。）',
-        'icon':'./resources/images/skillicons/006.png',//技能图标路径
+        'icon':'./resources/images/skillicons/006.jpg',//技能图标路径
         'level_limit':[2,3,4,8,10],//每一阶段的可点等级
         'cd':15,//CD时间
         //技能影响
@@ -834,7 +829,7 @@ woh.skill_data={
     '007':{
         'name':'天狐之怒',
         'description':'“青丘之山,有兽焉,其状如狐而九尾。”九尾狐出,乃世间将有大乱之象。（全部敌人受到连续伤害）',
-        'icon':'./resources/images/skillicons/007.png',//技能图标路径
+        'icon':'./resources/images/skillicons/007.jpg',//技能图标路径
         'level_limit':[2,3,4,9,11],//每一阶段的可点等级
         'cd':30,//CD时间
         //技能影响
@@ -851,7 +846,7 @@ woh.skill_data={
     '008':{
         'name':'心宿炎障',
         'description':'心宿,又称大火,东方苍龙七宿之心,守心护元,灭障除魔。（全部队友获得5秒免伤状态）',
-        'icon':'./resources/images/skillicons/008.png',//技能图标路径
+        'icon':'./resources/images/skillicons/008.jpg',//技能图标路径
         'level_limit':[5,8,9,13,15],//每一阶段的可点等级
         'cd':60,//CD时间
         //技能影响
@@ -868,7 +863,7 @@ woh.skill_data={
     '009':{
         'name':'花雨露',
         'description':'花雨润泽,沁人心脾,沐浴者神清气爽。（单体回复体力）',
-        'icon':'./resources/images/skillicons/009.png',//技能图标路径
+        'icon':'./resources/images/skillicons/009.jpg',//技能图标路径
         'level_limit':[5,6,7,8,9],//每一阶段的可点等级
         'cd':15,//CD时间
         //技能影响

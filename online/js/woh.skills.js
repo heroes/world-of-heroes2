@@ -14,7 +14,7 @@ Laro.NS('woh.skills.tpl', {
 Laro.NS('woh.skills', function (L) {
     var els = {};
     function getEls () {
-        els.container = document.querySelector('#role-skill-container');
+        els.container = document.getElementById('role-skill-container');
     }
     function bindEvent () {
         els.container.addEventListener('click', dispathEvent, false);

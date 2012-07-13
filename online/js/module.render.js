@@ -191,8 +191,9 @@
                         "<h1 id='name'></h1>"+
                         "<div id='weapon'>"+
                         "</div>"+
-                        "<div id='preview'>"+
-                        "</div>"+
+                        "<canvas id='role_preview' width='200' height='200'>"+
+
+                        "</canvas>"+
                         "<div id='clothes'>"+
                         "</div>"+
                         "<ul class='role-attributes'>"+
@@ -273,6 +274,8 @@
                     itemsList[i].className='useable'; 
                 }
             }
+            //预览装备
+            this.setPreview(data['clothes'],data['weapon']);
         },
         renderItemlattic:function(){
             var items=[];
@@ -311,9 +314,19 @@
         unInit : function(){
 
         },
-        //设置预览动画
-        setPreview:function(weapon,clothes){
-
+        //设置预览
+        setPreview:function(clothesid,weaponid){
+            console.log(clothesid,weaponid);
+            var ctx=_doc.getElementById('role_preview').getContext('2d'),
+                clothes=woh.item_data['clothes'][clothesid]['modal'],
+                weapon=woh.item_data['weapon'][weaponid]['modal'];
+                ctx.clearRect(0,0,200,200);
+            var clothesImg=new Image();
+                clothesImg.src=clothes[0];
+                ctx.drawImage(clothesImg,0,0,clothes[1],clothes[2],0,0,clothes[1],clothes[2]);
+            var weaponImg=new Image();
+                weaponImg.src=weapon[0];
+                ctx.drawImage(weaponImg,0,0,weapon[1],weapon[2],0,0,weapon[1],weapon[2]);
         },
         bind : function(){
         var that=this;
@@ -408,13 +421,27 @@
         tpl:function(){
           return "<button class='close'>"+
                  "</button>"+
-                 "<span class='skill-point'>1</span>";
-
+                 "<ul class='ava-bar'>"+
+                 "</ul>"+
+                 "<div></div>"+
+                 "<h1 class='name'></h1>"+
+                 "<span class='skill-point'></span>"+
+                 "<canvas class='preview'></canvas>"+
+                 "<ul class='skill-list'></ul>"+
+                 "<div class='description'>"+
+                    "<h3 class='name'></h3>"+
+                    "<p class='content'></p>"+
+                 "</div>";
         },
         init : function(){
             var skillinfo = _doc.getElementById('skill-manage');
             skillinfo.innerHTML = this.tpl();
             skillinfo.style.display = 'block';
+            _doc.querySelector('#skill-manage .name').innerHTML=woh.runtime.activeRole[0]['name'];
+
+            this.initAvatarBar();
+            this.initData(0);
+            _doc.querySelector('#skill-manage .ava-bar .avar:first-child').className+=' active';
             this.bind();
         },
         unInit : function(){
@@ -424,6 +451,39 @@
             _doc.querySelector('#skill-manage .close').addEventListener('click', function(){
                 _doc.getElementById('skill-manage').style.display = 'none';
             });
+
+        },
+        initAvatarBar:function(){ //载入活动人物的头像
+            for(var i in woh.runtime.activeRole){
+                _doc.querySelector('#skill-manage .ava-bar').innerHTML+='<li class="avar standard-stroke"><img width="105" height="105" id="roles'+i+'" src="'+woh.runtime.activeRole[i]['avatar']+'" data-toggle="'+i+'"></li>';
+            }
+            var that=this;
+            _doc.querySelector('#skill-manage .ava-bar').addEventListener('click',function(e){
+                if(e.target.id){
+                var currentId=e.target.getAttribute('data-toggle');
+                    _doc.querySelector('#skill-manage .ava-bar .active').className='avar standard-stroke';
+                    e.target.parentNode.className+=" active";
+                    that.initData(currentId);
+                }
+            },false);
+        },
+        initData:function(id){
+            var dataSkillPoint=woh.runtime.activeRole[id]['skill_point'],
+                dataSkillList=woh.runtime.activeRole[id]['skill_list'],
+                dataRoleCurrentLv=woh.runtime.activeRole[id]['lv'],
+                items=[];
+                _doc.querySelector('#skill-manage .skill-point').innerHTML=dataSkillPoint;
+                for(var key in dataSkillList){
+                    var iconclass='',
+                        nextRoleLevel=dataSkillList[key]+1;
+                    if(nextRoleLevel>=woh.skill_data[key]['level_limit'].length){nextRoleLevel=99;}
+                    if(dataSkillPoint>0&&nextRoleLevel<=dataRoleCurrentLv){
+                        iconclass=" class='useable ";
+                    }
+                    items.push("<li><img width='77' height='77'"+iconclass+"src='"+woh.skill_data[key]['icon']+"'/></li>");
+                }
+                items=items.join("");
+            _doc.querySelector('#skill-manage .skill-list').innerHTML=items;    
         }
     };
     Map.init();

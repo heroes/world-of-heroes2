@@ -105,17 +105,18 @@ margin-top:420px;}
 #map-skill{background: url(../resources/images/map/button2.png) center no-repeat}
 #map-person{background: url(../resources/images/map/button1.png) center no-repeat}
 
-.map-module .sub-win .ava-bar{width:85%;list-style: none; margin: 0 auto; padding: 0;}
+.map-module .sub-win .ava-bar{width:85%;list-style: none; margin-top: 20px; margin-left:32px;padding: 0;}
+.map-module .sub-win#skill-manage .ava-bar{margin-left: 60px}
 .map-module .sub-win .ava-bar .avar{width:105px; height:105px; display: inline-block; opacity: .3; margin:3px;}
 .map-module .sub-win .ava-bar .avar.active{opacity:1}
 .map-module .sub-win h1#name{color:black; font-size:24px; font-weight:bold; text-align:center; margin:0;}
 .map-module .sub-win .left-block,.sub-win .right-block{height:640px;float:left;}
-.map-module .sub-win .left-block{width: 420px; margin:20px 30px}
+.map-module .sub-win .left-block{width: 420px; margin:0 30px}
 .map-module .sub-win .right-block{width:440px;margin-left:10px}
-.map-module .sub-win .left-block #clothes,.sub-win .left-block #weapon{background:url(../resources/images/map/selected_bg.png) center;rgba(0,0,0,.7);width:77px;height:77px; margin-top: 105px; border-top: 20px; border-bottom: 20px; border-left: 4px; border-right:4px;  border-image: url(../resources/images/map/selected_bg.png) 20 4 20 4 repeat}
+.map-module .sub-win .left-block #clothes,.sub-win .left-block #weapon{background:url(../resources/images/map/selected_bg.png) center;rgba(0,0,0,.7);width:77px;height:77px; margin-top: 55px; border-top: 20px; border-bottom: 20px; border-left: 4px; border-right:4px;  border-image: url(../resources/images/map/selected_bg.png) 20 4 20 4 repeat}
 .sub-win .left-block #weapon{float:left}
 .map-module .sub-win .left-block #clothes{float:right}
-.map-module .sub-win .left-block #preview{float:left;width:230px;height:230px;margin-left:15px;}
+.map-module .sub-win .left-block #role_preview{float:left;width:230px;height:230px;margin-left:15px; background: gray}
 .map-module .sub-win .right-block .description{height: 100px; margin-left: 18px}
 .map-module .sub-win .right-block .items{height:300px;margin-top: 140px;margin-left: 7px}
 .map-module .sub-win .right-block ul.items{width:100%; list-style: none; padding: 0; margin: 140px 0 0 10px}
@@ -130,7 +131,13 @@ margin-top:420px;}
 }
 .map-module .sub-win#role-manage .exp-bar-inner{height: 26px;background: rgba(0,0,0,.7); width: 220px}
 .map-module .sub-win#role-manage .exp-value{height: 26px; background: white;}
-.map-module .sub-win#skill-manage span.skill-point{font-size: 30px; color: red; display: block;margin-top: 186px; margin-left: 465px}
+.map-module .sub-win#skill-manage h1.name{width: 200px; text-align: center;font-size: 28px;position: absolute;left: 60px; top: 150px}
+.map-module .sub-win#skill-manage span.skill-point{position:absolute;top:200px;font-size: 30px; color: red; display: block; float: left; margin-left: 465px;line-height: 30px}
+.map-module .sub-win#skill-manage ul.skill-list{list-style:none;position: absolute;left: 290px; top: 260px;}
+.map-module .sub-win#skill-manage ul.skill-list li{display: inline-block; border: 3px solid black; margin-right: 5px; padding: 0; height: 77px}
+.map-module .sub-win#skill-manage ul.skill-list li img{opacity: .3}
+.map-module .sub-win#skill-manage ul.skill-list li img.useable{opacity: 1}
+
 .cg-module,.drama-module{
 	width:960px;
 	height:640px;

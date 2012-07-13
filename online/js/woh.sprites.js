@@ -92,6 +92,7 @@ Laro.NS('woh', function (L) {
                 o.setRange(start, end);
                 o.rewind();
                 o.play(loop);
+                console.log(o.play);
             });
             
             animation[0].setCallback(L.curry(this.onAnimationEvent, this));
