@@ -304,7 +304,7 @@
             roleinfo.innerHTML = this.tpl();
             roleinfo.style.display = 'block';
            
-            this.renderItemlattic()
+            this.renderItemlattic();
             this.bind();
             this.initAvatarBar();
             this.renderItems();
