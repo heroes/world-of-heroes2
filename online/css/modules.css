@@ -84,7 +84,8 @@
     top: 50%;
     margin-left: -250px;
     font-weight: 500;
-    font-size: 24px
+    font-size: 24px;
+    color: white
 }
 .drama-module .caption-con p {
     opacity: 0;
