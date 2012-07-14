@@ -1,12 +1,10 @@
 /**
- * ������߹��� 
+ * 技能影响
  */
+ Laro.NS('woh', function (L) {
 
 
-Laro.NS('woh', function (L) {
-
-
-    var Monster = woh.Sprite.extend(function () {
+    var SkillEffect = woh.Sprite.extend(function () {
         this.speed = 100;
     }).methods({
         getAnimationGroup: function (type) {
@@ -25,25 +23,24 @@ Laro.NS('woh', function (L) {
             return ret;
         },
         initCheckArea: function () {
+            // ¿É²Ù×÷ÇøÓò == > ÕâÒ»²¿·ÖÊý¾ÝÐèÒª Ìáµ½ ÈËÎïÊý¾ÝÅäÖÃ ÀïÃæÈ¥£¬ ÕâÀïÄ¿Ç°ÔÝÊ±ÏÈÐ´ËÀ
             var me = this;
             this.checkRect = new L.Sprite(woh.stage.$, function () {
-                this.width = 0;
-                this.height = 0;
+                this.width = 100;
+                this.height = 120;
 
                 this.setPos = function (x, y) {
-                    this.x = x;
-                    this.y = y;
+                    // ÒòÎª sprite Ä¬ÈÏÊÇ»­ÔÚÖÐÐÄµÄ£¬ËùÒÔ Ò²ÐèÒª¼ÓÉÏÆ«ÒÆÁ¿
+                    this.x = x - 50;
+                    this.y = y - 60;
                 };
 
                 this.setPos(me.x, me.y);
+                // dev Ä£Ê½£¬¿ÉÒÔÏÔÊ¾¿ÉÒÔ²Ù×÷µÄÇøÓò£¬ÕýÊ½µÄÊ±ºò°ÑdrawÈ¥µô
                 this.draw = function (rd) {
                     rd.drawRect(0, 0, this.width, this.height, '#000');
                 }
             });
-
-            // this.checkRect.addEventListener('mousedown', function (x, y) {
-            //     me.canMove = false;
-            // });
         },
         draw: function (render) {
             var x = Math.floor(this.x), y = Math.floor(this.y),
@@ -62,5 +59,5 @@ Laro.NS('woh', function (L) {
             this.fsm.setState(woh.roleStates.attack);
         }
     });
-    this.Monster = Monster;
+    this.SkillEffect = SkillEffect;
 });

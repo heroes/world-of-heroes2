@@ -59,17 +59,12 @@ Laro.NS('woh', function (L) {
                     this.x = x - 50;
                     this.y = y - 60;
                 };
-                
                 this.setPos(me.x, me.y);
                 // dev 模式，可以显示可以操作的区域，正式的时候把draw去掉
                 this.draw = function (rd) {
                     rd.drawRect(0, 0, this.width, this.height, '#000');
                 }
             });    
-            
-            // this.checkRect.addEventListener('mousedown', function (x, y) {
-            //     me.canMove = true;
-            // });
         },
 
         getAnimations: function () {
@@ -92,7 +87,6 @@ Laro.NS('woh', function (L) {
                 o.setRange(start, end);
                 o.rewind();
                 o.play(loop);
-                console.log(o.play);
             });
             
             animation[0].setCallback(L.curry(this.onAnimationEvent, this));

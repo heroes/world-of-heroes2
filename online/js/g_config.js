@@ -8,18 +8,28 @@ woh.g_config = {
 //'next'用来存储下一幕的
 woh.g_config.script={
     //死亡
-    '0':{
+    'dead':{
         type:'dead',
+        repeat:true,
         data: {},     
-        next:'1'
+        next:'loading_1'
     },
     //开始界面
-    '1':{
+    'loading_1':{
+        type:'loading',
+        repeat:true,
+        data:{
+            key:'intro'
+        },
+        next:'intro'
+    },
+    'intro':{
         type:'intro',//标记相应的stage类型
         repeat:true,//标记在流程中是否允许重复出现（即选关的时候是否会被再次触发）
-        next:'7'
+        data:{},
+        next:'drama_1'
     },
-    '2':{
+    'drama_1':{
         type:'drama',//标记相应的stage类型
         repeat:false,
         data:[
@@ -61,7 +71,7 @@ woh.g_config.script={
         data:{
             key: 'battle_1'
         },
-        next:'6'
+        next:'7'
     },
     '6':{
         type:'battle',
@@ -73,7 +83,7 @@ woh.g_config.script={
         type:'map',
         repeat:true,
         data:{},
-        next:'5'
+        next:'6'
     }
 };
 
@@ -82,7 +92,14 @@ woh.g_config.resources = {
     // 比如： 战斗场景，随便测试一个, 假如第一场战斗
     // 根目录基于 resources/
     intro:{
-
+        type:'intro',
+        resources:[
+            'images/index/index.jpg',
+            'images/index/start-button-1.png',
+            'images/index/start-button-2.png',
+            'images/index/start-button-3.png',
+            'images/index/start-button-4.png'
+        ]
     },
     battle_1: {
         type: 'battle',
@@ -431,7 +448,7 @@ woh.g_config.monsters = {
                     "pivotx": 100,
                     "pivoty": 85,
                     "events": [
-                            { name: 'standup', frame: 1 }, //第一帧进入时触发
+                            {name: 'standup', frame: 1}, //第一帧进入时触发
                             {name: 'standdown', frame: 2}//第二帧进入时触发
                         ]
                 },
@@ -705,7 +722,7 @@ woh.item_data={
 //buff类型：速度类（加减）,防御类（加减）,暴击类（加减）,生命类（加减）
 //注：大招均为手势识别施放,每个人的第四个招为大招
 
-//目前唐如的三个技能分别为 单体攻击 瞬发群体攻击 吟唱群体攻击 大招为全屏幕地图炮高伤害攻击 
+//目前唐如的三个技能分别为 单体攻击 治疗 吟唱群体攻击 大招为全屏幕地图炮高伤害攻击 
 
 woh.skill_data={
     '001':{
@@ -910,7 +927,6 @@ woh.monster_init_data={
         'health':1400,
         'attack':30,
     }
-
 }
 //console.log(role_data);
 

@@ -36,7 +36,6 @@ Laro.NS('woh.stageClass', function (L) {
             woh.log('enter [loading]', msg);
             this.msg = msg;
             this.progress = 0;
-            woh.show(woh.els.canvasWrap);
             
             var ress = woh.g_config.resources[msg.key].resources;
             woh.loader.preload(ress, L.curry(this.loadProgressCallback, this));
@@ -49,6 +48,7 @@ Laro.NS('woh.stageClass', function (L) {
             this.timeInState += dt;
         },
         transition: function () {
+            woh.log('leave [loading]');
             (this.timeInState - this._finishTime > 1) && woh.gameScript.continueExec();
         },
         draw: function (render) {

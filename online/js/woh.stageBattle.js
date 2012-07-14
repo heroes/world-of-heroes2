@@ -17,7 +17,6 @@ Laro.NS('woh.stageClass', function (L) {
 
             woh.log('enter stage [Battle] with msg ' + msg);
             woh.show(woh.els.canvasWrap);
-
             // temp part to do area
             var me = this;
             /*
