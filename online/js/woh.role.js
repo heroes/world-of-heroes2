@@ -16,9 +16,8 @@ Laro.NS('woh', function (L) {
                 };
 
                 this.setPos(me.x, me.y);
-                // dev 模式，可以显示可以操作的区域，正式的时候把draw去掉
                 this.draw = function (rd) {
-                    rd.drawRect(0, 0, this.width, this.height, '#000');
+                     rd.drawRect(0, 0, this.width, this.height, '#000');
                 }
             });
 

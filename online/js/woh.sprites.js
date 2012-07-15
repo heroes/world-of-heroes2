@@ -176,7 +176,7 @@ Laro.NS('woh', function (L) {
             var me=this;
             var ctx = render.context;
             var x = this.x - me.data['width']/ 2 ;
-            var y = this.y - me.data['height'];
+            var y = this.y - me.data['height']/2-30;
             //console.log(this.hpBarW,this.checkRect.height);
             var border = 2;
             ctx.save();
