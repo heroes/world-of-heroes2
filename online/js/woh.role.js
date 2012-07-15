@@ -32,9 +32,9 @@ Laro.NS('woh', function (L) {
                 me = this;
             // draw circle & pie ==> 这里的数据也要提出去
             if (this.canMove) {
-                render.context.drawImage(woh.loader.loadedImages['images/circle.png'], this.x - 60, this.y + 20);
+                render.context.drawImage(woh.loader.loadedImages['images/circle.png'], this.x - me.checkRect.width/2, this.y+me.checkRect.height/2-30);
                 render.context.drawImage(woh.loader.loadedImages['images/pie.png'], woh.STAGE_MOUSE_POS.x - 38, woh.STAGE_MOUSE_POS.y - 23);
-                render.drawLine(this.x, this.y + 45, woh.STAGE_MOUSE_POS.x, woh.STAGE_MOUSE_POS.y, '#fff')
+                render.drawLine(this.x, this.y+me.checkRect.height/2, woh.STAGE_MOUSE_POS.x, woh.STAGE_MOUSE_POS.y, '#fff')
             }
             this.curAnimation && this.curAnimation.forEach(function (o) {
                 ((me.face == 'left' && !o.renderMirrored) || (me.face == 'right' && o.renderMirrored)) && o.mirror();

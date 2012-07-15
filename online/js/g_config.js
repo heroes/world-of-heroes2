@@ -353,7 +353,7 @@ woh.g_config.clothes={
                 "type": "animation",
                 "framerate": 2,
                 "pivotx": 171,
-                "pivoty": 105,
+                "pivoty": 130,
                 "events": [
                     {name:'standup',frame:1},//第一帧进入时触发
                     {name:'standdown',frame:2}//第二帧进入时触发
@@ -372,7 +372,7 @@ woh.g_config.clothes={
                 "type": "animation",
                 "framerate": 2,
                 "pivotx": 171,
-                "pivoty": 105,
+                "pivoty": 130,
                 "events": [
                     {name:'standup',frame:1},//第一帧进入时触发
                     {name:'standdown',frame:2}//第二帧进入时触发
@@ -393,7 +393,7 @@ woh.g_config.clothes={
                 "type": "animation",
                 "framerate": 2,
                 "pivotx": 171,
-                "pivoty": 105,
+                "pivoty": 130,
                 "events": []
             },
             "data": [
@@ -409,7 +409,7 @@ woh.g_config.clothes={
                 "type": "animation",
                 "framerate": 2,
                 "pivotx": 171,
-                "pivoty": 105,
+                "pivoty": 130,
                 "events": []
             },
             "data": [
@@ -426,7 +426,7 @@ woh.g_config.clothes={
                 "type": "animation",
                 "framerate": 2,
                 "pivotx": 171,
-                "pivoty": 105,
+                "pivoty": 130,
                 "events": []
             },
             "data": [
@@ -443,7 +443,7 @@ woh.g_config.clothes={
                 "type": "animation",
                 "framerate": 2,
                 "pivotx": 171,
-                "pivoty": 105,
+                "pivoty": 130,
                 "events": [
                     {name:'standup',frame:1},//第一帧进入时触发
                     {name:'standdown',frame:2}//第二帧进入时触发
@@ -462,7 +462,7 @@ woh.g_config.clothes={
                 "type": "animation",
                 "framerate": 2,
                 "pivotx": 171,
-                "pivoty": 105,
+                "pivoty": 130,
                 "events": []
             },
             "data": [
@@ -480,7 +480,7 @@ woh.g_config.clothes={
                 "type": "animation",
                 "framerate": 2,
                 "pivotx": 171,
-                "pivoty": 105,
+                "pivoty": 130,
                 "events": []
             },
             "data": [
@@ -496,7 +496,7 @@ woh.g_config.clothes={
                 "type": "animation",
                 "framerate": 2,
                 "pivotx": 171,
-                "pivoty": 105,
+                "pivoty": 130,
                 "events": []
             },
             "data": [
@@ -513,7 +513,7 @@ woh.g_config.clothes={
                 "type": "animation",
                 "framerate": 2,
                 "pivotx": 171,
-                "pivoty": 105,
+                "pivoty": 130,
                 "events": []
             },
             "data": [
@@ -710,7 +710,7 @@ woh.g_config.weapon={
                 "type": "animation",
                 "framerate": 2,
                 "pivotx": 171,
-                "pivoty": 105,
+                "pivoty": 130,
                 "events": []
             },
             "data": [
@@ -726,7 +726,7 @@ woh.g_config.weapon={
                 "type": "animation",
                 "framerate": 2,
                 "pivotx": 171,
-                "pivoty": 105,
+                "pivoty": 130,
                 "events": []
             },
             "data": [
@@ -744,7 +744,7 @@ woh.g_config.weapon={
                 "type": "animation",
                 "framerate": 2,
                 "pivotx": 171,
-                "pivoty": 105,
+                "pivoty": 130,
                 "events": []
             },
             "data": [
@@ -760,7 +760,7 @@ woh.g_config.weapon={
                 "type": "animation",
                 "framerate": 2,
                 "pivotx": 171,
-                "pivoty": 105,
+                "pivoty": 130,
                 "events": []
             },
             "data": [
@@ -777,7 +777,7 @@ woh.g_config.weapon={
                 "type": "animation",
                 "framerate": 2,
                 "pivotx": 171,
-                "pivoty": 105,
+                "pivoty": 130,
                 "events": []
             },
             "data": [
@@ -794,7 +794,7 @@ woh.g_config.weapon={
                 "type": "animation",
                 "framerate": 2,
                 "pivotx": 171,
-                "pivoty": 105,
+                "pivoty": 130,
                 "events": []
             },
             "data": [
@@ -810,7 +810,7 @@ woh.g_config.weapon={
                 "type": "animation",
                 "framerate": 2,
                 "pivotx": 171,
-                "pivoty": 105,
+                "pivoty": 130,
                 "events": []
             },
             "data": [
@@ -828,7 +828,7 @@ woh.g_config.weapon={
                 "type": "animation",
                 "framerate": 2,
                 "pivotx": 171,
-                "pivoty": 105,
+                "pivoty": 130,
                 "events": []
             },
             "data": [
@@ -844,7 +844,7 @@ woh.g_config.weapon={
                 "type": "animation",
                 "framerate": 2,
                 "pivotx": 171,
-                "pivoty": 105,
+                "pivoty": 130,
                 "events": []
             },
             "data": [
@@ -861,7 +861,7 @@ woh.g_config.weapon={
                 "type": "animation",
                 "framerate": 2,
                 "pivotx": 171,
-                "pivoty": 105,
+                "pivoty": 130,
                 "events": []
             },
             "data": [
@@ -1008,7 +1008,7 @@ woh.role_init_data={
             standdown:[0,0,140,210]
         },
         'width':100,
-        'height':120
+        'height':140
     },
     '003':{
         'name':'碧青',//名字
