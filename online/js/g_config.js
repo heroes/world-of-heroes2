@@ -115,7 +115,24 @@ woh.g_config.resources = {
             'images/sprites/clothes/001/none/magic.png',
             'images/sprites/clothes/001/none/stand.png',
             'images/sprites/clothes/001/none/run.png',
+            
+            'images/sprites/clothes/001/001/attack.png',
+            'images/sprites/clothes/001/001/hurted.png',
+            'images/sprites/clothes/001/001/magic.png',
             'images/sprites/clothes/001/001/stand.png',
+            'images/sprites/clothes/001/001/run.png',
+
+            'images/sprites/clothes/002/none/attack.png',
+            'images/sprites/clothes/002/none/hurted.png',
+            'images/sprites/clothes/002/none/magic.png',
+            'images/sprites/clothes/002/none/stand.png',
+            'images/sprites/clothes/002/none/run.png',
+
+            'images/sprites/clothes/002/003/attack.png',
+            'images/sprites/clothes/002/003/hurted.png',
+            'images/sprites/clothes/002/003/magic.png',
+            'images/sprites/clothes/002/003/stand.png',
+            'images/sprites/clothes/002/003/run.png',
 
             'images/sprites/weapon/001/attack.png',
             'images/sprites/weapon/001/hurted.png',
@@ -128,6 +145,18 @@ woh.g_config.resources = {
             'images/sprites/weapon/002/magic.png',
             'images/sprites/weapon/002/stand.png',
             'images/sprites/weapon/002/run.png',
+
+            'images/sprites/weapon/003/attack.png',
+            'images/sprites/weapon/003/hurt.png',
+            'images/sprites/weapon/003/magic.png',
+            'images/sprites/weapon/003/stand.png',
+            'images/sprites/weapon/003/run.png',
+
+            'images/sprites/weapon/004/attack.png',
+            'images/sprites/weapon/004/hurt.png',
+            'images/sprites/weapon/004/magic.png',
+            'images/sprites/weapon/004/stand.png',
+            'images/sprites/weapon/004/run.png',
         ]
     }
 };
@@ -325,7 +354,10 @@ woh.g_config.clothes={
                 "framerate": 2,
                 "pivotx": 171,
                 "pivoty": 105,
-                "events": []
+                "events": [
+                    {name:'standup',frame:1},//第一帧进入时触发
+                    {name:'standdown',frame:2}//第二帧进入时触发
+                ]
             },
             "data": [
                 [0,0,341,209,0,0,341,209],
@@ -341,7 +373,10 @@ woh.g_config.clothes={
                 "framerate": 2,
                 "pivotx": 171,
                 "pivoty": 105,
-                "events": []
+                "events": [
+                    {name:'standup',frame:1},//第一帧进入时触发
+                    {name:'standdown',frame:2}//第二帧进入时触发
+                ]
             },
             "data": [
                 [0,0,341,209,0,0,341,209],
@@ -409,7 +444,10 @@ woh.g_config.clothes={
                 "framerate": 2,
                 "pivotx": 171,
                 "pivoty": 105,
-                "events": []
+                "events": [
+                    {name:'standup',frame:1},//第一帧进入时触发
+                    {name:'standdown',frame:2}//第二帧进入时触发
+                ]
             },
             "data": [
                 [0,0,341,209,0,0,341,209],
@@ -540,6 +578,40 @@ woh.g_config.weapon={
                 [600,0,799,169,600,0,799,169]
             ],
             "filename": "images/sprites/weapon/001/attack.png"
+        },
+        "magic": {
+            "info": {
+                "nbrOfFrames": 4,
+                "name": "magic",
+                "type": "animation",
+                "framerate": 2,
+                "pivotx": 100,
+                "pivoty": 85,
+                "events": []
+            },
+            "data": [
+                [0,0,199,169,0,0,199,169],
+                [200,0,399,169,200,0,399,169],
+                [400,0,599,169,400,0,599,169],
+                [600,0,799,169,600,0,799,169]
+            ],
+            "filename": "images/sprites/weapon/001/magic.png"
+        },
+        "hurted": {
+            "info": {
+                "nbrOfFrames": 2,
+                "name": "hurted",
+                "type": "animation",
+                "framerate": 2,
+                "pivotx": 100,
+                "pivoty": 85,
+                "events": []
+            },
+            "data": [
+                [0,0,199,169,0,0,199,169],
+                [200,0,399,169,200,0,399,169]
+            ],
+            "filename": "images/sprites/weapon/001/hurted.png"
         }
     },
     '002':{
@@ -594,7 +666,209 @@ woh.g_config.weapon={
                 [600,0,799,169,600,0,799,169]
             ],
             "filename": "images/sprites/weapon/002/attack.png"
+        },
+        "magic": {
+            "info": {
+                "nbrOfFrames": 4,
+                "name": "magic",
+                "type": "animation",
+                "framerate": 2,
+                "pivotx": 100,
+                "pivoty": 85,
+                "events": []
+            },
+            "data": [
+                [0,0,199,169,0,0,199,169],
+                [200,0,399,169,200,0,399,169],
+                [400,0,599,169,400,0,599,169],
+                [600,0,799,169,600,0,799,169]
+            ],
+            "filename": "images/sprites/weapon/002/magic.png"
+        },
+        "hurted": {
+            "info": {
+                "nbrOfFrames": 2,
+                "name": "hurted",
+                "type": "animation",
+                "framerate": 2,
+                "pivotx": 100,
+                "pivoty": 85,
+                "events": []
+            },
+            "data": [
+                [0,0,199,169,0,0,199,169],
+                [200,0,399,169,200,0,399,169]
+            ],
+            "filename": "images/sprites/weapon/002/hurted.png"
         }
+    },
+    '003':{
+        "stand": {
+            "info": {
+                "nbrOfFrames": 2,
+                "name": "stand",
+                "type": "animation",
+                "framerate": 2,
+                "pivotx": 171,
+                "pivoty": 105,
+                "events": []
+            },
+            "data": [
+                [0,0,341,209,0,0,341,209],
+                [342,0,683,209,342,0,683,209]
+            ],
+            "filename": "images/sprites/weapon/003/stand.png"
+        },
+        "run": {
+            "info": {
+                "nbrOfFrames": 4,
+                "name": "run",
+                "type": "animation",
+                "framerate": 2,
+                "pivotx": 171,
+                "pivoty": 105,
+                "events": []
+            },
+            "data": [
+                [0,0,341,209,0,0,341,209],
+                [342,0,683,209,342,0,683,209],
+                [684,0,1025,209,684,0,1025,209],
+                [1026,0,1367,209,1026,0,1367,209]
+            ],
+            "filename": "images/sprites/weapon/003/run.png"
+        }, 
+        "attack": {
+            "info": {
+                "nbrOfFrames": 2,
+                "name": "attack",
+                "type": "animation",
+                "framerate": 2,
+                "pivotx": 171,
+                "pivoty": 105,
+                "events": []
+            },
+            "data": [
+                [0,0,341,209,0,0,341,209],
+                [342,0,683,209,342,0,683,209]
+            ],
+            "filename": "images/sprites/weapon/003/attack.png"
+        },
+        "magic": {
+            "info": {
+                "nbrOfFrames": 3,
+                "name": "magic",
+                "type": "animation",
+                "framerate": 2,
+                "pivotx": 171,
+                "pivoty": 105,
+                "events": []
+            },
+            "data": [
+                [0,0,341,209,0,0,341,209],
+                [342,0,683,209,342,0,683,209],
+                [684,0,1025,209,684,0,1025,209]
+            ],
+            "filename": "images/sprites/weapon/003/magic.png"
+        },
+        "hurted": {
+            "info": {
+                "nbrOfFrames": 1,
+                "name": "hurted",
+                "type": "animation",
+                "framerate": 2,
+                "pivotx": 171,
+                "pivoty": 105,
+                "events": []
+            },
+            "data": [
+                [0,0,341,209,0,0,341,209]
+            ],
+            "filename": "images/sprites/weapon/003/hurted.png"
+        }     
+    },
+    '004':{
+        "stand": {
+            "info": {
+                "nbrOfFrames": 2,
+                "name": "stand",
+                "type": "animation",
+                "framerate": 2,
+                "pivotx": 171,
+                "pivoty": 105,
+                "events": []
+            },
+            "data": [
+                [0,0,341,209,0,0,341,209],
+                [342,0,683,209,342,0,683,209]
+            ],
+            "filename": "images/sprites/weapon/004/stand.png"
+        },
+        "run": {
+            "info": {
+                "nbrOfFrames": 4,
+                "name": "run",
+                "type": "animation",
+                "framerate": 2,
+                "pivotx": 171,
+                "pivoty": 105,
+                "events": []
+            },
+            "data": [
+                [0,0,341,209,0,0,341,209],
+                [342,0,683,209,342,0,683,209],
+                [684,0,1025,209,684,0,1025,209],
+                [1026,0,1367,209,1026,0,1367,209]
+            ],
+            "filename": "images/sprites/weapon/004/run.png"
+        }, 
+        "attack": {
+            "info": {
+                "nbrOfFrames": 2,
+                "name": "attack",
+                "type": "animation",
+                "framerate": 2,
+                "pivotx": 171,
+                "pivoty": 105,
+                "events": []
+            },
+            "data": [
+                [0,0,341,209,0,0,341,209],
+                [342,0,683,209,342,0,683,209]
+            ],
+            "filename": "images/sprites/weapon/004/attack.png"
+        },
+        "magic": {
+            "info": {
+                "nbrOfFrames": 3,
+                "name": "magic",
+                "type": "animation",
+                "framerate": 2,
+                "pivotx": 171,
+                "pivoty": 105,
+                "events": []
+            },
+            "data": [
+                [0,0,341,209,0,0,341,209],
+                [342,0,683,209,342,0,683,209],
+                [684,0,1025,209,684,0,1025,209]
+            ],
+            "filename": "images/sprites/weapon/004/magic.png"
+        },
+        "hurted": {
+            "info": {
+                "nbrOfFrames": 1,
+                "name": "hurted",
+                "type": "animation",
+                "framerate": 2,
+                "pivotx": 171,
+                "pivoty": 105,
+                "events": []
+            },
+            "data": [
+                [0,0,341,209,0,0,341,209]
+            ],
+            "filename": "images/sprites/weapon/004/hurted.png"
+        }     
     },
 }
  // 精灵啦啦啦啦
@@ -721,13 +995,17 @@ woh.role_init_data={
         'avatar':'./resources/images/map/ava/shaofei_cheng.png',//头像
         'exp':1300,//当前经验值
         'weapon':'003',//武器编号
-        'clothes':'none',//衣服编号
+        'clothes':'002_none',//衣服编号
         'skill_point':'3',
         'skill_list':{
             '005':1,
             '006':1,
             '007':0,
             '008':0,
+        },
+        "areadata": {
+            standup:[0,0,140,210],
+            standdown:[0,0,140,210]
         },
         'width':100,
         'height':120
