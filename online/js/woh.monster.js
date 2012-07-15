@@ -1,5 +1,5 @@
 /**
- * »ÀŒÔªÚ’ﬂπ÷ŒÔ 
+ * √à√ã√é√Ø¬ª√≤√ï√ü¬π√ñ√é√Ø 
  */
 
 
@@ -24,27 +24,6 @@ Laro.NS('woh', function (L) {
 
             return ret;
         },
-        initCheckArea: function () {
-            var me = this;
-            this.checkRect = new L.Sprite(woh.stage.$, function () {
-                this.width = 0;
-                this.height = 0;
-
-                this.setPos = function (x, y) {
-                    this.x = x;
-                    this.y = y;
-                };
-
-                this.setPos(me.x, me.y);
-                this.draw = function (rd) {
-                    rd.drawRect(0, 0, this.width, this.height, '#000');
-                }
-            });
-
-            // this.checkRect.addEventListener('mousedown', function (x, y) {
-            //     me.canMove = false;
-            // });
-        },
         draw: function (render) {
             var x = Math.floor(this.x), y = Math.floor(this.y),
                 me = this;
@@ -53,9 +32,7 @@ Laro.NS('woh', function (L) {
                 ((me.face == 'left' && !o.renderMirrored) || (me.face == 'right' && o.renderMirrored)) && o.mirror();
                 o.draw(render, x, y, 0, 1, null);
             });
-            this.drawHPBar(render);
-            //console.log(ctx);
-
+            this.drawHPBar(render);//ÁªòÂà∂Ë°ÄÊù°
         },
 
         normalAttack: function () {

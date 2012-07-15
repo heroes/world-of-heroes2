@@ -10,6 +10,7 @@ Laro.NS('woh', function (L) {
     
 
     var Sprite = L.Class(function (data, brain) {
+        console.log(data);
         var statesList = [
             woh.roleStates.stand, woh.roleStateClass.Stand,
             woh.roleStates.run, woh.roleStateClass.Run,
@@ -23,11 +24,11 @@ Laro.NS('woh', function (L) {
         //L.extend(this, data);
         this.nowLife=this.life = 1000;
         // 不用 Vector 操作，在大数据量操作的时候会快些
-        this.x = 0;
+        this.x = 0; 
         this.y = 0;
         //定义血条的宽和高
-        this.bloodBarW=this.data.bloodBarW||120;
-        this.bloodBarH=15;
+        this.hpBarW=this.data.hpBarW||120;
+        this.hpBarH=15;
         this.movement = new L.Vector2(0, 0);
         this.fsm = new L.AppFSM(this, statesList);
         // 当前animation
@@ -48,25 +49,20 @@ Laro.NS('woh', function (L) {
             this.initCheckArea();
             this.stand(); // 默认进入站立状态
         },
+        //默认的checkarea为0
         initCheckArea: function () {
-            // 可操作区域 == > 这一部分数据需要 提到 人物数据配置 里面去， 这里目前暂时先写死
             var me = this;
             this.checkRect = new L.Sprite(woh.stage.$, function () {
-                this.width = 100;
-                this.height = 120;
+                this.width = 0;
+                this.height = 0;
                 this.setPos = function (x, y) {
                     // 因为 sprite 默认是画在中心的，所以 也需要加上偏移量
-                    this.x = x - 50;
-                    this.y = y - 60;
+                    this.x = x;
+                    this.y = y;
                 };
                 this.setPos(me.x, me.y);
-                // dev 模式，可以显示可以操作的区域，正式的时候把draw去掉
-                this.draw = function (rd) {
-                    rd.drawRect(0, 0, this.width, this.height, '#000');
-                }
             });    
         },
-
         getAnimations: function () {
             this.animations.stand = this.getAnimationGroup('stand');
             this.animations.run = this.getAnimationGroup('run');
@@ -175,10 +171,11 @@ Laro.NS('woh', function (L) {
             this.fsm.setState(woh.roleStates.hurted);
         },
         drawHPBar: function (render) {
+            var me=this;
             var ctx = render.context;
-            var x = this.x - this.bloodBarW / 2 ;
-            var y = this.y - this.checkRect.height+10;
-            //console.log(this.bloodBarW,this.checkRect.height);
+            var x = this.x - this.hpBarW / 2 ;
+            var y = this.y - me.data['hpBarpos'];
+            //console.log(this.hpBarW,this.checkRect.height);
             var border = 2;
             ctx.save();
             ctx.globalAlpha = 0.7;
@@ -186,18 +183,18 @@ Laro.NS('woh', function (L) {
 
 
             ctx.beginPath();
-            ctx.lineWidth = this.bloodBarH+border*2;
+            ctx.lineWidth = this.hpBarH+border*2;
             ctx.strokeStyle = '#000';
             ctx.moveTo(x - border,y );
-            ctx.lineTo(x+border+this.bloodBarW,y);
+            ctx.lineTo(x+border+this.hpBarW,y);
             ctx.stroke();
             ctx.closePath();
 
             ctx.beginPath();
-            ctx.lineWidth = this.bloodBarH ;
+            ctx.lineWidth = this.hpBarH ;
             ctx.strokeStyle = 'green';
             ctx.moveTo(x,y);
-            ctx.lineTo(x+ this.bloodBarW*this.nowLife/this.life ,y);
+            ctx.lineTo(x+ this.hpBarW*this.nowLife/this.life ,y);
             ctx.stroke();
             ctx.closePath();
 
@@ -205,7 +202,4 @@ Laro.NS('woh', function (L) {
         },
     });
     this.Sprite = Sprite;
-
-    
-
 });

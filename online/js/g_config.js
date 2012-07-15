@@ -27,7 +27,7 @@ woh.g_config.script={
         type:'intro',//标记相应的stage类型
         repeat:true,//标记在流程中是否允许重复出现（即选关的时候是否会被再次触发）
         data:{},
-        next:'drama_1'
+        next:'dialogue_1'
     },
     'drama_1':{
         type:'drama',//标记相应的stage类型
@@ -42,7 +42,7 @@ woh.g_config.script={
                     ]
                 }
         ],
-        next:'3'
+        next:'dialogue_1'
     },
     '3':{
         type:'cg',
@@ -50,7 +50,7 @@ woh.g_config.script={
         data:{},
         next:'4'
     },
-    '4':{
+    'dialogue_1':{
         type:'dialogue',
         repeat:false,
         data:[
@@ -62,16 +62,16 @@ woh.g_config.script={
             {'avatar':'resources/images/dialogue/UI-dialog-character.png','name':'唐如','content':'你没事吧，醒醒啊！呼吸很平稳，看来只是晕过去了而已。',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
             {'avatar':'resources/images/dialogue/UI-dialog-character.png','name':'唐如','content':'天啊，哪来那么多的大螃蟹！不好，螃蟹似乎是冲着那个人来的。不管怎么样，先把它们击退吧。',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'}
         ],
-        next:'5'
+        next:'loading_2'
     },
     // 
-    '5':{
+    'loading_2':{
         type:'loading',
         repeat:true,
         data:{
             key: 'battle_1'
         },
-        next:'7'
+        next:'6'
     },
     '6':{
         type:'battle',
@@ -431,8 +431,14 @@ woh.g_config.weapon={
 }
  // 精灵啦啦啦啦
 woh.g_config.monsters = {
-
     "crab": {
+        "health":140,//血量
+        "attack":20,//攻击
+        "defend":0,//防御
+        "crit":0,//暴击
+        "drop":['clothes','001',0.05],//掉落类型，掉落id，掉落概率
+        "exp":20,//打死一只怪物获得的经验值
+        "hpBarpos":100,//血条的偏移
         "areadata": {
             standup: [0, 0, 190, 120],
             standdown: [0, 0, 190, 120]
@@ -535,7 +541,9 @@ woh.role_init_data={
         "areadata": {
             standup:[0,0,140,210],
             standdown:[0,0,140,210]
-        }
+        },
+        'checkarea':[100,120],
+        'hpBarpos':110//血条的偏移
     },
     '002':{
         'name':'程少非',//名字
@@ -551,7 +559,9 @@ woh.role_init_data={
             '006':1,
             '007':0,
             '008':0,
-        }
+        },
+        'checkarea':[100,120],
+        'hpBarpos':110//血条的偏移
     },
     '003':{
         'name':'碧青',//名字
@@ -567,10 +577,26 @@ woh.role_init_data={
             '010':1,
             '011':0,
             '012':0
-        }
+        },
+        'checkarea':[100,120],
+        'hpBarpos':110//血条的偏移
     },
 }
+//怪物初始化数据
+// woh.monster_init_data={
+//     'crab':{
+        
+//     },
+//     'crab_boss':{
+//         'health':1400,
+//         'attack':30,
+//         'skill':[function(){
 
+//         },function(){
+
+//         }]
+//     }
+// }
 woh.item_data={
         'weapon':{
             '001':{
@@ -917,16 +943,6 @@ woh.skill_data={
     }
 }
 
-//怪物初始化数据
-woh.monster_init_data={
-    'crab':{
-        'health':140,
-        'attack':20,
-    },
-    'crab_boss':{
-        'health':1400,
-        'attack':30,
-    }
-}
+
 //console.log(role_data);
 
