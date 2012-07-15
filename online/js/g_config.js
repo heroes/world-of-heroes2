@@ -134,7 +134,7 @@ woh.g_config.resources = {
 
 //衣服的动画数据
 woh.g_config.clothes={
-    'none':{
+    '001_none':{
         "stand":{
             "info": {
                 "nbrOfFrames": 2,
@@ -315,6 +315,174 @@ woh.g_config.clothes={
             ],
             "filename": "images/sprites/clothes/001/001/magic.png"
         }
+    }, 
+    '002_none':{
+        "stand": {
+            "info": {
+                "nbrOfFrames": 2,
+                "name": "stand",
+                "type": "animation",
+                "framerate": 2,
+                "pivotx": 171,
+                "pivoty": 105,
+                "events": []
+            },
+            "data": [
+                [0,0,341,209,0,0,341,209],
+                [342,0,683,209,342,0,683,209]
+            ],
+            "filename": "images/sprites/clothes/002/none/stand.png"
+        },
+        "run": {
+            "info": {
+                "nbrOfFrames": 4,
+                "name": "run",
+                "type": "animation",
+                "framerate": 2,
+                "pivotx": 171,
+                "pivoty": 105,
+                "events": []
+            },
+            "data": [
+                [0,0,341,209,0,0,341,209],
+                [342,0,683,209,342,0,683,209],
+                [684,0,1025,209,684,0,1025,209],
+                [1026,0,1367,209,1026,0,1367,209]
+            ],
+            "filename": "images/sprites/clothes/002/none/run.png"
+        },
+        "attack": {
+            "info": {
+                "nbrOfFrames": 2,
+                "name": "attack",
+                "type": "animation",
+                "framerate": 2,
+                "pivotx": 171,
+                "pivoty": 105,
+                "events": []
+            },
+            "data": [
+                [0,0,341,209,0,0,341,209],
+                [342,0,683,209,342,0,683,209]
+            ],
+            "filename": "images/sprites/clothes/002/none/attack.png"
+        },
+        "magic": {
+            "info": {
+                "nbrOfFrames": 3,
+                "name": "magic",
+                "type": "animation",
+                "framerate": 2,
+                "pivotx": 171,
+                "pivoty": 105,
+                "events": []
+            },
+            "data": [
+                [0,0,341,209,0,0,341,209],
+                [342,0,683,209,342,0,683,209],
+                [684,0,1025,209,684,0,1025,209]
+            ],
+            "filename": "images/sprites/clothes/002/none/magic.png"
+        },
+        "hurted": {
+            "info": {
+                "nbrOfFrames": 1,
+                "name": "hurted",
+                "type": "animation",
+                "framerate": 2,
+                "pivotx": 171,
+                "pivoty": 105,
+                "events": []
+            },
+            "data": [
+                [0,0,341,209,0,0,341,209]
+            ],
+            "filename": "images/sprites/clothes/002/none/hurted.png"
+        }                
+    }, 
+    '003':{
+        "stand": {
+            "info": {
+                "nbrOfFrames": 2,
+                "name": "stand",
+                "type": "animation",
+                "framerate": 2,
+                "pivotx": 171,
+                "pivoty": 105,
+                "events": []
+            },
+            "data": [
+                [0,0,341,209,0,0,341,209],
+                [342,0,683,209,342,0,683,209]
+            ],
+            "filename": "images/sprites/clothes/002/003/stand.png"
+        },
+        "run": {
+            "info": {
+                "nbrOfFrames": 4,
+                "name": "run",
+                "type": "animation",
+                "framerate": 2,
+                "pivotx": 171,
+                "pivoty": 105,
+                "events": []
+            },
+            "data": [
+                [0,0,341,209,0,0,341,209],
+                [342,0,683,209,342,0,683,209],
+                [684,0,1025,209,684,0,1025,209],
+                [1026,0,1367,209,1026,0,1367,209]
+            ],
+            "filename": "images/sprites/clothes/002/003/run.png"
+        },
+        "attack": {
+            "info": {
+                "nbrOfFrames": 2,
+                "name": "attack",
+                "type": "animation",
+                "framerate": 2,
+                "pivotx": 171,
+                "pivoty": 105,
+                "events": []
+            },
+            "data": [
+                [0,0,341,209,0,0,341,209],
+                [342,0,683,209,342,0,683,209]
+            ],
+            "filename": "images/sprites/clothes/002/003/attack.png"
+        },
+        "magic": {
+            "info": {
+                "nbrOfFrames": 3,
+                "name": "magic",
+                "type": "animation",
+                "framerate": 2,
+                "pivotx": 171,
+                "pivoty": 105,
+                "events": []
+            },
+            "data": [
+                [0,0,341,209,0,0,341,209],
+                [342,0,683,209,342,0,683,209],
+                [684,0,1025,209,684,0,1025,209]
+            ],
+            "filename": "images/sprites/clothes/002/003/magic.png"
+        },
+        "hurted": {
+            "info": {
+                "nbrOfFrames": 1,
+                "name": "hurted",
+                "type": "animation",
+                "framerate": 2,
+                "pivotx": 171,
+                "pivoty": 105,
+                "events": []
+            },
+            "data": [
+                [0,0,341,209,0,0,341,209]
+            ],
+            "filename": "images/sprites/clothes/002/003/hurted.png"
+        }                
     },   
 }
 //武器的动画数据
