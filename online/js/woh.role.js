@@ -6,8 +6,8 @@ Laro.NS('woh', function (L) {
             // 可操作区域 == > 这一部分数据需要 提到 人物数据配置 里面去， 这里目前暂时先写死
             var me = this;
             this.checkRect = new L.Sprite(woh.stage.$, function () {
-                this.width = me.data['checkarea'][0];
-                this.height = me.data['checkarea'][1];;
+                this.width = me.data['width'];
+                this.height = me.data['height'];
 
                 this.setPos = function (x, y) {
                     // 因为 sprite 默认是画在中心的，所以 也需要加上偏移量

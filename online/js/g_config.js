@@ -438,7 +438,8 @@ woh.g_config.monsters = {
         "crit":0,//暴击
         "drop":['clothes','001',0.05],//掉落类型，掉落id，掉落概率
         "exp":20,//打死一只怪物获得的经验值
-        "hpBarpos":100,//血条的偏移
+        'width':150,
+        'height':110,
         "areadata": {
             standup: [0, 0, 190, 120],
             standdown: [0, 0, 190, 120]
@@ -542,8 +543,8 @@ woh.role_init_data={
             standup:[0,0,140,210],
             standdown:[0,0,140,210]
         },
-        'checkarea':[100,120],
-        'hpBarpos':110//血条的偏移
+        'width':100,
+        'height':120
     },
     '002':{
         'name':'程少非',//名字
@@ -560,8 +561,8 @@ woh.role_init_data={
             '007':0,
             '008':0,
         },
-        'checkarea':[100,120],
-        'hpBarpos':110//血条的偏移
+        'width':100,
+        'height':120
     },
     '003':{
         'name':'碧青',//名字
@@ -578,8 +579,8 @@ woh.role_init_data={
             '011':0,
             '012':0
         },
-        'checkarea':[100,120],
-        'hpBarpos':110//血条的偏移
+        'width':100,
+        'height':120
     },
 }
 //怪物初始化数据

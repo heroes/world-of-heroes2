@@ -27,7 +27,7 @@ Laro.NS('woh', function (L) {
         this.x = 0; 
         this.y = 0;
         //定义血条的宽和高
-        this.hpBarW=this.data.hpBarW||120;
+        this.hpBarW=this.data['width']||120;
         this.hpBarH=15;
         this.movement = new L.Vector2(0, 0);
         this.fsm = new L.AppFSM(this, statesList);
@@ -43,6 +43,7 @@ Laro.NS('woh', function (L) {
         this.brain.knowSprite(this);
 
         this.born();
+
     }).methods({
         born: function () {
             this.getAnimations();
@@ -159,8 +160,9 @@ Laro.NS('woh', function (L) {
             this.fsm.setState(woh.roleStates.stand);
         },
         moveTo: function (x, y) {
+            var me=this;
             x > this.x ? this.faceRight() : this.faceLeft();
-            this.toPos = {x: x, y: y-60};
+            this.toPos = {x: x, y: y-me.data['height']/2};
             this.fsm.setState(woh.roleStates.run);
         },
         normalAttack: function () {
@@ -173,8 +175,8 @@ Laro.NS('woh', function (L) {
         drawHPBar: function (render) {
             var me=this;
             var ctx = render.context;
-            var x = this.x - this.hpBarW / 2 ;
-            var y = this.y - me.data['hpBarpos'];
+            var x = this.x - me.data['width']/ 2 ;
+            var y = this.y - me.data['height'];
             //console.log(this.hpBarW,this.checkRect.height);
             var border = 2;
             ctx.save();
