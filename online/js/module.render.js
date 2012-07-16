@@ -323,10 +323,10 @@
                 ctx.clearRect(0,0,200,200);
             var clothesImg=new Image();
                 clothesImg.src=clothes[0];
-                ctx.drawImage(clothesImg,0,0,clothes[1],clothes[2],0,0,clothes[1],clothes[2]);
+                ctx.drawImage(clothesImg,(clothes[1]-200)/2,0,clothes[1],clothes[2],0,0,clothes[1],clothes[2]);
             var weaponImg=new Image();
                 weaponImg.src=weapon[0];
-                ctx.drawImage(weaponImg,0,0,weapon[1],weapon[2],0,0,weapon[1],weapon[2]);
+                ctx.drawImage(weaponImg,(weapon[1]-200)/2,0,weapon[1],weapon[2],0,0,weapon[1],weapon[2]);
         },
         bind : function(){
         var that=this;
@@ -418,6 +418,7 @@
     //点技能界面
     //需求：类似dota的点技能，当技能处于可点状态，点击相应图标升级技能，每升级一次消耗一个技能点
     var skillManager = _win.skillManager = {
+        currentActiveRole:0,
         tpl:function(){
           return "<button class='close'>"+
                  "</button>"+
@@ -451,7 +452,15 @@
             _doc.querySelector('#skill-manage .close').addEventListener('click', function(){
                 _doc.getElementById('skill-manage').style.display = 'none';
             });
-
+            //绑定点技能的功能
+            var that=this;
+            _doc.querySelector('#skill-manage .skill-list').addEventListener('click',function(e){
+                if(e.target.nodeName=='img'||e.target.nodeName=='IMG'&&e.target.className=='useable'){
+                    woh.runtime.activeRole[that.currentActiveRole]['skill_list'][e.target.getAttribute('data-toggle')]++;
+                    woh.runtime.activeRole[that.currentActiveRole]['skill_point']--;
+                    that.initData(that.currentActiveRole);
+                }
+            },false);
         },
         initAvatarBar:function(){ //载入活动人物的头像
             for(var i in woh.runtime.activeRole){
@@ -468,6 +477,7 @@
             },false);
         },
         initData:function(id){
+            this.currentActiveRole=id;
             var dataSkillPoint=woh.runtime.activeRole[id]['skill_point'],
                 dataSkillList=woh.runtime.activeRole[id]['skill_list'],
                 dataRoleCurrentLv=woh.runtime.activeRole[id]['lv'],
@@ -478,9 +488,9 @@
                         nextRoleLevel=dataSkillList[key]+1;
                     if(nextRoleLevel>=woh.skill_data[key]['level_limit'].length){nextRoleLevel=99;}
                     if(dataSkillPoint>0&&nextRoleLevel<=dataRoleCurrentLv){
-                        iconclass=" class='useable ";
+                        iconclass=" class='useable' ";
                     }
-                    items.push("<li><img width='77' height='77'"+iconclass+"src='"+woh.skill_data[key]['icon']+"'/></li>");
+                    items.push("<li><img width='77' height='77'"+iconclass+"data-toggle='"+key+"' src='"+woh.skill_data[key]['icon']+"'/></li>");
                 }
                 items=items.join("");
             _doc.querySelector('#skill-manage .skill-list').innerHTML=items;    
