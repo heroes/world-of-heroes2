@@ -38,6 +38,8 @@ Laro.NS('woh', function (L) {
             });
             this.drawHPBar(render);
             //console.log(ctx);
+        },
+        initSkills:function(){
 
         },
         getAnimationGroup: function (type) {
@@ -54,7 +56,6 @@ Laro.NS('woh', function (L) {
             for (var i = 0; i < obj.length; i ++) {
                 ret.push(L.$lea.getAnimation(i));
             }
-            
             return ret;
         },
     });

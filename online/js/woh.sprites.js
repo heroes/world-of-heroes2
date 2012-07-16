@@ -71,12 +71,7 @@ Laro.NS('woh', function (L) {
             this.animations.attack = this.getAnimationGroup('attack');
             this.animations.magic = this.getAnimationGroup('magic');
         },
-        // 设置当前 animation 并自动播放
-        setAndPlay: function (animation, loop, start, end) {
-            if (loop === undefined) loop = true;
-            if (start === undefined) start = 0;
-            if (end === undefined) end = 1;
-            
+     
             animation = typeof animation == 'string' ? this.animations[animation] : animation;
             this.curAnimation = animation;
             

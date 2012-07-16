@@ -2,8 +2,6 @@
  * 技能影响
  */
  Laro.NS('woh', function (L) {
-
-
     var SkillEffect = woh.Sprite.extend(function () {
         this.speed = 100;
     }).methods({
@@ -22,23 +20,6 @@
 
             return ret;
         },
-        initCheckArea: function () {
-            var me = this;
-            this.checkRect = new L.Sprite(woh.stage.$, function () {
-                this.width = 100;
-                this.height = 120;
-
-                this.setPos = function (x, y) {
-                    this.x = x - 50;
-                    this.y = y - 60;
-                };
-
-                this.setPos(me.x, me.y);
-                this.draw = function (rd) {
-                    rd.drawRect(0, 0, this.width, this.height, '#000');
-                }
-            });
-        },
         draw: function (render) {
             var x = Math.floor(this.x), y = Math.floor(this.y),
                 me = this;
@@ -48,9 +29,11 @@
                 o.draw(render, x, y, 0, 1, null);
             });
         },
+        extract:function(target){
 
-        normalAttack: function () {
-            
+        },
+        cdCount:function(){
+
         }
     });
     this.SkillEffect = SkillEffect;
