@@ -71,7 +71,7 @@ woh.g_config.script={
         data:{
             key: 'battle_1'
         },
-        next:'6'
+        next:'7'
     },
     '6':{
         type:'battle',
@@ -995,7 +995,7 @@ woh.role_init_data={
         'avatar':'./resources/images/map/ava/shaofei_cheng.png',//头像
         'exp':1300,//当前经验值
         'weapon':'003',//武器编号
-        'clothes':'002_none',//衣服编号
+        'clothes':'003',//衣服编号
         'skill_point':'3',
         'skill_list':{
             '005':1,
@@ -1140,7 +1140,7 @@ woh.item_data={
                 'name':'云锦深衣',
                 'description':'看起来是高级武将使用的样式，但已十分破旧，上有云锦纹路，据说有护持作用。',
                 'icon':'./resources/images/map/items/c_001.png',
-                'modal':['.resources/images/sprites/clothes/001/001/stand.png',200,170],
+                'modal':['resources/images/sprites/clothes/001/001/stand.png',200,170],
                 'health':0,
                 'attack':10,
                 'defend':3,
@@ -1151,6 +1151,7 @@ woh.item_data={
                 'name':'锦袍',
                 'description':'富家公子常穿的便服,冬暖夏凉。',
                 'icon':'./resources/images/map/items/c_003.png',
+                'modal':['resources/images/sprites/clothes/002/003/stand.png',342,210],
                 'health':0,
                 'attack':10,
                 'defend':3,
@@ -1161,6 +1162,7 @@ woh.item_data={
                 'name':'蜀锦袍',
                 'description':'“犹馀蜀中锦,爱惜比甘棠。”蜀地的锦缎千载驰名,用其制作的袍子自然也价格不菲。',
                 'icon':'./resources/images/map/items/c_003.png',
+                'modal':['resources/images/sprites/clothes/002/003/stand.png',342,210],
                 'health':0,
                 'attack':10,
                 'defend':3,

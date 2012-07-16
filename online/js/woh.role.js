@@ -3,14 +3,12 @@ Laro.NS('woh', function (L) {
         this.speed = 200;
     }).methods({
         initCheckArea: function () {
-            // 可操作区域 == > 这一部分数据需要 提到 人物数据配置 里面去， 这里目前暂时先写死
             var me = this;
             this.checkRect = new L.Sprite(woh.stage.$, function () {
                 this.width = me.data['width'];
                 this.height = me.data['height'];
 
                 this.setPos = function (x, y) {
-                    // 因为 sprite 默认是画在中心的，所以 也需要加上偏移量
                     this.x = x - this.width/2;
                     this.y = y - this.height/2;
                 };
@@ -29,7 +27,6 @@ Laro.NS('woh', function (L) {
         draw: function (render) {
             var x = Math.floor(this.x), y = Math.floor(this.y),
                 me = this;
-            // draw circle & pie ==> 这里的数据也要提出去
             if (this.canMove) {
                 render.context.drawImage(woh.loader.loadedImages['images/circle.png'], this.x - me.checkRect.width/2, this.y+me.checkRect.height/2-30);
                 render.context.drawImage(woh.loader.loadedImages['images/pie.png'], woh.STAGE_MOUSE_POS.x - 38, woh.STAGE_MOUSE_POS.y - 23);
