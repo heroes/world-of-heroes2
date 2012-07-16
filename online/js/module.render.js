@@ -455,11 +455,16 @@
             //绑定点技能的功能
             var that=this;
             _doc.querySelector('#skill-manage .skill-list').addEventListener('click',function(e){
-                if(e.target.nodeName=='img'||e.target.nodeName=='IMG'&&e.target.className=='useable'){
-                    woh.runtime.activeRole[that.currentActiveRole]['skill_list'][e.target.getAttribute('data-toggle')]++;
+            if(e.target.nodeName=='img'||e.target.nodeName=='IMG'){
+                var skill_key=e.target.getAttribute('data-toggle');
+                _doc.querySelector('#skill-manage .description h3.name').innerHTML=woh.skill_data[skill_key]['name'];
+                _doc.querySelector('#skill-manage .description p.content').innerHTML=woh.skill_data[skill_key]['description'];
+                if(e.target.className=='useable'){
+                    woh.runtime.activeRole[that.currentActiveRole]['skill_list'][skill_key]++;
                     woh.runtime.activeRole[that.currentActiveRole]['skill_point']--;
                     that.initData(that.currentActiveRole);
                 }
+            }
             },false);
         },
         initAvatarBar:function(){ //载入活动人物的头像

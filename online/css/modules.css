@@ -138,6 +138,7 @@ margin-top:420px;}
 .map-module .sub-win#skill-manage ul.skill-list li{display: inline-block; border: 3px solid black; margin-right: 5px; padding: 0; height: 77px}
 .map-module .sub-win#skill-manage ul.skill-list li img{opacity: .3}
 .map-module .sub-win#skill-manage ul.skill-list li img.useable{opacity: 1}
+.map-module .sub-win#skill-manage .description{ position: absolute;top: 450px; left: 80px; width: 500px;}
 
 .cg-module,.drama-module{
 	width:960px;
