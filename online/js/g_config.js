@@ -972,9 +972,9 @@ woh.role_init_data={
         'lv':0,//等级(根据类型和等级读取其他数据)
         'avatar':'./resources/images/map/ava/rio_tang.png',//头像
         'exp':0,//当前经验值
-        'weapon':'001',//武器编号
+        'weapon':'002',//武器编号
         'clothes':'001',//衣服编号,none表示裸奔
-        'skill_point':'3',//剩余技能点
+        'skill_point':0,//剩余技能点
         'skill_list':{
             '001':0, 
             '002':0,
@@ -996,7 +996,7 @@ woh.role_init_data={
         'exp':1300,//当前经验值
         'weapon':'003',//武器编号
         'clothes':'003',//衣服编号
-        'skill_point':'3',
+        'skill_point':3,
         'skill_list':{
             '005':1,
             '006':1,
