@@ -35,7 +35,7 @@ Laro.NS('woh', function (L) {
         this.curAnimation = null;
         
         // 是否可移动标志
-        this.canMove = false;
+        this.canMove = false;   
         this.face = 'right';
 
         this.brain = brain;
@@ -166,6 +166,12 @@ Laro.NS('woh', function (L) {
         },
         normalAttack: function () {
             this.fsm.setState(woh.roleStates.attack);
+        },
+        attack: function (data) {
+            this.fsm.setState(woh.roleStates.attack);
+        },
+        magic:function(data){
+
         },
         hurted: function (damage) {
             this.life -= damage;
