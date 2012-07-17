@@ -1391,7 +1391,45 @@ woh.skill_data={
         //技能影响
     }
 }
-
+//技能效果动画的配置
+woh.skill_effect={
+    "001": {
+        "info": {
+            "nbrOfFrames": 4,
+            "name": "001",
+            "type": "animation",
+            "framerate": 4,
+            "pivotx": 200,
+            "pivoty": 185,
+            "events": []
+        },
+        "data": [
+            [0,0,399,369,0,0,399,369],
+            [400,0,799,369,400,0,799,369],
+            [800,0,1199,369,800,0,1199,369],
+            [1200,0,1599,369,1200,0,1599,369]
+        ],
+        "filename": "./resources/images/sprites/skilleffect/001.png"
+    },
+    "002": {
+        "info": {
+            "nbrOfFrames": 4,
+            "name": "002",
+            "type": "animation",
+            "framerate": 4,
+            "pivotx": 70,
+            "pivoty": 92,
+            "events": []
+        },
+        "data": [
+            [0,0,139,184,0,0,139,184],
+            [140,0,279,184,140,0,279,184],
+            [280,0,419,184,280,0,419,184],
+            [420,0,559,184,420,0,559,184]
+        ],
+        "filename": "./resources/images/sprites/skilleffect/002.png"
+    }
+}
 
 //console.log(role_data);
 
