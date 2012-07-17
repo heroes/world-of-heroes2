@@ -73,10 +73,10 @@ Laro.NS('woh.stageClass', function (L) {
                     
                 },
             }
-            this.roles.add('rio_tang', new woh.Role(woh.runtime.role[0], this.aiController));
+            this.roles.add('rio_tang', new woh.Role(woh.runtime.role['001'], this.aiController));
             this.roles.get('rio_tang').setPos(100, 400);
             this.roles.get('rio_tang').stage = this;
-            this.roles.add('sola_cheng', new woh.Role(woh.runtime.role[1], this.aiController));
+            this.roles.add('sola_cheng', new woh.Role(woh.runtime.role['002'], this.aiController));
             this.roles.get('sola_cheng').setPos(200, 400);
             this.roles.get('sola_cheng').stage = this;
             this.roles.add('crab', new woh.Monster(woh.g_config.monsters.crab, this.aiController));

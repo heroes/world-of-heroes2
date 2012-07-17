@@ -24,17 +24,16 @@ Laro.NS('woh.runtime', function (L) {
     	this.scriptProcess.push(key);
     	this.scriptProcess.sort();
     },
-    this.role=[],//全部人物的运行时数据
+    this.role=null,//全部人物的运行时数据
     this.activeRole=[],//活动人物的列表，初始值为唐如一个人
     this.packageItems=[];//物品列表
     this.init=function(){
         //初始化运行时人物数据
-        for(var key in woh.role_init_data){
-            this.role.push(eval('('+JSON.stringify(woh.role_init_data[key])+')'));
-        }
+        this.role=eval('('+JSON.stringify(woh.role_init_data)+')');
+        console.log(this.role['001']);  
         //以下为测试代码
-        this.activeRole.push(this.role[0]);
-        this.activeRole.push(this.role[1]);
+        this.activeRole.push(this.role['001']);
+        this.activeRole.push(this.role['002']);
         this.packageItems.push(['weapon','002']);
         this.packageItems.push(['weapon','003']);
         this.packageItems.push(['weapon','004']);

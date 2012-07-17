@@ -1,5 +1,5 @@
 ﻿/**
- * 人物或者怪物 
+ * 人物,怪物或技能特效
  */
 woh.roleAttackType = {
     normalAttack: 0,
@@ -19,7 +19,7 @@ Laro.NS('woh', function (L) {
             woh.roleStates.magic, woh.roleStateClass.Magic,
             woh.roleStates.dead, woh.roleStateClass.Dead,
         ];
-        
+        this.fsm = new L.AppFSM(this, statesList);
         this.data = data;
         //L.extend(this, data);
         this.nowLife=this.life = 1000;
@@ -30,7 +30,6 @@ Laro.NS('woh', function (L) {
         this.hpBarW=this.data['width']||120;
         this.hpBarH=15;
         this.movement = new L.Vector2(0, 0);
-        this.fsm = new L.AppFSM(this, statesList);
         // 当前animation
         this.animations = {};
         this.curAnimation = null;

@@ -28,12 +28,6 @@
                 ((me.face == 'left' && !o.renderMirrored) || (me.face == 'right' && o.renderMirrored)) && o.mirror();
                 o.draw(render, x, y, 0, 1, null);
             });
-        },
-        extract:function(target){
-
-        },
-        cdCount:function(){
-
         }
     });
     this.SkillEffect = SkillEffect;
