@@ -1,4 +1,4 @@
-/**
+﻿/**
  * ÈËÎï»òÕß¹ÖÎï 
  */
 
@@ -8,6 +8,7 @@ Laro.NS('woh', function (L) {
 
     var Monster = woh.Sprite.extend(function () {
         this.speed = 100;
+        this.enemy = "role"
     }).methods({
         getAnimationGroup: function (type) {
             L.$lea.setLoader(woh.loader);
@@ -34,7 +35,14 @@ Laro.NS('woh', function (L) {
             });
             this.drawHPBar(render); //绘制血条
         },
-
+        setPos: function(x, y) {
+            this.x = x;
+            this.y = y;
+            this.checkRect.setPos(x, y);
+            this.brain.knowPos(this,x,y);
+            if(this.stage)
+                this.stage.registerHurtableObject("monster", this,{left:this.left,right:this.right,top:this.top,bottom:this.bottom});
+        },
         normalAttack: function () {
 
             this.fsm.setState(woh.roleStates.attack);

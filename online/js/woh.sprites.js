@@ -11,6 +11,25 @@ Laro.NS('woh', function (L) {
 
     var Sprite = L.Class(function (data, brain) {
 
+        this.width = data.width;
+        this.height = data.height;
+
+        Object.defineProperty(this,"left",{get:function(){
+            return this.x - this.width/2;
+        }})
+
+        Object.defineProperty(this,"right",{get:function(){
+            return this.x + this.width/2;
+        }})
+
+        Object.defineProperty(this,"top",{get:function(){
+            return this.y - this.height/2;
+        }})
+
+        Object.defineProperty(this,"bottom",{get:function(){
+            return this.y + this.height/2;
+        }})
+
         var statesList = [
             woh.roleStates.stand, woh.roleStateClass.Stand,
             woh.roleStates.run, woh.roleStateClass.Run,
@@ -22,13 +41,12 @@ Laro.NS('woh', function (L) {
         this.fsm = new L.AppFSM(this, statesList);
         this.data = data;
         //L.extend(this, data);
-        this.nowLife=this.life = 1000;
+        this.currentHP = data.health || 1000;
+        this.maxHP = data.health || 1000;
         // 不用 Vector 操作，在大数据量操作的时候会快些
         this.x = 0; 
         this.y = 0;
-        //定义血条的宽和高
-        this.hpBarW=this.data['width']||120;
-        this.hpBarH=15;
+
         this.movement = new L.Vector2(0, 0);
         // 当前animation
         this.animations = {};
@@ -41,6 +59,8 @@ Laro.NS('woh', function (L) {
 
         this.brain = brain;
         this.brain.knowSprite(this);
+
+        this.magicAttack = null;
 
         this.born();
 
@@ -71,7 +91,13 @@ Laro.NS('woh', function (L) {
             this.animations.stand = this.getAnimationGroup('stand');
             this.animations.run = this.getAnimationGroup('run');
             this.animations.hurted = this.getAnimationGroup('hurted');
-            this.animations.attack = this.getAnimationGroup('attack');
+            var attack = this.getAnimationGroup('attack');
+            Object.defineProperty(this.animations,"attack",{get:function(){
+                if(this.magicAttack)
+                    return this.animations[this.magicAttack];
+                else return attack;
+            }})
+
             this.animations.magic = this.getAnimationGroup('magic');
         },
         // 设置当前 animation 并自动播放
@@ -97,12 +123,12 @@ Laro.NS('woh', function (L) {
             switch (evt) {
                 case "stopped" : this.fsm.message(woh.roleMessages.animStopped); break;
                 case "standup": 
-                    with(this.getPos())
-                         this.stage.registerHurtableObject(me,me.data["areadata"]["standup"],{x:x-82,y:y-120});
+                    //with(this.getPos())
+                         //this.stage.registerHurtableObject(me,me.data["areadata"]["standup"],{x:x-82,y:y-120});
                     break;
                 case "standdown":
-                    with(this.getPos())
-                         this.stage.registerHurtableObject(me,me.data["areadata"]["standdown"],{x:x-82,y:y-120});
+                    //with(this.getPos())
+                         //this.stage.registerHurtableObject(me,me.data["areadata"]["standdown"],{x:x-82,y:y-120});
                     break;
                 case "end_attack" : this.endAttack(); break;
             }
@@ -149,6 +175,7 @@ Laro.NS('woh', function (L) {
             this.x = x;
             this.y = y;
             this.checkRect.setPos(x, y);
+
             this.brain.knowPos(this,x,y);
         },
         faceLeft: function () {
@@ -179,8 +206,7 @@ Laro.NS('woh', function (L) {
             
         },
         hurted: function (damage) {
-            this.life -= damage;
-            console.log(this.life);
+            this.currentHP -= damage;
             this.fsm.setState(woh.roleStates.hurted);
         },
         drawHPBar: function (render) {
@@ -196,18 +222,18 @@ Laro.NS('woh', function (L) {
 
 
             ctx.beginPath();
-            ctx.lineWidth = this.hpBarH+border*2;
+            ctx.lineWidth =5+border*2;
             ctx.strokeStyle = '#000';
-            ctx.moveTo(x - border,y );
-            ctx.lineTo(x+border+this.hpBarW,y);
+            ctx.moveTo(this.left - border,this.top );
+            ctx.lineTo(this.right+border,this.top);
             ctx.stroke();
             ctx.closePath();
 
             ctx.beginPath();
             ctx.lineWidth = this.hpBarH ;
             ctx.strokeStyle = 'green';
-            ctx.moveTo(x,y);
-            ctx.lineTo(x+ this.hpBarW*this.nowLife/this.life ,y);
+            ctx.moveTo(this.left,this.top);
+            ctx.lineTo(this.left+ this.width*this.currentHP/this.maxHP ,this.top);
             ctx.stroke();
             ctx.closePath();
 

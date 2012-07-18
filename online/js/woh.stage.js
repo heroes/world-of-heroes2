@@ -43,8 +43,9 @@ Laro.NS('woh.stage', function (L) {
         // 用于处理一些有事件交互的 sprite, 暂不管多点触摸的情况
         pkg.$ = new L.Stage(woh.els.canvas);
         document.addEventListener('mouseup', function (e) {
-            with (woh.els.canvas.getClientRects()[0])
-                var x = e.clientX - left, y = e.clientY - top;
+            if (woh.els.canvas.getClientRects().length) 
+                with (woh.els.canvas.getClientRects()[0])
+                    var x = e.clientX - left, y = e.clientY - top;
             if (x < 0) x = 0;
             if (x > woh.els.canvas.width) x = woh.els.canvas.width;
             if (y < 0) x = 0;
@@ -55,9 +56,10 @@ Laro.NS('woh.stage', function (L) {
                 woh.currentRoleGroup.dispatch('pressEnd');
             }
         });
-        document.addEventListener('mousemove', function (e) {
-            with (woh.els.canvas.getClientRects()[0])
-                var x = e.clientX - left, y = e.clientY - top;
+        document.addEventListener('mousemove', function(e) {
+            if (woh.els.canvas.getClientRects().length) 
+                with (woh.els.canvas.getClientRects()[0])
+                    var x = e.clientX - left, y = e.clientY - top;
             if (x < 0) x = 0;
             if (x > woh.els.canvas.width) x = woh.els.canvas.width;
             if (y < 0) x = 0;

@@ -1,6 +1,7 @@
 Laro.NS('woh', function (L) {
     var Role = this.Sprite.extend(function () {
         this.speed = 200;
+        this.enemy = "monster";
     }).methods({
         initCheckArea: function () {
             var me = this;
@@ -57,6 +58,14 @@ Laro.NS('woh', function (L) {
                 ret.push(L.$lea.getAnimation(i));
             }
             return ret;
+        },
+        setPos: function(x, y){
+            this.x = x;
+            this.y = y;
+            this.checkRect.setPos(x, y);
+            this.brain.knowPos(this,x,y);
+            if(this.stage)
+                this.stage.registerHurtableObject("role", this,{left:this.left,right:this.right,top:this.top,bottom:this.bottom});
         },
     });
     this.Role = Role;

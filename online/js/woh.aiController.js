@@ -72,11 +72,11 @@ Laro.NS('woh', function (L) {
                     var nearestPos = nearest.getPos();
                     if (player.fsm.getCurrentState().stateId != woh.roleStates.stand)
                         return;
-                    if (nearestPos.x - playerPos.x < 120 && nearestPos.x - playerPos.x > 0 && Math.abs(nearestPos.y - playerPos.y) < 60) {
+                    if (nearestPos.x - playerPos.x < 200 && nearestPos.x - playerPos.x > 0 && Math.abs(nearestPos.y - playerPos.y) < 100) {
                         player.faceRight();
                         player.normalAttack();
                     }
-                    if (nearestPos.x - playerPos.x > -120 && nearestPos.x - playerPos.x < 0 && Math.abs(nearestPos.y - playerPos.y) < 60) {
+                    if (nearestPos.x - playerPos.x > -200 && nearestPos.x - playerPos.x < 0 && Math.abs(nearestPos.y - playerPos.y) < 100) {
                         player.faceLeft();
                         player.normalAttack();
                     }

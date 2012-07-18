@@ -8,7 +8,10 @@ Laro.NS('woh.stageClass', function (L) {
         // role collection
         this.roles = new woh.RoleCollection();
         woh.currentRoleGroup = this.roles;
-        this.hurtables = [];
+        this.hurtables = {
+            monster:[],
+            role:[]
+        }
 
     }).methods({
         enter: function (msg, from) {
@@ -71,31 +74,31 @@ Laro.NS('woh.stageClass', function (L) {
         drawBg: function (rd) {
             rd.context.drawImage(woh.loader.loadedImages['images/bg/bg-beach-dusk.jpg'], 0, 0);
         },
-        registerHurtableObject: function (obj, areas, offset) {
+        registerHurtableObject: function (type, obj, area) {
             //console.log([areas[0]+offset.x,areas[1]+offset.y,areas[2]+offset.x,areas[3]+offset.y]);
-            if (this.hurtables.some(function (e) {
+            if (this.hurtables[type].some(function (e) {
                 if (e.obj == obj) {
                     e.areas = {
-                        left: areas[0] + offset.x,
-                        top: areas[1] + offset.y,
-                        right: areas[2] + offset.x,
-                        bottom: areas[3] + offset.y
+                        left: area.left,
+                        top: area.top,
+                        right: area.right,
+                        bottom: area.bottom
                     };
                     return true;
                 }
             })) return;
 
-            this.hurtables.push({
+            this.hurtables[type].push({
                 obj: obj,
                 areas: {
-                    left: areas[0] + offset.x,
-                    top: areas[1] + offset.y,
-                    right: areas[2] + offset.x,
-                    bottom: areas[3] + offset.y
+                    left: area.left,
+                    top: area.top,
+                    right: area.right,
+                    bottom: area.bottom
                 }
             })
         },
-        hurtArea: function (area) {
+        hurtArea: function (type, area) {
             canvas = document.getElementById("canvas");
             function areaCross(area1, area2) {
                 with (canvas.getContext("2d")) {
@@ -107,7 +110,7 @@ Laro.NS('woh.stageClass', function (L) {
                     (area1.left < area2.right && area2.left < area1.right);
             }
 
-            this.hurtables.forEach(function (e) {
+            this.hurtables[type].forEach(function (e) {
                 if (areaCross(area, e.areas)) {
                     e.obj.hurted(10);
                     return true;
