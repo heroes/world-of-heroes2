@@ -21,16 +21,16 @@ Laro.NS('woh.stageClass', function (L) {
             var me = this;
             /*
             document.querySelector("body").onmouseup = function (e) {
-                if (e.target.tagName != "CANVAS") return;
-                var rect = e.target.getClientRects()[0];
-                var offsetX = e.clientX - rect.left;
-                var offsetY = e.clientY - rect.top;
-                me.hurtArea({
-                    left: offsetX - 50,
-                    top: offsetY - 50,
-                    right: offsetX + 50,
-                    bottom: offsetY + 50
-                }, e.target);
+            if (e.target.tagName != "CANVAS") return;
+            var rect = e.target.getClientRects()[0];
+            var offsetX = e.clientX - rect.left;
+            var offsetY = e.clientY - rect.top;
+            me.hurtArea({
+            left: offsetX - 50,
+            top: offsetY - 50,
+            right: offsetX + 50,
+            bottom: offsetY + 50
+            }, e.target);
             }*/
             // rio_tang
             this.aiController = new woh.AIController(this);
@@ -99,6 +99,7 @@ Laro.NS('woh.stageClass', function (L) {
             canvas = document.getElementById("canvas");
             function areaCross(area1, area2) {
                 with (canvas.getContext("2d")) {
+                    strokeStyle = "red";
                     strokeRect(area1.left, area1.top, area1.right - area1.left, area1.bottom - area1.top);
                     strokeRect(area2.left, area2.top, area2.right - area2.left, area2.bottom - area2.top);
                 }
@@ -108,7 +109,7 @@ Laro.NS('woh.stageClass', function (L) {
 
             this.hurtables.forEach(function (e) {
                 if (areaCross(area, e.areas)) {
-                    e.obj.hurted(1);
+                    e.obj.hurted(10);
                     return true;
                 }
             })

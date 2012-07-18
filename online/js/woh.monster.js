@@ -32,10 +32,11 @@ Laro.NS('woh', function (L) {
                 ((me.face == 'left' && !o.renderMirrored) || (me.face == 'right' && o.renderMirrored)) && o.mirror();
                 o.draw(render, x, y, 0, 1, null);
             });
-            this.drawHPBar(render);//绘制血条
+            this.drawHPBar(render); //绘制血条
         },
 
         normalAttack: function () {
+
             this.fsm.setState(woh.roleStates.attack);
         }
     });

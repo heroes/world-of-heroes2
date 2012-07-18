@@ -10,7 +10,7 @@ Laro.NS('woh', function (L) {
     
 
     var Sprite = L.Class(function (data, brain) {
-        console.log(data);
+
         var statesList = [
             woh.roleStates.stand, woh.roleStateClass.Stand,
             woh.roleStates.run, woh.roleStateClass.Run,
@@ -35,7 +35,8 @@ Laro.NS('woh', function (L) {
         this.curAnimation = null;
         
         // 是否可移动标志
-        this.canMove = false;   
+        this.canMove = false;
+
         this.face = 'right';
 
         this.brain = brain;
@@ -52,6 +53,7 @@ Laro.NS('woh', function (L) {
         //默认的checkarea为0
         initCheckArea: function () {
             var me = this;
+
             this.checkRect = new L.Sprite(woh.stage.$, function () {
                 this.width = 0;
                 this.height = 0;
@@ -62,6 +64,8 @@ Laro.NS('woh', function (L) {
                 };
                 this.setPos(me.x, me.y);
             });
+
+            
         },
         getAnimations: function () {
             this.animations.stand = this.getAnimationGroup('stand');
@@ -172,10 +176,11 @@ Laro.NS('woh', function (L) {
             this.fsm.setState(woh.roleStates.attack);
         },
         magic:function(data){
-
+            
         },
         hurted: function (damage) {
             this.life -= damage;
+            console.log(this.life);
             this.fsm.setState(woh.roleStates.hurted);
         },
         drawHPBar: function (render) {

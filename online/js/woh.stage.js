@@ -7,8 +7,8 @@ Laro.NS('woh.stage', function (L) {
     this.statesName = {
         'intro': 0, // 介绍场景（开始界面）
         'drama': 1, // 字幕
-        'dialogue': 2,//对话
-        'cg':3,//CG播放
+        'dialogue': 2, //对话
+        'cg': 3, //CG播放
         'map': 4, // 大地图场景
         'battle': 5, // 战斗场景
         'gameover': 6, // 战斗结束
@@ -24,36 +24,48 @@ Laro.NS('woh.stage', function (L) {
         this.statesName.gameover, woh.stageClass.Gameover,
         this.statesName.loading, woh.stageClass.Loading
     ];
-    
-    function init () {
+
+    function init() {
         initStageCollection();
         pkg.fsm = new L.AppFSM(this, this.statesList);
-        
-        woh.gameScript.startExec(woh.g_config.script,'loading_1');//从开始界面开始
+
+        woh.gameScript.startExec(woh.g_config.script, 'loading_1'); //从开始界面开始
     }
-    function go (stage, msg) {
+    function go(stage, msg) {
 
         if (pkg.statesName[stage] == undefined) {
             return woh.warn('no this stage --> ' + stage);
         }
         pkg.fsm.enter(pkg.statesName[stage], msg);
     }
-    
-    function initStageCollection () {
+
+    function initStageCollection() {
         // 用于处理一些有事件交互的 sprite, 暂不管多点触摸的情况
         pkg.$ = new L.Stage(woh.els.canvas);
-        pkg.$.addEventListener('mouseup', function (x, y) {
+        document.addEventListener('mouseup', function (e) {
+            with (woh.els.canvas.getClientRects()[0])
+                var x = e.clientX - left, y = e.clientY - top;
+            if (x < 0) x = 0;
+            if (x > woh.els.canvas.width) x = woh.els.canvas.width;
+            if (y < 0) x = 0;
+            if (y > woh.els.canvas.height) y = woh.els.canvas.height;
             if (woh.currentRoleGroup) {
                 var r = woh.currentRoleGroup.getOneCanMove();
                 r && r.moveTo(x, y);
                 woh.currentRoleGroup.dispatch('pressEnd');
             }
         });
-        pkg.$.addEventListener('mousemove', function (x, y) {
-            woh.STAGE_MOUSE_POS = {x: x, y: y};
+        document.addEventListener('mousemove', function (e) {
+            with (woh.els.canvas.getClientRects()[0])
+                var x = e.clientX - left, y = e.clientY - top;
+            if (x < 0) x = 0;
+            if (x > woh.els.canvas.width) x = woh.els.canvas.width;
+            if (y < 0) x = 0;
+            if (y > woh.els.canvas.height) y = woh.els.canvas.height;
+            woh.STAGE_MOUSE_POS = { x: x, y: y };
         });
     }
-    
+
     this.update = function (dt) {
         this.fsm && this.fsm.update(dt);
         this.$.dispatchUpdate(dt);
@@ -62,7 +74,7 @@ Laro.NS('woh.stage', function (L) {
         this.fsm && this.fsm.draw(render);
         this.$.dispatchDraw(render);
     };
-    
+
     this.init = init;
     this.go = go;
 });

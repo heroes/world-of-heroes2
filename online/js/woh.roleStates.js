@@ -19,29 +19,29 @@ woh.roleMessages = {
 };
 
 Laro.NS('woh.roleStateClass', function (L) {
-    
+
     // stand
     var Stand = L.BaseState.extend(function () {
-    
+
     }).methods({
         enter: function (msg, from) {
             this.host.setAndPlay('stand');
             this.host.setPos(this.host.x, this.host.y);
         },
         leave: function () {
-            
+
         },
         update: function (dt) {
-        
+
         },
-        transition: function () {},
-        message: function () {}
-    
+        transition: function () { },
+        message: function () { }
+
     });
-    
+
     // Move
     var Run = L.BaseState.extend(function () {
-    
+
     }).methods({
         enter: function (msg, from) {
             console.log('enter run');
@@ -53,85 +53,89 @@ Laro.NS('woh.roleStateClass', function (L) {
         },
         update: function (dt) {
             if (this.host.toPos) {
-                var speed = dt*(this.host.speed);
-                this.dis = Math.sqrt(Math.pow(this.host.toPos.x-this.host.x, 2) + Math.pow(this.host.toPos.y-this.host.y, 2));
-                var newX = this.host.x + speed * (this.host.toPos.x - this.host.x)/this.dis,
-                    newY = this.host.y + speed * (this.host.toPos.y - this.host.y)/this.dis;
+                var speed = dt * (this.host.speed);
+                this.dis = Math.sqrt(Math.pow(this.host.toPos.x - this.host.x, 2) + Math.pow(this.host.toPos.y - this.host.y, 2));
+                var newX = this.host.x + speed * (this.host.toPos.x - this.host.x) / this.dis,
+                    newY = this.host.y + speed * (this.host.toPos.y - this.host.y) / this.dis;
                 this.host.setPos(newX, newY);
             }
         },
         transition: function () {
             this.dis < 2 && this.host.stand();
         },
-        message: function () {}
-    
+        message: function () { }
+
     });
-    
+
 
     var Attack = L.BaseState.extend(function () {
-    
+        this.cooldown = 1000;
     }).methods({
         enter: function (msg, from) {
             this.host.setAndPlay('attack');
         },
-        leave: function () {},
+        leave: function () { },
         update: function (dt) {
-        
+            this.cooldown -= dt*1000;
+            if (this.cooldown < 0) {
+                this.cooldown += 1000;
+                this.host.stage.hurtArea({ top: this.host.y, left: this.host.x, bottom: this.host.y + 200, right: this.host.x + 200 });
+            }
         },
-        transition: function () {},
-        message: function () {}
-    
+        transition: function () { },
+        message: function () { }
+
     });
-    
+
     var Hurted = L.BaseState.extend(function () {
-    
+
     }).methods({
         enter: function (msg, from) {
             this.host.setAndPlay('hurted');
         },
-        leave: function () {},
+        leave: function () { },
         update: function (dt) {
-            
+
         },
-        transition: function () {},
-        message: function () {}
-    
+        transition: function () { },
+        message: function () { }
+
     });
-    
+
     var Magic = L.BaseState.extend(function () {
-    
+
     }).methods({
         enter: function (msg, from) {
             this.host.setAndPlay('magic');
         },
-        leave: function () {},
+        leave: function () { },
         update: function (dt) {
-        
+
         },
-        transition: function () {},
-        message: function () {}
-    
+        transition: function () { },
+        message: function () { }
+
     });
-    
+
     var Dead = L.BaseState.extend(function () {
-    
+
     }).methods({
         enter: function (msg, from) {
             this.host.setAndPlay('dead');
         },
-        leave: function () {},
+        leave: function () { },
         update: function (dt) {
-        
+
         },
-        transition: function () {},
-        message: function () {}
-    
+        transition: function () { },
+        message: function () { }
+
     });
 
     this.Stand = Stand;
     this.Run = Run;
     this.Hurted = Hurted;
     this.Magic = Magic;
-    this.Attack=Attack;
+    this.Attack = Attack;
     this.Dead = Dead;
 });
