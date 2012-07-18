@@ -26,8 +26,11 @@ Laro.NS('woh.roleStateClass', function (L) {
     }).methods({
         enter: function (msg, from) {
             this.host.setAndPlay('stand');
+            this.host.setPos(this.host.x, this.host.y);
         },
-        leave: function () {},
+        leave: function () {
+            
+        },
         update: function (dt) {
         
         },

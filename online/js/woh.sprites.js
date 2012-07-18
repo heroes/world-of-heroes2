@@ -61,7 +61,7 @@ Laro.NS('woh', function (L) {
                     this.y = y;
                 };
                 this.setPos(me.x, me.y);
-            });    
+            });
         },
         getAnimations: function () {
             this.animations.stand = this.getAnimationGroup('stand');
@@ -162,7 +162,8 @@ Laro.NS('woh', function (L) {
             var me=this;
             x > this.x ? this.faceRight() : this.faceLeft();
             this.toPos = {x: x, y: y-me.data['height']/2};
-            this.fsm.setState(woh.roleStates.run);
+            if(this.fsm.getCurrentState().stateId != woh.roleStates.run )
+                this.fsm.setState(woh.roleStates.run);
         },
         normalAttack: function () {
             this.fsm.setState(woh.roleStates.attack);
