@@ -27,65 +27,93 @@ woh.g_config.script={
         type:'intro',//标记相应的stage类型
         repeat:true,//标记在流程中是否允许重复出现（即选关的时候是否会被再次触发）
         data:{},
-        next:'dialogue_1'
-    },
+        next:'drama_1'
+    }, 
     'drama_1':{
         type:'drama',//标记相应的stage类型
         repeat:false,
         data:[
-                {
-                    appear: 'auto',
-                    data: [
+            {
+                appear: 'auto',
+                data: [
                         '当唐如捡起沙滩上第九十九个贝壳的时候——',
                         '他们相遇了。',
                         '这是命运的邂逅。'    
-                    ]
-                }
+                ]
+            }
         ],
         next:'dialogue_1'
     },
-    '3':{
-        type:'cg',
-        repeat:false,
-        data:{},
-        next:'4'
-    },
+    // '3':{
+    //     type:'cg',
+    //     repeat:false,
+    //     data:{},
+    //     next:'4'
+    // },
     'dialogue_1':{
         type:'dialogue',
         repeat:false,
         data:[
-            {'avatar':'resources/images/dialogue/UI-dialog-character.png','name':'唐如','content':'好美的人哦……',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
-            {'avatar':'resources/images/dialogue/UI-dialog-character.png','name':'？？','content':'你知道……人鱼吗？',position:'right',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
-            {'avatar':'resources/images/dialogue/UI-dialog-character.png','name':'唐如','content':'人鱼？古书里面倒是记载着不少关于这个的传说……',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
-            {'avatar':'','name':'','content':'喂喂喂，你怎么了！',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
-            {'avatar':'resources/images/dialogue/UI-dialog-character.png','name':'？？','content':'……',position:'right',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
-            {'avatar':'resources/images/dialogue/UI-dialog-character.png','name':'唐如','content':'你没事吧，醒醒啊！呼吸很平稳，看来只是晕过去了而已。',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
-            {'avatar':'resources/images/dialogue/UI-dialog-character.png','name':'唐如','content':'天啊，哪来那么多的大螃蟹！不好，螃蟹似乎是冲着那个人来的。不管怎么样，先把它们击退吧。',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'}
+            {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'世间竟有如此美丽之人……',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'？？','content':'你知道……人鱼吗？',position:'right',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'人鱼？虽说古籍中确有此物记载，然子不语怪力乱神……',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'喂喂喂，兄台你怎么了！',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'？？','content':'……',position:'right',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'醒，醒醒啊！呼吸平稳，脉象虽弱却不乱，莫非是饿晕过去了？',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'天啊，哪来那么多的大螃蟹！不好，螃蟹似乎是冲着那个人来的。无论如何，先把它们击退吧。',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'}
         ],
         next:'loading_2'
     },
-    // 
     'loading_2':{
         type:'loading',
         repeat:true,
         data:{
             key: 'battle_1'
         },
-        next:'7'
+        next:'map_1'
     },
-    '6':{
+    'battle_withlittlecrab':{
         type:'battle',
         repeat:false,
         data:{},
-        next:'7'
+        next:'map_1'
     },
-    '7':{
+    'map_1':{
         type:'map',
         repeat:true,
         data:{},
-        next:'6'
+        next:'dialogue_2'
+    },
+    'dialogue_2':{
+        type:'dialogue',
+        repeat:false,
+        data:[
+            {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'此人究竟做过何事，竟惹得这些螃蟹如此怨愤？君子不立危墙之下，还是速速离去为好——嘿～咻～此人虽不肥胖，分量却着实不轻。',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
+        ],
+        next:'drama_2'
+    },
+    'drama_2':{
+        type:'drama',//标记相应的stage类型
+        repeat:false,
+        data:[
+            {
+                appear: 'auto',
+                data: [
+                        '唐如带着晕倒的少年回到了自己家.',
+                        '自双亲去世后',
+                        '唐如就独自一人居住在停泊在山洞中的一艘大船里'    
+                ]
+            }
+        ],
+        next:'dialogue_3'
+    },
+    'dialogue_3':{
+        type:'dialogue',
+        repeat:false,
+        data:[{'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'？？','content':'饿了。',position:'left',globalBg : 'resources/images/bg/bg-boat-inner.jpg'}],
+        next:'battle_withlittlecrab'
     }
-};
+};  
 
 //每个场景对应的需要预加载的资源列表
 woh.g_config.resources = {
@@ -98,7 +126,12 @@ woh.g_config.resources = {
             'images/index/start-button-1.png',
             'images/index/start-button-2.png',
             'images/index/start-button-3.png',
-            'images/index/start-button-4.png'
+            'images/index/start-button-4.png',
+
+            'images/dialogue/rio_tang_normal.png',
+            'images/bg/bg-beach-dusk.jpg',
+            'images/bg/bg-beach.jpg',
+            'images/bg/bg-boat-inner.jpg'
         ]
     },
     battle_1: {
