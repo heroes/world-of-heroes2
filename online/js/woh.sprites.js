@@ -7,8 +7,6 @@ woh.roleAttackType = {
 };
 // Role
 Laro.NS('woh', function (L) {
-    
-
     var Sprite = L.Class(function (data, brain) {
 
         this.width = data.width;
