@@ -271,7 +271,7 @@ woh.g_config.clothes={
         "magic": {
             "info": {
                 "nbrOfFrames": 4,
-                "name": "hurted",
+                "name": "magic",
                 "type": "animation",
                 "framerate": 2,
                 "pivotx": 100,
@@ -362,9 +362,9 @@ woh.g_config.clothes={
         "magic": {
             "info": {
                 "nbrOfFrames": 4,
-                "name": "hurted",
+                "name": "magic",
                 "type": "animation",
-                "framerate": 2,
+                "framerate": 4,
                 "pivotx": 100,
                 "pivoty": 75,
                 "events": []
@@ -457,7 +457,7 @@ woh.g_config.clothes={
                 "nbrOfFrames": 1,
                 "name": "hurted",
                 "type": "animation",
-                "framerate": 2,
+                "framerate": 4,
                 "pivotx": 171,
                 "pivoty": 130,
                 "events": []
@@ -544,7 +544,7 @@ woh.g_config.clothes={
                 "nbrOfFrames": 1,
                 "name": "hurted",
                 "type": "animation",
-                "framerate": 2,
+                "framerate": 4,
                 "pivotx": 171,
                 "pivoty": 130,
                 "events": []
@@ -635,7 +635,7 @@ woh.g_config.weapon={
                 "nbrOfFrames": 2,
                 "name": "hurted",
                 "type": "animation",
-                "framerate": 2,
+                "framerate": 4,
                 "pivotx": 100,
                 "pivoty": 75,
                 "events": []
@@ -723,7 +723,7 @@ woh.g_config.weapon={
                 "nbrOfFrames": 2,
                 "name": "hurted",
                 "type": "animation",
-                "framerate": 2,
+                "framerate": 4,
                 "pivotx": 100,
                 "pivoty": 75,
                 "events": []
@@ -808,7 +808,7 @@ woh.g_config.weapon={
                 "nbrOfFrames": 1,
                 "name": "hurted",
                 "type": "animation",
-                "framerate": 2,
+                "framerate": 4,
                 "pivotx": 171,
                 "pivoty": 130,
                 "events": []
@@ -892,7 +892,7 @@ woh.g_config.weapon={
                 "nbrOfFrames": 1,
                 "name": "hurted",
                 "type": "animation",
-                "framerate": 2,
+                "framerate": 4,
                 "pivotx": 171,
                 "pivoty": 130,
                 "events": []
@@ -981,9 +981,9 @@ woh.g_config.monsters = {
             {
                 "info": {
                     "nbrOfFrames": 1,
-                    "name": "",
+                    "name": "hurted",
                     "type": "animation",
-                    "framerate": 10,
+                    "framerate": 4,
                     "pivotx": 100,
                     "pivoty": 85,
                     "events": []
@@ -1005,7 +1005,7 @@ woh.role_init_data={
         'lv':0,//等级(根据类型和等级读取其他数据)
         'avatar':'./resources/images/map/ava/rio_tang.png',//头像
         'exp':0,//当前经验值
-        'weapon':'002',//武器编号
+        'weapon':'001',//武器编号
         'clothes':'001',//衣服编号,none表示裸奔
         'skill_point':0,//剩余技能点
         'skill_list':{
