@@ -142,7 +142,29 @@ woh.g_config.resources = {
             'images/circle.png',
             'images/pie.png',
 
-            //载入无装备状态的资源
+            //载入大地图资源
+            'images/map/ava/rio_tang.png',
+            'images/map/ava/shaofei_cheng.png',
+            'images/map/ava/rio_tang.png',
+            'images/map/items/c_001.png',
+            'images/map/items/c_003.png',
+            'images/map/items/c_005.png',
+            'images/map/items/w_001.png',
+            'images/map/items/w_002.png',
+            'images/map/items/w_003.png',
+            'images/map/items/w_004.png',
+            'images/map/items/w_005.png',
+
+            'images/map/button1.png',
+            'images/map/button2.png',
+            'images/map/button3.png',
+            'images/map/cross.png',
+            'images/map/exp-right.png',
+            'images/map/map.jpg',
+            'images/map/selected_bg.png',
+            'images/map/win_bg.jpg',
+            'images/map/win_bg2.jpg',
+            //载入装备资源
             'images/sprites/clothes/001/none/attack.png',
             'images/sprites/clothes/001/none/hurted.png',
             'images/sprites/clothes/001/none/magic.png',
@@ -190,6 +212,8 @@ woh.g_config.resources = {
             'images/sprites/weapon/004/magic.png',
             'images/sprites/weapon/004/stand.png',
             'images/sprites/weapon/004/run.png',
+
+            'images/monster/normal001-crab.png'
         ]
     }
 };
