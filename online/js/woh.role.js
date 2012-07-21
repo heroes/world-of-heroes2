@@ -1,11 +1,11 @@
-Laro.NS('woh', function (L) {
+﻿Laro.NS('woh', function (L) {
     var Role = this.Sprite.extend(function () {
         this.speed = 200;
         this.enemy = "monster";
-    var rate_info=woh.skill_rate[this.data['type']],
+        var rate_info=woh.skill_rate[this.data['type']],
         level_info=woh.base_level_data[this.data['lv']];
-    //根据偏移百分比计算出人物的各项基础数值
-    var health=rate_info['health']*level_info['health'],
+        //根据偏移百分比计算出人物的各项基础数值
+        var health=rate_info['health']*level_info['health'],
         attack=rate_info['attack']*level_info['attack'],
         defend=rate_info['defend']*level_info['defend'],
         crit=rate_info['crit']*level_info['crit'];
@@ -29,7 +29,7 @@ Laro.NS('woh', function (L) {
         //计算人物的生命
         this.currentHP = health || 1000;
         this.maxHP = health || 1000;
-        this.attack=attack;
+        this.damage=attack;
         this.defend=defend;
         this.crit=crit;
     }).methods({

@@ -101,7 +101,7 @@ Laro.NS('woh.stageClass', function (L) {
                 }
             })
         },
-        hurtArea: function (type, area) {
+        hurtArea: function (type, area, damage) {
             canvas = document.getElementById("canvas");
             function areaCross(area1, area2) {
                 with (canvas.getContext("2d")) {
@@ -115,7 +115,7 @@ Laro.NS('woh.stageClass', function (L) {
 
             this.hurtables[type].forEach(function (e) {
                 if (areaCross(area, e.areas)) {
-                    e.obj.hurted(10);
+                    e.obj.hurted(damage);
                     return true;
                 }
             })
