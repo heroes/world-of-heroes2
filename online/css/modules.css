@@ -175,11 +175,11 @@ margin-top:420px;}
 	bottom: 0
 }
 .dialogue-module .chat .avatar.right{right:0;}
-.dialogue-module .chat .bg{background:url(../resources/images/dialogue/UI-dialog-bg.png) no-repeat;height:254px;position: absolute;bottom:0;width:100%;z-index:-1;}
+/*.dialogue-module .chat .bg{background:url(../resources/images/dialogue/UI-dialog-bg.png) no-repeat;height:254px;position: absolute;bottom:0;width:100%;z-index:-1;}
 .dialogue-module .chat .content{color:#fff;font:bold 24px Arial;height:245px;padding-top: 40px;width: 580px;}
 .dialogue-module .chat .content.left{padding-right: 330px;padding-left: 30px}
 .dialogue-module .chat .content.right{padding-left: 330px;padding-right: 30px}
-.dialogue-module .chat .content h1{padding: 10px; margin:0; font-size:24px;line-height:24px;}
+.dialogue-module .chat .content h1{padding: 10px; margin:0; font-size:24px;line-height:24px;}*/
 
 
 .battle-module{
