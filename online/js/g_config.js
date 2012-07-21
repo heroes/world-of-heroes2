@@ -189,7 +189,7 @@ woh.g_config.resources = {
             'images/sprites/clothes/002/none/dead.png',
 
             'images/sprites/clothes/002/003/attack.png',
-            'images/sprites/clothes/002/003/hurted.png',
+            'images/sprites/clothes/002/0c03/hurted.png',
             'images/sprites/clothes/002/003/magic.png',
             'images/sprites/clothes/002/003/stand.png',
             'images/sprites/clothes/002/003/run.png',
@@ -1103,7 +1103,25 @@ woh.g_config.monsters = {
                 ],
                 "filename": "images/monster/normal001-crab.png"
             }
-        ]
+        ],
+        "dead": [{
+            "info": {
+                "nbrOfFrames": 5,
+                "name": "dead",
+                "type": "animation",
+                "framerate": 4,
+                "pivotx": 95,
+                "pivoty": 60,
+                "events": []
+            },
+            "data": [
+                [0,0,189,119,0,0,189,119],
+                [760,0,949,119,760,0,949,119],
+                [0,0,189,119,0,0,189,119],
+                [760,0,949,119,760,0,949,119]
+            ],
+            "filename": "images/monster/normal001-crab.png"
+        }]        
     }
 
 }
