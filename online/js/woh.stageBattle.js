@@ -46,7 +46,6 @@ Laro.NS('woh.stageClass', function (L) {
             this.roles.add('crab', new woh.Monster(woh.g_config.monsters.crab, this.aiController));
             this.roles.get('crab').setPos(500, 400);
             this.roles.get('crab').stage = this;
-
         },
         leave: function () {
             woh.log('leave stage [battle]');

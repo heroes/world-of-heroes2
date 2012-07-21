@@ -147,7 +147,6 @@ woh.g_config.resources = {
             //载入大地图资源
             'images/map/ava/rio_tang.png',
             'images/map/ava/shaofei_cheng.png',
-            'images/map/ava/rio_tang.png',
             'images/map/items/c_001.png',
             'images/map/items/c_003.png',
             'images/map/items/c_005.png',
@@ -172,6 +171,7 @@ woh.g_config.resources = {
             'images/sprites/clothes/001/none/magic.png',
             'images/sprites/clothes/001/none/stand.png',
             'images/sprites/clothes/001/none/run.png',
+            'images/sprites/clothes/001/none/dead.png',
 
             
             'images/sprites/clothes/001/001/attack.png',
@@ -179,18 +179,21 @@ woh.g_config.resources = {
             'images/sprites/clothes/001/001/magic.png',
             'images/sprites/clothes/001/001/stand.png',
             'images/sprites/clothes/001/001/run.png',
+            'images/sprites/clothes/001/001/dead.png',
 
             'images/sprites/clothes/002/none/attack.png',
             'images/sprites/clothes/002/none/hurted.png',
             'images/sprites/clothes/002/none/magic.png',
             'images/sprites/clothes/002/none/stand.png',
             'images/sprites/clothes/002/none/run.png',
+            'images/sprites/clothes/002/none/dead.png',
 
             'images/sprites/clothes/002/003/attack.png',
             'images/sprites/clothes/002/003/hurted.png',
             'images/sprites/clothes/002/003/magic.png',
             'images/sprites/clothes/002/003/stand.png',
             'images/sprites/clothes/002/003/run.png',
+            'images/sprites/clothes/002/003/dead.png',
 
             'images/sprites/weapon/001/attack.png',
             'images/sprites/weapon/001/hurted.png',
