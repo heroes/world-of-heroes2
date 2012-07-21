@@ -110,7 +110,7 @@ woh.g_config.script={
     'dialogue_3':{
         type:'dialogue',
         repeat:false,
-        data:[{'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'？？','content':'饿了。',position:'left',globalBg : 'resources/images/bg/bg-boat-inner.jpg'}],
+        data:[{'avatar':'resources/images/dialogue/sola_cheng_mormal.png','name':'？？','content':'饿了。',position:'left',globalBg : 'resources/images/bg/bg-boat-inner.jpg'}],
         next:'battle_withlittlecrab'
     }
 };  
@@ -172,6 +172,7 @@ woh.g_config.resources = {
             'images/sprites/clothes/001/none/magic.png',
             'images/sprites/clothes/001/none/stand.png',
             'images/sprites/clothes/001/none/run.png',
+
             
             'images/sprites/clothes/001/001/attack.png',
             'images/sprites/clothes/001/001/hurted.png',
@@ -311,7 +312,27 @@ woh.g_config.clothes={
                 [600,0,799,169,600,0,799,169]
             ],
             "filename": "images/sprites/clothes/001/none/magic.png"
-        }
+        },
+        "dead": {
+            "info": {
+                "nbrOfFrames": 6,
+                "name": "dead",
+                "type": "animation",
+                "framerate": 4,
+                "pivotx": 100,
+                "pivoty": 85,
+                "events": []
+            },
+            "data": [
+                [0,0,199,169,0,0,199,169],
+                [200,0,399,169,200,0,399,169],
+                [400,0,599,169,400,0,599,169],
+                [600,0,799,169,600,0,799,169],
+                [400,0,599,169,400,0,599,169],
+                [600,0,799,169,600,0,799,169],
+            ],
+            "filename": "images/sprites/clothes/001/none/dead.png"
+        } 
     },  
     '001':{
         "stand":{
@@ -402,7 +423,27 @@ woh.g_config.clothes={
                 [600,0,799,169,600,0,799,169]
             ],
             "filename": "images/sprites/clothes/001/001/magic.png"
-        }
+        },
+        "dead": {
+            "info": {
+                "nbrOfFrames": 6,
+                "name": "dead",
+                "type": "animation",
+                "framerate": 4,
+                "pivotx": 100,
+                "pivoty": 85,
+                "events": []
+            },
+            "data": [
+                [0,0,199,169,0,0,199,169],
+                [200,0,399,169,200,0,399,169],
+                [400,0,599,169,400,0,599,169],
+                [600,0,799,169,600,0,799,169],
+                [400,0,599,169,400,0,599,169],
+                [600,0,799,169,600,0,799,169],
+            ],
+            "filename": "images/sprites/clothes/001/001/dead.png"
+        }        
     }, 
     '002_none':{
         "stand": {
@@ -492,7 +533,27 @@ woh.g_config.clothes={
                 [0,0,341,209,0,0,341,209]
             ],
             "filename": "images/sprites/clothes/002/none/hurted.png"
-        }                
+        }, 
+        "dead": {
+            "info": {
+                "nbrOfFrames": 6,
+                "name": "dead",
+                "type": "animation",
+                "framerate": 6,
+                "pivotx": 171,
+                "pivoty": 105,
+                "events": []
+            },
+            "data": [
+                [0,0,341,209,0,0,341,209],
+                [342,0,683,209,342,0,683,209],
+                [684,0,1025,209,684,0,1025,209],
+                [1026,0,1367,209,1026,0,1367,209],
+                [684,0,1025,209,684,0,1025,209],
+                [1026,0,1367,209,1026,0,1367,209]
+            ],
+            "filename": "images/sprites/clothes/002/none/dead.png"
+        }                 
     }, 
     '003':{
         "stand": {
@@ -579,7 +640,27 @@ woh.g_config.clothes={
                 [0,0,341,209,0,0,341,209]
             ],
             "filename": "images/sprites/clothes/002/003/hurted.png"
-        }                
+        },
+        "dead": {
+            "info": {
+                "nbrOfFrames": 6,
+                "name": "dead",
+                "type": "animation",
+                "framerate": 6,
+                "pivotx": 171,
+                "pivoty": 105,
+                "events": []
+            },
+            "data": [
+                [0,0,341,209,0,0,341,209],
+                [342,0,683,209,342,0,683,209],
+                [684,0,1025,209,684,0,1025,209],
+                [1026,0,1367,209,1026,0,1367,209],
+                [684,0,1025,209,684,0,1025,209],
+                [1026,0,1367,209,1026,0,1367,209]
+            ],
+            "filename": "images/sprites/clothes/002/003/dead.png"
+        }               
     },   
 }
 //武器的动画数据

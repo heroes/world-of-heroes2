@@ -97,6 +97,7 @@ Laro.NS('woh', function (L) {
             }})
 
             this.animations.magic = this.getAnimationGroup('magic');
+            this.animations.dead = this.getAnimationGroup('dead');
         },
         // 设置当前 animation 并自动播放
         setAndPlay: function (animation, loop, start, end) {
