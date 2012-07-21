@@ -1554,6 +1554,22 @@ woh.skill_data={
 }
 //技能效果动画的配置
 woh.skill_effect={
+    "normal_1": {
+        "info": {
+            "nbrOfFrames": 2,
+            "name": "normal_1",
+            "type": "animation",
+            "framerate": 4,
+            "pivotx": 35,
+            "pivoty": 77,
+            "events": []
+        },
+        "data": [
+            [0,0,69,154,0,0,69,154],
+            [70,0,139,154,70,0,139,154]
+        ],
+        "filename": "./resources/images/sprites/skilleffect/normal_1.png"
+    },
     "001": {
         "info": {
             "nbrOfFrames": 4,
