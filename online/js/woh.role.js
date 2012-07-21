@@ -2,6 +2,36 @@ Laro.NS('woh', function (L) {
     var Role = this.Sprite.extend(function () {
         this.speed = 200;
         this.enemy = "monster";
+    var rate_info=woh.skill_rate[this.data['type']],
+        level_info=woh.base_level_data[this.data['lv']];
+    //根据偏移百分比计算出人物的各项基础数值
+    var health=rate_info['health']*level_info['health'],
+        attack=rate_info['attack']*level_info['attack'],
+        defend=rate_info['defend']*level_info['defend'],
+        crit=rate_info['crit']*level_info['crit'];
+        //加上装备的加成值
+        //武器的加成值
+        if(this.data['weapon']!='none'){
+            var weapon=woh.item_data['weapon'][this.data['weapon']];
+                health+=weapon['health'];
+                attack+=weapon['attack'];
+                defend+=weapon['defend'];
+                crit+=weapon['crit'];
+        }
+        //衣服的加成值
+        if(this.data['clothes']!='none'){
+            var clothes=woh.item_data['clothes'][this.data['clothes']];
+                health+=clothes['health'];
+                attack+=clothes['attack'];
+                defend+=clothes['defend'];
+                crit+=clothes['crit'];
+        }
+        //计算人物的生命
+        this.currentHP = health || 1000;
+        this.maxHP = health || 1000;
+        this.attack=attack;
+        this.defend=defend;
+        this.crit=crit;
     }).methods({
         initCheckArea: function () {
             var me = this;

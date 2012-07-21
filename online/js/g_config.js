@@ -27,7 +27,7 @@ woh.g_config.script={
         type:'intro',//标记相应的stage类型
         repeat:true,//标记在流程中是否允许重复出现（即选关的时候是否会被再次触发）
         data:{},
-        next:'drama_1'
+        next:'loading_2'
     }, 
     'drama_1':{
         type:'drama',//标记相应的stage类型
@@ -70,7 +70,7 @@ woh.g_config.script={
         data:{
             key: 'battle_1'
         },
-        next:'map_1'
+        next:'battle_withlittlecrab'
     },
     'battle_withlittlecrab':{
         type:'battle',
@@ -189,7 +189,7 @@ woh.g_config.resources = {
             'images/sprites/clothes/002/none/dead.png',
 
             'images/sprites/clothes/002/003/attack.png',
-            'images/sprites/clothes/002/0c03/hurted.png',
+            'images/sprites/clothes/002/003/hurted.png',
             'images/sprites/clothes/002/003/magic.png',
             'images/sprites/clothes/002/003/stand.png',
             'images/sprites/clothes/002/003/run.png',

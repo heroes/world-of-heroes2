@@ -8,7 +8,8 @@ Laro.NS('woh', function (L) {
 
     var Monster = woh.Sprite.extend(function () {
         this.speed = 100;
-        this.enemy = "role"
+        this.enemy = "role";
+        this.attack=this.data['attack'];
     }).methods({
         getAnimationGroup: function (type) {
             L.$lea.setLoader(woh.loader);
@@ -44,7 +45,6 @@ Laro.NS('woh', function (L) {
                 this.stage.registerHurtableObject("monster", this,{left:this.left,right:this.right,top:this.top,bottom:this.bottom});
         },
         normalAttack: function () {
-
             this.fsm.setState(woh.roleStates.attack);
         }
     });
