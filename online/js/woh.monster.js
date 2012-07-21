@@ -9,7 +9,7 @@ Laro.NS('woh', function (L) {
     var Monster = woh.Sprite.extend(function () {
         this.speed = 100;
         this.enemy = "role";
-        this.attack=this.data['attack'];
+        this.damage=this.data['damage'];
     }).methods({
         getAnimationGroup: function (type) {
             L.$lea.setLoader(woh.loader);

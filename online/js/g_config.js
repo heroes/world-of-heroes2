@@ -1018,7 +1018,7 @@ woh.g_config.weapon={
 woh.g_config.monsters = {
     "crab": {
         "health":140,//血量
-        "attack":20,//攻击
+        "damage":20,//攻击
         "defend":0,//防御
         "crit":0,//暴击
         "drop":['clothes','001',0.05],//掉落类型，掉落id，掉落概率
