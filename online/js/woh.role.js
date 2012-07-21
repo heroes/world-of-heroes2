@@ -20,10 +20,12 @@ Laro.NS('woh', function (L) {
                 }
             });
 
-            this.checkRect.addEventListener('mousedown', function (x, y) {
+            function onTapDown (x, y) {
                 me.canMove = true;
                 woh.skills.show(me.data.type);
-            });
+            }
+            this.checkRect.addEventListener('mousedown', onTapDown);
+            this.checkRect.addEventListener('touchstart', onTapDown);
         },
         draw: function (render) {
             var x = Math.floor(this.x), y = Math.floor(this.y),

@@ -1,5 +1,5 @@
 /**
- * battle for hongru
+ * battle
  */
 
 Laro.NS('woh.stageClass', function (L) {
@@ -69,10 +69,14 @@ Laro.NS('woh.stageClass', function (L) {
         },
         draw: function (render) {
             this.drawBg(render);
+            this.drawMask(render);
             this.roles.dispatch('draw', render);
         },
         drawBg: function (rd) {
             rd.context.drawImage(woh.loader.loadedImages['images/bg/bg-beach-dusk.jpg'], 0, 0);
+        },
+        drawMask: function (rd) {
+            pkg.Battle.ENABLE_MASK && rd.drawFillScreen('rgba(0,0,0,'+ pkg.Battle.screenMaskAlpha +')');
         },
         registerHurtableObject: function (type, obj, area) {
             //console.log([areas[0]+offset.x,areas[1]+offset.y,areas[2]+offset.x,areas[3]+offset.y]);
@@ -117,6 +121,19 @@ Laro.NS('woh.stageClass', function (L) {
                 }
             })
         }
+        
+    }).statics({
+        // static methods
+        // woh.stageClass.Battle.enableScreenMask();
+        enableScreenMask: function (alpha) {
+            this.screenMaskAlpha = alpha;
+            this.ENABLE_MASK = true;
+        },
+        disableScreenMask: function () {
+            this.ENABLE_MASK = false;
+        }
+    
     });
+    
     this.Battle = Battle;
 });
