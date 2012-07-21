@@ -55,10 +55,10 @@ woh.g_config.script={
         repeat:false,
         data:[
             {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'世间竟有如此美丽之人……',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
-            {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'？？','content':'你知道……人鱼吗？',position:'right',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_mormal.png','name':'？？','content':'你知道……人鱼吗？',position:'right',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
             {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'人鱼？虽说古籍中确有此物记载，然子不语怪力乱神……',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
             {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'喂喂喂，兄台你怎么了！',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
-            {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'？？','content':'……',position:'right',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_mormal.png','name':'？？','content':'……',position:'right',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
             {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'醒，醒醒啊！呼吸平稳，脉象虽弱却不乱，莫非是饿晕过去了？',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
             {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'天啊，哪来那么多的大螃蟹！不好，螃蟹似乎是冲着那个人来的。无论如何，先把它们击退吧。',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'}
         ],
@@ -110,7 +110,7 @@ woh.g_config.script={
     'dialogue_3':{
         type:'dialogue',
         repeat:false,
-        data:[{'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'？？','content':'饿了。',position:'left',globalBg : 'resources/images/bg/bg-boat-inner.jpg'}],
+        data:[{'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'？？','content':'饿了。',position:'left',globalBg : 'resources/images/bg/bg-boat-inner.jpg'}],
         next:'battle_withlittlecrab'
     }
 };  
@@ -129,6 +129,8 @@ woh.g_config.resources = {
             'images/index/start-button-4.png',
 
             'images/dialogue/rio_tang_normal.png',
+            'images/dialogue/sola_cheng_normal.png',
+            'images/dialogue/UI-dialog-bg.png',
             'images/bg/bg-beach-dusk.jpg',
             'images/bg/bg-beach.jpg',
             'images/bg/bg-boat-inner.jpg'

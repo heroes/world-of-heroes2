@@ -101,18 +101,24 @@
                     '<div class="avatar right scaleX"><img src="<%=avatar%>" alt="" /></div>'+
                 '<%}%>'+
                 '<div class="bg scaleX"></div>'+
+                '<div class="content left">'+
+                    '<%if(name){%>'+
+                    '<h1><span>【</span><span class="name"><%=name%></span><span>】</span></h1>'+
+                    '<%}%>'+
+                    '<p class="words"><%=content%></p>'+
+                '</div>'+
             '<%}else{%>'+
                 '<%if(avatar){%>'+
                     '<div class="avatar left"><img src="<%=avatar%>" alt="" /></div>'+
                 '<%}%>'+
                 '<div class="bg"></div>'+
+                '<div class="content right">'+
+                    '<%if(name){%>'+
+                    '<h1><span>【</span><span class="name"><%=name%></span><span>】</span></h1>'+
+                    '<%}%>'+
+                    '<p class="words"><%=content%></p>'+
+                '</div>'+
             '<%}%>'+
-            '<div class="content">'+
-                '<%if(name){%>'+
-                '<h1><span>【</span><span class="name"><%=name%></span><span>】</span></h1>'+
-                '<%}%>'+
-                '<p class="words"><%=content%></p>'+
-            '</div>'+
         '</div></div>';
         return str;
         },
