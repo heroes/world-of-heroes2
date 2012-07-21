@@ -42,7 +42,33 @@ Laro.NS('woh.stage', function (L) {
     function initStageCollection() {
         // 用于处理一些有事件交互的 sprite, 暂不管多点触摸的情况
         pkg.$ = new L.Stage(woh.els.canvas);
-        document.addEventListener('mouseup', function (e) {
+        // 取 canvas 绝对位置已经在 x, y 中处理 过
+        function onPressEnd (x, y) {
+            if (x < 0) x = 0;
+            if (x > woh.els.canvas.width) x = woh.els.canvas.width;
+            if (y < 0) x = 0;
+            if (y > woh.els.canvas.height) y = woh.els.canvas.height;
+            if (woh.currentRoleGroup) {
+                var r = woh.currentRoleGroup.getOneCanMove();
+                r && r.moveTo(x, y);
+                woh.currentRoleGroup.dispatch('pressEnd');
+            }
+        }
+        function onPressMove (x, y) {
+            if (x < 0) x = 0;
+            if (x > woh.els.canvas.width) x = woh.els.canvas.width;
+            if (y < 0) x = 0;
+            if (y > woh.els.canvas.height) y = woh.els.canvas.height;
+            woh.STAGE_MOUSE_POS = { x: x, y: y };
+        }
+        
+        pkg.$.addEventListener('mouseup', onPressEnd);
+        pkg.$.addEventListener('touchend', onPressEnd);
+        
+        pkg.$.addEventListener('mousemove', onPressMove);
+        pkg.$.addEventListener('touchmove', onPressMove);
+        
+       /*  document.addEventListener('mouseup', function (e) {
             if (woh.els.canvas.getClientRects().length) 
                 with (woh.els.canvas.getClientRects()[0])
                     var x = e.clientX - left, y = e.clientY - top;
@@ -65,7 +91,7 @@ Laro.NS('woh.stage', function (L) {
             if (y < 0) x = 0;
             if (y > woh.els.canvas.height) y = woh.els.canvas.height;
             woh.STAGE_MOUSE_POS = { x: x, y: y };
-        });
+        }); */
     }
 
     this.update = function (dt) {
