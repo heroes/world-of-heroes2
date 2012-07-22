@@ -11,6 +11,7 @@ Laro.NS('woh', function (L) {
 
         this.width = data.width;
         this.height = data.height;
+        this.hpBarH=15;
 
         Object.defineProperty(this,"left",{get:function(){
             return this.x - this.width/2;
@@ -218,18 +219,18 @@ Laro.NS('woh', function (L) {
 
 
             ctx.beginPath();
-            ctx.lineWidth =5+border*2;
+            ctx.lineWidth =this.hpBarH+border*2;
             ctx.strokeStyle = '#000';
-            ctx.moveTo(this.left - border,this.top );
-            ctx.lineTo(this.right+border,this.top);
+            ctx.moveTo(this.left - border,this.top-30);
+            ctx.lineTo(this.right+border,this.top-30);
             ctx.stroke();
             ctx.closePath();
 
             ctx.beginPath();
-            ctx.lineWidth = this.hpBarH ;
+            ctx.lineWidth = this.hpBarH;
             ctx.strokeStyle = 'green';
-            ctx.moveTo(this.left,this.top);
-            ctx.lineTo(this.left+ this.width*this.currentHP/this.maxHP ,this.top);
+            ctx.moveTo(this.left,this.top-30);
+            ctx.lineTo(this.left+ this.width*this.currentHP/this.maxHP ,this.top-30);
             ctx.stroke();
             ctx.closePath();
 
