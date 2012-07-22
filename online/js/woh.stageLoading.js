@@ -10,7 +10,7 @@ Laro.NS('woh.stageClass', function (L) {
     }
     
     var Loading = L.BaseState.extend(function () {
-        this.timeInState = 0;
+
         this.font = new L.Font({
             "outline_b": 0,
             "font": "Georgia",
@@ -35,6 +35,8 @@ Laro.NS('woh.stageClass', function (L) {
             */
 
             woh.log('enter [loading]', msg);
+            this.timeInState = 0;
+            this._finishTime = Number.MAX_VALUE;
             this.msg = msg;
             this.progress = 0;
             
@@ -51,7 +53,6 @@ Laro.NS('woh.stageClass', function (L) {
             this.timeInState += dt;
         },
         transition: function () {
-            woh.log('transition [loading]');
             (this.timeInState - this._finishTime > 1) && woh.gameScript.continueExec();
         },
         draw: function (render) {
