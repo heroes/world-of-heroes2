@@ -56,7 +56,7 @@ Laro.NS('woh', function (L) {
         this.face = 'right';
 
         this.brain = brain||null;
-        this.brain||this.brain.knowSprite(this);
+        if(this.brain){this.brain.knowSprite(this)};
 
         this.magicAttack = null;
 
@@ -97,7 +97,7 @@ Laro.NS('woh', function (L) {
             }})
 
             this.animations.magic = this.getAnimationGroup('magic')||null;
-            this.animations.dead = this.getAnimationGroup('dead')|null;
+            this.animations.dead = this.getAnimationGroup('dead')||null;
         },
         // 设置当前 animation 并自动播放
         setAndPlay: function (animation, loop, start, end) {
@@ -175,7 +175,7 @@ Laro.NS('woh', function (L) {
             this.y = y;
             this.checkRect.setPos(x, y);
 
-            this.brain.knowPos(this,x,y);
+            if(this.brain){this.brain.knowPos(this,x,y)};
         },
         faceLeft: function () {
             this.face = 'left';
