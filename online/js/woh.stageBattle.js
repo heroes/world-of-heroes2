@@ -46,6 +46,11 @@ Laro.NS('woh.stageClass', function (L) {
             this.roles.add('crab', new woh.Monster(woh.g_config.monsters.crab, this.aiController));
             this.roles.get('crab').setPos(500, 400);
             this.roles.get('crab').stage = this;
+
+            this.roles.add('crab2', new woh.Monster(woh.g_config.monsters.crab, this.aiController));
+            this.roles.get('crab2').setPos(600, 300);
+            this.roles.get('crab2').stage = this;
+
             this.roles.add('attack_1', new woh.SkillEffect(woh.g_config.skill_effect.normal_1));
             this.roles.get('attack_1').setPos(300, 300);
             this.roles.get('attack_1').stage = this;

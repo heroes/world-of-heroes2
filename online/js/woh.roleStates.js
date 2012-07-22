@@ -121,11 +121,10 @@ Laro.NS('woh.roleStateClass', function (L) {
     });
 
     var Dead = L.BaseState.extend(function () {
-
+        this.cooldown = 1000;
     }).methods({
         enter: function (msg, from) {
             this.host.setAndPlay('dead');
-            this.cooldown = 300;
         },
         leave: function () { },
         update: function (dt) {

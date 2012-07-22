@@ -90,7 +90,10 @@ Laro.NS('woh', function (L) {
                 this.monsters.push(obj);
         },
         knowDie: function (obj) {
-            this.knowPos(obj, Infinity, Infinity);
+            if (this.isPlayer(obj))
+                this.players = this.players.filter(function (e) { return e!=obj });
+            if (this.isMonster(obj))
+                this.monsters = this.monsters.filter(function (e) { return e != obj });
         }
     });
     this.AIController = AIController;
