@@ -79,12 +79,12 @@ woh.g_config.script={
             "role":["001","002"],
             "monster":[
                 [
-                    ['crab',3],
-                    ['crab',2],
-                    ['crab',3]
+                    [{type:'crab',x:100,y:200},{type:'crab',x:200,y:300},{type:'crab',x:300,y:200}],
+                    [{type:'crab',x:100,y:200},{type:'crab',x:300,y:200}],
+                    [{type:'crab',x:100,y:200},{type:'crab',x:300,y:200}]
                 ],
                 [
-                    ['crab_boss',1]
+                    [{type:'crab_boss',x:100,y:200}]
                 ]
             ]
         },
@@ -1030,7 +1030,7 @@ woh.g_config.weapon={
 woh.g_config.monsters = {
     "crab": {
         "health":140,//血量
-        "damage":20,//攻击
+        "damage":4,//攻击
         "defend":0,//防御
         "crit":0,//暴击
         "drop":['clothes','001',0.05],//掉落类型，掉落id，掉落概率

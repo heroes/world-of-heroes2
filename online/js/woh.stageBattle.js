@@ -37,14 +37,45 @@ Laro.NS('woh.stageClass', function (L) {
             }*/
             // rio_tang
             this.aiController = new woh.AIController(this);
-            woh.runtime.activeRole=[];
-            for(var i in data['role']){
-                var roleId=data['role'][i];
+            woh.runtime.activeRole = [];
+
+            var me = this;
+            var i = 0;
+            data['role'].forEach(function (roleId) {
                 woh.runtime.activeRole.push(woh.runtime.role[roleId]);
-                this.roles.add(roleId, new woh.Role(woh.runtime.role[roleId], this.aiController));
-                this.roles.get(roleId).setPos(400-120*i,300);
-                this.roles.get(roleId).stage = this;
-            }
+                me.roles.add(roleId, new woh.Role(woh.runtime.role[roleId], me.aiController));
+                me.roles.get(roleId).setPos(400 - 120 * i++, 300);
+                me.roles.get(roleId).stage = me;
+            });
+
+            var activeLines = data.monster.length;
+            data.monster.forEach(function (line) {
+
+                function startWave(i) {
+                    if (i >= line.length) {
+                        activeLines--;
+
+                        if (activeLines == 0) {
+                            //TODO:È«²¿½áÊø
+                        }
+                        return;
+                    }
+                    var wave = line[i].slice();
+                    var living = wave.length;
+                    wave.forEach(function (data) {
+                        var monster = new woh.Monster(woh.g_config.monsters[data.type], me.aiController);
+                        monster.ondead = function () {
+                            living--;
+                            if (living == 0)
+                                startWave(i + 1);
+                        };
+                        monster.stage = me;
+                        monster.setPos(data.x, data.y);
+                        me.roles.add(Math.random().toFixed(10), monster);
+                    });
+                }
+                startWave(0);
+            })
 
             // this.roles.add('001', new woh.Role(woh.runtime.role['001'], this.aiController));
             // this.roles.get('001').setPos(100, 400);
@@ -134,6 +165,9 @@ Laro.NS('woh.stageClass', function (L) {
         },
         kill: function (sprite) {
             this.roles.remove(sprite);
+            if (sprite.ondead) {
+                sprite.ondead();
+            }
         }
 
     }).statics({

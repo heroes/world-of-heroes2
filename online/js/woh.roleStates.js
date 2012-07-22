@@ -88,7 +88,7 @@ Laro.NS('woh.roleStateClass', function (L) {
     });
 
     var Hurted = L.BaseState.extend(function () {
-        this.cooldown = 300;
+        this.cooldown = 200;
     }).methods({
         enter: function (msg, from) {
             this.host.setAndPlay('hurted');
