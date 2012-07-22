@@ -33,9 +33,8 @@ Laro.NS('woh.stageClass', function (L) {
         this.timeInState = 0;        
     }).methods({
         enter: function (msg, fromState) {
-            woh.hide(woh.els.loading);
             woh.log('enter stage [intro]');
-            woh.show(woh.els.intro);
+            woh.util.showContainer(woh.els.intro);
             //woh.els.intro.style['opacity'] = 0;
             //prepare(msg);
         },

@@ -52,9 +52,41 @@ Laro.NS('woh.util', function (L) {
         woh.els.canvasWrap.style['marginTop'] = originT + 'px';
     }
     
+    function apply2Els (els, fn) {
+        if (typeof els == 'string') {
+            els = document.querySelectorAll(els);
+        } else if (els.nodeType && els.nodeType == 1) {
+            els = [els];
+        }
+        for (var i = 0; i < els.length; i ++) {
+            var el = els[i];
+            typeof fn == 'function' && fn(el);
+        }
+    }
+    function show (selector) {
+        apply2Els(selector, function (el) {
+            el.style.display = 'block';
+        })
+    }
+    function hide (selector) {
+        apply2Els(selector, function (el) {
+            el.style.display = 'none';
+        })
+    }
+    
+    /**
+     * 针对所有的 stage-container ，显示某一个，其他全部自动隐藏
+     */
+    function showContainer (sel) {
+        hide('.stage-container');
+        show(sel);
+    }
     
     this.getActionTarget = getActionTarget;
     this.shakeScreen = shakeScreen;
     this.stopShakeScreen = stopShakeScreen;
+    this.show = show;
+    this.hide = hide;
+    this.showContainer = showContainer;
     
 });

@@ -33,13 +33,16 @@ Laro.NS('woh.stageClass', function (L) {
                     toStage: 'battle' // 加载完后进入哪个stage
                 }
             */
+
             woh.log('enter [loading]', msg);
             this.msg = msg;
             this.progress = 0;
             
             var ress = woh.g_config.resources[msg.key].resources;
+            //console.log(ress)
             woh.loader.preload(ress, L.curry(this.loadProgressCallback, this));
             
+            woh.util.showContainer(woh.els.canvasWrap);
         },
         leave: function () {
             
@@ -48,7 +51,7 @@ Laro.NS('woh.stageClass', function (L) {
             this.timeInState += dt;
         },
         transition: function () {
-            woh.log('leave [loading]');
+            woh.log('transition [loading]');
             (this.timeInState - this._finishTime > 1) && woh.gameScript.continueExec();
         },
         draw: function (render) {
