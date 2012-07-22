@@ -75,7 +75,16 @@ woh.g_config.script={
     'battle_withlittlecrab':{
         type:'battle',
         repeat:false,
-        data:{},
+        data:{
+            "boss":[
+                ['crab_boss',1]
+            ],
+            "monster":[
+                ['crab',3],
+                ['crab',2],
+                ['crab',3]
+            ]
+        },
         next:'map_1'
     },
     'map_1':{
