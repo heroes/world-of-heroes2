@@ -4,8 +4,6 @@
 
 
 Laro.NS('woh', function (L) {
-
-
     var Monster = woh.Sprite.extend(function () {
         this.speed = 100;
         this.enemy = "role";

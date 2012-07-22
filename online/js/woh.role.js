@@ -45,9 +45,9 @@
                 };
 
                 this.setPos(me.x, me.y);
-                this.draw = function (rd) {
-                     rd.drawRect(0, 0, this.width, this.height, '#000');
-                }
+                // this.draw = function (rd) {
+                //      rd.drawRect(0, 0, this.width, this.height, '#000');
+                // }
             });
 
             function onTapDown (x, y) {

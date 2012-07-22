@@ -76,7 +76,7 @@ woh.g_config.script={
         type:'battle',
         repeat:false,
         data:{
-            "role":["001"],
+            "role":["001","002"],
             "monster":[
                 [
                     ['crab',3],
