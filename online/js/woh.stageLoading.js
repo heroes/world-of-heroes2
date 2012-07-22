@@ -19,10 +19,18 @@ Laro.NS('woh.stageClass', function (L) {
             "base_g": 255,
             "outline_r": 0,
             "base_r": 255,
-            "size": 36,
+            "size": 12,
             "id": "loading",
             "outline_g": 0
         });
+        
+        var byid = function (id) { return document.getElementById(id); }
+        this.imgs = {
+            person: byid('loadingImgPerson'),
+            bg: byid('loadingImgBg'),
+            barbg: byid('loadingImgBarBg'),
+            bar: byid('loadingImgBar')
+        };
         
     }).methods({
         enter: function (msg, fromState) {
@@ -57,7 +65,16 @@ Laro.NS('woh.stageClass', function (L) {
         },
         draw: function (render) {
             // TODO
-            render.drawSystemText(Math.floor(this.progress*100) + '%', render.getWidth()/2 - 60, render.getHeight()/2, this.font);
+            var w = render.getWidth(),
+                h = render.getHeight(),
+                totalW = 370,
+                barW = parseInt(totalW * this.progress);
+                
+            render.context.drawImage(this.imgs.bg, 0, 0, w, h);
+            render.context.drawImage(this.imgs.barbg, 268, 328);
+            render.context.drawImage(this.imgs.bar, 0, 0, barW, this.imgs.bar.height, 305, 366, barW, 38);
+            render.context.drawImage(this.imgs.person, (w-this.imgs.person.width)/2-172 + barW, (h-this.imgs.person.height)/2-60);
+            render.drawSystemText(Math.floor(this.progress*100) + '%', w/2 - 20, h/2 + 104, this.font);
         },
         
         // 各种处理

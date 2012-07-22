@@ -104,6 +104,12 @@
         </div>
     </div>
     
+    <!-- loading 本身要用的图片资源 -->
+    <img src="./resources/images/loading/loading.png" id="loadingImgPerson" style="display:none" />
+    <img src="./resources/images/loading/loading1.jpg" id="loadingImgBg" style="display:none" />
+    <img src="./resources/images/loading/loading2.png" id="loadingImgBarBg" style="display:none" />
+    <img src="./resources/images/loading/loading3.jpg" id="loadingImgBar" style="display:none" />
+    
     <script src="./js/lib/laro.0.4.js"></script>
     <script src="./js/lib/leta.fx.js"></script>
     <script src="./js/lib/leditor.js"></script>
@@ -141,7 +147,9 @@
     <script src="./js/woh.skills.js"></script>
     
     <script>
-        woh.init();
+        onload = function () {
+            woh.init();
+        }
     </script>
 </body>
 
