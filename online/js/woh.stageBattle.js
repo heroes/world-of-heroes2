@@ -37,26 +37,6 @@ Laro.NS('woh.stageClass', function (L) {
             }*/
             // rio_tang
             this.aiController = new woh.AIController(this);
-<<<<<<< HEAD
-            this.roles.add('rio_tang', new woh.Role(woh.runtime.role['001'], this.aiController));
-            this.roles.get('rio_tang').setPos(100, 400);
-            this.roles.get('rio_tang').stage = this;
-            this.roles.add('sola_cheng', new woh.Role(woh.runtime.role['002'], this.aiController));
-            this.roles.get('sola_cheng').setPos(200, 400);
-            this.roles.get('sola_cheng').stage = this;
-            this.roles.add('crab', new woh.Monster(woh.g_config.monsters.crab, this.aiController));
-            this.roles.get('crab').setPos(500, 400);
-            this.roles.get('crab').stage = this;
-
-            this.roles.add('crab2', new woh.Monster(woh.g_config.monsters.crab, this.aiController));
-            this.roles.get('crab2').setPos(600, 300);
-            this.roles.get('crab2').stage = this;
-
-            this.roles.add('attack_1', new woh.SkillEffect(woh.g_config.skill_effect.normal_1));
-            this.roles.get('attack_1').setPos(300, 300);
-            this.roles.get('attack_1').stage = this;
-
-=======
             woh.runtime.activeRole=[];
             for(var i in data['role']){
                 var roleId=data['role'][i];
@@ -78,8 +58,6 @@ Laro.NS('woh.stageClass', function (L) {
             // this.roles.add('attack_1', new woh.SkillEffect(woh.g_config.skill_effect.normal_1));
             // this.roles.get('attack_1').setPos(300, 300);
             // this.roles.get('attack_1').stage = this;
-            
->>>>>>> 人物配置生效
         },
         leave: function () {
             woh.log('leave stage [battle]');
