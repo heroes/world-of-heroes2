@@ -281,7 +281,7 @@ woh.g_config.clothes={
                 "nbrOfFrames": 4,
                 "name": "",
                 "type": "animation",
-                "framerate": 4,
+                "framerate": 2,
                 "pivotx": 100,
                 "pivoty": 75,
                 "events": []
@@ -392,7 +392,7 @@ woh.g_config.clothes={
                 "nbrOfFrames": 4,
                 "name": "",
                 "type": "animation",
-                "framerate": 10,
+                "framerate": 2,
                 "pivotx": 100,
                 "pivoty": 75,
                 "events": []
@@ -721,7 +721,7 @@ woh.g_config.weapon={
                 "nbrOfFrames": 4,
                 "name": "",
                 "type": "animation",
-                "framerate": 10,
+                "framerate": 2,
                 "pivotx": 100,
                 "pivoty": 75,
                 "events": []
@@ -809,7 +809,7 @@ woh.g_config.weapon={
                 "nbrOfFrames": 4,
                 "name": "",
                 "type": "animation",
-                "framerate": 10,
+                "framerate": 2,
                 "pivotx": 100,
                 "pivoty": 75,
                 "events": []

@@ -38,23 +38,23 @@ Laro.NS('woh.stageClass', function (L) {
             // rio_tang
             this.aiController = new woh.AIController(this);
             woh.runtime.activeRole=[];
-            for(var i in data['role']){
+            var len=data['role'].length;
+            for(var i=0;i<len;i++){
                 var roleId=data['role'][i];
                 woh.runtime.activeRole.push(woh.runtime.role[roleId]);
                 this.roles.add(roleId, new woh.Role(woh.runtime.role[roleId], this.aiController));
                 this.roles.get(roleId).setPos(400-120*i,300);
                 this.roles.get(roleId).stage = this;
             }
-
             // this.roles.add('001', new woh.Role(woh.runtime.role['001'], this.aiController));
             // this.roles.get('001').setPos(100, 400);
             // this.roles.get('001').stage = this;
             // this.roles.add('sola_cheng', new woh.Role(woh.runtime.role['002'], this.aiController));
             // this.roles.get('sola_cheng').setPos(200, 400);
             // this.roles.get('sola_cheng').stage = this;
-            // this.roles.add('crab', new woh.Monster(woh.g_config.monsters.crab, this.aiController));
-            // this.roles.get('crab').setPos(500, 400);
-            // this.roles.get('crab').stage = this;
+            this.roles.add('crab', new woh.Monster(woh.g_config.monsters.crab, this.aiController));
+            this.roles.get('crab').setPos(500, 400);
+            this.roles.get('crab').stage = this;
             // this.roles.add('attack_1', new woh.SkillEffect(woh.g_config.skill_effect.normal_1));
             // this.roles.get('attack_1').setPos(300, 300);
             // this.roles.get('attack_1').stage = this;
