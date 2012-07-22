@@ -9,8 +9,8 @@ Laro.NS('woh.stageClass', function (L) {
         this.roles = new woh.RoleCollection();
         woh.currentRoleGroup = this.roles;
         this.hurtables = {
-            monster:[],
-            role:[]
+            monster: [],
+            role: []
         }
 
     }).methods({
@@ -49,7 +49,7 @@ Laro.NS('woh.stageClass', function (L) {
             this.roles.add('attack_1', new woh.SkillEffect(woh.g_config.skill_effect.normal_1));
             this.roles.get('attack_1').setPos(300, 300);
             this.roles.get('attack_1').stage = this;
-            
+
         },
         leave: function () {
             woh.log('leave stage [battle]');
@@ -79,7 +79,7 @@ Laro.NS('woh.stageClass', function (L) {
             rd.context.drawImage(woh.loader.loadedImages['images/bg/bg-beach-dusk.jpg'], 0, 0);
         },
         drawMask: function (rd) {
-            pkg.Battle.ENABLE_MASK && rd.drawFillScreen('rgba(0,0,0,'+ pkg.Battle.screenMaskAlpha +')');
+            pkg.Battle.ENABLE_MASK && rd.drawFillScreen('rgba(0,0,0,' + pkg.Battle.screenMaskAlpha + ')');
         },
         registerHurtableObject: function (type, obj, area) {
             //console.log([areas[0]+offset.x,areas[1]+offset.y,areas[2]+offset.x,areas[3]+offset.y]);
@@ -123,8 +123,11 @@ Laro.NS('woh.stageClass', function (L) {
                     return true;
                 }
             })
+        },
+        kill: function (sprite) {
+            this.roles.remove(sprite);
         }
-        
+
     }).statics({
         // static methods
         // woh.stageClass.Battle.enableScreenMask();
@@ -135,8 +138,8 @@ Laro.NS('woh.stageClass', function (L) {
         disableScreenMask: function () {
             this.ENABLE_MASK = false;
         }
-    
+
     });
-    
+
     this.Battle = Battle;
 });

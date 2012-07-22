@@ -204,7 +204,11 @@ Laro.NS('woh', function (L) {
         },
         hurted: function (damage) {
             this.currentHP -= damage;
-            this.fsm.setState(woh.roleStates.hurted);
+            if(this.currentHP<=0) {
+                this.fsm.setState(woh.roleStates.dead);
+                this.brain.knowDie(this);
+            }
+            else this.fsm.setState(woh.roleStates.hurted);
         },
         drawHPBar: function (render) {
             var me=this;
@@ -225,14 +229,15 @@ Laro.NS('woh', function (L) {
             ctx.lineTo(this.right+border,this.top-30);
             ctx.stroke();
             ctx.closePath();
-
-            ctx.beginPath();
-            ctx.lineWidth = this.hpBarH;
-            ctx.strokeStyle = 'green';
-            ctx.moveTo(this.left,this.top-30);
-            ctx.lineTo(this.left+ this.width*this.currentHP/this.maxHP ,this.top-30);
-            ctx.stroke();
-            ctx.closePath();
+            if(this.currentHP>0) {
+                ctx.beginPath();
+                ctx.lineWidth = this.hpBarH;
+                ctx.strokeStyle = 'green';
+                ctx.moveTo(this.left,this.top-30);
+                ctx.lineTo(this.left+ this.width*this.currentHP/this.maxHP ,this.top-30);
+                ctx.stroke();
+                ctx.closePath();
+            }
 
             ctx.restore();
         },

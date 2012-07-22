@@ -79,9 +79,11 @@
             L.$lea.setLoader(woh.loader);
             var obj = [
                 woh.g_config.clothes[this.data['clothes']][type],
-                woh.g_config.weapon[this.data['weapon']][type],
-            ],
-                ret = [];
+            ],ret = [];
+            var weapon = woh.g_config.weapon[this.data['weapon']][type];
+            if(weapon)
+                obj.push(weapon);
+
             if (!Array.isArray(obj)) {
                 obj = [obj];
             }

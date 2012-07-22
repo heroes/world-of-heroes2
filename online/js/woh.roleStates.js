@@ -76,10 +76,10 @@ Laro.NS('woh.roleStateClass', function (L) {
         },
         leave: function () { },
         update: function (dt) {
-            this.cooldown -= dt*1000;
+            this.cooldown -= dt * 1000;
             if (this.cooldown < 0) {
                 this.cooldown += 1000;
-                this.host.stage.hurtArea(this.host.enemy,{ top: this.host.y-200, left: this.host.x-200, bottom: this.host.y + 200, right: this.host.x + 200 },this.host.damage);
+                this.host.stage.hurtArea(this.host.enemy, { top: this.host.y - 200, left: this.host.x - 200, bottom: this.host.y + 200, right: this.host.x + 200 }, this.host.damage);
             }
         },
         transition: function () { },
@@ -88,14 +88,17 @@ Laro.NS('woh.roleStateClass', function (L) {
     });
 
     var Hurted = L.BaseState.extend(function () {
-
+        this.cooldown = 300;
     }).methods({
         enter: function (msg, from) {
             this.host.setAndPlay('hurted');
+            this.cooldown = 500;
         },
         leave: function () { },
         update: function (dt) {
-
+            this.cooldown -= dt*1000;
+            if (this.cooldown < 0)
+                this.host.stand();
         },
         transition: function () { },
         message: function () { }
@@ -122,10 +125,13 @@ Laro.NS('woh.roleStateClass', function (L) {
     }).methods({
         enter: function (msg, from) {
             this.host.setAndPlay('dead');
+            this.cooldown = 300;
         },
         leave: function () { },
         update: function (dt) {
-
+            this.cooldown -= dt*1000;
+            if (this.cooldown < 0)
+                this.host.stage.kill(this.host);
         },
         transition: function () { },
         message: function () { }

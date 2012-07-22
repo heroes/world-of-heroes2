@@ -88,6 +88,9 @@ Laro.NS('woh', function (L) {
                 this.players.push(obj);
             if (this.isMonster(obj))
                 this.monsters.push(obj);
+        },
+        knowDie: function (obj) {
+            this.knowPos(obj, Infinity, Infinity);
         }
     });
     this.AIController = AIController;

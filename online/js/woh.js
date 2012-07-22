@@ -89,7 +89,7 @@ Laro.NS('woh', function (L) {
             } else {
                 for (var i = 0; i < this._objects.length; i++) {
                     var o = this._objects[i];
-                    if (o.name == name) {
+                    if (o.name == name || o.obj === name) {
                         return this._objects.splice(i, 1);
                     }
                 }
