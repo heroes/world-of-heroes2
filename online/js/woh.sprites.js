@@ -55,8 +55,8 @@ Laro.NS('woh', function (L) {
 
         this.face = 'right';
 
-        this.brain = brain;
-        this.brain.knowSprite(this);
+        this.brain = brain||null;
+        this.brain||this.brain.knowSprite(this);
 
         this.magicAttack = null;
 
@@ -86,9 +86,9 @@ Laro.NS('woh', function (L) {
             
         },
         getAnimations: function () {
-            this.animations.stand = this.getAnimationGroup('stand');
-            this.animations.run = this.getAnimationGroup('run');
-            this.animations.hurted = this.getAnimationGroup('hurted');
+            this.animations.stand = this.getAnimationGroup('stand')||null;
+            this.animations.run = this.getAnimationGroup('run')||null;
+            this.animations.hurted = this.getAnimationGroup('hurted')||null;
             var attack = this.getAnimationGroup('attack');
             Object.defineProperty(this.animations,"attack",{get:function(){
                 if(this.magicAttack)
@@ -96,8 +96,8 @@ Laro.NS('woh', function (L) {
                 else return attack;
             }})
 
-            this.animations.magic = this.getAnimationGroup('magic');
-            this.animations.dead = this.getAnimationGroup('dead');
+            this.animations.magic = this.getAnimationGroup('magic')||null;
+            this.animations.dead = this.getAnimationGroup('dead')|null;
         },
         // 设置当前 animation 并自动播放
         setAndPlay: function (animation, loop, start, end) {
@@ -196,9 +196,6 @@ Laro.NS('woh', function (L) {
                 this.fsm.setState(woh.roleStates.run);
         },
         normalAttack: function () {
-            this.fsm.setState(woh.roleStates.attack);
-        },
-        attack: function (data) {
             this.fsm.setState(woh.roleStates.attack);
         },
         magic:function(data){
