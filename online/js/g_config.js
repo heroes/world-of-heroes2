@@ -76,13 +76,16 @@ woh.g_config.script={
         type:'battle',
         repeat:false,
         data:{
-            "boss":[
-                ['crab_boss',1]
-            ],
+            "role":["001"],
             "monster":[
-                ['crab',3],
-                ['crab',2],
-                ['crab',3]
+                [
+                    ['crab',3],
+                    ['crab',2],
+                    ['crab',3]
+                ],
+                [
+                    ['crab_boss',1]
+                ]
             ]
         },
         next:'map_1'
