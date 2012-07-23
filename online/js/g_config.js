@@ -1026,7 +1026,7 @@ woh.g_config.weapon={
         }     
     },
 }
- // 精灵啦啦啦啦
+//怪物的数据
 woh.g_config.monsters = {
     "crab": {
         "health":140,//血量
@@ -1134,8 +1134,113 @@ woh.g_config.monsters = {
             ],
             "filename": "images/monster/normal001-crab.png"
         }]        
+    },
+    "crab_boss": {
+        "health":1400,//血量
+        "damage":10,//攻击
+        "defend":0,//防御
+        "crit":0,//暴击
+        "drop":['clothes','001',0.05],//掉落类型，掉落id，掉落概率
+        "exp":20,//打死一只怪物获得的经验值
+        'width':296,
+        'height':207,
+        "areadata": {
+            standup: [0, 0, 190, 120],
+            standdown: [0, 0, 190, 120]
+        },
+        "stand": [
+            {
+                "info": {
+                    "nbrOfFrames": 2,
+                    "name": "crab_boss",
+                    "type": "animation",
+                    "framerate": 2,
+                    "pivotx": 148,
+                    "pivoty": 103,
+                    "events": []
+                },
+                "data": [
+                    [592,0,887,206,592,0,887,206],
+                    [888,0,1183,206,888,0,1183,206],
+                ],
+                "filename": "images/monster/boss-crab.png"
+            }
+        ],
+        "run": [
+            {
+                "info": {
+                    "nbrOfFrames": 6,
+                    "name": "crab_boss",
+                    "type": "animation",
+                    "framerate": 2,
+                    "pivotx": 148,
+                    "pivoty": 103,
+                    "events": []
+                },
+                "data": [
+                    [592,0,887,206,592,0,887,206],
+                    [888,0,1183,206,888,0,1183,206],
+                ],
+                "filename": "images/monster/boss-crab.png"
+            }
+        ],
+        "attack": [
+            {
+                "info": {
+                    "nbrOfFrames": 2,
+                    "name": "crab_boss",
+                    "type": "animation",
+                    "framerate": 2,
+                    "pivotx": 148,
+                    "pivoty": 103,
+                    "events": []
+                },
+                "data": [
+                    [296,0,591,206,296,0,591,206],
+                    [592,0,887,206,592,0,887,206],
+                ],
+                "filename": "images/monster/boss-crab.png"
+            }
+        ],
+        "hurted": [
+            {
+                "info": {
+                    "nbrOfFrames": 2,
+                    "name": "crab_boss",
+                    "type": "animation",
+                    "framerate": 2,
+                    "pivotx": 148,
+                    "pivoty": 103,
+                    "events": []
+                },
+                "data": [
+                    [0,0,295,206,0,0,295,206],
+                    [296,0,591,206,296,0,591,206]
+                ],
+                "filename": "images/monster/boss-crab.png"
+            }
+        ],
+        "dead": [
+            {
+                "info": {
+                    "nbrOfFrames": 4,
+                    "name": "crab_boss",
+                    "type": "animation",
+                    "framerate": 2,
+                    "pivotx": 148,
+                    "pivoty": 103,
+                    "events": []
+                },
+                "data": [
+                    [1184,0,1479,206,1184,0,1479,206],
+                    [1480,0,1775,206,1480,0,1775,206],
+                    [1184,0,1479,206,1184,0,1479,206],
+                    [1480,0,1775,206,1480,0,1775,206]
+                ],
+                "filename": "images/monster/boss-crab.png"
+            }
+        ]        
     }
-
 }
 //用于初始化人物的数据
 woh.role_init_data={
