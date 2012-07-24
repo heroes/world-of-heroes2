@@ -1041,6 +1041,7 @@ woh.g_config.monsters = {
             standup: [0, 0, 190, 120],
             standdown: [0, 0, 190, 120]
         },
+        "damageArea":[113,0,113+78,101],
         "stand": [
         // role
                 {
@@ -1148,6 +1149,7 @@ woh.g_config.monsters = {
             standup: [0, 0, 190, 120],
             standdown: [0, 0, 190, 120]
         },
+        "damageArea":[106,0,106+189,142],
         "stand": [
             {
                 "info": {

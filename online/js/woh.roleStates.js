@@ -79,7 +79,10 @@ Laro.NS('woh.roleStateClass', function (L) {
             this.cooldown -= dt * 1000;
             if (this.cooldown < 0) {
                 this.cooldown += 1000;
-                this.host.stage.hurtArea(this.host.enemy, { top: this.host.y - 200, left: this.host.x - 200, bottom: this.host.y + 200, right: this.host.x + 200 }, this.host.damage);
+                if(this.host.damageArea)
+                    this.host.stage.hurtArea(this.host.enemy, { top: this.host.y + this.host.damageArea.top, left: this.host.x + this.host.damageArea.left, bottom: this.host.y + this.host.damageArea.bottom, right: this.host.x + this.host.damageArea.right }, this.host.damage);
+                else 
+                    this.host.stage.hurtArea(this.host.enemy, { top: this.host.y - 200, left: this.host.x - 200, bottom: this.host.y + 200, right: this.host.x + 200 }, this.host.damage);
             }
         },
         transition: function () { },

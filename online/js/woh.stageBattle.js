@@ -151,6 +151,7 @@ Laro.NS('woh.stageClass', function (L) {
                 with (canvas.getContext("2d")) {
                     strokeStyle = "red";
                     strokeRect(area1.left, area1.top, area1.right - area1.left, area1.bottom - area1.top);
+                    strokeStyle = "blue";
                     strokeRect(area2.left, area2.top, area2.right - area2.left, area2.bottom - area2.top);
                 }
                 return (area1.top < area2.bottom && area2.top < area1.bottom) &&

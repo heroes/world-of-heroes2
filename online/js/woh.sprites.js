@@ -29,6 +29,15 @@ Laro.NS('woh', function (L) {
             return this.y + this.height/2;
         }})
 
+        if(data.damageArea) {
+            this.damageArea = {
+                left:data.damageArea[0]-this.width/2,
+                top:data.damageArea[1]-this.height/2,
+                right:data.damageArea[2]- this.width/2,
+                bottom:data.damageArea[3]-this.height/2
+            }
+        }
+
         var statesList = [
             woh.roleStates.stand, woh.roleStateClass.Stand,
             woh.roleStates.run, woh.roleStateClass.Run,
