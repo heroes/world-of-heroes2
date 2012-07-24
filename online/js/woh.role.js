@@ -53,6 +53,7 @@
             function onTapDown (x, y) {
                 me.canMove = true;
                 woh.skills.show(me.data.type);
+                woh.STAGE_MOUSE_POS = { x: x, y: y };
             }
             this.checkRect.addEventListener('mousedown', onTapDown);
             this.checkRect.addEventListener('touchstart', onTapDown);
