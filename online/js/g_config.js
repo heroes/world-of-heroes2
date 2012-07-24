@@ -54,13 +54,13 @@ woh.g_config.script={
         type:'dialogue',
         repeat:false,
         data:[
-            {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'世间竟有如此美丽之人……',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
-            {'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'？？','content':'你知道……人鱼吗？',position:'right',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
-            {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'人鱼？虽说古籍中确有此物记载，然子不语怪力乱神……',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
-            {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'喂喂喂，兄台你怎么了！',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
-            {'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'？？','content':'……',position:'right',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
-            {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'醒，醒醒啊！呼吸平稳，脉象虽弱却不乱，莫非是饿晕过去了？',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
-            {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'天啊，哪来那么多的大螃蟹！不好，螃蟹似乎是冲着那个人来的。无论如何，先把它们击退吧。',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'}
+            {'avatar':'resources/images/dialogue/rio_tang_beauty_sup.png','name':'唐如','content':'世间竟有如此美丽之人……',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_nature.png','name':'？？','content':'你知道……人鱼吗？',position:'right',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_smile.png','name':'唐如','content':'人鱼？虽说古籍中确有此物记载，然子不语怪力乱神……',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'喂喂喂，兄台你怎么了！',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_a.png','name':'？？','content':'……',position:'right',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'醒，醒醒啊！呼吸平稳，脉象虽弱却不乱，莫非是饿晕过去了？',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'天啊，哪来那么多的大螃蟹！不好，螃蟹似乎是冲着那个人来的。无论如何，先把它们击退吧。',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'}
         ],
         next:'loading_2'
     },
@@ -100,7 +100,8 @@ woh.g_config.script={
         type:'dialogue',
         repeat:false,
         data:[
-            {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'此人究竟做过何事，竟惹得这些螃蟹如此怨愤？君子不立危墙之下，还是速速离去为好——嘿～咻～此人虽不肥胖，分量却着实不轻。',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'此人究竟做过何事，竟惹得这些螃蟹如此怨愤？君子不立危墙之下，还是速速离去为好——',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_heavy.png','name':'唐如','content':'嘿～咻～此人虽不肥胖，分量却着实不轻。',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
         ],
         next:'drama_2'
     },
@@ -113,7 +114,7 @@ woh.g_config.script={
                 data: [
                         '唐如带着晕倒的少年回到了自己家。',
                         '自双亲去世后，',
-                        '唐如就独自一人居住在停泊在山洞中的一艘大船里。'    
+                        '唐如就独自一人居住在停泊在小湾中的一艘大船里。'    
                 ]
             }
         ],
@@ -123,12 +124,12 @@ woh.g_config.script={
         type:'dialogue',
         repeat:false,
         data:[
-            {'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'少年','content':'饿了。',position:'right',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
-            {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'来，这是刚熬好的粥，哎呀，我说你倒是慢点喝，刚饿晕了，不宜马上暴食啊。',position:'left',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
-            {'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'少年','content':'粥是好粥，就是这碗寒酸了点，此粥色泽金黄，当用镶金玉碗相配，方显相得益彰，色香和合——烦请再来一碗。',position:'right',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
-            {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'买不起镶金玉碗还真是抱歉。好吧好吧，你等着，我给你盛去，真是个爱使唤人的大少爷。',position:'left',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
-            {'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'少年','content':'这是你家？果然破落。那边架上那堆书看来也是你的，俗语说，读书穷三代，笔墨毁一生，而今亲眼所见，果真不假。',position:'right',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
-            {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'是是是，实 在 抱 歉，阁下若已吃饱，就请歇息吧。',position:'left',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_nature.png','name':'少年','content':'饿了。',position:'right',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_smile.png','name':'唐如','content':'来，这是刚熬好的粥，哎呀，我说你倒是慢点喝，刚饿晕了，不宜马上暴食啊。',position:'left',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'少年','content':'粥是好粥，就是这碗寒酸了点，此粥色泽金黄，当用镶金玉碗相配，方显相得益彰，色香和合——烦请再来一碗。',position:'right',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'买不起镶金玉碗还真是抱歉。好吧好吧，你等着，我给你盛去，真是个爱使唤人的大少爷。',position:'left',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_pity.png','name':'少年','content':'这是你家？果然破落。那边架上那堆书看来也是你的，俗语说，读书穷三代，笔墨毁一生，而今亲眼所见，果真不假。',position:'right',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_light_angry.png','name':'唐如','content':'是是是，实 在 抱 歉，阁下若已吃饱，就请歇息吧。',position:'left',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
         ],
         next:'drama_3'
     },
@@ -152,12 +153,12 @@ woh.g_config.script={
         type:'dialogue',
         repeat:false,
         data:[
-            {'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'少年','content':'饿了。',position:'right',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
-            {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'来，这是刚熬好的粥，哎呀，我说你倒是慢点喝，刚饿晕了，不宜马上暴食啊。',position:'left',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
-            {'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'少年','content':'粥是好粥，就是这碗寒酸了点，此粥色泽金黄，当用镶金玉碗相配，方显相得益彰，色香和合——烦请再来一碗。',position:'right',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
-            {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'买不起镶金玉碗还真是抱歉。好吧好吧，你等着，我给你盛去，真是个爱使唤人的大少爷。',position:'left',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
-            {'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'少年','content':'这是你家？果然破落。那边架上那堆书看来也是你的，俗语说，读书穷三代，笔墨毁一生，而今亲眼所见，果真不假。',position:'right',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
-            {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'是是是，实 在 抱 歉，阁下若已吃饱，就请歇息吧。',position:'left',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'少年','content':'饿了。',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'来，这是刚熬好的粥，哎呀，我说你倒是慢点喝，刚饿晕了，不宜马上暴食啊。',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'少年','content':'粥是好粥，就是这碗寒酸了点，此粥色泽金黄，当用镶金玉碗相配，方显相得益彰，色香和合——烦请再来一碗。',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'买不起镶金玉碗还真是抱歉。好吧好吧，你等着，我给你盛去，真是个爱使唤人的大少爷。',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'少年','content':'这是你家？果然破落。那边架上那堆书看来也是你的，俗语说，读书穷三代，笔墨毁一生，而今亲眼所见，果真不假。',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'是是是，实 在 抱 歉，阁下若已吃饱，就请歇息吧。',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
         ],
         next:'drama_3'
     },
