@@ -27,7 +27,7 @@ woh.g_config.script={
         type:'intro',//标记相应的stage类型
         repeat:true,//标记在流程中是否允许重复出现（即选关的时候是否会被再次触发）
         data:{},
-        next:'loading_2'
+        next:'drama_1'
     }, 
     'drama_1':{
         type:'drama',//标记相应的stage类型
@@ -76,16 +76,16 @@ woh.g_config.script={
         type:'battle',
         repeat:false,
         data:{
-            "role":["001","002"],
+            "role":["001"],
             "monster":[
                 [
-                    [{type:'crab',x:100,y:200},{type:'crab',x:200,y:300},{type:'crab',x:300,y:200}],
-                    [{type:'crab',x:100,y:200},{type:'crab',x:300,y:200}],
-                    [{type:'crab',x:100,y:200},{type:'crab',x:300,y:200}]
+                    [{type:'crab',x:100,y:200}],//{type:'crab',x:200,y:300},{type:'crab',x:300,y:200}],
+                    // [{type:'crab',x:100,y:200},{type:'crab',x:300,y:200}],
+                    // [{type:'crab',x:100,y:200},{type:'crab',x:300,y:200}]
                 ],
-                [
-                    [{type:'crab_boss',x:100,y:200}]
-                ]
+                // [
+                //     [{type:'crab_boss',x:100,y:200}]
+                // ]
             ]
         },
         next:'map_1'
@@ -123,7 +123,7 @@ woh.g_config.script={
         type:'dialogue',
         repeat:false,
         data:[{'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'？？','content':'饿了。',position:'left',globalBg : 'resources/images/bg/bg-boat-inner.jpg'}],
-        next:'battle_withlittlecrab'
+        next:'intro'
     }
 };  
 
