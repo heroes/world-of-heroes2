@@ -44,12 +44,12 @@ Laro.NS('woh.roleStateClass', function (L) {
 
     }).methods({
         enter: function (msg, from) {
-            console.log('enter run');
+            //console.log('enter run');
             this.host.setAndPlay('run');
             this.dis = Number.MAX_VALUE;
         },
         leave: function () {
-            console.log('leave run')
+           // console.log('leave run')
         },
         update: function (dt) {
             if (this.host.toPos) {

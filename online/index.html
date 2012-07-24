@@ -62,14 +62,6 @@
 <body>
     <div id="doc" class="doc">
         <div id="game-container" class="game-container">
-            <!-- loading -->
-            <div id="css-loading" class="stage-container css-loading">
-                <div id="block_1" class="barlittle"></div>
-                <div id="block_2" class="barlittle"></div>
-                <div id="block_3" class="barlittle"></div>
-                <div id="block_4" class=" barlittle"></div>
-                <div id="block_5" class="barlittle"></div>
-            </div>
             <!-- intro stage -->
             <div id="intro" class="stage-container intro-module">
 
@@ -86,18 +78,13 @@
             <div id="dialogue" class="stage-container dialogue-module">
                 
             </div>
-            <!-- battle -->
-            <div id="battle" class="stage-container battle-module">
-                <canvas id="battle_canvas" width="960" height="640"></canvas>
-                <!-- role skill container -->
-                <div id="role-skill-container" class="skill-icons"></div>
-            </div>
             <!-- map -->
             <div id="map" class="stage-container map-module">
                 
             </div>
             <!-- canvas for render -->
-            <div id="canvas-wrap" class="stage-container">
+            <div id="canvas-wrap" class="stage-container battle-module">
+                <div id="role-skill-container" class="skill-icons"></div>
                 <canvas id="canvas"></canvas>
             </div>
         </div>

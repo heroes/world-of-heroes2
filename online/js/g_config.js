@@ -76,10 +76,10 @@ woh.g_config.script={
         type:'battle',
         repeat:false,
         data:{
-            "role":["001"],
+            "role":["001","002"],
             "monster":[
                 [
-                    [{type:'crab',x:100,y:200}],//{type:'crab',x:200,y:300},{type:'crab',x:300,y:200}],
+                    [{type:'crab',x:100,y:200},{type:'crab',x:800,y:300},{type:'crab',x:300,y:500}],
                     // [{type:'crab',x:100,y:200},{type:'crab',x:300,y:200}],
                     // [{type:'crab',x:100,y:200},{type:'crab',x:300,y:200}]
                 ],
@@ -128,10 +128,39 @@ woh.g_config.script={
             {'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'少年','content':'粥是好粥，就是这碗寒酸了点，此粥色泽金黄，当用镶金玉碗相配，方显相得益彰，色香和合——烦请再来一碗。',position:'right',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
             {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'买不起镶金玉碗还真是抱歉。好吧好吧，你等着，我给你盛去，真是个爱使唤人的大少爷。',position:'left',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
             {'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'少年','content':'这是你家？果然破落。那边架上那堆书看来也是你的，俗语说，读书穷三代，笔墨毁一生，而今亲眼所见，果真不假。',position:'right',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
-            
+            {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'是是是，实 在 抱 歉，阁下若已吃饱，就请歇息吧。',position:'left',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
         ],
-        next:'intro'
-    }
+        next:'drama_3'
+    },
+    'drama_3':{
+        type:'drama',//标记相应的stage类型
+        repeat:false,
+        data:[
+            {
+                appear: 'auto',
+                data: [
+                        'ZZZZZZZZZZZZZZZZ',
+                        '.',
+                        '.',
+                        '.'   
+                ]
+            }
+        ],
+        next:'dialogue_4'
+    },
+    'dialogue_4':{
+        type:'dialogue',
+        repeat:false,
+        data:[
+            {'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'少年','content':'饿了。',position:'right',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'来，这是刚熬好的粥，哎呀，我说你倒是慢点喝，刚饿晕了，不宜马上暴食啊。',position:'left',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'少年','content':'粥是好粥，就是这碗寒酸了点，此粥色泽金黄，当用镶金玉碗相配，方显相得益彰，色香和合——烦请再来一碗。',position:'right',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'买不起镶金玉碗还真是抱歉。好吧好吧，你等着，我给你盛去，真是个爱使唤人的大少爷。',position:'left',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'少年','content':'这是你家？果然破落。那边架上那堆书看来也是你的，俗语说，读书穷三代，笔墨毁一生，而今亲眼所见，果真不假。',position:'right',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'是是是，实 在 抱 歉，阁下若已吃饱，就请歇息吧。',position:'left',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
+        ],
+        next:'drama_3'
+    },
 };  
 
 //每个场景对应的需要预加载的资源列表
