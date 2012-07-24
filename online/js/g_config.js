@@ -177,11 +177,27 @@ woh.g_config.resources = {
             'images/index/start-button-4.png',
 
             'images/dialogue/rio_tang_normal.png',
+            'images/dialogue/rio_tang_angry.png',
+            'images/dialogue/rio_tang_beauty_sup.png',
+            'images/dialogue/rio_tang_heavy.png',
+            'images/dialogue/rio_tang_light_angry.png',
+            'images/dialogue/rio_tang_smile.png',
+            'images/dialogue/rio_tang_sup.png',
+            'images/dialogue/rio_tang_wei.png',
+
             'images/dialogue/sola_cheng_normal.png',
+            'images/dialogue/sola_cheng_a.png',
+            'images/dialogue/sola_cheng_food.png',
+            'images/dialogue/sola_cheng_nature.png',
+            'images/dialogue/sola_cheng_pity.png',
+            'images/dialogue/sola_cheng_sigh.png',
+            
             'images/dialogue/UI-dialog-bg.png',
+
             'images/bg/bg-beach-dusk.jpg',
             'images/bg/bg-beach.jpg',
             'images/bg/bg-boat-inner.jpg',
+            'images/bg/bg-boat-outer.jpg',
 
             'images/cg/cg_1.jpg'
         ]
