@@ -214,30 +214,30 @@ Laro.NS('woh', function (L) {
             else this.fsm.setState(woh.roleStates.hurted);
         },
         drawHPBar: function (render) {
-            var me=this;
             var ctx = render.context;
-            var x = this.x - me.data['width']/ 2 ;
-            var y = this.y - me.data['height']/2-30;
-            //console.log(this.hpBarW,this.checkRect.height);
+            var x = this.x - this.data['width']/ 2 ,
+                y = this.y - this.data['height']/2-30,
+                hpBarW=this.maxHP/2;
+            if(hpBarW>this.width){hpBarW=this.width};
+            var hpBarL=this.x-hpBarW/2;
             var border = 2;
             ctx.save();
             ctx.globalAlpha = 0.7;
             ctx.lineCap = "round";
 
-
             ctx.beginPath();
             ctx.lineWidth =this.hpBarH+border*2;
             ctx.strokeStyle = '#000';
-            ctx.moveTo(this.left - border,this.top-30);
-            ctx.lineTo(this.right+border,this.top-30);
+            ctx.moveTo(hpBarL - border,this.top-30);
+            ctx.lineTo(hpBarL+hpBarW+border,this.top-30);
             ctx.stroke();
             ctx.closePath();
             if(this.currentHP>0) {
                 ctx.beginPath();
                 ctx.lineWidth = this.hpBarH;
                 ctx.strokeStyle = 'green';
-                ctx.moveTo(this.left,this.top-30);
-                ctx.lineTo(this.left+ this.width*this.currentHP/this.maxHP ,this.top-30);
+                ctx.moveTo(hpBarL,this.top-30);
+                ctx.lineTo(hpBarL+ hpBarW*this.currentHP/this.maxHP ,this.top-30);
                 ctx.stroke();
                 ctx.closePath();
             }
