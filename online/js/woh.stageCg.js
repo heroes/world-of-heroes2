@@ -6,9 +6,10 @@ Laro.NS('woh.stageClass', function (L) {
     var Cg = L.BaseState.extend(function () {
     
     }).methods({
-        enter: function (msg, from) {
-            woh.log('enter stage [Cg] with msg ' + msg);
-            woh.show(woh.els.cg)
+        enter: function (data, from) {
+            woh.log('enter stage [Cg]');
+            //woh.els.cg.innerHTML+="<img src='"+data[0]['path']+"''>";
+            woh.show(woh.els.cg);
             
         },
         leave: function () {

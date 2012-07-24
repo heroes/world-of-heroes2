@@ -42,14 +42,14 @@ woh.g_config.script={
                 ]
             }
         ],
+        next:'cg_1'
+    },
+    'cg_1':{
+        type:'cg',
+        repeat:false,
+        data:[{'path':'resources/images/cg/cg_1.jpg'}],
         next:'dialogue_1'
     },
-    // '3':{
-    //     type:'cg',
-    //     repeat:false,
-    //     data:{},
-    //     next:'4'
-    // },
     'dialogue_1':{
         type:'dialogue',
         repeat:false,
@@ -122,7 +122,14 @@ woh.g_config.script={
     'dialogue_3':{
         type:'dialogue',
         repeat:false,
-        data:[{'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'？？','content':'饿了。',position:'left',globalBg : 'resources/images/bg/bg-boat-inner.jpg'}],
+        data:[
+            {'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'少年','content':'饿了。',position:'right',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'来，这是刚熬好的粥，哎呀，我说你倒是慢点喝，刚饿晕了，不宜马上暴食啊。',position:'left',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'少年','content':'粥是好粥，就是这碗寒酸了点，此粥色泽金黄，当用镶金玉碗相配，方显相得益彰，色香和合——烦请再来一碗。',position:'right',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'买不起镶金玉碗还真是抱歉。好吧好吧，你等着，我给你盛去，真是个爱使唤人的大少爷。',position:'left',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'少年','content':'这是你家？果然破落。那边架上那堆书看来也是你的，俗语说，读书穷三代，笔墨毁一生，而今亲眼所见，果真不假。',position:'right',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
+            
+        ],
         next:'intro'
     }
 };  
