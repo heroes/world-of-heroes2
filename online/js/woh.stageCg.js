@@ -8,9 +8,8 @@ Laro.NS('woh.stageClass', function (L) {
     }).methods({
         enter: function (data, from) {
             woh.log('enter stage [Cg]');
-            //woh.els.cg.innerHTML+="<img src='"+data[0]['path']+"''>";
+            woh.els.cg.querySelector('img').src=data[0]['path'];
             woh.show(woh.els.cg);
-            
         },
         leave: function () {
             woh.log('leave stage [cg]');

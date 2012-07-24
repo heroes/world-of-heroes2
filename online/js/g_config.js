@@ -152,7 +152,9 @@ woh.g_config.resources = {
             'images/dialogue/UI-dialog-bg.png',
             'images/bg/bg-beach-dusk.jpg',
             'images/bg/bg-beach.jpg',
-            'images/bg/bg-boat-inner.jpg'
+            'images/bg/bg-boat-inner.jpg',
+
+            'images/cg/cg_1.jpg'
         ]
     },
     battle_1: {
