@@ -15,9 +15,6 @@ Laro.NS('woh.stageClass', function (L) {
 
     }).methods({
         enter: function (data, from) {
-            woh.log('enter stage [battle]');
-            woh.show(woh.els.battle);
-
             woh.log('enter stage [Battle]');
             woh.show(woh.els.canvasWrap);
             // temp part to do area
@@ -48,16 +45,17 @@ Laro.NS('woh.stageClass', function (L) {
                 me.roles.get(roleId).stage = me;
             });
 
-            var activeLines = data.monster.length;
+            this.activeLines = data.monster.length;
             data.monster.forEach(function (line) {
 
                 function startWave(i) {
                     if (i >= line.length) {
-                        activeLines--;
+                        me.activeLines--;
 
-                        if (activeLines == 0) {
-                            //TODO:ȫ������
-                        }
+                        // if (me.activeLines == 0) {
+                        //     //TODO:È«²¿½áÊø
+                        //     alert("你被螃蟹君干掉了");
+                        // }
                         return;
                     }
                     var wave = line[i].slice();
@@ -84,24 +82,13 @@ Laro.NS('woh.stageClass', function (L) {
             // this.roles.add('sola_cheng', new woh.Role(woh.runtime.role['002'], this.aiController));
             // this.roles.get('sola_cheng').setPos(200, 400);
             // this.roles.get('sola_cheng').stage = this;
-            this.roles.add('crab', new woh.Monster(woh.g_config.monsters.crab, this.aiController));
-            this.roles.get('crab').setPos(500, 400);
-            this.roles.get('crab').stage = this;
             // this.roles.add('attack_1', new woh.SkillEffect(woh.g_config.skill_effect.normal_1));
             // this.roles.get('attack_1').setPos(300, 300);
             // this.roles.get('attack_1').stage = this;
         },
-        leave: function () {
-            woh.log('leave stage [battle]');
-            woh.hide(woh.els.battle);
-        },
-        update: function (dt) {
-            this.timeInState += dt;
-
-        },
         transition: function () {
             //this.timeInState > 2 && woh.gameScript.continueExec();
-            this.timeInState > Infinity && woh.gameScript.continueExec();
+            this.activeLines == 0 && woh.gameScript.continueExec();
         },
         leave: function () {
             woh.log('leave stage [battle]');
