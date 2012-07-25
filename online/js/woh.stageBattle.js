@@ -51,7 +51,6 @@ Laro.NS('woh.stageClass', function (L) {
                 function startWave(i) {
                     if (i >= line.length) {
                         me.activeLines--;
-
                         // if (me.activeLines == 0) {
                         //     //TODO:È«²¿½áÊø
                         //     alert("你被螃蟹君干掉了");
