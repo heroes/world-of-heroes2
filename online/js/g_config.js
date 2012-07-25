@@ -1255,6 +1255,7 @@ woh.role_init_data={
         'weapon':'001',//武器编号
         'clothes':'001',//衣服编号,none表示裸奔
         'skill_point':0,//剩余技能点
+        'damageArea':[120,-90,180,0],
         'skill_list':{
             '001':0, 
             '002':0,
@@ -1276,6 +1277,7 @@ woh.role_init_data={
         'exp':1300,//当前经验值
         'weapon':'003',//武器编号
         'clothes':'003',//衣服编号
+        'damageArea':[120,170,180,260],
         'skill_point':3,
         'skill_list':{
             '005':1,
