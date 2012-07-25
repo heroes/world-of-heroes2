@@ -250,6 +250,7 @@ woh.g_config.resources = {
         type: 'battle',
         resources: [
             'images/bg/bg-beach-dusk.jpg',
+            'images/bg/bg-beach.jpg',
             
             'images/circle.png',
             'images/pie.png',
@@ -332,12 +333,6 @@ woh.g_config.resources = {
             'images/monster/normal001-crab.png'
         ]
     },
-    battle_2: {
-        type: 'battle',
-        resources: [
-            'images/bg/bg-beach.jpg',
-            ]
-        }
 };
 
 //衣服的动画数据
