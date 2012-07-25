@@ -74,9 +74,10 @@ woh.g_config.script={
     },
     'battle_withlittlecrab':{
         type:'battle',
-        repeat:false,
+        repeat:true,
         data:{
             "role":["001"],
+            "bg":'images/bg/bg-beach-dusk.jpg',
             "monster":[
                 //sample
                 //[
@@ -182,6 +183,7 @@ woh.g_config.script={
         repeat:false,
         data:{
             "role":["001","002"],
+            "bg":'images/bg/bg-beach.jpg',
             "monster":[
                 [
                     [{type:'crab',x:100,y:200},{type:'crab',x:100,y:200},{type:'crab',x:100,y:200}],
