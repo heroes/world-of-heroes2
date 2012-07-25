@@ -197,6 +197,8 @@ margin-top:420px;}
 }
 .battle-module .skill-icon{float:left; margin-right:10px; background:red; width:100px; height:100px;
     -webkit-border-radius: 10px;
+    border:5px solid black;
+    box-shadow: 0 0 10px black;
 }
 
 

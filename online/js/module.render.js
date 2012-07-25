@@ -77,7 +77,7 @@
     };
     //CG界面
     CG={
-        tpl:'<button class="skip"></button>',
+        tpl:'<button class="skip"></button><img/>',
         init:function(){
             this.render();
             this.bind();

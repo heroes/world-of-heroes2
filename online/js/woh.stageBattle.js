@@ -11,14 +11,15 @@ Laro.NS('woh.stageClass', function (L) {
         this.hurtables = {
             monster: [],
             role: []
-        }
-
+        };
+        this.data=null;
     }).methods({
         enter: function (data, from) {
             woh.log('enter stage [Battle]');
             woh.show(woh.els.canvasWrap);
             // temp part to do area
             var me = this;
+            this.data=data;
             /*
             document.querySelector("body").onmouseup = function (e) {
             if (e.target.tagName != "CANVAS") return;
@@ -35,8 +36,6 @@ Laro.NS('woh.stageClass', function (L) {
             // rio_tang
             this.aiController = new woh.AIController(this);
             woh.runtime.activeRole = [];
-
-            var me = this;
             var i = 0;
             data['role'].forEach(function (roleId) {
                 woh.runtime.activeRole.push(woh.runtime.role[roleId]);
@@ -51,7 +50,6 @@ Laro.NS('woh.stageClass', function (L) {
                 function startWave(i) {
                     if (i >= line.length) {
                         me.activeLines--;
-
                         // if (me.activeLines == 0) {
                         //     //TODO:È«²¿½áÊø
                         //     alert("你被螃蟹君干掉了");
@@ -93,6 +91,7 @@ Laro.NS('woh.stageClass', function (L) {
         leave: function () {
             woh.log('leave stage [battle]');
             woh.hide(woh.els.canvasWrap);
+            this.roles.remove();
         },
         update: function (dt) {
             this.roles.dispatch('update', dt);
@@ -103,7 +102,7 @@ Laro.NS('woh.stageClass', function (L) {
             this.roles.dispatch('draw', render);
         },
         drawBg: function (rd) {
-            rd.context.drawImage(woh.loader.loadedImages['images/bg/bg-beach-dusk.jpg'], 0, 0);
+            rd.context.drawImage(woh.loader.loadedImages[this.data['bg']], 0, 0);
         },
         drawMask: function (rd) {
             pkg.Battle.ENABLE_MASK && rd.drawFillScreen('rgba(0,0,0,' + pkg.Battle.screenMaskAlpha + ')');

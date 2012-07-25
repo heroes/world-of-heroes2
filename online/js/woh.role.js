@@ -51,9 +51,9 @@
             });
 
             function onTapDown (x, y) {
+                woh.STAGE_MOUSE_POS = { x: me.x, y: (me.y+me.height/2) };
                 me.canMove = true;
                 woh.skills.show(me.data.type);
-                woh.STAGE_MOUSE_POS = { x: x, y: y };
             }
             this.checkRect.addEventListener('mousedown', onTapDown);
             this.checkRect.addEventListener('touchstart', onTapDown);

@@ -42,25 +42,25 @@ woh.g_config.script={
                 ]
             }
         ],
+        next:'cg_1'
+    },
+    'cg_1':{
+        type:'cg',
+        repeat:false,
+        data:[{'path':'resources/images/cg/cg_1.jpg'}],
         next:'dialogue_1'
     },
-    // '3':{
-    //     type:'cg',
-    //     repeat:false,
-    //     data:{},
-    //     next:'4'
-    // },
     'dialogue_1':{
         type:'dialogue',
         repeat:false,
         data:[
-            {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'世间竟有如此美丽之人……',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
-            {'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'？？','content':'你知道……人鱼吗？',position:'right',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
-            {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'人鱼？虽说古籍中确有此物记载，然子不语怪力乱神……',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
-            {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'喂喂喂，兄台你怎么了！',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
-            {'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'？？','content':'……',position:'right',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
-            {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'醒，醒醒啊！呼吸平稳，脉象虽弱却不乱，莫非是饿晕过去了？',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
-            {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'天啊，哪来那么多的大螃蟹！不好，螃蟹似乎是冲着那个人来的。无论如何，先把它们击退吧。',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'}
+            {'avatar':'resources/images/dialogue/rio_tang_beauty_sup.png','name':'唐如','content':'世间竟有如此美丽之人……',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_nature.png','name':'？？','content':'你知道……人鱼吗？',position:'right',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_smile.png','name':'唐如','content':'人鱼？虽说古籍中确有此物记载，然子不语怪力乱神……',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'喂喂喂，兄台你怎么了！',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_a.png','name':'？？','content':'……',position:'right',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'醒，醒醒啊！呼吸平稳，脉象虽弱却不乱，莫非是饿晕过去了？',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'天啊，哪来那么多的大螃蟹！不好，螃蟹似乎是冲着那个人来的。无论如何，先把它们击退吧。',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'}
         ],
         next:'loading_2'
     },
@@ -74,18 +74,24 @@ woh.g_config.script={
     },
     'battle_withlittlecrab':{
         type:'battle',
-        repeat:false,
+        repeat:true,
         data:{
             "role":["001"],
+            "bg":'images/bg/bg-beach-dusk.jpg',
             "monster":[
-                [
-                    [{type:'crab',x:100,y:200}],//{type:'crab',x:200,y:300},{type:'crab',x:300,y:200}],
+                //sample
+                //[
+                    //[{type:'crab',x:100,y:200},{type:'crab',x:800,y:300},{type:'crab',x:300,y:500}],
                     // [{type:'crab',x:100,y:200},{type:'crab',x:300,y:200}],
                     // [{type:'crab',x:100,y:200},{type:'crab',x:300,y:200}]
-                ],
+                //],
                 // [
                 //     [{type:'crab_boss',x:100,y:200}]
                 // ]
+                [
+                    [{type:'crab',x:100,y:200}],
+                    [{type:'crab',x:800,y:300},{type:'crab',x:300,y:500}]
+                ],
             ]
         },
         next:'map_1'
@@ -100,7 +106,8 @@ woh.g_config.script={
         type:'dialogue',
         repeat:false,
         data:[
-            {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'此人究竟做过何事，竟惹得这些螃蟹如此怨愤？君子不立危墙之下，还是速速离去为好——嘿～咻～此人虽不肥胖，分量却着实不轻。',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'此人究竟做过何事，竟惹得这些螃蟹如此怨愤？君子不立危墙之下，还是速速离去为好——',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_heavy.png','name':'唐如','content':'嘿～咻～此人虽不肥胖，分量却着实不轻。',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
         ],
         next:'drama_2'
     },
@@ -113,7 +120,7 @@ woh.g_config.script={
                 data: [
                         '唐如带着晕倒的少年回到了自己家。',
                         '自双亲去世后，',
-                        '唐如就独自一人居住在停泊在山洞中的一艘大船里。'    
+                        '唐如就独自一人居住在停泊在小湾中的一艘大船里。'    
                 ]
             }
         ],
@@ -122,9 +129,84 @@ woh.g_config.script={
     'dialogue_3':{
         type:'dialogue',
         repeat:false,
-        data:[{'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'？？','content':'饿了。',position:'left',globalBg : 'resources/images/bg/bg-boat-inner.jpg'}],
+        data:[
+            {'avatar':'resources/images/dialogue/sola_cheng_nature.png','name':'少年','content':'饿了。',position:'right',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_smile.png','name':'唐如','content':'来，这是刚熬好的粥，哎呀，我说你倒是慢点喝，刚饿晕了，不宜马上暴食啊。',position:'left',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'少年','content':'粥是好粥，就是这碗寒酸了点，此粥色泽金黄，当用镶金玉碗相配，方显相得益彰，色香和合——烦请再来一碗。',position:'right',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'买不起镶金玉碗还真是抱歉。好吧好吧，你等着，我给你盛去，真是个爱使唤人的大少爷。',position:'left',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_pity.png','name':'少年','content':'这是你家？果然破落。那边架上那堆书看来也是你的，俗语说，读书穷三代，笔墨毁一生，而今亲眼所见，果真不假。',position:'right',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_light_angry.png','name':'唐如','content':'是是是，实~在~抱~歉!阁下若已吃饱，就请歇息吧。',position:'left',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
+        ],
+        next:'drama_3'
+    },
+    'drama_3':{
+        type:'drama',//标记相应的stage类型
+        repeat:false,
+        data:[
+            {
+                appear: 'auto',
+                data: [
+                        'ZZZZZZZZZZZZZZZZ',
+                        '.',
+                        '.',
+                        '.'   
+                ]
+            }
+        ],
+        next:'dialogue_4'
+    },
+    'dialogue_4':{
+        type:'dialogue',
+        repeat:false,
+        data:[
+            {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'好舒服的香气，不似花香，却似……唔，稻香——咦？这是谁的衣服？',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_pity.png','name':'少年','content':'看你衣衫破败，身体羸弱，这般躺在外面，若受寒得病，想来也是孤苦伶仃无人照拂，在下实在于心不忍，便解衣与你御寒。',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'儒生今日还要为生计操劳，若阁下已无大碍，儒生恕不远送。',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'少年','content':'你这住处还挺别致，只是此处潮湿阴寒，你又身体羸弱，长住下去似乎不妥吧。',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_light_angry.png','name':'唐如','content':'又是身……身体羸弱，好吧，这原是父亲留下的船只，去岁寒冬，海风卷了茅屋，未及修葺，便在此暂住，阁下不必担忧。',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'少年','content':'唔，仔细看去，这船的做工倒是不坏。',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_a.png','name':'少年','content':'哎呀，坏了坏了！劳烦陪在下再去一趟昨日的海滩，昨日晕倒之时，似乎落下了重要的东西呢。',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'……好吧。（看来捡了个大麻烦回家啊。）',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+        ],
+        next:'loading_3'
+    },
+    'loading_3':{
+        type:'loading',
+        repeat:true,
+        data:{
+            key:'battle_2'
+        },
+        next:'battle_withlittlecrab2'
+    },
+    'battle_withlittlecrab2':{
+        type:'battle',
+        repeat:false,
+        data:{
+            "role":["001","002"],
+            "bg":'images/bg/bg-beach.jpg',
+            "monster":[
+                [
+                    [{type:'crab',x:100,y:200},{type:'crab',x:100,y:200},{type:'crab',x:100,y:200}],
+                    [{type:'crab',x:100,y:200},{type:'crab',x:100,y:200},{type:'crab',x:100,y:200}]
+                ]
+            ]
+        },
+        next:'map_2'
+    },
+    'map_2':{
+        type:'map',
+        repeat:true,
+        data:{},
+        next:'dialogue_5'
+    },
+    'dialogue_5':{
+        type:'dialogue',
+        repeat:false,
+        data:[
+            {'avatar':'resources/images/dialogue/crab_boss.png','name':'大王蟹','content':'可恶，可恶的人类！侵我族类，不可饶恕！',position:'left',globalBg : 'resources/images/bg/bg-beach.jpg'},
+        ],
         next:'intro'
-    }
+    },
 };  
 
 //每个场景对应的需要预加载的资源列表
@@ -141,11 +223,29 @@ woh.g_config.resources = {
             'images/index/start-button-4.png',
 
             'images/dialogue/rio_tang_normal.png',
+            'images/dialogue/rio_tang_angry.png',
+            'images/dialogue/rio_tang_beauty_sup.png',
+            'images/dialogue/rio_tang_heavy.png',
+            'images/dialogue/rio_tang_light_angry.png',
+            'images/dialogue/rio_tang_smile.png',
+            'images/dialogue/rio_tang_sup.png',
+            'images/dialogue/rio_tang_wei.png',
+
             'images/dialogue/sola_cheng_normal.png',
+            'images/dialogue/sola_cheng_a.png',
+            'images/dialogue/sola_cheng_food.png',
+            'images/dialogue/sola_cheng_nature.png',
+            'images/dialogue/sola_cheng_pity.png',
+            'images/dialogue/sola_cheng_sigh.png',
+            
             'images/dialogue/UI-dialog-bg.png',
+
             'images/bg/bg-beach-dusk.jpg',
             'images/bg/bg-beach.jpg',
-            'images/bg/bg-boat-inner.jpg'
+            'images/bg/bg-boat-inner.jpg',
+            'images/bg/bg-boat-outer.jpg',
+
+            'images/cg/cg_1.jpg'
         ]
     },
     battle_1: {
@@ -233,7 +333,13 @@ woh.g_config.resources = {
 
             'images/monster/normal001-crab.png'
         ]
-    }
+    },
+    battle_2: {
+        type: 'battle',
+        resources: [
+            'images/bg/bg-beach.jpg',
+            ]
+        }
 };
 
 //衣服的动画数据
