@@ -90,6 +90,9 @@ woh.g_config.script={
                 // ]
                 [
                     [{type:'crab',x:100,y:200}],
+                    [{type:'crab',x:800,y:300},{type:'crab',x:300,y:500}],
+                    [{type:'crab',x:800,y:300},{type:'crab',x:300,y:500}],
+                    [{type:'crab',x:800,y:300},{type:'crab',x:300,y:500}],
                     [{type:'crab',x:800,y:300},{type:'crab',x:300,y:500}]
                 ],
             ]
@@ -1135,8 +1138,8 @@ woh.g_config.weapon={
 //怪物的数据
 woh.g_config.monsters = {
     "crab": {
-        "health":140,//血量
-        "damage":4,//攻击
+        "health":340,//血量
+        "damage":1,//攻击
         "defend":0,//防御
         "crit":0,//暴击
         "drop":['clothes','001',0.05],//掉落类型，掉落id，掉落概率
@@ -1243,8 +1246,8 @@ woh.g_config.monsters = {
         }]        
     },
     "crab_boss": {
-        "health":1400,//血量
-        "damage":10,//攻击
+        "health":2400,//血量
+        "damage":5,//攻击
         "defend":0,//防御
         "crit":0,//暴击
         "drop":['clothes','001',0.05],//掉落类型，掉落id，掉落概率

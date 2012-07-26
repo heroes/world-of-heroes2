@@ -13,6 +13,11 @@ Laro.NS('woh', function (L) {
         this.height = data.height;
         this.hpBarH=15;
 
+        Object.defineProperty(this,"force",{get:function(){
+            if(me.face == "right") return 20;
+            else if(me.face == "left") return -20;
+        }})
+
         Object.defineProperty(this,"left",{get:function(){
             return this.x - this.width/2;
         }})
@@ -242,7 +247,11 @@ Laro.NS('woh', function (L) {
             
         },
         hurted: function (damage) {
-            this.currentHP -= damage;
+            
+            this.currentHP -= damage.damage;
+            this.kickback = damage.force;
+            if(this.x<0) this.x=0;
+
             if(this.currentHP<=0) {
                 this.fsm.setState(woh.roleStates.dead);
                 this.brain.knowDie(this);
