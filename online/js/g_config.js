@@ -286,6 +286,7 @@ woh.g_config.resources = {
             
             'images/circle.png',
             'images/pie.png',
+            'images/shadow.png',
 
             //载入大地图资源
             'images/map/ava/rio_tang.png',

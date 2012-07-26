@@ -193,6 +193,7 @@ Laro.NS('woh', function (L) {
         draw: function (render) {
             var x = Math.floor(this.x), y = Math.floor(this.y),
                 me = this;
+            console.log(me.checkRect.width);
             this.curAnimation && this.curAnimation.forEach(function (o) { 
                 ((me.face == 'left' && !o.renderMirrored) || (me.face == 'right' && o.renderMirrored)) && o.mirror();
                 o.draw(render, x, y, 0, 1, null); 
