@@ -18,6 +18,8 @@ Laro.NS('woh', function (L) {
             return sprite instanceof woh.Monster;
         },
         updateMonsterTarget: function (monster) {
+            if (monster.locked)
+                return;
             var nearest = null;
             var nearestDistance = Infinity;
             var monsterPos = monster.getPos();
@@ -91,7 +93,7 @@ Laro.NS('woh', function (L) {
         },
         knowDie: function (obj) {
             if (this.isPlayer(obj))
-                this.players = this.players.filter(function (e) { return e!=obj });
+                this.players = this.players.filter(function (e) { return e != obj });
             if (this.isMonster(obj))
                 this.monsters = this.monsters.filter(function (e) { return e != obj });
         }

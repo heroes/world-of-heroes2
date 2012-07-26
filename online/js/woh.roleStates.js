@@ -69,16 +69,24 @@ Laro.NS('woh.roleStateClass', function (L) {
 
 
     var Attack = L.BaseState.extend(function () {
-        this.cooldown = 1000;
+        this.cooldown = this.host.cooldown;
     }).methods({
         enter: function (msg, from) {
-            this.host.setAndPlay('attack');
+            //this.cooldown += Math.floor(this.host.cooldown/3);
         },
         leave: function () { },
         update: function (dt) {
             this.cooldown -= dt * 1000;
+
+            if (this.cooldown <  this.host.cooldown-600) {
+                if(this.host.locked)
+                    this.host.setAndPlay('stand',false);
+                this.host.locked = false;
+            }
             if (this.cooldown < 0) {
-                this.cooldown += 1000;
+                this.host.setAndPlay('attack',false);
+                this.host.locked = true;
+                this.cooldown +=  this.host.cooldown;
                 this.host.stage.hurtArea(this.host.enemy, { top: this.host.damageArea.top, left: this.host.damageArea.left, bottom: this.host.damageArea.bottom, right: this.host.damageArea.right }, {
                     damage:this.host.damage,
                     attacker:this.host,
@@ -94,8 +102,10 @@ Laro.NS('woh.roleStateClass', function (L) {
 
     var Hurted = L.BaseState.extend(function () {
         this.cooldown = 200;
+        
     }).methods({
         enter: function (msg, from) {
+            this.host.locked = false;
             this.host.setAndPlay('hurted');
             this.cooldown = 200;
         },

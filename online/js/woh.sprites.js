@@ -13,9 +13,16 @@ Laro.NS('woh', function (L) {
         this.height = data.height;
         this.hpBarH=15;
 
+        if(data.cooldown)
+            this.cooldown = data.cooldown;
+        else this.cooldown = 1000;
+
         Object.defineProperty(this,"force",{get:function(){
-            if(me.face == "right") return 20;
-            else if(me.face == "left") return -20;
+            if(data.force)
+                var force = data.force;
+            else force = 10;
+            if(me.face == "right") return force;
+            else if(me.face == "left") return -force;
         }})
 
         Object.defineProperty(this,"left",{get:function(){
@@ -250,6 +257,10 @@ Laro.NS('woh', function (L) {
             
             this.currentHP -= damage.damage;
             this.kickback = damage.force;
+            if(damage.force>0) {
+                this.faceLeft();
+            }
+            else this.faceRight();
             if(this.x<0) this.x=0;
 
             if(this.currentHP<=0) {

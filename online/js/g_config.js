@@ -387,10 +387,10 @@ woh.g_config.clothes={
         },
         "attack":{
             "info": {
-                "nbrOfFrames": 4,
+                "nbrOfFrames": 5,
                 "name": "",
                 "type": "animation",
-                "framerate": 2,
+                "framerate": 4,
                 "pivotx": 100,
                 "pivoty": 75,
                 "events": []
@@ -399,7 +399,8 @@ woh.g_config.clothes={
                 [0,0,199,169,0,0,199,169],
                 [200,0,399,169,200,0,399,169],
                 [400,0,599,169,400,0,599,169],
-                [600,0,799,169,600,0,799,169]
+                [600,0,799,169,600,0,799,169],
+                [0,0,199,169,0,0,199,169]
             ],
             "filename": "images/sprites/clothes/001/none/attack.png"
         },
@@ -498,10 +499,10 @@ woh.g_config.clothes={
         },
         "attack":{
             "info": {
-                "nbrOfFrames": 4,
+                "nbrOfFrames": 5,
                 "name": "",
                 "type": "animation",
-                "framerate": 2,
+                "framerate": 4,
                 "pivotx": 100,
                 "pivoty": 75,
                 "events": []
@@ -510,7 +511,8 @@ woh.g_config.clothes={
                 [0,0,199,169,0,0,199,169],
                 [200,0,399,169,200,0,399,169],
                 [400,0,599,169,400,0,599,169],
-                [600,0,799,169,600,0,799,169]
+                [600,0,799,169,600,0,799,169],
+                [0,0,199,169,0,0,199,169]
             ],
             "filename": "images/sprites/clothes/001/001/attack.png"
         },
@@ -612,7 +614,7 @@ woh.g_config.clothes={
         },
         "attack": {
             "info": {
-                "nbrOfFrames": 2,
+                "nbrOfFrames": 3,
                 "name": "attack",
                 "type": "animation",
                 "framerate": 2,
@@ -622,7 +624,8 @@ woh.g_config.clothes={
             },
             "data": [
                 [0,0,341,209,0,0,341,209],
-                [342,0,683,209,342,0,683,209]
+                [342,0,683,209,342,0,683,209],
+                [0,0,341,209,0,0,341,209]
             ],
             "filename": "images/sprites/clothes/002/none/attack.png"
         },
@@ -719,7 +722,7 @@ woh.g_config.clothes={
         },
         "attack": {
             "info": {
-                "nbrOfFrames": 2,
+                "nbrOfFrames": 3,
                 "name": "attack",
                 "type": "animation",
                 "framerate": 2,
@@ -729,7 +732,8 @@ woh.g_config.clothes={
             },
             "data": [
                 [0,0,341,209,0,0,341,209],
-                [342,0,683,209,342,0,683,209]
+                [342,0,683,209,342,0,683,209],
+                [0,0,341,209,0,0,341,209]
             ],
             "filename": "images/sprites/clothes/002/003/attack.png"
         },
@@ -827,10 +831,10 @@ woh.g_config.weapon={
         },
         "attack":{
             "info": {
-                "nbrOfFrames": 4,
+                "nbrOfFrames": 5,
                 "name": "",
                 "type": "animation",
-                "framerate": 2,
+                "framerate": 4,
                 "pivotx": 100,
                 "pivoty": 75,
                 "events": []
@@ -839,7 +843,8 @@ woh.g_config.weapon={
                 [0,0,199,169,0,0,199,169],
                 [200,0,399,169,200,0,399,169],
                 [400,0,599,169,400,0,599,169],
-                [600,0,799,169,600,0,799,169]
+                [600,0,799,169,600,0,799,169],
+                [0,0,199,169,0,0,199,169]
             ],
             "filename": "images/sprites/weapon/001/attack.png"
         },
@@ -915,10 +920,10 @@ woh.g_config.weapon={
         },
         "attack":{
             "info": {
-                "nbrOfFrames": 4,
+                "nbrOfFrames": 5,
                 "name": "",
                 "type": "animation",
-                "framerate": 2,
+                "framerate": 4,
                 "pivotx": 100,
                 "pivoty": 75,
                 "events": []
@@ -927,7 +932,8 @@ woh.g_config.weapon={
                 [0,0,199,169,0,0,199,169],
                 [200,0,399,169,200,0,399,169],
                 [400,0,599,169,400,0,599,169],
-                [600,0,799,169,600,0,799,169]
+                [600,0,799,169,600,0,799,169],
+                [0,0,199,169,0,0,199,169]
             ],
             "filename": "images/sprites/weapon/002/attack.png"
         },
@@ -1003,7 +1009,7 @@ woh.g_config.weapon={
         }, 
         "attack": {
             "info": {
-                "nbrOfFrames": 2,
+                "nbrOfFrames": 3,
                 "name": "attack",
                 "type": "animation",
                 "framerate": 2,
@@ -1013,7 +1019,8 @@ woh.g_config.weapon={
             },
             "data": [
                 [0,0,341,209,0,0,341,209],
-                [342,0,683,209,342,0,683,209]
+                [342,0,683,209,342,0,683,209],
+                [0,0,341,209,0,0,341,209]
             ],
             "filename": "images/sprites/weapon/003/attack.png"
         },
@@ -1087,7 +1094,7 @@ woh.g_config.weapon={
         }, 
         "attack": {
             "info": {
-                "nbrOfFrames": 2,
+                "nbrOfFrames": 3,
                 "name": "attack",
                 "type": "animation",
                 "framerate": 2,
@@ -1097,7 +1104,8 @@ woh.g_config.weapon={
             },
             "data": [
                 [0,0,341,209,0,0,341,209],
-                [342,0,683,209,342,0,683,209]
+                [342,0,683,209,342,0,683,209],
+                [0,0,341,209,0,0,341,209]
             ],
             "filename": "images/sprites/weapon/004/attack.png"
         },
@@ -1194,7 +1202,7 @@ woh.g_config.monsters = {
         "attack": [
             {
                 "info": {
-                    "nbrOfFrames": 2,
+                    "nbrOfFrames": 3,
                     "name": "",
                     "type": "animation",
                     "framerate": 2,
@@ -1203,8 +1211,8 @@ woh.g_config.monsters = {
                     "events": []
                 },
                 "data": [
-                    [570,0,759,119,570,0,759,119],
-                    [190,0,379,119,190,0,379,119]
+                    [190,0,379,119,190,0,379,119],
+                    [570,0,759,119,570,0,759,119]
                 ],
                 "filename": "images/monster/normal001-crab.png"
             }
@@ -1307,8 +1315,8 @@ woh.g_config.monsters = {
                     "events": []
                 },
                 "data": [
-                    [296,0,591,206,296,0,591,206],
                     [592,0,887,206,592,0,887,206],
+                    [296,0,591,206,296,0,591,206]
                 ],
                 "filename": "images/monster/boss-crab.png"
             }
