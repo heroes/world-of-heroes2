@@ -189,8 +189,8 @@ woh.g_config.script={
             "bg":'images/bg/bg-beach.jpg',
             "monster":[
                 [
-                    [{type:'crab',x:100,y:200},{type:'crab',x:100,y:200},{type:'crab',x:100,y:200}],
-                    [{type:'crab',x:100,y:200},{type:'crab',x:100,y:200},{type:'crab',x:100,y:200}]
+                    [{type:'crab',x:100,y:200},{type:'crab',x:300,y:200},{type:'crab',x:500,y:200}],
+                    [{type:'crab',x:800,y:200},{type:'crab',x:700,y:200},{type:'crab',x:100,y:200}]
                 ]
             ]
         },
@@ -203,6 +203,34 @@ woh.g_config.script={
         next:'dialogue_5'
     },
     'dialogue_5':{
+        type:'dialogue',
+        repeat:false,
+        data:[
+            {'avatar':'resources/images/dialogue/crab_boss.png','name':'大王蟹','content':'可恶，可恶的人类！侵我族类，不可饶恕！',position:'left',globalBg : 'resources/images/bg/bg-beach.jpg'},
+        ],
+        next:'battle_withcrabboss'
+    },
+    'battle_withcrabboss':{
+        type:'battle',
+        repeat:true,
+        data:{
+            "role":["001","002"],
+            "bg":'images/bg/bg-beach.jpg',
+            "monster":[
+                [
+                    [{type:'crab_boss',x:100,y:200}]
+                ]
+            ]
+        },
+        next:'map_3'
+    },
+    'map_3':{
+        type:'map',
+        repeat:true,
+        data:{},
+        next:'dialogue_6'
+    },
+    'dialogue_6':{
         type:'dialogue',
         repeat:false,
         data:[
@@ -340,9 +368,10 @@ woh.g_config.resources = {
     battle_2: {
         type: 'battle',
         resources: [
-            'images/bg/bg-beach.jpg',
+                'images/bg/bg-beach.jpg',
+                'images/dialogue/crab_boss.png',
             ]
-        }
+    }
 };
 
 //衣服的动画数据
