@@ -27,7 +27,7 @@ Laro.NS('woh', function (L) {
         draw: function (render) {
             var x = Math.floor(this.x), y = Math.floor(this.y),
                 me = this;
-            render.context.drawImage(woh.loader.loadedImages['images/shadow.png'], this.x - 60, this.y+me.height/2-30);
+            render.context.drawImage(woh.loader.loadedImages['images/shadow.png'], this.x - 60, this.y+me.height/2-40);
             this.curAnimation && this.curAnimation.forEach(function (o) {
                 ((me.face == 'left' && !o.renderMirrored) || (me.face == 'right' && o.renderMirrored)) && o.mirror();
                 o.draw(render, x, y, 0, 1, null);
