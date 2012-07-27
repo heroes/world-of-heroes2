@@ -27,8 +27,8 @@ woh.g_config.script={
         type:'intro',//标记相应的stage类型
         repeat:true,//标记在流程中是否允许重复出现（即选关的时候是否会被再次触发）
         data:{},
-        next:'drama_1'
-        //next:'battle_withcrabboss'
+        //next:'drama_1'
+        next:'loading_2'
     }, 
     'drama_1':{
         type:'drama',//标记相应的stage类型
@@ -71,7 +71,8 @@ woh.g_config.script={
         data:{
             key: 'battle_1'
         },
-        next:'battle_withlittlecrab'
+        //next:'battle_withlittlecrab'
+        next:'loading_3'
     },
     'battle_withlittlecrab':{
         type:'battle',
@@ -180,7 +181,8 @@ woh.g_config.script={
         data:{
             key:'battle_2'
         },
-        next:'battle_withlittlecrab2'
+        //next:'battle_withlittlecrab2'
+        next:'battle_withcrabboss'
     },
     'battle_withlittlecrab2':{
         type:'battle',
@@ -276,6 +278,8 @@ woh.g_config.resources = {
             'images/bg/bg-beach.jpg',
             'images/bg/bg-boat-inner.jpg',
             'images/bg/bg-boat-outer.jpg',
+            'images/bg/btn-skip.png',
+            'images/bg/btn-skip2.png',
 
             'images/cg/cg_1.jpg'
         ]
@@ -1291,8 +1295,8 @@ woh.g_config.monsters = {
         "crit":0,//暴击
         "drop":['clothes','001',0.05],//掉落类型，掉落id，掉落概率
         "exp":20,//打死一只怪物获得的经验值
-        "width":296,
-        "height":207,
+        "width":200,
+        "height":100,
         "areadata": {
             standup: [0, 0, 190, 120],
             standdown: [0, 0, 190, 120]
@@ -1305,8 +1309,8 @@ woh.g_config.monsters = {
                     "name": "crab_boss",
                     "type": "animation",
                     "framerate": 2,
-                    "pivotx": 148,
-                    "pivoty": 103,
+                    "pivotx": 100,
+                    "pivoty": 123,
                     "events": []
                 },
                 "data": [
@@ -1323,8 +1327,8 @@ woh.g_config.monsters = {
                     "name": "crab_boss",
                     "type": "animation",
                     "framerate": 2,
-                    "pivotx": 148,
-                    "pivoty": 103,
+                    "pivotx": 100,
+                    "pivoty": 123,
                     "events": []
                 },
                 "data": [
@@ -1341,8 +1345,8 @@ woh.g_config.monsters = {
                     "name": "crab_boss",
                     "type": "animation",
                     "framerate": 2,
-                    "pivotx": 148,
-                    "pivoty": 103,
+                    "pivotx": 100,
+                    "pivoty": 123,
                     "events": []
                 },
                 "data": [
@@ -1359,8 +1363,8 @@ woh.g_config.monsters = {
                     "name": "crab_boss",
                     "type": "animation",
                     "framerate": 2,
-                    "pivotx": 148,
-                    "pivoty": 103,
+                    "pivotx": 100,
+                    "pivoty": 123,
                     "events": []
                 },
                 "data": [
@@ -1377,8 +1381,8 @@ woh.g_config.monsters = {
                     "name": "crab_boss",
                     "type": "animation",
                     "framerate": 2,
-                    "pivotx": 148,
-                    "pivoty": 103,
+                    "pivotx": 100,
+                    "pivoty": 123,
                     "events": []
                 },
                 "data": [
