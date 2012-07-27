@@ -1182,8 +1182,8 @@ woh.g_config.monsters = {
         "crit":0,//暴击
         "drop":['clothes','001',0.05],//掉落类型，掉落id，掉落概率
         "exp":20,//打死一只怪物获得的经验值
-        'width':190,
-        'height':120,
+        'width':124,
+        'height':74,
         "areadata": {
             standup: [0, 0, 190, 120],
             standdown: [0, 0, 190, 120]
@@ -1197,8 +1197,8 @@ woh.g_config.monsters = {
                     "name": "stand",
                     "type": "animation",
                     "framerate": 2,
-                    "pivotx": 100,
-                    "pivoty": 75,
+                    "pivotx": 70,
+                    "pivoty": 55,
                     "events": [
                             {name: 'standup', frame: 1}, //第一帧进入时触发
                             {name: 'standdown', frame: 2}//第二帧进入时触发
@@ -1218,8 +1218,8 @@ woh.g_config.monsters = {
                     "name": "",
                     "type": "animation",
                     "framerate": 2,
-                    "pivotx": 100,
-                    "pivoty": 85,
+                    "pivotx": 70,
+                    "pivoty": 55,
                     "events": []
                 },
                 "data": [
@@ -1236,8 +1236,8 @@ woh.g_config.monsters = {
                     "name": "",
                     "type": "animation",
                     "framerate": 2,
-                    "pivotx": 100,
-                    "pivoty": 85,
+                    "pivotx": 70,
+                    "pivoty": 55,
                     "events": []
                 },
                 "data": [
@@ -1254,8 +1254,8 @@ woh.g_config.monsters = {
                     "name": "hurted",
                     "type": "animation",
                     "framerate": 4,
-                    "pivotx": 100,
-                    "pivoty": 85,
+                    "pivotx": 70,
+                    "pivoty": 55,
                     "events": []
                 },
                 "data": [
@@ -1270,8 +1270,8 @@ woh.g_config.monsters = {
                 "name": "dead",
                 "type": "animation",
                 "framerate": 4,
-                "pivotx": 95,
-                "pivoty": 60,
+                "pivotx": 70,
+                "pivoty": 55,
                 "events": []
             },
             "data": [
