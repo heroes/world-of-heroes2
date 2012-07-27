@@ -27,8 +27,7 @@ woh.g_config.script={
         type:'intro',//标记相应的stage类型
         repeat:true,//标记在流程中是否允许重复出现（即选关的时候是否会被再次触发）
         data:{},
-        //next:'drama_1'
-        next:'loading_2'
+        next:'drama_1'
     }, 
     'drama_1':{
         type:'drama',//标记相应的stage类型
@@ -71,8 +70,7 @@ woh.g_config.script={
         data:{
             key: 'battle_1'
         },
-        //next:'battle_withlittlecrab'
-        next:'loading_3'
+        next:'battle_withlittlecrab'
     },
     'battle_withlittlecrab':{
         type:'battle',
@@ -170,7 +168,7 @@ woh.g_config.script={
             {'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'少年','content':'你这住处还挺别致，只是此处潮湿阴寒，你又身体羸弱，长住下去似乎不妥吧。',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
             {'avatar':'resources/images/dialogue/rio_tang_light_angry.png','name':'唐如','content':'又是身……身体羸弱，好吧，这原是父亲留下的船只，去岁寒冬，海风卷了茅屋，未及修葺，便在此暂住，阁下不必担忧。',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
             {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'少年','content':'唔，仔细看去，这船的做工倒是不坏。',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
-            {'avatar':'resources/images/dialogue/sola_cheng_a.png','name':'少年','content':'哎呀，坏了坏了！劳烦陪在下再去一趟昨日的海滩，昨日晕倒之时，似乎落下了重要的东西呢。',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_a.png','name':'少年','content':'哎呀，坏了坏了！赶快领我去一趟昨天的海滩，昨天晕倒的时候，似乎掉了很重要的东西呢。',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
             {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'……好吧。（看来捡了个大麻烦回家啊。）',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
         ],
         next:'loading_3'
@@ -181,8 +179,7 @@ woh.g_config.script={
         data:{
             key:'battle_2'
         },
-        //next:'battle_withlittlecrab2'
-        next:'battle_withcrabboss'
+        next:'battle_withlittlecrab2'
     },
     'battle_withlittlecrab2':{
         type:'battle',
@@ -237,7 +234,31 @@ woh.g_config.script={
         type:'dialogue',
         repeat:false,
         data:[
-            {'avatar':'resources/images/dialogue/crab_boss.png','name':'大王蟹','content':'可恶，可恶的人类！侵我族类，不可饶恕！',position:'left',globalBg : 'resources/images/bg/bg-beach.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'少年','content':'幸好幸好，没有损坏，这可是我一年的心血呢！',position:'left',globalBg : 'resources/images/bg/bg-beach.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'这是什么？《海味谱》？待我看看。',position:'right',globalBg : 'resources/images/bg/bg-beach.jpg'},
+             {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'……第三章，“蟹肉治法百种”，难怪那些螃蟹要攻击他。',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_a.png','name':'少年','content':'我决定了！',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'你决定了什么……喂喂喂，你在做什么？',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'少年','content':'我决定了，以后我来保护你，我们出海寻找人鱼去吧——对了，你叫什么名字？',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'儒生姓唐名如……等等，我为什么要被你保护……你在对别人的家做什么啊！',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'少年','content':'我叫程少非，赶快上船吧！',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'不不不，这不是钱的问题，就算你再往我手里塞金叶子我也不能把父亲留下来的……喂，不要自顾自地把人家的家开走啊！',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+        ],
+        next:'drama_4'
+    },
+    'drama_4':{
+        type:'drama',//标记相应的stage类型
+        repeat:false,
+        data:[
+            {
+                appear: 'auto',
+                data: [
+                        '就这样,',
+                        '唐如不情不愿地被少非拖着，',
+                        '开始了出海寻找人鱼的旅程。',
+                        '（第一章完）'   
+                ]
+            }
         ],
         next:'intro'
     },
