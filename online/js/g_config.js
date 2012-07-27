@@ -397,6 +397,7 @@ woh.g_config.resources = {
         resources: [
                 'images/bg/bg-beach.jpg',
                 'images/dialogue/crab_boss.png',
+                'images/monster/boss-crab.png'
             ]
     }
 };
