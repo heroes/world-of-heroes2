@@ -28,6 +28,7 @@ woh.g_config.script={
         repeat:true,//标记在流程中是否允许重复出现（即选关的时候是否会被再次触发）
         data:{},
         next:'drama_1'
+        //next:'battle_withcrabboss'
     }, 
     'drama_1':{
         type:'drama',//标记相应的stage类型
@@ -1176,7 +1177,7 @@ woh.g_config.weapon={
 //怪物的数据
 woh.g_config.monsters = {
     "crab": {
-        "health":340,//血量
+        "health":40,//血量
         "damage":1,//攻击
         "defend":0,//防御
         "crit":0,//暴击
@@ -1284,14 +1285,14 @@ woh.g_config.monsters = {
         }]        
     },
     "crab_boss": {
-        "health":2400,//血量
+        "health":100,//血量
         "damage":5,//攻击
         "defend":0,//防御
         "crit":0,//暴击
         "drop":['clothes','001',0.05],//掉落类型，掉落id，掉落概率
         "exp":20,//打死一只怪物获得的经验值
-        'width':296,
-        'height':207,
+        "width":296,
+        "height":207,
         "areadata": {
             standup: [0, 0, 190, 120],
             standdown: [0, 0, 190, 120]
