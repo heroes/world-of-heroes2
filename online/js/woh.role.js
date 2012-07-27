@@ -44,7 +44,7 @@
                     this.y = y - this.height/2;
                 };
 
-                this.setPos(me.x, me.y);
+                this.setPos(me.x, me.y); 
                 // this.draw = function (rd) {
                 //      rd.drawRect(0, 0, this.width, this.height, '#000');
                 // }
@@ -61,9 +61,9 @@
         draw: function (render) {
             var x = Math.floor(this.x), y = Math.floor(this.y),
                 me = this;
-            render.context.drawImage(woh.loader.loadedImages['images/shadow.png'], this.x - me.width/2, this.y+me.height/2-40);
+            render.context.drawImage(woh.loader.loadedImages['images/shadow.png'], this.x - 60, this.y+me.height/2-40);
             if (this.canMove) {
-                render.context.drawImage(woh.loader.loadedImages['images/circle.png'], this.x - me.checkRect.width/2, this.y+me.checkRect.height/2-30);
+                render.context.drawImage(woh.loader.loadedImages['images/circle.png'], this.x - 55, this.y+me.checkRect.height/2-30);
                 render.context.drawImage(woh.loader.loadedImages['images/pie.png'], woh.STAGE_MOUSE_POS.x - 38, woh.STAGE_MOUSE_POS.y - 23);
                 render.drawLine(this.x, this.y+me.checkRect.height/2, woh.STAGE_MOUSE_POS.x, woh.STAGE_MOUSE_POS.y, '#fff')
             }
@@ -71,6 +71,7 @@
                 ((me.face == 'left' && !o.renderMirrored) || (me.face == 'right' && o.renderMirrored)) && o.mirror();
                 o.draw(render, x, y, 0, 1, null);
             });
+            render.drawRect(me.x-me.width/2, me.y-me.height/2, me.x+me.width/2, me.y+me.height/2, '#000');
             this.drawHPBar(render);
             //console.log(ctx);
         },
