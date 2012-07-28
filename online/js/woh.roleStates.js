@@ -78,7 +78,7 @@ Laro.NS('woh.roleStateClass', function (L) {
         update: function (dt) {
             this.cooldown -= dt * 1000;
 
-            if (this.cooldown <  this.host.cooldown-600) {
+            if (this.cooldown <  this.host.cooldown-800) {
                 if(this.host.locked)
                     this.host.setAndPlay('stand',false);
                 this.host.locked = false;
@@ -86,13 +86,7 @@ Laro.NS('woh.roleStateClass', function (L) {
             if (this.cooldown < 0) {
                 this.host.setAndPlay('attack',false);
                 this.host.locked = true;
-                this.cooldown +=  this.host.cooldown;
-                this.host.stage.hurtArea(this.host.enemy, { top: this.host.damageArea.top, left: this.host.damageArea.left, bottom: this.host.damageArea.bottom, right: this.host.damageArea.right }, {
-                    damage:this.host.damage,
-                    attacker:this.host,
-                    force:this.host.force,
-                });
-               
+                this.cooldown +=  this.host.cooldown;              
             }
         },
         transition: function () { },

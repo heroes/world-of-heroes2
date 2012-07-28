@@ -82,28 +82,25 @@ Laro.NS('woh', function (L) {
         var me =this;
         this.damageArea = {
             get top() {
-                //if(me.face == "right")
-                    //return data.damageArea[1] + me.y - me.height/2;
-                //else if(me.face == "left")
-                    return data.damageArea[1] + me.y + me.height/2;
+
+                    return data.damageArea[1] + me.y;
             },
             get bottom() {
-                //if(me.face == "right")
-                    //return data.damageArea[3] + me.y - me.height/2;
-                //else if(me.face == "left")
-                    return data.damageArea[3] + me.y + me.height/2;
-                },
+
+                    return data.damageArea[3] + me.y;
+
+            },
             get left() {
                 if(me.face == "right")
-                    return data.damageArea[0] + me.x - me.width/2;
+                    return data.damageArea[0] + me.x;
                 else if(me.face == "left")
-                    return -data.damageArea[2] + me.x + me.width/2;
+                    return -data.damageArea[2] + me.x;
             },
             get right() {
                 if(me.face == "right")
-                    return data.damageArea[2] + me.x - me.width/2;
+                    return data.damageArea[2] + me.x;
                 else if(me.face == "left")
-                    return -data.damageArea[0] + me.x + me.width/2;
+                    return -data.damageArea[0] + me.x;
             }
         }
 
@@ -177,6 +174,13 @@ Laro.NS('woh', function (L) {
                 case "standdown":
                     //with(this.getPos())
                          //this.stage.registerHurtableObject(me,me.data["areadata"]["standdown"],{x:x-82,y:y-120});
+                    break;
+                case "attack_affect":
+                    this.stage.hurtArea(this.enemy, this.damageArea, {
+                        damage:this.damage,
+                        attacker:this,
+                        force:this.force,
+                    });
                     break;
                 case "end_attack" : this.endAttack(); break;
             }

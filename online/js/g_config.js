@@ -89,11 +89,7 @@ woh.g_config.script={
                 //     [{type:'crab_boss',x:100,y:200}]
                 // ]
                 [
-                    [{type:'crab',x:100,y:200}],
-                    [{type:'crab',x:800,y:300},{type:'crab',x:300,y:500}],
-                    [{type:'crab',x:800,y:300},{type:'crab',x:300,y:500}],
-                    [{type:'crab',x:800,y:300},{type:'crab',x:300,y:500}],
-                    [{type:'crab',x:800,y:300},{type:'crab',x:300,y:500}]
+                    [{type:'crab',x:100,y:200}]
                 ],
             ]
         },
@@ -503,7 +499,7 @@ woh.g_config.clothes={
                 "framerate": 4,
                 "pivotx": 100,
                 "pivoty": 85,
-                "events": []
+                "events": [{name: 'attack_affect', frame: 4}]
             },
             "data": [
                 [0,0,199,169,0,0,199,169],
@@ -677,7 +673,7 @@ woh.g_config.clothes={
                 "framerate": 2,
                 "pivotx": 171,
                 "pivoty": 130,
-                "events": []
+                "events": [{name: 'attack_affect', frame: 2}]
             },
             "data": [
                 [0,0,341,209,0,0,341,209],
@@ -1215,11 +1211,12 @@ woh.g_config.monsters = {
         "exp":20,//打死一只怪物获得的经验值
         'width':124,
         'height':74,
+        'cooldown':2000,
         "areadata": {
             standup: [0, 0, 190, 120],
             standdown: [0, 0, 190, 120]
         },
-        "damageArea":[113,0,113+78,101],
+        "damageArea":[0,-45,100,30],
         "stand": [
         // role
                 {
@@ -1269,7 +1266,9 @@ woh.g_config.monsters = {
                     "framerate": 2,
                     "pivotx": 70,
                     "pivoty": 55,
-                    "events": []
+                    "events": [
+                            {name: 'attack_affect', frame: 2}
+                        ]
                 },
                 "data": [
                     [190,0,379,119,190,0,379,119],
@@ -1327,7 +1326,7 @@ woh.g_config.monsters = {
             standup: [0, 0, 190, 120],
             standdown: [0, 0, 190, 120]
         },
-        "damageArea":[106,0,106+189,142],
+        "damageArea":[0,-45,100,30],
         "stand": [
             {
                 "info": {
@@ -1337,7 +1336,7 @@ woh.g_config.monsters = {
                     "framerate": 2,
                     "pivotx": 100,
                     "pivoty": 123,
-                    "events": []
+                    "events": [{name: 'attack_affect', frame: 2}]
                 },
                 "data": [
                     [592,0,887,206,592,0,887,206],
@@ -1433,7 +1432,7 @@ woh.role_init_data={
         'weapon':'001',//武器编号
         'clothes':'001',//衣服编号,none表示裸奔
         'skill_point':0,//剩余技能点
-        'damageArea':[120,-90,180,0],
+        'damageArea':[20,-45,80,45],
         'skill_list':{
             '001':0, 
             '002':0,
@@ -1455,7 +1454,9 @@ woh.role_init_data={
         'exp':1300,//当前经验值
         'weapon':'003',//武器编号
         'clothes':'003',//衣服编号
-        'damageArea':[120,-90,180,0],
+        'damageArea':[20,-15,180,65],
+        'force':90,
+        'cooldown':2000,
         'skill_point':3,
         'skill_list':{
             '005':1,
