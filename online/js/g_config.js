@@ -1911,6 +1911,126 @@ woh.g_config.skill_effect={
             "filename": "images/sprites/skilleffect/002.png"
         }
     },
+    "003":{
+        "stand": {
+            "info": {
+                "nbrOfFrames": 4,
+                "name": "stand",
+                "type": "animation",
+                "framerate": 4,
+                "pivotx": 150,
+                "pivoty": 150,
+                "events": []
+            },
+            "data": [
+                [0,0,299,299,0,0,299,299],
+                [300,0,599,299,300,0,599,299],
+                [600,0,899,299,600,0,899,299],
+                [900,0,1199,299,900,0,1199,299]
+            ],
+            "filename": "images/sprites/skilleffect/003.png"
+        }
+    },
+    "004":{
+        "stand": {
+            "info": {
+                "nbrOfFrames": 8,
+                "name": "",
+                "type": "animation",
+                "framerate": 4,
+                "pivotx": 65,
+                "pivoty": 150,
+                "events": []
+            },
+            "data": [
+                [0,0,130,299,0,0,130,299],
+                [131,0,261,299,131,0,261,299],
+                [262,0,392,299,262,0,392,299],
+                [393,0,523,299,393,0,523,299],
+                [524,0,654,299,524,0,654,299],
+                [655,0,785,299,655,0,785,299],
+                [786,0,916,299,786,0,916,299],
+                [917,0,1047,299,917,0,1047,299]
+            ],
+            "filename": "images/sprites/skilleffect/004.png"
+        }       
+    },
+    "005":{
+        "stand": {
+            "info": {
+                "nbrOfFrames": 3,
+                "name": "stand",
+                "type": "animation",
+                "framerate": 4,
+                "pivotx": 171,
+                "pivoty": 170,
+                "events": []
+            },
+            "data": [
+                [0,0,341,339,0,0,341,339],
+                [342,0,683,339,342,0,683,339],
+                [684,0,1025,339,684,0,1025,339]
+            ],
+            "filename": "images/sprites/skilleffect/005.png"
+        }        
+    },
+    "006":{
+        "stand": {
+            "info": {
+                "nbrOfFrames": 3,
+                "name": "stand",
+                "type": "animation",
+                "framerate": 3,
+                "pivotx": 171,
+                "pivoty": 105,
+                "events": []
+            },
+            "data": [
+                [0,0,341,209,0,0,341,209],
+                [342,0,683,209,342,0,683,209],
+                [684,0,1025,209,684,0,1025,209]
+            ],
+            "filename": "images/sprites/skilleffect/006.png"
+        }
+    },
+    "007":{
+        "stand": {
+            "info": {
+                "nbrOfFrames": 3,
+                "name": "stand",
+                "type": "animation",
+                "framerate": 4,
+                "pivotx": 171,
+                "pivoty": 170,
+                "events": []
+            },
+            "data": [
+                [0,0,341,339,0,0,341,339],
+                [342,0,683,339,342,0,683,339],
+                [684,0,1025,339,684,0,1025,339]
+            ],
+            "filename": "images/sprites/skilleffect/007.png"
+        }       
+    },
+    "008":{
+        "stand": {
+            "info": {
+                "nbrOfFrames": 3,
+                "name": "stand",
+                "type": "animation",
+                "framerate": 10,
+                "pivotx": 171,
+                "pivoty": 170,
+                "events": []
+            },
+            "data": [
+                [0,0,341,339,0,0,341,339],
+                [342,0,683,339,342,0,683,339],
+                [684,0,1025,339,684,0,1025,339]
+            ],
+            "filename": "images/sprites/skilleffect/008.png"
+        }        
+    }
 }
 
 //console.log(role_data);
