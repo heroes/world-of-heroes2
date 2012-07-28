@@ -239,10 +239,10 @@ Laro.NS('woh', function (L) {
             this.fsm.setState(woh.roleStates.stand);
         },
         moveTo: function (x, y) {
-            var me=this;
+            var me=this; 
             x > this.x ? this.faceRight() : this.faceLeft();
             this.toPos = {x: x, y: y-me.data['height']/2};
-            if(this.fsm.getCurrentState().stateId != woh.roleStates.run )
+            if(this.fsm.getCurrentState().stateId != woh.roleStates.run)
                 this.fsm.setState(woh.roleStates.run);
         },
         normalAttack: function () {
