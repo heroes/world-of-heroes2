@@ -82,15 +82,15 @@ Laro.NS('woh', function (L) {
         var me =this;
         this.damageArea = {
             get top() {
-                if(me.face == "right")
-                    return data.damageArea[1] + me.y - me.height/2;
-                else if(me.face == "left")
+                //if(me.face == "right")
+                    //return data.damageArea[1] + me.y - me.height/2;
+                //else if(me.face == "left")
                     return data.damageArea[1] + me.y + me.height/2;
             },
             get bottom() {
-                if(me.face == "right")
-                    return data.damageArea[3] + me.y - me.height/2;
-                else if(me.face == "left")
+                //if(me.face == "right")
+                    //return data.damageArea[3] + me.y - me.height/2;
+                //else if(me.face == "left")
                     return data.damageArea[3] + me.y + me.height/2;
                 },
             get left() {
