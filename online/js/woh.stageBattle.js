@@ -40,7 +40,7 @@ Laro.NS('woh.stageClass', function (L) {
             data['role'].forEach(function (roleId) {
                 woh.runtime.activeRole.push(woh.runtime.role[roleId]);
                 me.roles.add(roleId, new woh.Role(woh.runtime.role[roleId], me.aiController));
-                me.roles.get(roleId).setPos(400 - 120 * i++, 300);
+                me.roles.get(roleId).setPos(400 - 120 * i++, 300-(i%2)*120);
                 me.roles.get(roleId).stage = me;
             });
 
@@ -72,8 +72,6 @@ Laro.NS('woh.stageClass', function (L) {
                 }
                 startWave(0);
             })
-
-
             // this.roles.add('001', new woh.Role(woh.runtime.role['001'], this.aiController));
             // this.roles.get('001').setPos(100, 400);
             // this.roles.get('001').stage = this;
