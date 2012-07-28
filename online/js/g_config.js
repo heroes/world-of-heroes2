@@ -653,7 +653,7 @@ woh.g_config.clothes={
                 "nbrOfFrames": 4,
                 "name": "run",
                 "type": "animation",
-                "framerate": 2,
+                "framerate": 4,
                 "pivotx": 171,
                 "pivoty": 130,
                 "events": [
@@ -671,7 +671,7 @@ woh.g_config.clothes={
         },
         "attack": {
             "info": {
-                "nbrOfFrames": 3,
+                "nbrOfFrames": 4,
                 "name": "attack",
                 "type": "animation",
                 "framerate": 2,
@@ -681,6 +681,7 @@ woh.g_config.clothes={
             },
             "data": [
                 [0,0,341,209,0,0,341,209],
+                [342,0,683,209,342,0,683,209],
                 [342,0,683,209,342,0,683,209],
                 [0,0,341,209,0,0,341,209]
             ],
@@ -764,7 +765,7 @@ woh.g_config.clothes={
                 "nbrOfFrames": 4,
                 "name": "run",
                 "type": "animation",
-                "framerate": 2,
+                "framerate": 4,
                 "pivotx": 171,
                 "pivoty": 130,
                 "events": []
@@ -779,7 +780,7 @@ woh.g_config.clothes={
         },
         "attack": {
             "info": {
-                "nbrOfFrames": 3,
+                "nbrOfFrames": 4,
                 "name": "attack",
                 "type": "animation",
                 "framerate": 2,
@@ -789,6 +790,7 @@ woh.g_config.clothes={
             },
             "data": [
                 [0,0,341,209,0,0,341,209],
+                [342,0,683,209,342,0,683,209],
                 [342,0,683,209,342,0,683,209],
                 [0,0,341,209,0,0,341,209]
             ],
@@ -1051,7 +1053,7 @@ woh.g_config.weapon={
                 "nbrOfFrames": 4,
                 "name": "run",
                 "type": "animation",
-                "framerate": 2,
+                "framerate": 4,
                 "pivotx": 171,
                 "pivoty": 130,
                 "events": []
@@ -1066,7 +1068,7 @@ woh.g_config.weapon={
         }, 
         "attack": {
             "info": {
-                "nbrOfFrames": 3,
+                "nbrOfFrames": 4,
                 "name": "attack",
                 "type": "animation",
                 "framerate": 2,
@@ -1076,6 +1078,7 @@ woh.g_config.weapon={
             },
             "data": [
                 [0,0,341,209,0,0,341,209],
+                [342,0,683,209,342,0,683,209],
                 [342,0,683,209,342,0,683,209],
                 [0,0,341,209,0,0,341,209]
             ],
@@ -1136,7 +1139,7 @@ woh.g_config.weapon={
                 "nbrOfFrames": 4,
                 "name": "run",
                 "type": "animation",
-                "framerate": 2,
+                "framerate": 4,
                 "pivotx": 171,
                 "pivoty": 130,
                 "events": []
@@ -1161,6 +1164,7 @@ woh.g_config.weapon={
             },
             "data": [
                 [0,0,341,209,0,0,341,209],
+                [342,0,683,209,342,0,683,209],
                 [342,0,683,209,342,0,683,209],
                 [0,0,341,209,0,0,341,209]
             ],
@@ -1244,7 +1248,7 @@ woh.g_config.monsters = {
                     "nbrOfFrames": 2,
                     "name": "",
                     "type": "animation",
-                    "framerate": 2,
+                    "framerate": 4,
                     "pivotx": 70,
                     "pivoty": 55,
                     "events": []
@@ -1345,10 +1349,10 @@ woh.g_config.monsters = {
         "run": [
             {
                 "info": {
-                    "nbrOfFrames": 6,
+                    "nbrOfFrames": 2,
                     "name": "crab_boss",
                     "type": "animation",
-                    "framerate": 2,
+                    "framerate": 4,
                     "pivotx": 100,
                     "pivoty": 123,
                     "events": []
@@ -1451,7 +1455,7 @@ woh.role_init_data={
         'exp':1300,//当前经验值
         'weapon':'003',//武器编号
         'clothes':'003',//衣服编号
-        'damageArea':[120,170,180,260],
+        'damageArea':[120,-90,180,0],
         'skill_point':3,
         'skill_list':{
             '005':1,
