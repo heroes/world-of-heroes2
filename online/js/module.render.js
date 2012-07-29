@@ -507,6 +507,27 @@
             _doc.querySelector('#skill-manage .skill-list').innerHTML=items;    
         }
     };
+    var battleCount = _win.battleCount={
+        tpl:function(){
+            return "<div class='battle-count'></div>"
+        },
+        init:function(){
+            _doc.querySelector('.battle-module .mask').innerHTML=this.tpl(); 
+            _doc.querySelector('.battle-module .mask').style.display="block";
+            this.bind();
+        },
+        bind:function(){
+            var me=this;
+            _doc.querySelector('.battle-module .mask .battle-count').addEventListener('click',function(){
+                woh.util.fadeOut(woh.els.canvasWrap);
+                me.hide();
+            },false);
+        },
+        hide:function(){
+            _doc.querySelector('.battle-module .mask').innerHTML="";
+            _doc.querySelector('.battle-module .mask').style.display="none";
+        }
+    };
     Map.init();
     Intro.init();
     CG.init();

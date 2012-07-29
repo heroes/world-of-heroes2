@@ -75,7 +75,7 @@ Laro.NS('woh.stageClass', function (L) {
         },
         leave: function () {
             woh.log('leave stage [battle]');
-            woh.util.fadeOut(woh.els.canvasWrap);
+            battleCount.init();
             this.roles.remove();
         },
         update: function (dt) {

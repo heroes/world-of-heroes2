@@ -200,7 +200,20 @@ margin-top:420px;}
     border:5px solid black;
     box-shadow: 0 0 10px black;
 }
-
+.battle-module .mask{
+	width: 100%;
+	height: 100%;
+	display: none;
+	position: absolute;
+	background: rgba(0,0,0,.8);
+	z-index: 2;
+}
+.battle-module .mask .battle-count{
+	width: 652px;
+	height: 514px;
+	margin: 30px auto;
+	background: url(../resources/images/count/count-bg.png) no-repeat;
+}
 .opacity-anim {
     -webkit-transition: opacity 0.5s ease;
     -moz-transition: opacity 0.5s ease;
