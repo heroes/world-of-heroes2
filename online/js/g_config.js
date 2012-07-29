@@ -21,8 +21,8 @@ woh.g_config.script={
         data:{
             key:'intro'
         },
-        //next:'intro'
-        next:'loading_2'
+        next:'intro'
+        //next:'loading_2'
     },
     'intro':{
         type:'intro',//标记相应的stage类型
@@ -447,7 +447,7 @@ woh.g_config.clothes={
                 "framerate": 4,
                 "pivotx": 100,
                 "pivoty": 75,
-                "events": []
+                "events": [{name: 'attack_affect', frame: 4}]
             },
             "data": [
                 [0,0,199,169,0,0,199,169],
@@ -500,7 +500,7 @@ woh.g_config.clothes={
                 "framerate": 4,
                 "pivotx": 100,
                 "pivoty": 85,
-                "events": [{name: 'attack_affect', frame: 4}]
+                "events": []
             },
             "data": [
                 [0,0,199,169,0,0,199,169],
@@ -559,7 +559,7 @@ woh.g_config.clothes={
                 "framerate": 4,
                 "pivotx": 100,
                 "pivoty": 75,
-                "events": []
+                "events": [{name: 'attack_affect', frame: 4}]
             },
             "data": [
                 [0,0,199,169,0,0,199,169],
@@ -671,7 +671,7 @@ woh.g_config.clothes={
                 "framerate": 4,
                 "pivotx": 100,
                 "pivoty": 75,
-                "events": []
+                "events": [{name: 'attack_affect', frame: 4}]
             },
             "data": [
                 [0,0,199,169,0,0,199,169],
@@ -895,7 +895,7 @@ woh.g_config.clothes={
                 "framerate": 2,
                 "pivotx": 171,
                 "pivoty": 130,
-                "events": []
+                "events": [{name: 'attack_affect', frame: 2}]
             },
             "data": [
                 [0,0,341,209,0,0,341,209],
@@ -1373,7 +1373,7 @@ woh.g_config.monsters = {
         "attack": [
             {
                 "info": {
-                    "nbrOfFrames": 3,
+                    "nbrOfFrames": 2,
                     "name": "",
                     "type": "animation",
                     "framerate": 2,

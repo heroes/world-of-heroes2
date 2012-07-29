@@ -164,7 +164,7 @@ Laro.NS('woh', function (L) {
         },
         onAnimationEvent: function (evt, anim) {
             var me = this;
-            
+            console.log(evt,"敌人是"+this.enemy,this.damage);
             switch (evt) {
                 case "stopped" : this.fsm.message(woh.roleMessages.animStopped); break;
                 case "standup": 
@@ -259,7 +259,8 @@ Laro.NS('woh', function (L) {
             
         },
         hurted: function (damage) {
-            
+            console.log("伤害",damage.damage);
+            console.log("伤害来源",this.enemy);
             this.currentHP -= damage.damage;
             this.kickback = damage.force;
             if(damage.force>0) {
