@@ -623,6 +623,118 @@ woh.g_config.clothes={
             ],
             "filename": "images/sprites/clothes/001/001/dead.png"
         }        
+    },
+    '002':{
+        "stand":{
+            "info": {
+                "nbrOfFrames": 2,
+                "name": "stand",
+                "type": "animation",
+                "framerate": 2,
+                "pivotx": 100,
+                "pivoty": 75,
+                "events": [
+                    {name:'standup',frame:1},//第一帧进入时触发
+                    {name:'standdown',frame:2}//第二帧进入时触发
+                ]
+            },
+            "data": [
+                [0,0,199,169,0,0,199,169],
+                [200,0,399,169,200,0,399,169]
+            ],
+            "filename": "images/sprites/clothes/001/002/stand.png"
+        }, 
+        "run":{
+            "info": {
+                "nbrOfFrames": 4,
+                "name": "",
+                "type": "animation",
+                "framerate": 4,
+                "pivotx": 100,
+                "pivoty": 75,
+                "events": []
+            },
+            "data": [
+                [0,0,199,169,0,0,199,169],
+                [200,0,399,169,200,0,399,169],
+                [400,0,599,169,400,0,599,169],
+                [600,0,799,169,600,0,799,169]
+            ],
+            "filename": "images/sprites/clothes/001/002/run.png"
+        },
+        "attack":{
+            "info": {
+                "nbrOfFrames": 5,
+                "name": "",
+                "type": "animation",
+                "framerate": 4,
+                "pivotx": 100,
+                "pivoty": 75,
+                "events": []
+            },
+            "data": [
+                [0,0,199,169,0,0,199,169],
+                [200,0,399,169,200,0,399,169],
+                [400,0,599,169,400,0,599,169],
+                [600,0,799,169,600,0,799,169],
+                [0,0,199,169,0,0,199,169]
+            ],
+            "filename": "images/sprites/clothes/001/002/attack.png"
+        },
+        "hurted": {
+            "info": {
+                "nbrOfFrames": 2,
+                "name": "hurted",
+                "type": "animation",
+                "framerate": 4,
+                "pivotx": 100,
+                "pivoty": 75,
+                "events": []
+            },
+            "data": [
+                [0,0,199,169,0,0,199,169],
+                [200,0,399,169,200,0,399,169]
+            ],
+            "filename": "images/sprites/clothes/001/002/hurted.png"
+        },
+        "magic": {
+            "info": {
+                "nbrOfFrames": 4,
+                "name": "magic",
+                "type": "animation",
+                "framerate": 4,
+                "pivotx": 100,
+                "pivoty": 75,
+                "events": []
+            },
+            "data": [
+                [0,0,199,169,0,0,199,169],
+                [200,0,399,169,200,0,399,169],
+                [400,0,599,169,400,0,599,169],
+                [600,0,799,169,600,0,799,169]
+            ],
+            "filename": "images/sprites/clothes/001/002/magic.png"
+        },
+        "dead": {
+            "info": {
+                "nbrOfFrames": 6,
+                "name": "dead",
+                "type": "animation",
+                "framerate": 4,
+                "pivotx": 100,
+                "pivoty": 85,
+                "events": []
+            },
+            "data": [
+                [0,0,199,169,0,0,199,169],
+                [200,0,399,169,200,0,399,169],
+                [400,0,599,169,400,0,599,169],
+                [600,0,799,169,600,0,799,169],
+                [400,0,599,169,400,0,599,169],
+                [600,0,799,169,600,0,799,169],
+            ],
+            "filename": "images/sprites/clothes/001/002/dead.png"
+        }        
     }, 
     '002_none':{
         "stand": {
