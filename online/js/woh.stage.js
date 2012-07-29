@@ -46,7 +46,7 @@ Laro.NS('woh.stage', function (L) {
         function onPressEnd (x, y) {
             if (x < 0) x = 0;
             if (x > woh.els.canvas.width) x = woh.els.canvas.width;
-            if (y < 0) x = 0;
+            if (y < 250) y = 250;
             if (y > woh.els.canvas.height) y = woh.els.canvas.height;
             if (woh.currentRoleGroup) {
                 var r = woh.currentRoleGroup.getOneCanMove();
@@ -57,7 +57,7 @@ Laro.NS('woh.stage', function (L) {
         function onPressMove (x, y) {
             if (x < 0) x = 0;
             if (x > woh.els.canvas.width) x = woh.els.canvas.width;
-            if (y < 0) x = 0;
+            if (y < 250) y = 250;
             if (y > woh.els.canvas.height) y = woh.els.canvas.height;
             woh.STAGE_MOUSE_POS = { x: x, y: y };
         }
