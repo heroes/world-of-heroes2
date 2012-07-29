@@ -1699,8 +1699,8 @@ woh.item_data={
         'clothes':{
             'none':{},
             '001':{
-                'name':'粗布衣',
-                'description':'旧衣店出售的破旧衣服,上面还打了几个补丁。',
+                'name':'百家布衣',
+                'description':'各种布料东拼西凑而成的寒酸衣服，穷苦人家的穿着。',
                 'icon':'./resources/images/map/items/c_001.png',
                 'modal':['resources/images/sprites/clothes/001/001/stand.png',200,170],
                 'health':0,
@@ -1712,7 +1712,7 @@ woh.item_data={
             '002':{
                 'name':'云锦深衣',
                 'description':'看起来是高级武将使用的样式，但已十分破旧，上有云锦纹路，据说有护持作用。',
-                'icon':'./resources/images/map/items/c_001.png',
+                'icon':'./resources/images/map/items/c_002.png',
                 'modal':['resources/images/sprites/clothes/001/001/stand.png',200,170],
                 'health':0,
                 'attack':10,
