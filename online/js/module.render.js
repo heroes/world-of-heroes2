@@ -511,10 +511,11 @@
         tpl:function(){
             return "<div class='battle-count'></div>"
         },
-        init:function(){
+        init:function(data){
             _doc.querySelector('.battle-module .mask').innerHTML=this.tpl(); 
             _doc.querySelector('.battle-module .mask').style.display="block";
             this.bind();
+            this.initData(data);
         },
         bind:function(){
             var me=this;
@@ -526,6 +527,10 @@
         hide:function(){
             _doc.querySelector('.battle-module .mask').innerHTML="";
             _doc.querySelector('.battle-module .mask').style.display="none";
+        },
+        //渲染界面数据
+        initData:function(data){
+            
         }
     };
     Map.init();
