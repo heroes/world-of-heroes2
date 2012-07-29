@@ -314,6 +314,7 @@ woh.g_config.resources = {
             'images/map/ava/rio_tang.png',
             'images/map/ava/shaofei_cheng.png',
             'images/map/items/c_001.png',
+            'images/map/items/c_002.png',
             'images/map/items/c_003.png',
             'images/map/items/c_005.png',
             'images/map/items/w_001.png',
