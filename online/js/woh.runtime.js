@@ -38,6 +38,7 @@ Laro.NS('woh.runtime', function (L) {
         this.packageItems.push(['weapon','003']);
         this.packageItems.push(['weapon','004']);
         this.packageItems.push(['clothes','001']);
+        this.packageItems.push(['clothes','002']);
         this.packageItems.push(['clothes','003']);
         this.packageItems.push(['clothes','005']);
     }
