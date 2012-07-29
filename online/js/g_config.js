@@ -347,6 +347,13 @@ woh.g_config.resources = {
             'images/sprites/clothes/001/001/run.png',
             'images/sprites/clothes/001/001/dead.png',
 
+            'images/sprites/clothes/001/002/attack.png',
+            'images/sprites/clothes/001/002/hurted.png',
+            'images/sprites/clothes/001/002/magic.png',
+            'images/sprites/clothes/001/002/stand.png',
+            'images/sprites/clothes/001/002/run.png',
+            'images/sprites/clothes/001/002/dead.png',
+
             'images/sprites/clothes/002/none/attack.png',
             'images/sprites/clothes/002/none/hurted.png',
             'images/sprites/clothes/002/none/magic.png',
@@ -1713,7 +1720,7 @@ woh.item_data={
                 'name':'云锦深衣',
                 'description':'看起来是高级武将使用的样式，但已十分破旧，上有云锦纹路，据说有护持作用。',
                 'icon':'./resources/images/map/items/c_002.png',
-                'modal':['resources/images/sprites/clothes/001/001/stand.png',200,170],
+                'modal':['resources/images/sprites/clothes/001/002/stand.png',200,170],
                 'health':0,
                 'attack':10,
                 'defend':3,
