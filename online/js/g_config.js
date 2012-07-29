@@ -22,7 +22,6 @@ woh.g_config.script={
             key:'intro'
         },
         next:'intro'
-        //next:'loading_2'
     },
     'intro':{
         type:'intro',//标记相应的stage类型
@@ -1439,7 +1438,7 @@ woh.g_config.monsters = {
             standup: [0, 0, 190, 120],
             standdown: [0, 0, 190, 120]
         },
-        "damageArea":[0,-45,100,30],
+        "damageArea":[100,-45,200,30],
         "stand": [
             {
                 "info": {
@@ -1449,7 +1448,7 @@ woh.g_config.monsters = {
                     "framerate": 2,
                     "pivotx": 100,
                     "pivoty": 123,
-                    "events": [{name: 'attack_affect', frame: 2}]
+                    "events": []
                 },
                 "data": [
                     [592,0,887,206,592,0,887,206],
@@ -1485,7 +1484,7 @@ woh.g_config.monsters = {
                     "framerate": 2,
                     "pivotx": 100,
                     "pivoty": 123,
-                    "events": []
+                    "events": [{name: 'attack_affect', frame: 2}]
                 },
                 "data": [
                     [592,0,887,206,592,0,887,206],

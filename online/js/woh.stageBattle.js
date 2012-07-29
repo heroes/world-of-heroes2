@@ -50,10 +50,6 @@ Laro.NS('woh.stageClass', function (L) {
                 function startWave(i) {
                     if (i >= line.length) {
                         me.activeLines--;
-                        // if (me.activeLines == 0) {
-                        //     //TODO:È«²¿½áÊø
-                        //     alert("你被螃蟹君干掉了");
-                        // }
                         return;
                     }
                     var wave = line[i].slice();
@@ -72,18 +68,8 @@ Laro.NS('woh.stageClass', function (L) {
                 }
                 startWave(0);
             })
-            // this.roles.add('001', new woh.Role(woh.runtime.role['001'], this.aiController));
-            // this.roles.get('001').setPos(100, 400);
-            // this.roles.get('001').stage = this;
-            // this.roles.add('sola_cheng', new woh.Role(woh.runtime.role['002'], this.aiController));
-            // this.roles.get('sola_cheng').setPos(200, 400);
-            // this.roles.get('sola_cheng').stage = this;
-            // this.roles.add('attack_1', new woh.SkillEffect(woh.g_config.skill_effect.normal_1));
-            // this.roles.get('attack_1').setPos(300, 300);
-            // this.roles.get('attack_1').stage = this;
         },
         transition: function () {
-            //this.timeInState > 2 && woh.gameScript.continueExec();
             this.activeLines == 0 && woh.gameScript.continueExec();
         },
         leave: function () {
