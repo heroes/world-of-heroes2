@@ -16,7 +16,8 @@ Laro.NS('woh.stageClass', function (L) {
     }).methods({
         enter: function (data, from) {
             woh.log('enter stage [Battle]');
-            woh.show(woh.els.canvasWrap);
+            setTimeout(function () {woh.util.fadeIn(woh.els.canvasWrap)}, 500);
+            this.timeInState = 0;
             // temp part to do area
             var me = this;
             this.data=data;
@@ -88,16 +89,19 @@ Laro.NS('woh.stageClass', function (L) {
         },
         leave: function () {
             woh.log('leave stage [battle]');
-            woh.hide(woh.els.canvasWrap);
+            woh.util.fadeOut(woh.els.canvasWrap);
             this.roles.remove();
         },
         update: function (dt) {
             this.roles.dispatch('update', dt);
+            this.timeInState += dt;
         },
         draw: function (render) {
-            this.drawBg(render);
-            this.drawMask(render);
-            this.roles.dispatch('draw', render);
+            if (this.timeInState > 0.5) {
+                this.drawBg(render);
+                this.drawMask(render);
+                this.roles.dispatch('draw', render);
+            }
         },
         drawBg: function (rd) {
             rd.context.drawImage(woh.loader.loadedImages[this.data['bg']], 0, 0);

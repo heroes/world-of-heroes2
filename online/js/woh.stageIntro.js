@@ -34,13 +34,13 @@ Laro.NS('woh.stageClass', function (L) {
     }).methods({
         enter: function (msg, fromState) {
             woh.log('enter stage [intro]');
-            woh.util.showContainer(woh.els.intro);
+            woh.util.fadeIn(woh.els.intro);
             //woh.els.intro.style['opacity'] = 0;
             //prepare(msg);
         },
         leave: function () {
             //woh.log('leave stage [intro]');
-            woh.hide(woh.els.intro);
+            woh.util.fadeOut(woh.els.intro);
         },
         update: function (dt) {
             this.timeInState += dt;

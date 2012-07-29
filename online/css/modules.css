@@ -201,6 +201,12 @@ margin-top:420px;}
     box-shadow: 0 0 10px black;
 }
 
+.opacity-anim {
+    -webkit-transition: opacity 0.5s ease;
+    -moz-transition: opacity 0.5s ease;
+    -msie-transition: opacity 0.5s ease;
+}
+
 
 
 

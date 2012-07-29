@@ -14,7 +14,7 @@ Laro.NS('woh.stageClass', function (L) {
     }).methods({
         enter: function (msg, from) {
             woh.log('enter stage [drama] with msg ' + msg);
-            woh.show(woh.els.drama);
+            woh.util.fadeIn(woh.els.drama)
             this.msg = msg;
             this.timeInState = 0;
             var captionPlayer = new woh.CaptionPlayer();
@@ -27,7 +27,7 @@ Laro.NS('woh.stageClass', function (L) {
         },
         leave: function () {
             woh.log('leave stage [drama]');
-            woh.hide(woh.els.drama);
+            woh.util.fadeOut(woh.els.drama);
         },
         update: function (dt) {
             this.timeInState += dt;

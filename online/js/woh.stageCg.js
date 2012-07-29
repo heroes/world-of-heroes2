@@ -9,11 +9,11 @@ Laro.NS('woh.stageClass', function (L) {
         enter: function (data, from) {
             woh.log('enter stage [Cg]');
             woh.els.cg.querySelector('img').src=data[0]['path'];
-            woh.show(woh.els.cg);
+            woh.util.fadeIn(woh.els.cg);
         },
         leave: function () {
             woh.log('leave stage [cg]');
-            woh.hide(woh.els.cg);
+            woh.util.fadeOut(woh.els.cg);
         },
         update: function (dt) {
         

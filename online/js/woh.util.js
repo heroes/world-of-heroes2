@@ -1,6 +1,29 @@
 /* util methods */
 Laro.NS('woh.util', function (L) {
     var pkg = this;
+    
+    var trimReplace = /(^\s*|\s*$)/g;
+    var trim = String.prototype.trim ?
+    function (s) {
+        return s.trim()
+    } : function (s) {
+        return s.replace(trimReplace, '')
+    }
+    
+    function classReg(c) {
+        return new RegExp("(^|\\s+)" + c + "(\\s+|$)")
+    }
+    
+    var hasClass = function (el, c) {
+        return classReg(c).test(el.className)
+    };
+    var _addClass = function (el, c) {
+        el.className = trim(el.className + ' ' + c)
+    };
+    var _removeClass = function (el, c) {
+        el.className = trim(el.className.replace(classReg(c), ' '))
+    };
+    
     /**
      * 获取点击的事件源, 该事件源是有 data-cmd 属性的 默认从event.target往上找三层,找不到就返回null
      */
@@ -74,6 +97,46 @@ Laro.NS('woh.util', function (L) {
         })
     }
     
+    function addClass (selector, c) {
+        apply2Els(selector, function (el) {
+            !hasClass(el, c) && _addClass(el, c);
+        });
+    }
+    function removeClass(selector, c) {
+        apply2Els(selector, function (el) {
+            hasClass(el, c) && _removeClass(el, c);
+        });
+    }
+    function setAttr(sel, prop, val) {
+        apply2Els(sel, function (el) {
+            el && el.setAttribute && el.setAttribute(prop, val);
+        });
+    }
+    function fadeIn (sel) {
+        apply2Els(sel, function (el) {
+            el.style.opacity = 0;
+            show(el);
+            addClass(el, 'opacity-anim');
+            setTimeout(function () {
+                el.style.opacity = 1;
+            }, 0);
+            
+        });
+    }
+    // 这里由于css3 transition 的duration 是0.5s 所以暂时定500ms;
+    function fadeOut (sel) {
+        apply2Els(sel, function (el) {
+            el.style.opacity = 1;
+            addClass(el, 'opacity-anim');
+            setTimeout(function () {
+                el.style.opacity = 0;
+            }, 0);
+            setTimeout(function () {
+                hide(el);
+            }, 500)
+        });
+    }
+    
     /**
      * 针对所有的 stage-container ，显示某一个，其他全部自动隐藏
      */
@@ -88,5 +151,12 @@ Laro.NS('woh.util', function (L) {
     this.show = show;
     this.hide = hide;
     this.showContainer = showContainer;
+    
+    this.hasClass = hasClass;
+    this.addClass = addClass;
+    this.removeClass = removeClass;
+    
+    this.fadeIn = fadeIn;
+    this.fadeOut = fadeOut;
     
 });

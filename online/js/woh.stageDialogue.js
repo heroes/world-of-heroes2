@@ -9,12 +9,12 @@ Laro.NS('woh.stageClass', function (L) {
         enter: function (msg, from) {
             woh.log('enter stage [dialogue] with msg ' + msg);
             window.Dialogue.init(msg);
-            woh.show(woh.els.dialogue)
+            woh.util.fadeIn(woh.els.dialogue)
             this.timeInState=0;
         },
         leave: function () {
             woh.log('leave stage [dialogue]');
-            woh.hide(woh.els.dialogue);
+            woh.util.fadeOut(woh.els.dialogue);
         },
         update: function (dt) {
             this.timeInState += dt;

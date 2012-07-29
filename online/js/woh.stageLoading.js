@@ -52,10 +52,10 @@ Laro.NS('woh.stageClass', function (L) {
             //console.log(ress)
             woh.loader.preload(ress, L.curry(this.loadProgressCallback, this));
             
-            woh.util.showContainer(woh.els.canvasWrap);
+            woh.util.fadeIn(woh.els.canvasWrap);
         },
         leave: function () {
-            
+            woh.util.fadeOut(woh.els.canvasWrap);
         },
         update: function (dt) {
             this.timeInState += dt;
