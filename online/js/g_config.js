@@ -22,6 +22,7 @@ woh.g_config.script={
             key:'intro'
         },
         next:'intro'
+        //next:'loading_2'
     },
     'intro':{
         type:'intro',//标记相应的stage类型
@@ -91,7 +92,8 @@ woh.g_config.script={
                 [
                     [{type:'crab',x:100,y:200}]
                 ],
-            ]
+            ],
+            "drop":['clothes','002',1],//掉落类型，掉落id，掉落概率
         },
         next:'map_1'
     },
@@ -188,7 +190,8 @@ woh.g_config.script={
                     [{type:'crab',x:100,y:200},{type:'crab',x:300,y:200},{type:'crab',x:500,y:200}],
                     [{type:'crab',x:800,y:200},{type:'crab',x:700,y:200},{type:'crab',x:100,y:200}]
                 ]
-            ]
+            ],
+            "drop":['weapon','004',1],//掉落类型，掉落id，掉落概率
         },
         next:'map_2'
     },
@@ -216,8 +219,10 @@ woh.g_config.script={
                 [
                     [{type:'crab_boss',x:100,y:200}]
                 ]
-            ]
+            ],
+            "drop":['weapon','002',1],//掉落类型，掉落id，掉落概率
         },
+        
         next:'map_3'
     },
     'map_3':{
@@ -1327,7 +1332,6 @@ woh.g_config.monsters = {
         "damage":1,//攻击
         "defend":0,//防御
         "crit":0,//暴击
-        "drop":['clothes','001',0.05],//掉落类型，掉落id，掉落概率
         "exp":20,//打死一只怪物获得的经验值
         'width':124,
         'height':74,
@@ -1438,7 +1442,7 @@ woh.g_config.monsters = {
         "damage":5,//攻击
         "defend":0,//防御
         "crit":0,//暴击
-        "drop":['clothes','001',0.05],//掉落类型，掉落id，掉落概率
+        //"drop":['clothes','001',0.05],//掉落类型，掉落id，掉落概率
         "exp":20,//打死一只怪物获得的经验值
         "width":200,
         "height":100,
