@@ -235,10 +235,10 @@
             var rate_info=woh.skill_rate[data['type']],
                 level_info=woh.base_level_data[data['lv']];
             //根据偏移百分比计算出基础数值
-            var health=rate_info['health']*level_info['health'],
-                attack=rate_info['attack']*level_info['attack'],
-                defend=rate_info['defend']*level_info['defend'],
-                crit=rate_info['crit']*level_info['crit'];
+            var health=parseInt(rate_info['health']*level_info['health']),
+                attack=parseInt(rate_info['attack']*level_info['attack']),
+                defend=parseInt(rate_info['defend']*level_info['defend']),
+                crit=parseInt(rate_info['crit']*level_info['crit']);
             //加上装备的加成值
             //武器的加成值
             if(data['weapon']!='none'){
@@ -553,15 +553,17 @@
                     role.exp+=result.exp;
                     var nextexp=woh.base_level_data[role.lv+1]['exp'],
                         distance=nextexp-woh.base_level_data[role.lv]['exp'];
-                    if(role.exp>=nextexp){
+                    while(role.exp>=nextexp)
+                    {
                         show="show";
                         role.lv++;
+                        if(role.lv==20)break;
                         //升级则技能点+1
                         role.skill_point++;
                         nextexp=woh.base_level_data[role.lv+1]['exp'];
                         distance=nextexp-woh.base_level_data[role.lv]['exp'];
                     }
-                    expwidth=105*(role.exp-woh.base_level_data[role.lv]['exp'])/distance;
+                    if(role.lv<20){expwidth=105*(role.exp-woh.base_level_data[role.lv]['exp'])/distance;}
                 }
                 items.push("<li class='exp-info'>"+
                     "<img class='lvup "+show+"' src='./resources/images/count/lvUP.png'>"+

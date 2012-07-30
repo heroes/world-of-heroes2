@@ -5,10 +5,10 @@ Laro.NS('woh', function (L) {
         var rate_info=woh.skill_rate[this.data['type']],
         level_info=woh.base_level_data[this.data['lv']];
         //根据偏移百分比计算出人物的各项基础数值
-        var health=rate_info['health']*level_info['health'],
-        attack=rate_info['attack']*level_info['attack'],
-        defend=rate_info['defend']*level_info['defend'],
-        crit=rate_info['crit']*level_info['crit'];
+        var health=parseInt(rate_info['health']*level_info['health']),
+            attack=parseInt(rate_info['attack']*level_info['attack']),
+            defend=parseInt(rate_info['defend']*level_info['defend']),
+            crit=parseInt(rate_info['crit']*level_info['crit']);
         //加上装备的加成值
         //武器的加成值
         if(this.data['weapon']!='none'){
