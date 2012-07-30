@@ -5,6 +5,13 @@ Laro.NS('woh', function (L) {
     function computeDistance(pos1, pos2) {
         return Math.sqrt(Math.pow(pos1.x - pos2.x, 2) + Math.pow(pos1.y - pos2.y, 2));
     }
+    function areaCross(area1, area2) {
+        return (area1.top < area2.bottom && area2.top < area1.bottom) &&
+            (area1.left < area2.right && area2.left < area1.right);
+    }
+    function canAttack(sprite1,sprite2) {
+        return areaCross(sprite1.damageArea,sprite2);
+    }
 
     var AIController = L.Class(function (me) {
         this.me = me;
@@ -18,7 +25,7 @@ Laro.NS('woh', function (L) {
             return sprite instanceof woh.Monster;
         },
         updateMonsterTarget: function (monster) {
-            if (monster.locked)
+            if(monster.locked)
                 return;
             var nearest = null;
             var nearestDistance = Infinity;
@@ -35,27 +42,30 @@ Laro.NS('woh', function (L) {
             if (nearest) {
                 var nearestPos = nearest.getPos();
 
-                if (monsterPos.x - nearestPos.x > 0)
-                    monster.moveTo(nearestPos.x + 100, nearestPos.y + 50);
-                else if (monsterPos.x - nearestPos.x < 0)
-                    monster.moveTo(nearestPos.x - 100, nearestPos.y + 50);
+                var monsterFace = monster.face;
 
-                if (nearestPos.x - monsterPos.x < 120 && nearestPos.x - monsterPos.x > 0 && Math.abs(nearestPos.y - monsterPos.y) < 60) {
-                    monster.faceRight();
+                monster.faceRight();
+                if (canAttack(monster,nearest)) {
                     monster.normalAttack();
+                    return ;
                 }
-                if (nearestPos.x - monsterPos.x > -120 && nearestPos.x - monsterPos.x < 0 && Math.abs(nearestPos.y - monsterPos.y) < 60) {
-                    monster.faceLeft();
+                monster.faceLeft();
+                if (canAttack(monster,nearest)) {
                     monster.normalAttack();
+                    return;
                 }
+
+                    monster.face = monsterFace;
+
+                if (monsterPos.x - nearestPos.x > 0)
+                    monster.moveTo(nearestPos.x + 10, nearestPos.y );
+                else if (monsterPos.x - nearestPos.x < 0)
+                    monster.moveTo(nearestPos.x - 10, nearestPos.y );
+
+ 
             }
         },
-        knowPos: function (obj, x, y) {
-            if (this.isMonster(obj)) {
-                this.updateMonsterTarget(obj);
-            }
-            if (this.isPlayer(obj)) {
-                var player = obj;
+        updatePlayerTarget:function(player) {
                 var playerPos = player.getPos();
                 var nearest = null;
                 var nearestDistance = Infinity;
@@ -67,22 +77,38 @@ Laro.NS('woh', function (L) {
                         nearest = monster;
                         nearestDistance = distance;
                     }
-                    me.updateMonsterTarget(monster);
                 });
 
                 if (nearest) {
                     var nearestPos = nearest.getPos();
                     if (player.fsm.getCurrentState().stateId != woh.roleStates.stand)
                         return;
-                    if (nearestPos.x - playerPos.x < 200 && nearestPos.x - playerPos.x > 0 && Math.abs(nearestPos.y - playerPos.y) < 100) {
-                        player.faceRight();
+                    var playerFace = player.face;
+
+                    player.faceRight();
+                    if (canAttack(player,nearest)) {
                         player.normalAttack();
+                        return ;
                     }
-                    if (nearestPos.x - playerPos.x > -200 && nearestPos.x - playerPos.x < 0 && Math.abs(nearestPos.y - playerPos.y) < 100) {
-                        player.faceLeft();
+                    player.faceLeft();
+                    if (canAttack(player,nearest)) {
                         player.normalAttack();
+                        return;
                     }
+
+                    player.face = playerFace;
                 }
+        },
+        knowPos: function (obj, x, y) {
+            if (this.isMonster(obj)) {
+                this.updateMonsterTarget(obj);
+            }
+            if (this.isPlayer(obj)) {
+                var me = this;
+                this.monsters.forEach(function (monster) {
+                    me.updateMonsterTarget(monster);
+                });
+                this.updatePlayerTarget(obj);
             }
         },
         knowSprite: function (obj) {
@@ -92,10 +118,19 @@ Laro.NS('woh', function (L) {
                 this.monsters.push(obj);
         },
         knowDie: function (obj) {
-            if (this.isPlayer(obj))
+            if (this.isPlayer(obj)) {
                 this.players = this.players.filter(function (e) { return e != obj });
-            if (this.isMonster(obj))
+                this.monsters.forEach(function (monster) {
+                    me.updateMonsterTarget(monster);
+                });
+            }
+            if (this.isMonster(obj)) {
                 this.monsters = this.monsters.filter(function (e) { return e != obj });
+                var me =this;
+                this.players.forEach(function (player) {
+                    me.updatePlayerTarget(obj);
+                });
+            }
         }
     });
     this.AIController = AIController;

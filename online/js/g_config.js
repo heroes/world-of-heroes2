@@ -1387,7 +1387,7 @@ woh.g_config.monsters = {
                     "pivotx": 70,
                     "pivoty": 55,
                     "events": [
-                            {name: 'attack_affect', frame: 2}
+                            {name: 'attack_affect', frame: 1}
                         ]
                 },
                 "data": [
@@ -1492,7 +1492,7 @@ woh.g_config.monsters = {
                     "framerate": 2,
                     "pivotx": 100,
                     "pivoty": 123,
-                    "events": [{name: 'attack_affect', frame: 2}]
+                    "events": [{name: 'attack_affect', frame: 1}]
                 },
                 "data": [
                     [592,0,887,206,592,0,887,206],

@@ -41,8 +41,8 @@ Laro.NS('woh.stageClass', function (L) {
             data['role'].forEach(function (roleId) {
                 woh.runtime.activeRole.push(woh.runtime.role[roleId]);
                 me.roles.add(roleId, new woh.Role(woh.runtime.role[roleId], me.aiController));
-                me.roles.get(roleId).setPos(400 - 120 * i++, 300-(i%2)*120);
                 me.roles.get(roleId).stage = me;
+                me.roles.get(roleId).setPos(400 - 120 * i++, 300-(i%2)*120);
             });
 
             this.activeLines = data.monster.length;

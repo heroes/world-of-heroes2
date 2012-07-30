@@ -1,4 +1,4 @@
-/**
+﻿/**
  * ÈËÎï»òÕß¹ÖÎï 
  */
 
@@ -49,9 +49,6 @@ Laro.NS('woh', function (L) {
             this.brain.knowPos(this,x,y);
             if(this.stage)
                 this.stage.registerHurtableObject("monster", this,{left:this.left,right:this.right,top:this.top,bottom:this.bottom});
-        },
-        normalAttack: function () {
-            this.fsm.setState(woh.roleStates.attack);
         }
     });
     this.Monster = Monster;

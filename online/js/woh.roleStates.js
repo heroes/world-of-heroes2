@@ -69,10 +69,10 @@ Laro.NS('woh.roleStateClass', function (L) {
 
 
     var Attack = L.BaseState.extend(function () {
-        this.cooldown = this.host.cooldown;
+        this.cooldown = 0;
     }).methods({
         enter: function (msg, from) {
-            //this.cooldown += Math.floor(this.host.cooldown/3);
+            this.cooldown += Math.floor(this.host.cooldown/3);
         },
         leave: function () { },
         update: function (dt) {
@@ -82,6 +82,8 @@ Laro.NS('woh.roleStateClass', function (L) {
                 if(this.host.locked)
                     this.host.setAndPlay('stand',false);
                 this.host.locked = false;
+                this.host.brain.knowPos(this.host,this.host.x,this.host.y);
+
             }
             if (this.cooldown < 0) {
                 this.host.setAndPlay('attack',false);
@@ -99,14 +101,18 @@ Laro.NS('woh.roleStateClass', function (L) {
         
     }).methods({
         enter: function (msg, from) {
-            this.host.locked = false;
+            this.host.locked = true;
             this.host.setAndPlay('hurted');
-            this.cooldown = 200;
+            this.cooldown = 300;
         },
-        leave: function () { },
+        leave: function () {
+            this.host.locked = false;
+        },
         update: function (dt) {
             if(this.host.kickback) {
-                this.host.x += this.host.kickback / 200 * dt *1000;
+                this.host.x += this.host.kickback / 300 * dt *1000;
+                this.host.setPos(this.host.x,this.host.y);
+                
             }
             this.cooldown -= dt*1000;
             if (this.cooldown < 0)
