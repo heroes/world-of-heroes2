@@ -257,15 +257,20 @@
                     crit+=clothes['crit'];
             }
             //读取当前经验值
-            var exp_length=220*data['exp']/woh.base_level_data[data['lv']+1]['exp']+'px';
-            //console.log(exp_length);
+            var role_exp=data['exp'],
+                expwidth=220;
+                //满级的处理
+                if(data['lv']<20){
+                    expwidth=220*(data['exp']-woh.base_level_data[data['lv']]['exp'])/(woh.base_level_data[data['lv']+1]['exp']-woh.base_level_data[data['lv']]['exp']);
+                }
+            //console.log(expwidth);
             //界面渲染的相关部分，应当提出来
             //将数据渲染到界面上
             _doc.querySelector('#role-manage .role-info .role-attributes #health').innerHTML=health;
             _doc.querySelector('#role-manage .role-info .role-attributes #attack').innerHTML=attack;
             _doc.querySelector('#role-manage .role-info .role-attributes #defend').innerHTML=defend;
             _doc.querySelector('#role-manage .role-info .role-attributes #crit').innerHTML=crit*100;
-            _doc.querySelector('#role-manage .role-info .exp-value').style.width=exp_length;
+            _doc.querySelector('#role-manage .role-info .exp-value').style.width=expwidth+"px";
             //将装备和服装图标设为人物当前的装备
             _doc.getElementById('weapon').innerHTML="<img width='77' height='77' src='"+(data["weapon"]=="none"?'':woh.item_data["weapon"][data["weapon"]]["icon"])+"'/>";
             _doc.getElementById('clothes').innerHTML="<img width='77' height='77' src='"+(data["clothes"]=="none"?'':woh.item_data["clothes"][data["clothes"]]["icon"])+"'/>";
@@ -537,24 +542,41 @@
         //渲染界面数据
         initData:function(result){
             //计算经验值
+            //经验条宽度最大值为105
             var items=[];
             result.roledata.forEach(function (role) {
-                role.exp+=result.exp;
-                //计算是否升级
-                items.push("<li class='exp-info'><div class='avatar'><img src="+role.avatar+"></div></li>");
+                    var show="",
+                        expwidth=105,
+                        distance=0;//距离下一等级的经验
+                //计算等级提升情况，若满级（20）则直接跳过计算
+                if(role.lv<20){
+                    role.exp+=result.exp;
+                    var nextexp=woh.base_level_data[role.lv+1]['exp'],
+                        distance=nextexp-woh.base_level_data[role.lv]['exp'];
+                    if(role.exp>=nextexp){
+                        show="show";
+                        role.lv++;
+                        //升级则技能点+1
+                        role.skill_point++;
+                        nextexp=woh.base_level_data[role.lv+1]['exp'];
+                        distance=nextexp-woh.base_level_data[role.lv]['exp'];
+                    }
+                    expwidth=105*(role.exp-woh.base_level_data[role.lv]['exp'])/distance;
+                }
+                items.push("<li class='exp-info'>"+
+                    "<img class='lvup "+show+"' src='./resources/images/count/lvUP.png'>"+
+                    "<div class='avatar'><img src="+role.avatar+"></div>"+
+                    "<div class='exp-bar'><div class='exp-bar-inner' style='width:"+expwidth+"px'></div></div>"+
+                    "<p class='lv-info'>Lv:"+role.lv+"</p>"
+                    +"</li>");
             });
+            //渲染等级数据
             _doc.querySelector('.battle-module .mask .battle-count .role').innerHTML=items.join("");
             //计算掉落
             if(Math.random()<=result.drop[2]){
                 woh.runtime.packageItems.push([result.drop[0],result.drop[1]]);
                 _doc.querySelector('.battle-module .mask .battle-count .item').innerHTML="<li class='single'><img src='"+woh.item_data[result.drop[0]][result.drop[1]].icon+"'></li>"
             }
-
-            //渲染界面数据
-            // "<li class='exp-info'>"+
-            //     "<div class='avatar'><img/></div>"+
-            //     "<div class='exp-bar'><div class='exp-inner'></div></div>"+
-            // "</li>";
         }
     };
     Map.init();

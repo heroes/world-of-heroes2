@@ -130,7 +130,7 @@ margin-top:420px;}
 .map-module .sub-win#role-manage .exp-bar{height: 26px; width: 250px;margin:10px auto;
 	background: url(../resources/images/map/exp-right.png) right bottom no-repeat;
 }
-.map-module .sub-win#role-manage .exp-bar-inner{height: 26px;background: rgba(0,0,0,.7); width: 220px}
+.map-module .sub-win#role-manage .exp-bar-inner{height: 26px;background: rgba(0,0,0,.7); width: 220px; margin: 3px 0}
 .map-module .sub-win#role-manage .exp-value{height: 26px; background: white;}
 .map-module .sub-win#skill-manage h1.name{width: 200px; text-align: center;font-size: 28px;position: absolute;left: 60px; top: 150px}
 .map-module .sub-win#skill-manage span.skill-point{position:absolute;top:200px;font-size: 30px; color: red; display: block; float: left; margin-left: 465px;line-height: 30px}
@@ -206,7 +206,7 @@ margin-top:420px;}
 	display: none;
 	position: absolute;
 	background: rgba(0,0,0,.8);
-	z-index: 2;
+	z-index: 3;
 }
 .battle-module .mask .battle-count{
 	width: 652px;
@@ -224,16 +224,45 @@ margin-top:420px;}
 	padding-top:95px;
 	height: 220px;
 }
-.battle-module .mask .battle-count .role li{
+.battle-module .mask .battle-count .role li.exp-info{
 	display: inline-block;
 	width: 33.3%;
-	height: 200px
+	height: 200px;
+	position: relative;
+}
+.battle-module .mask .battle-count .role li.exp-info img.lvup{
+	position: absolute;
+	left: -10px;
+	top: -10px;
+	display: none;
+}
+.battle-module .mask .battle-count .role li.exp-info img.lvup.show{
+	display: block;
 }
 .battle-module .mask .battle-count .role li.exp-info .avatar{
 	width: 120px;
 	height: 120px;
 	padding: 5px;
 	background: url(../resources/images/count/avatar-outer.png) no-repeat;
+}
+.battle-module .mask .battle-count .role li.exp-info .exp-bar{
+	width: 127px;
+	height: 16px;
+	margin: 10px auto;
+	padding: 2px 0;
+	background: url(../resources/images/count/expbar-bg.png) no-repeat;
+}
+.battle-module .mask .battle-count .role li.exp-info .lv-info{
+	color: black;
+	font-size: 18px;
+	text-align: center;
+	font-weight: bold;
+}
+.battle-module .mask .battle-count .role li.exp-info .exp-bar .exp-bar-inner{
+	background: white;
+	width: 105px;
+	height:16px;
+	margin-left: 2px;
 }
 .battle-module .mask .battle-count .item{
 	margin-top:40px;

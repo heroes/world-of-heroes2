@@ -1332,7 +1332,7 @@ woh.g_config.monsters = {
         "damage":1,//攻击
         "defend":0,//防御
         "crit":0,//暴击
-        "exp":20,//打死一只怪物获得的经验值
+        "exp":1250,//打死一只怪物获得的经验值
         'width':124,
         'height':74,
         'cooldown':2000,

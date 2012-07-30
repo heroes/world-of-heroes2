@@ -76,7 +76,8 @@ Laro.NS('woh.stageClass', function (L) {
         },
         leave: function () {
             woh.log('leave stage [battle]');
-            console.log(this.data.drop);
+            //清空技能列表
+            document.getElementById('role-skill-container').innerHTML="";
             var result={
                 exp:this.totalexp,
                 roledata:woh.runtime.activeRole,
