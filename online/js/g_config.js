@@ -303,7 +303,12 @@ woh.g_config.resources = {
             'images/bg/btn-skip.png',
             'images/bg/btn-skip2.png',
 
-            'images/cg/cg_1.jpg'
+            'images/cg/cg_1.jpg',
+            //载入结算界面的资源
+            'images/count/avatar-outer.png',
+            'images/count/lvUP.png',
+            'images/count/expbar-bg.png',
+            'images/count/count-bg.png',
         ]
     },
     battle_1: {
