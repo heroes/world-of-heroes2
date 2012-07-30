@@ -509,12 +509,25 @@
     };
     var battleCount = _win.battleCount={
         tpl:function(){
-            return "<div class='battle-count'></div>"
+            return "<div class='battle-count'>"+
+                "<ul class='role'></ul>"+
+                "<ul class='item'></ul>"+
+            "</div>";
         },
-        init:function(){
+        _role_tpl:function(){
+            return "<li class='exp-info'>"+
+                "<div class='avatar'><img/></div>"+
+                "<div class='exp-bar'><div class='exp-inner'></div></div>"+
+            "</li>";
+        },
+        _item_tpl:function(){
+            return "<li class='item'></li>";
+        },
+        init:function(data){
             _doc.querySelector('.battle-module .mask').innerHTML=this.tpl(); 
             _doc.querySelector('.battle-module .mask').style.display="block";
             this.bind();
+            this.initData(data);
         },
         bind:function(){
             var me=this;
@@ -526,6 +539,18 @@
         hide:function(){
             _doc.querySelector('.battle-module .mask').innerHTML="";
             _doc.querySelector('.battle-module .mask').style.display="none";
+        },
+        //渲染界面数据
+        initData:function(result){
+            //计算经验值
+            result.roledata.forEach(function (role) {
+                role.exp+=result.exp;
+                //计算是否升级
+            });
+            //计算掉落
+            if(Math.random()<=result.drop[2]){
+                woh.runtime.packageItems.push([result.drop[0],result.drop[1]]);
+            }
         }
     };
     Map.init();

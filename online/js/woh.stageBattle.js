@@ -21,6 +21,7 @@ Laro.NS('woh.stageClass', function (L) {
             // temp part to do area
             var me = this;
             this.data=data;
+            this.totalexp=0;
             /*
             document.querySelector("body").onmouseup = function (e) {
             if (e.target.tagName != "CANVAS") return;
@@ -47,7 +48,6 @@ Laro.NS('woh.stageClass', function (L) {
 
             this.activeLines = data.monster.length;
             data.monster.forEach(function (line) {
-
                 function startWave(i) {
                     if (i >= line.length) {
                         me.activeLines--;
@@ -57,6 +57,7 @@ Laro.NS('woh.stageClass', function (L) {
                     var living = wave.length;
                     wave.forEach(function (data) {
                         var monster = new woh.Monster(woh.g_config.monsters[data.type], me.aiController);
+                        me.totalexp+=woh.g_config.monsters[data.type]['exp'];
                         monster.ondead = function () {
                             living--;
                             if (living == 0)
@@ -75,7 +76,13 @@ Laro.NS('woh.stageClass', function (L) {
         },
         leave: function () {
             woh.log('leave stage [battle]');
-            battleCount.init();
+            console.log(this.data.drop);
+            var result={
+                exp:this.totalexp,
+                roledata:woh.runtime.activeRole,
+                drop:this.data.drop
+            };
+            battleCount.init(result);
             this.roles.remove();
         },
         update: function (dt) {
@@ -122,7 +129,7 @@ Laro.NS('woh.stageClass', function (L) {
         hurtArea: function (type, area, damage) {
             canvas = document.getElementById("canvas");
             function areaCross(area1, area2) {
-                with (canvas.getContext("2d")) {
+                with (canvas.getContext("2d")){
                     strokeStyle = "red";
                     strokeRect(area1.left, area1.top, area1.right - area1.left, area1.bottom - area1.top);
                     strokeStyle = "blue";

@@ -30,16 +30,9 @@ Laro.NS('woh.runtime', function (L) {
     this.init=function(){
         //初始化运行时人物数据
         this.role=eval('('+JSON.stringify(woh.role_init_data)+')');;  
-        //以下为测试代码
-        //this.activeRole.push(this.role['001']);
-        //this.activeRole.push(this.role['002']);
         this.packageItems.push(['weapon','001']);
-        this.packageItems.push(['weapon','002']);
         this.packageItems.push(['weapon','003']);
-        this.packageItems.push(['weapon','004']);
         this.packageItems.push(['clothes','001']);
-        this.packageItems.push(['clothes','002']);
         this.packageItems.push(['clothes','003']);
-        this.packageItems.push(['clothes','005']);
     }
 });
