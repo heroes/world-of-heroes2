@@ -537,19 +537,24 @@
         //渲染界面数据
         initData:function(result){
             //计算经验值
+            var items=[];
             result.roledata.forEach(function (role) {
                 role.exp+=result.exp;
                 //计算是否升级
+                items.push("<li class='exp-info'><div class='avatar'><img src="+role.avatar+"></div></li>");
             });
+            _doc.querySelector('.battle-module .mask .battle-count .role').innerHTML=items.join("");
             //计算掉落
             if(Math.random()<=result.drop[2]){
                 woh.runtime.packageItems.push([result.drop[0],result.drop[1]]);
+                _doc.querySelector('.battle-module .mask .battle-count .item').innerHTML="<li class='single'><img src='"+woh.item_data[result.drop[0]][result.drop[1]].icon+"'></li>"
             }
+
             //渲染界面数据
-            "<li class='exp-info'>"+
-                "<div class='avatar'><img/></div>"+
-                "<div class='exp-bar'><div class='exp-inner'></div></div>"+
-            "</li>";
+            // "<li class='exp-info'>"+
+            //     "<div class='avatar'><img/></div>"+
+            //     "<div class='exp-bar'><div class='exp-inner'></div></div>"+
+            // "</li>";
         }
     };
     Map.init();

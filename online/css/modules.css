@@ -212,21 +212,40 @@ margin-top:420px;}
 	width: 652px;
 	height: 514px;
 	margin: 30px auto;
-	background: url(../resources/images/count/count-bg.png) no-repeat top;
+	background: url(../resources/images/count/count-bg.png) no-repeat;
 }
 .battle-module .mask .battle-count .role,
 .battle-module .mask .battle-count .item{
 	width: 430px;
 	margin: 0 auto;
-	border: 1px solid black;
 	list-style: none;
 }
 .battle-module .mask .battle-count .role{
 	padding-top:95px;
 	height: 220px;
 }
+.battle-module .mask .battle-count .role li{
+	display: inline-block;
+	width: 33.3%;
+	height: 200px
+}
+.battle-module .mask .battle-count .role li.exp-info .avatar{
+	width: 120px;
+	height: 120px;
+	padding: 5px;
+	background: url(../resources/images/count/avatar-outer.png) no-repeat;
+}
 .battle-module .mask .battle-count .item{
 	margin-top:40px;
+}
+.battle-module .mask .battle-count .item li.single{
+	background: rgba(0,0,0,.8);
+	border: 1px solid #000;
+	padding: 3px;
+	display: inline-block;
+	margin: 0 10px;
+	width: 80px;
+	height: 80px
 }
 .opacity-anim {
     -webkit-transition: opacity 0.5s ease;

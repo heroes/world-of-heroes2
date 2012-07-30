@@ -21,8 +21,8 @@ woh.g_config.script={
         data:{
             key:'intro'
         },
-        next:'intro'
-        //next:'loading_2'
+        //next:'intro'
+        next:'loading_2'
     },
     'intro':{
         type:'intro',//标记相应的stage类型
