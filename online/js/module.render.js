@@ -510,15 +510,9 @@
     var battleCount = _win.battleCount={
         tpl:function(){
             return "<div class='battle-count'>"+
-                "<ul class='role'></ul>"+
-                "<ul class='item'></ul>"+
+                "<ul class='role'>111</ul>"+
+                "<ul class='item'>111</ul>"+
             "</div>";
-        },
-        _role_tpl:function(){
-            return "<li class='exp-info'>"+
-                "<div class='avatar'><img/></div>"+
-                "<div class='exp-bar'><div class='exp-inner'></div></div>"+
-            "</li>";
         },
         _item_tpl:function(){
             return "<li class='item'></li>";
@@ -551,6 +545,11 @@
             if(Math.random()<=result.drop[2]){
                 woh.runtime.packageItems.push([result.drop[0],result.drop[1]]);
             }
+            //渲染界面数据
+            "<li class='exp-info'>"+
+                "<div class='avatar'><img/></div>"+
+                "<div class='exp-bar'><div class='exp-inner'></div></div>"+
+            "</li>";
         }
     };
     Map.init();

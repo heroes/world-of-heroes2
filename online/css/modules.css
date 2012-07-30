@@ -212,7 +212,21 @@ margin-top:420px;}
 	width: 652px;
 	height: 514px;
 	margin: 30px auto;
-	background: url(../resources/images/count/count-bg.png) no-repeat;
+	background: url(../resources/images/count/count-bg.png) no-repeat top;
+}
+.battle-module .mask .battle-count .role,
+.battle-module .mask .battle-count .item{
+	width: 430px;
+	margin: 0 auto;
+	border: 1px solid black;
+	list-style: none;
+}
+.battle-module .mask .battle-count .role{
+	padding-top:95px;
+	height: 220px;
+}
+.battle-module .mask .battle-count .item{
+	margin-top:40px;
 }
 .opacity-anim {
     -webkit-transition: opacity 0.5s ease;
