@@ -11,7 +11,7 @@
     <meta content="telephone=no,email=no" name="format-detection"/>
  
     <!--TODO:添加一个ios用的icon-->
-    <link rel="apple-touch-icon" href="favicon.png"/>
+    <link rel="apple-touch-icon-precomposed" href="favicon.png" />
     <link rel="Shortcut Icon" href="favicon.png" type="image/x-icon"/>
 
     <title>大侠的世界II</title>
@@ -43,6 +43,14 @@
     }
     * {
         -webkit-text-size-adjust:none;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        -webkit-touch-callout: none;
+    }
+    @media screen and (min-device-width: 1920px) {
+        body
+        { 
+            -webkit-transform:scale(2);
+        }
     }
     </style>
 
