@@ -342,6 +342,7 @@ woh.g_config.resources = {
             'images/map/selected_bg.png',
             'images/map/win_bg.jpg',
             'images/map/win_bg2.jpg',
+            
             //载入装备资源
             'images/sprites/clothes/001/none/attack.png',
             'images/sprites/clothes/001/none/hurted.png',
