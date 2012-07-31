@@ -18,7 +18,17 @@
     <title>大侠的世界II</title>
 
     <!--TODO:改成你想要的缩放比例-->
-    <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no" />
+    <meta id="viewport"  name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <script type="text/javascript">
+    (function(doc) {
+        var viewport = document.getElementById('viewport');
+        if ( navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPod/i)) {
+            doc.getElementById("viewport").setAttribute("content", "width=device-width, initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no");
+        } else if ( navigator.userAgent.match(/iPad/i) ) {
+            doc.getElementById("viewport").setAttribute("content", "width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no");
+        }
+    }(document));
+    </script>
 
 
 
@@ -46,12 +56,6 @@
         -webkit-text-size-adjust:none;
         -webkit-tap-highlight-color: rgba(0,0,0,0);
         -webkit-touch-callout: none;
-    }
-    @media screen and (min-width: 1920px) {
-        body
-        { 
-            -webkit-transform:scale(2);
-        }
     }
     </style>
 
