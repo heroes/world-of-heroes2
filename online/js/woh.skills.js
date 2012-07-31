@@ -16,24 +16,7 @@ Laro.NS('woh.skills', function (L) {
     function getEls () {
         els.container = document.getElementById('role-skill-container');
     }
-    function bindEvent () {
-        els.container.addEventListener('click', dispathEvent, false);
-    }
-    function dispathEvent (e) {
-        var tar = woh.util.getActionTarget(e, 3);
-        if (tar) {
-            var cmd = tar.getAttribute('data-cmd');
-            alert(cmd);
-            switch (cmd) {
-                case 'skill001':
-                    // todo, 调用释放第一个技能的方法
-                    break;
-                case 'skill002':
-                    //todo
-                    break;
-            }
-        }
-    }
+
     // 显示对应人物 的技能列表
     this.show = function (id) {
         var h = [],
@@ -51,6 +34,5 @@ Laro.NS('woh.skills', function (L) {
     
     this.init = function () {
         getEls();
-        bindEvent();
     }
 });

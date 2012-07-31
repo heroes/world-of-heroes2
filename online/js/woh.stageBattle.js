@@ -147,11 +147,17 @@ Laro.NS('woh.stageClass', function (L) {
                 }
             })
         },
-        kill: function (sprite) {
+        kill: function (sprite) { 
             this.roles.remove(sprite);
             if (sprite.ondead) {
                 sprite.ondead();
             }
+            // 人物死光 game over
+            if (this.aiController.players.length == 0) {
+                woh.stage.go('gameover', {replay: true});
+                woh.util.fadeOut(woh.els.canvasWrap);
+            }
+
         }
 
     }).statics({
