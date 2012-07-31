@@ -90,7 +90,9 @@ woh.g_config.script={
                 //     [{type:'crab_boss',x:100,y:200}]
                 // ]
                 [
-                    [{type:'crab',x:100,y:200}]
+                    [{type:'crab',x:100,y:200}],[{type:'crab',x:100,y:200},{type:'crab',x:300,y:200}]
+                    
+
                 ],
             ],
             "drop":['clothes','002',1],//掉落类型，掉落id，掉落概率
@@ -187,8 +189,9 @@ woh.g_config.script={
             "bg":'images/bg/bg-beach.jpg',
             "monster":[
                 [
-                    [{type:'crab',x:100,y:200},{type:'crab',x:300,y:200},{type:'crab',x:500,y:200}],
-                    [{type:'crab',x:800,y:200},{type:'crab',x:700,y:200},{type:'crab',x:100,y:200}]
+                    [{type:'crab',x:100,y:-200},{type:'crab',x:300,y:-200},{type:'crab',x:500,y:900},{type:'crab',x:400,y:900}],
+                    [{type:'crab',x:100,y:-200},{type:'crab',x:300,y:-200},{type:'crab',x:500,y:900},{type:'crab',x:400,y:900}],
+                    [{type:'crab',x:100,y:-200},{type:'crab',x:300,y:-200},{type:'crab',x:500,y:900},{type:'crab',x:400,y:900},{type:'crab',x:300,y:900}],
                 ]
             ],
             "drop":['weapon','004',1],//掉落类型，掉落id，掉落概率
@@ -1334,8 +1337,8 @@ woh.g_config.weapon={
 //怪物的数据
 woh.g_config.monsters = {
     "crab": {
-        "health":40,//血量
-        "damage":1,//攻击
+        "health":300,//血量
+        "damage":4,//攻击
         "defend":0,//防御
         "crit":0,//暴击
         "exp":1250,//打死一只怪物获得的经验值
@@ -1444,8 +1447,8 @@ woh.g_config.monsters = {
         }]        
     },
     "crab_boss": {
-        "health":100,//血量
-        "damage":5,//攻击
+        "health":1000,//血量
+        "damage":15,//攻击
         "defend":0,//防御
         "crit":0,//暴击
         //"drop":['clothes','001',0.05],//掉落类型，掉落id，掉落概率

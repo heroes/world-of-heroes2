@@ -1,4 +1,4 @@
-Laro.NS('woh', function (L) {
+﻿Laro.NS('woh', function (L) {
     var Role = this.Sprite.extend(function () {
         this.speed = 200;
         this.enemy = "monster";
@@ -70,7 +70,8 @@ Laro.NS('woh', function (L) {
             this.curAnimation && this.curAnimation.forEach(function (o) {
                 ((me.face == 'left' && !o.renderMirrored) || (me.face == 'right' && o.renderMirrored)) && o.mirror();
                 o.draw(render, x, y, 0, 1, null);
-            });             /***debug***/
+            });
+            /***debug***
             render.context.fillStyle = "blue";
             render.context.fillRect(this.x - 2, this.y - 2, 4, 4);
             render.context.strokeStyle = "green";
