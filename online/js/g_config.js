@@ -1338,7 +1338,7 @@ woh.g_config.weapon={
 woh.g_config.monsters = {
     "crab": {
         "health":300,//血量
-        "damage":4,//攻击
+        "damage":5,//攻击
         "defend":0,//防御
         "crit":0,//暴击
         "exp":1250,//打死一只怪物获得的经验值

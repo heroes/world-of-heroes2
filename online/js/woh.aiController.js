@@ -121,14 +121,14 @@ Laro.NS('woh', function (L) {
             if (this.isPlayer(obj)) {
                 this.players = this.players.filter(function (e) { return e != obj });
                 this.monsters.forEach(function (monster) {
-                    me.updateMonsterTarget(monster);
+                    me && me.updateMonsterTarget(monster);
                 });
             }
             if (this.isMonster(obj)) {
                 this.monsters = this.monsters.filter(function (e) { return e != obj });
                 var me =this;
                 this.players.forEach(function (player) {
-                    me.updatePlayerTarget(obj);
+                    me && me.updatePlayerTarget(obj);
                 });
             }
         }

@@ -19,6 +19,7 @@ Laro.NS('woh', function (L) {
         els.canvas = $('canvas');
         els.canvasWrap = $('canvas-wrap');
         els.map = $('map');
+        els.gameover = $('gameover');
         pkg.els = els;
     }
 
@@ -70,6 +71,7 @@ Laro.NS('woh', function (L) {
         woh.stage.init();
         woh.skills.init();
         woh.loop.init();
+        woh.evt.init();
     };
 
 });
@@ -123,6 +125,9 @@ Laro.NS('woh', function (L) {
                 var obj = o.obj;
                 obj[fnName] && obj[fnName].apply(obj, __args);
             });
+        },
+        length: function () {
+            return this._objects.length;
         }
     });
 

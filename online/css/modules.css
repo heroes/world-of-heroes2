@@ -282,7 +282,17 @@ margin-top:420px;}
     -msie-transition: opacity 0.5s ease;
 }
 
-
+.gameover-module {
+    background: url(../resources/images/index/dead.jpg) no-repeat 50% 50%;
+}
+.back-home-btn {
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+    width: 129px;
+    height: 129px;
+    background: url(../resources/images/index/return-button.png) no-repeat;
+}
 
 
 
