@@ -20,19 +20,19 @@ woh.skill_rate={
 		'speed_movement':200,//移动速度，单位为像素
 		'speed_attack':1,//攻击速度，单位为t/s,每秒多少次
 	},
-	'002':{
+  '002':{
+    'health':0.5,
+    'attack':2,
+    'defend':0.5,
+    'crit':1,
+    'miss':1,
+    'speed_movement':200,
+    'speed_attack':1,
+  },
+	'003':{
     'health':1.2,
 		'attack':0.5,
 		'defend':1.3,
-		'crit':1,
-		'miss':1,
-		'speed_movement':200,
-		'speed_attack':1,
-	},
-	'003':{
-    'health':0.5,
-		'attack':2,
-		'defend':0.5,
 		'crit':1,
 		'miss':1,
 		'speed_movement':200,
