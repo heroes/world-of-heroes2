@@ -72,18 +72,26 @@ Laro.NS('woh.stageClass', function (L) {
             })
         },
         transition: function () {
-            this.activeLines == 0 && woh.gameScript.continueExec();
+            if (this.aiController.players.length == 0) {
+                woh.stage.go('gameover', {replay: true});
+                woh.util.fadeOut(woh.els.canvasWrap);
+            }
+            else{
+                this.activeLines == 0 && woh.gameScript.continueExec();
+            }
         },
         leave: function () {
             woh.log('leave stage [battle]');
             //清空技能列表
             document.getElementById('role-skill-container').innerHTML="";
-            var result={
-                exp:this.totalexp,
-                roledata:woh.runtime.activeRole,
-                drop:this.data.drop
-            };
-            battleCount.init(result);
+            if(this.aiController.players.length != 0){
+                var result={
+                    exp:this.totalexp,
+                    roledata:woh.runtime.activeRole,
+                    drop:this.data.drop
+                };
+                battleCount.init(result);
+            }
             this.roles.remove();
         },
         update: function (dt) {
@@ -152,12 +160,6 @@ Laro.NS('woh.stageClass', function (L) {
             if (sprite.ondead) {
                 sprite.ondead();
             }
-            // 人物死光 game over
-            if (this.aiController.players.length == 0) {
-                woh.stage.go('gameover', {replay: true});
-                woh.util.fadeOut(woh.els.canvasWrap);
-            }
-
         }
 
     }).statics({
