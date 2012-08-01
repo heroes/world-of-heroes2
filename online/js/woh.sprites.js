@@ -249,11 +249,12 @@ Laro.NS('woh', function (L) {
             if(this.fsm.getCurrentState().stateId != woh.roleStates.run)
                 this.fsm.setState(woh.roleStates.run);
         },
-        normalAttack: function () {
+        normalAttack: function (animate) {
             if(this.fsm.getCurrentState().stateId != woh.roleStates.attack &&
                 this.fsm.getCurrentState().stateId != woh.roleStates.hurted &&
                 this.fsm.getCurrentState().stateId != woh.roleStates.dead )
                 this.fsm.setState(woh.roleStates.attack);
+            //this.animations.attack[2]=
         },
         magic:function(data){
             

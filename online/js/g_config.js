@@ -1987,23 +1987,23 @@ woh.skill_data={
 }
 //技能效果动画的配置
 woh.g_config.skill_effect={
-    "normal_1":{
-        "stand": {
+    "normal_1":{ 
+        "animation": {
             "info": {
                 "nbrOfFrames": 2,
-                "name": "normal_1",
+                "name": "stand",
                 "type": "animation",
-                "framerate": 4,
-                "pivotx": 35,
-                "pivoty": 77,
+                "framerate": 2,
+                "pivotx": 23,
+                "pivoty": 80,
                 "events": []
             },
             "data": [
-                [0,0,69,154,0,0,69,154],
-                [70,0,139,154,70,0,139,154]
+                [0,0,45,159,0,0,45,159],
+                [46,0,91,159,46,0,91,159]
             ],
             "filename": "images/sprites/skilleffect/normal_1.png"
-        }
+        }        
     },
     "001": {
         "stand":{
