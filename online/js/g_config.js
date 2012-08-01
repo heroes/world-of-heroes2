@@ -2006,7 +2006,7 @@ woh.g_config.skill_effect={
         }        
     },
     "001": {
-        "stand":{
+        "animation":{
             "info": {
                 "nbrOfFrames": 4,
                 "name": "001",
@@ -2026,7 +2026,7 @@ woh.g_config.skill_effect={
         }
     },
     "002": {
-        "stand":{
+        "animation":{
             "info": {
             "nbrOfFrames": 4,
             "name": "002",
@@ -2046,7 +2046,7 @@ woh.g_config.skill_effect={
         }
     },
     "003":{
-        "stand": {
+        "animation": {
             "info": {
                 "nbrOfFrames": 4,
                 "name": "stand",
@@ -2066,7 +2066,7 @@ woh.g_config.skill_effect={
         }
     },
     "004":{
-        "stand": {
+        "animation": {
             "info": {
                 "nbrOfFrames": 8,
                 "name": "",
@@ -2090,7 +2090,7 @@ woh.g_config.skill_effect={
         }       
     },
     "005":{
-        "stand": {
+        "animation": {
             "info": {
                 "nbrOfFrames": 3,
                 "name": "stand",
@@ -2109,7 +2109,7 @@ woh.g_config.skill_effect={
         }        
     },
     "006":{
-        "stand": {
+        "animation": {
             "info": {
                 "nbrOfFrames": 3,
                 "name": "stand",
@@ -2128,7 +2128,7 @@ woh.g_config.skill_effect={
         }
     },
     "007":{
-        "stand": {
+        "animation": {
             "info": {
                 "nbrOfFrames": 3,
                 "name": "stand",
@@ -2147,7 +2147,7 @@ woh.g_config.skill_effect={
         }       
     },
     "008":{
-        "stand": {
+        "animation": {
             "info": {
                 "nbrOfFrames": 3,
                 "name": "stand",
