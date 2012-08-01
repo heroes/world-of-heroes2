@@ -1,4 +1,4 @@
-/**
+﻿/**
  * 背包
  * @author
  */
@@ -303,7 +303,7 @@
             var itemlattics=_doc.querySelectorAll('#role-manage ul.items li'),
                 itemdatas=woh.runtime.packageItems;
             for(var i in itemdatas){
-                itemlattics[i].innerHTML="<img width='77' height='77' src='"+woh.item_data[itemdatas[i][0]][itemdatas[i][1]]['icon']+"' draggable='true'"
+                itemlattics[i].innerHTML="<img width='77' height='77' src='"+woh.item_data[itemdatas[i][0]][itemdatas[i][1]]['icon']+"' draggable='false'"
                 +"datatype='"+woh.runtime.packageItems[i][0]+"' datatag='"+woh.runtime.packageItems[i][1]+"' for='"+woh.item_data[itemdatas[i][0]][itemdatas[i][1]]['for']+"'/>";
             }
         },
@@ -316,9 +316,9 @@
             roleinfo.style.display = 'block';
            
             this.renderItemlattic();
-            this.bind();
             this.initAvatarBar();
             this.renderItems();
+            this.bind();
             this.initData(0);
             _doc.querySelector('#role-manage .ava-bar .avar:first-child').className+=' active';
         },
@@ -357,22 +357,67 @@
             //装备图标拖动事件
         var draggingType,
             draggingId;
-            _doc.querySelector('#role-manage .items').addEventListener('dragstart',function(e){
-                if(e.target.className=='useable'){
+        var draggingIcon;
+
+        Array.prototype.forEach.call(document.querySelectorAll('#role-manage .items img'),function(elem){
+            enableMouseGestureEvents(elem);
+            enableGestureEvents(elem);
+            elem.addEventListener('panstart',function(e){ 
+
+                if(this.className=='useable'){
                     draggingType=e.target.attributes['datatype'].nodeValue;
                     draggingId=e.target.attributes['datatag'].nodeValue;
+                    draggingIcon = this;
                 }
             },false);
-            _doc.querySelector('#role-manage .items').addEventListener('drop',function(){
-
+            var puttingWeapon = false;
+            var puttingClothes = false;
+            elem.addEventListener('pan',function(e){
+                if(this.className!='useable')
+                    return ;
+                var puttingWeapon = false;
+                var puttingCloth = false;
+                
+                this.style.webkitTransform = "matrix(1, 0, 0, 1, "+[e.displacementX,e.displacementY]+")";
+                var rect = this.getClientRects()[0];
+                var weapon = document.querySelector("#weapon");
+                if(Math.abs(weapon.getClientRects()[0].left - rect.left) < 30) {
+                    puttingWeapon = true;
+                }
+                var clothes = document.querySelector("#clothes");
+                if(Math.abs(clothes.getClientRects()[0].left - rect.left) < 30) {
+                    puttingClothes = true;
+                }
             },false);
+
+            elem.addEventListener('panend',function(e){
+                if(puttingWeapon) {
+                    if(draggingType=='weapon'){
+                        weapon.innerHTML="<img width='77' height='77' src='"+woh.item_data['weapon'][draggingId]['icon']+"'/>";
+                    }
+                    woh.runtime.activeRole[that.currentActiveRole]['weapon']=draggingId;
+                    that.initData(that.currentActiveRole);
+                    draggingType="";
+                }
+                if(puttingClothes) {
+                    if(draggingType=='clothes'){
+                        clothes.innerHTML="<img width='77' height='77' src='"+woh.item_data['clothes'][draggingId]['icon']+"'/>";
+                    }
+                    woh.runtime.activeRole[that.currentActiveRole]['clothes']=draggingId;
+                    that.initData(that.currentActiveRole);
+                    draggingType="";
+                }
+                this.style.webkitTransform = "matrix(1, 0, 0, 1, 0 ,0)";
+            },false);
+
             //点击装备图标显示相应数值
-            _doc.querySelector('#role-manage .items').addEventListener('mousedown',function(e){
+            elem.addEventListener('tap',function(e){
                 if(e.target.attributes['datatype']){
                     if(_doc.querySelector('#role-manage .items .active')){
-                        _doc.querySelector('#role-manage .items .active').className="";
+                        _doc.querySelector('#role-manage .items .active').classList.remove("active");
                     }
-                    e.target.parentNode.className+=' active';
+                    this.parentNode.classList.add("active");
+
                     var dataType=e.target.attributes['datatype'].nodeValue,
                         dataTag=e.target.attributes['datatag'].nodeValue,
                         dataItem=woh.item_data[dataType][dataTag];
@@ -383,6 +428,10 @@
                     ' 防御+'+dataItem['defend']+' 暴击+'+dataItem['crit'];
                 }
             },false);
+        });
+
+
+/*
             _doc.getElementById('weapon').ondragover=function(e){
                 if (e.preventDefault) 
                     e.preventDefault();                                          
@@ -391,6 +440,7 @@
                 if (e.preventDefault) 
                     e.preventDefault();                                          
             };
+
             _doc.getElementById('weapon').addEventListener('drop',function(e){
                 if(draggingType=='weapon'){
                     if(e.target.id=='weapon'){
@@ -419,6 +469,7 @@
                     draggingType="";
                 }
             },false);
+*/
         },
         initAvatarBar:function(){ //载入活动人物的头像
             for(var i in woh.runtime.activeRole){
