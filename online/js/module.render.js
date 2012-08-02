@@ -523,7 +523,6 @@
                         woh.runtime.activeRole[that.currentActiveRole]['skill_list'][skill_key]++;
                         woh.runtime.activeRole[that.currentActiveRole]['skill_point']--;
                         that.initData(that.currentActiveRole);
-                        var activeone=e.target.getAttribute('data-toggle');
                     }
                     else{
                         (_doc.querySelector('#skill-manage .skill-list li.active')===null)||(_doc.querySelector('#skill-manage .skill-list li.active').className="");
@@ -557,11 +556,10 @@
                 _doc.querySelector('#skill-manage .skill-point').innerHTML=dataSkillPoint;
                 console.log("技能列表",dataSkillList);
                 for(var key in dataSkillList){
-                    console.log(dataSkillList[key]);
                     var iconclass='',
-                        nextRoleLevel=dataSkillList[key]+1;
-                    if(nextRoleLevel>=woh.skill_data[key]['level_limit'].length){nextRoleLevel=99;}
-                    if(dataSkillPoint>0&&nextRoleLevel<=dataRoleCurrentLv){
+                        nextSkillLevel=dataSkillList[key]+1;
+                    //当有剩余技能点以及当前人物等级大于下一阶段技能可点等级时技能标识为可点
+                    if(dataSkillPoint>0&&nextSkillLevel<woh.skill_data[key]['level_limit'].length&&woh.skill_data[key]['level_limit'][nextSkillLevel]<=dataRoleCurrentLv){
                         iconclass=" class='useable' ";
                     }
                     items.push("<li><img width='77' height='77'"+iconclass+"data-toggle='"+key+"' src='"+woh.skill_data[key]['icon']+"'/></li>");

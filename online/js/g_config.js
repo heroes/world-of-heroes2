@@ -1798,7 +1798,7 @@ woh.skill_data={
         'name':'疾风刺',
         'description':'追求一击必杀的招式,轻灵迅捷,其威力在不同修为者手中截然不同。（冲向对方进行一次攻击）',//技能描述
         'icon':'./resources/images/skillicons/001.jpg',//技能图标路径
-        'level_limit':[1,2,4,5,7],//每一阶段的可点等级
+        'level_limit':[0,1,2,4,5,7],//每一阶段的可点等级
         'cd':15,//CD时间
         
         //技能影响
@@ -1806,7 +1806,7 @@ woh.skill_data={
             //单体直接伤害，攻击范围等同于武器攻击范围
             'attack_direct':{
                 'target':'enemySingle',//使用对象 selfSingle/ememySingle/selfRange/ememyRange/selfAll/enemyAll
-                'attack_addition':[10,12,14,16,18],//伤害增加值,对应不同等级
+                'attack_addition':[0,10,12,14,16,18],//伤害增加值,对应不同等级
             }
         }
     },
@@ -1814,7 +1814,7 @@ woh.skill_data={
         'name':'落英染',
         'description':'英华翩舞兮,染景纷纷旧年时。美好的追忆总能治愈人心。（己方全体生命回复）',//技能描述
         'icon':'./resources/images/skillicons/002.jpg',//技能图标路径
-        'level_limit':[2,3,4,8,10],//每一阶段的可点等级
+        'level_limit':[0,2,3,4,8,10],//每一阶段的可点等级
         'cd':15,//CD时间
         //技能影响
         'data':{
@@ -1829,7 +1829,7 @@ woh.skill_data={
         'name':'浮云风卷',
         'description':'飘风自南,泱泱涤尘。凝神静气,荡净浮埃。（以施法者为中心,在半径200的区域内进行群体攻击）',//技能描述
         'icon':'./resources/images/skillicons/003.jpg',//技能图标路径
-        'level_limit':[2,3,4,9,11],//每一阶段的可点等级
+        'level_limit':[0,2,3,4,9,11],//每一阶段的可点等级
         'cd':30,//CD时间
         //技能影响
         'data':{
@@ -1860,7 +1860,7 @@ woh.skill_data={
         'name':'醉舞秋红',
         'description':'日暮秋烟起,萧萧枫树林。寄托壮志未酬哀思的招式,饱含尽除敌寇的怨愤。(敌方全体造成大量伤害)',
         'icon':'./resources/images/skillicons/004.jpg',//技能图标路径
-        'level_limit':[5,8,9,13,15],//每一阶段的可点等级
+        'level_limit':[0,5,8,9,13,15],//每一阶段的可点等级
         'cd':120,//CD时间
         //技能影响
         'data':{
@@ -1877,7 +1877,7 @@ woh.skill_data={
         'name':'灵焰灼',
         'description':'星星之火,可以燎原,一旦燃起,便势不可当。(敌方全体受到伤害)',
         'icon':'./resources/images/skillicons/005.jpg',//技能图标路径
-        'level_limit':[1,2,4,5,7],//每一阶段的可点等级
+        'level_limit':[0,1,2,4,5,7],//每一阶段的可点等级
         'cd':15,//CD时间
         //技能影响
         'data':{
@@ -1895,7 +1895,7 @@ woh.skill_data={
         'name':'心月斩',
         'description':'心月狐,其性属火,喜好游戏人间,祸乱人心。（造成范围伤害,受到伤害者行动封印。）',
         'icon':'./resources/images/skillicons/006.jpg',//技能图标路径
-        'level_limit':[2,3,4,8,10],//每一阶段的可点等级
+        'level_limit':[0,2,3,4,8,10],//每一阶段的可点等级
         'cd':15,//CD时间
         //技能影响
         'data':{
@@ -1916,7 +1916,7 @@ woh.skill_data={
         'name':'天狐之怒',
         'description':'“青丘之山,有兽焉,其状如狐而九尾。”九尾狐出,乃世间将有大乱之象。（全部敌人受到连续伤害）',
         'icon':'./resources/images/skillicons/007.jpg',//技能图标路径
-        'level_limit':[2,3,4,9,11],//每一阶段的可点等级
+        'level_limit':[0,2,3,4,9,11],//每一阶段的可点等级
         'cd':30,//CD时间
         //技能影响
         'data':{
@@ -1933,7 +1933,7 @@ woh.skill_data={
         'name':'心宿炎障',
         'description':'心宿,又称大火,东方苍龙七宿之心,守心护元,灭障除魔。（全部队友获得5秒免伤状态）',
         'icon':'./resources/images/skillicons/008.jpg',//技能图标路径
-        'level_limit':[5,8,9,13,15],//每一阶段的可点等级
+        'level_limit':[0,5,8,9,13,15],//每一阶段的可点等级
         'cd':60,//CD时间
         //技能影响
         'data':{
@@ -1950,7 +1950,7 @@ woh.skill_data={
         'name':'花雨露',
         'description':'花雨润泽,沁人心脾,沐浴者神清气爽。（单体回复体力）',
         'icon':'./resources/images/skillicons/009.jpg',//技能图标路径
-        'level_limit':[5,6,7,8,9],//每一阶段的可点等级
+        'level_limit':[0,5,6,7,8,9],//每一阶段的可点等级
         'cd':15,//CD时间
         //技能影响
         'data':{
@@ -1961,7 +1961,7 @@ woh.skill_data={
         'name':'水月霖',
         'description':'水月之力属幻,堕入幽梦者,如履太虚。（敌方全体受到伤害并进入减速状态）',
         'icon':'./resources/images/skillicons/010.png',//技能图标路径
-        'level_limit':[5,6,7,8,9],//每一阶段的可点等级
+        'level_limit':[0,5,6,7,8,9],//每一阶段的可点等级
         'cd':15,//CD时间
         //技能影响
         'data':{
@@ -1972,7 +1972,7 @@ woh.skill_data={
         'name':'芳华流转',
         'description':'芳华轻笑,千红流转,生机盎然。（全体回复体力）',
         'icon':'./resources/images/skillicons/011.png',//技能图标路径
-        'level_limit':[5,6,7,8,9],//每一阶段的可点等级
+        'level_limit':[0,5,6,7,8,9],//每一阶段的可点等级
         'cd':30,//CD时间
         //技能影响
     },
@@ -1980,7 +1980,7 @@ woh.skill_data={
         'name':'镜泉润物',
         'description':'泉之始,镜之初,润泽万物,生生不息。（全体回复大量体力并解除一切负面状态）',
         'icon':'./resources/images/skillicons/012.png',//技能图标路径
-        'level_limit':[5,6,7,8,9],//每一阶段的可点等级
+        'level_limit':[0,5,6,7,8,9],//每一阶段的可点等级
         'cd':60,//CD时间
         //技能影响
     }
