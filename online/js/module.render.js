@@ -517,16 +517,21 @@
             //绑定点技能的功能
             var that=this;
             _doc.querySelector('#skill-manage .skill-list').addEventListener('click',function(e){
-            if(e.target.nodeName=='img'||e.target.nodeName=='IMG'){
-                var skill_key=e.target.getAttribute('data-toggle');
-                _doc.querySelector('#skill-manage .description h3.name').innerHTML=woh.skill_data[skill_key]['name'];
-                _doc.querySelector('#skill-manage .description p.content').innerHTML=woh.skill_data[skill_key]['description'];
-                if(e.target.className=='useable'){
-                    woh.runtime.activeRole[that.currentActiveRole]['skill_list'][skill_key]++;
-                    woh.runtime.activeRole[that.currentActiveRole]['skill_point']--;
-                    that.initData(that.currentActiveRole);
+                if(e.target.nodeName=='img'||e.target.nodeName=='IMG'){
+                    var skill_key=e.target.getAttribute('data-toggle');
+                    if(e.target.className=='useable'&&e.target.parentNode.className=='active'){
+                        woh.runtime.activeRole[that.currentActiveRole]['skill_list'][skill_key]++;
+                        woh.runtime.activeRole[that.currentActiveRole]['skill_point']--;
+                        that.initData(that.currentActiveRole);
+                        var activeone=e.target.getAttribute('data-toggle');
+                    }
+                    else{
+                        (_doc.querySelector('#skill-manage .skill-list li.active')===null)||(_doc.querySelector('#skill-manage .skill-list li.active').className="");
+                        e.target.parentNode.className='active';
+                    }
+                    _doc.querySelector('#skill-manage .description h3.name').innerHTML=woh.skill_data[skill_key]['name'];
+                    _doc.querySelector('#skill-manage .description p.content').innerHTML=woh.skill_data[skill_key]['description'];
                 }
-            }
             },false);
         },
         initAvatarBar:function(){ //载入活动人物的头像
@@ -550,7 +555,9 @@
                 dataRoleCurrentLv=woh.runtime.activeRole[id]['lv'],
                 items=[];
                 _doc.querySelector('#skill-manage .skill-point').innerHTML=dataSkillPoint;
+                console.log("技能列表",dataSkillList);
                 for(var key in dataSkillList){
+                    console.log(dataSkillList[key]);
                     var iconclass='',
                         nextRoleLevel=dataSkillList[key]+1;
                     if(nextRoleLevel>=woh.skill_data[key]['level_limit'].length){nextRoleLevel=99;}

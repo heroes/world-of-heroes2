@@ -136,6 +136,7 @@ margin-top:420px;}
 .map-module .sub-win#skill-manage span.skill-point{position:absolute;top:200px;font-size: 30px; color: red; display: block; float: left; margin-left: 465px;line-height: 30px}
 .map-module .sub-win#skill-manage ul.skill-list{list-style:none;position: absolute;left: 290px; top: 260px;}
 .map-module .sub-win#skill-manage ul.skill-list li{display: inline-block; border: 3px solid black; margin-right: 5px; padding: 0; height: 77px}
+.map-module .sub-win#skill-manage ul.skill-list li.active{border: 3px solid yellow;}
 .map-module .sub-win#skill-manage ul.skill-list li img{opacity: .3}
 .map-module .sub-win#skill-manage ul.skill-list li img.useable{opacity: 1}
 .map-module .sub-win#skill-manage .description{ position: absolute;top: 450px; left: 80px; width: 500px;}
