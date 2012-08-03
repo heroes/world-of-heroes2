@@ -66,7 +66,7 @@
             if(e.target.id.substring(0,4)=='btn-'){
                 //e.target.style.background="url(../online/resources/images/index/index-btn-press.png) no-repeat";
                 switch(e.target.id){
-                    case 'btn-1':setTimeout('woh.runtime.scriptProcess=[];woh.gameScript.continueExec()',300);break;
+                    case 'btn-1':woh.runtime.scriptProcess=[];setTimeout('woh.gameScript.continueExec()',300);break;
                     case 'btn-2':document.getElementById('Intro-0').style.display='block';break;
                     case 'btn-3':document.getElementById('Intro-1').style.display='block';break;
                     case 'btn-4':document.getElementById('Intro-2').style.display='block';break;
@@ -374,17 +374,16 @@
             elem.addEventListener('pan',function(e){
                 if(this.className!='useable')
                     return ;
-                var puttingWeapon = false;
-                var puttingCloth = false;
-                
                 this.style.webkitTransform = "matrix(1, 0, 0, 1, "+[e.displacementX,e.displacementY]+")";
                 var rect = this.getClientRects()[0];
                 var weapon = document.querySelector("#weapon");
                 if(Math.abs(weapon.getClientRects()[0].left - rect.left) < 30) {
+                    console.log("puttingWeapon = true");
                     puttingWeapon = true;
                 }
                 var clothes = document.querySelector("#clothes");
                 if(Math.abs(clothes.getClientRects()[0].left - rect.left) < 30) {
+                    console.log("puttingClothes = true");
                     puttingClothes = true;
                 }
             },false);
@@ -393,18 +392,18 @@
                 if(puttingWeapon) {
                     if(draggingType=='weapon'){
                         weapon.innerHTML="<img width='77' height='77' src='"+woh.item_data['weapon'][draggingId]['icon']+"'/>";
+                        woh.runtime.activeRole[that.currentActiveRole]['weapon']=draggingId;
+                        that.initData(that.currentActiveRole);
+                        draggingType="";
                     }
-                    woh.runtime.activeRole[that.currentActiveRole]['weapon']=draggingId;
-                    that.initData(that.currentActiveRole);
-                    draggingType="";
                 }
                 if(puttingClothes) {
                     if(draggingType=='clothes'){
                         clothes.innerHTML="<img width='77' height='77' src='"+woh.item_data['clothes'][draggingId]['icon']+"'/>";
+                        woh.runtime.activeRole[that.currentActiveRole]['clothes']=draggingId;
+                        that.initData(that.currentActiveRole);
+                        draggingType="";
                     }
-                    woh.runtime.activeRole[that.currentActiveRole]['clothes']=draggingId;
-                    that.initData(that.currentActiveRole);
-                    draggingType="";
                 }
                 this.style.webkitTransform = "matrix(1, 0, 0, 1, 0 ,0)";
             },false);

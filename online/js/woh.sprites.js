@@ -153,7 +153,7 @@ Laro.NS('woh', function (L) {
             
             animation = typeof animation == 'string' ? this.animations[animation] : animation;
             this.curAnimation = animation;
-            console.log("当前动画",animation);
+            //console.log("当前动画",animation);
             animation.forEach(function (o) {
                 o.setRange(start, end);
                 o.rewind();
@@ -164,7 +164,7 @@ Laro.NS('woh', function (L) {
         },
         onAnimationEvent: function (evt, anim) {
             var me = this;
-            console.log(evt,"敌人是"+this.enemy,this.damage);
+            //console.log(evt,"敌人是"+this.enemy,this.damage);
             switch (evt) {
                 case "stopped" : this.fsm.message(woh.roleMessages.animStopped); break;
                 case "standup": 
