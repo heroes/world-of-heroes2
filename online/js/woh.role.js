@@ -86,6 +86,7 @@
 
         },
         getAnimationGroup: function (type) {
+            var me=this;
             L.$lea.setLoader(woh.loader);
             var obj = [
                 woh.g_config.clothes[this.data['clothes']][type],
@@ -93,7 +94,10 @@
             //当状态为攻击的时候加上攻击光效
             type!='dead'&&obj.push(woh.g_config.weapon[this.data['weapon']][type]);
             if(type=='attack'){
-
+                var effect=eval('('+JSON.stringify(woh.g_config.skill_effect)+')')['normal_1']['animation'];
+                    effect['info']['pivotx']-=me.data.damageArea[2];
+                obj.push(effect);
+               // console.log('绘制偏移',effect['pivotx'],obj[2]);
             }
             if (!Array.isArray(obj)) {
                 obj = [obj];

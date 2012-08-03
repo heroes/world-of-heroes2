@@ -10,9 +10,16 @@ Laro.NS('woh', function (L) {
         this.damage=this.data['damage'];
     }).methods({
         getAnimationGroup: function (type) {
+            var me=this;
             L.$lea.setLoader(woh.loader);
 
             var obj = this.data[type];
+            if(type=='attack'){
+                var effect=eval('('+JSON.stringify(woh.g_config.skill_effect)+')')['normal_1']['animation'];
+                    effect['info']['pivotx']-=me.data.damageArea[2];
+                obj.push(effect);
+               // console.log('绘制偏移',effect['pivotx'],obj[2]);
+            }
             ret = [];
             if (!Array.isArray(obj)) {
                 obj = [obj];
