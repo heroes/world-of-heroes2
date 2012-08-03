@@ -89,9 +89,9 @@
             L.$lea.setLoader(woh.loader);
             var obj = [
                 woh.g_config.clothes[this.data['clothes']][type],
-                woh.g_config.weapon[this.data['weapon']][type]
             ],ret = [];
             //当状态为攻击的时候加上攻击光效
+            type!='dead'&&obj.push(woh.g_config.weapon[this.data['weapon']][type]);
             if(type=='attack'){
 
             }

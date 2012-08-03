@@ -95,8 +95,10 @@ Laro.NS('woh.stageClass', function (L) {
             this.roles.remove();
         },
         update: function (dt) {
-            this.roles.dispatch('update', dt);
-            this.timeInState += dt;
+            if (this.aiController.players.length != 0) {
+                this.roles.dispatch('update', dt);
+                this.timeInState += dt;
+            }
         },
         draw: function (render) {
             if (this.timeInState > 0.5) {

@@ -153,7 +153,7 @@ Laro.NS('woh', function (L) {
             
             animation = typeof animation == 'string' ? this.animations[animation] : animation;
             this.curAnimation = animation;
-            
+            console.log("当前动画",animation);
             animation.forEach(function (o) {
                 o.setRange(start, end);
                 o.rewind();
