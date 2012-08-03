@@ -16,7 +16,7 @@ Laro.NS('woh', function (L) {
             var obj = this.data[type];
             if(type=='attack'){
                 var effect=eval('('+JSON.stringify(woh.g_config.skill_effect)+')')['normal_1']['animation'];
-                    effect['info']['pivotx']-=me.data.damageArea[2];
+                    effect['info']['pivotx']-=me.data.damageArea[2];//将动画的绘制偏移调整到伤害区域的边缘位置
                 obj.push(effect);
                // console.log('绘制偏移',effect['pivotx'],obj[2]);
             }
