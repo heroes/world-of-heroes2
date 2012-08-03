@@ -363,7 +363,6 @@
             enableMouseGestureEvents(elem);
             enableGestureEvents(elem);
             elem.addEventListener('panstart',function(e){ 
-
                 if(this.className=='useable'){
                     draggingType=e.target.attributes['datatype'].nodeValue;
                     draggingId=e.target.attributes['datatag'].nodeValue;
