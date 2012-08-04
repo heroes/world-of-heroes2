@@ -59,7 +59,7 @@ woh.g_config.script={
             {'avatar':'resources/images/dialogue/sola_cheng_nature.png','name':'？？','content':'你知道……人鱼吗？',position:'right',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
             {'avatar':'resources/images/dialogue/rio_tang_smile.png','name':'唐如','content':'人鱼？虽说古籍中确有此物记载，然子不语怪力乱神……',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
             {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'喂喂喂，兄台你怎么了！',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
-            {'avatar':'resources/images/dialogue/sola_cheng_a.png','name':'？？','content':'……',position:'right',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_faint.png','name':'？？','content':'……',position:'right',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
             {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'醒，醒醒啊！呼吸平稳，脉象虽弱却不乱，莫非是饿晕过去了？',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
             {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'天啊，哪来那么多的大螃蟹！不好，螃蟹似乎是冲着那个人来的。无论如何，先把它们击退吧。',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'}
         ],
