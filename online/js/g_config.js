@@ -283,6 +283,7 @@ woh.g_config.resources = {
             'images/dialogue/rio_tang_wei.png',
 
             'images/dialogue/sola_cheng_normal.png',
+            'images/dialogue/sola_cheng_faint.png',
             'images/dialogue/sola_cheng_a.png',
             'images/dialogue/sola_cheng_food.png',
             'images/dialogue/sola_cheng_nature.png',
