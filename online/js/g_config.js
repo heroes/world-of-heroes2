@@ -77,7 +77,7 @@ woh.g_config.script={
         type:'battle',
         repeat:true,
         data:{
-            "role":["001","002"],
+            "role":["001"],
             "bg":'images/bg/bg-beach-dusk.jpg',
             "monster":[
                 //sample
