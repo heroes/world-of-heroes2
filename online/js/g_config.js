@@ -1629,7 +1629,7 @@ woh.item_data={
                 'icon':'./resources/images/map/items/w_001.png',//图标路径
                 'modal':['./resources/images/sprites/weapon/001/stand.png',0,0,200,170],//模型路径
                 'health':0,
-                'attack':10,
+                'attack':5,
                 'defend':3,
                 'crit':0,
                 'for':'001',
@@ -1639,9 +1639,9 @@ woh.item_data={
                 'description':'美其名曰“玉”，其实不过是打磨得比较光滑的青铜而已。',//描述
                 'icon':'./resources/images/map/items/w_002.png',//图标路径
                 'modal':['./resources/images/sprites/weapon/002/stand.png',0,0,200,170],//模型路径
-                'health':0,//血量加成
-                'attack':3,//攻击加成
-                'defend':0,//防御加成
+                'health':10,//血量加成
+                'attack':10,//攻击加成
+                'defend':3,//防御加成
                 'crit':0,//暴击加成
                 'for':'001',//适用角色（读取role_data中的数据）
             },
@@ -1662,7 +1662,7 @@ woh.item_data={
                 'icon':'./resources/images/map/items/w_004.png',
                 'modal':['./resources/images/sprites/weapon/004/stand.png',75,55,267,155],
                 'health':0,
-                'attack':10,
+                'attack':15,
                 'defend':3,
                 'crit':0,
                 'for':'002',   
@@ -1707,8 +1707,8 @@ woh.item_data={
                 'description':'各种布料东拼西凑而成的寒酸衣服，穷苦人家的穿着。',
                 'icon':'./resources/images/map/items/c_001.png',
                 'modal':['resources/images/sprites/clothes/001/001/stand.png',0,0,200,170],
-                'health':0,
-                'attack':10,
+                'health':3,
+                'attack':0,
                 'defend':3,
                 'crit':0,
                 'for':'001',//适用职业类型
@@ -1718,8 +1718,8 @@ woh.item_data={
                 'description':'看起来是高级武将使用的样式，但已十分破旧，上有云锦纹路，据说有护持作用。',
                 'icon':'./resources/images/map/items/c_002.png',
                 'modal':['resources/images/sprites/clothes/001/002/stand.png',0,0,200,170],
-                'health':0,
-                'attack':10,
+                'health':5,
+                'attack':0,
                 'defend':3,
                 'crit':0,
                 'for':'001',
@@ -1729,8 +1729,8 @@ woh.item_data={
                 'description':'富家公子常穿的便服,冬暖夏凉。',
                 'icon':'./resources/images/map/items/c_003.png',
                 'modal':['resources/images/sprites/clothes/002/003/stand.png',75,55,267,155],
-                'health':0,
-                'attack':10,
+                'health':5,
+                'attack':0,
                 'defend':3,
                 'crit':0,
                 'for':'002',//适用职业类型
@@ -1740,8 +1740,8 @@ woh.item_data={
                 'description':'“犹馀蜀中锦,爱惜比甘棠。”蜀地的锦缎千载驰名,用其制作的袍子自然也价格不菲。',
                 'icon':'./resources/images/map/items/c_003.png',
                 'modal':['resources/images/sprites/clothes/002/003/stand.png',75,55,267,155],
-                'health':0,
-                'attack':10,
+                'health':7,
+                'attack':2,
                 'defend':3,
                 'crit':0,
                 'for':'002',//适用角色

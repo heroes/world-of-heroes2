@@ -21,8 +21,8 @@ woh.skill_rate={
 		'speed_attack':1,//攻击速度，单位为t/s,每秒多少次
 	},
   '002':{
-    'health':0.5,
-    'attack':2,
+    'health':0.7,
+    'attack':1.8,
     'defend':0.5,
     'crit':1,
     'miss':1,
