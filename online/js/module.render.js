@@ -404,10 +404,8 @@
                     if(draggingType=='clothes'){
                         draggingIcon.src=clothes.getElementsByTagName('img')[0].src;
                         draggingIcon.attributes['datatag'].nodeValue=eval('('+JSON.stringify(clothes.getElementsByTagName('img')[0].attributes['datatag'].nodeValue)+')');
-                        console.log("datatag",draggingIcon.attributes['datatag'].nodeValue);
                         clothes.getElementsByTagName('img')[0].src=cache.src;
                         clothes.getElementsByTagName('img')[0].attributes['datatag'].nodeValue=cache.id;
-                        clothes.innerHTML="<img width='77' height='77' src='"+woh.item_data['clothes'][draggingId]['icon']+"'/>";
                         woh.runtime.activeRole[that.currentActiveRole]['clothes']=draggingId;
                         that.initData(that.currentActiveRole);
                         draggingType="";
