@@ -206,6 +206,7 @@ Laro.NS('woh', function (L) {
         },
         pressEnd: function () {
             this.canMove = false;
+            woh.canMoveRole = null;
         },
         startAttack: function (type) {
         

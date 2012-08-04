@@ -18,6 +18,7 @@ Laro.NS('woh.stageClass', function (L) {
             woh.log('enter stage [Battle]');
             setTimeout(function () {woh.util.fadeIn(woh.els.canvasWrap)}, 500);
             this.timeInState = 0;
+            this.gameOverTime = 0;
             // temp part to do area
             var me = this;
             this.data=data;
@@ -72,12 +73,16 @@ Laro.NS('woh.stageClass', function (L) {
             })
         },
         transition: function () {
-            if (this.aiController.players.length == 0) {
-                woh.stage.go('gameover', {replay: true});
-                woh.util.fadeOut(woh.els.canvasWrap);
+            if (this.aiController.players.length == 0) { 
+                if (!this.gameOverTime) { this.gameOverTime = this.timeInState; }
             }
             else{
                 this.activeLines == 0 && woh.gameScript.continueExec();
+            }
+
+            if (this.gameOverTime > 0 && this.timeInState - this.gameOverTime > 1.5) { 
+                woh.stage.go('gameover', {replay: true});
+                woh.util.fadeOut(woh.els.canvasWrap);
             }
         },
         leave: function () {
@@ -95,20 +100,28 @@ Laro.NS('woh.stageClass', function (L) {
             this.roles.remove();
         },
         update: function (dt) {
+            this.timeInState += dt;
             if (this.aiController.players.length != 0) {
                 this.roles.dispatch('update', dt);
-                this.timeInState += dt;
             }
         },
         draw: function (render) {
             if (this.timeInState > 0.5) {
                 this.drawBg(render);
+                // 把控制人物移动的pie和line放到这里draw，保证只在bg上面
+                this.drawMovePie(render);
                 this.drawMask(render);
                 this.roles.dispatch('draw', render);
             }
         },
         drawBg: function (rd) {
             rd.context.drawImage(woh.loader.loadedImages[this.data['bg']], 0, 0);
+        },
+        drawMovePie: function (render) {
+            if (woh.canMoveRole) {
+                render.context.drawImage(woh.loader.loadedImages['images/pie.png'], woh.STAGE_MOUSE_POS.x - 38, woh.STAGE_MOUSE_POS.y - 23);
+                render.drawLine(woh.canMoveRole.x, woh.canMoveRole.y+woh.canMoveRole.checkRect.height/2, woh.STAGE_MOUSE_POS.x, woh.STAGE_MOUSE_POS.y, '#fff');
+            }
         },
         drawMask: function (rd) {
             pkg.Battle.ENABLE_MASK && rd.drawFillScreen('rgba(0,0,0,' + pkg.Battle.screenMaskAlpha + ')');
