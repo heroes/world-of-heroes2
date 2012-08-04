@@ -386,14 +386,13 @@
             },false);
 
             elem.addEventListener('panend',function(e){
-                var draggingDOM=_doc.querySelector('#role-manage .items img[datatype="'+draggingType+'"][datatag="'+draggingId+'"]');
-                var cache_src=(draggingDOM.src).toString(),
-                    cache_id=eval('('+JSON.stringify(draggingDOM.attributes['datatag'].nodeValue)+')');
+                var cache_src=(draggingIcon.src).toString(),
+                    cache_id=eval('('+JSON.stringify(draggingIcon.attributes['datatag'].nodeValue)+')');
                 var cache={src:cache_src,id:cache_id}; 
                 if(puttingWeapon) {
                     if(draggingType=='weapon'){
-                        draggingDOM.src=weapon.getElementsByTagName('img')[0].src;
-                        draggingDOM.attributes['datatag'].nodeValue=eval('('+JSON.stringify(weapon.getElementsByTagName('img')[0].attributes['datatag'].nodeValue)+')');
+                        draggingIcon.src=weapon.getElementsByTagName('img')[0].src;
+                        draggingIcon.attributes['datatag'].nodeValue=eval('('+JSON.stringify(weapon.getElementsByTagName('img')[0].attributes['datatag'].nodeValue)+')');
                         weapon.getElementsByTagName('img')[0].src=cache.src;
                         weapon.getElementsByTagName('img')[0].attributes['datatag'].nodeValue=cache.id;
                         woh.runtime.activeRole[that.currentActiveRole]['weapon']=draggingId;
@@ -403,9 +402,9 @@
                 }
                 if(puttingClothes) {
                     if(draggingType=='clothes'){
-                        draggingDOM.src=clothes.getElementsByTagName('img')[0].src;
-                        draggingDOM.attributes['datatag'].nodeValue=eval('('+JSON.stringify(clothes.getElementsByTagName('img')[0].attributes['datatag'].nodeValue)+')');
-                        console.log("datatag",draggingDOM.attributes['datatag'].nodeValue);
+                        draggingIcon.src=clothes.getElementsByTagName('img')[0].src;
+                        draggingIcon.attributes['datatag'].nodeValue=eval('('+JSON.stringify(clothes.getElementsByTagName('img')[0].attributes['datatag'].nodeValue)+')');
+                        console.log("datatag",draggingIcon.attributes['datatag'].nodeValue);
                         clothes.getElementsByTagName('img')[0].src=cache.src;
                         clothes.getElementsByTagName('img')[0].attributes['datatag'].nodeValue=cache.id;
                         clothes.innerHTML="<img width='77' height='77' src='"+woh.item_data['clothes'][draggingId]['icon']+"'/>";
