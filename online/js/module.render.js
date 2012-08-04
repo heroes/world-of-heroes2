@@ -334,10 +334,10 @@
                 ctx.clearRect(0,0,200,200);
             var clothesImg=new Image();
                 clothesImg.src=clothes[0];
-                ctx.drawImage(clothesImg,(clothes[1]-200)/2,0,clothes[1],clothes[2],0,0,clothes[1],clothes[2]);
+                ctx.drawImage(clothesImg,clothes[1],clothes[2],clothes[3],clothes[4],0,0,clothes[3],clothes[4]);
             var weaponImg=new Image();
                 weaponImg.src=weapon[0];
-                ctx.drawImage(weaponImg,(weapon[1]-200)/2,0,weapon[1],weapon[2],0,0,weapon[1],weapon[2]);
+                ctx.drawImage(weaponImg,weapon[1],weapon[2],weapon[3],weapon[4],0,0,clothes[3],clothes[4]);
         },
         bind : function(){
         var that=this;

@@ -77,7 +77,7 @@ woh.g_config.script={
         type:'battle',
         repeat:true,
         data:{
-            "role":["001"],
+            "role":["001","002"],
             "bg":'images/bg/bg-beach-dusk.jpg',
             "monster":[
                 //sample
@@ -1636,7 +1636,7 @@ woh.item_data={
                 'name':'匕首',//名称
                 'description':'勉强能够用来防身的便宜货,居家旅行常备的防盗工具。',
                 'icon':'./resources/images/map/items/w_001.png',//图标路径
-                'modal':['./resources/images/sprites/weapon/001/stand.png',200,170],//模型路径
+                'modal':['./resources/images/sprites/weapon/001/stand.png',0,0,200,170],//模型路径
                 'health':0,
                 'attack':10,
                 'defend':3,
@@ -1647,7 +1647,7 @@ woh.item_data={
                 'name':'玉殃',//名称
                 'description':'美其名曰“玉”，其实不过是打磨得比较光滑的青铜而已。',//描述
                 'icon':'./resources/images/map/items/w_002.png',//图标路径
-                'modal':['./resources/images/sprites/weapon/002/stand.png',200,170],//模型路径
+                'modal':['./resources/images/sprites/weapon/002/stand.png',0,0,200,170],//模型路径
                 'health':0,//血量加成
                 'attack':3,//攻击加成
                 'defend':0,//防御加成
@@ -1658,7 +1658,7 @@ woh.item_data={
                 'name':'龙泉剑',
                 'description':'“装饰着金色精美花纹的剑，一看就很贵的样子，至于攻击力，就不得而知了。',
                 'icon':'./resources/images/map/items/w_003.png',
-                'modal':['./resources/images/sprites/weapon/003/stand.png',342,210],
+                'modal':['./resources/images/sprites/weapon/003/stand.png',75,55,267,155],
                 'health':0,
                 'attack':10,
                 'defend':3,
@@ -1669,7 +1669,7 @@ woh.item_data={
                 'name':'飞渊剑',
                 'description':'据说取材于极渊苦寒之地的紫晶，看起来挺像那么回事的。',
                 'icon':'./resources/images/map/items/w_004.png',
-                'modal':['./resources/images/sprites/weapon/004/stand.png',342,210],
+                'modal':['./resources/images/sprites/weapon/004/stand.png',75,55,267,155],
                 'health':0,
                 'attack':10,
                 'defend':3,
@@ -1715,7 +1715,7 @@ woh.item_data={
                 'name':'百家布衣',
                 'description':'各种布料东拼西凑而成的寒酸衣服，穷苦人家的穿着。',
                 'icon':'./resources/images/map/items/c_001.png',
-                'modal':['resources/images/sprites/clothes/001/001/stand.png',200,170],
+                'modal':['resources/images/sprites/clothes/001/001/stand.png',0,0,200,170],
                 'health':0,
                 'attack':10,
                 'defend':3,
@@ -1726,7 +1726,7 @@ woh.item_data={
                 'name':'云锦深衣',
                 'description':'看起来是高级武将使用的样式，但已十分破旧，上有云锦纹路，据说有护持作用。',
                 'icon':'./resources/images/map/items/c_002.png',
-                'modal':['resources/images/sprites/clothes/001/002/stand.png',200,170],
+                'modal':['resources/images/sprites/clothes/001/002/stand.png',0,0,200,170],
                 'health':0,
                 'attack':10,
                 'defend':3,
@@ -1737,7 +1737,7 @@ woh.item_data={
                 'name':'锦袍',
                 'description':'富家公子常穿的便服,冬暖夏凉。',
                 'icon':'./resources/images/map/items/c_003.png',
-                'modal':['resources/images/sprites/clothes/002/003/stand.png',342,210],
+                'modal':['resources/images/sprites/clothes/002/003/stand.png',75,55,267,155],
                 'health':0,
                 'attack':10,
                 'defend':3,
@@ -1748,7 +1748,7 @@ woh.item_data={
                 'name':'蜀锦袍',
                 'description':'“犹馀蜀中锦,爱惜比甘棠。”蜀地的锦缎千载驰名,用其制作的袍子自然也价格不菲。',
                 'icon':'./resources/images/map/items/c_003.png',
-                'modal':['resources/images/sprites/clothes/002/003/stand.png',342,210],
+                'modal':['resources/images/sprites/clothes/002/003/stand.png',75,55,267,155],
                 'health':0,
                 'attack':10,
                 'defend':3,
