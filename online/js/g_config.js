@@ -95,7 +95,7 @@ woh.g_config.script={
 
                 ],
             ],
-            "drop":['clothes','002',1],//掉落类型，掉落id，掉落概率
+            "drop":['weapon','002',1],//掉落类型，掉落id，掉落概率
         },
         next:'map_1'
     },
@@ -469,7 +469,7 @@ woh.g_config.clothes={
                 "framerate": 4,
                 "pivotx": 100,
                 "pivoty": 75,
-                "events": [{name: 'attack_affect', frame: 4}]
+                "events": [{name: 'attack_affect', frame: 1}]
             },
             "data": [
                 [0,0,199,169,0,0,199,169],
@@ -580,7 +580,7 @@ woh.g_config.clothes={
                 "framerate": 4,
                 "pivotx": 100,
                 "pivoty": 75,
-                "events": [{name: 'attack_affect', frame: 4}]
+                "events": [{name: 'attack_affect', frame: 1}]
             },
             "data": [
                 [0,0,199,169,0,0,199,169],
@@ -691,7 +691,7 @@ woh.g_config.clothes={
                 "framerate": 4,
                 "pivotx": 100,
                 "pivoty": 75,
-                "events": [{name: 'attack_affect', frame: 4}]
+                "events": [{name: 'attack_affect', frame: 1}]
             },
             "data": [
                 [0,0,199,169,0,0,199,169],

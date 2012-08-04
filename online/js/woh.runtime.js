@@ -32,9 +32,5 @@ Laro.NS('woh.runtime', function (L) {
         this.role=eval('('+JSON.stringify(woh.role_init_data)+')');
         console.log(this.role);  
         this.activeRole.push(this.role['001']);
-        this.packageItems.push(['weapon','001']);
-        this.packageItems.push(['weapon','003']);
-        this.packageItems.push(['clothes','001']);
-        this.packageItems.push(['clothes','003']);
     }
 });
