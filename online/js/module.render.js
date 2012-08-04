@@ -396,6 +396,13 @@
                         weapon.getElementsByTagName('img')[0].src=cache.src;
                         weapon.getElementsByTagName('img')[0].attributes['datatag'].nodeValue=cache.id;
                         woh.runtime.activeRole[that.currentActiveRole]['weapon']=draggingId;
+                        //更新包裹数据
+                        for(var i in woh.runtime.packageItems){
+                            if(woh.runtime.packageItems[i][0]=='weapon'&&woh.runtime.packageItems[i][1]==draggingId){
+                                woh.runtime.packageItems[i][1]=draggingIcon.attributes['datatag'].nodeValue;
+                                break;
+                            }
+                        }
                         that.initData(that.currentActiveRole);
                         draggingType="";
                     }
@@ -407,8 +414,13 @@
                         clothes.getElementsByTagName('img')[0].src=cache.src;
                         clothes.getElementsByTagName('img')[0].attributes['datatag'].nodeValue=cache.id;
                         woh.runtime.activeRole[that.currentActiveRole]['clothes']=draggingId;
-                        that.initData(that.currentActiveRole);
-                        draggingType="";
+                        //更新包裹数据
+                        for(var i in woh.runtime.packageItems){
+                            if(woh.runtime.packageItems[i][0]=='clothes'&&woh.runtime.packageItems[i][1]==draggingId){
+                                woh.runtime.packageItems[i][1]=draggingIcon.attributes['datatag'].nodeValue;
+                                break;
+                            }
+                        }
                     }
                 }
                 this.style.webkitTransform = "matrix(1, 0, 0, 1, 0 ,0)";

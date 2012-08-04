@@ -80,19 +80,10 @@ woh.g_config.script={
             "role":["001"],
             "bg":'images/bg/bg-beach-dusk.jpg',
             "monster":[
-                //sample
-                //[
-                    //[{type:'crab',x:100,y:200},{type:'crab',x:800,y:300},{type:'crab',x:300,y:500}],
-                    // [{type:'crab',x:100,y:200},{type:'crab',x:300,y:200}],
-                    // [{type:'crab',x:100,y:200},{type:'crab',x:300,y:200}]
-                //],
-                // [
-                //     [{type:'crab_boss',x:100,y:200}]
-                // ]
                 [
-                    [{type:'crab',x:100,y:200}],[{type:'crab',x:100,y:200},{type:'crab',x:300,y:200}]
-                    
-
+                    [{type:'crab',x:100,y:200}],
+                    [{type:'crab',x:100,y:200},{type:'crab',x:300,y:200}],
+                    [{type:'crab',x:100,y:200},{type:'crab',x:900,y:200}]
                 ],
             ],
             "drop":['weapon','002',1],//掉落类型，掉落id，掉落概率
@@ -1333,7 +1324,7 @@ woh.g_config.monsters = {
         "damage":5,//攻击
         "defend":0,//防御
         "crit":0,//暴击
-        "exp":1250,//打死一只怪物获得的经验值
+        "exp":300,//打死一只怪物获得的经验值
         'width':124,
         'height':74,
         'cooldown':2000,
