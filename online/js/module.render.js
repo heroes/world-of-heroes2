@@ -637,7 +637,7 @@
             //渲染等级数据
             _doc.querySelector('.battle-module .mask .battle-count .role').innerHTML=items.join("");
             //计算掉落
-            if(Math.random()<=result.drop[2]){
+            if(Math.random()<=result.drop[2]&&woh.runtime.packageItems.length<15){
                 woh.runtime.packageItems.push([result.drop[0],result.drop[1]]);
                 _doc.querySelector('.battle-module .mask .battle-count .item').innerHTML="<li class='single'><img src='"+woh.item_data[result.drop[0]][result.drop[1]].icon+"'></li>"
             }
