@@ -5,6 +5,7 @@
 Laro.NS('woh.stageClass', function (L) {
     var pkg = this;
     var Battle = L.BaseState.extend(function () {
+        console.log(pkg);
         // role collection
         this.roles = new woh.RoleCollection();
         woh.currentRoleGroup = this.roles;
@@ -46,7 +47,7 @@ Laro.NS('woh.stageClass', function (L) {
                 me.roles.get(roleId).stage = me;
                 me.roles.get(roleId).setPos(400 - 120 * i++, 300-(i%2)*120);
             });
-
+            //console.log("当前活动人物队列",woh.currentRoleGroup);
             this.activeLines = data.monster.length;
             data.monster.forEach(function (line) {
                 function startWave(i) {

@@ -271,8 +271,8 @@ Laro.NS('woh', function (L) {
                 this.specialAttack = data.effect;
         },
         hurted: function (damage) {
-            console.log("伤害",damage.damage);
-            console.log("伤害来源",this.enemy);
+            //console.log("伤害",damage.damage);
+            //console.log("伤害来源",this.enemy);
             this.currentHP -= damage.damage;
             this.kickback = damage.force;
             if(damage.force>0) {

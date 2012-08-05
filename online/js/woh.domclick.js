@@ -5,16 +5,18 @@ Laro.NS('woh.evt', function (L) {
     function dispatchClick (e) {
         var tar = woh.util.getActionTarget(e, 3);
         if (tar) {
-            var cmd = tar.getAttribute('data-cmd');
+            var cmd = tar.getAttribute('data-cmd'),
+                roleId= tar.getAttribute('role-type')||null;
+            //roleId和cmd分别对应人物ID和技能ID，initSkills写在woh.role.js文件里，可以改成其他的。
+            roleId&&woh.currentRoleGroup.get(roleId).initSkills(cmd);
             switch (cmd) {
-                // 技能btn
-                case 'skill001':
-                    alert('技能1');
-                    break;
-                case 'skill002':
-                    alert('技能2');
-                    break;
-                
+                // // 技能btn
+                // case '001':
+                //     alert('技能1');
+                //     break;
+                // case '002':
+                //     alert('技能2');
+                //     break;
                 //返回首页
                 case 'backToHome':
                     woh.stage.go('intro');

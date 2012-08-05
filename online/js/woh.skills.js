@@ -24,7 +24,7 @@ Laro.NS('woh.skills', function (L) {
         for(var key in skillList){
             console.log(key);
             if(skillList[key]!=0){
-                h.push('<img class="skill-icon" data-cmd="skill'+key+'" src="'+woh.skill_data[key]['icon']+'">');
+                h.push('<img class="skill-icon" role-type="'+id+'" data-cmd="'+key+'" src="'+woh.skill_data[key]['icon']+'">');
             }
         }
         h=h.join('');

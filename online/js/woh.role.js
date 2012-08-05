@@ -89,8 +89,8 @@
             this.drawHPBar(render);
             //console.log(ctx);
         },
-        initSkills:function(){
-
+        initSkills:function(id){
+            alert('我是人物'+this.data['name']+',正在施放技能'+id);
         },
         getAnimationGroup: function (type) {
             var me=this;
