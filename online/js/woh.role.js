@@ -27,6 +27,12 @@
                 crit+=clothes['crit'];
         }
         //计算人物的生命
+        this.attackBuff = {
+            effect:"001",
+            convert:function(damage){
+                
+            }
+        }
         this.currentHP = health || 1000;
         this.maxHP = health || 1000;
         this.damage=attack;
@@ -95,8 +101,11 @@
             //当状态为攻击的时候加上攻击光效
             type!='dead'&&obj.push(woh.g_config.weapon[this.data['weapon']][type]);
             if(type=='attack'){
-                var effect=eval('('+JSON.stringify(woh.g_config.skill_effect)+')')['normal_1']['animation'];
-                    effect['info']['pivotx']-=me.data.damageArea[2];
+                if(this.attackBuff)
+                    var effectType = this.attackBuff.effect;
+                if(!effectType)effectType = "normal_1";
+                var effect = JSON.parse(JSON.stringify(woh.g_config.skill_effect[effectType]['animation']));
+                effect['info']['pivotx'] -= me.data.damageArea[2]; //将动画的绘制偏移调整到伤害区域的边缘位置
                 obj.push(effect);
                // console.log('绘制偏移',effect['pivotx'],obj[2]);
             }

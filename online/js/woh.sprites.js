@@ -41,6 +41,8 @@ Laro.NS('woh', function (L) {
             return this.y + this.height/2;
         }})
 
+        this.attackBuff = null;
+
         if(data.damageArea) {
             this.damageArea = {
                 left:data.damageArea[0]-this.width/2,
@@ -135,12 +137,10 @@ Laro.NS('woh', function (L) {
             this.animations.stand = this.getAnimationGroup('stand')||null;
             this.animations.run = this.getAnimationGroup('run')||null;
             this.animations.hurted = this.getAnimationGroup('hurted')||null;
-            var attack = this.getAnimationGroup('attack');
+
             Object.defineProperty(this.animations,"attack",{get:function(){
-                if(this.magicAttack)
-                    return this.animations[this.magicAttack];
-                else return attack;
-            }})
+                return this.getAnimationGroup('attack');
+            }.bind(this)})
 
             this.animations.magic = this.getAnimationGroup('magic')||null;
             this.animations.dead = this.getAnimationGroup('dead')||null;
@@ -176,6 +176,15 @@ Laro.NS('woh', function (L) {
                          //this.stage.registerHurtableObject(me,me.data["areadata"]["standdown"],{x:x-82,y:y-120});
                     break;
                 case "attack_affect":
+                    var damageData = {
+                        damage:this.damage,
+                        attacker:this,
+                        force:this.force
+                    };
+                    if(this.attackBuff) {
+                        this.attackBuff.convert(damageData);
+                        this.attackBuff = null;
+                    }
                     this.stage.hurtArea(this.enemy, this.damageArea, {
                         damage:this.damage,
                         attacker:this,
@@ -257,8 +266,9 @@ Laro.NS('woh', function (L) {
                 this.fsm.setState(woh.roleStates.attack);
             //this.animations.attack[2]=
         },
-        magic:function(data){
-            
+        cast:function(data){
+            if(data.effect)
+                this.specialAttack = data.effect;
         },
         hurted: function (damage) {
             console.log("伤害",damage.damage);

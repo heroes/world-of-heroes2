@@ -1549,7 +1549,7 @@ woh.role_init_data={
         'weapon':'001',//武器编号
         'clothes':'001',//衣服编号,none表示裸奔
         'skill_point':0,//剩余技能点
-        'damageArea':[20,-45,80,45],
+        'damageArea':[30,-45,100,45],
         'skill_list':{
             '001':0, 
             '002':0,
