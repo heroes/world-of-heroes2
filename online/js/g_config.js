@@ -22,7 +22,7 @@ woh.g_config.script={
             key:'intro'
         },
         next:'intro'
-        //next:'loading_2'
+        //next:'dialogue_7'
     },
     'intro':{
         type:'intro',//标记相应的stage类型
@@ -274,17 +274,21 @@ woh.g_config.script={
         type:'dialogue',
         repeat:false,
         data:[
-            {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'少年','content':'幸好幸好，没有损坏，这可是我一年的心血呢！',position:'left',globalBg : 'resources/images/bg/bg-beach.jpg'},
-            {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'这是什么？《海味谱》？待我看看。',position:'right',globalBg : 'resources/images/bg/bg-beach.jpg'},
-            {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'……第三章，“蟹肉治法百种”，难怪那些螃蟹要攻击他。',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
-            {'avatar':'resources/images/dialogue/sola_cheng_a.png','name':'少年','content':'我决定了！',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
-            {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'你决定了什么……喂喂喂，你在做什么？',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
-            {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'少年','content':'我决定了，以后我来保护你，我们出海寻找人鱼去吧——对了，你叫什么名字？',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
-            {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'儒生姓唐名如……等等，我为什么要被你保护……你在对别人的家做什么啊！',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
-            {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'少年','content':'我叫程少非，赶快上船吧！',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
-            {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'不不不，这不是钱的问题，就算你再往我手里塞金叶子我也不能把父亲留下来的……喂，不要自顾自地把人家的家开走啊！',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_sigh.png','name':'程少非','content':'怪事怪事怪事，这不可能！',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'又是何事惊叹啊？',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_nature.png','name':'程少非','content':'根据这份航海图，过了青邱国就是普度湾，可怎么到现在还是一片汪洋？',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'航海图且让我一观——“仅售十文，买五送一，货真价实，童叟无欺”，这航海图你是哪弄的？',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'程少非','content':'东口山脚下卖包子的大爷手里买下的，开价十文钱，很便宜吧？不过我看他孤苦可怜，就硬给了十吊钱。',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'怜悯孤弱固然值得称赞，不过总觉得哪里不对劲的样子……',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'我说，你还真敢就凭这么一份来历不明的航海图出海啊！',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'程少非','content':'放心放心，凭我在外游历的经验，是绝不会在这种小事上出错的。',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_smile.png','name':'唐如','content':'（看他一副经验老成的样子，莫非比想象中的要可靠？）说起来，你在外游历了多久啊？',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_nature.png','name':'程少非','content':'至今一年有余。说来这海上风光，和陆上当真是截然不同啊。',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'等等，莫非你是头一次出海？',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'程少非','content':'是啊，有何不妥？',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'事到如今，也只好听天由命了。',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
         ],
-        next:'drama_4'
+        next:'intro'
     },
 };  
 
@@ -1590,8 +1594,8 @@ woh.role_init_data={
         'skill_point':0,//剩余技能点
         'damageArea':[30,-45,100,45],
         'skill_list':{
-            '001':1, 
-            '002':1,
+            '001':0, 
+            '002':0,
             '003':0,
             '004':0
         },//技能列表（编号-等级）
@@ -1613,7 +1617,7 @@ woh.role_init_data={
         'damageArea':[20,-15,180,65],
         'force':90,
         'cooldown':2000,
-        'skill_point':3,
+        'skill_point':0,
         'skill_list':{
             '005':1,
             '006':1,
