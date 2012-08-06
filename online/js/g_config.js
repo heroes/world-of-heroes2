@@ -129,7 +129,7 @@ woh.g_config.script={
             {'avatar':'resources/images/dialogue/rio_tang_smile.png','name':'唐如','content':'来，这是刚熬好的粥，哎呀，我说你倒是慢点喝，刚饿晕了，不宜马上暴食啊。',position:'left',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
             {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'少年','content':'粥是好粥，就是这碗寒酸了点，这粥色泽金黄，香味清新，用镶金玉碗相配，才显相得益彰，色香和合——嗯，再来一碗。',position:'right',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
             {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'买不起镶金玉碗还真-是-抱-歉-啊！好吧好吧，你等着，我这就给你盛去。',position:'left',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
-            {'avatar':'resources/images/dialogue/sola_cheng_pity.png','name':'少年','content':'这是你家？果然破落。那边架上那堆书看来也是你的，俗语说，读书穷三代，笔墨毁一生，而今亲眼所见，果真不假。',position:'right',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_pity.png','name':'少年','content':'这是你家？果然破落。那边架上那堆书看来也是你的，俗语说，读书穷三代，笔墨毁一生，现在亲眼所见，果然不假。',position:'right',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
             {'avatar':'resources/images/dialogue/rio_tang_light_angry.png','name':'唐如','content':'是是是，实~在~抱~歉!阁下若已吃饱，就请歇息吧。（罢了罢了，眼不见心不烦，将就着在外面歇一宿，明天便请他离开吧。）',position:'left',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
 
         ],
