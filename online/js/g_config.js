@@ -332,7 +332,7 @@ woh.g_config.resources = {
             'images/cg/cg_1.jpg',
             
             //sound
-            //'music/chat.mp3'
+            'music/chat.mp3'
         ]
     },
     battle_1: {
