@@ -183,7 +183,7 @@ woh.g_config.script={
             "bg":'images/bg/bg-beach.jpg',
             "monster":[
                 [
-                    [{type:'crab',x:100,y:-200},{type:'crab',x:300,y:-20  0},{type:'crab',x:500,y:900},{type:'crab',x:400,y:900}],
+                    [{type:'crab',x:100,y:-200},{type:'crab',x:300,y:-200},{type:'crab',x:500,y:900},{type:'crab',x:400,y:900}],
                     [{type:'crab',x:100,y:-200},{type:'crab',x:300,y:-200},{type:'crab',x:500,y:900},{type:'crab',x:400,y:900}],
                     [{type:'crab',x:100,y:-200},{type:'crab',x:300,y:-200},{type:'crab',x:500,y:900},{type:'crab',x:400,y:900},{type:'crab',x:300,y:900}],
                 ]
