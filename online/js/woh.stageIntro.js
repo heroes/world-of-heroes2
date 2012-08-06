@@ -35,6 +35,7 @@ Laro.NS('woh.stageClass', function (L) {
         enter: function (msg, fromState) {
             woh.log('enter stage [intro]');
             woh.util.fadeIn(woh.els.intro);
+            woh.util.playOneSound('music/chat.mp3');
             //woh.els.intro.style['opacity'] = 0;
             //prepare(msg);
         },

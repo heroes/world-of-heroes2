@@ -145,6 +145,18 @@ Laro.NS('woh.util', function (L) {
         show(sel);
     }
     
+    // 播放已加载音乐中的一个，其他都暂停
+    function playOneSound(key, isLoop) {
+        var sds = woh.loader.loadedSounds;
+        if (isLoop == undefined) { isLoop = true }
+        if (sds[key]) {
+            for (var k in sds) {
+                (k == key) ? (sds[k].audio.paused && sds[k].play('default', isLoop)) : sds[k].pause();
+            }
+        }
+    }
+    this.playOneSound = playOneSound;
+    
     this.getActionTarget = getActionTarget;
     this.shakeScreen = shakeScreen;
     this.stopShakeScreen = stopShakeScreen;

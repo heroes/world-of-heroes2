@@ -9,7 +9,8 @@ Laro.NS('woh.stageClass', function (L) {
     }).methods({
     	enter: function (msg, from) {
             woh.log('enter stage [Map] with msg ' + msg);
-            woh.show(woh.els.map)
+            woh.show(woh.els.map);
+            woh.util.playOneSound('music/chat.mp3');
             
         },
         leave: function () {

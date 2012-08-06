@@ -598,6 +598,7 @@
             _doc.querySelector('.battle-module .mask').style.display="block";
             this.bind();
             this.initData(data);
+            woh.util.playOneSound('music/win.mp3', false);
         },
         bind:function(){
             var me=this;

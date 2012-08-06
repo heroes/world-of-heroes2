@@ -9,7 +9,8 @@ Laro.NS('woh.stageClass', function (L) {
         enter: function (msg, from) {
             woh.log('enter stage [dialogue] with msg ' + msg);
             window.Dialogue.init(msg);
-            woh.util.fadeIn(woh.els.dialogue)
+            woh.util.fadeIn(woh.els.dialogue);
+            woh.util.playOneSound('music/chat.mp3');
             this.timeInState=0;
         },
         leave: function () {

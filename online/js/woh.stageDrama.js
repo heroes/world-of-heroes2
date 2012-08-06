@@ -15,6 +15,8 @@ Laro.NS('woh.stageClass', function (L) {
         enter: function (msg, from) {
             woh.log('enter stage [drama] with msg ' + msg);
             woh.util.fadeIn(woh.els.drama)
+            woh.util.playOneSound('music/chat.mp3');
+            
             this.msg = msg;
             this.timeInState = 0;
             var captionPlayer = new woh.CaptionPlayer();

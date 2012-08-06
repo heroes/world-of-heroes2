@@ -74,6 +74,7 @@ woh.g_config.script={
         next:'battle_withlittlecrab'
     },
     'battle_withlittlecrab':{
+        name: 'battle_withlittlecrab',
         type:'battle',
         repeat:true,
         data:{
@@ -174,6 +175,7 @@ woh.g_config.script={
         next:'battle_withlittlecrab2'
     },
     'battle_withlittlecrab2':{
+        name: 'battle_withlittlecrab2',
         type:'battle',
         repeat:false,
         data:{
@@ -205,6 +207,7 @@ woh.g_config.script={
         next:'battle_withcrabboss'
     },
     'battle_withcrabboss':{
+        name: 'battle_withcrabboss',
         type:'battle',
         repeat:true,
         data:{
@@ -305,6 +308,9 @@ woh.g_config.resources = {
             'images/count/lvUP.png',
             'images/count/expbar-bg.png',
             'images/count/count-bg.png',
+            
+            // sound
+            'music/chat.mp3'
         ]
     },
     battle_1: {
@@ -400,7 +406,12 @@ woh.g_config.resources = {
             'images/sprites/weapon/004/stand.png',
             'images/sprites/weapon/004/run.png',
 
-            'images/monster/normal001-crab.png'
+            'images/monster/normal001-crab.png',
+            
+            'music/battle-boss.mp3',
+            'music/battle-normal.mp3',
+            'music/fail.mp3',
+            'music/win.mp3'
         ]
     },
     battle_2: {
