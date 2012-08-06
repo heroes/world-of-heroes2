@@ -296,10 +296,12 @@ woh.g_config.resources = {
         type:'intro',
         resources:[
             'images/index/index.jpg',
+            'images/index/dead.jpg',
             'images/index/start-button-1.png',
             'images/index/start-button-2.png',
             'images/index/start-button-3.png',
             'images/index/start-button-4.png',
+            'images/index/return-button.jpg',
 
             'images/dialogue/rio_tang_normal.png',
             'images/dialogue/rio_tang_angry.png',
@@ -328,19 +330,14 @@ woh.g_config.resources = {
             'images/bg/btn-skip2.png',
 
             'images/cg/cg_1.jpg',
-            //载入结算界面的资源
-            'images/count/avatar-outer.png',
-            'images/count/lvUP.png',
-            'images/count/expbar-bg.png',
-            'images/count/count-bg.png',
             
-            // sound
-            'music/chat.mp3'
+            //sound
+            //'music/chat.mp3'
         ]
     },
     battle_1: {
         type: 'battle',
-        resources: [
+        resources:[
             'images/bg/bg-beach-dusk.jpg',
             
             'images/circle.png',
@@ -430,6 +427,12 @@ woh.g_config.resources = {
             'images/sprites/weapon/004/magic.png',
             'images/sprites/weapon/004/stand.png',
             'images/sprites/weapon/004/run.png',
+
+            //载入结算界面的资源
+            'images/count/avatar-outer.png',
+            'images/count/lvUP.png',
+            'images/count/expbar-bg.png',
+            'images/count/count-bg.png',
 
             'images/monster/normal001-crab.png',
             
