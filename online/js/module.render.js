@@ -439,7 +439,7 @@
                     //显示相应的资料
                     _doc.querySelector('#role-manage .description .name').innerHTML=dataItem['name'];
                     _doc.querySelector('#role-manage .description .content').innerHTML=dataItem['description'];
-                    _doc.querySelector('#role-manage .description .value').innerHTML='生命+'+dataItem['health']+' 攻击+'+dataItem['defend']+
+                    _doc.querySelector('#role-manage .description .value').innerHTML='生命+'+dataItem['health']+' 攻击+'+dataItem['attack']+
                     ' 防御+'+dataItem['defend']+' 暴击+'+dataItem['crit'];
                 }
             },false);
