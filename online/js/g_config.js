@@ -158,7 +158,7 @@ woh.g_config.script={
             {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'好舒服的香气，不似花香，却似……唔，稻香——咦？这是谁的衣服？',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
             {'avatar':'resources/images/dialogue/sola_cheng_pity.png','name':'少年','content':'看你衣衫褴褛，身体病弱，还整晚躺在外面，万一不小心受寒得病，一定也没人照顾，实在可怜。我就把外袍拿来给你披上了。',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
             {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'可……可怜，在下手足俱全，尚可自食其力，不劳阁下多虑。',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
-            {'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'少年','content':'你这住处还挺别致，只是此处潮湿阴寒，你又病弱不堪，长住下去似乎也不妥……',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'少年','content':'你这住处还挺别致，只是这海边阴冷潮湿，你这病弱不堪的身子，长住下去似乎不妥呢……',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
             {'avatar':'resources/images/dialogue/rio_tang_light_angry.png','name':'唐如','content':'病……病弱不堪……',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
             {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'少年','content':'说起来这船的做工还不坏呢，咦咦咦？这花纹，唔……哎呀！',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
             {'avatar':'resources/images/dialogue/sola_cheng_a.png','name':'少年','content':'坏了坏了！赶快领我去一趟昨天的海滩，昨天晕倒的时候，似乎掉了很重要的东西呢。',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
@@ -202,7 +202,7 @@ woh.g_config.script={
         type:'dialogue',
         repeat:false,
         data:[
-            {'avatar':'resources/images/dialogue/crab_boss.png','name':'大王蟹','content':'可恶，可恶的人类！侵我族类，不可饶恕！',position:'left',globalBg : 'resources/images/bg/bg-beach.jpg'},
+            {'avatar':'resources/images/dialogue/crab_boss.png','name':'大王蟹','content':'可恶，可恶的人类！血海深仇，不共戴天！',position:'left',globalBg : 'resources/images/bg/bg-beach.jpg'},
         ],
         next:'battle_withcrabboss'
     },
