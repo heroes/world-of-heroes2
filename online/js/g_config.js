@@ -80,6 +80,7 @@ woh.g_config.script={
         data:{
             "role":["001"],
             "bg":'images/bg/bg-beach-dusk.jpg',
+            "bgm":"music/battle-normal.mp3",
             "monster":[
                 [
                     [{type:'crab',x:100,y:200}],
@@ -181,6 +182,7 @@ woh.g_config.script={
         data:{
             "role":["001","002"],
             "bg":'images/bg/bg-beach.jpg',
+            "bgm":"music/battle-normal.mp3",
             "monster":[
                 [
                     [{type:'crab',x:100,y:-200},{type:'crab',x:300,y:-200},{type:'crab',x:500,y:900},{type:'crab',x:400,y:900}],
@@ -213,6 +215,7 @@ woh.g_config.script={
         data:{
             "role":["001","002"],
             "bg":'images/bg/bg-beach.jpg',
+            "bgm":"music/battle-boss.mp3",
             "monster":[
                 [
                     [{type:'crab_boss',x:100,y:200}]
