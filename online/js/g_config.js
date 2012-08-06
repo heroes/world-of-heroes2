@@ -126,10 +126,10 @@ woh.g_config.script={
         data:[
             {'avatar':'resources/images/dialogue/sola_cheng_nature.png','name':'少年','content':'饿了。',position:'right',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
             {'avatar':'resources/images/dialogue/rio_tang_smile.png','name':'唐如','content':'来，这是刚熬好的粥，哎呀，我说你倒是慢点喝，刚饿晕了，不宜马上暴食啊。',position:'left',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
-            {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'少年','content':'粥是好粥，就是这碗寒酸了点，此粥色泽金黄，当用镶金玉碗相配，方显相得益彰，色香和合——烦请再来一碗。',position:'right',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
-            {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'买不起镶金玉碗还真是抱歉。好吧好吧，你等着，我给你盛去，真是个爱使唤人的大少爷。',position:'left',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'少年','content':'粥是好粥，就是这碗寒酸了点，这粥色泽金黄，香味清新，用镶金玉碗相配，才显相得益彰，色香和合——嗯，再来一碗。',position:'right',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'买不起镶金玉碗还真-是-抱-歉-啊！好吧好吧，你等着，我这就给你盛去。',position:'left',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
             {'avatar':'resources/images/dialogue/sola_cheng_pity.png','name':'少年','content':'这是你家？果然破落。那边架上那堆书看来也是你的，俗语说，读书穷三代，笔墨毁一生，而今亲眼所见，果真不假。',position:'right',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
-            {'avatar':'resources/images/dialogue/rio_tang_light_angry.png','name':'唐如','content':'是是是，实~在~抱~歉!阁下若已吃饱，就请歇息吧。（罢了罢了，眼不见心不烦，将就着在外面歇一宿吧。）',position:'left',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_light_angry.png','name':'唐如','content':'是是是，实~在~抱~歉!阁下若已吃饱，就请歇息吧。（罢了罢了，眼不见心不烦，将就着在外面歇一宿，明天便请他离开吧。）',position:'left',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
 
         ],
         next:'drama_3'
@@ -155,12 +155,12 @@ woh.g_config.script={
         repeat:false,
         data:[
             {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'好舒服的香气，不似花香，却似……唔，稻香——咦？这是谁的衣服？',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
-            {'avatar':'resources/images/dialogue/sola_cheng_pity.png','name':'少年','content':'看你衣衫破败，身体病弱，整晚躺在外面受寒得病，想来也是孤苦伶仃无人照拂，我实在于心不忍，就把外袍拿来给你披上了。',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
-            {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'身……身体病弱，好吧，衣衫原物奉还，在下今日还要为三餐忧心，恕不远送了。',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
-            {'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'少年','content':'你这住处还挺别致，只是此处潮湿阴寒，你又病弱不堪，长住下去似乎不妥吧。',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
-            {'avatar':'resources/images/dialogue/rio_tang_light_angry.png','name':'唐如','content':'病……病弱不堪，好，好吧，这原是父亲留下的船只，去岁寒冬，海风卷了茅屋，未及修葺，便在此暂住，阁下不必担忧。',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
-            {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'少年','content':'唔，仔细看去，这船的做工还不坏，似乎可以派上用场——',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
-            {'avatar':'resources/images/dialogue/sola_cheng_a.png','name':'少年','content':'哎呀，坏了坏了！赶快领我去一趟昨天的海滩，昨天晕倒的时候，似乎掉了很重要的东西呢。',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_pity.png','name':'少年','content':'看你衣衫褴褛，身体病弱，还整晚躺在外面，万一不小心受寒得病，看来也没人照顾，看你实在可怜，就把外袍拿来给你披上了。',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'可……可怜，在下手足俱全，尚可自食其力，不劳阁下多虑。',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'少年','content':'你这住处还挺别致，只是此处潮湿阴寒，你又病弱不堪，长住下去似乎也不妥……',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_light_angry.png','name':'唐如','content':'病……病弱不堪……',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'少年','content':'说起来这船的做工还不坏呢，咦咦咦？这花纹，唔……哎呀！',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_a.png','name':'少年','content':'坏了坏了！赶快领我去一趟昨天的海滩，昨天晕倒的时候，似乎掉了很重要的东西呢。',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
             {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'……好吧。（看来捡了个大麻烦回家啊。）',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
         ],
         next:'loading_3'
@@ -181,7 +181,7 @@ woh.g_config.script={
             "bg":'images/bg/bg-beach.jpg',
             "monster":[
                 [
-                    [{type:'crab',x:100,y:-200},{type:'crab',x:300,y:-200},{type:'crab',x:500,y:900},{type:'crab',x:400,y:900}],
+                    [{type:'crab',x:100,y:-200},{type:'crab',x:300,y:-20  0},{type:'crab',x:500,y:900},{type:'crab',x:400,y:900}],
                     [{type:'crab',x:100,y:-200},{type:'crab',x:300,y:-200},{type:'crab',x:500,y:900},{type:'crab',x:400,y:900}],
                     [{type:'crab',x:100,y:-200},{type:'crab',x:300,y:-200},{type:'crab',x:500,y:900},{type:'crab',x:400,y:900},{type:'crab',x:300,y:900}],
                 ]
@@ -230,14 +230,14 @@ woh.g_config.script={
         type:'dialogue',
         repeat:false,
         data:[
-            {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'少年','content':'幸好幸好，没有损坏，这可是我一年的心血呢！',position:'left',globalBg : 'resources/images/bg/bg-beach.jpg'},
-            {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'这是什么？《海味谱》？待我看看。',position:'right',globalBg : 'resources/images/bg/bg-beach.jpg'},
-             {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'……第三章，“蟹肉治法百种”，难怪那些螃蟹要攻击他。',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
-            {'avatar':'resources/images/dialogue/sola_cheng_a.png','name':'少年','content':'我决定了！',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'少年','content':'幸好幸好，没有损坏，这可是我整整一年的心血结晶啊！',position:'left',globalBg : 'resources/images/bg/bg-beach.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'这是……《海味谱》？待我看看。',position:'right',globalBg : 'resources/images/bg/bg-beach.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'……第三章，“蟹肉治法百种”，难怪那些螃蟹要攻击他。',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_a.png','name':'少年','content':'唔，我决定了！',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
             {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'你决定了什么……喂喂喂，你在做什么？',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
-            {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'少年','content':'我决定了，以后我来保护你，我们出海寻找人鱼去吧——对了，你叫什么名字？',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'少年','content':'从此以后，你由我来保护，我们一起游历江海，寻找人鱼去吧——对了你叫什么名字？',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
             {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'儒生姓唐名如……等等，我为什么要被你保护……你在对别人的家做什么啊！',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
-            {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'少年','content':'我叫程少非，赶快上船吧！',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'少年','content':'唐如，唐如，哈哈！我叫程少非，赶快上船吧！',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
             {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'不不不，这不是钱的问题，就算你再往我手里塞金叶子我也不能把父亲留下来的……喂，不要自顾自地把人家的家开走啊！',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
         ],
         next:'drama_4'
@@ -256,7 +256,29 @@ woh.g_config.script={
                 ]
             }
         ],
-        next:'intro'
+        next:'map_4'
+    },
+    'map_4':{
+        type:'map',
+        repeat:true,
+        data:{},
+        next:'dialogue_7'
+    },
+    'dialogue_7':{
+        type:'dialogue',
+        repeat:false,
+        data:[
+            {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'少年','content':'幸好幸好，没有损坏，这可是我一年的心血呢！',position:'left',globalBg : 'resources/images/bg/bg-beach.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'这是什么？《海味谱》？待我看看。',position:'right',globalBg : 'resources/images/bg/bg-beach.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'……第三章，“蟹肉治法百种”，难怪那些螃蟹要攻击他。',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_a.png','name':'少年','content':'我决定了！',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'你决定了什么……喂喂喂，你在做什么？',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'少年','content':'我决定了，以后我来保护你，我们出海寻找人鱼去吧——对了，你叫什么名字？',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'儒生姓唐名如……等等，我为什么要被你保护……你在对别人的家做什么啊！',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'少年','content':'我叫程少非，赶快上船吧！',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'不不不，这不是钱的问题，就算你再往我手里塞金叶子我也不能把父亲留下来的……喂，不要自顾自地把人家的家开走啊！',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+        ],
+        next:'drama_4'
     },
 };  
 
