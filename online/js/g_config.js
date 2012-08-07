@@ -305,7 +305,7 @@ woh.g_config.resources = {
             'images/index/start-button-2.png',
             'images/index/start-button-3.png',
             'images/index/start-button-4.png',
-            'images/index/return-button.jpg',
+            'images/index/return-button.png',
 
             'images/dialogue/rio_tang_normal.png',
             'images/dialogue/rio_tang_angry.png',
