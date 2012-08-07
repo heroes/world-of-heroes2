@@ -27,12 +27,7 @@
                 crit+=clothes['crit'];
         }
         //计算人物的生命
-        this.attackBuff = {
-            effect:"001",
-            convert:function(damage){
-                
-            }
-        }
+        this.attackBuff =null;
         this.currentHP = health || 1000;
         this.maxHP = health || 1000;
         this.damage=attack;
@@ -90,7 +85,13 @@
             //console.log(ctx);
         },
         initSkills:function(id){
-            alert('我是人物'+this.data['name']+',正在施放技能'+id);
+            //alert('我是人物'+this.data['name']+',正在施放技能'+id);
+            this.attackBuff = {
+                effect:id,
+                convert:function(damage){
+                
+                }
+            }
         },
         getAnimationGroup: function (type) {
             var me=this;
