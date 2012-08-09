@@ -93,6 +93,12 @@ Laro.NS('woh.stageClass', function (L) {
             woh.log('leave stage [battle]');
             //清空技能列表
             document.getElementById('role-skill-container').innerHTML="";
+            //清空技能cd
+            for(var key in woh.runtime.cdCounter){
+                var o=woh.runtime.cdCounter[key];
+                    o.cd=false;
+                    o.cdTime=woh.skill_data[key].cd;
+            }
             if(this.aiController.players.length != 0){
                 var result={
                     exp:this.totalexp,
@@ -107,6 +113,18 @@ Laro.NS('woh.stageClass', function (L) {
             this.timeInState += dt;
             if (this.aiController.players.length != 0) {
                 this.roles.dispatch('update', dt);
+            }
+            //计算技能cd倒计时
+            for(var key in woh.runtime.cdCounter){
+                var o=woh.runtime.cdCounter[key];
+                if(o.cd){
+                    o.cdTime+=dt;
+                    if(o.cdTime>=woh.skill_data[key].cd){o.cd=false;o.cdTime=woh.skill_data[key].cd;}
+                    var _skillDom=document.querySelector('.battle-module .skill-icon[data-cmd="'+key+'"]');
+                    if(_skillDom){
+                        _skillDom.querySelector('.mask').style.height=100*(woh.skill_data[key].cd-o.cdTime>=0?woh.skill_data[key].cd-o.cdTime:0)/woh.skill_data[key].cd+"px";
+                    }
+                }
             }
         },
         draw: function (render) {

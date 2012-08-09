@@ -13,10 +13,10 @@
 
 Laro.NS('woh.skills', function (L) {
     var els = {};
+    var countInterval=null;
     function getEls () {
         els.container = document.getElementById('role-skill-container');
     }
-
     // 显示对应人物 的技能列表
     this.show = function (id) {
         var h = [],
@@ -24,13 +24,13 @@ Laro.NS('woh.skills', function (L) {
         for(var key in skillList){
             console.log(key);
             if(skillList[key]!=0){
-                h.push('<img class="skill-icon" role-type="'+id+'" data-cmd="'+key+'" src="'+woh.skill_data[key]['icon']+'">');
+                h.push('<div class="skill-icon" role-type="'+id+'" data-cmd="'+key+'"><div class="mask"></div><img src="'+woh.skill_data[key]['icon']+'"></div>');
             }
         }
         h=h.join('');
         console.log(h);
         els.container.innerHTML = h;
-    };
+    }; 
     
     this.init = function () {
         getEls();

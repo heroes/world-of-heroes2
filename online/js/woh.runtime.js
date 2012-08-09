@@ -27,10 +27,16 @@ Laro.NS('woh.runtime', function (L) {
     this.role=null,//全部人物的运行时数据
     this.activeRole=[],//活动人物的列表，初始值为唐如一个人
     this.packageItems=[];//物品列表
+    this.cdCounter={};
     this.init=function(){
         //初始化运行时人物数据
         this.role=eval('('+JSON.stringify(woh.role_init_data)+')');
         console.log(this.role);  
         this.activeRole.push(this.role['001']);
+        //初始化技能CD计算列表
+        for(var key in woh.skill_data){
+            this.cdCounter[key]={cdTime:woh.skill_data[key]['cd'],cd:false};
+        }
+        console.log(this.cdCounter);
     }
 });

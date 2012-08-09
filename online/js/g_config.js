@@ -22,7 +22,7 @@ woh.g_config.script={
             key:'intro'
         },
         next:'intro'
-        //next:'dialogue_7'
+        //next:'loading_2'
     },
     'intro':{
         type:'intro',//标记相应的stage类型
@@ -242,7 +242,7 @@ woh.g_config.script={
             {'avatar':'resources/images/dialogue/sola_cheng_a.png','name':'少年','content':'唔，我决定了！',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
             {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'你决定了什么……喂喂喂，你在做什么？',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
             {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'少年','content':'从今以后，你由我来保护，我们一起游历江海，寻找人鱼去吧——对了你叫什么名字？',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
-            {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'儒生姓唐名如……等等，我为什么要被你保护……你在对别人的家做什么啊！',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'在下姓唐名如……等等，我为什么要被你保护……你在对别人的家做什么啊！',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
             {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'少年','content':'唐如，唐如，哈哈！我叫程少非，赶快上船吧！',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
             {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'不不不，这不是钱的问题，就算你再往我手里塞金叶子我也不能把父亲留下来的……喂，不要自顾自地把人家的家开走啊！',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
         ],
@@ -1594,8 +1594,8 @@ woh.role_init_data={
         'skill_point':0,//剩余技能点
         'damageArea':[30,-45,100,45],
         'skill_list':{
-            '001':0, 
-            '002':0,
+            '001':1, 
+            '002':1,
             '003':0,
             '004':0
         },//技能列表（编号-等级）
