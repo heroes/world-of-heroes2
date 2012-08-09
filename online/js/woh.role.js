@@ -89,7 +89,7 @@
             this.attackBuff = {
                 effect:id,
                 convert:function(damage){
-                
+                    
                 }
             }
         },
@@ -106,7 +106,7 @@
                     var effectType = this.attackBuff.effect;
                 if(!effectType)effectType = "normal_1";
                 var effect = JSON.parse(JSON.stringify(woh.g_config.skill_effect[effectType]['animation']));
-                effect['info']['pivotx'] -= me.data.damageArea[2]; //将动画的绘制偏移调整到伤害区域的边缘位置
+                effectType=="normal_1"&&(effect['info']['pivotx'] -= me.data.damageArea[2]); //将动画的绘制偏移调整到伤害区域的边缘位置
                 obj.push(effect);
                // console.log('绘制偏移',effect['pivotx'],obj[2]);
             }

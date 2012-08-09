@@ -2059,8 +2059,8 @@ woh.g_config.skill_effect={
             "name": "002",
             "type": "animation",
             "framerate": 4,
-            "pivotx": 70,
-            "pivoty": 92,
+            "pivotx": 100,
+            "pivoty": 75,
             "events": []
             },
             "data": [
