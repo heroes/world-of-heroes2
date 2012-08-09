@@ -2141,15 +2141,15 @@ woh.g_config.skill_effect={
                 "nbrOfFrames": 3,
                 "name": "stand",
                 "type": "animation",
-                "framerate": 3,
+                "framerate": 2,
                 "pivotx": 171,
-                "pivoty": 105,
+                "pivoty": 130,
                 "events": []
             },
             "data": [
-                [0,0,341,209,0,0,341,209],
                 [342,0,683,209,342,0,683,209],
-                [684,0,1025,209,684,0,1025,209]
+                [684,0,1025,209,684,0,1025,209],
+                [0,0,341,209,0,0,341,209],
             ],
             "filename": "images/sprites/skilleffect/006.png"
         }
@@ -2160,7 +2160,7 @@ woh.g_config.skill_effect={
                 "nbrOfFrames": 3,
                 "name": "stand",
                 "type": "animation",
-                "framerate": 4,
+                "framerate": 3,
                 "pivotx": 171,
                 "pivoty": 170,
                 "events": []
@@ -2179,7 +2179,7 @@ woh.g_config.skill_effect={
                 "nbrOfFrames": 3,
                 "name": "stand",
                 "type": "animation",
-                "framerate": 10,
+                "framerate": 3,
                 "pivotx": 171,
                 "pivoty": 170,
                 "events": []
