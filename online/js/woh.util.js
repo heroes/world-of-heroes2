@@ -60,10 +60,10 @@ Laro.NS('woh.util', function (L) {
         
         clearInterval(pkg.SHAKE_INTERVAL);
         pkg.SHAKE_INTERVAL = setInterval(function () {
-            var horiDis = getRandomFlag() * getRange(10, 20) + originL,
+            var //horiDis = getRandomFlag() * getRange(10, 20) + originL;
                 vertDis = getRandomFlag() * getRange(8, 15) + originT;
             
-            woh.els.canvasWrap.style['marginLeft'] = horiDis + 'px';
+            //woh.els.canvasWrap.style['marginLeft'] = horiDis + 'px';
             woh.els.canvasWrap.style['marginTop'] = vertDis + 'px';
         }, 120);
     }

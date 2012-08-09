@@ -11,7 +11,7 @@ Laro.NS('woh.evt', function (L) {
             if(roleId&&!woh.runtime.cdCounter[cmd].cd){
                 woh.currentRoleGroup.get(roleId).initSkills(cmd);
                 woh.stageClass.Battle.enableScreenMask(0.8);
-                setTimeout('woh.stageClass.Battle.disableScreenMask()',400);
+                setTimeout('woh.stageClass.Battle.disableScreenMask()',1000);
                 tar.querySelector('.mask').style.height='100px';
                 woh.runtime.cdCounter[cmd].cd=true;
                 woh.runtime.cdCounter[cmd].cdTime=0;

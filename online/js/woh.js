@@ -67,7 +67,6 @@ Laro.NS('woh', function (L) {
         enableMouseGestureEvents(pkg.els.canvas);
         this.canvasRender = new L.CanvasRender(pkg.els.canvas, 1, false);
 
-        woh.runtime.init(); //初始化运行时数据
         woh.stage.init();
         woh.skills.init();
         woh.loop.init();

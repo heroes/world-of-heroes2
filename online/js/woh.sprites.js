@@ -151,6 +151,7 @@ Laro.NS('woh', function (L) {
             if (start === undefined) start = 0;
             if (end === undefined) end = 1;
             
+            if(this.attackBuff&&animation=='attack'){woh.util.shakeScreen();setTimeout('woh.util.stopShakeScreen()',1000);}
             animation = typeof animation == 'string' ? this.animations[animation] : animation;
             this.curAnimation = animation;
             //console.log("当前动画",animation);
@@ -161,6 +162,7 @@ Laro.NS('woh', function (L) {
             });
             
             animation[0].setCallback(L.curry(this.onAnimationEvent, this));
+
         },
         onAnimationEvent: function (evt, anim) {
             var me = this;
@@ -264,7 +266,6 @@ Laro.NS('woh', function (L) {
                 this.fsm.getCurrentState().stateId != woh.roleStates.hurted &&
                 this.fsm.getCurrentState().stateId != woh.roleStates.dead )
                 this.fsm.setState(woh.roleStates.attack);
-            //this.animations.attack[2]=
         },
         cast:function(data){
             if(data.effect)

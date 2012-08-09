@@ -29,6 +29,8 @@ Laro.NS('woh.runtime', function (L) {
     this.packageItems=[];//物品列表
     this.cdCounter={};
     this.init=function(){
+        this.scriptProcess=[];
+        this.stageTag ='intro';
         //初始化运行时人物数据
         this.role=eval('('+JSON.stringify(woh.role_init_data)+')');
         console.log(this.role);  
