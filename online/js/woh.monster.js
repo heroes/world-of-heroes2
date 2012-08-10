@@ -39,13 +39,13 @@ Laro.NS('woh', function (L) {
                 ((me.face == 'left' && !o.renderMirrored) || (me.face == 'right' && o.renderMirrored)) && o.mirror();
                 o.draw(render, x, y, 0, 1, null);
             });
-            /***debug***
+            //***debug***
             render.context.fillStyle = "blue";
             render.context.fillRect(this.x - 2, this.y - 2, 4, 4);
-            render.context.strokeStyle = "green";
-            render.context.strokeRect(this.left, this.top, this.width, this.height);
-            render.context.strokeStyle = "red";
-            render.context.strokeRect(this.damageArea.left, this.damageArea.top, this.damageArea.right - this.damageArea.left, this.damageArea.bottom - this.damageArea.top)
+            //render.context.strokeStyle = "green";
+            //render.context.strokeRect(this.left, this.top, this.width, this.height);
+            //render.context.strokeStyle = "red";
+            //render.context.strokeRect(this.damageArea.left, this.damageArea.top, this.damageArea.right - this.damageArea.left, this.damageArea.bottom - this.damageArea.top)
             /***********/
             this.drawHPBar(render); //绘制血条
         },
