@@ -347,7 +347,19 @@ woh.g_config.resources = {
             'images/circle.png',
             'images/pie.png',
             'images/shadow.png',
-
+            //载入技能图标资源
+            'images/skillicons/001.jpg',
+            'images/skillicons/002.jpg',
+            'images/skillicons/003.jpg',
+            'images/skillicons/004.jpg',
+            'images/skillicons/005.jpg',
+            'images/skillicons/006.jpg',
+            'images/skillicons/007.jpg',
+            'images/skillicons/008.jpg',
+            'images/skillicons/009.jpg',
+            'images/skillicons/010.jpg',
+            'images/skillicons/011.jpg',
+            'images/skillicons/012.jpg',
             //载入大地图资源
             'images/map/ava/rio_tang.png',
             'images/map/ava/shaofei_cheng.png',
