@@ -443,7 +443,16 @@ woh.g_config.resources = {
             'images/sprites/weapon/004/magic.png',
             'images/sprites/weapon/004/stand.png',
             'images/sprites/weapon/004/run.png',
-
+            //载入技能特效图片
+            'images/sprites/skilleffect/001.png',
+            'images/sprites/skilleffect/002.png',
+            'images/sprites/skilleffect/003.png',
+            'images/sprites/skilleffect/004.png',
+            'images/sprites/skilleffect/005.png',
+            'images/sprites/skilleffect/006.png',
+            'images/sprites/skilleffect/007.png',
+            'images/sprites/skilleffect/008.png',
+            'images/sprites/skilleffect/normal_1.png',
             //载入结算界面的资源
             'images/count/avatar-outer.png',
             'images/count/lvUP.png',
