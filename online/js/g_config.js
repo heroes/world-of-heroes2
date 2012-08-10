@@ -2036,6 +2036,7 @@ woh.skill_data={
 //技能效果动画的配置
 woh.g_config.skill_effect={
     "normal_1":{ 
+        "sound":"resources/sound/attack.mp3",
         "animation": {
             "info": {
                 "nbrOfFrames": 2,
@@ -2054,6 +2055,7 @@ woh.g_config.skill_effect={
         }        
     },
     "001": {
+        "sound":"resources/sound/skill_001.mp3",
         "animation":{
             "info": {
                 "nbrOfFrames": 4,
@@ -2074,6 +2076,7 @@ woh.g_config.skill_effect={
         }
     },
     "002": {
+        "sound":"resources/sound/skill_002.mp3",
         "animation":{
             "info": {
             "nbrOfFrames": 4,
@@ -2094,6 +2097,7 @@ woh.g_config.skill_effect={
         }
     },
     "003":{
+        "sound":"resources/sound/skill_003.mp3",
         "animation": {
             "info": {
                 "nbrOfFrames": 4,
@@ -2114,6 +2118,7 @@ woh.g_config.skill_effect={
         }
     },
     "004":{
+        "sound":"resources/sound/skill_004.mp3",
         "animation": {
             "info": {
                 "nbrOfFrames": 8,
@@ -2138,6 +2143,7 @@ woh.g_config.skill_effect={
         }       
     },
     "005":{
+        "sound":"resources/sound/skill_005.mp3",
         "animation": {
             "info": {
                 "nbrOfFrames": 3,
@@ -2157,6 +2163,7 @@ woh.g_config.skill_effect={
         }        
     },
     "006":{
+        "sound":"resources/sound/skill_006.mp3",
         "animation": {
             "info": {
                 "nbrOfFrames": 3,
@@ -2176,6 +2183,7 @@ woh.g_config.skill_effect={
         }
     },
     "007":{
+        "sound":"resources/sound/skill_007.mp3",
         "animation": {
             "info": {
                 "nbrOfFrames": 3,
@@ -2195,6 +2203,7 @@ woh.g_config.skill_effect={
         }       
     },
     "008":{
+        "sound":"resources/sound/skill_008.mp3",
         "animation": {
             "info": {
                 "nbrOfFrames": 3,
