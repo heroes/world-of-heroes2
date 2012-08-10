@@ -88,7 +88,7 @@ woh.g_config.script={
                     [{type:'crab',x:100,y:200},{type:'crab',x:900,y:200}]
                 ],
             ],
-            "drop":['weapon','002',1],//掉落类型，掉落id，掉落概率
+            "drop":['clothes','002',1],//掉落类型，掉落id，掉落概率
         },
         next:'map_1'
     },

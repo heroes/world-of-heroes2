@@ -421,6 +421,8 @@
                                 break;
                             }
                         }
+                        that.initData(that.currentActiveRole);
+                        draggingType="";
                     }
                 }
                 this.style.webkitTransform = "matrix(1, 0, 0, 1, 0 ,0)";
