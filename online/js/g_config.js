@@ -2033,7 +2033,7 @@ woh.skill_data={
         //技能影响
     }
 }
-//技能效果动画的配置
+//技能效果动画和音效配置
 woh.g_config.skill_effect={
     "normal_1":{ 
         "sound":"resources/sound/attack.mp3",
