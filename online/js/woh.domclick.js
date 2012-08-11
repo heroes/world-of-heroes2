@@ -5,6 +5,7 @@ Laro.NS('woh.evt', function (L) {
     function dispatchClick (e) {
         var tar = woh.util.getActionTarget(e, 3);
         if (tar) {
+            alert('aaaaa');
             var cmd = tar.getAttribute('data-cmd'),
                 roleId= tar.getAttribute('role-type')||null;
             //roleId和cmd分别对应人物ID和技能ID，initSkills写在woh.role.js文件里，可以改成其他的。
