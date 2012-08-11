@@ -7,7 +7,7 @@ woh.roleAttackType = {
 };
 // Role
 Laro.NS('woh', function (L) {
-    var Sprite = L.Class(function (data, brain) {
+    var Sprite = L.Class(function (data, brain) { console.log('start sprite');
 
         this.width = data.width;
         this.height = data.height;
@@ -16,7 +16,7 @@ Laro.NS('woh', function (L) {
         if(data.cooldown)
             this.cooldown = data.cooldown;
         else this.cooldown = 1000;
-
+        console.log(Object.defineProperty);
         Object.defineProperty(this,"force",{get:function(){
             if(data.force)
                 var force = data.force;
@@ -82,6 +82,7 @@ Laro.NS('woh', function (L) {
         this.brain = brain||null;
         if(this.brain){this.brain.knowSprite(this)};
         var me =this;
+        console.log('damageArea');
         this.damageArea = {
             get top() {
 
@@ -104,7 +105,8 @@ Laro.NS('woh', function (L) {
                 else if(me.face == "left")
                     return -data.damageArea[0] + me.x;
             }
-        }
+        };
+        console.log(this.damageArea);
 
         this.magicAttack = null;
 

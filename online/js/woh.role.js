@@ -132,6 +132,4 @@
         }
     });
     this.Role = Role;
-    console.log('Role');
-    console.log(this.Role);
 });
