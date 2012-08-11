@@ -415,6 +415,8 @@ woh.g_config.resources = {
             'images/count/count-bg.png',
 
             'images/monster/normal001-crab.png',
+            'images/monster/normal002-rabbit.png',
+            'images/monster/normal003-rabbit.png',
 
             'music/battle-normal.mp3',
             'music/fail.mp3',
