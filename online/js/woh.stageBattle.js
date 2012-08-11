@@ -20,7 +20,12 @@ Laro.NS('woh.stageClass', function (L) {
             setTimeout(function () {woh.util.fadeIn(woh.els.canvasWrap)}, 500);
             
             //woh.util.playOneSound('music/battle-boss.mp3');//: woh.util.playOneSound('music/battle-normal.mp3');
-            woh.util.playOneSound(data.bgm);
+            try{
+                woh.util.playOneSound(data.bgm);
+            }
+            catch(expection){
+                
+            }
             this.timeInState = 0;
             this.gameOverTime = 0;
             // temp part to do area
