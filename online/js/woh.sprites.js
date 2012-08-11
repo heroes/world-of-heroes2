@@ -7,7 +7,7 @@ woh.roleAttackType = {
 };
 // Role
 Laro.NS('woh', function (L) {
-    var Sprite = L.Class(function (data, brain) { console.log('start sprite');
+    var Sprite = L.Class(function (data, brain) { 
 
         this.width = data.width;
         this.height = data.height;
@@ -16,7 +16,7 @@ Laro.NS('woh', function (L) {
         if(data.cooldown)
             this.cooldown = data.cooldown;
         else this.cooldown = 1000;
-        console.log(Object.defineProperty);
+
         Object.defineProperty(this,"force",{get:function(){
             if(data.force)
                 var force = data.force;
@@ -82,7 +82,6 @@ Laro.NS('woh', function (L) {
         this.brain = brain||null;
         if(this.brain){this.brain.knowSprite(this)};
         var me =this;
-        console.log('damageArea');
         this.damageArea = {
             get top() {
 
@@ -106,25 +105,20 @@ Laro.NS('woh', function (L) {
                     return -data.damageArea[0] + me.x;
             }
         };
-        console.log(this.damageArea);
 
         this.magicAttack = null;
 
         this.born();
 
     }).methods({
-        born: function () { console.log('sprite born');
+        born: function () { 
             this.getAnimations();
-            console.log(111);
             this.initCheckArea();
-            console.log(222);
             this.stand(); // 默认进入站立状态
-            console.log('born end');
         },
         //默认的checkarea为0
         initCheckArea: function () {
             var me = this;
-            console.log(444);
             this.checkRect = new L.Sprite(woh.stage.$, function () {
                 this.width = 0;
                 this.height = 0;
@@ -135,19 +129,16 @@ Laro.NS('woh', function (L) {
                 };
                 this.setPos(me.x, me.y);
             });
-            console.log(555);
             
         },
         getAnimations: function () {
+            var me = this;
             this.animations.stand = this.getAnimationGroup('stand')||null;
             this.animations.run = this.getAnimationGroup('run')||null;
             this.animations.hurted = this.getAnimationGroup('hurted')||null;
-            console.log(333);
-            console.log(Function.bind);
             Object.defineProperty(this.animations,"attack",{get:function(){
-                return this.getAnimationGroup('attack');
-            }.bind(this)});
-            console.log(444);
+                return me.getAnimationGroup('attack');
+            }});
             
             this.animations.magic = this.getAnimationGroup('magic')||null;
             this.animations.dead = this.getAnimationGroup('dead')||null;
@@ -215,7 +206,7 @@ Laro.NS('woh', function (L) {
         draw: function (render) {
             var x = Math.floor(this.x), y = Math.floor(this.y),
                 me = this;
-            console.log(me.checkRect.width);
+
             this.curAnimation && this.curAnimation.forEach(function (o) { 
                 ((me.face == 'left' && !o.renderMirrored) || (me.face == 'right' && o.renderMirrored)) && o.mirror();
                 o.draw(render, x, y, 0, 1, null); 
@@ -257,7 +248,7 @@ Laro.NS('woh', function (L) {
             this.face = 'right';
         },
         
-        stand: function () {console.log(666);
+        stand: function () {
             this.toPos = null;
             this.fsm.setState(woh.roleStates.stand);
         },
