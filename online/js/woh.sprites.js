@@ -145,7 +145,8 @@ Laro.NS('woh', function (L) {
             console.log(333);
             Object.defineProperty(this.animations,"attack",{get:function(){
                 return this.getAnimationGroup('attack');
-            }.bind(this)})
+            }.bind(this)});
+            console.log(444);
             
             this.animations.magic = this.getAnimationGroup('magic')||null;
             this.animations.dead = this.getAnimationGroup('dead')||null;
