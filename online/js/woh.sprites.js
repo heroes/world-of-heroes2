@@ -143,6 +143,7 @@ Laro.NS('woh', function (L) {
             this.animations.run = this.getAnimationGroup('run')||null;
             this.animations.hurted = this.getAnimationGroup('hurted')||null;
             console.log(333);
+            console.log(Function.bind);
             Object.defineProperty(this.animations,"attack",{get:function(){
                 return this.getAnimationGroup('attack');
             }.bind(this)});
