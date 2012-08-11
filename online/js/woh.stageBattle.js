@@ -36,6 +36,8 @@ Laro.NS('woh.stageClass', function (L) {
                 console.log(11);
                 woh.runtime.activeRole.push(woh.runtime.role[roleId]);
                 console.log(22);
+                console.log(me.roles.add);
+                console.log(woh.Role);
                 me.roles.add(roleId, new woh.Role(woh.runtime.role[roleId], me.aiController));
                 console.log(33);
                 me.roles.get(roleId).stage = me;
