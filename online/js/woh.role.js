@@ -126,7 +126,7 @@
             this.brain.knowPos(this,x,y);
             if(this.stage)
                 this.stage.registerHurtableObject("role", this,{left:this.left,right:this.right,top:this.top,bottom:this.bottom});
-        },
+        }
     });
     this.Role = Role;
 });
