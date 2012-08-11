@@ -94,11 +94,14 @@ Laro.NS('woh.stageClass', function (L) {
             //清空技能列表
             document.getElementById('role-skill-container').innerHTML="";
             //清空技能cd
+            console.log('清空技能cd');
             for(var key in woh.runtime.cdCounter){
                 var o=woh.runtime.cdCounter[key];
                     o.cd=false;
                     o.cdTime=woh.skill_data[key].cd;
             }
+            console.log('清空技能cd结束');
+            console.log(this.aiController);
             if(this.aiController.players.length != 0||(this.aiController.players.length == 0&&this.data.name=='battle_Infinity')){
                 var result={
                     exp:this.totalexp,
