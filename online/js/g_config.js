@@ -276,9 +276,9 @@ woh.g_config.script={
         data:{
             key:'section_2'
         },
-        next:'drama_3'
+        next:'drama_5'
     },
-    'drama_3':{
+    'drama_5':{
         type:'drama',//标记相应的stage类型
         repeat:false,
         data:[
