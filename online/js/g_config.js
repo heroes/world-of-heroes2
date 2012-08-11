@@ -21,8 +21,8 @@ woh.g_config.script={
         data:{
             key:'intro'
         },
-        next:'intro'
-        //next:'loading_2'
+        //next:'intro'
+        next:'loading_4'
     },
     'intro':{
         type:'intro',//标记相应的stage类型
@@ -157,9 +157,9 @@ woh.g_config.script={
         repeat:false,
         data:[
             {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'好舒服的香气，不似花香，却似……唔，稻香——咦？这是谁的衣服？',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
-            {'avatar':'resources/images/dialogue/sola_cheng_pity.png','name':'少年','content':'看你衣衫褴褛，身体病弱，还整晚躺在外面，万一不小心受寒得病，一定也没人照顾，实在可怜。我就把外袍拿来给你披上了。',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_pity.png','name':'少年','content':'昨晚醒来看你衣衫褴褛，身体病弱，还躺在外面，万一受寒得病也一定没人照顾，想想就可怜。我实在不忍心，赶紧把外袍拿来给你披上了。',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
             {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'可……可怜，在，在下手足俱全，尚可自食其力，不劳阁下多虑。',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
-            {'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'少年','content':'这住处还挺别致，只是这海边阴冷潮湿，你这病弱不堪的身子，长住下去似乎不妥呢……',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'少年','content':'这住处还挺别致，就是这海边阴冷潮湿，你这病弱不堪的身子，长住下去似乎不妥……嗯。',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
             {'avatar':'resources/images/dialogue/rio_tang_light_angry.png','name':'唐如','content':'病……病弱不堪……',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
             {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'少年','content':'说起来这船的做工还不坏呢，咦咦咦？这花纹，唔……哎呀！',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
             {'avatar':'resources/images/dialogue/sola_cheng_a.png','name':'少年','content':'坏了坏了！赶快领我去一趟昨天的海滩，昨天晕倒的时候，似乎掉了很重要的东西呢。',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
@@ -268,28 +268,52 @@ woh.g_config.script={
         type:'map',
         repeat:true,
         data:{},
+        next:'loading_4'
+    },
+    'loading_4':{
+        type:'loading',
+        repeat:true,
+        data:{
+            key:'section_2'
+        },
+        next:'drama_3'
+    },
+    'drama_3':{
+        type:'drama',//标记相应的stage类型
+        repeat:false,
+        data:[
+            {
+                appear: 'auto',
+                data: [
+                        '两人一船驶向茫茫大海，',
+                        '向着传说中人鱼所在的海域行驶而去。'   
+                ]
+            }
+        ],
         next:'dialogue_7'
     },
     'dialogue_7':{
         type:'dialogue',
         repeat:false,
         data:[
-            {'avatar':'resources/images/dialogue/sola_cheng_sigh.png','name':'程少非','content':'怪事怪事怪事，这不可能！',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
-            {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'又是何事惊叹啊？',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
-            {'avatar':'resources/images/dialogue/sola_cheng_nature.png','name':'程少非','content':'根据这份航海图，过了青邱国就是普度湾，可怎么到现在还是一片汪洋？',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
-            {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'航海图且让我一观——“仅售十文，买五送一，货真价实，童叟无欺”，这航海图你是哪弄的？',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
-            {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'程少非','content':'东口山脚下卖包子的大爷手里买下的，开价十文钱，很便宜吧？不过我看他孤苦可怜，就硬给了十吊钱。',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
-            {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'怜悯孤弱固然值得称赞，不过总觉得哪里不对劲的样子……',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
-            {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'我说，你还真敢就凭这么一份来历不明的航海图出海啊！',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
-            {'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'程少非','content':'放心放心，凭我在外游历的经验，是绝不会在这种小事上出错的。',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
-            {'avatar':'resources/images/dialogue/rio_tang_smile.png','name':'唐如','content':'（看他一副经验老成的样子，莫非比想象中的要可靠？）说起来，你在外游历了多久啊？',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
-            {'avatar':'resources/images/dialogue/sola_cheng_nature.png','name':'程少非','content':'至今一年有余。说来这海上风光，和陆上当真是截然不同啊。',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
-            {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'等等，莫非你是头一次出海？',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
-            {'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'程少非','content':'是啊，有何不妥？',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
-            {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'事到如今，也只好听天由命了。',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_sigh.png','name':'程少非','content':'怪事怪事怪事，这不可能！',position:'right',globalBg : 'resources/images/bg/bg-boat-outer2.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'又是何事惊叹啊？',position:'left',globalBg : 'resources/images/bg/bg-boat-outer2.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_nature.png','name':'程少非','content':'根据这份航海图，过了青邱国就是普度湾，可怎么到现在还是一片汪洋？',position:'right',globalBg : 'resources/images/bg/bg-boat-outer2.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'航海图且让我一观——',position:'left',globalBg : 'resources/images/bg/bg-boat-outer2.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'“仅售十文，买五送一，货真价实，童叟无欺”，这航海图你是哪弄的？',position:'left',globalBg : 'resources/images/bg/bg-boat-outer2.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'程少非','content':'东口山脚下卖包子的瘸腿大爷手里买下的，开价十文钱，很便宜吧？',position:'right',globalBg : 'resources/images/bg/bg-boat-outer2.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_nature.png','name':'程少非','content':'不过我看他孤苦可怜，就硬给了十个金叶子，他拿了以后不知为何连包子都不要就飞快地跑了，追也追不上，唉。',position:'right',globalBg : 'resources/images/bg/bg-boat-outer2.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'怜悯孤弱固然值得称赞，不过总觉得哪里不对劲的样子……',position:'left',globalBg : 'resources/images/bg/bg-boat-outer2.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'我说，你还真敢就凭这么一份来历不明的航海图出海啊！',position:'left',globalBg : 'resources/images/bg/bg-boat-outer2.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'程少非','content':'放心放心，凭我在外游历的经验，是绝不会在这种小事上出错的。',position:'right',globalBg : 'resources/images/bg/bg-boat-outer2.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_smile.png','name':'唐如','content':'（看他一副经验老成的样子，莫非比想象中的要可靠？）说起来，你在外游历了多久啊？',position:'left',globalBg : 'resources/images/bg/bg-boat-outer2.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_nature.png','name':'程少非','content':'至今一年有余。啧啧，这海上风光，和陆上当真是截然不同啊，令人心胸开朗。',position:'right',globalBg : 'resources/images/bg/bg-boat-outer2.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'等……等等，这么说来，莫非你是头一次出海？',position:'left',globalBg : 'resources/images/bg/bg-boat-outer2.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'程少非','content':'是啊，有何不妥？',position:'right',globalBg : 'resources/images/bg/bg-boat-outer2.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'事到如今，也只好听天由命了。',position:'left',globalBg : 'resources/images/bg/bg-boat-outer2.jpg'},
         ],
         next:'intro'
-    },
+    }
 };  
 
 //每个场景对应的需要预加载的资源列表
@@ -465,7 +489,7 @@ woh.g_config.resources = {
             'music/battle-normal.mp3',
             'music/fail.mp3',
             'music/win.mp3'
-        ]
+        ] 
     },
     battle_2: {
         type: 'battle',
@@ -474,6 +498,12 @@ woh.g_config.resources = {
                 'images/dialogue/crab_boss.png',
                 'images/monster/boss-crab.png'
             ]
+    },
+    section_2:{
+        type: 'battle',
+        resources: [
+            'images/bg/bg-boat-outer2.jpg',
+        ]    
     }
 };
 
