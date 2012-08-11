@@ -34,6 +34,7 @@ Laro.NS('woh.evt', function (L) {
     
     function init () {
         document.body.addEventListener('click', dispatchClick, false);
+        document.body.addEventListener('touchstart', dispatchClick, false);
     }
     this.init = init;
 });
