@@ -5,7 +5,7 @@
 Laro.NS('woh.stageClass', function (L) {
     var pkg = this;
     var Battle = L.BaseState.extend(function () {
-        console.log(pkg);
+        //console.log(pkg);
         // role collection
         this.roles = new woh.RoleCollection();
         woh.currentRoleGroup = this.roles;
@@ -19,7 +19,7 @@ Laro.NS('woh.stageClass', function (L) {
             woh.log('enter stage [Battle]');
             setTimeout(function () {woh.util.fadeIn(woh.els.canvasWrap)}, 500);
             console.log(0);
-            console.log(data);
+            //console.log(data);
             woh.util.playOneSound(data.bgm);
             this.timeInState = 0;
             this.gameOverTime = 0;
