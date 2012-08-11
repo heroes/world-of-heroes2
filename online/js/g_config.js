@@ -83,9 +83,9 @@ woh.g_config.script={
             "bgm":"music/battle-normal.mp3",
             "monster":[
                 [
-                    [{type:'rabbit_1',x:100,y:200},{type:'rabbit_1',x:300,y:200}],
-                    [{type:'rabbit_1',x:100,y:200},{type:'rabbit_1',x:300,y:200}],
-                    [{type:'rabbit_1',x:100,y:200},{type:'rabbit_1',x:900,y:200}]
+                    [{type:'rabbit_2',x:100,y:200},{type:'rabbit_2',x:300,y:200}],
+                    [{type:'rabbit_2',x:100,y:200},{type:'rabbit_2',x:300,y:200}],
+                    [{type:'rabbit_2',x:100,y:200},{type:'rabbit_2',x:900,y:200}]
                 ],
             ],
             "drop":['clothes','002',1],//掉落类型，掉落id，掉落概率
@@ -1698,6 +1698,103 @@ woh.g_config.monsters = {
             "filename": "images/monster/normal002-rabbit.png"
         }],       
     },
+    "rabbit_2":{
+        "health":600,//血量
+        "damage":4,//攻击
+        "defend":0,//防御
+        "crit":0,//暴击
+        "exp":450,//打死一只怪物获得的经验值
+        'width':162,
+        'height':166,
+        'cooldown':2000,
+        "areadata": {
+            standup: [0, 0, 107, 155],
+            standdown: [0, 0, 107, 155]
+        },
+        "damageArea":[0,-45,100,30],
+        "stand": [{
+            "info": {
+                "nbrOfFrames": 2,
+                "name": "stand",
+                "type": "animation",
+                "framerate": 4,
+                "pivotx": 81,
+                "pivoty": 83,
+                "events": []
+            },
+            "data": [
+                [0,0,161,165,0,0,161,165],
+                [162,0,323,165,162,0,323,165],
+            ],
+            "filename": "images/monster/normal003-rabbit.png"
+        }],
+        "run": [{
+            "info": {
+                "nbrOfFrames": 2,
+                "name": "run",
+                "type": "animation",
+                "framerate": 4,
+                "pivotx": 81,
+                "pivoty": 83,
+                "events": []
+            },
+            "data": [
+                [0,0,161,165,0,0,161,165],
+                [162,0,323,165,162,0,323,165],
+            ],
+            "filename": "images/monster/normal003-rabbit.png"
+        }],
+        "attack": [{
+            "info": {
+                "nbrOfFrames": 3,
+                "name": "attack",
+                "type": "animation",
+                "framerate": 4,
+                "pivotx": 81,
+                "pivoty": 83,
+                "events": [{name: 'attack_affect', frame: 2}]
+            },
+            "data": [
+                [324,0,485,165,324,0,485,165],
+                [486,0,647,165,486,0,647,165],
+                [648,0,809,165,648,0,809,165]
+            ],
+            "filename": "images/monster/normal003-rabbit.png"
+        }],  
+        "hurted": [{
+            "info": {
+                "nbrOfFrames": 1,
+                "name": "hurted",
+                "type": "animation",
+                "framerate": 4,
+                "pivotx": 81,
+                "pivoty": 83,
+                "events": []
+            },
+            "data": [
+                [810,0,971,165,810,0,971,165]
+            ],
+            "filename": "images/monster/normal003-rabbit.png"
+        }],  
+        "dead": [{
+            "info": {
+                "nbrOfFrames": 4,
+                "name": "hurted",
+                "type": "animation",
+                "framerate": 4,
+                "pivotx": 81,
+                "pivoty": 83,
+                "events": []
+            },
+            "data": [
+                [810,0,971,165,810,0,971,165],
+                [972,0,1133,165,972,0,1133,165],
+                [810,0,971,165,810,0,971,165],
+                [972,0,1133,165,972,0,1133,165]
+            ],
+            "filename": "images/monster/normal003-rabbit.png"
+        }]     
+    }
 }
 //用于初始化人物的数据
 woh.role_init_data={
