@@ -464,6 +464,9 @@ woh.g_config.resources = {
             'images/sprites/skilleffect/007.png',
             'images/sprites/skilleffect/008.png',
             'images/sprites/skilleffect/normal_1.png',
+            //头像物品等资源
+            'images/map/ava/rio_tang.png',
+            'images/map/items/c_002.png',
             //载入结算界面的资源
             'images/count/avatar-outer.png',
             'images/count/lvUP.png',
