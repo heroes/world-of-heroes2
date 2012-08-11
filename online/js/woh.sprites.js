@@ -113,10 +113,11 @@ Laro.NS('woh', function (L) {
         this.born();
 
     }).methods({
-        born: function () {
+        born: function () { console.log('sprite born');
             this.getAnimations();
             this.initCheckArea();
             this.stand(); // 默认进入站立状态
+            console.log('born end');
         },
         //默认的checkarea为0
         initCheckArea: function () {
