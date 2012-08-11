@@ -19,6 +19,7 @@ Laro.NS('woh.stageClass', function (L) {
             woh.log('enter stage [Battle]');
             setTimeout(function () {woh.util.fadeIn(woh.els.canvasWrap)}, 500);
             console.log(0);
+            console.log(data);
             woh.util.playOneSound(data.bgm);
             this.timeInState = 0;
             this.gameOverTime = 0;
@@ -31,6 +32,7 @@ Laro.NS('woh.stageClass', function (L) {
             woh.runtime.activeRole = [];
             var i = 0;
             console.log(1);
+            console.log(woh.Role);
             data['role'].forEach(function (roleId) {
                 woh.runtime.activeRole.push(woh.runtime.role[roleId]);
                 me.roles.add(roleId, new woh.Role(woh.runtime.role[roleId], me.aiController));
