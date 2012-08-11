@@ -91,6 +91,7 @@
         },
         bind:function(){
             _doc.querySelector('#cg button.skip').addEventListener('mousedown',this.callbackFunc,false);
+            _doc.querySelector('#cg').addEventListener('touchstart',this.callbackFunc,false);
         }
     }
     //对话界面
