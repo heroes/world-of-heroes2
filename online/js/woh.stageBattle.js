@@ -32,14 +32,19 @@ Laro.NS('woh.stageClass', function (L) {
             woh.runtime.activeRole = [];
             var i = 0;
             console.log(1);
-            console.log(woh.Role);
             data['role'].forEach(function (roleId) {
+                console.log(11);
                 woh.runtime.activeRole.push(woh.runtime.role[roleId]);
+                console.log(22);
                 me.roles.add(roleId, new woh.Role(woh.runtime.role[roleId], me.aiController));
+                console.log(33);
                 me.roles.get(roleId).stage = me;
+                console.log(44);
                 me.roles.get(roleId).setPos(400 - 120 * i++, 300-(i%2)*120);
+                console.log(55);
             });
             //console.log("当前活动人物队列",woh.currentRoleGroup);
+            console.log(66);
             this.activeLines = data.monster.length;
             console.log(2);
             data.monster.forEach(function (line) {
