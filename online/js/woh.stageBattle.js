@@ -18,32 +18,19 @@ Laro.NS('woh.stageClass', function (L) {
         enter: function (data, from) { 
             woh.log('enter stage [Battle]');
             setTimeout(function () {woh.util.fadeIn(woh.els.canvasWrap)}, 500);
-            
-            //woh.util.playOneSound('music/battle-boss.mp3');//: woh.util.playOneSound('music/battle-normal.mp3');
-            //woh.util.playOneSound(data.bgm);
+            console.log(0);
+            woh.util.playOneSound(data.bgm);
             this.timeInState = 0;
             this.gameOverTime = 0;
             // temp part to do area
             var me = this;
             this.data=data;
             this.totalexp=0;
-            /*
-            document.querySelector("body").onmouseup = function (e) {
-            if (e.target.tagName != "CANVAS") return;
-            var rect = e.target.getClientRects()[0];
-            var offsetX = e.clientX - rect.left;
-            var offsetY = e.clientY - rect.top;
-            me.hurtArea({
-            left: offsetX - 50,
-            top: offsetY - 50,
-            right: offsetX + 50,
-            bottom: offsetY + 50
-            }, e.target);
-            }*/
             // rio_tang
             this.aiController = new woh.AIController(this);
             woh.runtime.activeRole = [];
             var i = 0;
+            console.log(1);
             data['role'].forEach(function (roleId) {
                 woh.runtime.activeRole.push(woh.runtime.role[roleId]);
                 me.roles.add(roleId, new woh.Role(woh.runtime.role[roleId], me.aiController));
@@ -52,6 +39,7 @@ Laro.NS('woh.stageClass', function (L) {
             });
             //console.log("当前活动人物队列",woh.currentRoleGroup);
             this.activeLines = data.monster.length;
+            console.log(2);
             data.monster.forEach(function (line) {
                 function startWave(i) {
                     if (i >= line.length) {
