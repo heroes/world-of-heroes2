@@ -74,10 +74,10 @@ woh.g_config.script={
         next:'battle_withlittlecrab'
     },
     'battle_withlittlecrab':{
-        name: 'battle_withlittlecrab',
         type:'battle',
         repeat:true,
         data:{
+            'name':'battle_withlittlecrab',
             "role":["001"],
             "bg":'images/bg/bg-beach-dusk.jpg',
             "bgm":"music/battle-normal.mp3",
@@ -176,10 +176,10 @@ woh.g_config.script={
         next:'battle_withlittlecrab2'
     },
     'battle_withlittlecrab2':{
-        name: 'battle_withlittlecrab2',
         type:'battle',
         repeat:false,
         data:{
+            "name": 'battle_withlittlecrab2',
             "role":["001","002"],
             "bg":'images/bg/bg-beach.jpg',
             "bgm":"music/battle-normal.mp3",
@@ -209,10 +209,10 @@ woh.g_config.script={
         next:'battle_withcrabboss'
     },
     'battle_withcrabboss':{
-        name: 'battle_withcrabboss',
         type:'battle',
         repeat:true,
         data:{
+            "name":'battle_withcrabboss',
             "role":["001","002"],
             "bg":'images/bg/bg-beach.jpg',
             "bgm":"music/battle-boss.mp3",
@@ -337,20 +337,21 @@ woh.g_config.script={
         next:'battle_Infinity'
     },
     'battle_Infinity':{
-        name:'battle_Infinity',
         type:'battle',
         repeat:true,
         data:{
+            "name":'battle_Infinity',
             "role":["001"],
             "bg":'images/bg/bg-beach.jpg',
             "bgm":"music/battle-normal.mp3",
             "monster":[
                 [
                     [{type:'crab',x:100,y:200}],
+                    [{type:'rabbit_2',x:100,y:200},{type:'rabbit_2',x:900,y:200},{type:'rabbit_2',x:100,y:200},{type:'rabbit_2',x:900,y:200}],
                     [{type:'crab',x:100,y:200},{type:'crab',x:300,y:200}],
                     [{type:'crab',x:100,y:200},{type:'crab',x:900,y:200}],
                     [{type:'rabbit_1',x:100,y:200},{type:'rabbit_1',x:900,y:200}],
-                    [{type:'rabbit_2',x:100,y:200},{type:'rabbit_2',x:900,y:200}],
+                    [{type:'rabbit_2',x:100,y:200},{type:'rabbit_2',x:900,y:200},{type:'rabbit_2',x:100,y:200},{type:'rabbit_2',x:900,y:200}],
                 ],
             ],
             "drop":['clothes','002',1],//掉落类型，掉落id，掉落概率
@@ -1516,7 +1517,7 @@ woh.g_config.weapon={
 woh.g_config.monsters = {
     "crab": {
         "health":300,//血量
-        "damage":5,//攻击
+        "damage":4,//攻击
         "defend":0,//防御
         "crit":0,//暴击
         "exp":300,//打死一只怪物获得的经验值
