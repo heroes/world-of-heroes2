@@ -59,8 +59,8 @@ Laro.NS('woh.stageClass', function (L) {
                     var living = wave.length;
                     wave.forEach(function (data) {
                         var monster = new woh.Monster(woh.g_config.monsters[data.type], me.aiController);
-                        me.totalexp+=woh.g_config.monsters[data.type]['exp'];
                         monster.ondead = function () {
+                            me.totalexp+=monster.data.exp;
                             living--;
                             if (living == 0)
                                 startWave(i + 1);
@@ -74,11 +74,14 @@ Laro.NS('woh.stageClass', function (L) {
             })
         },
         transition: function () {
-            if (this.aiController.players.length == 0) { 
+            if (this.aiController.players.length == 0&&this.data.name!='battle_Infinity') { 
+                console.log(this.data.name);
                 if (!this.gameOverTime) { this.gameOverTime = this.timeInState; }
             }
             else{
-                this.activeLines == 0 && woh.gameScript.continueExec();
+                if(this.activeLines == 0||(this.aiController.players.length == 0&&this.data.name=='battle_Infinity')){
+                    woh.gameScript.continueExec();
+                }
             }
 
             if (this.gameOverTime > 0 && this.timeInState - this.gameOverTime > 1.5) { 
@@ -96,7 +99,7 @@ Laro.NS('woh.stageClass', function (L) {
                     o.cd=false;
                     o.cdTime=woh.skill_data[key].cd;
             }
-            if(this.aiController.players.length != 0){
+            if(this.aiController.players.length != 0||(this.aiController.players.length == 0&&this.data.name=='battle_Infinity')){
                 var result={
                     exp:this.totalexp,
                     roledata:woh.runtime.activeRole,
