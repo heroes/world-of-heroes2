@@ -313,6 +313,49 @@ woh.g_config.script={
             {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'事到如今，也只好听天由命了。',position:'left',globalBg : 'resources/images/bg/bg-boat-outer2.jpg'},
         ],
         next:'intro'
+    },
+    
+    //无限模式
+    'drama_Infinity':{
+        type:'drama',
+        repeat:true,
+        data:[
+            {
+                appear: 'auto',
+                data: [  
+                ]
+            }
+        ],
+        next:'loading_Infinity'
+    },
+    'loading_Infinity':{
+        type:'loading',
+        repeat:true,
+        data:{
+            key:'battle_infinity'
+        },
+        next:'battle_Infinity'
+    },
+    'battle_Infinity':{
+        name:'battle_Infinity',
+        type:'battle',
+        repeat:true,
+        data:{
+            "role":["001"],
+            "bg":'images/bg/bg-beach.jpg',
+            "bgm":"music/battle-normal.mp3",
+            "monster":[
+                [
+                    [{type:'crab',x:100,y:200}],
+                    [{type:'crab',x:100,y:200},{type:'crab',x:300,y:200}],
+                    [{type:'crab',x:100,y:200},{type:'crab',x:900,y:200}],
+                    [{type:'rabbit_1',x:100,y:200},{type:'rabbit_1',x:900,y:200}],
+                    [{type:'rabbit_2',x:100,y:200},{type:'rabbit_2',x:900,y:200}],
+                ],
+            ],
+            "drop":['clothes','002',1],//掉落类型，掉落id，掉落概率
+        },
+        next:'intro'
     }
 };  
 
@@ -320,6 +363,63 @@ woh.g_config.script={
 woh.g_config.resources = {
     // 比如： 战斗场景，随便测试一个, 假如第一场战斗
     // 根目录基于 resources/
+    battle_infinity:{
+        type: 'battle',
+        resources:[
+            'images/circle.png',
+            'images/pie.png',
+            'images/shadow.png',
+            //载入技能图标资源
+            'images/skillicons/001.jpg',
+            'images/skillicons/002.jpg',
+            'images/skillicons/003.jpg',
+            'images/skillicons/004.jpg',
+            'images/skillicons/005.jpg',
+            'images/skillicons/006.jpg',
+            'images/skillicons/007.jpg',
+            'images/skillicons/008.jpg',
+            'images/skillicons/009.jpg',
+            'images/skillicons/010.jpg',
+            'images/skillicons/011.jpg',
+            'images/skillicons/012.jpg',
+            //载入装备资源
+           
+            'images/sprites/clothes/001/001/attack.png',
+            'images/sprites/clothes/001/001/hurted.png',
+            'images/sprites/clothes/001/001/magic.png',
+            'images/sprites/clothes/001/001/stand.png',
+            'images/sprites/clothes/001/001/run.png',
+            'images/sprites/clothes/001/001/dead.png',
+
+            'images/sprites/weapon/001/attack.png',
+            'images/sprites/weapon/001/hurted.png',
+            'images/sprites/weapon/001/magic.png',
+            'images/sprites/weapon/001/stand.png',
+            'images/sprites/weapon/001/run.png',
+
+            //载入技能特效图片
+            'images/sprites/skilleffect/001.png',
+            'images/sprites/skilleffect/002.png',
+            'images/sprites/skilleffect/003.png',
+            'images/sprites/skilleffect/004.png',
+            'images/sprites/skilleffect/005.png',
+            'images/sprites/skilleffect/006.png',
+            'images/sprites/skilleffect/007.png',
+            'images/sprites/skilleffect/008.png',
+            'images/sprites/skilleffect/normal_1.png',
+            //载入结算界面的资源
+            'images/count/avatar-outer.png',
+            'images/count/lvUP.png',
+            'images/count/expbar-bg.png',
+            'images/count/count-bg.png',
+
+            'images/monster/normal001-crab.png',
+
+            'music/battle-normal.mp3',
+            'music/fail.mp3',
+            'music/win.mp3'
+        ] 
+    },
     intro:{
         type:'intro',
         resources:[

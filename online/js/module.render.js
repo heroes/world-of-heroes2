@@ -67,7 +67,8 @@
                 //e.target.style.background="url(../online/resources/images/index/index-btn-press.png) no-repeat";
                 switch(e.target.id){
                     case 'btn-1':woh.runtime.init();setTimeout('woh.gameScript.continueExec()',300);break;
-                    case 'btn-2':document.getElementById('Intro-0').style.display='block';break;
+                    //case 'btn-2':document.getElementById('Intro-0').style.display='block';break;
+                    case 'btn-2':woh.runtime.init();woh.runtime.stageTag='drama_Infinity';setTimeout('woh.gameScript.continueExec()',300);break;
                     case 'btn-3':document.getElementById('Intro-1').style.display='block';break;
                     case 'btn-4':document.getElementById('Intro-2').style.display='block';break;
                     default:break;
