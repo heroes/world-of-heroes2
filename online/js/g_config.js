@@ -83,9 +83,9 @@ woh.g_config.script={
             "bgm":"music/battle-normal.mp3",
             "monster":[
                 [
-                    [{type:'rabbit_2',x:100,y:200},{type:'rabbit_2',x:300,y:200}],
-                    [{type:'rabbit_2',x:100,y:200},{type:'rabbit_2',x:300,y:200}],
-                    [{type:'rabbit_2',x:100,y:200},{type:'rabbit_2',x:900,y:200}]
+                    [{type:'crab',x:100,y:200}],
+                    [{type:'crab',x:100,y:200},{type:'crab',x:300,y:200}],
+                    [{type:'crab',x:100,y:200},{type:'crab',x:900,y:200}]
                 ],
             ],
             "drop":['clothes','002',1],//掉落类型，掉落id，掉落概率
@@ -1831,7 +1831,7 @@ woh.role_init_data={
         'clothes':'003',//衣服编号
         'damageArea':[20,-15,180,65],
         'force':90,
-        'cooldown':2000,
+        'cooldown':1000,
         'skill_point':0,
         'skill_list':{
             '005':1,
