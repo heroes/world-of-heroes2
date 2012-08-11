@@ -115,14 +115,16 @@ Laro.NS('woh', function (L) {
     }).methods({
         born: function () { console.log('sprite born');
             this.getAnimations();
+            console.log(111);
             this.initCheckArea();
+            console.log(222);
             this.stand(); // 默认进入站立状态
             console.log('born end');
         },
         //默认的checkarea为0
         initCheckArea: function () {
             var me = this;
-
+            console.log(444);
             this.checkRect = new L.Sprite(woh.stage.$, function () {
                 this.width = 0;
                 this.height = 0;
@@ -133,18 +135,18 @@ Laro.NS('woh', function (L) {
                 };
                 this.setPos(me.x, me.y);
             });
-
+            console.log(555);
             
         },
         getAnimations: function () {
             this.animations.stand = this.getAnimationGroup('stand')||null;
             this.animations.run = this.getAnimationGroup('run')||null;
             this.animations.hurted = this.getAnimationGroup('hurted')||null;
-
+            console.log(333);
             Object.defineProperty(this.animations,"attack",{get:function(){
                 return this.getAnimationGroup('attack');
             }.bind(this)})
-
+            
             this.animations.magic = this.getAnimationGroup('magic')||null;
             this.animations.dead = this.getAnimationGroup('dead')||null;
         },
@@ -253,7 +255,7 @@ Laro.NS('woh', function (L) {
             this.face = 'right';
         },
         
-        stand: function () {
+        stand: function () {console.log(666);
             this.toPos = null;
             this.fsm.setState(woh.roleStates.stand);
         },
