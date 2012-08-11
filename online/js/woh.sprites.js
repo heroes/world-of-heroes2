@@ -318,7 +318,7 @@ Laro.NS('woh', function (L) {
             }
 
             ctx.restore();
-        },
+        }
     });
     this.Sprite = Sprite;
 });

@@ -1,5 +1,6 @@
 ﻿Laro.NS('woh', function (L) {
-    var Role = this.Sprite.extend(function () {
+    console.log('Sprite', this.Sprite)
+    var Role = this.Sprite.extend(function () { console.log('role', 0)
         this.speed = 200;
         this.enemy = "monster";
         var rate_info=woh.skill_rate[this.data['type']],
