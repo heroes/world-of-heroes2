@@ -1949,7 +1949,7 @@ woh.role_init_data={
         'skill_point':0,//剩余技能点
         'damageArea':[30,-45,100,45],
         'skill_list':{
-            '001':0, 
+            '001':1, 
             '002':0,
             '003':0,
             '004':0
