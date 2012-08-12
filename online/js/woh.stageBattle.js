@@ -18,8 +18,7 @@ Laro.NS('woh.stageClass', function (L) {
         enter: function (data, from) { 
             woh.log('enter stage [Battle]');
             setTimeout(function () {woh.util.fadeIn(woh.els.canvasWrap)}, 500);
-            console.log(0);
-            //console.log(data);
+
             woh.util.playOneSound(data.bgm);
             this.timeInState = 0;
             this.gameOverTime = 0;
@@ -31,24 +30,17 @@ Laro.NS('woh.stageClass', function (L) {
             this.aiController = new woh.AIController(this);
             woh.runtime.activeRole = [];
             var i = 0;
-            console.log(1);
+
             data['role'].forEach(function (roleId) {
-                console.log(11);
                 woh.runtime.activeRole.push(woh.runtime.role[roleId]);
-                console.log(22);
                 console.log(me.roles.add);
                 console.log(woh.Role);
                 me.roles.add(roleId, new woh.Role(woh.runtime.role[roleId], me.aiController));
-                console.log(33);
                 me.roles.get(roleId).stage = me;
-                console.log(44);
                 me.roles.get(roleId).setPos(400 - 120 * i++, 300-(i%2)*120);
-                console.log(55);
             });
             //console.log("当前活动人物队列",woh.currentRoleGroup);
-            console.log(66);
             this.activeLines = data.monster.length;
-            console.log(2);
             data.monster.forEach(function (line) {
                 function startWave(i) {
                     if (i >= line.length) {
