@@ -602,7 +602,17 @@ woh.g_config.resources = {
             'music/battle-boss.mp3',
             'music/battle-normal.mp3',
             'music/fail.mp3',
-            'music/win.mp3'
+            'music/win.mp3',
+            // 攻击和技能音效
+            'sound/attack.mp3',
+            'sound/skill_001.mp3',
+            'sound/skill_002.mp3',
+            'sound/skill_003.mp3',
+            'sound/skill_004.mp3',
+            'sound/skill_005.mp3',
+            'sound/skill_006.mp3',
+            'sound/skill_007.mp3',
+            'sound/skill_008.mp3'
         ] 
     },
     battle_2: {
@@ -2374,7 +2384,7 @@ woh.skill_data={
 //技能效果动画和音效配置
 woh.g_config.skill_effect={
     "normal_1":{ 
-        "sound":"resources/sound/attack.mp3",
+        "sound":"sound/attack.mp3",
         "animation": {
             "info": {
                 "nbrOfFrames": 2,

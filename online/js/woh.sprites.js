@@ -149,6 +149,7 @@ Laro.NS('woh', function (L) {
             if (start === undefined) start = 0;
             if (end === undefined) end = 1;
             
+            if (animation == 'attack') { woh.loader.loadedSounds['sound/attack.mp3'] && woh.loader.loadedSounds['sound/attack.mp3'].play() }
             if(this.attackBuff&&animation=='attack'){woh.util.shakeScreen();setTimeout('woh.util.stopShakeScreen()',1000);}
             animation = typeof animation == 'string' ? this.animations[animation] : animation;
             this.curAnimation = animation;
@@ -160,7 +161,7 @@ Laro.NS('woh', function (L) {
             });
             
             animation[0].setCallback(L.curry(this.onAnimationEvent, this));
-
+            
         },
         onAnimationEvent: function (evt, anim) {
             var me = this;

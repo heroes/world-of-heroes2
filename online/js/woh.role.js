@@ -95,6 +95,9 @@
                     
                 }
             }
+            // 技能音效
+            var key = 'sound/skill_' + id + '.mp3';
+            woh.loader.loadedSounds[key] && woh.loader.loadedSounds[key].play();
         },
         getAnimationGroup: function (type) {
             var me=this;
