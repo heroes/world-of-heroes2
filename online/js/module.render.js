@@ -578,7 +578,7 @@
                     var iconclass='',
                         nextSkillLevel=dataSkillList[key]+1;
                     //当有剩余技能点以及当前人物等级大于下一阶段技能可点等级时技能标识为可点
-                    if(dataSkillPoint>0&&nextSkillLevel<woh.skill_data[key]['level_limit'].length&&woh.skill_data[key]['level_limit'][nextSkillLevel]<=dataRoleCurrentLv){
+                    if(dataSkillPoint>0&&nextSkillLevel<woh.skill_data[key]['level_limit'].length&&woh.skill_data[key]['level_limit'][nextSkillLevel-1]<=dataRoleCurrentLv){
                         iconclass=" class='useable' ";
                     }
                     items.push("<li><img width='77' height='77'"+iconclass+"data-toggle='"+key+"' src='"+woh.skill_data[key]['icon']+"'/></li>");

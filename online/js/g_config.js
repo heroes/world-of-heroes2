@@ -357,6 +357,10 @@ woh.g_config.script={
                     [{type:'rabbit_1',x:100,y:200},{type:'rabbit_2',x:900,y:200},{type:'rabbit_1',x:500,y:0},{type:'rabbit_2',x:500,y:640},{type:'crab',x:300,y:0},{type:'crab',x:800,y:640}],
                     [{type:'rabbit_1',x:100,y:200},{type:'rabbit_2',x:900,y:200},{type:'crab',x:500,y:0},{type:'rabbit_1',x:500,y:640},{type:'rabbit_2',x:300,y:0},{type:'crab',x:800,y:640},{type:'crab',x:150,y:0},{type:'crab',x:960,y:640}],
                     [{type:'crab_boss',x:500,y:640},{type:'crab',x:100,y:200},{type:'crab',x:900,y:200}],
+                    [{type:'rabbit_1',x:100,y:200},{type:'rabbit_2',x:900,y:200},{type:'crab',x:500,y:0}],
+                    [{type:'rabbit_1',x:100,y:200},{type:'rabbit_2',x:900,y:200},{type:'rabbit_1',x:500,y:0},{type:'rabbit_2',x:500,y:640},{type:'crab',x:300,y:0},{type:'crab',x:800,y:640}],
+                    [{type:'rabbit_1',x:100,y:200},{type:'rabbit_2',x:900,y:200},{type:'crab',x:500,y:0},{type:'rabbit_1',x:500,y:640},{type:'rabbit_2',x:300,y:0},{type:'crab',x:800,y:640},{type:'crab',x:150,y:0},{type:'crab',x:960,y:640}],
+                    [{type:'crab_boss',x:500,y:640},{type:'crab',x:100,y:200},{type:'crab',x:900,y:200}],
                 ],
             ],
             "drop":['clothes','002',1],//掉落类型，掉落id，掉落概率
