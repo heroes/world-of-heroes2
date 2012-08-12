@@ -53,11 +53,16 @@
               var sub=document.createElement();
               _doc.getElementById('intro').appendChild(sub);
               sub.outerHTML=this.tpl_pop('Intro-'+i);
-              document.getElementById('Intro-'+i).querySelector('.close').addEventListener(
+            }
+            //设置三个子窗体中的内容
+            document.getElementById('Intro-2').innerHTML+="<p class='thanks first'>本游戏内使用的背景音乐均为单机PC游戏《仙剑奇侠传5》中的背景音乐。</p>"+
+                                                         "<p class='thanks'>感谢《仙剑奇侠传》带给我们实现梦想的动力和勇气。<a href='http://weibo.com/yaosir1'>@姚壮宪</a><a href='http://e.weibo.com/palclub'>@仙剑奇侠传</a></p>"+
+                                                         "<p class='thanks'>PS：本游戏纯属业余爱好，非商用，请勿擅自用于商业目的。</p>";
+            for(var j=0;j<3;j++){
+                document.getElementById('Intro-'+j).querySelector('.close').addEventListener(
                  'click',function(){document.getElementById(this.getAttribute('data-toggle')).style.display='none';},false
               );
             }
-            //设置三个子窗体中的内容
         },
         unInit:function(){
 

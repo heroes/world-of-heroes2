@@ -4,6 +4,16 @@
 	position:absolute;
 	z-index: 2;
 	display:none;
+	background:white;
+}
+.sub-win p.thanks{
+	color: black;
+	font-size: 24px;
+	text-align: center;
+	
+}
+.sub-win p.thanks.first{
+	padding-top: 100px;
 }
 .sub-win#role-manage{
 	background:url(../resources/images/map/win_bg.jpg) no-repeat;
