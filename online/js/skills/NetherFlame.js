@@ -1,0 +1,33 @@
+/**
+ * ¼¼ÄÜÓ°Ïì
+ */
+Laro.NS('woh', function (L) {
+    var NetherFlame = woh.SkillEffect.extend(function () {
+    }).methods({
+        getAnimationGroup: function (type) {
+            L.$lea.setLoader(woh.loader);
+
+            var obj = this.data[type];
+            ret = [];
+            if (!Array.isArray(obj)) {
+                obj = [obj];
+            }
+            L.$lea.setSourceObj(obj);
+            for (var i = 0; i < obj.length; i++) {
+                ret.push(L.$lea.getAnimation(i));
+            }
+
+            return ret;
+        },
+        draw: function (render) {
+            var x = Math.floor(this.x), y = Math.floor(this.y),
+                me = this;
+
+            this.curAnimation && this.curAnimation.forEach(function (o) {
+                ((me.face == 'left' && !o.renderMirrored) || (me.face == 'right' && o.renderMirrored)) && o.mirror();
+                o.draw(render, x, y, 0, 1, null);
+            });
+        }
+    });
+    this.NetherFlame = NetherFlame;
+});
