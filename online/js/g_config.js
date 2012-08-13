@@ -2200,10 +2200,15 @@ woh.skill_data={
         //技能影响
         'data':{
             //单体直接伤害，攻击范围等同于武器攻击范围
-            'attack_direct':{
-                'target':'enemySingle',//使用对象 selfSingle/ememySingle/selfRange/ememyRange/selfAll/enemyAll
-                'attack_addition':[0,10,12,14,16,18],//伤害增加值,对应不同等级
-            }
+
+            'type':'attackBuff',
+            'effect':'001',
+            'level':0,
+            'convert':function(damage){
+                [0,10,12,14,16,18][this.level];
+            },
+            'type':'call',
+            'effect':'FallenFlowers'
         }
     },
     '002':{
@@ -2215,10 +2220,8 @@ woh.skill_data={
         //技能影响
         'data':{
             //回复
-            'recover':{
-                'target':'selfAll',
-                'attack_addition':[]
-            },
+            'type':'call',
+            'effect':'FallenFlowers'
         }
     },
     '003':{
@@ -2229,27 +2232,7 @@ woh.skill_data={
         'cd':30,//CD时间
         //技能影响
         'data':{
-            //单体直接伤害
-            'attack_direct':{
-
-            },
-            //回复
-            'recover':{
-
-            },
-            //区域伤害
-            'attack_area':{
-                'target':'enemyRange',//使用对象 selfSingle/ememySingle/selfRange/ememyRange
-                'duration':3,//动作持续时间
-                'continue':3,//技能有效时间
-                'times':3,//造成的伤害次数
-                'range':200, //技能的攻击范围,数值表示攻击范围的半径
-                'attack_addition':[50,60,70,80,90],//伤害增加值
-            },
-            //添加buff
-            'buff':{
-
-            }
+            'type':'call',
         }
     },
     '004':{
@@ -2261,12 +2244,8 @@ woh.skill_data={
         //技能影响
         'data':{
             //区域伤害
-            'attack_area':{
-                'target':'enemyAll',//使用对象 selfSingle/ememySingle/selfRange/ememyRange
-                'duration':0.5,//动作持续时间
-                'continue':5,//技能效果持续时间
-                'attack_addition':30,//伤害增加值
-            }
+            'type':'call',
+            'effect':'FallenFlowers'
         }
     },
     '005':{
@@ -2277,14 +2256,8 @@ woh.skill_data={
         'cd':15,//CD时间
         //技能影响
         'data':{
-            
-            //添加buff
-            'buff':{
-                'target':'enemyRange',
-                'health_addition':[-20,-30,-40,-50,-60],
-                'duration':5,
-                'times':5
-            }
+            'type':'call',
+            'effect':'NetherFlame'
         }
     },
     '006':{
@@ -2295,16 +2268,11 @@ woh.skill_data={
         'cd':15,//CD时间
         //技能影响
         'data':{
-            'attack_area':{
-                'target':'enemyRange',//使用对象 selfSingle/ememySingle/selfRange/ememyRange
-                'range':10,
-                'attack_addition':[10,20,30,40,50],//伤害增加值
-            },
-            //添加buff
-            'buff':{
-                'target':'enemyRange',
-                'speed_addition':-9999,
-                'duration':[0.5,1,1.2,1.5,2]
+            'type':'attackBuff',
+            'effect':'006',
+            'level':0,
+            'convert':function(damage){
+                [0,10,12,14,16,18][this.level];
             }
         }
     },

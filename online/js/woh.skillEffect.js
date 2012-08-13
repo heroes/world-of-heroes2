@@ -1,8 +1,8 @@
-/**
+﻿/**
  * 技能影响
  */
  Laro.NS('woh', function (L) {
-    var SkillEffect = woh.Sprite.extend(function () {
+    var SkillEffect = L.Class(function () {
         this.speed = 100;
     }).methods({
         getAnimationGroup: function (type) {
@@ -19,6 +19,12 @@
             }
 
             return ret;
+        },
+        update: function (dt) {
+            this.curAnimation && this.curAnimation.forEach(function (o) { 
+                o.update(dt) 
+            });
+            
         },
         draw: function (render) {
             var x = Math.floor(this.x), y = Math.floor(this.y),

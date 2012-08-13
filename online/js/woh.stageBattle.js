@@ -1,4 +1,4 @@
-/**
+﻿/**
  * battle
  */
 
@@ -192,6 +192,9 @@ Laro.NS('woh.stageClass', function (L) {
             if (sprite.ondead) {
                 sprite.ondead();
             }
+        },
+        createSkillEffect:function(caster,skill) {
+            this.roles.add(Math.random().toFixed(10), new woh[skill.effect](caster,this,skill));
         }
 
     }).statics({

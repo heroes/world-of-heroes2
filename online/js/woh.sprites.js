@@ -186,11 +186,7 @@ Laro.NS('woh', function (L) {
                         this.attackBuff.convert(damageData);
                         this.attackBuff = null;
                     }
-                    this.stage.hurtArea(this.enemy, this.damageArea, {
-                        damage:this.damage,
-                        attacker:this,
-                        force:this.force,
-                    });
+                    this.stage.hurtArea(this.enemy, this.damageArea, damageData);
                     break;
                 case "end_attack" : this.endAttack(); break;
             }
