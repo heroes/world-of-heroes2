@@ -14,12 +14,11 @@ html, body {
 .left{float: left;}
 .right{float: right;}
 .scaleX{
-     -moz-transform:scaleX(-1);
+    -moz-transform:scaleX(-1);
     -webkit-transform:scaleX(-1);
     -o-transform:scaleX(-1);
     transform:scaleX(-1);
 }
-
 .barlittle {
 	background-color:#2187e7;  
 	background-image: -moz-linear-gradient(45deg, #2187e7 25%, #a0eaff); 

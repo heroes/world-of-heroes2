@@ -4,16 +4,22 @@
 	position:absolute;
 	z-index: 2;
 	display:none;
-	background:white;
+	background:black;
+}
+.sub-win#Intro-1{
+	background:url(../resources/images/index/about-us.jpg) no-repeat;
+}
+.sub-win#Intro-2{
+	background:url(../resources/images/index/thanks.jpg) no-repeat;
 }
 .sub-win p.thanks{
 	color: black;
 	font-size: 24px;
-	text-align: center;
-	
+	width: 450px;
+	padding-left: 50px
 }
 .sub-win p.thanks.first{
-	padding-top: 100px;
+	padding-top: 150px;
 }
 .sub-win#role-manage{
 	background:url(../resources/images/map/win_bg.jpg) no-repeat;
