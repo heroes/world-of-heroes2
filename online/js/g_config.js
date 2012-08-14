@@ -21,8 +21,8 @@ woh.g_config.script={
         data:{
             key:'intro'
         },
-        next:'intro'
-        //next:'loading_4'
+        //next:'intro'
+        next:'loading_4'
     },
     'intro':{
         type:'intro',//标记相应的stage类型
@@ -311,6 +311,7 @@ woh.g_config.script={
             {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'等……等等，这么说来，莫非你是头一次出海？',position:'left',globalBg : 'resources/images/bg/bg-boat-outer2.jpg'},
             {'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'程少非','content':'是啊，有何不妥？',position:'right',globalBg : 'resources/images/bg/bg-boat-outer2.jpg'},
             {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'事到如今，也只好听天由命了。',position:'left',globalBg : 'resources/images/bg/bg-boat-outer2.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_beauty_sup.png','name':'唐如','content':'——咦？怎么有歌声？',position:'left',globalBg : 'resources/images/bg/bg-boat-outer2.jpg'},
         ],
         next:'intro'
     },
