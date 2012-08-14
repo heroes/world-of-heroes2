@@ -325,10 +325,31 @@ woh.g_config.script={
         type:'dialogue',
         repeat:false,
         data:[
-            {'avatar':'','name':'人鱼少女','content':'灵皇皇兮既降，飙远举兮云中；览冀洲兮有余，横四海兮焉穷！',position:'left',globalBg : 'resources/images/cg/cg_3.jpg'},
-            {'avatar':'resources/images/dialogue/rio_tang_beauty_sup.png','name':'唐如','content':'此曲只应天上有……子曰“不图为乐之至于斯也”，想必莫过于此了。',position:'right',globalBg : 'resources/images/cg/cg_3.jpg'},
-            {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'程少非','content':'啊哈，终于找到了！',position:'right',globalBg : 'resources/images/cg/cg_3.jpg'},
-
+            {'avatar':'','name':'人鱼少女','content':'灵皇皇兮既降，飙远举兮云中；览冀洲兮有余，横四海兮焉穷！',position:'right',globalBg : 'resources/images/cg/cg_3.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_beauty_sup.png','name':'唐如','content':'此曲只应天上有……子曰“不图为乐之至于斯也”，想必莫过于此了。',position:'left',globalBg : 'resources/images/cg/cg_3.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'程少非','content':'啊哈，终于找到了！',position:'left',globalBg : 'resources/images/cg/cg_3.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'程少非','content':'这位人鱼姑娘，这厢有礼，在下远道而来，请问能否借尾巴一尝？',position:'left',globalBg : 'resources/images/cg/cg_3.jpg'},
+            {'avatar':'resources/images/dialogue/qing_normal.png','name':'人鱼少女','content':'……',position:'right',globalBg : 'resources/images/bg/bg-meet-dusk.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'尝……尝？你在胡言乱语什么啊，当心冲撞了人家姑娘……你你你，你拿着刀冲上去是想……',position:'left',globalBg : 'resources/images/bg/bg-meet-dusk.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'程少非','content':'人鱼肉是世间美味，想必这位姑娘也早已习惯，请姑娘稍安勿躁，可能会有一点点痛，但事后必有重酬。',position:'left',globalBg : 'resources/images/bg/bg-meet-dusk.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'习惯？那……那种事情怎有可能习惯……喂！',position:'left',globalBg : 'resources/images/bg/bg-meet-dusk.jpg'},
+            {'avatar':'resources/images/dialogue/qing_normal.png','name':'人鱼少女','content':'哼，愚蠢的人类。',position:'right',globalBg : 'resources/images/bg/bg-meet-dusk.jpg'},
+        ],
+        next:'drama_6'
+    },
+    'drama_6':{
+        type:'drama',//标记相应的stage类型
+        repeat:false,
+        data:[
+            {
+                appear: 'auto',
+                data: [
+                    '人鱼少女伸开双手，',
+                    '口中不知念了几句什么。',
+                    '海面突然掀起滔天巨浪，',
+                    '两人连人带船被卷进了水幕中。'   
+                ]
+            }
         ],
         next:'dialogue_9'
     },
@@ -336,11 +357,16 @@ woh.g_config.script={
         type:'dialogue',
         repeat:false,
         data:[
-            {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'程少非','content':'这位人鱼姑娘，在下',position:'left',globalBg : 'resources/images/bg/bg-boat-outer2.jpg'},
-            {'avatar':'resources/images/dialogue/rio_tang_beauty_sup.png','name':'唐如','content':'此曲只应天上有……子曰“不图为乐之至于斯也”，想必莫过于此了。',position:'right',globalBg : 'resources/images/bg/bg-boat-outer2.jpg'},
-            {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'程少非','content':'啊哈，终于找到了！',position:'right',globalBg : 'resources/images/bg/bg-boat-outer2.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_beauty_sup.png','name':'唐如','content':'此曲只应天上有……子曰“不图为乐之至于斯也”，想必莫过于此了。',position:'left',globalBg : 'resources/images/cg/cg_3.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'程少非','content':'啊哈，终于找到了！',position:'left',globalBg : 'resources/images/cg/cg_3.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'程少非','content':'这位人鱼姑娘，这厢有礼，在下远道而来，请问能否借尾巴一尝？',position:'left',globalBg : 'resources/images/cg/cg_3.jpg'},
+            {'avatar':'resources/images/dialogue/qing_normal.png','name':'人鱼少女','content':'……',position:'right',globalBg : 'resources/images/bg/bg-meet-dusk.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'尝……尝？你在胡言乱语什么啊，当心冲撞了人家姑娘……你你你，你拿着刀冲上去是想……',position:'left',globalBg : 'resources/images/bg/bg-meet-dusk.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'程少非','content':'人鱼肉是世间美味，想必这位姑娘也早已习惯，请姑娘稍安勿躁，可能会有一点点痛，但事后必有重酬。',position:'left',globalBg : 'resources/images/bg/bg-meet-dusk.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'习惯？那……那种事情怎有可能习惯……喂！',position:'left',globalBg : 'resources/images/bg/bg-meet-dusk.jpg'},
+            {'avatar':'resources/images/dialogue/qing_normal.png','name':'人鱼少女','content':'哼，愚蠢的人类。',position:'right',globalBg : 'resources/images/bg/bg-meet-dusk.jpg'},
         ],
-        next:'dialogue_9'
+        next:'drama_6'
     },
     //无限模式
     'drama_Infinity':{
@@ -666,7 +692,18 @@ woh.g_config.resources = {
             'images/bg/bg-boat-outer2.jpg',
             'images/cg/cg_2.jpg',
             'images/cg/cg_3.jpg',
+            //碧青的表情图
             'images/dialogue/qing_normal.png',
+            'images/dialogue/qing_look_ahead.png',
+            'images/dialogue/qing_pay_a_look.png',
+            'images/dialogue/qing_lose_sprite.png',
+            'images/dialogue/qing_lose_soft.png',
+            'images/dialogue/qing_lose_thinking.png',
+            'images/dialogue/qing_lose_upset.png',
+            //背景资源
+            'resources/images/bg/bg-meet-dusk.jpg',
+            'resources/images/bg/bg-sea.jpg',
+            'resources/images/bg/bg-field.jpg'
         ]    
     }
 };
