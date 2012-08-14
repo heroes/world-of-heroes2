@@ -21,14 +21,14 @@ woh.g_config.script={
         data:{
             key:'intro'
         },
-        //next:'intro'
-        next:'loading_4'
+        next:'intro'
     },
     'intro':{
         type:'intro',//标记相应的stage类型
         repeat:true,//标记在流程中是否允许重复出现（即选关的时候是否会被再次触发）
         data:{},
         next:'drama_1'
+        //next:'loading_4'
     }, 
     'drama_1':{
         type:'drama',//标记相应的stage类型
@@ -357,10 +357,36 @@ woh.g_config.script={
         type:'dialogue',
         repeat:false,
         data:[
-            {'avatar':'resources/images/dialogue/sola_cheng_pity','name':'程少非','content':'醒醒，醒醒！',position:'left',globalBg : 'resources/images/bg/bg-sea.jpg'},
-            {'avatar':'resources/images/dialogue/rio_tang_heavy','name':'唐如','content':'唔……唔……你往在下口中塞了何物？',position:'right',globalBg : 'resources/images/bg/bg-sea.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_pity.png','name':'程少非','content':'醒醒，醒醒！',position:'left',globalBg : 'resources/images/bg/bg-sea.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_heavy.png','name':'唐如','content':'唔……唔……你往在下口中塞了何物？',position:'right',globalBg : 'resources/images/bg/bg-sea.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_sigh.png','name':'程少非','content':'反应那么普通，你还真是无趣啊。',position:'left',globalBg : 'resources/images/bg/bg-sea.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'好吧，我那么无趣还真是……唔！',position:'right',globalBg : 'resources/images/bg/bg-sea.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_a.png','name':'程少非','content':'喂喂喂，含住含住，不要吐出来，这是避水珠，能让人在水中行动自如，吐掉了那可是要淹死的哟！',position:'left',globalBg : 'resources/images/bg/bg-sea.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'如此说来，我们现在是在水底？',position:'right',globalBg : 'resources/images/bg/bg-sea.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'程少非','content':'你可总算回过神了，刚才牙咬得那么紧，害我费了好大劲，最后用了点小手段才把珠子塞进你嘴里，呼。',position:'left',globalBg : 'resources/images/bg/bg-sea.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'手……段，那倒是什么啊。',position:'right',globalBg : 'resources/images/bg/bg-sea.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'程少非','content':'若说是什么手段，那肯定是……秘密啦！此地水族十分凶猛，跟紧我不要走散了。',position:'left',globalBg : 'resources/images/bg/bg-sea.jpg'},
         ],
-        next:'drama_6'
+        next:'battle_withlittlecrab3'
+    },
+    'battle_withlittlecrab3':{
+        type:'battle',
+        repeat:true,
+        data:{
+            "name": 'battle_withlittlecrab3',
+            "role":["001","002"],
+            "bg":'images/bg/bg-sea.jpg',
+            "bgm":"music/battle-normal2.mp3",
+            "monster":[
+                [
+                    [{type:'crab',x:100,y:-200},{type:'crab',x:300,y:-200},{type:'crab',x:500,y:900},{type:'crab',x:400,y:900}],
+                    [{type:'crab',x:100,y:-200},{type:'crab',x:300,y:-200},{type:'crab',x:500,y:900},{type:'crab',x:400,y:900}],
+                    [{type:'crab',x:100,y:-200},{type:'crab',x:300,y:-200},{type:'crab',x:500,y:900},{type:'crab',x:400,y:900},{type:'crab',x:300,y:900}],
+                ]
+            ],
+            "drop":['weapon','004',1],//掉落类型，掉落id，掉落概率
+        },
+        next:'map_2'
     },
     //无限模式
     'drama_Infinity':{
@@ -531,7 +557,7 @@ woh.g_config.resources = {
             'images/cg/cg_1.jpg',
             
             //sound
-            //'music/chat.mp3'
+            'music/chat.mp3'
         ]
     },
     battle_1: {
@@ -691,13 +717,15 @@ woh.g_config.resources = {
             'images/dialogue/qing_look_ahead.png',
             'images/dialogue/qing_pay_a_look.png',
             'images/dialogue/qing_lose_sprite.png',
-            'images/dialogue/qing_lose_soft.png',
-            'images/dialogue/qing_lose_thinking.png',
-            'images/dialogue/qing_lose_upset.png',
+            'images/dialogue/qing_soft.png',
+            'images/dialogue/qing_thinking.png',
+            'images/dialogue/qing_upset.png',
             //背景资源
-            'resources/images/bg/bg-meet-dusk.jpg',
-            'resources/images/bg/bg-sea.jpg',
-            'resources/images/bg/bg-field.jpg'
+            'images/bg/bg-meet-dusk.jpg',
+            'images/bg/bg-sea.jpg',
+            'images/bg/bg-field.jpg',
+            //音乐
+            'music/battle-normal2.mp3',
         ]    
     }
 };
