@@ -21,8 +21,8 @@ woh.g_config.script={
         data:{
             key:'intro'
         },
-        next:'intro'
-        //next:'loading_4'
+        //next:'intro'
+        next:'loading_4'
     },
     'intro':{
         type:'intro',//标记相应的stage类型
@@ -313,9 +313,35 @@ woh.g_config.script={
             {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'事到如今，也只好听天由命了。',position:'left',globalBg : 'resources/images/bg/bg-boat-outer2.jpg'},
             {'avatar':'resources/images/dialogue/rio_tang_beauty_sup.png','name':'唐如','content':'——咦？怎么有歌声？',position:'left',globalBg : 'resources/images/bg/bg-boat-outer2.jpg'},
         ],
-        next:'intro'
+        next:'cg_2'
     },
-    
+    'cg_2':{
+        type:'cg',
+        repeat:false,
+        data:[{'path':'resources/images/cg/cg_2.jpg'}],
+        next:'dialogue_8'
+    },
+    'dialogue_8':{
+        type:'dialogue',
+        repeat:false,
+        data:[
+            {'avatar':'','name':'人鱼少女','content':'灵皇皇兮既降，飙远举兮云中；览冀洲兮有余，横四海兮焉穷！',position:'left',globalBg : 'resources/images/cg/cg_3.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_beauty_sup.png','name':'唐如','content':'此曲只应天上有……子曰“不图为乐之至于斯也”，想必莫过于此了。',position:'right',globalBg : 'resources/images/cg/cg_3.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'程少非','content':'啊哈，终于找到了！',position:'right',globalBg : 'resources/images/cg/cg_3.jpg'},
+
+        ],
+        next:'dialogue_9'
+    },
+    'dialogue_9':{
+        type:'dialogue',
+        repeat:false,
+        data:[
+            {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'程少非','content':'这位人鱼姑娘，在下',position:'left',globalBg : 'resources/images/bg/bg-boat-outer2.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_beauty_sup.png','name':'唐如','content':'此曲只应天上有……子曰“不图为乐之至于斯也”，想必莫过于此了。',position:'right',globalBg : 'resources/images/bg/bg-boat-outer2.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'程少非','content':'啊哈，终于找到了！',position:'right',globalBg : 'resources/images/bg/bg-boat-outer2.jpg'},
+        ],
+        next:'dialogue_9'
+    },
     //无限模式
     'drama_Infinity':{
         type:'drama',
@@ -323,8 +349,7 @@ woh.g_config.script={
         data:[
             {
                 appear: 'auto',
-                data: [  
-                ]
+                data: [ ]
             }
         ],
         next:'loading_Infinity'
@@ -432,7 +457,18 @@ woh.g_config.resources = {
 
             'music/battle-normal.mp3',
             'music/fail.mp3',
-            'music/win.mp3'
+            'music/win.mp3',
+
+            // 攻击和技能音效
+            'sound/attack.mp3',
+            'sound/skill_001.mp3',
+            'sound/skill_002.mp3',
+            'sound/skill_003.mp3',
+            'sound/skill_004.mp3',
+            'sound/skill_005.mp3',
+            'sound/skill_006.mp3',
+            'sound/skill_007.mp3',
+            'sound/skill_008.mp3'
         ] 
     },
     intro:{
@@ -475,7 +511,7 @@ woh.g_config.resources = {
             'images/cg/cg_1.jpg',
             
             //sound
-            'music/chat.mp3'
+            //'music/chat.mp3'
         ]
     },
     battle_1: {
@@ -628,6 +664,9 @@ woh.g_config.resources = {
         type: 'battle',
         resources: [
             'images/bg/bg-boat-outer2.jpg',
+            'images/cg/cg_2.jpg',
+            'images/cg/cg_3.jpg',
+            'images/dialogue/qing_normal.png',
         ]    
     }
 };
