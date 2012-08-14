@@ -357,14 +357,8 @@ woh.g_config.script={
         type:'dialogue',
         repeat:false,
         data:[
-            {'avatar':'resources/images/dialogue/rio_tang_beauty_sup.png','name':'唐如','content':'此曲只应天上有……子曰“不图为乐之至于斯也”，想必莫过于此了。',position:'left',globalBg : 'resources/images/cg/cg_3.jpg'},
-            {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'程少非','content':'啊哈，终于找到了！',position:'left',globalBg : 'resources/images/cg/cg_3.jpg'},
-            {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'程少非','content':'这位人鱼姑娘，这厢有礼，在下远道而来，请问能否借尾巴一尝？',position:'left',globalBg : 'resources/images/cg/cg_3.jpg'},
-            {'avatar':'resources/images/dialogue/qing_normal.png','name':'人鱼少女','content':'……',position:'right',globalBg : 'resources/images/bg/bg-meet-dusk.jpg'},
-            {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'尝……尝？你在胡言乱语什么啊，当心冲撞了人家姑娘……你你你，你拿着刀冲上去是想……',position:'left',globalBg : 'resources/images/bg/bg-meet-dusk.jpg'},
-            {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'程少非','content':'人鱼肉是世间美味，想必这位姑娘也早已习惯，请姑娘稍安勿躁，可能会有一点点痛，但事后必有重酬。',position:'left',globalBg : 'resources/images/bg/bg-meet-dusk.jpg'},
-            {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'习惯？那……那种事情怎有可能习惯……喂！',position:'left',globalBg : 'resources/images/bg/bg-meet-dusk.jpg'},
-            {'avatar':'resources/images/dialogue/qing_normal.png','name':'人鱼少女','content':'哼，愚蠢的人类。',position:'right',globalBg : 'resources/images/bg/bg-meet-dusk.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_pity','name':'程少非','content':'醒醒，醒醒！',position:'left',globalBg : 'resources/images/bg/bg-sea.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_heavy','name':'唐如','content':'唔……唔……你往在下口中塞了何物？',position:'right',globalBg : 'resources/images/bg/bg-sea.jpg'},
         ],
         next:'drama_6'
     },
