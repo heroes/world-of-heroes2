@@ -92,6 +92,7 @@
                 this.attackBuff = data;
             }
             else if(data.type=="call") {
+                this.fsm.setState(woh.roleStates.magic);
                 this.stage.createSkillEffect(this,data);
             }
             // 技能音效

@@ -26,7 +26,6 @@ Laro.NS('woh.roleStateClass', function (L) {
     }).methods({
         enter: function (msg, from) {
             this.host.setAndPlay('stand');
-            this.host.setPos(this.host.x, this.host.y);
         },
         leave: function () {
 
@@ -72,7 +71,6 @@ Laro.NS('woh.roleStateClass', function (L) {
         this.cooldown = 0;
     }).methods({
         enter: function (msg, from) {
-            this.cooldown += Math.floor(this.host.cooldown / 3);
         },
         leave: function () { },
         update: function (dt) {
@@ -115,8 +113,10 @@ Laro.NS('woh.roleStateClass', function (L) {
 
             }
             this.cooldown -= dt * 1000;
-            if (this.cooldown < 0)
+            if (this.cooldown < 0) {
                 this.host.stand();
+                this.host.setPos(this.host.x, this.host.y);
+            }
         },
         transition: function () { },
         message: function () { }
@@ -124,14 +124,17 @@ Laro.NS('woh.roleStateClass', function (L) {
     });
 
     var Magic = L.BaseState.extend(function () {
-
+        this.cooldown = 200;
     }).methods({
         enter: function (msg, from) {
             this.host.setAndPlay('magic');
+            this.cooldown = 1000;
         },
         leave: function () { },
         update: function (dt) {
-
+            this.cooldown -= dt * 1000;
+            if (this.cooldown < 0)
+                this.host.stand();
         },
         transition: function () { },
         message: function () { }
