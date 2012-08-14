@@ -2231,6 +2231,7 @@ woh.skill_data={
         //技能影响
         'data':{
             'type':'call',
+            'effect':'CloudInWind'
         }
     },
     '004':{
@@ -2282,13 +2283,8 @@ woh.skill_data={
         'cd':30,//CD时间
         //技能影响
         'data':{
-            'attack_area':{
-                
-            },
-            //添加buff
-            'buff':{
-                
-            }
+            'type':'call',
+            'effect':'FuryOfFox'
         }
     },
     '008':{
