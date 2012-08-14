@@ -18,7 +18,11 @@
 	width: 450px;
 	padding-left: 50px
 }
-.sub-win p.thanks.first{
+.sub-win p.aboutus{
+	font-size: 22px;
+	padding-left:50px;
+}
+.sub-win p.thanks.first,.sub-win p.aboutus.first{
 	padding-top: 150px;
 }
 .sub-win#role-manage{
