@@ -1,4 +1,4 @@
-﻿Laro.NS('woh', function (L) {
+﻿ Laro.NS('woh', function (L) {
     
     var Role = this.Sprite.extend(function () { 
         this.speed = 200;
@@ -95,7 +95,7 @@
                 this.stage.createSkillEffect(this,data);
             }
             // 技能音效
-            var key = 'sound/skill_' + id + '.mp3';
+            var key = 'sound/skill_'  + id + '.mp3';
             woh.loader.loadedSounds[key] && woh.loader.loadedSounds[key].play();
         },
         getAnimationGroup: function (type) {
@@ -113,7 +113,7 @@
                 var effect = JSON.parse(JSON.stringify(woh.g_config.skill_effect[effectType]['animation']));
                 effectType=="normal_1"&&(effect['info']['pivotx'] -= me.data.damageArea[2]); //将动画的绘制偏移调整到伤害区域的边缘位置
                 obj.push(effect);
-               // console.log('绘制偏移',effect['pivotx'],obj[2]);
+               console.log('当前动画',obj);
             }
             if (!Array.isArray(obj)) {
                 obj = [obj];
