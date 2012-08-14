@@ -6,17 +6,17 @@ Laro.NS('woh', function (L) {
         var loop,start,end;
         this.curAnimation = this.getAnimationGroup();
         
-            if (loop === undefined) loop = true;
-            if (start === undefined) start = 0;
-            if (end === undefined) end = 1;
+        if (loop === undefined) loop = true;
+        if (start === undefined) start = 0;
+        if (end === undefined) end = 1;
 
 
-            //console.log("当前动画",animation);
-            this.curAnimation.forEach(function (o) {
-                o.setRange(start, end);
-                o.rewind();
-                o.play(loop);
-            });
+        //console.log("当前动画",animation);
+        this.curAnimation.forEach(function (o) {
+            o.setRange(start, end);
+            o.rewind();
+            o.play(loop);
+        });
             
         this.t = 0;
         this.stage = stage;
@@ -41,7 +41,7 @@ Laro.NS('woh', function (L) {
             this.supr(dt);
             this.t += dt;
             if(this.t>2) {
-                this.stage.kill(this)
+                this.stage.kill(this);
             }
         },
         draw: function (render) {

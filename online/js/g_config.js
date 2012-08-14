@@ -2206,9 +2206,7 @@ woh.skill_data={
             'level':0,
             'convert':function(damage){
                 [0,10,12,14,16,18][this.level];
-            },
-            'type':'call',
-            'effect':'FallenFlowers'
+            }
         }
     },
     '002':{
