@@ -33,12 +33,16 @@ Laro.NS('woh.stageClass', function (L) {
 
             data['role'].forEach(function (roleId) {
                 woh.runtime.activeRole.push(woh.runtime.role[roleId]);
-                console.log(me.roles.add);
-                console.log(woh.Role);
                 me.roles.add(roleId, new woh.Role(woh.runtime.role[roleId], me.aiController));
                 me.roles.get(roleId).stage = me;
                 me.roles.get(roleId).setPos(400 - 120 * i++, 300-(i%2)*120);
             });
+            //挑战模式下全部技能开启
+            if(this.data.name=='battle_Infinity'){
+                woh.runtime.role['001'].skill_list['001']=1;
+                woh.runtime.role['001'].skill_list['002']=1;
+                woh.runtime.role['001'].skill_list['003']=1;
+            }
             //console.log("当前活动人物队列",woh.currentRoleGroup);
             this.activeLines = data.monster.length;
             data.monster.forEach(function (line) {

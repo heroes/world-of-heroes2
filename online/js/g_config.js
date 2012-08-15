@@ -218,10 +218,10 @@ woh.g_config.script={
             "bgm":"music/battle-boss.mp3",
             "monster":[
                 [
-                    [{type:'crab_boss',x:100,y:200}]
+                    [{type:'crab_boss',x:100,y:200},{type:'crab',x:50,y:200},{type:'crab',x:50,y:300}]
                 ]
             ],
-            "drop":['clothes','002',1],//掉落类型，掉落id，掉落概率
+            "drop":['weapon','002',1],//掉落类型，掉落id，掉落概率
         },
         
         next:'map_3'
@@ -2004,7 +2004,7 @@ woh.g_config.monsters = {
         }]        
     },  
     "crab_boss": {
-        "health":600,//血量
+        "health":1200,//血量
         "damage":15,//攻击
         "defend":0,//防御
         "crit":0,//暴击
@@ -2319,8 +2319,8 @@ woh.role_init_data={
         'damageArea':[30,-45,100,45],
         'skill_list':{
             '001':1, 
-            '002':1,
-            '003':1,
+            '002':0,
+            '003':0,
             '004':0
         },//技能列表（编号-等级）
         "areadata": {
@@ -2565,7 +2565,7 @@ woh.skill_data={
         'name':'落英染',
         'description':'英华翩舞兮,染景纷纷旧年时。美好的追忆总能治愈人心。（己方全体生命回复）',//技能描述
         'icon':'./resources/images/skillicons/002.jpg',//技能图标路径
-        'level_limit':[0,2,3,4,8,10],//每一阶段的可点等级
+        'level_limit':[1,3,4,8,10,11],//每一阶段的可点等级
         'cd':15,//CD时间
         //技能影响
         'data':{
@@ -2579,7 +2579,7 @@ woh.skill_data={
         'name':'浮云风卷',
         'description':'飘风自南,泱泱涤尘。凝神静气,荡净浮埃。（以施法者为中心,在半径200的区域内进行群体攻击）',//技能描述
         'icon':'./resources/images/skillicons/003.jpg',//技能图标路径
-        'level_limit':[0,2,3,4,9,11],//每一阶段的可点等级
+        'level_limit':[3,4,6,9,11,12],//每一阶段的可点等级
         'cd':30,//CD时间
         //技能影响
         'data':{
@@ -2592,7 +2592,7 @@ woh.skill_data={
         'name':'醉舞秋红',
         'description':'日暮秋烟起,萧萧枫树林。寄托壮志未酬哀思的招式,饱含尽除敌寇的怨愤。(敌方全体造成大量伤害)',
         'icon':'./resources/images/skillicons/004.jpg',//技能图标路径
-        'level_limit':[0,5,8,9,13,15],//每一阶段的可点等级
+        'level_limit':[9,13,14,15,16,20],//每一阶段的可点等级
         'cd':120,//CD时间
         //技能影响
         'data':{
@@ -2619,7 +2619,7 @@ woh.skill_data={
         'name':'心月斩',
         'description':'心月狐,其性属火,喜好游戏人间,祸乱人心。（造成范围伤害,受到伤害者行动封印。）',
         'icon':'./resources/images/skillicons/006.jpg',//技能图标路径
-        'level_limit':[0,2,3,4,8,10],//每一阶段的可点等级
+        'level_limit':[2,3,4,8,10,11],//每一阶段的可点等级
         'cd':15,//CD时间
         //技能影响
         'data':{
@@ -2632,7 +2632,7 @@ woh.skill_data={
         'name':'天狐之怒',
         'description':'“青丘之山,有兽焉,其状如狐而九尾。”九尾狐出,乃世间将有大乱之象。（全部敌人受到连续伤害）',
         'icon':'./resources/images/skillicons/007.jpg',//技能图标路径
-        'level_limit':[0,2,3,4,9,11],//每一阶段的可点等级
+        'level_limit':[3,4,6,9,11,12],//每一阶段的可点等级
         'cd':30,//CD时间
         //技能影响
         'data':{
@@ -2645,7 +2645,7 @@ woh.skill_data={
         'name':'心宿炎障',
         'description':'心宿,又称大火,东方苍龙七宿之心,守心护元,灭障除魔。（全部队友获得5秒免伤状态）',
         'icon':'./resources/images/skillicons/008.jpg',//技能图标路径
-        'level_limit':[0,5,8,9,13,15],//每一阶段的可点等级
+        'level_limit':[9,13,14,15,16,20],//每一阶段的可点等级
         'cd':60,//CD时间
         //技能影响
         'data':{
