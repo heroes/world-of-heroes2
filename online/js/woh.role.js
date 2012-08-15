@@ -95,7 +95,6 @@
                 };
             }
             else if(data.type=="call") {
-                this.fsm.setState(woh.roleStates.magic);
                 this.stage.createSkillEffect(this,data,this.data.skill_list[id]);
             }
             // 技能音效

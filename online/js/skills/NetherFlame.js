@@ -2,7 +2,7 @@
  * ¼¼ÄÜÓ°Ïì
  */
 Laro.NS('woh', function (L) {
-    var NetherFlame = woh.SkillEffect.extend(function (caster,stage,data) {
+    var NetherFlame = woh.SkillEffect.extend(function (caster,stage,data,level) {
         var loop,start,end;
         this.curAnimation = this.getAnimationGroup();
         
@@ -20,7 +20,18 @@ Laro.NS('woh', function (L) {
             
         this.t = 0;
         this.stage = stage;
-        
+        this.stage.roles._objects.forEach(function(o){
+            var role = o.obj;
+            if(role instanceof woh.Monster) {
+                var damageData = {
+                    damage:data.damage[level],
+                    attacker:caster,
+                    force:0
+                };
+                role.hurted(damageData);
+            }
+        })
+    
     }).methods({
         getAnimationGroup: function (type) {
             L.$lea.setLoader(woh.loader);

@@ -2,7 +2,7 @@
  * ¼¼ÄÜÓ°Ïì
  */
 Laro.NS('woh', function (L) {
-    var CloudInWind = woh.SkillEffect.extend(function (caster,stage,data) {
+    var CloudInWind = woh.SkillEffect.extend(function (caster,stage,data,level) {
         this.caster = caster;
         var loop,start,end;
         this.curAnimation = this.getAnimationGroup();
@@ -21,6 +21,13 @@ Laro.NS('woh', function (L) {
             
         this.t = 0;
         this.stage = stage;
+
+        var damageData = {
+            damage:data.damage[level],
+            attacker:caster,
+            force:0
+        };
+        this.stage.hurtArea(caster.enemy, {left:caster.x-100,top:caster.y-100,right:caster.x+100,bottom:caster.y+100}, damageData);
         
     }).methods({
         getAnimationGroup: function (type) {

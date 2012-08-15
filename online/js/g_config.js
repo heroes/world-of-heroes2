@@ -2342,7 +2342,8 @@ woh.skill_data={
         'data':{
             //区域伤害
             'type':'call',
-            'effect':'FallenFlowers'
+            'effect':'FuryOfFox',
+            'damage':[90,150,210,270,330],
         }
     },
     '005':{

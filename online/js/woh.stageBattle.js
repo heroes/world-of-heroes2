@@ -194,8 +194,8 @@ Laro.NS('woh.stageClass', function (L) {
                 sprite.ondead();
             }
         },
-        createSkillEffect:function(caster,skill) {
-            this.roles.add(Math.random().toFixed(10), new woh[skill.effect](caster,this,skill));
+        createSkillEffect:function(caster,skill,level) {
+            this.roles.add(Math.random().toFixed(10), new woh[skill.effect](caster,this,skill,level));
         }
 
     }).statics({
