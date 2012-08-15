@@ -183,7 +183,7 @@ Laro.NS('woh', function (L) {
                         force:this.force
                     };
                     if(this.attackBuff) {
-                        this.attackBuff.convert(damageData);
+                        this.attackBuff.converter.convert(damageData);
                         this.attackBuff = null;
                     }
                     this.stage.hurtArea(this.enemy, this.damageArea, damageData);

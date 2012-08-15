@@ -2202,11 +2202,8 @@ woh.skill_data={
             //单体直接伤害，攻击范围等同于武器攻击范围
 
             'type':'attackBuff',
-            'effect':'001',
-            'level':0,
-            'convert':function(damage){
-                [0,10,12,14,16,18][this.level];
-            }
+            'damage':[30,60,90,120,150],
+            'converter':'WindStrike'
         }
     },
     '002':{
@@ -2219,6 +2216,7 @@ woh.skill_data={
         'data':{
             //回复
             'type':'call',
+            'heal':[60,120,180,240,300],
             'effect':'FallenFlowers'
         }
     },
@@ -2231,6 +2229,7 @@ woh.skill_data={
         //技能影响
         'data':{
             'type':'call',
+            'damage':[90,150,210,270,330],
             'effect':'CloudInWind'
         }
     },
@@ -2256,6 +2255,7 @@ woh.skill_data={
         //技能影响
         'data':{
             'type':'call',
+            'damage':[20,40,60,80,100],
             'effect':'NetherFlame'
         }
     },
@@ -2268,11 +2268,8 @@ woh.skill_data={
         //技能影响
         'data':{
             'type':'attackBuff',
-            'effect':'006',
-            'level':0,
-            'convert':function(damage){
-                [0,10,12,14,16,18][this.level];
-            }
+            'damage':[90,150,210,270,330],         
+            'converter':'WillStrike'
         }
     },
     '007':{
@@ -2284,7 +2281,8 @@ woh.skill_data={
         //技能影响
         'data':{
             'type':'call',
-            'effect':'FuryOfFox'
+            'effect':'FuryOfFox',
+            'damage':[90,150,210,270,330],
         }
     },
     '008':{

@@ -89,10 +89,13 @@
             //alert('我是人物'+this.data['name']+',正在施放技能'+id);
             var data = woh.skill_data[id].data;
             if(data.type=="attackBuff") {
-                this.attackBuff = data;
+                this.attackBuff = {
+                    effect:id,
+                    converter:new woh[data.converter](data,this.data.skill_list[id])
+                };
             }
             else if(data.type=="call") {
-                this.stage.createSkillEffect(this,data);
+                this.stage.createSkillEffect(this,data,this.data.skill_list[id]);
             }
             // 技能音效
             var key = 'sound/skill_'  + id + '.mp3';
