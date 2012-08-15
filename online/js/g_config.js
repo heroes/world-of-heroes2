@@ -379,28 +379,31 @@ woh.g_config.script={
             "bgm":"music/battle-normal2.mp3",
             "monster":[
                 [
-                    [{type:'crab',x:100,y:-200},{type:'crab',x:300,y:-200},{type:'crab',x:500,y:900},{type:'crab',x:400,y:900}],
-                    [{type:'crab',x:100,y:-200},{type:'crab',x:300,y:-200},{type:'crab',x:500,y:900},{type:'crab',x:400,y:900}],
-                    [{type:'crab',x:100,y:-200},{type:'crab',x:300,y:-200},{type:'crab',x:500,y:900},{type:'crab',x:400,y:900},{type:'crab',x:300,y:900}],
+                    [{type:'crab_2',x:100,y:-200},{type:'crab',x:300,y:-200},{type:'crab',x:500,y:900},{type:'crab',x:400,y:900}],
+                    [{type:'crab_3',x:100,y:-200},{type:'crab',x:300,y:-200},{type:'crab',x:500,y:900},{type:'crab',x:400,y:900}],
+                    [{type:'crab',x:100,y:-200},{type:'crab_2',x:300,y:-200},{type:'crab_3',x:500,y:900},{type:'crab',x:400,y:900},{type:'crab',x:300,y:900}],
                 ]
             ],
             "drop":['weapon','004',1],//掉落类型，掉落id，掉落概率
         },
+        next:'map_5'
+    },
+    'map_5':{
+        type:'map',
+        repeat:true,
+        data:{},
         next:'dialogue_10'
     },
     'dialogue_10':{
         type:'dialogue',
         repeat:false,
         data:[
-            {'avatar':'resources/images/dialogue/sola_cheng_pity.png','name':'程少非','content':'醒醒，醒醒！',position:'left',globalBg : 'resources/images/bg/bg-sea.jpg'},
-            {'avatar':'resources/images/dialogue/rio_tang_heavy.png','name':'唐如','content':'唔……唔……你往在下口中塞了何物？',position:'right',globalBg : 'resources/images/bg/bg-sea.jpg'},
-            {'avatar':'resources/images/dialogue/sola_cheng_sigh.png','name':'程少非','content':'反应那么普通，你还真是无趣啊。',position:'left',globalBg : 'resources/images/bg/bg-sea.jpg'},
-            {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'好吧，我那么无趣还真是……唔！',position:'right',globalBg : 'resources/images/bg/bg-sea.jpg'},
-            {'avatar':'resources/images/dialogue/sola_cheng_a.png','name':'程少非','content':'喂喂喂，含住含住，不要吐出来，这是避水珠，能让人在水中行动自如，吐掉了那可是要淹死的哟！',position:'left',globalBg : 'resources/images/bg/bg-sea.jpg'},
-            {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'如此说来，我们现在是在水底？',position:'right',globalBg : 'resources/images/bg/bg-sea.jpg'},
-            {'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'程少非','content':'你可总算回过神了，刚才牙咬得那么紧，害我费了好大劲，最后用了点小手段才把珠子塞进你嘴里，呼。',position:'left',globalBg : 'resources/images/bg/bg-sea.jpg'},
-            {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'手……段，那倒是什么啊。',position:'right',globalBg : 'resources/images/bg/bg-sea.jpg'},
-            {'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'程少非','content':'若说是什么手段，那肯定是……秘密啦！此地水族十分凶猛，跟紧我不要走散了。',position:'left',globalBg : 'resources/images/bg/bg-sea.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'到了这里还没完没了的，你是残害了多少它们的同类……',position:'left',globalBg : 'resources/images/bg/bg-sea.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_heavy.png','name':'唐如','content':'哎呀珠子……唔！',position:'left',globalBg : 'resources/images/bg/bg-sea.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_a.png','name':'程少非','content':'哎呀哎呀，都叫你小心点的，不好，避水珠被暗流卷走了！',position:'right',globalBg : 'resources/images/bg/bg-sea.jpg'},
+            {'avatar':'','name':'？？？','content':'陆沉海转，风起岚涛，飙远举兮云中，喝！',position:'right',globalBg : 'resources/images/bg/bg-sea.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_a.png','name':'程少非','content':'呜哇！',position:'right',globalBg : 'resources/images/bg/bg-sea.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'呜哇！',position:'left',globalBg : 'resources/images/bg/bg-sea.jpg'},
         ],
         next:'drama_7'
     },
@@ -411,14 +414,39 @@ woh.g_config.script={
             {
                 appear: 'auto',
                 data: [
-                    '人鱼少女伸开双手，',
-                    '口中不知念了几句什么。',
-                    '海面突然掀起滔天巨浪，',
-                    '两人连人带船被卷进了水幕中。'   
+                    '海水被一股强大的力量从中间破开，',
+                    '两人被从水底重新甩到了岸上。'  
                 ]
             }
         ],
-        next:'dialogue_9'
+        next:'dialogue_11'
+    },
+    'dialogue_11':{
+        type:'dialogue',
+        repeat:false,
+        data:[
+            {'avatar':'resources/images/dialogue/sola_cheng_nature.png','name':'程少非','content':'虽然不知道怎么回事，不过看起来好像安全了的样子。',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_heavy.png','name':'唐如','content':'咳，咳，咳，我，呕……',position:'right',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_a.png','name':'程少非','content':'唉，你看你你看你，如此体弱，接下来舟车劳顿，可怎么受得了，着实令人忧心啊。',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_light_angry.png','name':'唐如','content':'一副事不关己的样子，莫非不是你强拖我来的？',position:'right',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'程少非','content':'和螃蟹战斗那么久，肚子也饿了，不如就往陆上走走，说不定会有意想不到的美食在前哟！',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'虽说完全不想再和这不靠谱的家伙扯上关系，但目前看来似乎又只能如此……',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'我说你就不能等人家考虑完再走……等等我啊！',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'}
+        ],
+        next:'drama_8'
+    },
+    'drama_8':{
+        type:'drama',//标记相应的stage类型
+        repeat:false,
+        data:[
+            {
+                appear: 'auto',
+                data: [
+                    '未完待续'
+                ]
+            }
+        ],
+        next:'intro'
     },
     //无限模式
     'drama_Infinity':{
