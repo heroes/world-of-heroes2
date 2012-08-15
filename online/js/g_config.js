@@ -22,13 +22,13 @@ woh.g_config.script={
             key:'intro'
         },
         next:'intro'
-        //next:'loading_4'
     },
     'intro':{
         type:'intro',//标记相应的stage类型
         repeat:true,//标记在流程中是否允许重复出现（即选关的时候是否会被再次触发）
         data:{},
         next:'drama_1'
+        //next:'loading_4'
     }, 
     'drama_1':{
         type:'drama',//标记相应的stage类型
@@ -311,10 +311,83 @@ woh.g_config.script={
             {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'等……等等，这么说来，莫非你是头一次出海？',position:'left',globalBg : 'resources/images/bg/bg-boat-outer2.jpg'},
             {'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'程少非','content':'是啊，有何不妥？',position:'right',globalBg : 'resources/images/bg/bg-boat-outer2.jpg'},
             {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'事到如今，也只好听天由命了。',position:'left',globalBg : 'resources/images/bg/bg-boat-outer2.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_beauty_sup.png','name':'唐如','content':'——咦？怎么有歌声？',position:'left',globalBg : 'resources/images/bg/bg-boat-outer2.jpg'},
         ],
-        next:'intro'
+        next:'cg_2'
     },
-    
+    'cg_2':{
+        type:'cg',
+        repeat:false,
+        data:[{'path':'resources/images/cg/cg_2.jpg'}],
+        next:'dialogue_8'
+    },
+    'dialogue_8':{
+        type:'dialogue',
+        repeat:false,
+        data:[
+            {'avatar':'','name':'人鱼少女','content':'灵皇皇兮既降，飙远举兮云中；览冀洲兮有余，横四海兮焉穷！',position:'right',globalBg : 'resources/images/cg/cg_3.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_beauty_sup.png','name':'唐如','content':'此曲只应天上有……子曰“不图为乐之至于斯也”，想必莫过于此了。',position:'left',globalBg : 'resources/images/cg/cg_3.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'程少非','content':'啊哈，终于找到了！',position:'left',globalBg : 'resources/images/cg/cg_3.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'程少非','content':'这位人鱼姑娘，这厢有礼，在下远道而来，请问能否借尾巴一尝？',position:'left',globalBg : 'resources/images/cg/cg_3.jpg'},
+            {'avatar':'resources/images/dialogue/qing_normal.png','name':'人鱼少女','content':'……',position:'right',globalBg : 'resources/images/bg/bg-meet-dusk.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'尝……尝？你在胡言乱语什么啊，当心冲撞了人家姑娘……你你你，你拿着刀冲上去是想……',position:'left',globalBg : 'resources/images/bg/bg-meet-dusk.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'程少非','content':'人鱼肉是世间美味，想必这位姑娘也早已习惯，请姑娘稍安勿躁，可能会有一点点痛，但事后必有重酬。',position:'left',globalBg : 'resources/images/bg/bg-meet-dusk.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'习惯？那……那种事情怎有可能习惯……喂！',position:'left',globalBg : 'resources/images/bg/bg-meet-dusk.jpg'},
+            {'avatar':'resources/images/dialogue/qing_normal.png','name':'人鱼少女','content':'哼，愚蠢的人类。',position:'right',globalBg : 'resources/images/bg/bg-meet-dusk.jpg'},
+        ],
+        next:'drama_6'
+    },
+    'drama_6':{
+        type:'drama',//标记相应的stage类型
+        repeat:false,
+        data:[
+            {
+                appear: 'auto',
+                data: [
+                    '人鱼少女伸开双手，',
+                    '口中不知念了几句什么。',
+                    '海面突然掀起滔天巨浪，',
+                    '两人连人带船被卷进了水幕中。'   
+                ]
+            }
+        ],
+        next:'dialogue_9'
+    },
+    'dialogue_9':{
+        type:'dialogue',
+        repeat:false,
+        data:[
+            {'avatar':'resources/images/dialogue/sola_cheng_pity.png','name':'程少非','content':'醒醒，醒醒！',position:'left',globalBg : 'resources/images/bg/bg-sea.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_heavy.png','name':'唐如','content':'唔……唔……你往在下口中塞了何物？',position:'right',globalBg : 'resources/images/bg/bg-sea.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_sigh.png','name':'程少非','content':'反应那么普通，你还真是无趣啊。',position:'left',globalBg : 'resources/images/bg/bg-sea.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'好吧，我那么无趣还真是……唔！',position:'right',globalBg : 'resources/images/bg/bg-sea.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_a.png','name':'程少非','content':'喂喂喂，含住含住，不要吐出来，这是避水珠，能让人在水中行动自如，吐掉了那可是要淹死的哟！',position:'left',globalBg : 'resources/images/bg/bg-sea.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'如此说来，我们现在是在水底？',position:'right',globalBg : 'resources/images/bg/bg-sea.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'程少非','content':'你可总算回过神了，刚才牙咬得那么紧，害我费了好大劲，最后用了点小手段才把珠子塞进你嘴里，呼。',position:'left',globalBg : 'resources/images/bg/bg-sea.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'手……段，那倒是什么啊。',position:'right',globalBg : 'resources/images/bg/bg-sea.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'程少非','content':'若说是什么手段，那肯定是……秘密啦！此地水族十分凶猛，跟紧我不要走散了。',position:'left',globalBg : 'resources/images/bg/bg-sea.jpg'},
+        ],
+        next:'battle_withlittlecrab3'
+    },
+    'battle_withlittlecrab3':{
+        type:'battle',
+        repeat:true,
+        data:{
+            "name": 'battle_withlittlecrab3',
+            "role":["001","002"],
+            "bg":'images/bg/bg-sea.jpg',
+            "bgm":"music/battle-normal2.mp3",
+            "monster":[
+                [
+                    [{type:'crab',x:100,y:-200},{type:'crab',x:300,y:-200},{type:'crab',x:500,y:900},{type:'crab',x:400,y:900}],
+                    [{type:'crab',x:100,y:-200},{type:'crab',x:300,y:-200},{type:'crab',x:500,y:900},{type:'crab',x:400,y:900}],
+                    [{type:'crab',x:100,y:-200},{type:'crab',x:300,y:-200},{type:'crab',x:500,y:900},{type:'crab',x:400,y:900},{type:'crab',x:300,y:900}],
+                ]
+            ],
+            "drop":['weapon','004',1],//掉落类型，掉落id，掉落概率
+        },
+        next:'map_2'
+    },
     //无限模式
     'drama_Infinity':{
         type:'drama',
@@ -322,8 +395,7 @@ woh.g_config.script={
         data:[
             {
                 appear: 'auto',
-                data: [  
-                ]
+                data: [ ]
             }
         ],
         next:'loading_Infinity'
@@ -431,7 +503,18 @@ woh.g_config.resources = {
 
             'music/battle-normal.mp3',
             'music/fail.mp3',
-            'music/win.mp3'
+            'music/win.mp3',
+
+            // 攻击和技能音效
+            'sound/attack.mp3',
+            'sound/skill_001.mp3',
+            'sound/skill_002.mp3',
+            'sound/skill_003.mp3',
+            'sound/skill_004.mp3',
+            'sound/skill_005.mp3',
+            'sound/skill_006.mp3',
+            'sound/skill_007.mp3',
+            'sound/skill_008.mp3'
         ] 
     },
     intro:{
@@ -627,6 +710,22 @@ woh.g_config.resources = {
         type: 'battle',
         resources: [
             'images/bg/bg-boat-outer2.jpg',
+            'images/cg/cg_2.jpg',
+            'images/cg/cg_3.jpg',
+            //碧青的表情图
+            'images/dialogue/qing_normal.png',
+            'images/dialogue/qing_look_ahead.png',
+            'images/dialogue/qing_pay_a_look.png',
+            'images/dialogue/qing_lose_sprite.png',
+            'images/dialogue/qing_soft.png',
+            'images/dialogue/qing_thinking.png',
+            'images/dialogue/qing_upset.png',
+            //背景资源
+            'images/bg/bg-meet-dusk.jpg',
+            'images/bg/bg-sea.jpg',
+            'images/bg/bg-field.jpg',
+            //音乐
+            'music/battle-normal2.mp3',
         ]    
     }
 };

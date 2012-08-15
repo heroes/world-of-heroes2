@@ -57,10 +57,10 @@ Laro.NS('woh', function (L) {
 
                     monster.face = monsterFace;
 
-                if (monsterPos.x - nearestPos.x > 0)
-                    monster.moveTo(nearestPos.x + 10, nearestPos.y );
-                else if (monsterPos.x - nearestPos.x < 0)
-                    monster.moveTo(nearestPos.x - 10, nearestPos.y );
+                if (monsterPos.x - nearestPos.x > 3)
+                    monster.moveTo(nearestPos.x + 10, nearestPos.y + (Math.random()*20-10));
+                else if (monsterPos.x - nearestPos.x < -3)
+                    monster.moveTo(nearestPos.x - 10, nearestPos.y + (Math.random()*20-10));
 
  
             }
@@ -98,6 +98,8 @@ Laro.NS('woh', function (L) {
 
                     player.face = playerFace;
                 }
+                else 
+                    player.stand();
         },
         knowPos: function (obj, x, y) {
             if (this.isMonster(obj)) {
@@ -128,7 +130,7 @@ Laro.NS('woh', function (L) {
                 this.monsters = this.monsters.filter(function (e) { return e != obj });
                 var me =this;
                 this.players.forEach(function (player) {
-                    me && me.updatePlayerTarget(obj);
+                    me && me.updatePlayerTarget(player);
                 });
             }
         }

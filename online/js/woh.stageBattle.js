@@ -132,6 +132,7 @@ Laro.NS('woh.stageClass', function (L) {
             }
         },
         drawBg: function (rd) {
+            console.log(this.data['bg']);
             rd.context.drawImage(woh.loader.loadedImages[this.data['bg']], 0, 0);
         },
         drawMovePie: function (render) {
