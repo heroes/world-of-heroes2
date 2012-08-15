@@ -386,7 +386,39 @@ woh.g_config.script={
             ],
             "drop":['weapon','004',1],//掉落类型，掉落id，掉落概率
         },
-        next:'map_2'
+        next:'dialogue_10'
+    },
+    'dialogue_10':{
+        type:'dialogue',
+        repeat:false,
+        data:[
+            {'avatar':'resources/images/dialogue/sola_cheng_pity.png','name':'程少非','content':'醒醒，醒醒！',position:'left',globalBg : 'resources/images/bg/bg-sea.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_heavy.png','name':'唐如','content':'唔……唔……你往在下口中塞了何物？',position:'right',globalBg : 'resources/images/bg/bg-sea.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_sigh.png','name':'程少非','content':'反应那么普通，你还真是无趣啊。',position:'left',globalBg : 'resources/images/bg/bg-sea.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'好吧，我那么无趣还真是……唔！',position:'right',globalBg : 'resources/images/bg/bg-sea.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_a.png','name':'程少非','content':'喂喂喂，含住含住，不要吐出来，这是避水珠，能让人在水中行动自如，吐掉了那可是要淹死的哟！',position:'left',globalBg : 'resources/images/bg/bg-sea.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'如此说来，我们现在是在水底？',position:'right',globalBg : 'resources/images/bg/bg-sea.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'程少非','content':'你可总算回过神了，刚才牙咬得那么紧，害我费了好大劲，最后用了点小手段才把珠子塞进你嘴里，呼。',position:'left',globalBg : 'resources/images/bg/bg-sea.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'手……段，那倒是什么啊。',position:'right',globalBg : 'resources/images/bg/bg-sea.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_normal.png','name':'程少非','content':'若说是什么手段，那肯定是……秘密啦！此地水族十分凶猛，跟紧我不要走散了。',position:'left',globalBg : 'resources/images/bg/bg-sea.jpg'},
+        ],
+        next:'drama_7'
+    },
+    'drama_7':{
+        type:'drama',//标记相应的stage类型
+        repeat:false,
+        data:[
+            {
+                appear: 'auto',
+                data: [
+                    '人鱼少女伸开双手，',
+                    '口中不知念了几句什么。',
+                    '海面突然掀起滔天巨浪，',
+                    '两人连人带船被卷进了水幕中。'   
+                ]
+            }
+        ],
+        next:'dialogue_9'
     },
     //无限模式
     'drama_Infinity':{
@@ -418,11 +450,11 @@ woh.g_config.script={
             "bgm":"music/battle-normal.mp3",
             "monster":[
                 [
-                    [{type:'crab',x:100,y:200}],
+                    [{type:'crab_3',x:100,y:200}],
                     [{type:'crab',x:100,y:200},{type:'crab',x:900,y:200}],
                     [{type:'crab',x:100,y:200},{type:'crab',x:900,y:200},{type:'crab',x:500,y:0},{type:'rabbit_1',x:500,y:640}],
                     [{type:'crab',x:100,y:200},{type:'crab',x:900,y:200},{type:'crab',x:500,y:0},{type:'crab',x:500,y:640},{type:'crab',x:300,y:0},{type:'crab',x:800,y:640}],
-                    [{type:'crab',x:100,y:200},{type:'crab',x:900,y:200},{type:'crab',x:500,y:0},{type:'crab',x:500,y:640},{type:'crab',x:300,y:0},{type:'crab',x:800,y:640},{type:'crab',x:150,y:0},{type:'crab',x:960,y:640}],
+                    [{type:'crab',x:100,y:200},{type:'crab_2',x:900,y:200},{type:'crab',x:500,y:0},{type:'crab',x:500,y:640},{type:'crab',x:300,y:0},{type:'crab',x:800,y:640},{type:'crab',x:150,y:0},{type:'crab',x:960,y:640}],
                     [{type:'crab_boss',x:500,y:640}],
                     [{type:'rabbit_1',x:100,y:200},{type:'rabbit_2',x:900,y:200}],
                     [{type:'rabbit_1',x:100,y:200},{type:'rabbit_2',x:900,y:200},{type:'crab',x:500,y:0}],
@@ -500,6 +532,8 @@ woh.g_config.resources = {
             'images/monster/normal001-crab.png',
             'images/monster/normal002-rabbit.png',
             'images/monster/normal003-rabbit.png',
+            'images/monster/normal004-crab.png',
+            'images/monster/normal005-crab.png',
 
             'music/battle-normal.mp3',
             'music/fail.mp3',
@@ -726,10 +760,12 @@ woh.g_config.resources = {
             'images/bg/bg-field.jpg',
             //音乐
             'music/battle-normal2.mp3',
+            //怪物
+            'images/monster/normal004-crab.png',
+            'images/monster/normal005-crab.png',
         ]    
     }
 };
-
 //衣服的动画数据
 woh.g_config.clothes={
     '001_none':{
@@ -1747,6 +1783,226 @@ woh.g_config.monsters = {
             "filename": "images/monster/normal001-crab.png"
         }]        
     },
+    "crab_2": {
+        "health":300,//血量
+        "damage":4,//攻击
+        "defend":0,//防御
+        "crit":0,//暴击
+        "exp":300,//打死一只怪物获得的经验值
+        'width':124,
+        'height':74,
+        'cooldown':2000,
+        "areadata": {
+            standup: [0, 0, 190, 120],
+            standdown: [0, 0, 190, 120]
+        },
+        "damageArea":[0,-45,100,30],
+        "stand": [
+        // role
+                {
+                "info": {
+                    "nbrOfFrames": 2,
+                    "name": "stand",
+                    "type": "animation",
+                    "framerate": 2,
+                    "pivotx": 70,
+                    "pivoty": 55,
+                    "events": [
+                            {name: 'standup', frame: 1}, //第一帧进入时触发
+                            {name: 'standdown', frame: 2}//第二帧进入时触发
+                        ]
+                },
+                "data": [
+                        [380,0,569,119,380,0,569,119],
+                        [570,0,759,119,570,0,759,119]
+                    ],
+                "filename": "images/monster/normal004-crab.png"
+            }
+        ],
+        "run": [
+            {
+                "info": {
+                    "nbrOfFrames": 2,
+                    "name": "",
+                    "type": "animation",
+                    "framerate": 4,
+                    "pivotx": 70,
+                    "pivoty": 55,
+                    "events": []
+                },
+                "data": [
+                        [380,0,569,119,380,0,569,119],
+                        [570,0,759,119,570,0,759,119]
+                ],
+                "filename": "images/monster/normal004-crab.png"
+            }
+        ],
+        "attack": [
+            {
+                "info": {
+                    "nbrOfFrames": 2,
+                    "name": "",
+                    "type": "animation",
+                    "framerate": 2,
+                    "pivotx": 70,
+                    "pivoty": 55,
+                    "events": [
+                            {name: 'attack_affect', frame: 1}
+                        ]
+                },
+                "data": [
+                    [190,0,379,119,190,0,379,119],
+                    [570,0,759,119,570,0,759,119]
+                ],
+                "filename": "images/monster/normal004-crab.png"
+            }
+        ],
+        "hurted": [
+            {
+                "info": {
+                    "nbrOfFrames": 1,
+                    "name": "hurted",
+                    "type": "animation",
+                    "framerate": 4,
+                    "pivotx": 70,
+                    "pivoty": 55,
+                    "events": []
+                },
+                "data": [
+                    [0,0,189,119,0,0,189,119]
+                ],
+                "filename": "images/monster/normal004-crab.png"
+            }
+        ],
+        "dead": [{
+            "info": {
+                "nbrOfFrames": 5,
+                "name": "dead",
+                "type": "animation",
+                "framerate": 4,
+                "pivotx": 70,
+                "pivoty": 55,
+                "events": []
+            },
+            "data": [
+                [0,0,189,119,0,0,189,119],
+                [760,0,949,119,760,0,949,119],
+                [0,0,189,119,0,0,189,119],
+                [760,0,949,119,760,0,949,119]
+            ],
+            "filename": "images/monster/normal004-crab.png"
+        }]        
+    },  
+    "crab_3": {
+        "health":300,//血量
+        "damage":4,//攻击
+        "defend":0,//防御
+        "crit":0,//暴击
+        "exp":300,//打死一只怪物获得的经验值
+        'width':124,
+        'height':74,
+        'cooldown':2000,
+        "areadata": {
+            standup: [0, 0, 190, 120],
+            standdown: [0, 0, 190, 120]
+        },
+        "damageArea":[0,-45,100,30],
+        "stand": [
+        // role
+                {
+                "info": {
+                    "nbrOfFrames": 2,
+                    "name": "stand",
+                    "type": "animation",
+                    "framerate": 2,
+                    "pivotx": 70,
+                    "pivoty": 55,
+                    "events": [
+                            {name: 'standup', frame: 1}, //第一帧进入时触发
+                            {name: 'standdown', frame: 2}//第二帧进入时触发
+                        ]
+                },
+                "data": [
+                        [380,0,569,119,380,0,569,119],
+                        [570,0,759,119,570,0,759,119]
+                    ],
+                "filename": "images/monster/normal005-crab.png"
+            }
+        ],
+        "run": [
+            {
+                "info": {
+                    "nbrOfFrames": 2,
+                    "name": "",
+                    "type": "animation",
+                    "framerate": 4,
+                    "pivotx": 70,
+                    "pivoty": 55,
+                    "events": []
+                },
+                "data": [
+                        [380,0,569,119,380,0,569,119],
+                        [570,0,759,119,570,0,759,119]
+                ],
+                "filename": "images/monster/normal005-crab.png"
+            }
+        ],
+        "attack": [
+            {
+                "info": {
+                    "nbrOfFrames": 2,
+                    "name": "",
+                    "type": "animation",
+                    "framerate": 2,
+                    "pivotx": 70,
+                    "pivoty": 55,
+                    "events": [
+                            {name: 'attack_affect', frame: 1}
+                        ]
+                },
+                "data": [
+                    [190,0,379,119,190,0,379,119],
+                    [570,0,759,119,570,0,759,119]
+                ],
+                "filename": "images/monster/normal005-crab.png"
+            }
+        ],
+        "hurted": [
+            {
+                "info": {
+                    "nbrOfFrames": 1,
+                    "name": "hurted",
+                    "type": "animation",
+                    "framerate": 4,
+                    "pivotx": 70,
+                    "pivoty": 55,
+                    "events": []
+                },
+                "data": [
+                    [0,0,189,119,0,0,189,119]
+                ],
+                "filename": "images/monster/normal005-crab.png"
+            }
+        ],
+        "dead": [{
+            "info": {
+                "nbrOfFrames": 5,
+                "name": "dead",
+                "type": "animation",
+                "framerate": 4,
+                "pivotx": 70,
+                "pivoty": 55,
+                "events": []
+            },
+            "data": [
+                [0,0,189,119,0,0,189,119],
+                [760,0,949,119,760,0,949,119],
+                [0,0,189,119,0,0,189,119],
+                [760,0,949,119,760,0,949,119]
+            ],
+            "filename": "images/monster/normal005-crab.png"
+        }]        
+    },  
     "crab_boss": {
         "health":600,//血量
         "damage":15,//攻击
