@@ -109,6 +109,12 @@ Laro.NS('woh.roleStateClass', function (L) {
         update: function (dt) {
             if (this.host.kickback) {
                 this.host.x += this.host.kickback / 300 * dt * 1000;
+                if(this.host.x<0 ){
+                    this.host.x = 0;
+                }
+                if(this.host.x>960){
+                    this.host.x = 960;
+                }
                 this.host.setPos(this.host.x, this.host.y);
 
             }
