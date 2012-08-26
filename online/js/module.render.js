@@ -89,24 +89,7 @@
             }
         },
     };
-    //CG界面
-    CG={
-        tpl:'<button class="skip"></button><img/>',
-        init:function(){
-            this.render();
-            this.bind();
-        },
-        callbackFunc:function(e){
-            woh.gameScript.continueExec();
-        },
-        render:function(){
-            _doc.getElementById('cg').innerHTML = this.tpl;
-        },
-        bind:function(){
-            _doc.querySelector('#cg button.skip').addEventListener('mousedown',this.callbackFunc,false);
-            _doc.querySelector('#cg').addEventListener('touchstart',this.callbackFunc,false);
-        }
-    }
+
     //对话界面
     Dialogue = _win.Dialogue = {
         tpl:function(data){
@@ -672,6 +655,5 @@
     };
     Map.init();
     Intro.init();
-    CG.init();
 })(window);
 

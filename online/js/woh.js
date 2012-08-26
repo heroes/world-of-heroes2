@@ -71,6 +71,8 @@ Laro.NS('woh', function (L) {
         woh.skills.init();
         woh.loop.init();
         woh.evt.init();
+        document.querySelector('#cg').addEventListener('mousedown',function(){woh.gameScript.continueExec()},false);
+        document.querySelector('#cg').addEventListener('touchstart',function(){woh.gameScript.continueExec()},false);
     };
 
 });
