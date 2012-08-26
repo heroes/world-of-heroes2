@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    <!--允许全屏-->
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="yes" name="apple-touch-fullscreen"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--禁止电话号码和邮箱识别-->
+    <meta content="telephone=no,email=no" name="format-detection"/>
+ 
+    <!--TODO:添加一个ios用的icon-->
+    <link rel="apple-touch-icon-precomposed" href="favicon-precomposed.png" />
+    <link rel="apple-touch-icon" href="favicon-precomposed.png" />
+    <link rel="Shortcut Icon" href="favicon.png" type="image/x-icon"/>
+
+    <title>大侠的世界II</title>
+
+    <!--TODO:改成你想要的缩放比例-->
+    <meta id="viewport"  name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <script type="text/javascript">
+    (function(doc) {
+        var viewport = document.getElementById('viewport');
+        if ( navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPod/i)) {
+            doc.getElementById("viewport").setAttribute("content", "width=device-width, initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no");
+        } else if ( navigator.userAgent.match(/iPad/i) ) {
+            doc.getElementById("viewport").setAttribute("content", "width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no");
+        }
+    }(document));
+    </script>
+
+
+
+
+    <style type="text/css">
+    html,body {
+        margin: 0 0 0 0;
+        padding: 0 0 0 0;
+        width:100%;
+        height:100%;
+    }
+    body {
+        display:-webkit-box;
+        -webkit-box-orient: horizontal;
+        -webkit-box-pack: center;
+        -webkit-box-align: center;
+        text-align:center;
+        cursor:default;
+    }
+    body * 
+    {
+        text-align:left;
+    }
+    * {
+        -webkit-text-size-adjust:none;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        -webkit-touch-callout: none;
+    }
+    </style>
+
+    <script type="text/javascript">
+        //关闭选择
+        document.addEventListener("selectstart", function (e) { e.preventDefault(); });
+        //避免鼠标变成文本选择形状
+        //document.addEventListener("mousedown", function (e) { e.preventDefault(); });
+        //避免上下滚屏
+        document.addEventListener("touchmove", function (e) { e.preventDefault(); });
+
+    </script>
+    <meta name="author" content="https://github.com/heroes"/>
+    <title>大侠的世界</title>
+    <link rel="stylesheet" href="./css/common.css"/>
+    <link rel="stylesheet" href="./css/modules.css" />
+</head>
+
+<body>
+    <div id="doc" class="doc">
+        <div id="game-container" class="game-container">
+            <!-- intro stage -->
+            <div id="intro" class="stage-container intro-module">
+
+            </div>
+            <!-- drama stage -->
+            <div id="drama" class="stage-container drama-module">
+                
+            </div> 
+            <!-- cg stage-->
+            <div id="cg" class="stage-container cg-module">
+            
+            </div>
+            <!-- drama dialogue -->
+            <div id="dialogue" class="stage-container dialogue-module">
+                
+            </div>
+            <!-- map -->
+            <div id="map" class="stage-container map-module">
+                
+            </div>
+            <!-- canvas for render -->
+            <div id="canvas-wrap" class="stage-container battle-module">
+                <div class="mask"></div>
+                <div id="role-skill-container" class="skill-icons"></div>
+                <canvas id="canvas"></canvas>
+            </div>
+            <!-- dead -->
+            <div id="gameover" class="stage-container gameover-module">
+                <a href="javascript:;" data-cmd="backToHome" class="back-home-btn" ></a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- loading 本身要用的图片资源 -->
+    <img src="./resources/images/loading/loading.png" id="loadingImgPerson" style="display:none" />
+    <img src="./resources/images/loading/loading1.jpg" id="loadingImgBg" style="display:none" />
+    <img src="./resources/images/loading/loading2.png" id="loadingImgBarBg" style="display:none" />
+    <img src="./resources/images/loading/loading3.jpg" id="loadingImgBar" style="display:none" />
+    
+    <script src="./js/lib/laro.0.4.js"></script>
+    <script src="./js/lib/leta.fx.js"></script>
+    <script src="./js/lib/leditor.js"></script>
+    <script src="./js/lib/gesture.js"></script>
+    <script src="./js/woh.js"></script>
+    <script src="./js/g_config.js"></script>
+    <script src="./js/woh.util.js"></script>
+    
+    <script src="./js/woh.captionPlayer.js"></script>
+    
+    <script src="./js/woh.roleStates.js"></script>
+    <script src="./js/woh.sprites.js"></script>
+    <script src="./js/woh.monster.js"></script>
+    <script src="./js/woh.role.js"></script>
+    <script src="./js/woh.skillEffect.js"></script>
+    <script src="./js/woh.aiController.js"></script>
+    
+    <script src="./js/woh.stageIntro.js"></script>
+    <script src="./js/woh.stageCg.js"></script>
+   
+    <script src="./js/woh.stageBattle.js"></script>
+    <script src="./js/woh.stageDrama.js"></script>
+    <script src="./js/woh.stageDialogue.js"></script>
+    <script src="./js/woh.stageMap.js"></script>
+    <script src="./js/woh.stageGameover.js"></script>
+    <script src="./js/woh.stageLoading.js"></script>
+    
+    <script src="./js/level.attribute.js"></script>
+    <script src="./js/woh.runtime.js"></script>
+    <script src="./js/woh.gameScript.js"></script>
+    <script src="./js/woh.stage.js"></script>
+    <script src="./js/woh.loop.js"></script>
+    <script src="./js/module.render.js"></script>
+    
+    <script src="./js/woh.skills.js"></script>
+    <script src="./js/skills/Fallenflowers.js"></script>
+    <script src="./js/skills/CloudInWind.js"></script>
+    <script src="./js/skills/FuryOfFox.js"></script>
+    <script src="./js/skills/NetherFlame.js"></script>
+    <script src="./js/skills/WillStrike.js"></script>
+    <script src="./js/skills/WindStrike.js"></script>
+
+
+    <script src="./js/woh.domclick.js"></script>
+    
+    <script>
+        onload = function () {
+            woh.init();
+        }
+    </script>
+</body>
+
+</html>

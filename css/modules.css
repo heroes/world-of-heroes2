@@ -1,0 +1,329 @@
+.sub-win{
+	width:960px;
+	height:640px;
+	position:absolute;
+	z-index: 2;
+	display:none;
+	background:black;
+}
+.sub-win#Intro-1{
+	background:url(../resources/images/index/about-us.jpg) no-repeat;
+}
+.sub-win#Intro-2{
+	background:url(../resources/images/index/thanks.jpg) no-repeat;
+}
+.sub-win p.thanks{
+	color: black;
+	font-size: 24px;
+	width: 450px;
+	padding-left: 50px
+}
+.sub-win p.aboutus{
+	font-size: 22px;
+	padding-left:50px;
+}
+.sub-win p.thanks.first,.sub-win p.aboutus.first{
+	padding-top: 150px;
+}
+.sub-win#role-manage{
+	background:url(../resources/images/map/win_bg.jpg) no-repeat;
+}
+.sub-win#skill-manage{
+	background:url(../resources/images/map/win_bg2.jpg) no-repeat;
+}
+.sub-win button.close{
+	position:absolute;
+	top:20px;
+	right:20px;
+	background:url(../resources/images/map/cross.png) no-repeat center;
+	background-size: 80px 80px;
+	width:94px;
+	height:94px;
+	border:0;
+	-webkit-transition: -webkit-transform .3s ease-in;
+    -moz-transition:    -moz-transform .3s ease-in;
+    -o-transition:      -o-transform .3s ease-in;
+    transition:         transform .3s ease-in;
+}
+.sub-win button.close:hover{
+ -webkit-transform: rotate(180deg) scale(0.8);
+    -moz-transform: rotate(180deg) scale(0.8);
+    -o-transform: rotate(180deg) scale(0.8);
+    -transform: rotate(180deg) scale(0.8);}
+.sub-win .standard-stroke{
+	border:5px solid rgba(0,0,0,.7);
+}
+
+.intro-module{
+	width:960px;
+	height:640px;
+	background:#000 url(../resources/images/index/index.jpg) top center no-repeat;
+}
+.intro-module .intro-pop{
+	width:960px;
+	height:640px;
+	background:rgba(0,0,0,.7);
+	position:absolute;
+	display:none;
+}
+.intro-module .intro-pop .content{
+	margin:10px;
+	border:3px solid white;
+	border-radius:10px;
+	padding:10px;
+}
+.intro-module .intro-pop button.leave{
+	margin:0 auto;
+	background:white;
+}
+.intro-module .button{
+	width:129px;
+	height:129px;
+	float:left;
+	border-radius:64px;
+	margin-right:20px;
+	margin-top:470px;
+	text-align:center;
+	color:black;
+	text-shadow:0 0 5px white;
+	cursor:pointer;
+	font-size:13px;
+}
+.intro-module .button#btn-1{background:url(../resources/images/index/start-button-1.png) no-repeat;}
+.intro-module .button#btn-2{background:url(../resources/images/index/start-button-2.png) no-repeat;}
+.intro-module .button#btn-3{background:url(../resources/images/index/start-button-3.png) no-repeat;}
+.intro-module .button#btn-4{background:url(../resources/images/index/start-button-4.png) no-repeat;}
+.intro-module .button:first-child{margin-left:300px;}
+.intro-module .button:hover{
+	box-shadow:0 0 20px white;
+}
+.drama-module .caption-con {
+    width: 500px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -250px;
+    font-weight: 500;
+    font-size: 24px;
+    color: white
+}
+.drama-module .caption-con p {
+    opacity: 0;
+}
+.map-module{
+	width:960px;
+	height:640px;
+	background: url(../resources/images/map/map.jpg) no-repeat;
+}
+.map-module .button{
+width:180px;
+height:200px;
+margin:0 10px;
+float:right;
+cursor:pointer;
+margin-top:420px;}
+#map-leave{background: url(../resources/images/map/button3.png) center no-repeat}
+#map-skill{background: url(../resources/images/map/button2.png) center no-repeat}
+#map-person{background: url(../resources/images/map/button1.png) center no-repeat}
+
+.map-module .sub-win .ava-bar{width:85%;list-style: none; margin-top: 20px; margin-left:32px;padding: 0;}
+.map-module .sub-win#skill-manage .ava-bar{margin-left: 60px}
+.map-module .sub-win .ava-bar .avar{width:105px; height:105px; display: inline-block; opacity: .3; margin:3px;}
+.map-module .sub-win .ava-bar .avar.active{opacity:1}
+.map-module .sub-win h1#name{color:black; font-size:24px; font-weight:bold; text-align:center; margin:0;}
+.map-module .sub-win .left-block,.sub-win .right-block{height:640px;float:left;}
+.map-module .sub-win .left-block{width: 420px; margin:0 30px}
+.map-module .sub-win .right-block{width:440px;margin-left:10px}
+.map-module .sub-win .left-block #clothes,.sub-win .left-block #weapon{background:url(../resources/images/map/selected_bg.png) center;rgba(0,0,0,.7);width:77px;height:77px; margin-top: 55px; border-top: 20px; border-bottom: 20px; border-left: 4px; border-right:4px;  border-image: url(../resources/images/map/selected_bg.png) 20 4 20 4 repeat}
+.sub-win .left-block #weapon{float:left}
+.map-module .sub-win .left-block #clothes{float:right}
+.map-module .sub-win .left-block #role_preview{float:left;width:230px;height:230px;margin-left:15px;}
+.map-module .sub-win .right-block .description{height: 100px; margin-left: 18px}
+.map-module .sub-win .right-block .items{height:300px;margin-top: 140px;margin-left: 7px}
+.map-module .sub-win .right-block ul.items{width:100%; list-style: none; padding: 0; margin: 140px 0 0 10px}
+.map-module .sub-win .right-block ul.items li{display:block;float:left;width:77px;height:77px;border:3px solid #000;margin:1px;background:rgba(0,0,0,.7);padding:0;}
+.map-module .sub-win .right-block ul.items li.active{border:3px solid yellow;}
+.map-module .sub-win .right-block ul.items li img{margin: 0; padding: 0; opacity: .1}
+.map-module .sub-win .right-block ul.items li img.useable{opacity: 1}
+.map-module .sub-win#role-manage ul.role-attributes{width:80%;list-style: none; clear:both;margin:0 auto;font-weight:bold}
+.map-module .sub-win#role-manage ul.role-attributes li{display: inline-block; width: 40% ;padding:0 10px;}
+.map-module .sub-win#role-manage .exp-bar{height: 26px; width: 250px;margin:10px auto;
+	background: url(../resources/images/map/exp-right.png) right bottom no-repeat;
+}
+.map-module .sub-win#role-manage .exp-bar-inner{height: 26px;background: rgba(0,0,0,.7); width: 220px; margin: 3px 0}
+.map-module .sub-win#role-manage .exp-value{height: 26px; background: white;}
+.map-module .sub-win#skill-manage h1.name{width: 200px; text-align: center;font-size: 28px;position: absolute;left: 60px; top: 150px}
+.map-module .sub-win#skill-manage span.skill-point{position:absolute;top:200px;font-size: 30px; color: red; display: block; float: left; margin-left: 465px;line-height: 30px}
+.map-module .sub-win#skill-manage ul.skill-list{list-style:none;position: absolute;left: 290px; top: 260px;}
+.map-module .sub-win#skill-manage ul.skill-list li{display: inline-block; border: 3px solid black; margin-right: 5px; padding: 0; height: 77px}
+.map-module .sub-win#skill-manage ul.skill-list li.active{border: 3px solid yellow;}
+.map-module .sub-win#skill-manage ul.skill-list li img{opacity: .3}
+.map-module .sub-win#skill-manage ul.skill-list li img.useable{opacity: 1}
+.map-module .sub-win#skill-manage .description{ position: absolute;top: 450px; left: 80px; width: 500px;}
+
+.cg-module,.drama-module{
+	width:960px;
+	height:640px;
+	background:#000;
+}
+.cg-module .button,.drama-module .button{
+	padding:16px;
+	width:100px;
+	text-align:center;
+	background:red;
+	color:white;
+	float:right;
+	margin-top:520px;
+	cursor: pointer
+}
+.dialogue-module{
+	width:960px;
+	height:640px; 
+}
+.dialogue-module .chat-wrap{
+	width:960px;
+	height:640px; 
+}
+.dialogue-module .chat{
+	z-index:2;
+	position:absolute;
+	bottom:0;
+	width:100%;
+	height:254px;
+}
+.dialogue-module .chat .avatar{
+	position: absolute;
+	bottom: 0
+}
+.dialogue-module .chat .avatar.right{right:0;}
+.dialogue-module .chat .bg{background:url(../resources/images/dialogue/UI-dialog-bg.png) no-repeat;height:254px;position: absolute;bottom:0;width:100%;z-index:-1;}
+.dialogue-module .chat .content{color:#fff;font:bold 24px Arial;height:245px;padding-top: 40px;width: 580px;}
+.dialogue-module .chat .content.left{padding-left: 30px}
+.dialogue-module .chat .content.right{padding-right: 30px}
+.dialogue-module .chat .content h1{padding: 10px; margin:0; font-size:24px;line-height:24px;}
+
+
+.battle-module{
+	width:960px;
+	height:640px;
+	background:#000;
+}
+.battle-module .skill-icons{
+	position:absolute;
+	z-index:2;
+	height:100px;
+	top:10px;
+	left:0;
+	padding:10px;
+}
+.battle-module .skill-icon{
+	float:left; 
+	margin-right:10px; 
+	background:red; 
+	width:100px; 
+	height:100px;
+    border:5px solid black;
+    box-shadow: 0 0 10px black;
+    display: inline-block;
+    position: relative;
+}
+.battle-module .skill-icon .mask{display:block;width: 100px; height:0; opacity: 0.8; position: absolute; background: black}
+.battle-module .skill-icon img{width: 100px; height: 100px}
+.battle-module .mask{
+	width: 100%;
+	height: 100%;
+	display: none;
+	position: absolute;
+	background: rgba(0,0,0,.8);
+	z-index: 3;
+}
+.battle-module .mask .battle-count{
+	width: 652px;
+	height: 514px;
+	margin: 30px auto;
+	background: url(../resources/images/count/count-bg.png) no-repeat;
+}
+.battle-module .mask .battle-count .role,
+.battle-module .mask .battle-count .item{
+	width: 430px;
+	margin: 0 auto;
+	list-style: none;
+}
+.battle-module .mask .battle-count .role{
+	padding-top:95px;
+	height: 220px;
+}
+.battle-module .mask .battle-count .role li.exp-info{
+	display: inline-block;
+	width: 33.3%;
+	height: 200px;
+	position: relative;
+}
+.battle-module .mask .battle-count .role li.exp-info img.lvup{
+	position: absolute;
+	left: -10px;
+	top: -10px;
+	display: none;
+}
+.battle-module .mask .battle-count .role li.exp-info img.lvup.show{
+	display: block;
+}
+.battle-module .mask .battle-count .role li.exp-info .avatar{
+	width: 120px;
+	height: 120px;
+	padding: 5px;
+	background: url(../resources/images/count/avatar-outer.png) no-repeat;
+}
+.battle-module .mask .battle-count .role li.exp-info .exp-bar{
+	width: 127px;
+	height: 16px;
+	margin: 10px auto;
+	padding: 2px 0;
+	background: url(../resources/images/count/expbar-bg.png) no-repeat;
+}
+.battle-module .mask .battle-count .role li.exp-info .lv-info{
+	color: black;
+	font-size: 18px;
+	text-align: center;
+	font-weight: bold;
+}
+.battle-module .mask .battle-count .role li.exp-info .exp-bar .exp-bar-inner{
+	background: white;
+	width: 105px;
+	height:16px;
+	margin-left: 2px;
+}
+.battle-module .mask .battle-count .item{
+	margin-top:40px;
+}
+.battle-module .mask .battle-count .item li.single{
+	background: rgba(0,0,0,.8);
+	border: 1px solid #000;
+	padding: 3px;
+	display: inline-block;
+	margin: 0 10px;
+	width: 80px;
+	height: 80px
+}
+.opacity-anim {
+    -webkit-transition: opacity 0.5s ease;
+    -moz-transition: opacity 0.5s ease;
+    -msie-transition: opacity 0.5s ease;
+}
+
+.gameover-module {
+    background: url(../resources/images/index/dead.jpg) no-repeat 50% 50%;
+}
+.back-home-btn {
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+    width: 129px;
+    height: 129px;
+    background: url(../resources/images/index/return-button.png) no-repeat;
+}
+
+
+
+
+
