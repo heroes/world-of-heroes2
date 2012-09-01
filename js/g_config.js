@@ -2915,6 +2915,24 @@ woh.g_config.skill_effect={
         }        
     }
 }
-
+//地图的配置
+woh.g_config.mapConfig={
+    'section1':{
+        //相应点在大地图上的位置
+        position:{x:0,y:0},
+        //相应关卡的起始点
+        beginingNode:'intro',
+        //是否已经解锁
+        locked:true
+    },
+    'section2':{
+        //相应点在大地图上的位置
+        position:{x:0,y:0},
+        //相应关卡的起始点
+        beginingNode:'intro',
+        //是否已经解锁
+        locked:true
+    }
+}
 //console.log(role_data);
 

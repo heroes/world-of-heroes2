@@ -27,8 +27,10 @@ Laro.NS('woh.runtime', function (L) {
     this.role=null,//全部人物的运行时数据
     this.activeRole=[],//活动人物的列表，初始值为唐如一个人
     this.packageItems=[];//物品列表
-    this.cdCounter={};
+    this.cdCounter={}; 
+    this.mapState=
     this.init=function(){
+        this.packageItems=[];
         this.scriptProcess=[];
         this.stageTag ='intro';
         //初始化运行时人物数据
