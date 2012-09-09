@@ -28,7 +28,7 @@ Laro.NS('woh.runtime', function (L) {
     this.activeRole=[],//活动人物的列表，初始值为唐如一个人
     this.packageItems=[];//物品列表
     this.cdCounter={}; 
-    this.mapState=
+    this.mapState={};
     this.init=function(){
         this.packageItems=[];
         this.scriptProcess=[];
