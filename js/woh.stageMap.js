@@ -11,7 +11,7 @@ Laro.NS('woh.stageClass', function (L) {
             woh.log('enter stage [Map] with msg ' + msg);
             woh.show(woh.els.map);
             woh.util.playOneSound('music/chat.mp3');
-            
+            //显示地图上的解锁点
         },
         leave: function () {
             woh.log('leave stage [map]');
