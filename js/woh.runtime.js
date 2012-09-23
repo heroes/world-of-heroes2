@@ -41,6 +41,7 @@ Laro.NS('woh.runtime', function (L) {
         for(var key in woh.skill_data){
             this.cdCounter[key]={cdTime:woh.skill_data[key]['cd'],cd:false};
         }
-        console.log(this.cdCounter);
+        //console.log(this.cdCounter);
+        this.mapState=eval('('+JSON.stringify(woh.g_config.mapConfig)+')');
     }
 });
