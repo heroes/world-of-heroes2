@@ -431,7 +431,18 @@ woh.g_config.script={
             {'avatar':'resources/images/dialogue/rio_tang_light_angry.png','name':'唐如','content':'一副事不关己的样子，莫非不是你强拖我来的？',position:'right',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
             {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'程少非','content':'和螃蟹战斗那么久，肚子也饿了，不如就往陆上走走，说不定会有意想不到的美食在前哟！',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
             {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'虽说完全不想再和这不靠谱的家伙扯上关系，但目前看来似乎又只能如此……',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
-            {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'我说你就不能等人家考虑完再走……等等我啊！',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'}
+            {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'我说你就不能等人家考虑完再走……等等我啊！',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
+            {'avatar':'resources/images/dialogue/fuchen_angry.png','name':'扶尘子','content':'喂，那边的！怎敢随便在老朽的花田里踩来踩去，当真无礼至极。',position:'left',globalBg : 'resources/images/bg/bg-field.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'花田？可这分明是满目疮痍之荒地……',position:'right',globalBg : 'resources/images/bg/bg-field.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_nature.png','name':'程少非','content':'那边那几株萝卜苗倒是长势不错，好好烹调，也能称得上佳肴。',position:'left',globalBg : 'resources/images/bg/bg-field.jpg'},
+            {'avatar':'resources/images/dialogue/fuchen_face_red.png','name':'扶尘子','content':'胡胡胡胡……胡扯！那边园子门口明明写着……',position:'left',globalBg : 'resources/images/bg/bg-field.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_nature.png','name':'程少非','content':'妇女之宝',position:'left',globalBg : 'resources/images/bg/bg-field.jpg'},
+// 扶尘子：胡说！难道你们没看到园子门口的大字？
+// 程少非：这么说来，方才路过的荒草丛里有块很煞风景的大石，上面刻着几个不知所谓的大字，莫非就是……
+// 扶尘子：你你你，气死我啦！早知道就随你们在海里喂鱼算了，哼！
+// 唐如：你看你看，人家生气了吧，还不赶快赔罪——你又在乱翻什么啊。
+// 程少非：唐如唐如，快来看，这边有些奇特的果子，看起来很好吃的样子，一起来尝尝吧。
+// 唐如：不要乱吃奇怪的东西……喂！
         ],
         next:'drama_8'
     },
@@ -782,6 +793,13 @@ woh.g_config.resources = {
             'images/dialogue/qing_soft.png',
             'images/dialogue/qing_thinking.png',
             'images/dialogue/qing_upset.png',
+            //扶尘子的表情图
+            'images/dialogue/fuchen_angry.png',
+            'images/dialogue/fuchen_cold_laugh.png',
+            'images/dialogue/fuchen_face_red.png',
+            'images/dialogue/fuchen_pretent_pity.png',
+            'images/dialogue/fuchen_sad_laugh.png',
+            'images/dialogue/fuchen_upset.png',
             //背景资源
             'images/bg/bg-meet-dusk.jpg',
             'images/bg/bg-sea.jpg',
