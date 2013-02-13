@@ -34,34 +34,6 @@ html, body {
 	-moz-animation:move 1s infinite linear;
 	-webkit-animation:move 1s infinite linear;
 }
-#block_1{
- 	-moz-animation-delay: .4s;
-	-webkit-animation-delay: .4s;
- }
-#block_2{
- 	-moz-animation-delay: .3s;
-	-webkit-animation-delay: .3s;
-}
-#block_3{
- 	-moz-animation-delay: .2s;
-	-webkit-animation-delay: .2s;
-}
-#block_4{
- 	-moz-animation-delay: .3s;
-	-webkit-animation-delay: .3s;
-}
-#block_5{
- 	-moz-animation-delay: .4s;
-	-webkit-animation-delay: .4s;
-}
-@-moz-keyframes move{
-	0%{-moz-transform: scale(1.2);opacity:1;}
-	100%{-moz-transform: scale(0.7);opacity:0.1;}
-}
-@-webkit-keyframes move{
-	0%{-webkit-transform: scale(1.2);opacity:1;}
-	100%{-webkit-transform: scale(0.7);opacity:0.1;}
-}
 
 .doc {
     width: 960px;

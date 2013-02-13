@@ -1,4 +1,4 @@
-﻿ Laro.NS('woh', function (L) {
+﻿Laro.NS('woh', function (L) {
     
     var Role = this.Sprite.extend(function () { 
         this.speed = 200;

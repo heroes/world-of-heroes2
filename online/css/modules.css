@@ -312,17 +312,26 @@ margin-top:420px;}
 }
 
 .gameover-module {
-    background: url(../resources/images/index/dead.jpg) no-repeat 50% 50%;
+  background: url(../resources/images/index/dead.jpg) no-repeat 50% 50%;
 }
 .back-home-btn {
-    position: absolute;
-    right: 40px;
-    bottom: 40px;
-    width: 129px;
-    height: 129px;
-    background: url(../resources/images/index/return-button.png) no-repeat;
+  position: absolute;
+  right: 40px;
+  bottom: 40px;
+  width: 129px;
+  height: 129px;
+  background: url(../resources/images/index/return-button.png) no-repeat;
 }
-
+.drama-module ul{
+	font-size: 1.5em;
+	line-height: 1.5em;
+	color: white;
+	list-style: none;
+	margin: 0 auto;
+	width: 100%;
+	margin-top: 170px;
+}
+.drama-module ul li{text-align: center;}
 
 
 
