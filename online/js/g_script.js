@@ -397,13 +397,14 @@ woh.g_config.script={
             {'avatar':'resources/images/dialogue/sola_cheng_a.png','name':'程少非','content':'唉，你看你你看你，如此体弱，接下来舟车劳顿，可怎么受得了，啧啧，着实令人忧心。',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
             {'avatar':'resources/images/dialogue/rio_tang_light_angry.png','name':'唐如','content':'一副事不关己的样子，莫非不是你强拖我来的？',position:'right',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
             {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'程少非','content':'和螃蟹战斗那么久，肚子也饿了，不如就往陆上走走，说不定会有意想不到的美食在前。',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
-            {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'虽说完全不想再和这不靠谱的家伙扯上关系，但目前看来单独行动不是明智之举。',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'(虽说完全不想再和这不靠谱的家伙扯上关系，但目前看来单独行动着实不是明智之举，也只有走一步算一步了。)',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
             {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'我说你就不能等人家考虑完再走，喂喂喂，等等我！',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
             {'avatar':'resources/images/dialogue/fuchen_angry.png','name':'扶尘子','content':'喂，那边的！怎敢随便在老朽的花田里踩来踩去，当真无礼至极。',position:'left',globalBg : 'resources/images/bg/bg-field.jpg'},
             {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'花田？可这分明是荒地。',position:'right',globalBg : 'resources/images/bg/bg-field.jpg'},
-            {'avatar':'resources/images/dialogue/sola_cheng_nature.png','name':'程少非','content':'那边那几株萝卜苗倒是长势不错，好好烹调，也能称得上佳肴。',position:'left',globalBg : 'resources/images/bg/bg-field.jpg'},
-            {'avatar':'resources/images/dialogue/fuchen_face_red.png','name':'扶尘子','content':'胡胡胡胡胡扯！老朽才不屑与你们这些不通风雅之人为伍，哼！',position:'left',globalBg : 'resources/images/bg/bg-field.jpg'},
-            {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'看起来好像很生气的样子，是不是应该道歉呢？喂喂喂，你又在做什么！',position:'left',globalBg : 'resources/images/bg/bg-field.jpg'},
+            {'avatar':'resources/images/dialogue/sola_cheng_nature.png','name':'程少非','content':'那边几株萝卜苗倒是长势不错，好好烹调，也称得上佳肴。',position:'left',globalBg : 'resources/images/bg/bg-field.jpg'},
+            {'avatar':'resources/images/dialogue/fuchen_face_red.png','name':'扶尘子','content':'胡胡胡胡胡扯！老朽才不屑与你们这些不通风雅之人说话，哼！',position:'left',globalBg : 'resources/images/bg/bg-field.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'看起来好像很生气的样子，是不是应该道歉呢？',position:'left',globalBg : 'resources/images/bg/bg-field.jpg'},
+            {'avatar':'resources/images/dialogue/rio_tang_sup.png','name':'唐如','content':'喂喂喂，你又在做什么！',position:'left',globalBg : 'resources/images/bg/bg-field.jpg'},
             {'avatar':'resources/images/dialogue/sola_cheng_nature.png','name':'程少非','content':'这种果子似乎没见过，嗯，色彩鲜艳，气味芬芳，应当是一种食材。',position:'left',globalBg : 'resources/images/bg/bg-field.jpg'},
         ],
         next:'drama_8'
@@ -438,6 +439,12 @@ woh.g_config.script={
             "drop":['clothes','004',1],//掉落类型，掉落id，掉落概率
         },
 
+        next:'map_7'
+    },
+    'map_7':{
+        type:'map',
+        repeat:true,
+        data:{},
         next:'dialogue_12'
     },
     'dialogue_12':{
@@ -458,7 +465,7 @@ woh.g_config.script={
             {'avatar':'resources/images/dialogue/qing_pay_a_look.png','name':'少女','content':'又在痴人说梦。',position:'left',globalBg : 'resources/images/bg/bg-field.jpg'},
             {'avatar':'resources/images/dialogue/fuchen_face_red.png','name':'扶尘子','content':'碧青你来得正好，赶紧帮为师教训一下这两个无礼小贼！',position:'right',globalBg : 'resources/images/bg/bg-field.jpg'},
             {'avatar':'resources/images/dialogue/qing_pay_a_look.png','name':'碧青','content':'那么久了，亏你还在乎那种无聊约定。',position:'left',globalBg : 'resources/images/bg/bg-field.jpg'},
-            {'avatar':'resources/images/dialogue/fuchen_face_red.png','name':'扶尘子','content':'这……碧青你也是知道的，我虽然跟那人约好绝不能对人类动武这样的事情我从一开始就没打算遵守，不过和这两个小辈动手总归有失身份，所以还是你来……',position:'right',globalBg : 'resources/images/bg/bg-field.jpg'},
+            {'avatar':'resources/images/dialogue/fuchen_face_red.png','name':'扶尘子','content':'这……碧青你也是知道的，虽然跟那人约好绝不能对人类动武这样的事情我从一开始就没打算遵守，不过和这两个小辈动手总归有失身份，所以还是你来……',position:'right',globalBg : 'resources/images/bg/bg-field.jpg'},
             {'avatar':'resources/images/dialogue/qing_pay_a_look.png','name':'碧青','content':'无聊。你们，一起上吧。',position:'left',globalBg : 'resources/images/bg/bg-field.jpg'},
         ],
         next:'intro'
