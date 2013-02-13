@@ -444,47 +444,6 @@
                 }
             },false);
         });
-
-
-/*
-            _doc.getElementById('weapon').ondragover=function(e){
-                if (e.preventDefault) 
-                    e.preventDefault();                                          
-            };
-            _doc.getElementById('clothes').ondragover=function(e){
-                if (e.preventDefault) 
-                    e.preventDefault();                                          
-            };
-
-            _doc.getElementById('weapon').addEventListener('drop',function(e){
-                if(draggingType=='weapon'){
-                    if(e.target.id=='weapon'){
-                        e.target.innerHTML="<img width='77' height='77' src='"+woh.item_data['weapon'][draggingId]['icon']+"'/>";
-                    }
-                    else{
-                        e.target.src=woh.item_data['weapon'][draggingId]['icon'];
-                    }
-                    //更新相关数据
-                    woh.runtime.activeRole[that.currentActiveRole]['weapon']=draggingId;
-                    that.initData(that.currentActiveRole);
-                    draggingType="";
-                }
-            },false);
-            _doc.getElementById('clothes').addEventListener('drop',function(e){
-                if(draggingType=='clothes'){
-                    if(e.target.id=='clothes'){
-                        e.target.innerHTML="<img width='77' height='77' src='"+woh.item_data['clothes'][draggingId]['icon']+"'/>";
-                    }
-                    else{
-                        e.target.src=woh.item_data['clothes'][draggingId]['icon'];
-                    }
-                    //更新相关数据
-                    woh.runtime.activeRole[that.currentActiveRole]['clothes']=draggingId;
-                    that.initData(that.currentActiveRole);
-                    draggingType="";
-                }
-            },false);
-*/
         },
         initAvatarBar:function(){ //载入活动人物的头像
             for(var i in woh.runtime.activeRole){
