@@ -332,7 +332,14 @@ margin-top:420px;}
 	margin-top: 170px;
 }
 .drama-module ul li{text-align: center;}
-
+.map-mudule .story-point{
+	width: 30px;
+	height: 30px;
+	background: red;
+	position: absolute;
+	left: 100px;
+	top: 100px;
+}
 
 
 
