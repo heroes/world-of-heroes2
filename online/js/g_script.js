@@ -84,7 +84,11 @@ woh.g_config.script={
     'map_1':{
         type:'map',
         repeat:true,
-        data:{},
+        data:{
+            point:{
+                
+            }
+        },
         next:'dialogue_2'
     },
     'dialogue_2':{
