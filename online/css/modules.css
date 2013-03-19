@@ -79,7 +79,7 @@
 .intro-module .button{
 	width:129px;
 	height:129px;
-	float:left;
+	display: inline-block;
 	border-radius:64px;
 	margin-right:20px;
 	margin-top:470px;
@@ -88,14 +88,25 @@
 	text-shadow:0 0 5px white;
 	cursor:pointer;
 	font-size:13px;
+	vertical-align: middle;
+}
+.intro-module .button#btn-0{
+	background:url(../resources/images/index/sound.png) no-repeat; 
+	width: 60px;
+	height:60px;
+	border-radius: 0;
 }
 .intro-module .button#btn-1{background:url(../resources/images/index/start-button-1.png) no-repeat;}
 .intro-module .button#btn-2{background:url(../resources/images/index/start-button-2.png) no-repeat;}
 .intro-module .button#btn-3{background:url(../resources/images/index/start-button-3.png) no-repeat;}
 .intro-module .button#btn-4{background:url(../resources/images/index/start-button-4.png) no-repeat;}
-.intro-module .button:first-child{margin-left:300px;}
+.intro-module .button:first-child{margin-left:50px;}
+.intro-module .button:nth-child(2){margin-left: 190px;}
 .intro-module .button:hover{
 	box-shadow:0 0 20px white;
+}
+.intro-module .button#btn-0:hover{
+	box-shadow: none;
 }
 .drama-module .caption-con {
     width: 500px;
@@ -332,14 +343,6 @@ margin-top:420px;}
 	margin-top: 170px;
 }
 .drama-module ul li{text-align: center;}
-.map-mudule .story-point{
-	width: 30px;
-	height: 30px;
-	background: red;
-	position: absolute;
-	left: 100px;
-	top: 100px;
-}
 
 
 

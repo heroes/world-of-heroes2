@@ -157,7 +157,15 @@ Laro.NS('woh.util', function (L) {
             }
         }
     }
+    //停止播放音乐
+    function stopMusic(){
+        var sds = woh.loader.loadedSounds;
+        for (var k in sds) {
+                sds[k].pause();
+            }
+    }
     this.playOneSound = playOneSound;
+    this.stopMusic = stopMusic;
     
     this.getActionTarget = getActionTarget;
     this.shakeScreen = shakeScreen;

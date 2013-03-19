@@ -39,10 +39,10 @@
             '<div class="content">内容</div>'+
             '<button class="close" data-toggle='+id+'></button>'
         '</div>'},//弹出窗
-        total:4,
+        total:5,
         init:function(){
             var items = [];
-            for(var i = 1; i <= this.total; i++){  
+            for(var i = 0; i < this.total; i++){  
                 items.push(this.tpl("btn-"+i));
             }
            _doc.getElementById('intro').innerHTML = items.join('');
@@ -79,6 +79,18 @@
             if(e.target.id.substring(0,4)=='btn-'){
                 //e.target.style.background="url(../online/resources/images/index/index-btn-press.png) no-repeat";
                 switch(e.target.id){
+                    case 'btn-0':
+                        if(woh.g_config.sound_play){
+                            woh.g_config.sound_play = false;
+                            woh.util.stopMusic();
+                            e.target.style.background = "url(./resources/images/index/nosound.png) no-repeat";
+                        }
+                        else{
+                            woh.g_config.sound_play = true;
+                            woh.util.playOneSound('music/chat.mp3');
+                            e.target.style.background = "url(./resources/images/index/sound.png) no-repeat";
+                        }
+                    break;
                     case 'btn-1':woh.runtime.init();setTimeout('woh.gameScript.continueExec()',300);break;
                     //case 'btn-2':document.getElementById('Intro-0').style.display='block';break;
                     case 'btn-2':woh.runtime.init();woh.runtime.stageTag='drama_Infinity';setTimeout('woh.gameScript.continueExec()',300);break;
@@ -557,7 +569,7 @@
             _doc.querySelector('.battle-module .mask').style.display="block";
             this.bind();
             this.initData(data);
-            woh.util.playOneSound('music/win.mp3', false);
+            woh.g_config.sound_play&&woh.util.playOneSound('music/win.mp3', false);
         },
         bind:function(){
             var me=this;

@@ -1,9 +1,9 @@
 ﻿/* global default configs */
 woh.g_config = {
     canvasWidth: 960,
-    canvasHeight: 640
+    canvasHeight: 640,
+    sound_play:true
 };
-
 
 //衣服的动画数据
 woh.g_config.clothes={

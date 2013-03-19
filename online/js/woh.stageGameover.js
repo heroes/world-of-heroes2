@@ -12,7 +12,7 @@ Laro.NS('woh.stageClass', function (L) {
             console.log('game over')
             console.log(msg);
             woh.util.fadeIn(woh.els.gameover);
-            woh.util.playOneSound('music/fail.mp3');
+            woh.g_config.sound_play&&woh.util.playOneSound('music/fail.mp3');
         },
         draw: function () {},
         update: function () {},

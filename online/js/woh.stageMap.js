@@ -10,7 +10,7 @@ Laro.NS('woh.stageClass', function (L) {
     	enter: function (msg, from) {
             woh.log('enter stage [Map] with msg ' + msg);
             woh.show(woh.els.map);
-            woh.util.playOneSound('music/chat.mp3');
+            woh.g_config.sound_play&&woh.util.playOneSound('music/chat.mp3');
             //以下为测试代码
             var sp = document.createElement("div");
             sp.setAttribute("class","story-point")
@@ -22,7 +22,7 @@ Laro.NS('woh.stageClass', function (L) {
             sp.style.top="100px";
             document.getElementById("map").appendChild(sp);
             sp.addEventListener("click",function(e){
-                woh.gameScript.startExec(woh.g_config.script, 'loading_1'); 
+                woh.gameScript.startExec(woh.g_config.script, 'cg_1'); 
             },false);
         },
         leave: function () {
