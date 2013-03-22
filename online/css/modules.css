@@ -143,24 +143,43 @@
     cursor: pointer;
 }
 .map-module ul.story-menu{
-    background:#bbbbbb;
     position: absolute;
     list-style: none;
-    border: 1px solid #000000;
     display: none;
     margin: 0;
     padding: 0;
+    width: 92px;
 }
 .map-module ul.story-menu.active{
     display: block;
 }
 .map-module ul.story-menu li{
-    line-height: 20px;
-    padding:10px 30px;
+    background: url("../resources/images/map/select-menu-middle.png") repeat-y;
 }
-.map-module ul.story-menu li:hover{
-    background: #000000;
-    color: #ffffff;
+.map-module ul.story-menu li ul li.story-menu-li{
+    list-style: none;
+    width: 94px;
+    padding: 0;
+    margin: 0;
+    line-height: 34px;
+    background: none;
+    text-align: center;
+    line-height: 34px;
+}
+.map-module ul.story-menu li ul{
+    background: none;
+    padding: 0;
+}
+.map-module ul.story-menu li ul li.story-menu-li:hover{
+    background: url("../resources/images/map/select-menu-hover.png") center no-repeat;
+}
+.map-module ul.story-menu li.header{
+    background: url("../resources/images/map/select-menu-header.png") no-repeat;
+    height: 34px;
+}
+.map-module ul.story-menu li.bottom{
+    background: url("../resources/images/map/selece-menu-bottom.png") no-repeat;
+    height: 34px;
 }
 .map-module .button#map-person{background: url(../resources/images/map/button1.png) center no-repeat}
 .map-module .button#map-skill{background: url(../resources/images/map/button2.png) center no-repeat}

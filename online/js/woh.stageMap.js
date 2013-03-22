@@ -29,21 +29,31 @@ Laro.NS('woh.stageClass', function (L) {
                         menu.setAttribute("class",menu_class+" active");
                     }, false);
                     var sp_list = document.createElement("ul");
-                    map.appendChild(sp_list);
-                    sp_list.setAttribute("class", "story-menu");
-                    sp_list.setAttribute("id", o.id);
-                    sp_list.style.left = parseInt(o.xPos) + 80 + "px";
-                    sp_list.style.bottom = o.yPos + "px";
+                        map.appendChild(sp_list);
+                        sp_list.setAttribute("class", "story-menu");
+                        sp_list.setAttribute("id", o.id);
+                        sp_list.style.left = parseInt(o.xPos) + 80 + "px";
+                        sp_list.style.bottom = o.yPos + "px";
+                    var sp_list_header = document.createElement("li");
+                        sp_list.appendChild(sp_list_header);
+                        sp_list_header.setAttribute("class","header");
+                    var menu_area = document.createElement("li");
+                        sp_list.appendChild(menu_area);
+                    var sp_list_menu = document.createElement("ul");
+                        menu_area.appendChild(sp_list_menu);
                     o.storyList.forEach(function (o) {
                         var sp_list_node = document.createElement("li");
                         sp_list_node.innerHTML = o.title;
                         sp_list_node.setAttribute("class","story-menu-li");
                         sp_list_node.setAttribute("data-point", o.story_point);
-                        sp_list.appendChild(sp_list_node);
+                        sp_list_menu.appendChild(sp_list_node);
                         sp_list_node.addEventListener('click', function (e) {
                             woh.gameScript.startExec(woh.g_config.script, e.target.getAttribute("data-point"));
                         }, false);
                     });
+                    var sp_list_bottom = document.createElement("li");
+                        sp_list.appendChild(sp_list_bottom);
+                        sp_list_bottom.setAttribute("class","bottom");
                 });
 
 //
