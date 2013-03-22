@@ -156,6 +156,11 @@
 }
 .map-module ul.story-menu li{
     line-height: 20px;
+    padding:10px 30px;
+}
+.map-module ul.story-menu li:hover{
+    background: #000000;
+    color: #ffffff;
 }
 .map-module .button#map-person{background: url(../resources/images/map/button1.png) center no-repeat}
 .map-module .button#map-skill{background: url(../resources/images/map/button2.png) center no-repeat}
