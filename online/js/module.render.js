@@ -4,30 +4,30 @@
  */
 (function(_win){
 
-	var cache = {};
-	_win.tmpl =  function (str, data){
-	var fn = !/\W/.test(str) ?
-	  cache[str] = cache[str] ||
-		tmpl(document.getElementById(str).innerHTML) :
+    var cache = {};
+    _win.tmpl =  function (str, data){
+    var fn = !/\W/.test(str) ?
+      cache[str] = cache[str] ||
+        tmpl(document.getElementById(str).innerHTML) :
 
-	  new Function("obj",
-		"var p=[],print=function(){p.push.apply(p,arguments);};" +
-		"with(obj){p.push('" +
+      new Function("obj",
+        "var p=[],print=function(){p.push.apply(p,arguments);};" +
+        "with(obj){p.push('" +
 
-		str
-		  .replace(/[\r\t\n]/g, " ")
-		  .split("<%").join("\t")
-		  .replace(/((^|%>)[^\t]*)'/g, "$1\r")
-		  .replace(/\t=(.*?)%>/g, "',$1,'")
-		  .split("\t").join("');")
-		  .split("%>").join("p.push('")
-		  .split("\r").join("\\'")
-	  + "');}return p.join('');");
+        str
+          .replace(/[\r\t\n]/g, " ")
+          .split("<%").join("\t")
+          .replace(/((^|%>)[^\t]*)'/g, "$1\r")
+          .replace(/\t=(.*?)%>/g, "',$1,'")
+          .split("\t").join("');")
+          .split("%>").join("p.push('")
+          .split("\r").join("\\'")
+      + "');}return p.join('');");
 
-	return data ? fn( data ) : fn;
-	};
+    return data ? fn( data ) : fn;
+    };
 
-	var _doc = _win.document;
+    var _doc = _win.document;
 
 
     //开始界面
@@ -42,7 +42,7 @@
         total:5,
         init:function(){
             var items = [];
-            for(var i = 0; i < this.total; i++){  
+            for(var i = 0; i < this.total; i++){
                 items.push(this.tpl("btn-"+i));
             }
            _doc.getElementById('intro').innerHTML = items.join('');
@@ -168,18 +168,24 @@
     //地图界面
     Map={
         tpl:function(){
-            return '<div class="button" id="map-leave"></div>' +
+            return '<div class="button" id="map-person"></div>'+
                 '<div class="button" id="map-skill"></div>' +
-                '<div class="button" id="map-person"></div>'+
                 '<div id="role-manage" class="sub-win"></div>'+
-                '<div id="skill-manage" class="sub-win"></div>'
+                '<div id="skill-manage" class="sub-win"></div>';
         },
         init:function(){
             this.render();
             this.bind();
         },
         render:function(){
-            _doc.getElementById('map').innerHTML=this.tpl();
+            var map = _doc.getElementById('map');
+            map.innerHTML=this.tpl();
+            map.addEventListener('click',function(e){
+              if(e.target.getAttribute("class")!="story-menu-li"&&e.target.getAttribute("class")!="story-point"){
+                  var activemenu = document.querySelector(".story-menu.active");
+                  activemenu&&activemenu.setAttribute("class","story-menu");
+              }
+            },false);
         },
         bind:function(){
             _doc.getElementById('map-person').addEventListener('click', function(){
@@ -188,9 +194,6 @@
             _doc.getElementById('map-skill').addEventListener('click', function(){
                 skillManager.init();
             });
-            _doc.getElementById('map-leave').addEventListener('click', function(){
-                woh.gameScript.continueExec();
-            })
         }
     }
 
@@ -238,7 +241,7 @@
                  "</div>"
         },
         initData:function(id){
-            this.currentActiveRole=id;                          
+            this.currentActiveRole=id;
             var data=woh.runtime.activeRole[id];//显示相应人物的数据
             _doc.querySelector('#role-manage .role-info h1#name').innerHTML=data['name']+'<small> Lv:'+data['lv']+'</small>';
             //载入相关数据
@@ -289,10 +292,10 @@
 
             for(var i in itemsList){
                 if(itemsList[i].getAttribute&&itemsList[i].getAttribute('for')!=data['type']){
-                         itemsList[i].className=''; 
+                         itemsList[i].className='';
                 }
                 else{
-                    itemsList[i].className='useable'; 
+                    itemsList[i].className='useable';
                 }
             }
             //预览装备
@@ -321,7 +324,7 @@
             var roleinfo = _doc.getElementById('role-manage');
             roleinfo.innerHTML = this.tpl();
             roleinfo.style.display = 'block';
-           
+
             this.renderItemlattic();
             this.initAvatarBar();
             this.renderItems();
@@ -360,7 +363,7 @@
                     that.initData(currentId);
                 }
         },false);
-            
+
             //装备图标拖动事件
         var draggingType,
             draggingId;
@@ -369,7 +372,7 @@
         Array.prototype.forEach.call(document.querySelectorAll('#role-manage .items img'),function(elem){
             enableMouseGestureEvents(elem);
             enableGestureEvents(elem);
-            elem.addEventListener('panstart',function(e){ 
+            elem.addEventListener('panstart',function(e){
                 if(this.className=='useable'){
                     draggingType=e.target.attributes['datatype'].nodeValue;
                     draggingId=e.target.attributes['datatag'].nodeValue;
@@ -398,7 +401,7 @@
             elem.addEventListener('panend',function(e){
                 var cache_src=(draggingIcon.src).toString(),
                     cache_id=eval('('+JSON.stringify(draggingIcon.attributes['datatag'].nodeValue)+')');
-                var cache={src:cache_src,id:cache_id}; 
+                var cache={src:cache_src,id:cache_id};
                 if(puttingWeapon) {
                     if(draggingType=='weapon'){
                         draggingIcon.src=weapon.getElementsByTagName('img')[0].src;
@@ -551,7 +554,7 @@
                     items.push("<li><img width='77' height='77'"+iconclass+"data-toggle='"+key+"' src='"+woh.skill_data[key]['icon']+"'/></li>");
                 }
                 items=items.join("");
-            _doc.querySelector('#skill-manage .skill-list').innerHTML=items;    
+            _doc.querySelector('#skill-manage .skill-list').innerHTML=items;
         }
     };
     var battleCount = _win.battleCount={
@@ -565,7 +568,7 @@
             return "<li class='item'></li>";
         },
         init:function(data){
-            _doc.querySelector('.battle-module .mask').innerHTML=this.tpl(); 
+            _doc.querySelector('.battle-module .mask').innerHTML=this.tpl();
             _doc.querySelector('.battle-module .mask').style.display="block";
             this.bind();
             this.initData(data);

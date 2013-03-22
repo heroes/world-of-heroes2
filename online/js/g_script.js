@@ -77,18 +77,30 @@ woh.g_config.script={
                     [{type:'crab',x:100,y:200},{type:'crab',x:900,y:200}]
                 ],
             ],
-            "drop":['clothes','002',1],//掉落类型，掉落id，掉落概率
+            "drop":['clothes','002',1]//掉落类型，掉落id，掉落概率
         },
         next:'map_1'
     },
     'map_1':{
         type:'map',
         repeat:true,
-        data:{
-            point:{
-                
-            }
-        },
+        data:[   //数组形式存储点
+            {
+                id:"place1",//点的id
+                xPos:700, //x轴坐标
+                yPos:260, //y轴坐标
+                storyList:[//菜单项
+                    {
+                        title:"初遇少年",
+                        story_point:"drama_1"
+                    },
+                    {
+                        title:"走为上计",
+                        story_point:"dialogue_2"
+                    }
+                ]
+            },
+        ],
         next:'dialogue_2'
     },
     'dialogue_2':{
@@ -175,14 +187,34 @@ woh.g_config.script={
                     [{type:'crab',x:100,y:-200},{type:'crab',x:300,y:-200},{type:'crab',x:500,y:900},{type:'crab',x:400,y:900},{type:'crab',x:300,y:900}],
                 ]
             ],
-            "drop":['weapon','004',1],//掉落类型，掉落id，掉落概率
+            "drop":['weapon','004',1]//掉落类型，掉落id，掉落概率
         },
         next:'map_2'
     },
     'map_2':{
         type:'map',
         repeat:true,
-        data:{},
+        data:[   //数组形式存储点
+            {
+                id:"place1",//点的id
+                xPos:700, //x轴坐标
+                yPos:260, //y轴坐标
+                storyList:[//菜单项
+                    {
+                        title:"初遇少年",
+                        story_point:"drama_1"
+                    },
+                    {
+                        title:"走为上计",
+                        story_point:"dialogue_2"
+                    },
+                    {
+                        title:"大战蟹王",
+                        story_point:"dialogue_5"
+                    }
+                ]
+            },
+        ],
         next:'dialogue_5'
     },
     'dialogue_5':{
@@ -206,7 +238,7 @@ woh.g_config.script={
                     [{type:'crab_boss',x:100,y:200},{type:'crab',x:50,y:200},{type:'crab',x:50,y:300}]
                 ]
             ],
-            "drop":['weapon','002',1],//掉落类型，掉落id，掉落概率
+            "drop":['weapon','002',1]//掉落类型，掉落id，掉落概率
         },
         
         next:'map_3'
@@ -214,7 +246,31 @@ woh.g_config.script={
     'map_3':{
         type:'map',
         repeat:true,
-        data:{},
+        data:[   //数组形式存储点
+            {
+                id:"place1",//点的id
+                xPos:700, //x轴坐标
+                yPos:260, //y轴坐标
+                storyList:[//菜单项
+                    {
+                        title:"初遇少年",
+                        story_point:"drama_1"
+                    },
+                    {
+                        title:"走为上计",
+                        story_point:"dialogue_2"
+                    },
+                    {
+                        title:"大战蟹王",
+                        story_point:"dialogue_5"
+                    },
+                    {
+                        title:"扬帆远航",
+                        story_point:"dialogue_6"
+                    }
+                ]
+            },
+        ],
         next:'dialogue_6'
     },
     'dialogue_6':{
@@ -247,7 +303,31 @@ woh.g_config.script={
     'map_4':{
         type:'map',
         repeat:true,
-        data:{},
+        data:[   //数组形式存储点
+            {
+                id:"place1",//点的id
+                xPos:700, //x轴坐标
+                yPos:260, //y轴坐标
+                storyList:[//菜单项
+                    {
+                        title:"初遇少年",
+                        story_point:"drama_1"
+                    },
+                    {
+                        title:"走为上计",
+                        story_point:"dialogue_2"
+                    },
+                    {
+                        title:"大战蟹王",
+                        story_point:"dialogue_5"
+                    },
+                    {
+                        title:"扬帆远航",
+                        story_point:"dialogue_6"
+                    }
+                ]
+            },
+        ],
         next:'loading_4'
     },
     'loading_4':{
@@ -361,7 +441,42 @@ woh.g_config.script={
     'map_5':{
         type:'map',
         repeat:true,
-        data:{},
+        data:[   //数组形式存储点
+            {
+                id:"place1",//点的id
+                xPos:700, //x轴坐标
+                yPos:260, //y轴坐标
+                storyList:[//菜单项
+                    {
+                        title:"初遇少年",
+                        story_point:"drama_1"
+                    },
+                    {
+                        title:"走为上计",
+                        story_point:"dialogue_2"
+                    },
+                    {
+                        title:"大战蟹王",
+                        story_point:"dialogue_5"
+                    },
+                    {
+                        title:"扬帆远航",
+                        story_point:"dialogue_6"
+                    }
+                ]
+            },
+            {
+                id:"place2",//点的id
+                xPos:400, //x轴坐标
+                yPos:450, //y轴坐标
+                storyList:[//菜单项
+                    {
+                        title:"陆沉海转",
+                        story_point:"dialogue_10"
+                    }
+                ]
+            }
+        ],
         next:'dialogue_10'
     },
     'dialogue_10':{
@@ -389,7 +504,46 @@ woh.g_config.script={
     'map_6':{
         type:'map',
         repeat:true,
-        data:{},
+        data:[   //数组形式存储点
+            {
+                id:"place1",//点的id
+                xPos:700, //x轴坐标
+                yPos:260, //y轴坐标
+                storyList:[//菜单项
+                    {
+                        title:"初遇少年",
+                        story_point:"drama_1"
+                    },
+                    {
+                        title:"走为上计",
+                        story_point:"dialogue_2"
+                    },
+                    {
+                        title:"大战蟹王",
+                        story_point:"dialogue_5"
+                    },
+                    {
+                        title:"扬帆远航",
+                        story_point:"dialogue_6"
+                    }
+                ]
+            },
+            {
+                id:"place2",//点的id
+                xPos:400, //x轴坐标
+                yPos:450, //y轴坐标
+                storyList:[//菜单项
+                    {
+                        title:"陆沉海转",
+                        story_point:"dialogue_10"
+                    },
+                    {
+                        title:"安然无恙",
+                        story_point:"dialogue_11"
+                    }
+                ]
+            }
+        ],
         next:'dialogue_11'
     },
     'dialogue_11':{
@@ -448,7 +602,50 @@ woh.g_config.script={
     'map_7':{
         type:'map',
         repeat:true,
-        data:{},
+        data:[   //数组形式存储点
+            {
+                id:"place1",//点的id
+                xPos:700, //x轴坐标
+                yPos:260, //y轴坐标
+                storyList:[//菜单项
+                    {
+                        title:"初遇少年",
+                        story_point:"drama_1"
+                    },
+                    {
+                        title:"走为上计",
+                        story_point:"dialogue_2"
+                    },
+                    {
+                        title:"大战蟹王",
+                        story_point:"dialogue_5"
+                    },
+                    {
+                        title:"扬帆远航",
+                        story_point:"dialogue_6"
+                    }
+                ]
+            },
+            {
+                id:"place2",//点的id
+                xPos:400, //x轴坐标
+                yPos:450, //y轴坐标
+                storyList:[//菜单项
+                    {
+                        title:"陆沉海转",
+                        story_point:"dialogue_10"
+                    },
+                    {
+                        title:"安然无恙",
+                        story_point:"dialogue_11"
+                    },
+                    {
+                        title:"人鱼少女",
+                        story_point:"dialogue_11"
+                    }
+                ]
+            }
+        ],
         next:'dialogue_12'
     },
     'dialogue_12':{

@@ -128,15 +128,35 @@
 	background: url(../resources/images/map/map.jpg) no-repeat;
 }
 .map-module .button{
-width:180px;
-height:200px;
-margin:0 10px;
-float:right;
-cursor:pointer;
-margin-top:420px;}
-#map-leave{background: url(../resources/images/map/button3.png) center no-repeat}
-#map-skill{background: url(../resources/images/map/button2.png) center no-repeat}
-#map-person{background: url(../resources/images/map/button1.png) center no-repeat}
+    width:180px;
+    height:200px;
+    margin:0 10px;
+    float:left;
+    cursor:pointer;
+    margin-top:420px;
+}
+.map-module .story-point{
+    width:80px;
+    height:67px;
+    position: absolute;
+    background: url(../resources/images/map/select-ico.png) center no-repeat;
+    cursor: pointer;
+}
+.map-module ul.story-menu{
+    background:#b1b1b1;
+    position: absolute;
+    list-style: none;
+    border: 1px solid #000000;
+    display: none;
+}
+.map-module ul.story-menu.active{
+    display: block;
+}
+.map-module ul.story-menu li{
+
+}
+.map-module .button#map-person{background: url(../resources/images/map/button1.png) center no-repeat}
+.map-module .button#map-skill{background: url(../resources/images/map/button2.png) center no-repeat}
 
 .map-module .sub-win .ava-bar{width:85%;list-style: none; margin-top: 20px; margin-left:32px;padding: 0;}
 .map-module .sub-win#skill-manage .ava-bar{margin-left: 60px}
