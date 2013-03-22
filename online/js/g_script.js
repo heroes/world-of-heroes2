@@ -872,6 +872,7 @@ woh.g_config.resources = {
             'images/map/items/select-menu-header.png',
             'images/map/items/select-menu-middle.png',
             'images/map/items/select-menu-bottom.png',
+            'images/map/items/select-menu-hover.png',
             'images/map/items/c_001.png',
             'images/map/items/c_002.png',
             'images/map/items/c_003.png',
