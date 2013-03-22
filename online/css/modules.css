@@ -143,17 +143,19 @@
     cursor: pointer;
 }
 .map-module ul.story-menu{
-    background:#b1b1b1;
+    background:#bbbbbb;
     position: absolute;
     list-style: none;
     border: 1px solid #000000;
     display: none;
+    margin: 0;
+    padding: 0;
 }
 .map-module ul.story-menu.active{
     display: block;
 }
 .map-module ul.story-menu li{
-
+    line-height: 20px;
 }
 .map-module .button#map-person{background: url(../resources/images/map/button1.png) center no-repeat}
 .map-module .button#map-skill{background: url(../resources/images/map/button2.png) center no-repeat}
