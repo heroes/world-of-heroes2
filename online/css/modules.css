@@ -199,6 +199,10 @@
     width: 324px;
     height: 92px;
 }
+.map-module .button:hover{
+    -webkit-transition: all 0.1s linear;
+    -webkit-transform: scale(1.1);
+}
 .map-module .button#map-person{background: url(../resources/images/map/button1.png) center no-repeat}
 .map-module .button#map-skill{background: url(../resources/images/map/button2.png) center no-repeat}
 
