@@ -10,7 +10,7 @@ woh.g_config.script={
     //开始界面
     'loading_1':{
         type:'loading',
-        repeat:true,
+        repeat:false,
         data:{
             key:'intro'
         },
@@ -25,7 +25,7 @@ woh.g_config.script={
     }, 
     'drama_1':{
         type:'drama',//标记相应的stage类型
-        repeat:false,          
+        repeat:true,
         data: [
                 '当唐如捡起沙滩上第九十九个贝壳的时候——',
                 '他们相遇了',
@@ -35,13 +35,13 @@ woh.g_config.script={
     },
     'cg_1':{
         type:'cg',
-        repeat:false,
+        repeat:true,
         data:[{'path':'resources/images/cg/cg_1.jpg'}],
         next:'dialogue_1'
     },
     'dialogue_1':{
         type:'dialogue',
-        repeat:false,
+        repeat:true,
         data:[
             {'avatar':'resources/images/dialogue/rio_tang_beauty_sup.png','name':'唐如','content':'好美的人！',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
             {'avatar':'resources/images/dialogue/sola_cheng_nature.png','name':'？？','content':'你知道……人鱼吗？',position:'right',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
@@ -56,7 +56,7 @@ woh.g_config.script={
     },
     'loading_2':{
         type:'loading',
-        repeat:true,
+        repeat:false,
         data:{
             key: 'battle_1'
         },
@@ -114,7 +114,7 @@ woh.g_config.script={
     },
     'drama_2':{
         type:'drama',//标记相应的stage类型
-        repeat:false,
+        repeat:true,
         data:[
            
             '唐如带着晕倒的少年回到了自己家',
@@ -166,7 +166,7 @@ woh.g_config.script={
     },
     'loading_3':{
         type:'loading',
-        repeat:true,
+        repeat:false,
         data:{
             key:'battle_2'
         },
@@ -174,7 +174,7 @@ woh.g_config.script={
     },
     'battle_withlittlecrab2':{
         type:'battle',
-        repeat:false,
+        repeat:true,
         data:{
             "name": 'battle_withlittlecrab2',
             "role":["001","002"],
@@ -219,7 +219,7 @@ woh.g_config.script={
     },
     'dialogue_5':{
         type:'dialogue',
-        repeat:false,
+        repeat:true,
         data:[
             {'avatar':'resources/images/dialogue/crab_boss.png','name':'大王蟹','content':'可恶，可恶的人类！血海深仇，不共戴天！',position:'left',globalBg : 'resources/images/bg/bg-beach.jpg'},
         ],
@@ -324,6 +324,10 @@ woh.g_config.script={
                     {
                         title:"扬帆远航",
                         story_point:"dialogue_6"
+                    },
+                    {
+                        title:"海上奇遇",
+                        story_point:"loading_4"
                     }
                 ]
             },
@@ -332,7 +336,7 @@ woh.g_config.script={
     },
     'loading_4':{
         type:'loading',
-        repeat:true,
+        repeat:false,
         data:{
             key:'section_2'
         },
@@ -340,7 +344,7 @@ woh.g_config.script={
     },
     'drama_5':{
         type:'drama',//标记相应的stage类型
-        repeat:false,
+        repeat:true,
         data:[
             '两人一船驶向茫茫大海，',
             '向着传说中人鱼所在的海域行驶而去。'   
@@ -349,7 +353,7 @@ woh.g_config.script={
     },
     'dialogue_7':{
         type:'dialogue',
-        repeat:false,
+        repeat:true,
         data:[
             {'avatar':'resources/images/dialogue/sola_cheng_sigh.png','name':'程少非','content':'怪事怪事怪事，这不可能！',position:'right',globalBg : 'resources/images/bg/bg-boat-outer2.jpg'},
             {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'又是何事惊叹啊？',position:'left',globalBg : 'resources/images/bg/bg-boat-outer2.jpg'},
@@ -372,13 +376,13 @@ woh.g_config.script={
     },
     'cg_2':{
         type:'cg',
-        repeat:false,
+        repeat:true,
         data:[{'path':'resources/images/cg/cg_2.jpg'}],
         next:'dialogue_8'
     },
     'dialogue_8':{
         type:'dialogue',
-        repeat:false,
+        repeat:true,
         data:[
             {'avatar':'','name':'人鱼少女','content':'灵皇皇兮既降，飙远举兮云中；览冀洲兮有余，横四海兮焉穷！',position:'right',globalBg : 'resources/images/cg/cg_3.jpg'},
             {'avatar':'resources/images/dialogue/rio_tang_beauty_sup.png','name':'唐如','content':'此曲只应天上有……子曰“不图为乐之至于斯也”，想必莫过于此了。',position:'left',globalBg : 'resources/images/cg/cg_3.jpg'},
@@ -394,7 +398,7 @@ woh.g_config.script={
     },
     'drama_6':{
         type:'drama',//标记相应的stage类型
-        repeat:false,
+        repeat:true,
         data:[
             '人鱼少女伸开双手，',
             '口中不知念了几句什么。',
@@ -405,7 +409,7 @@ woh.g_config.script={
     },
     'dialogue_9':{
         type:'dialogue',
-        repeat:false,
+        repeat:true,
         data:[
             {'avatar':'resources/images/dialogue/sola_cheng_pity.png','name':'程少非','content':'醒醒，醒醒！',position:'left',globalBg : 'resources/images/bg/bg-sea.jpg'},
             {'avatar':'resources/images/dialogue/rio_tang_heavy.png','name':'唐如','content':'唔……唔……你往在下口中塞了何物？',position:'right',globalBg : 'resources/images/bg/bg-sea.jpg'},
@@ -434,7 +438,7 @@ woh.g_config.script={
                     [{type:'crab',x:100,y:-200},{type:'crab_2',x:300,y:-200},{type:'crab_3',x:500,y:900},{type:'crab',x:400,y:900},{type:'crab',x:300,y:900}],
                 ]
             ],
-            "drop":['weapon','004',1],//掉落类型，掉落id，掉落概率
+            "drop":['weapon','004',1]//掉落类型，掉落id，掉落概率
         },
         next:'map_5'
     },
@@ -462,6 +466,10 @@ woh.g_config.script={
                     {
                         title:"扬帆远航",
                         story_point:"dialogue_6"
+                    },
+                    {
+                        title:"海上奇遇",
+                        story_point:"loading_4"
                     }
                 ]
             },
@@ -481,7 +489,7 @@ woh.g_config.script={
     },
     'dialogue_10':{
         type:'dialogue',
-        repeat:false,
+        repeat:true,
         data:[
             {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'到了这里还没完没了的，你究竟残害了多少它们的同类……',position:'left',globalBg : 'resources/images/bg/bg-sea.jpg'},
             {'avatar':'resources/images/dialogue/rio_tang_heavy.png','name':'唐如','content':'哎呀珠子……唔！',position:'left',globalBg : 'resources/images/bg/bg-sea.jpg'},
@@ -494,7 +502,7 @@ woh.g_config.script={
     },
     'drama_7':{
         type:'drama',//标记相应的stage类型
-        repeat:false,
+        repeat:true,
         data:[
             '海水被一股强大的力量从中间破开，',
             '两人被从水底重新甩到了岸上。'  
@@ -525,6 +533,10 @@ woh.g_config.script={
                     {
                         title:"扬帆远航",
                         story_point:"dialogue_6"
+                    },
+                    {
+                        title:"海上奇遇",
+                        story_point:"loading_4"
                     }
                 ]
             },
@@ -548,7 +560,7 @@ woh.g_config.script={
     },
     'dialogue_11':{
         type:'dialogue',
-        repeat:false,
+        repeat:true,
         data:[
             {'avatar':'resources/images/dialogue/sola_cheng_nature.png','name':'程少非','content':'虽然不知道怎么回事，不过看起来好像安全了的样子。',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
             {'avatar':'resources/images/dialogue/rio_tang_heavy.png','name':'唐如','content':'咳，咳，咳，我，呕……',position:'right',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
@@ -569,7 +581,7 @@ woh.g_config.script={
     },
     'drama_8':{
         type:'drama',//标记相应的stage类型
-        repeat:false,
+        repeat:true,
         data:[
             '轰隆一声巨响',
             '两人眼前出现了无数',
@@ -623,6 +635,10 @@ woh.g_config.script={
                     {
                         title:"扬帆远航",
                         story_point:"dialogue_6"
+                    },
+                    {
+                        title:"海上奇遇",
+                        story_point:"loading_4"
                     }
                 ]
             },
@@ -650,7 +666,7 @@ woh.g_config.script={
     },
     'dialogue_12':{
         type:'dialogue',
-        repeat:false,
+        repeat:true,
         data:[
             {'avatar':'resources/images/dialogue/fuchen_angry.png','name':'扶尘子','content':'急急如律令，退！',position:'left',globalBg : 'resources/images/bg/bg-field.jpg'},
             {'avatar':'resources/images/dialogue/sola_cheng_a.png','name':'程少非','content':'那些兔子怪一下都不见了，好厉害的道长！',position:'right',globalBg : 'resources/images/bg/bg-field.jpg'},
@@ -715,7 +731,7 @@ woh.g_config.script={
                     [{type:'crab_boss',x:500,y:640},{type:'crab',x:100,y:200},{type:'crab',x:900,y:200}],
                 ],
             ],
-            "drop":['clothes','002',1],//掉落类型，掉落id，掉落概率
+            "drop":['clothes','002',1]//掉落类型，掉落id，掉落概率
         },
         next:'intro'
     }
@@ -841,7 +857,8 @@ woh.g_config.resources = {
             'images/cg/cg_1.jpg',
             
             //sound
-            'music/chat.mp3'
+            'music/chat.mp3',
+            'music/cg.mp3'
         ]
     },
     battle_1: {
@@ -869,10 +886,8 @@ woh.g_config.resources = {
             'images/map/ava/rio_tang.png',
             'images/map/ava/shaofei_cheng.png',
             'images/map/items/select-ico.png',
-            'images/map/items/select-menu-header.png',
-            'images/map/items/select-menu-middle.png',
-            'images/map/items/select-menu-bottom.png',
-            'images/map/items/select-menu-hover.png',
+            'images/map/items/select-menu.png',
+            'images/map/items/select-li.png',
             'images/map/items/c_001.png',
             'images/map/items/c_002.png',
             'images/map/items/c_003.png',

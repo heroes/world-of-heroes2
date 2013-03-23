@@ -13,6 +13,7 @@ Laro.NS('woh.stageClass', function (L) {
                 woh.g_config.sound_play && woh.util.playOneSound('music/chat.mp3');
 
                 var data = msg;
+                var last_li;
                 data.forEach(function (o) {
                     var sp = document.createElement("div");
                     map.appendChild(sp);
@@ -32,8 +33,6 @@ Laro.NS('woh.stageClass', function (L) {
                         map.appendChild(sp_list);
                         sp_list.setAttribute("class", "story-menu");
                         sp_list.setAttribute("id", o.id);
-                        sp_list.style.left = parseInt(o.xPos) + 80 + "px";
-                        sp_list.style.bottom = o.yPos + "px";
                     var sp_list_header = document.createElement("li");
                         sp_list.appendChild(sp_list_header);
                         sp_list_header.setAttribute("class","header");
@@ -50,18 +49,13 @@ Laro.NS('woh.stageClass', function (L) {
                         sp_list_node.addEventListener('click', function (e) {
                             woh.gameScript.startExec(woh.g_config.script, e.target.getAttribute("data-point"));
                         }, false);
+                        last_li = sp_list_node;
                     });
                     var sp_list_bottom = document.createElement("li");
                         sp_list.appendChild(sp_list_bottom);
                         sp_list_bottom.setAttribute("class","bottom");
                 });
-
-//
-//            document.getElementById("map").appendChild(sp);
-//            sp.setAttribute("class","story-point");
-//            sp.addEventListener("click",function(e){
-//                woh.gameScript.startExec(woh.g_config.script, 'cg_1');
-//            },false);
+                last_li.setAttribute("class","story-menu-li new");//标记新剧情点
             },
             leave: function () {
                 woh.log('leave stage [map]');

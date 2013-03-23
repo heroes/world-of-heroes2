@@ -130,10 +130,9 @@
 .map-module .button{
     width:180px;
     height:200px;
-    margin:0 10px;
+    margin:420px 10px 0 10px;
     float:left;
     cursor:pointer;
-    margin-top:420px;
 }
 .map-module .story-point{
     width:80px;
@@ -146,39 +145,45 @@
     position: absolute;
     list-style: none;
     display: none;
-    margin: 0;
+    margin: 0 0 0 -162px;
     padding: 0;
-    width: 92px;
+    width: 324px;
+    z-index: 10;
+    left: 50%;
 }
 .map-module ul.story-menu.active{
     display: block;
 }
-.map-module ul.story-menu li{
-    background: url("../resources/images/map/select-menu-middle.png") repeat-y;
+.map-module ul.story-menu li ul{
+    font-size: 1.5em;
+    width: 280px;
+    margin-left: 32px;
+    background: url("../resources/images/map/select-li.png") repeat-y;
+    padding: 0;
 }
 .map-module ul.story-menu li ul li.story-menu-li{
     list-style: none;
-    width: 94px;
     padding: 0;
-    margin: 0;
     background: none;
     text-align: center;
-    line-height: 40px;
+    line-height: 80px;
 }
-.map-module ul.story-menu li ul{
-    background: none;
-    padding: 0;
+.map-module ul.story-menu li ul li.story-menu-li.new{
+    list-style: url("../resources/images/map/new.png") inside;
 }
+
 .map-module ul.story-menu li ul li.story-menu-li:hover{
-    background: url("../resources/images/map/select-menu-hover.png") center no-repeat;
+    text-shadow: 0 0 10px red;
 }
 .map-module ul.story-menu li.header{
-    background: url("../resources/images/map/select-menu-header.png") no-repeat;
-    height: 34px;
+    background: url("../resources/images/map/select-menu.png") top no-repeat;
+    width: 324px;
+    height: 92px;
 }
 .map-module ul.story-menu li.bottom{
-    background: url("../resources/images/map/selece-menu-bottom.png") no-repeat;
-    height: 34px;
+    background: url("../resources/images/map/select-menu.png") bottom no-repeat;
+    width: 324px;
+    height: 92px;
 }
 .map-module .button#map-person{background: url(../resources/images/map/button1.png) center no-repeat}
 .map-module .button#map-skill{background: url(../resources/images/map/button2.png) center no-repeat}
@@ -384,9 +389,8 @@
 	line-height: 1.5em;
 	color: white;
 	list-style: none;
-	margin: 0 auto;
+	margin: 170px auto 0 auto;
 	width: 100%;
-	margin-top: 170px;
 }
 .drama-module ul li{text-align: center;}
 
