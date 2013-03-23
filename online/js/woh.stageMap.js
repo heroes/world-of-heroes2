@@ -2,8 +2,7 @@
  * stage Map Class
  */
 Laro.NS('woh.stageClass', function (L) {
-   var pkg = this;
-
+    var pkg = this;
     var Map;
     Map = L.BaseState.extend(function () {
     }).methods({
@@ -11,9 +10,13 @@ Laro.NS('woh.stageClass', function (L) {
                 woh.log('enter stage [Map] with msg ' + msg);
                 woh.show(woh.els.map);
                 woh.g_config.sound_play && woh.util.playOneSound('music/chat.mp3');
-
-                var data = msg;
                 var last_sp,last_li;
+                var data;
+                var map_key = woh.g_config.script.map_key;
+                if (msg.key > map_key) {
+                    woh.g_config.script.map_key = msg.key;
+                    data = msg.data;
+                } else data = woh.g_config.script["map_" + map_key].data.data;
                 data.forEach(function (o) {
                     var sp = document.createElement("div");
                     map.appendChild(sp);

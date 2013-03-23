@@ -1,5 +1,6 @@
 //'next'用来存储下一幕的
 woh.g_config.script={
+    map_key:1,
     //死亡
     'dead':{
         type:'dead',
@@ -21,7 +22,6 @@ woh.g_config.script={
         repeat:true,//标记在流程中是否允许重复出现（即选关的时候是否会被再次触发）
         data:{},
         next:'drama_1'
-        //next:'loading_4'
     }, 
     'drama_1':{
         type:'drama',//标记相应的stage类型
@@ -29,7 +29,7 @@ woh.g_config.script={
         data: [
                 '当唐如捡起沙滩上第九十九个贝壳的时候——',
                 '他们相遇了',
-                '这是命运的邂逅'    
+                '这是命运的邂逅'
         ],
         next:'cg_1'
     },
@@ -84,28 +84,31 @@ woh.g_config.script={
     'map_1':{
         type:'map',
         repeat:true,
-        data:[   //数组形式存储点
-            {
-                id:"place1",//点的id
-                xPos:700, //x轴坐标
-                yPos:260, //y轴坐标
-                storyList:[//菜单项
-                    {
-                        title:"初遇少年",
-                        story_point:"drama_1"
-                    },
-                    {
-                        title:"走为上计",
-                        story_point:"dialogue_2"
-                    }
-                ]
-            },
-        ],
-        next:'dialogue_2'
+        data:{
+            key:1,
+            data:
+            [   //数组形式存储点
+                {
+                    id:"place1",//点的id
+                    xPos:700, //x轴坐标
+                    yPos:260, //y轴坐标
+                    storyList:[//菜单项
+                        {
+                            title:"初遇少年",
+                            story_point:"drama_1"
+                        },
+                        {
+                            title:"走为上计",
+                            story_point:"dialogue_2"
+                        }
+                    ]
+                },
+            ]
+        }
     },
     'dialogue_2':{
         type:'dialogue',
-        repeat:false,
+        repeat:true,
         data:[
             {'avatar':'resources/images/dialogue/rio_tang_wei.png','name':'唐如','content':'此人究竟做过何事，让这些螃蟹如此怨愤？君子不立危墙之下，三十六计走为上策——',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
             {'avatar':'resources/images/dialogue/rio_tang_heavy.png','name':'唐如','content':'嘿～咻～此人虽不肥胖，分量却着实不轻。',position:'left',globalBg : 'resources/images/bg/bg-beach-dusk.jpg'},
@@ -116,16 +119,16 @@ woh.g_config.script={
         type:'drama',//标记相应的stage类型
         repeat:true,
         data:[
-           
+
             '唐如带着晕倒的少年回到了自己家',
             '自双亲去世后',
-            '唐如就独自一人居住在停泊在小湾中的一艘大船里'    
+            '唐如就独自一人居住在停泊在小湾中的一艘大船里'
         ],
         next:'dialogue_3'
     },
     'dialogue_3':{
         type:'dialogue',
-        repeat:false,
+        repeat:true,
         data:[
             {'avatar':'resources/images/dialogue/sola_cheng_nature.png','name':'少年','content':'饿了。',position:'right',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
             {'avatar':'resources/images/dialogue/rio_tang_smile.png','name':'唐如','content':'来，这是刚熬好的粥，我说你倒是慢点喝，饿晕醒转，不宜马上暴食。',position:'left',globalBg : 'resources/images/bg/bg-boat-inner.jpg'},
@@ -139,19 +142,19 @@ woh.g_config.script={
     },
     'drama_3':{
         type:'drama',//标记相应的stage类型
-        repeat:false,
+        repeat:true,
 
         data: [
             'ZZZZZZZZZZZZZZZZ',
             '.',
             '.',
-            '.'   
+            '.'
         ],
         next:'dialogue_4'
     },
     'dialogue_4':{
         type:'dialogue',
-        repeat:false,
+        repeat:true,
         data:[
             {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'好舒服的香气，不似花香，却似……唔，稻香——咦？这是谁的衣服？',position:'left',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
             {'avatar':'resources/images/dialogue/sola_cheng_pity.png','name':'少年','content':'昨晚醒来看你衣衫褴褛，身体病弱，还躺在外面，万一受寒得病也一定没人照顾。我实在不忍心，赶紧把外袍拿来给你披上了。',position:'right',globalBg : 'resources/images/bg/bg-boat-outer.jpg'},
@@ -194,6 +197,8 @@ woh.g_config.script={
     'map_2':{
         type:'map',
         repeat:true,
+        data:{
+        key:2,
         data:[   //数组形式存储点
             {
                 id:"place1",//点的id
@@ -213,9 +218,9 @@ woh.g_config.script={
                         story_point:"dialogue_5"
                     }
                 ]
-            },
-        ],
-        next:'dialogue_5'
+            }
+        ]
+        }
     },
     'dialogue_5':{
         type:'dialogue',
@@ -240,12 +245,14 @@ woh.g_config.script={
             ],
             "drop":['weapon','002',1]//掉落类型，掉落id，掉落概率
         },
-        
+
         next:'map_3'
     },
     'map_3':{
         type:'map',
         repeat:true,
+        data:{
+        key:3,
         data:[   //数组形式存储点
             {
                 id:"place1",//点的id
@@ -270,12 +277,12 @@ woh.g_config.script={
                     }
                 ]
             },
-        ],
-        next:'dialogue_6'
+        ]
+        }
     },
     'dialogue_6':{
         type:'dialogue',
-        repeat:false,
+        repeat:true,
         data:[
             {'avatar':'resources/images/dialogue/sola_cheng_food.png','name':'少年','content':'幸好幸好，没有损坏，这可是我整整一年的心血结晶啊！',position:'left',globalBg : 'resources/images/bg/bg-beach.jpg'},
             {'avatar':'resources/images/dialogue/rio_tang_normal.png','name':'唐如','content':'这是……《海味谱》？待我看看。',position:'right',globalBg : 'resources/images/bg/bg-beach.jpg'},
@@ -291,18 +298,20 @@ woh.g_config.script={
     },
     'drama_4':{
         type:'drama',//标记相应的stage类型
-        repeat:false,
+        repeat:true,
         data:[
             '就这样,',
             '唐如不情不愿地被少非拖着，',
             '开始了出海寻找人鱼的旅程。',
-            '（第一章完）'   
+            '（第一章完）'
         ],
         next:'map_4'
     },
     'map_4':{
         type:'map',
         repeat:true,
+        data:{
+        key:4,
         data:[   //数组形式存储点
             {
                 id:"place1",//点的id
@@ -330,9 +339,9 @@ woh.g_config.script={
                         story_point:"loading_4"
                     }
                 ]
-            },
-        ],
-        next:'loading_4'
+            }
+        ]
+        }
     },
     'loading_4':{
         type:'loading',
@@ -347,7 +356,7 @@ woh.g_config.script={
         repeat:true,
         data:[
             '两人一船驶向茫茫大海，',
-            '向着传说中人鱼所在的海域行驶而去。'   
+            '向着传说中人鱼所在的海域行驶而去。'
         ],
         next:'dialogue_7'
     },
@@ -403,7 +412,7 @@ woh.g_config.script={
             '人鱼少女伸开双手，',
             '口中不知念了几句什么。',
             '海面突然掀起滔天巨浪，',
-            '两人连人带船被卷进了水幕中。'   
+            '两人连人带船被卷进了水幕中。'
         ],
         next:'dialogue_9'
     },
@@ -445,6 +454,8 @@ woh.g_config.script={
     'map_5':{
         type:'map',
         repeat:true,
+        data:{
+        key:5,
         data:[   //数组形式存储点
             {
                 id:"place1",//点的id
@@ -484,8 +495,8 @@ woh.g_config.script={
                     }
                 ]
             }
-        ],
-        next:'dialogue_10'
+        ]
+        }
     },
     'dialogue_10':{
         type:'dialogue',
@@ -505,13 +516,15 @@ woh.g_config.script={
         repeat:true,
         data:[
             '海水被一股强大的力量从中间破开，',
-            '两人被从水底重新甩到了岸上。'  
+            '两人被从水底重新甩到了岸上。'
         ],
         next:'map_6'
     },
     'map_6':{
         type:'map',
         repeat:true,
+        data:{
+        key:6,
         data:[   //数组形式存储点
             {
                 id:"place1",//点的id
@@ -555,8 +568,8 @@ woh.g_config.script={
                     }
                 ]
             }
-        ],
-        next:'dialogue_11'
+        ]
+        }
     },
     'dialogue_11':{
         type:'dialogue',
@@ -614,6 +627,8 @@ woh.g_config.script={
     'map_7':{
         type:'map',
         repeat:true,
+        data:{
+        key:7,
         data:[   //数组形式存储点
             {
                 id:"place1",//点的id
@@ -661,8 +676,8 @@ woh.g_config.script={
                     }
                 ]
             }
-        ],
-        next:'dialogue_12'
+        ]
+        }
     },
     'dialogue_12':{
         type:'dialogue',
@@ -692,7 +707,7 @@ woh.g_config.script={
         type:'drama',
         repeat:true,
         data:[
-        
+
         ],
         next:'loading_Infinity'
     },
