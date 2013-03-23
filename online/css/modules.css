@@ -151,7 +151,6 @@
 .map-module ul.story-menu{
     position: absolute;
     list-style: none;
-    display: none;
     margin: 0 0 0 -195px;
     padding: 0;
     width: 391px;
@@ -163,8 +162,8 @@
 }
 .map-module ul.story-menu.active{
     display: block;
-    -webkit-transform: scale(1);
     -webkit-transition: all 0.2s linear;
+    -webkit-transform: scale(1);
 }
 .map-module ul.story-menu li.story-menu-li{
     font-size: 40px;
