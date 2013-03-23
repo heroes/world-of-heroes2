@@ -161,10 +161,9 @@
     width: 94px;
     padding: 0;
     margin: 0;
-    line-height: 34px;
     background: none;
     text-align: center;
-    line-height: 34px;
+    line-height: 40px;
 }
 .map-module ul.story-menu li ul{
     background: none;
