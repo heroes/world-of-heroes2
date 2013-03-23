@@ -160,7 +160,7 @@
     display: block;
 }
 .map-module ul.story-menu li.story-menu-li{
-    font-size: 1.5em;
+    font-size: 40px;
     list-style: none;
     padding: 0;
     background: none;
@@ -168,6 +168,9 @@
     line-height: 60px;
     margin-left: 100px;
     cursor: pointer;
+}
+.map-module ul.story-menu li.story-menu-li.new{
+    margin-left: 62px;
 }
 .map-module ul.story-menu li.story-menu-li img{
     vertical-align: middle;
@@ -177,8 +180,10 @@
     margin-top: 100px;
 }
 .map-module ul.story-menu li.story-menu-li:hover{
-    text-shadow: 0 0 10px white;
-    background: url("../resources/images/map/hover.png") center no-repeat;
+    background: url("../resources/images/map/hover.png") 60px center no-repeat;
+}
+.map-module ul.story-menu li.story-menu-li.new:hover{
+    background: url("../resources/images/map/hover.png") 98px center no-repeat;
 }
 .map-module ul.story-menu li.header{
     background: url("../resources/images/map/select-menu.png") top no-repeat;

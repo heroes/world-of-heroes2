@@ -51,6 +51,7 @@ Laro.NS('woh.stageClass', function (L) {
                 });
                 last_sp.setAttribute("class","story-point new");
                 last_li.innerHTML = "<img src='./resources/images/map/ico-new.png'/>" +last_li.innerHTML;
+                last_li.setAttribute("class","story-menu-li new");
             },
             leave: function () {
                 woh.log('leave stage [map]');
