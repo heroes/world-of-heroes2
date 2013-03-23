@@ -13,10 +13,11 @@ Laro.NS('woh.stageClass', function (L) {
                 woh.g_config.sound_play && woh.util.playOneSound('music/chat.mp3');
 
                 var data = msg;
-                var last_li;
+                var last_sp,last_li;
                 data.forEach(function (o) {
                     var sp = document.createElement("div");
                     map.appendChild(sp);
+                    last_sp = sp;
                     sp.setAttribute("class", "story-point");
                     sp.setAttribute("data-menu", o.id);
                     sp.style.left = o.xPos + "px";
@@ -33,29 +34,20 @@ Laro.NS('woh.stageClass', function (L) {
                         map.appendChild(sp_list);
                         sp_list.setAttribute("class", "story-menu");
                         sp_list.setAttribute("id", o.id);
-                    var sp_list_header = document.createElement("li");
-                        sp_list.appendChild(sp_list_header);
-                        sp_list_header.setAttribute("class","header");
-                    var menu_area = document.createElement("li");
-                        sp_list.appendChild(menu_area);
-                    var sp_list_menu = document.createElement("ul");
-                        menu_area.appendChild(sp_list_menu);
                     o.storyList.forEach(function (o) {
                         var sp_list_node = document.createElement("li");
                         sp_list_node.innerHTML = o.title;
                         sp_list_node.setAttribute("class","story-menu-li");
                         sp_list_node.setAttribute("data-point", o.story_point);
-                        sp_list_menu.appendChild(sp_list_node);
+                        sp_list.appendChild(sp_list_node);
                         sp_list_node.addEventListener('click', function (e) {
                             woh.gameScript.startExec(woh.g_config.script, e.target.getAttribute("data-point"));
                         }, false);
                         last_li = sp_list_node;
                     });
-                    var sp_list_bottom = document.createElement("li");
-                        sp_list.appendChild(sp_list_bottom);
-                        sp_list_bottom.setAttribute("class","bottom");
                 });
-                last_li.setAttribute("class","story-menu-li new");//标记新剧情点
+                last_sp.setAttribute("class","story-point new");
+                last_li.innerHTML = "<img src='./resources/images/map/ico-new.png'/>" +last_li.innerHTML;
             },
             leave: function () {
                 woh.log('leave stage [map]');

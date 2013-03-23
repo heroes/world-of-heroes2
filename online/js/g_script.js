@@ -885,9 +885,9 @@ woh.g_config.resources = {
             //载入大地图资源
             'images/map/ava/rio_tang.png',
             'images/map/ava/shaofei_cheng.png',
-            'images/map/items/select-ico.png',
-            'images/map/items/select-menu.png',
-            'images/map/items/select-li.png',
+            'images/map/items/select-bg.png',
+            'images/map/items/select-ico-new.png',
+            'images/map/items/select-hover.png',
             'images/map/items/c_001.png',
             'images/map/items/c_002.png',
             'images/map/items/c_003.png',

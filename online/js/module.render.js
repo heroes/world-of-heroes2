@@ -181,7 +181,10 @@
             var map = _doc.getElementById('map');
             map.innerHTML=this.tpl();
             map.addEventListener('click',function(e){
-              if(e.target.getAttribute("class")!="story-menu-li"&&e.target.getAttribute("class")!="story-point"){
+              if(e.target.getAttribute("class")!="story-menu-li"&&
+                 e.target.getAttribute("class")!="story-point"&&
+                 e.target.getAttribute("class")!="story-point new"
+                ){
                   var activemenu = document.querySelector(".story-menu.active");
                   activemenu&&activemenu.setAttribute("class","story-menu");
               }

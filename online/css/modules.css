@@ -141,39 +141,44 @@
     background: url(../resources/images/map/select-ico.png) center no-repeat;
     cursor: pointer;
 }
+.map-module .story-point.new{
+    background: url(../resources/images/map/select-ico-new.png) center no-repeat;
+}
 .map-module ul.story-menu{
     position: absolute;
     list-style: none;
     display: none;
-    margin: 0 0 0 -162px;
+    margin: 0 0 0 -195px;
     padding: 0;
-    width: 324px;
+    width: 391px;
+    height: 480px;
     z-index: 10;
     left: 50%;
+    background: url("../resources/images/map/select-bg.png") no-repeat;
 }
 .map-module ul.story-menu.active{
     display: block;
 }
-.map-module ul.story-menu li ul{
+.map-module ul.story-menu li.story-menu-li{
     font-size: 1.5em;
-    width: 280px;
-    margin-left: 32px;
-    background: url("../resources/images/map/select-li.png") repeat-y;
-    padding: 0;
-}
-.map-module ul.story-menu li ul li.story-menu-li{
     list-style: none;
     padding: 0;
     background: none;
     text-align: center;
-    line-height: 80px;
+    line-height: 60px;
+    margin-left: 100px;
+    cursor: pointer;
 }
-.map-module ul.story-menu li ul li.story-menu-li.new{
-    list-style: url("../resources/images/map/new.png") inside;
+.map-module ul.story-menu li.story-menu-li img{
+    vertical-align: middle;
+    margin-right: 10px;
 }
-
-.map-module ul.story-menu li ul li.story-menu-li:hover{
-    text-shadow: 0 0 10px red;
+.map-module ul.story-menu li.story-menu-li:first-child{
+    margin-top: 100px;
+}
+.map-module ul.story-menu li.story-menu-li:hover{
+    text-shadow: 0 0 10px white;
+    background: url("../resources/images/map/hover.png") center no-repeat;
 }
 .map-module ul.story-menu li.header{
     background: url("../resources/images/map/select-menu.png") top no-repeat;
@@ -386,7 +391,7 @@
 }
 .drama-module ul{
 	font-size: 1.5em;
-	line-height: 1.5em;
+	line-height: 2em;
 	color: white;
 	list-style: none;
 	margin: 170px auto 0 auto;
