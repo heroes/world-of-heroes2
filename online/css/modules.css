@@ -159,9 +159,12 @@
     z-index: 10;
     left: 50%;
     background: url("../resources/images/map/select-bg.png") no-repeat;
+    -webkit-transform: scale(0);
 }
 .map-module ul.story-menu.active{
     display: block;
+    -webkit-transform: scale(1);
+    -webkit-transition: all 0.2s linear;
 }
 .map-module ul.story-menu li.story-menu-li{
     font-size: 40px;
