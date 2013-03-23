@@ -143,6 +143,7 @@
 }
 .map-module .story-point:hover{
     -webkit-transform:scale(1.2);
+    -webkit-transition:all 1s 1 ease-in-out;
 }
 .map-module .story-point.new{
     background: url(../resources/images/map/select-ico-new.png) center no-repeat;
