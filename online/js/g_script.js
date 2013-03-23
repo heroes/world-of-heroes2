@@ -672,7 +672,7 @@ woh.g_config.script={
                     },
                     {
                         title:"人鱼少女",
-                        story_point:"dialogue_11"
+                        story_point:"dialogue_12"
                     }
                 ]
             }
