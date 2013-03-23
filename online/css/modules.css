@@ -141,6 +141,9 @@
     background: url(../resources/images/map/select-ico.png) center no-repeat;
     cursor: pointer;
 }
+.map-module .story-point:hover{
+    -webkit-transform:scale(1.2);
+}
 .map-module .story-point.new{
     background: url(../resources/images/map/select-ico-new.png) center no-repeat;
 }
